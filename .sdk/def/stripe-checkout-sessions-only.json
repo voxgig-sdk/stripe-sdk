@@ -1,0 +1,122 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Stripe Checkout Sessions API",
+    "version": "1.0.0",
+    "description": "Create, list, and retrieve Stripe Checkout Sessions."
+  },
+  "servers": [
+    { "url": "https://api.stripe.com/v1" }
+  ],
+  "security": [
+    { "bearerAuth": [] }
+  ],
+  "paths": {
+    "/checkout/sessions": {
+      "get": {
+        "operationId": "listCheckoutSessions",
+        "summary": "List Checkout Sessions",
+        "parameters": [
+          { "name": "limit", "in": "query", "required": false, "schema": { "type": "integer" } },
+          { "name": "customer", "in": "query", "required": false, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of checkout sessions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/CheckoutSession" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createCheckoutSession",
+        "summary": "Create a Checkout Session",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": { "$ref": "#/components/schemas/CheckoutSessionInput" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The created checkout session",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CheckoutSession" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/checkout/sessions/{id}": {
+      "get": {
+        "operationId": "getCheckoutSession",
+        "summary": "Retrieve a Checkout Session",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "The requested checkout session",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CheckoutSession" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "CheckoutSessionInput": {
+        "type": "object",
+        "required": ["mode", "success_url"],
+        "properties": {
+          "mode": { "type": "string" },
+          "success_url": { "type": "string" },
+          "cancel_url": { "type": "string" },
+          "customer": { "type": "string" },
+          "currency": { "type": "string" }
+        }
+      },
+      "CheckoutSession": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "object": { "type": "string" },
+          "mode": { "type": "string" },
+          "status": { "type": "string" },
+          "success_url": { "type": "string" },
+          "cancel_url": { "type": "string" },
+          "customer": { "type": "string" },
+          "currency": { "type": "string" },
+          "amount_total": { "type": "integer" },
+          "payment_status": { "type": "string" },
+          "created": { "type": "integer" }
+        }
+      }
+    }
+  }
+}

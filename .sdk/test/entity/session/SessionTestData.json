@@ -1,0 +1,61 @@
+{
+  "existing": {
+    "session": {
+      "SESSION00": {
+        "amount_total": "s6e",
+        "cancel_url": "s6f",
+        "created": "s70",
+        "currency": "s71",
+        "customer": "s72",
+        "id": "SESSION00",
+        "mode": "s74",
+        "object": "s75",
+        "payment_status": "s76",
+        "status": "s77",
+        "success_url": "s78"
+      },
+      "SESSION01": {
+        "amount_total": "sdc",
+        "cancel_url": "sdd",
+        "created": "sde",
+        "currency": "sdf",
+        "customer": "se0",
+        "id": "SESSION01",
+        "mode": "se2",
+        "object": "se3",
+        "payment_status": "se4",
+        "status": "se5",
+        "success_url": "se6"
+      },
+      "SESSION02": {
+        "amount_total": "s14a",
+        "cancel_url": "s14b",
+        "created": "s14c",
+        "currency": "s14d",
+        "customer": "s14e",
+        "id": "SESSION02",
+        "mode": "s150",
+        "object": "s151",
+        "payment_status": "s152",
+        "status": "s153",
+        "success_url": "s154"
+      }
+    }
+  },
+  "new": {
+    "session": {
+      "session_ref01": {
+        "amount_total": "s1b8",
+        "cancel_url": "s1b9",
+        "created": "s1ba",
+        "currency": "s1bb",
+        "customer": "s1bc",
+        "mode": "s1be",
+        "object": "s1bf",
+        "payment_status": "s1c0",
+        "status": "s1c1",
+        "success_url": "s1c2"
+      }
+    }
+  }
+}

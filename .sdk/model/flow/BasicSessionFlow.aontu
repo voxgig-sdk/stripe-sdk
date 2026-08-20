@@ -1,0 +1,52 @@
+# BasicSessionFlow
+
+main: kit: flow: BasicSessionFlow:
+{
+  entity: "session",
+  kind: "basic",
+  name: "BasicSessionFlow",
+  step: [
+    {
+      input: {
+        ref: "session_ref01"
+      }
+
+      op: "create"
+    }
+
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "session_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      input: {
+        ref: "session_ref01",
+        srcdatavar: "session_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "session01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-session_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSessionFlow"
+}

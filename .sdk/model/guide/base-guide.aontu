@@ -1,0 +1,19 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 1
+  metrics: count: path: 2
+  metrics: count: method: 3
+
+  entity: session: {
+    path: "/checkout/sessions": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/checkout/sessions/{id}": {
+      op: load: method: *GET
+    }
+  }
+
+}
