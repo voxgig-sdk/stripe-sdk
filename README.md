@@ -10,6 +10,8 @@ This is an unofficial SDK for the Stripe Checkout Sessions public API, generated
 
 Learn more about Voxgig SDKs at [voxgig.com/sdk](https://voxgig.com/sdk/).
 
+> TypeScript, Python, PHP, Golang, Lua, JavaScript SDKs, a CLI with an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
+
 ## Entities, not endpoints
 
 This SDK exposes the API as a small set of **semantic entities** — Session — that you
@@ -49,11 +51,62 @@ const sessions = await client.Session().list()
 console.log(sessions)
 ```
 
+### Python
+
+```python
+client = StripeSDK.test()
+sessions = client.Session().list()
+print(sessions)
+```
+
+### PHP
+
+```php
+// Seed fixture data so offline calls resolve without a live server.
+$client = StripeSDK::test([
+    "entity" => ["session" => ["test01" => ["id" => "test01"]]],
+]);
+$sessions = $client->Session()->list();
+```
+
+### Golang
+
+```go
+client := sdk.Test()
+result, err := client.Session(nil).List(
+    nil, nil,
+)
+```
+
+### Lua
+
+```lua
+local client = sdk.test()
+local results, err = client:Session():list()
+```
+
+### JavaScript
+
+```js
+const client = StripeSDK.test()
+const sessions = await client.Session().list()
+// sessions is an array of entities, populated with mock data
+// — call sessions[0].data() for the record itself
+console.log(sessions)
+```
+
 ## Packages
 
 | Language | Package | Install |
 | --- | --- | --- |
 | TypeScript | `@voxgig-sdk/stripe` | publish pending — [install from git tag](https://github.com/voxgig-sdk/stripe-sdk/releases) |
+| Python | `voxgig-sdk-stripe` | publish pending — [install from git tag](https://github.com/voxgig-sdk/stripe-sdk/releases) |
+| PHP | `voxgig-sdk/stripe` | publish pending — [install from git tag](https://github.com/voxgig-sdk/stripe-sdk/releases) |
+| Golang | `github.com/voxgig-sdk/stripe-sdk/go` | `go get github.com/voxgig-sdk/stripe-sdk/go@latest` |
+| Lua | `voxgig-sdk-stripe` | publish pending — [install from git tag](https://github.com/voxgig-sdk/stripe-sdk/releases) |
+| JavaScript | `@voxgig-sdk/stripe-js` | publish pending — [install from git tag](https://github.com/voxgig-sdk/stripe-sdk/releases) |
+| Go CLI | `github.com/voxgig-sdk/stripe-sdk/go-cli` | `go install github.com/voxgig-sdk/stripe-sdk/go-cli/cmd/stripe@latest` |
+| Go MCP server | `github.com/voxgig-sdk/stripe-sdk/go-mcp` | `go get github.com/voxgig-sdk/stripe-sdk/go-mcp@latest` |
 
 ## Quickstart
 
@@ -79,7 +132,31 @@ See the [TypeScript README](ts/README.md) for the full guide.
 
 | Surface | Path |
 | --- | --- |
-| **SDK** (TypeScript) | `ts/` |
+| **SDK** (TypeScript, Python, PHP, Golang, Lua, JavaScript) | `ts/` `py/` `php/` `go/` `lua/` `js/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
+
+## Use it from an AI agent (MCP)
+
+The generated MCP server exposes every operation in this SDK as an
+[MCP](https://modelcontextprotocol.io) tool that Claude, Cursor or Cline
+can call directly. Build and register it:
+
+```bash
+cd go-mcp && go build -o stripe-mcp .
+```
+
+Then add it to your agent's MCP config (Claude Desktop, Cursor, etc.):
+
+```json
+{
+  "mcpServers": {
+    "stripe": {
+      "command": "/abs/path/to/stripe-mcp"
+    }
+  }
+}
+```
 
 ## Entities
 
@@ -91,6 +168,98 @@ The API exposes one entity:
 
 The operations available across these entities are **load**, **list**, **create** — see each entity's
 own list above for exactly which it supports.
+
+## Quickstart in other languages
+
+### Python
+
+```python
+import os
+from stripe_sdk import StripeSDK
+
+client = StripeSDK({
+    "apikey": os.environ.get("STRIPE_APIKEY"),
+})
+
+# List all sessions (returns a list, raises on error)
+sessions = client.Session().list()
+for session in sessions:
+    print(session)
+
+# Load a specific session (returns the record, raises on error)
+session = client.Session().load({"id": "example_id"})
+print(session)
+```
+
+### PHP
+
+```php
+<?php
+require_once 'stripe_sdk.php';
+
+$client = new StripeSDK([
+    "apikey" => getenv("STRIPE_APIKEY"),
+]);
+
+// List all sessions (returns an array; throws on error)
+$sessions = $client->Session()->list();
+print_r($sessions);
+
+// Load a specific session (returns the ENTITY; call data_get() for the record; throws on error)
+$session = $client->Session()->load(["id" => "example_id"]);
+print_r($session);
+```
+
+### Golang
+
+```go
+import sdk "github.com/voxgig-sdk/stripe-sdk/go"
+
+client := sdk.NewStripeSDK(map[string]any{
+    "apikey": os.Getenv("STRIPE_APIKEY"),
+})
+
+// List all sessions
+sessions, err := client.Session(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(sessions)
+```
+
+### Lua
+
+```lua
+local sdk = require("stripe_sdk")
+
+local client = sdk.new({
+  apikey = os.getenv("STRIPE_APIKEY"),
+})
+
+-- List all sessions
+local sessions, err = client:Session():list()
+print(sessions)
+
+-- Load a specific session
+local session, err = client:Session():load({ id = "example_id" })
+print(session)
+```
+
+### JavaScript
+
+```js
+const { StripeSDK } = require('@voxgig-sdk/stripe-js')
+
+const client = new StripeSDK({
+  apikey: process.env.STRIPE_APIKEY,
+})
+
+// List all sessions (returns an array)
+const sessions = await client.Session().list()
+for (const session of sessions) {
+  console.log(session)
+}
+```
 
 ## Direct and prepare
 
@@ -110,6 +279,59 @@ When the entity interface does not cover an endpoint, use `direct`:
 
 **TypeScript:**
 ```ts
+const result = await client.direct({
+  path: '/api/resource/{id}',
+  method: 'GET',
+  params: { id: 'example' },
+})
+if (result instanceof Error) {
+  throw result
+}
+console.log(result.data)
+```
+
+**Python:**
+```python
+result = client.direct({
+    "path": "/api/resource/{id}",
+    "method": "GET",
+    "params": {"id": "example"},
+})
+```
+
+**PHP:**
+```php
+$result = $client->direct([
+    "path" => "/api/resource/{id}",
+    "method" => "GET",
+    "params" => ["id" => "example"],
+]);
+```
+
+**Go:**
+```go
+result, err := client.Direct(map[string]any{
+    "path":   "/api/resource/{id}",
+    "method": "GET",
+    "params": map[string]any{"id": "example"},
+})
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+**Lua:**
+```lua
+local result, err = client:direct({
+  path = "/api/resource/{id}",
+  method = "GET",
+  params = { id = "example" },
+})
+```
+
+**JavaScript:**
+```js
 const result = await client.direct({
   path: '/api/resource/{id}',
   method: 'GET',
@@ -149,6 +371,11 @@ Pass custom features via the `extend` option at construction time.
 ## Per-language documentation
 
 - [TypeScript](ts/README.md)
+- [Python](py/README.md)
+- [PHP](php/README.md)
+- [Golang](go/README.md)
+- [Lua](lua/README.md)
+- [JavaScript](js/README.md)
 
 ## Upstream API
 
