@@ -1,6 +1,15 @@
 {
+  "NAME": "STRIPE",
+  "Name": "Stripe",
   "def": "stripe-checkout-sessions-only.json",
   "main": {
+    "api": {
+      "entity": {},
+      "guide": {}
+    },
+    "custom": {
+      "plurals": {}
+    },
     "def": {
       "desc": ""
     },
@@ -1007,5 +1016,8 @@
     }
   },
   "name": "stripe",
+  "name-": "stripe",
+  "name_": "stripe",
+  "name__orig": "stripe",
   "origin": "voxgig-sdk"
 }
