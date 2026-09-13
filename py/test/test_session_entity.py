@@ -140,7 +140,7 @@ def _session_basic_setup(extra):
         "STRIPE_TEST_SESSION_ENTID": idmap,
         "STRIPE_TEST_LIVE": "FALSE",
         "STRIPE_TEST_EXPLAIN": "FALSE",
-        "STRIPE_APIKEY": "NONE",
+        "STRIPE_APIKEY": "",
     })
 
     idmap_resolved = helpers.to_map(
@@ -150,6 +150,10 @@ def _session_basic_setup(extra):
 
     if env.get("STRIPE_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
+            # FIRST, so the generated fields below win: sdk-test-control.json's
+            # test.client.options adds to the live client, it does not
+            # redirect it.
+            runner.live_client_options(),
             {
                 "apikey": env.get("STRIPE_APIKEY"),
             },

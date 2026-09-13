@@ -139,7 +139,7 @@ function session_basic_setup($extra)
         "STRIPE_TEST_SESSION_ENTID" => $idmap,
         "STRIPE_TEST_LIVE" => "FALSE",
         "STRIPE_TEST_EXPLAIN" => "FALSE",
-        "STRIPE_APIKEY" => "NONE",
+        "STRIPE_APIKEY" => "",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -150,12 +150,27 @@ function session_basic_setup($extra)
 
     if ($env["STRIPE_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
+            // FIRST, so the generated fields below win: sdk-test-control.json's
+            // test.client.options adds to the live client, it does not redirect it.
+            Runner::live_client_options(),
             [
                 "apikey" => $env["STRIPE_APIKEY"],
             ],
-            $extra ?? [],
+            // ismap, not a plain "?? []" default: an empty PHP array is a
+            // LIST, and a non-map later entry REPLACES the accumulated map in
+            // merge - so the no-extras call discarded live_client_options()
+            // and the apikey/server map above it.
+            Vs::ismap($extra) ? $extra : new \stdClass(),
         ]);
-        $client = new StripeSDK(Helpers::to_map($merged_opts));
+        // "?? []" because merge legitimately answers with a stdClass when every
+        // contributing entry is an EMPTY map - an SDK with no apikey and no
+        // server variables generates an empty middle entry, so that is the
+        // common case, not the edge one. to_map returns null for a non-array by
+        // design, and the constructor takes a non-nullable array, so without the
+        // fallback every such SDK died on "must be of type array, null given"
+        // the moment live mode was switched on. Offline mode never reaches this
+        // branch, which is why the offline suite stayed green.
+        $client = new StripeSDK(Helpers::to_map($merged_opts) ?? []);
     }
 
     $live = $env["STRIPE_TEST_LIVE"] === "TRUE";

@@ -123,15 +123,17 @@ function session_direct_setup($mockres)
     $env = Runner::env_override([
         "STRIPE_TEST_SESSION_ENTID" => [],
         "STRIPE_TEST_LIVE" => "FALSE",
-        "STRIPE_APIKEY" => "NONE",
+        "STRIPE_APIKEY" => "",
     ]);
 
     $live = $env["STRIPE_TEST_LIVE"] === "TRUE";
 
     if ($live) {
-        $merged_opts = [
+        // Merged so the generated fields win: sdk-test-control.json's
+        // test.client.options adds to the live client, it does not redirect it.
+        $merged_opts = array_merge(Runner::live_client_options(), [
             "apikey" => $env["STRIPE_APIKEY"],
-        ];
+        ]);
         $client = new StripeSDK($merged_opts);
         return [
             "client" => $client,

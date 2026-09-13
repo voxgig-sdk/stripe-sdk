@@ -75,9 +75,13 @@ main: kit: entity: session: {
         {
           method: "POST"
           orig: "/checkout/sessions"
-          parts: [
-            "checkout"
-            "sessions"
+          segments: [
+            {
+              lit: "checkout"
+            }
+            {
+              lit: "sessions"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -110,9 +114,13 @@ main: kit: entity: session: {
           }
           method: "GET"
           orig: "/checkout/sessions"
-          parts: [
-            "checkout"
-            "sessions"
+          segments: [
+            {
+              lit: "checkout"
+            }
+            {
+              lit: "sessions"
+            }
           ]
           select: {
             exist: [
@@ -144,10 +152,16 @@ main: kit: entity: session: {
           }
           method: "GET"
           orig: "/checkout/sessions/{id}"
-          parts: [
-            "checkout"
-            "sessions"
-            "{id}"
+          segments: [
+            {
+              lit: "checkout"
+            }
+            {
+              lit: "sessions"
+            }
+            {
+              var: "id"
+            }
           ]
           select: {
             exist: [

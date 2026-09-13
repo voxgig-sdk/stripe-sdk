@@ -117,7 +117,7 @@ function session_direct_setup(mockres)
   local env = runner.env_override({
     ["STRIPE_TEST_SESSION_ENTID"] = {},
     ["STRIPE_TEST_LIVE"] = "FALSE",
-    ["STRIPE_APIKEY"] = "NONE",
+    ["STRIPE_APIKEY"] = "",
   })
 
   local live = env["STRIPE_TEST_LIVE"] == "TRUE"
@@ -126,6 +126,13 @@ function session_direct_setup(mockres)
     local merged_opts = {
       apikey = env["STRIPE_APIKEY"],
     }
+    -- sdk-test-control.json's test.client.options goes UNDER the generated
+    -- fields: it adds to the live client, it does not redirect it.
+    for _k, _v in pairs(runner.live_client_options()) do
+      if merged_opts[_k] == nil then
+        merged_opts[_k] = _v
+      end
+    end
     local client = sdk.new(merged_opts)
     return {
       client = client,

@@ -23,17 +23,8 @@
 ---@field id string
 
 ---@class SessionListMatch
----@field amount_total? number
----@field cancel_url? string
----@field created? number
----@field currency? string
 ---@field customer? string
----@field id? string
----@field mode? string
----@field object? string
----@field payment_status? string
----@field status? string
----@field success_url? string
+---@field limit? number
 
 ---@class SessionCreateData
 ---@field amount_total? number

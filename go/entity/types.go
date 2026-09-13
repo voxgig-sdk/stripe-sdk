@@ -34,17 +34,8 @@ type SessionLoadMatch struct {
 
 // SessionListMatch is the typed request payload for Session.ListTyped.
 type SessionListMatch struct {
-	AmountTotal *int `json:"amount_total,omitempty"`
-	CancelUrl *string `json:"cancel_url,omitempty"`
-	Created *int `json:"created,omitempty"`
-	Currency *string `json:"currency,omitempty"`
 	Customer *string `json:"customer,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Mode *string `json:"mode,omitempty"`
-	Object *string `json:"object,omitempty"`
-	PaymentStatus *string `json:"payment_status,omitempty"`
-	Status *string `json:"status,omitempty"`
-	SuccessUrl *string `json:"success_url,omitempty"`
+	Limit *int `json:"limit,omitempty"`
 }
 
 // SessionCreateData is the typed request payload for Session.CreateTyped.

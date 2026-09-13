@@ -13,6 +13,7 @@ const { StripeEntityBase } = require('./StripeEntityBase')
 const { BaseFeature } = require('./feature/base/BaseFeature')
 
 
+
 const stdutil = new Utility()
 
 
@@ -22,6 +23,7 @@ class StripeSDK {
   _utility = new Utility()
   _features
   _rootctx
+  
 
   constructor(options) {
 
@@ -94,6 +96,8 @@ class StripeSDK {
     return this._utility.struct.clone(this._utility)
   }
 
+  
+
 
   async prepare(fetchargs) {
     const utility = this._utility
@@ -139,6 +143,8 @@ class StripeSDK {
         spec.headers[key] = uheaders[key]
       }
     }
+
+    
 
     // Apply SDK auth (apikey, auth prefix, etc.)
     const authResult = prepareAuth(ctx)
@@ -345,6 +351,7 @@ const SDK = StripeSDK
 module.exports = {
   stdutil,
   config,
+  
 
   BaseFeature,
   StripeEntityBase,

@@ -105,6 +105,10 @@ class StripeConfig
               'type' => '`$STRING`',
             ],
           ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
+          ],
           'name' => 'session',
           'op' => [
             'create' => [
@@ -116,14 +120,22 @@ class StripeConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/checkout/sessions',
-                  'parts' => [
-                    'checkout',
-                    'sessions',
+                  'segments' => [
+                    [
+                      'lit' => 'checkout',
+                    ],
+                    [
+                      'lit' => 'sessions',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'checkout',
+                    'sessions',
                   ],
                 ],
               ],
@@ -152,9 +164,13 @@ class StripeConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/checkout/sessions',
-                  'parts' => [
-                    'checkout',
-                    'sessions',
+                  'segments' => [
+                    [
+                      'lit' => 'checkout',
+                    ],
+                    [
+                      'lit' => 'sessions',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -165,6 +181,10 @@ class StripeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.data`',
+                  ],
+                  'parts' => [
+                    'checkout',
+                    'sessions',
                   ],
                 ],
               ],
@@ -188,10 +208,16 @@ class StripeConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/checkout/sessions/{id}',
-                  'parts' => [
-                    'checkout',
-                    'sessions',
-                    '{id}',
+                  'segments' => [
+                    [
+                      'lit' => 'checkout',
+                    ],
+                    [
+                      'lit' => 'sessions',
+                    ],
+                    [
+                      'var' => 'id',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -201,6 +227,11 @@ class StripeConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'checkout',
+                    'sessions',
+                    '{id}',
                   ],
                 ],
               ],

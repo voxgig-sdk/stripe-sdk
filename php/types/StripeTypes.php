@@ -37,17 +37,8 @@ class SessionLoadMatch
 /** Request payload for Session#list. */
 class SessionListMatch
 {
-    public ?int $amount_total = null;
-    public ?string $cancel_url = null;
-    public ?int $created = null;
-    public ?string $currency = null;
     public ?string $customer = null;
-    public ?string $id = null;
-    public ?string $mode = null;
-    public ?string $object = null;
-    public ?string $payment_status = null;
-    public ?string $status = null;
-    public ?string $success_url = null;
+    public ?int $limit = null;
 }
 
 /** Request payload for Session#create. */

@@ -24,17 +24,8 @@ export interface SessionLoadMatch {
 }
 
 export interface SessionListMatch {
-  amount_total?: number
-  cancel_url?: string
-  created?: number
-  currency?: string
   customer?: string
-  id?: string
-  mode?: string
-  object?: string
-  payment_status?: string
-  status?: string
-  success_url?: string
+  limit?: number
 }
 
 export interface SessionCreateData {

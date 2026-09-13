@@ -28,17 +28,8 @@
 
 /**
  * @typedef {Object} SessionListMatch
- * @property {number} [amount_total]
- * @property {string} [cancel_url]
- * @property {number} [created]
- * @property {string} [currency]
  * @property {string} [customer]
- * @property {string} [id]
- * @property {string} [mode]
- * @property {string} [object]
- * @property {string} [payment_status]
- * @property {string} [status]
- * @property {string} [success_url]
+ * @property {number} [limit]
  */
 
 /**

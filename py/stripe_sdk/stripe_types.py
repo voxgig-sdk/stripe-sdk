@@ -35,17 +35,8 @@ class SessionLoadMatch(TypedDict):
 
 
 class SessionListMatch(TypedDict, total=False):
-    amount_total: int
-    cancel_url: str
-    created: int
-    currency: str
     customer: str
-    id: str
-    mode: str
-    object: str
-    payment_status: str
-    status: str
-    success_url: str
+    limit: int
 
 
 class SessionCreateData(TypedDict, total=False):
