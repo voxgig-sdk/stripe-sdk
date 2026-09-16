@@ -73,6 +73,12 @@ main: kit: entity: session: {
       name: "create"
       points: [
         {
+          contract: {
+            id: "POST /checkout/sessions"
+            json: "{\"operationId\":\"createCheckoutSession\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/x-www-form-urlencoded\":{\"schema\":{\"properties\":{\"cancel_url\":{\"type\":\"string\"},\"currency\":{\"type\":\"string\"},\"customer\":{\"type\":\"string\"},\"mode\":{\"type\":\"string\"},\"success_url\":{\"type\":\"string\"}},\"required\":[\"mode\",\"success_url\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"amount_total\":{\"type\":\"integer\"},\"cancel_url\":{\"type\":\"string\"},\"created\":{\"type\":\"integer\"},\"currency\":{\"type\":\"string\"},\"customer\":{\"type\":\"string\"},\"id\":{\"type\":\"string\"},\"mode\":{\"type\":\"string\"},\"object\":{\"type\":\"string\"},\"payment_status\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"success_url\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"The created checkout session\"}},\"security\":[{\"bearerAuth\":[]}],\"securitySchemes\":{\"bearerAuth\":{\"scheme\":\"bearer\",\"type\":\"http\"}},\"securitySource\":\"definition\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "POST"
           orig: "/checkout/sessions"
           segments: [
@@ -112,6 +118,12 @@ main: kit: entity: session: {
               }
             ]
           }
+          contract: {
+            id: "GET /checkout/sessions"
+            json: "{\"operationId\":\"listCheckoutSessions\",\"parameters\":[{\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"type\":\"integer\"}},{\"in\":\"query\",\"name\":\"customer\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"data\":{\"items\":{\"properties\":{\"amount_total\":{\"type\":\"integer\"},\"cancel_url\":{\"type\":\"string\"},\"created\":{\"type\":\"integer\"},\"currency\":{\"type\":\"string\"},\"customer\":{\"type\":\"string\"},\"id\":{\"type\":\"string\"},\"mode\":{\"type\":\"string\"},\"object\":{\"type\":\"string\"},\"payment_status\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"success_url\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"A page of checkout sessions\"}},\"security\":[{\"bearerAuth\":[]}],\"securitySchemes\":{\"bearerAuth\":{\"scheme\":\"bearer\",\"type\":\"http\"}},\"securitySource\":\"definition\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/checkout/sessions"
           segments: [
@@ -149,6 +161,12 @@ main: kit: entity: session: {
                 type: "`$STRING`"
               }
             ]
+          }
+          contract: {
+            id: "GET /checkout/sessions/{id}"
+            json: "{\"operationId\":\"getCheckoutSession\",\"parameters\":[{\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"amount_total\":{\"type\":\"integer\"},\"cancel_url\":{\"type\":\"string\"},\"created\":{\"type\":\"integer\"},\"currency\":{\"type\":\"string\"},\"customer\":{\"type\":\"string\"},\"id\":{\"type\":\"string\"},\"mode\":{\"type\":\"string\"},\"object\":{\"type\":\"string\"},\"payment_status\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"success_url\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"The requested checkout session\"}},\"security\":[{\"bearerAuth\":[]}],\"securitySchemes\":{\"bearerAuth\":{\"scheme\":\"bearer\",\"type\":\"http\"}},\"securitySource\":\"definition\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/checkout/sessions/{id}"

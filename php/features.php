@@ -4,7 +4,14 @@ declare(strict_types=1);
 // Stripe SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/DebugFeature.php';
+require_once __DIR__ . '/feature/IdempotencyFeature.php';
+require_once __DIR__ . '/feature/MetricsFeature.php';
+require_once __DIR__ . '/feature/PagingFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class StripeFeatures
@@ -14,8 +21,22 @@ class StripeFeatures
         switch ($name) {
             case "base":
                 return new StripeBaseFeature();
+            case "debug":
+                return new StripeDebugFeature();
+            case "idempotency":
+                return new StripeIdempotencyFeature();
+            case "metrics":
+                return new StripeMetricsFeature();
+            case "paging":
+                return new StripePagingFeature();
+            case "ratelimit":
+                return new StripeRatelimitFeature();
+            case "retry":
+                return new StripeRetryFeature();
             case "test":
                 return new StripeTestFeature();
+            case "timeout":
+                return new StripeTimeoutFeature();
             default:
                 return new StripeBaseFeature();
         }
@@ -31,7 +52,14 @@ class StripeFeatures
     {
         switch ($name) {
             case "base":
+            case "debug":
+            case "idempotency":
+            case "metrics":
+            case "paging":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

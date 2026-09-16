@@ -5,6 +5,8 @@ import * as Fs from 'node:fs'
 
 import { test, describe, afterEach } from 'node:test'
 import assert from 'node:assert'
+import { createLiveTransport } from '../../live-runner'
+import { runLiveEntity } from '../../live-entity'
 
 
 import { StripeSDK, BaseFeature, stdutil } from '../../..'
@@ -47,16 +49,13 @@ describe('SessionEntity', async () => {
 
     const live = 'TRUE' === process.env.STRIPE_TEST_LIVE
     for (const op of ['create', 'list', 'load']) {
-      if (maybeSkipControl(t, 'entityOp', 'session.' + op, live)) return
+      if (!live && maybeSkipControl(t, 'entityOp', 'session.' + op, live)) return
     }
 
+    
     const setup = basicSetup()
-    // The basic flow consumes synthetic IDs and field values from the
-    // fixture (entity TestData.json). Those don't exist on the live API.
-    // Skip live runs unless the user provided a real ENTID env override.
-    if (setup.syntheticOnly) {
-      t.skip('live entity test uses synthetic IDs from fixture — set STRIPE_TEST_SESSION_ENTID JSON to run live')
-      return
+    if (setup.live) {
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":[{"active":true,"name":"amount_total","req":false,"type":"`$INTEGER`","index$":0},{"active":true,"name":"cancel_url","req":false,"type":"`$STRING`","index$":1},{"active":true,"name":"created","req":false,"type":"`$INTEGER`","index$":2},{"active":true,"name":"currency","req":false,"type":"`$STRING`","index$":3},{"active":true,"name":"customer","req":false,"type":"`$STRING`","index$":4},{"active":true,"name":"id","req":false,"type":"`$STRING`","index$":5},{"active":true,"name":"mode","req":false,"type":"`$STRING`","index$":6},{"active":true,"name":"object","req":false,"type":"`$STRING`","index$":7},{"active":true,"name":"payment_status","req":false,"type":"`$STRING`","index$":8},{"active":true,"name":"status","req":false,"type":"`$STRING`","index$":9},{"active":true,"name":"success_url","req":false,"type":"`$STRING`","index$":10}],"id":{"field":"id","name":"id"},"name":"session","op":{"create":{"input":"data","name":"create","points":[{"active":true,"args":{},"contract":{"id":"POST /checkout/sessions","json":"{\"operationId\":\"createCheckoutSession\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/x-www-form-urlencoded\":{\"schema\":{\"properties\":{\"cancel_url\":{\"type\":\"string\"},\"currency\":{\"type\":\"string\"},\"customer\":{\"type\":\"string\"},\"mode\":{\"type\":\"string\"},\"success_url\":{\"type\":\"string\"}},\"required\":[\"mode\",\"success_url\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"amount_total\":{\"type\":\"integer\"},\"cancel_url\":{\"type\":\"string\"},\"created\":{\"type\":\"integer\"},\"currency\":{\"type\":\"string\"},\"customer\":{\"type\":\"string\"},\"id\":{\"type\":\"string\"},\"mode\":{\"type\":\"string\"},\"object\":{\"type\":\"string\"},\"payment_status\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"success_url\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"The created checkout session\"}},\"security\":[{\"bearerAuth\":[]}],\"securitySchemes\":{\"bearerAuth\":{\"scheme\":\"bearer\",\"type\":\"http\"}},\"securitySource\":\"definition\"}","source":"openapi3","version":1},"kind":"http","method":"POST","orig":"/checkout/sessions","segments":[{"lit":"checkout"},{"lit":"sessions"}],"select":{},"transform":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"create"},"list":{"input":"data","name":"list","points":[{"active":true,"args":{"query":[{"active":true,"kind":"query","name":"customer","orig":"customer","reqd":false,"type":"`$STRING`","index$":0},{"active":true,"kind":"query","name":"limit","orig":"limit","reqd":false,"type":"`$INTEGER`","index$":1}]},"contract":{"id":"GET /checkout/sessions","json":"{\"operationId\":\"listCheckoutSessions\",\"parameters\":[{\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"type\":\"integer\"}},{\"in\":\"query\",\"name\":\"customer\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"data\":{\"items\":{\"properties\":{\"amount_total\":{\"type\":\"integer\"},\"cancel_url\":{\"type\":\"string\"},\"created\":{\"type\":\"integer\"},\"currency\":{\"type\":\"string\"},\"customer\":{\"type\":\"string\"},\"id\":{\"type\":\"string\"},\"mode\":{\"type\":\"string\"},\"object\":{\"type\":\"string\"},\"payment_status\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"success_url\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"A page of checkout sessions\"}},\"security\":[{\"bearerAuth\":[]}],\"securitySchemes\":{\"bearerAuth\":{\"scheme\":\"bearer\",\"type\":\"http\"}},\"securitySource\":\"definition\"}","source":"openapi3","version":1},"kind":"http","method":"GET","orig":"/checkout/sessions","segments":[{"lit":"checkout"},{"lit":"sessions"}],"select":{"exist":["customer","limit"]},"transform":{"req":"`reqdata`","res":"`body.data`"},"index$":0}],"key$":"list"},"load":{"input":"data","name":"load","points":[{"active":true,"args":{"params":[{"active":true,"kind":"param","name":"id","orig":"id","reqd":true,"type":"`$STRING`","index$":0}]},"contract":{"id":"GET /checkout/sessions/{id}","json":"{\"operationId\":\"getCheckoutSession\",\"parameters\":[{\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"amount_total\":{\"type\":\"integer\"},\"cancel_url\":{\"type\":\"string\"},\"created\":{\"type\":\"integer\"},\"currency\":{\"type\":\"string\"},\"customer\":{\"type\":\"string\"},\"id\":{\"type\":\"string\"},\"mode\":{\"type\":\"string\"},\"object\":{\"type\":\"string\"},\"payment_status\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"success_url\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"The requested checkout session\"}},\"security\":[{\"bearerAuth\":[]}],\"securitySchemes\":{\"bearerAuth\":{\"scheme\":\"bearer\",\"type\":\"http\"}},\"securitySource\":\"definition\"}","source":"openapi3","version":1},"kind":"http","method":"GET","orig":"/checkout/sessions/{id}","segments":[{"lit":"checkout"},{"lit":"sessions"},{"var":"id"}],"select":{"exist":["id"]},"transform":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"session","name__orig":"session","Name":"Session","name_":"session","name-":"session","NAME":"SESSION","index$":0}, {"active":true,"entity":"session","key$":"BasicSessionFlow","kind":"basic","name":"BasicSessionFlow","param":{},"step":[{"active":true,"data":{},"input":{"ref":"session_ref01"},"match":{},"op":"create","spec":[],"valid":[],"index$":0},{"active":true,"data":{},"input":{},"match":{},"op":"list","spec":[],"valid":[{"apply":"ItemExists","def":{"ref":"session_ref01"}}],"index$":1},{"active":true,"data":{},"input":{"ref":"session_ref01","srcdatavar":"session_ref01_data","suffix":"_dt0"},"match":{"id":"session01"},"op":"load","spec":[],"valid":[{"apply":"TextFieldMark","def":{"mark":"Mark01-session_ref01"}}],"index$":2}]}, 'Session')
     }
     const client = setup.client
     const struct = setup.struct
@@ -124,13 +123,6 @@ function basicSetup(extra?: any) {
       }]
     })
 
-  // Detect whether the user provided a real ENTID JSON via env var. The
-  // basic flow consumes synthetic IDs from the fixture file; without an
-  // override those synthetic IDs reach the live API and 4xx. Surface this
-  // to the test so it can skip rather than fail.
-  const idmapEnvVal = process.env['STRIPE_TEST_SESSION_ENTID']
-  const idmapOverridden = null != idmapEnvVal && idmapEnvVal.trim().startsWith('{')
-
   const env = envOverride({
     'STRIPE_TEST_SESSION_ENTID': idmap,
     'STRIPE_TEST_LIVE': 'FALSE',
@@ -142,7 +134,13 @@ function basicSetup(extra?: any) {
 
   const live = 'TRUE' === env.STRIPE_TEST_LIVE
 
+  const transport = createLiveTransport()
   if (live) {
+    const rawIds = process.env['STRIPE_TEST_SESSION_ENTID']
+    idmap = rawIds && rawIds.trim() ? JSON.parse(rawIds) : {}
+    if (!idmap || Array.isArray(idmap) || typeof idmap !== 'object') {
+      throw new Error('Live ENTID must be a JSON object')
+    }
     client = new StripeSDK(merge([
       // FIRST, so the generated fields below win: sdk-test-control.json's
       // test.client.options adds to the live client, it does not redirect it.
@@ -155,7 +153,8 @@ function basicSetup(extra?: any) {
       // argument at all - so a bare 'extra' silently discarded the apikey
       // and server values above and handed the SDK undefined. Harmless
       // while there was nothing in that object; not harmless now.
-      extra || {}
+      extra || {},
+      { system: { fetch: transport.fetch } }
     ]))
   }
 
@@ -168,7 +167,7 @@ function basicSetup(extra?: any) {
     data: entityData,
     explain: 'TRUE' === env.STRIPE_TEST_EXPLAIN,
     live,
-    syntheticOnly: live && !idmapOverridden,
+    transport,
     now: Date.now(),
   }
 
