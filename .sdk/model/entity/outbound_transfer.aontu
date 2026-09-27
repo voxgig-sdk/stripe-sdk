@@ -1,0 +1,622 @@
+# Entity: outbound_transfer
+
+main: kit: entity: outbound_transfer: {
+
+  alias: field: {}
+
+  fields: {
+    amount: {
+      h: "Amount"
+      n: "amount"
+      r: true
+      sh: "Amount (in cents) transferred."
+      t: "`$INTEGER`"
+    }
+    cancelable: {
+      h: "Cancelable"
+      n: "cancelable"
+      r: true
+      sh: "Returns `true` if the object can be canceled, and `false` otherwise."
+      t: "`$BOOLEAN`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "An arbitrary string attached to the object."
+      t: "`$STRING`"
+    }
+    destination_payment_method: {
+      h: "Destination Payment Method"
+      n: "destination_payment_method"
+      r: false
+      sh: "The PaymentMethod used as the payment instrument for an OutboundTransfer."
+      t: "`$STRING`"
+    }
+    destination_payment_method_details: {
+      h: "Destination Payment Method Details"
+      n: "destination_payment_method_details"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 3
+        depth: 9
+      }
+    }
+    expected_arrival_date: {
+      fo: "unix-time"
+      h: "Expected Arrival Date"
+      n: "expected_arrival_date"
+      r: true
+      sh: "The date when funds are expected to arrive in the destination account."
+      t: "`$INTEGER`"
+    }
+    financial_account: {
+      h: "Financial Account"
+      n: "financial_account"
+      r: true
+      sh: "The FinancialAccount that funds were pulled from."
+      t: "`$STRING`"
+    }
+    hosted_regulatory_receipt_url: {
+      h: "Hosted Regulatory Receipt Url"
+      n: "hosted_regulatory_receipt_url"
+      r: false
+      sh: "A [hosted transaction receipt](https://docs.stripe.com/treasury/moving-money/regulatory-receipts) URL that is provided when money movement is considered regulated under Stripe's money transmission licenses."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: true
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    returned_details: {
+      h: "Returned Details"
+      n: "returned_details"
+      r: false
+      sh: "Details about a returned OutboundTransfer."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 4
+      }
+    }
+    statement_descriptor: {
+      h: "Statement Descriptor"
+      n: "statement_descriptor"
+      r: true
+      sh: "Information about the OutboundTransfer to be sent to the recipient account."
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "Current status of the OutboundTransfer: `processing`, `failed`, `canceled`, `posted`, `returned`."
+      t: "`$STRING`"
+    }
+    status_transitions: {
+      h: "Status Transitions"
+      n: "status_transitions"
+      r: true
+      t: "`$OBJECT`"
+    }
+    tracking_details: {
+      h: "Tracking Details"
+      n: "tracking_details"
+      r: false
+      sh: "Details about network-specific tracking information if available."
+      t: "`$ANY`"
+    }
+    transaction: {
+      h: "Transaction"
+      n: "transaction"
+      r: true
+      sh: "The Transaction associated with this object."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "outbound_transfer"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "outbound_transfer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              outbound_transfer: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "outbound_transfers"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/treasury/outbound_transfers/{outbound_transfer}/cancel"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "outbound_transfer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/treasury/outbound_transfers/{outbound_transfer}/cancel"
+          q: {
+            "$action": "cancel"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              outbound_transfer: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "outbound_transfers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "cancel"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/fail"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "outbound_transfer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/fail"
+          q: {
+            "$action": "fail"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              outbound_transfer: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "outbound_transfers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "fail"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/post"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "outbound_transfer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/post"
+          q: {
+            "$action": "post"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              outbound_transfer: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "outbound_transfers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "post"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/return"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "outbound_transfer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/return"
+          q: {
+            "$action": "return"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              outbound_transfer: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "outbound_transfers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "return"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/treasury/outbound_transfers"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/treasury/outbound_transfers"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "outbound_transfers"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/treasury/outbound_transfers"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "financial_account"
+                or: "financial_account"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/treasury/outbound_transfers"
+          q: {
+            exist: [
+              "ending_before"
+              "expand"
+              "financial_account"
+              "limit"
+              "starting_after"
+              "status"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "outbound_transfers"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/treasury/outbound_transfers/{outbound_transfer}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "outbound_transfer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/treasury/outbound_transfers/{outbound_transfer}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              outbound_transfer: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "outbound_transfers"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

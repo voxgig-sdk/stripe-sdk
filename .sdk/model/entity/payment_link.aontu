@@ -1,0 +1,520 @@
+# Entity: payment_link
+
+main: kit: entity: payment_link: {
+
+  alias: field: {}
+
+  fields: {
+    active: {
+      h: "Active"
+      n: "active"
+      r: true
+      sh: "Whether the payment link's `url` is active."
+      t: "`$BOOLEAN`"
+    }
+    after_completion: {
+      h: "After Completion"
+      n: "after_completion"
+      r: true
+      t: "`$OBJECT`"
+    }
+    allow_promotion_codes: {
+      h: "Allow Promotion Codes"
+      n: "allow_promotion_codes"
+      r: true
+      sh: "Whether user redeemable promotion codes are enabled."
+      t: "`$BOOLEAN`"
+    }
+    application: {
+      h: "Application"
+      n: "application"
+      r: false
+      sh: "The ID of the Connect application that created the Payment Link."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 2
+        depth: 1
+      }
+    }
+    application_fee_amount: {
+      h: "Application Fee Amount"
+      n: "application_fee_amount"
+      r: false
+      sh: "The amount of the application fee (if any) that will be requested to be applied to the payment and transferred to the application owner's Stripe account."
+      t: "`$INTEGER`"
+    }
+    application_fee_percent: {
+      h: "Application Fee Percent"
+      n: "application_fee_percent"
+      r: false
+      sh: "This represents the percentage of the subscription invoice total that will be transferred to the application owner's Stripe account."
+      t: "`$NUMBER`"
+    }
+    automatic_tax: {
+      h: "Automatic Tax"
+      n: "automatic_tax"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 6
+      }
+    }
+    billing_address_collection: {
+      h: "Billing Address Collection"
+      n: "billing_address_collection"
+      r: true
+      sh: "Configuration for collecting the customer's billing address."
+      t: "`$STRING`"
+    }
+    consent_collection: {
+      h: "Consent Collection"
+      n: "consent_collection"
+      r: false
+      sh: "When set, provides configuration to gather active consent from customers."
+      t: "`$ANY`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    custom_fields: {
+      h: "Custom Fields"
+      n: "custom_fields"
+      r: true
+      sh: "Collect additional information from your customer using custom fields."
+      t: "`$ARRAY`"
+    }
+    custom_text: {
+      h: "Custom Text"
+      n: "custom_text"
+      r: true
+      t: "`$OBJECT`"
+    }
+    customer_creation: {
+      h: "Customer Creation"
+      n: "customer_creation"
+      r: true
+      sh: "Configuration for Customer creation during checkout."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    inactive_message: {
+      h: "Inactive Message"
+      n: "inactive_message"
+      r: false
+      sh: "The custom message to be displayed to a customer when a payment link is no longer active."
+      t: "`$STRING`"
+    }
+    invoice_creation: {
+      h: "Invoice Creation"
+      n: "invoice_creation"
+      r: false
+      sh: "Configuration for creating invoice for payment mode payment links."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 11
+        depth: 18
+      }
+    }
+    line_items: {
+      h: "Line Items"
+      n: "line_items"
+      r: true
+      sh: "The line items representing what is being sold."
+      t: "`$OBJECT`"
+      union: {
+        branches: 3
+        count: 16
+        depth: 17
+      }
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    managed_payments: {
+      h: "Managed Payments"
+      n: "managed_payments"
+      r: false
+      sh: "Settings for Managed Payments for this Payment Link and resulting [CheckoutSessions](/api/checkout/sessions/object), [PaymentIntents](/api/payment_intents/object), [Invoices](/api/invoices/object), and [Subscriptions](/api/subscriptions/ob…"
+      t: "`$ANY`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: true
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    name_collection: {
+      h: "Name Collection"
+      n: "name_collection"
+      r: false
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    on_behalf_of: {
+      h: "On Behalf Of"
+      n: "on_behalf_of"
+      r: false
+      sh: "The account on behalf of which to charge."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 104516
+        depth: 64
+      }
+    }
+    optional_items: {
+      h: "Optional Items"
+      n: "optional_items"
+      r: false
+      sh: "The optional items presented to the customer at checkout."
+      t: "`$ARRAY`"
+    }
+    payment_intent_data: {
+      h: "Payment Intent Data"
+      n: "payment_intent_data"
+      r: false
+      sh: "Indicates the parameters to be passed to PaymentIntent creation during checkout."
+      t: "`$ANY`"
+    }
+    payment_method_collection: {
+      h: "Payment Method Collection"
+      n: "payment_method_collection"
+      r: true
+      sh: "Configuration for collecting a payment method during checkout."
+      t: "`$STRING`"
+    }
+    payment_method_options: {
+      h: "Payment Method Options"
+      n: "payment_method_options"
+      r: false
+      sh: "Payment-method-specific configuration."
+      t: "`$ANY`"
+    }
+    payment_method_types: {
+      h: "Payment Method Types"
+      n: "payment_method_types"
+      r: false
+      sh: "The list of payment method types that customers can use."
+      t: "`$ARRAY`"
+    }
+    phone_number_collection: {
+      h: "Phone Number Collection"
+      n: "phone_number_collection"
+      r: true
+      t: "`$OBJECT`"
+    }
+    restrictions: {
+      h: "Restrictions"
+      n: "restrictions"
+      r: false
+      sh: "Settings that restrict the usage of a payment link."
+      t: "`$ANY`"
+    }
+    shipping_address_collection: {
+      h: "Shipping Address Collection"
+      n: "shipping_address_collection"
+      r: false
+      sh: "Configuration for collecting the customer's shipping address."
+      t: "`$ANY`"
+    }
+    shipping_options: {
+      h: "Shipping Options"
+      n: "shipping_options"
+      r: true
+      sh: "The shipping rate options applied to the session."
+      t: "`$ARRAY`"
+      union: {
+        branches: 2
+        count: 3
+        depth: 8
+      }
+    }
+    submit_type: {
+      h: "Submit Type"
+      n: "submit_type"
+      r: true
+      sh: "Indicates the type of transaction being performed which customizes relevant text on the page, such as the submit button."
+      t: "`$STRING`"
+    }
+    subscription_data: {
+      h: "Subscription Data"
+      n: "subscription_data"
+      r: false
+      sh: "When creating a subscription, the specified configuration data will be used."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 8
+      }
+    }
+    tax_id_collection: {
+      h: "Tax Id Collection"
+      n: "tax_id_collection"
+      r: true
+      t: "`$OBJECT`"
+    }
+    transfer_data: {
+      h: "Transfer Data"
+      n: "transfer_data"
+      r: false
+      sh: "The account (if any) the payments will be attributed to for tax reporting, and where funds from each payment will be transferred to."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 99384
+        depth: 64
+      }
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: true
+      sh: "The public URL that can be shared with customers."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "payment_link"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/payment_links/{payment_link}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "payment_link"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/payment_links/{payment_link}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              payment_link: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_links"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/payment_links"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/payment_links"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_links"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/payment_links"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "active"
+                or: "active"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/payment_links"
+          q: {
+            exist: [
+              "active"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_links"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/payment_links/{payment_link}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "payment_link"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/payment_links/{payment_link}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              payment_link: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_links"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

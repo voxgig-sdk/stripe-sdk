@@ -1,0 +1,893 @@
+# Entity: registration
+
+main: kit: entity: registration: {
+
+  alias: field: {}
+
+  fields: {
+    active_from: {
+      fo: "unix-time"
+      h: "Active From"
+      n: "active_from"
+      r: true
+      sh: "Time at which the registration becomes active."
+      t: "`$INTEGER`"
+    }
+    ae: {
+      h: "Ae"
+      n: "ae"
+      r: true
+      t: "`$OBJECT`"
+    }
+    al: {
+      h: "Al"
+      n: "al"
+      r: true
+      t: "`$OBJECT`"
+    }
+    am: {
+      h: "Am"
+      n: "am"
+      r: true
+      t: "`$OBJECT`"
+    }
+    ao: {
+      h: "Ao"
+      n: "ao"
+      r: true
+      t: "`$OBJECT`"
+    }
+    at: {
+      h: "At"
+      n: "at"
+      r: true
+      t: "`$OBJECT`"
+    }
+    au: {
+      h: "Au"
+      n: "au"
+      r: true
+      t: "`$OBJECT`"
+    }
+    aw: {
+      h: "Aw"
+      n: "aw"
+      r: true
+      t: "`$OBJECT`"
+    }
+    az: {
+      h: "Az"
+      n: "az"
+      r: true
+      t: "`$OBJECT`"
+    }
+    ba: {
+      h: "Ba"
+      n: "ba"
+      r: true
+      t: "`$OBJECT`"
+    }
+    bb: {
+      h: "Bb"
+      n: "bb"
+      r: true
+      t: "`$OBJECT`"
+    }
+    bd: {
+      h: "Bd"
+      n: "bd"
+      r: true
+      t: "`$OBJECT`"
+    }
+    be: {
+      h: "Be"
+      n: "be"
+      r: true
+      t: "`$OBJECT`"
+    }
+    bf: {
+      h: "Bf"
+      n: "bf"
+      r: true
+      t: "`$OBJECT`"
+    }
+    bg: {
+      h: "Bg"
+      n: "bg"
+      r: true
+      t: "`$OBJECT`"
+    }
+    bh: {
+      h: "Bh"
+      n: "bh"
+      r: true
+      t: "`$OBJECT`"
+    }
+    bj: {
+      h: "Bj"
+      n: "bj"
+      r: true
+      t: "`$OBJECT`"
+    }
+    bs: {
+      h: "Bs"
+      n: "bs"
+      r: true
+      t: "`$OBJECT`"
+    }
+    by: {
+      h: "By"
+      n: "by"
+      r: true
+      t: "`$OBJECT`"
+    }
+    ca: {
+      h: "Ca"
+      n: "ca"
+      r: true
+      t: "`$OBJECT`"
+    }
+    cd: {
+      h: "Cd"
+      n: "cd"
+      r: true
+      t: "`$OBJECT`"
+    }
+    ch: {
+      h: "Ch"
+      n: "ch"
+      r: true
+      t: "`$OBJECT`"
+    }
+    cl: {
+      h: "Cl"
+      n: "cl"
+      r: true
+      t: "`$OBJECT`"
+    }
+    cm: {
+      h: "Cm"
+      n: "cm"
+      r: true
+      t: "`$OBJECT`"
+    }
+    co: {
+      h: "Co"
+      n: "co"
+      r: true
+      t: "`$OBJECT`"
+    }
+    country: {
+      h: "Country"
+      n: "country"
+      r: true
+      sh: "Two-letter country code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2))."
+      t: "`$STRING`"
+    }
+    country_options: {
+      h: "Country Options"
+      n: "country_options"
+      r: true
+      t: "`$OBJECT`"
+    }
+    cr: {
+      h: "Cr"
+      n: "cr"
+      r: true
+      t: "`$OBJECT`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    cv: {
+      h: "Cv"
+      n: "cv"
+      r: true
+      t: "`$OBJECT`"
+    }
+    cy: {
+      h: "Cy"
+      n: "cy"
+      r: true
+      t: "`$OBJECT`"
+    }
+    cz: {
+      h: "Cz"
+      n: "cz"
+      r: true
+      t: "`$OBJECT`"
+    }
+    de: {
+      h: "De"
+      n: "de"
+      r: true
+      t: "`$OBJECT`"
+    }
+    dk: {
+      h: "Dk"
+      n: "dk"
+      r: true
+      t: "`$OBJECT`"
+    }
+    ec: {
+      h: "Ec"
+      n: "ec"
+      r: true
+      t: "`$OBJECT`"
+    }
+    ee: {
+      h: "Ee"
+      n: "ee"
+      r: true
+      t: "`$OBJECT`"
+    }
+    eg: {
+      h: "Eg"
+      n: "eg"
+      r: true
+      t: "`$OBJECT`"
+    }
+    es: {
+      h: "Es"
+      n: "es"
+      r: true
+      t: "`$OBJECT`"
+    }
+    et: {
+      h: "Et"
+      n: "et"
+      r: true
+      t: "`$OBJECT`"
+    }
+    expires_at: {
+      fo: "unix-time"
+      h: "Expires At"
+      n: "expires_at"
+      r: false
+      sh: "If set, the registration stops being active at this time."
+      t: "`$INTEGER`"
+    }
+    fi: {
+      h: "Fi"
+      n: "fi"
+      r: true
+      t: "`$OBJECT`"
+    }
+    fr: {
+      h: "Fr"
+      n: "fr"
+      r: true
+      t: "`$OBJECT`"
+    }
+    gb: {
+      h: "Gb"
+      n: "gb"
+      r: true
+      t: "`$OBJECT`"
+    }
+    ge: {
+      h: "Ge"
+      n: "ge"
+      r: true
+      t: "`$OBJECT`"
+    }
+    gn: {
+      h: "Gn"
+      n: "gn"
+      r: true
+      t: "`$OBJECT`"
+    }
+    gr: {
+      h: "Gr"
+      n: "gr"
+      r: true
+      t: "`$OBJECT`"
+    }
+    hr: {
+      h: "Hr"
+      n: "hr"
+      r: true
+      t: "`$OBJECT`"
+    }
+    hu: {
+      h: "Hu"
+      n: "hu"
+      r: true
+      t: "`$OBJECT`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$OBJECT`"
+    }
+    ie: {
+      h: "Ie"
+      n: "ie"
+      r: true
+      t: "`$OBJECT`"
+    }
+    in: {
+      h: "In"
+      n: "in"
+      r: true
+      t: "`$OBJECT`"
+    }
+    is: {
+      h: "Is"
+      n: "is"
+      r: true
+      t: "`$OBJECT`"
+    }
+    it: {
+      h: "It"
+      n: "it"
+      r: true
+      t: "`$OBJECT`"
+    }
+    jp: {
+      h: "Jp"
+      n: "jp"
+      r: true
+      t: "`$OBJECT`"
+    }
+    ke: {
+      h: "Ke"
+      n: "ke"
+      r: true
+      t: "`$OBJECT`"
+    }
+    kg: {
+      h: "Kg"
+      n: "kg"
+      r: true
+      t: "`$OBJECT`"
+    }
+    kh: {
+      h: "Kh"
+      n: "kh"
+      r: true
+      t: "`$OBJECT`"
+    }
+    kr: {
+      h: "Kr"
+      n: "kr"
+      r: true
+      t: "`$OBJECT`"
+    }
+    kz: {
+      h: "Kz"
+      n: "kz"
+      r: true
+      t: "`$OBJECT`"
+    }
+    la: {
+      h: "La"
+      n: "la"
+      r: true
+      t: "`$OBJECT`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    lk: {
+      h: "Lk"
+      n: "lk"
+      r: true
+      t: "`$OBJECT`"
+    }
+    lt: {
+      h: "Lt"
+      n: "lt"
+      r: true
+      t: "`$OBJECT`"
+    }
+    lu: {
+      h: "Lu"
+      n: "lu"
+      r: true
+      t: "`$OBJECT`"
+    }
+    lv: {
+      h: "Lv"
+      n: "lv"
+      r: true
+      t: "`$OBJECT`"
+    }
+    ma: {
+      h: "Ma"
+      n: "ma"
+      r: true
+      t: "`$OBJECT`"
+    }
+    md: {
+      h: "Md"
+      n: "md"
+      r: true
+      t: "`$OBJECT`"
+    }
+    me: {
+      h: "Me"
+      n: "me"
+      r: true
+      t: "`$OBJECT`"
+    }
+    mk: {
+      h: "Mk"
+      n: "mk"
+      r: true
+      t: "`$OBJECT`"
+    }
+    mr: {
+      h: "Mr"
+      n: "mr"
+      r: true
+      t: "`$OBJECT`"
+    }
+    mt: {
+      h: "Mt"
+      n: "mt"
+      r: true
+      t: "`$OBJECT`"
+    }
+    mx: {
+      h: "Mx"
+      n: "mx"
+      r: true
+      t: "`$OBJECT`"
+    }
+    my: {
+      h: "My"
+      n: "my"
+      r: true
+      t: "`$OBJECT`"
+    }
+    ng: {
+      h: "Ng"
+      n: "ng"
+      r: true
+      t: "`$OBJECT`"
+    }
+    nl: {
+      h: "Nl"
+      n: "nl"
+      r: true
+      t: "`$OBJECT`"
+    }
+    no: {
+      h: "No"
+      n: "no"
+      r: true
+      t: "`$OBJECT`"
+    }
+    np: {
+      h: "Np"
+      n: "np"
+      r: true
+      t: "`$OBJECT`"
+    }
+    nz: {
+      h: "Nz"
+      n: "nz"
+      r: true
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    om: {
+      h: "Om"
+      n: "om"
+      r: true
+      t: "`$OBJECT`"
+    }
+    pe: {
+      h: "Pe"
+      n: "pe"
+      r: true
+      t: "`$OBJECT`"
+    }
+    ph: {
+      h: "Ph"
+      n: "ph"
+      r: true
+      t: "`$OBJECT`"
+    }
+    pl: {
+      h: "Pl"
+      n: "pl"
+      r: true
+      t: "`$OBJECT`"
+    }
+    pt: {
+      h: "Pt"
+      n: "pt"
+      r: true
+      t: "`$OBJECT`"
+    }
+    ro: {
+      h: "Ro"
+      n: "ro"
+      r: true
+      t: "`$OBJECT`"
+    }
+    rs: {
+      h: "Rs"
+      n: "rs"
+      r: true
+      t: "`$OBJECT`"
+    }
+    ru: {
+      h: "Ru"
+      n: "ru"
+      r: true
+      t: "`$OBJECT`"
+    }
+    sa: {
+      h: "Sa"
+      n: "sa"
+      r: true
+      t: "`$OBJECT`"
+    }
+    se: {
+      h: "Se"
+      n: "se"
+      r: true
+      t: "`$OBJECT`"
+    }
+    sg: {
+      h: "Sg"
+      n: "sg"
+      r: true
+      t: "`$OBJECT`"
+    }
+    si: {
+      h: "Si"
+      n: "si"
+      r: true
+      t: "`$OBJECT`"
+    }
+    sk: {
+      h: "Sk"
+      n: "sk"
+      r: true
+      t: "`$OBJECT`"
+    }
+    sn: {
+      h: "Sn"
+      n: "sn"
+      r: true
+      t: "`$OBJECT`"
+    }
+    sr: {
+      h: "Sr"
+      n: "sr"
+      r: true
+      t: "`$OBJECT`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "The status of the registration."
+      t: "`$STRING`"
+    }
+    th: {
+      h: "Th"
+      n: "th"
+      r: true
+      t: "`$OBJECT`"
+    }
+    tj: {
+      h: "Tj"
+      n: "tj"
+      r: true
+      t: "`$OBJECT`"
+    }
+    tr: {
+      h: "Tr"
+      n: "tr"
+      r: true
+      t: "`$OBJECT`"
+    }
+    tw: {
+      h: "Tw"
+      n: "tw"
+      r: true
+      t: "`$OBJECT`"
+    }
+    tz: {
+      h: "Tz"
+      n: "tz"
+      r: true
+      t: "`$OBJECT`"
+    }
+    ua: {
+      h: "Ua"
+      n: "ua"
+      r: true
+      t: "`$OBJECT`"
+    }
+    ug: {
+      h: "Ug"
+      n: "ug"
+      r: true
+      t: "`$OBJECT`"
+    }
+    us: {
+      h: "Us"
+      n: "us"
+      r: true
+      t: "`$OBJECT`"
+    }
+    uy: {
+      h: "Uy"
+      n: "uy"
+      r: true
+      t: "`$OBJECT`"
+    }
+    uz: {
+      h: "Uz"
+      n: "uz"
+      r: true
+      t: "`$OBJECT`"
+    }
+    vn: {
+      h: "Vn"
+      n: "vn"
+      r: true
+      t: "`$OBJECT`"
+    }
+    za: {
+      h: "Za"
+      n: "za"
+      r: true
+      t: "`$OBJECT`"
+    }
+    zm: {
+      h: "Zm"
+      n: "zm"
+      r: true
+      t: "`$OBJECT`"
+    }
+    zw: {
+      h: "Zw"
+      n: "zw"
+      r: true
+      t: "`$OBJECT`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "registration"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/tax/registrations/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/tax/registrations/{id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "tax"
+            }
+            {
+              lit: "registrations"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.country_options`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/tax/registrations"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/tax/registrations"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "tax"
+            }
+            {
+              lit: "registrations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.country_options`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/tax/registrations"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/tax/registrations"
+          q: {
+            exist: [
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+              "status"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "tax"
+            }
+            {
+              lit: "registrations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/tax/registrations/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/tax/registrations/{id}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "tax"
+            }
+            {
+              lit: "registrations"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.country_options`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

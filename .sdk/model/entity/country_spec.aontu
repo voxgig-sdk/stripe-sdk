@@ -1,0 +1,202 @@
+# Entity: country_spec
+
+main: kit: entity: country_spec: {
+
+  alias: field: {}
+
+  fields: {
+    default_currency: {
+      h: "Default Currency"
+      n: "default_currency"
+      r: true
+      sh: "The default currency for this country."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    supported_bank_account_currencies: {
+      h: "Supported Bank Account Currencies"
+      n: "supported_bank_account_currencies"
+      r: true
+      sh: "Currencies that can be accepted in the specific country (for transfers)."
+      t: "`$OBJECT`"
+    }
+    supported_payment_currencies: {
+      h: "Supported Payment Currencies"
+      n: "supported_payment_currencies"
+      r: true
+      sh: "Currencies that can be accepted in the specified country (for payments)."
+      t: "`$ARRAY`"
+    }
+    supported_payment_methods: {
+      h: "Supported Payment Methods"
+      n: "supported_payment_methods"
+      r: true
+      sh: "Payment methods available in the specified country."
+      t: "`$ARRAY`"
+    }
+    supported_transfer_countries: {
+      h: "Supported Transfer Countries"
+      n: "supported_transfer_countries"
+      r: true
+      sh: "Countries that can accept transfers from the specified country."
+      t: "`$ARRAY`"
+    }
+    verification_fields: {
+      h: "Verification Fields"
+      n: "verification_fields"
+      r: true
+      t: "`$OBJECT`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "country_spec"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/country_specs"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/country_specs"
+          q: {
+            exist: [
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "country_specs"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/country_specs/{country}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "country"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/country_specs/{country}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              country: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "country_specs"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

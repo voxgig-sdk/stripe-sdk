@@ -1,0 +1,79 @@
+{
+  "existing": {
+    "feature": {
+      "FEATURE00": {
+        "active": true,
+        "entitlement_feature": {},
+        "id": "FEATURE00",
+        "livemode": false,
+        "lookup_key": "s54",
+        "metadata": {},
+        "name": "s56",
+        "object": "s57",
+        "product_id": "PRODUCT01"
+      },
+      "FEATURE01": {
+        "active": true,
+        "entitlement_feature": {},
+        "id": "FEATURE01",
+        "livemode": false,
+        "lookup_key": "sa4",
+        "metadata": {},
+        "name": "sa6",
+        "object": "sa7",
+        "product_id": "PRODUCT01"
+      },
+      "FEATURE02": {
+        "active": true,
+        "entitlement_feature": {},
+        "id": "FEATURE02",
+        "livemode": false,
+        "lookup_key": "sf4",
+        "metadata": {},
+        "name": "sf6",
+        "object": "sf7",
+        "product_id": "PRODUCT01"
+      }
+    }
+  },
+  "new": {
+    "feature": {
+      "feature_ref01": {
+        "active": true,
+        "entitlement_feature": {},
+        "livemode": false,
+        "lookup_key": "s144",
+        "metadata": {},
+        "name": "s146",
+        "object": "s147"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/entitlements/features/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/entitlements/features": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/entitlements/features": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/products/{product}/features": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/entitlements/features/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

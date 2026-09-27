@@ -27,11 +27,11 @@ Tool-call arguments (what an agent sends):
 
 ```jsonc
 // stripe_list: first page of records
-{ "entity": "session" }
-{ "entity": "session", "query": { } }
+{ "entity": "account" }
+{ "entity": "account", "query": { } }
 
 // stripe_load: one record by id
-{ "entity": "session", "query": { "id": 1 } }
+{ "entity": "account", "query": { "id": 1 } }
 ```
 
 > The rest of this guide follows the [Diátaxis](https://diataxis.fr) framework:
@@ -60,8 +60,8 @@ Tool-call arguments (what an agent sends):
    ```
 
 4. **Restart Claude Code.** The `stripe_list` and `stripe_load` tools now appear
-   in new sessions. Ask the agent to *"list session using stripe"*
-   and it calls `stripe_list` with `{"entity":"session"}`.
+   in new sessions. Ask the agent to *"list account using stripe"*
+   and it calls `stripe_list` with `{"entity":"account"}`.
 
 ## How-to guides
 
@@ -92,7 +92,7 @@ Args: `entity` (required), `query` (optional filter map). Returns the first
 page of records as JSON:
 
 ```jsonc
-{ "entity": "session" }
+{ "entity": "account" }
 ```
 
 ### Call the `stripe_load` tool
@@ -101,7 +101,7 @@ Args: `entity` (required), `query` = `{"id":N}` (required). Returns the single
 record as JSON:
 
 ```jsonc
-{ "entity": "session", "query": { "id": 1 } }
+{ "entity": "account", "query": { "id": 1 } }
 ```
 
 ### Cross-compile release binaries
@@ -129,7 +129,7 @@ Both tools take the same argument object:
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `entity` | string | One of the 1 supported entities (see below). |
+| `entity` | string | One of the 148 supported entities (see below). |
 | `query` | object | Optional match map. `{"id":N}` for load; omit or `{}` for list. |
 
 JSON schemas are emitted by the SDK from the `Args` struct's `json` /
@@ -151,9 +151,9 @@ JSON schemas are emitted by the SDK from the `Args` struct's `json` /
 
 ### Entities
 
-The 1 entity valid as the `entity` argument:
+The 148 entities valid as the `entity` argument:
 
-session
+account | account_link | account_owner | account_session | active_entitlement | alert | apple_pay_domain | application_fee | association | authentication | authorization | balance | balance_setting | balance_transaction | bank_account | calculation | capability | card | cardholder | cash_balance | cash_balance_transaction | charge | configuration | confirmation_token | connection_token | country_spec | coupon | credit_balance_summary | credit_balance_transaction | credit_grant | credit_note | credit_note_line | credit_reversal | customer | customer_balance_transaction | customer_session | debit_reversal | deleted_account | deleted_apple_pay_domain | deleted_coupon | deleted_external_account | deleted_invoiceitem | deleted_person | deleted_plan | deleted_product_feature | deleted_subscription_item | deleted_webhook_endpoint | discount | dispute | domain | early_fraud_warning | ephemeral_key | event | exchange_rate | external_account | feature | feedback_option | file | file_link | financial_account | financial_account_feature | fund_cash_balance | funding_instruction | history | inbound_transfer | install | invoice | invoice_payment | invoice_rendering_template | invoiceitem | line | line_item | linked_account | linked_account_owner | location | login_link | mandate | meter | meter_event | meter_event_adjustment | meter_event_summary | onboarding_link | order | outbound_payment | outbound_transfer | payment_attempt_record | payment_evaluation | payment_intent | payment_intent_amount_details_line_item | payment_link | payment_method | payment_method_configuration | payment_method_domain | payment_record | payout | person | personalization_design | physical_bundle | plan | price | product | product_feature | promotion_code | quote | quote_computed_upfront_line_item | quote_pdf | reader | received_credit | received_debit | refund | registration | report_run | report_type | request | reversal | review | scheduled_query_run | search | secret | session | setting | settlement | setup_attempt | setup_intent | shipping_rate | sigma_api_query | source | source_mandate_notification | source_transaction | subscription | subscription_item | subscription_schedule | supplier | tax_code | tax_id | tax_rate | test_clock | token | topup | transaction | transaction_entry | transfer | trial_offer | value_list | value_list_item | verification_report | verification_session | webhook_endpoint
 
 ### Smoke test via HTTP (raw JSON-RPC)
 
@@ -173,7 +173,7 @@ curl -sN -X POST http://localhost:18080 \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json, text/event-stream' \
   -H "Mcp-Session-Id: $SESSION" \
-  -d '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"stripe_load","arguments":{"entity":"session","query":{"id":1}}}}'
+  -d '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"stripe_load","arguments":{"entity":"account","query":{"id":1}}}}'
 ```
 
 ## Explanation

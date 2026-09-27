@@ -1,0 +1,141 @@
+{
+  "existing": {
+    "line": {
+      "LINE00": {
+        "amount": 260,
+        "currency": "s105",
+        "description": "s106",
+        "discount_amount": 263,
+        "discount_amounts": [],
+        "discountable": false,
+        "discounts": [],
+        "id": "LINE00",
+        "invoice": "s10c",
+        "invoice_line_item": "s10d",
+        "livemode": true,
+        "metadata": {},
+        "object": "s110",
+        "parent": "s111",
+        "period": {},
+        "pretax_credit_amounts": [],
+        "pricing": "s114",
+        "quantity": 277,
+        "quantity_decimal": "s116",
+        "subscription": "s117",
+        "subtotal": 280,
+        "tax_rates": [],
+        "taxes": [],
+        "type": "s11b",
+        "unit_amount": 284,
+        "unit_amount_decimal": "s11d",
+        "invoice_id": "INVOICE01"
+      },
+      "LINE01": {
+        "amount": 520,
+        "currency": "s209",
+        "description": "s20a",
+        "discount_amount": 523,
+        "discount_amounts": [],
+        "discountable": false,
+        "discounts": [],
+        "id": "LINE01",
+        "invoice": "s210",
+        "invoice_line_item": "s211",
+        "livemode": true,
+        "metadata": {},
+        "object": "s214",
+        "parent": "s215",
+        "period": {},
+        "pretax_credit_amounts": [],
+        "pricing": "s218",
+        "quantity": 537,
+        "quantity_decimal": "s21a",
+        "subscription": "s21b",
+        "subtotal": 540,
+        "tax_rates": [],
+        "taxes": [],
+        "type": "s21f",
+        "unit_amount": 544,
+        "unit_amount_decimal": "s221",
+        "invoice_id": "INVOICE01"
+      },
+      "LINE02": {
+        "amount": 780,
+        "currency": "s30d",
+        "description": "s30e",
+        "discount_amount": 783,
+        "discount_amounts": [],
+        "discountable": false,
+        "discounts": [],
+        "id": "LINE02",
+        "invoice": "s314",
+        "invoice_line_item": "s315",
+        "livemode": true,
+        "metadata": {},
+        "object": "s318",
+        "parent": "s319",
+        "period": {},
+        "pretax_credit_amounts": [],
+        "pricing": "s31c",
+        "quantity": 797,
+        "quantity_decimal": "s31e",
+        "subscription": "s31f",
+        "subtotal": 800,
+        "tax_rates": [],
+        "taxes": [],
+        "type": "s323",
+        "unit_amount": 804,
+        "unit_amount_decimal": "s325",
+        "invoice_id": "INVOICE01"
+      }
+    }
+  },
+  "new": {
+    "line": {
+      "line_ref01": {
+        "amount": 1040,
+        "currency": "s411",
+        "description": "s412",
+        "discount_amount": 1043,
+        "discount_amounts": [],
+        "discountable": false,
+        "discounts": [],
+        "invoice": "s418",
+        "invoice_line_item": "s419",
+        "livemode": true,
+        "metadata": {},
+        "object": "s41c",
+        "parent": "s41d",
+        "period": {},
+        "pretax_credit_amounts": [],
+        "pricing": "s420",
+        "quantity": 1057,
+        "quantity_decimal": "s422",
+        "subscription": "s423",
+        "subtotal": 1060,
+        "tax_rates": [],
+        "taxes": [],
+        "type": "s427",
+        "unit_amount": 1064,
+        "unit_amount_decimal": "s429"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/invoices/{invoice}/lines/{line_item_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/credit_notes/preview/lines": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/invoices/{invoice}/lines": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

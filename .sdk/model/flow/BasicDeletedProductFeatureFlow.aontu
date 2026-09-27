@@ -1,0 +1,9 @@
+# BasicDeletedProductFeatureFlow
+
+main: kit: flow: BasicDeletedProductFeatureFlow:
+{
+  entity: "deleted_product_feature",
+  kind: "basic",
+  name: "BasicDeletedProductFeatureFlow",
+  "key$": "BasicDeletedProductFeatureFlow"
+}

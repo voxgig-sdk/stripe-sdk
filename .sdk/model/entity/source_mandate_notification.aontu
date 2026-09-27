@@ -1,0 +1,181 @@
+# Entity: source_mandate_notification
+
+main: kit: entity: source_mandate_notification: {
+
+  alias: field: {}
+
+  fields: {
+    acss_debit: {
+      h: "Acss Debit"
+      n: "acss_debit"
+      r: false
+      t: "`$OBJECT`"
+    }
+    amount: {
+      h: "Amount"
+      n: "amount"
+      r: false
+      sh: "A positive integer in the smallest currency unit (that is, 100 cents for $1.00, or 1 for ¥1, Japanese Yen being a zero-decimal currency) representing the amount associated with the mandate notification."
+      t: "`$INTEGER`"
+    }
+    bacs_debit: {
+      h: "Bacs Debit"
+      n: "bacs_debit"
+      r: false
+      t: "`$OBJECT`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    reason: {
+      h: "Reason"
+      n: "reason"
+      r: true
+      sh: "The reason of the mandate notification."
+      t: "`$STRING`"
+    }
+    sepa_debit: {
+      h: "Sepa Debit"
+      n: "sepa_debit"
+      r: false
+      t: "`$OBJECT`"
+    }
+    source: {
+      h: "Source"
+      n: "source"
+      r: true
+      sh: "`Source` objects allow you to accept a variety of payment methods."
+      t: "`$OBJECT`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "The status of the mandate notification."
+      t: "`$STRING`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "The type of source this mandate notification is attached to."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "source_mandate_notification"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/sources/{source}/mandate_notifications/{mandate_notification}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "mandate_notification"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "source_id"
+                or: "source"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/sources/{source}/mandate_notifications/{mandate_notification}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+              "source_id"
+            ]
+          }
+          r: {
+            param: {
+              mandate_notification: "id"
+              source: "source_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "sources"
+            }
+            {
+              var: "source_id"
+            }
+            {
+              lit: "mandate_notifications"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.source")]
+  ]
+
+}

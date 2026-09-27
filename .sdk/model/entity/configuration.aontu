@@ -1,0 +1,744 @@
+# Entity: configuration
+
+main: kit: entity: configuration: {
+
+  alias: field: {}
+
+  fields: {
+    active: {
+      h: "Active"
+      n: "active"
+      r: true
+      sh: "Whether the configuration is active and can be used to create portal sessions."
+      t: "`$BOOLEAN`"
+    }
+    application: {
+      h: "Application"
+      n: "application"
+      r: false
+      sh: "ID of the Connect Application that created the configuration."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 2
+        depth: 1
+      }
+    }
+    bbpos_wisepad3: {
+      h: "Bbpos Wisepad3"
+      n: "bbpos_wisepad3"
+      r: false
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 3
+        depth: 12
+      }
+    }
+    bbpos_wisepos_e: {
+      h: "Bbpos Wisepos E"
+      n: "bbpos_wisepos_e"
+      r: false
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 3
+        depth: 12
+      }
+    }
+    business_profile: {
+      h: "Business Profile"
+      n: "business_profile"
+      r: true
+      t: "`$OBJECT`"
+    }
+    cellular: {
+      h: "Cellular"
+      n: "cellular"
+      r: true
+      t: "`$OBJECT`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    default_return_url: {
+      h: "Default Return Url"
+      n: "default_return_url"
+      r: false
+      sh: "The default URL to redirect customers to when they click on the portal's link to return to your website."
+      t: "`$STRING`"
+    }
+    features: {
+      h: "Features"
+      n: "features"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 7
+      }
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    is_account_default: {
+      h: "Is Account Default"
+      n: "is_account_default"
+      r: false
+      sh: "Whether this Configuration is the default for your account"
+      t: "`$BOOLEAN`"
+    }
+    is_default: {
+      h: "Is Default"
+      n: "is_default"
+      r: true
+      sh: "Whether the configuration is the default."
+      t: "`$BOOLEAN`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    login_page: {
+      h: "Login Page"
+      n: "login_page"
+      r: true
+      t: "`$OBJECT`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "The name of the configuration."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    offline: {
+      h: "Offline"
+      n: "offline"
+      r: false
+      t: "`$OBJECT`"
+    }
+    reboot_window: {
+      h: "Reboot Window"
+      n: "reboot_window"
+      r: true
+      t: "`$OBJECT`"
+    }
+    stripe_s700: {
+      h: "Stripe S700"
+      n: "stripe_s700"
+      r: false
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 3
+        depth: 12
+      }
+    }
+    stripe_s710: {
+      h: "Stripe S710"
+      n: "stripe_s710"
+      r: false
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 3
+        depth: 12
+      }
+    }
+    tipping: {
+      h: "Tipping"
+      n: "tipping"
+      r: false
+      t: "`$OBJECT`"
+    }
+    updated: {
+      fo: "unix-time"
+      h: "Updated"
+      n: "updated"
+      r: true
+      sh: "Time at which the object was last updated."
+      t: "`$INTEGER`"
+    }
+    verifone_m425: {
+      h: "Verifone M425"
+      n: "verifone_m425"
+      r: false
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 3
+        depth: 12
+      }
+    }
+    verifone_p400: {
+      h: "Verifone P400"
+      n: "verifone_p400"
+      r: false
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 3
+        depth: 12
+      }
+    }
+    verifone_p630: {
+      h: "Verifone P630"
+      n: "verifone_p630"
+      r: false
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 3
+        depth: 12
+      }
+    }
+    verifone_ux700: {
+      h: "Verifone Ux700"
+      n: "verifone_ux700"
+      r: false
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 3
+        depth: 12
+      }
+    }
+    verifone_v660p: {
+      h: "Verifone V660p"
+      n: "verifone_v660p"
+      r: false
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 3
+        depth: 12
+      }
+    }
+    wifi: {
+      h: "Wifi"
+      n: "wifi"
+      r: true
+      t: "`$OBJECT`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "configuration"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/billing_portal/configurations/{configuration}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "configuration"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/billing_portal/configurations/{configuration}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              configuration: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "billing_portal"
+            }
+            {
+              lit: "configurations"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/terminal/configurations/{configuration}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "configuration"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/terminal/configurations/{configuration}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              configuration: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "configurations"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/billing_portal/configurations"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/billing_portal/configurations"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "billing_portal"
+            }
+            {
+              lit: "configurations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/terminal/configurations"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/terminal/configurations"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "configurations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/billing_portal/configurations"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "active"
+                or: "active"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "is_default"
+                or: "is_default"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/billing_portal/configurations"
+          q: {
+            exist: [
+              "active"
+              "ending_before"
+              "expand"
+              "is_default"
+              "limit"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "billing_portal"
+            }
+            {
+              lit: "configurations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/terminal/configurations"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "is_account_default"
+                or: "is_account_default"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/terminal/configurations"
+          q: {
+            exist: [
+              "ending_before"
+              "expand"
+              "is_account_default"
+              "limit"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "configurations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/billing_portal/configurations/{configuration}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "configuration"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/billing_portal/configurations/{configuration}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              configuration: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "billing_portal"
+            }
+            {
+              lit: "configurations"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/terminal/configurations/{configuration}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "configuration"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/terminal/configurations/{configuration}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              configuration: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "configurations"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /v1/terminal/configurations/{configuration}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "configuration"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/v1/terminal/configurations/{configuration}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              configuration: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "configurations"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

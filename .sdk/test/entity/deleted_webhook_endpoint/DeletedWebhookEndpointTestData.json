@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "deleted_webhook_endpoint": {
+      "DELETED_WEBHOOK_ENDPOINT00": {
+        "id": "DELETED_WEBHOOK_ENDPOINT00"
+      },
+      "DELETED_WEBHOOK_ENDPOINT01": {
+        "id": "DELETED_WEBHOOK_ENDPOINT01"
+      },
+      "DELETED_WEBHOOK_ENDPOINT02": {
+        "id": "DELETED_WEBHOOK_ENDPOINT02"
+      }
+    }
+  },
+  "new": {
+    "deleted_webhook_endpoint": {
+      "deleted_webhook_endpoint_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /v1/webhook_endpoints/{webhook_endpoint}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

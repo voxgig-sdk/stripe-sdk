@@ -1,0 +1,44 @@
+# BasicCountrySpecFlow
+
+main: kit: flow: BasicCountrySpecFlow:
+{
+  entity: "country_spec",
+  kind: "basic",
+  name: "BasicCountrySpecFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "country_spec_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "country_spec_ref01",
+        srcdatavar: "country_spec_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "country_spec01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-country_spec_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCountrySpecFlow"
+}

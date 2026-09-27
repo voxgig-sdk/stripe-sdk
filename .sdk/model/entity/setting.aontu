@@ -1,0 +1,130 @@
+# Entity: setting
+
+main: kit: entity: setting: {
+
+  alias: field: {}
+
+  fields: {
+    defaults: {
+      h: "Defaults"
+      n: "defaults"
+      r: true
+      t: "`$OBJECT`"
+    }
+    head_office: {
+      h: "Head Office"
+      n: "head_office"
+      r: false
+      sh: "The place where your business is located."
+      t: "`$ANY`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "The status of the Tax `Settings`."
+      t: "`$STRING`"
+    }
+    status_details: {
+      h: "Status Details"
+      n: "status_details"
+      r: true
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "setting"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/tax/settings"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/tax/settings"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "tax"
+            }
+            {
+              lit: "settings"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/tax/settings"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/tax/settings"
+          q: {
+            exist: [
+              "expand"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "tax"
+            }
+            {
+              lit: "settings"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

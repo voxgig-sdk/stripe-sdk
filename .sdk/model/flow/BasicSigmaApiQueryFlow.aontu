@@ -1,0 +1,18 @@
+# BasicSigmaApiQueryFlow
+
+main: kit: flow: BasicSigmaApiQueryFlow:
+{
+  entity: "sigma_api_query",
+  kind: "basic",
+  name: "BasicSigmaApiQueryFlow",
+  step: [
+    {
+      i: {
+        ref: "sigma_api_query_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicSigmaApiQueryFlow"
+}

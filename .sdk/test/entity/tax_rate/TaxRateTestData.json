@@ -1,0 +1,111 @@
+{
+  "existing": {
+    "tax_rate": {
+      "TAX_RATE00": {
+        "active": true,
+        "country": "sb5",
+        "created": 182,
+        "description": "sb7",
+        "display_name": "sb8",
+        "effective_percentage": 185,
+        "flat_amount": "sba",
+        "id": "TAX_RATE00",
+        "inclusive": true,
+        "jurisdiction": "sbd",
+        "jurisdiction_level": "sbe",
+        "livemode": false,
+        "metadata": {},
+        "object": "sc1",
+        "percentage": 194,
+        "rate_type": "sc3",
+        "state": "sc4",
+        "tax_type": "sc5"
+      },
+      "TAX_RATE01": {
+        "active": true,
+        "country": "s169",
+        "created": 362,
+        "description": "s16b",
+        "display_name": "s16c",
+        "effective_percentage": 365,
+        "flat_amount": "s16e",
+        "id": "TAX_RATE01",
+        "inclusive": true,
+        "jurisdiction": "s171",
+        "jurisdiction_level": "s172",
+        "livemode": false,
+        "metadata": {},
+        "object": "s175",
+        "percentage": 374,
+        "rate_type": "s177",
+        "state": "s178",
+        "tax_type": "s179"
+      },
+      "TAX_RATE02": {
+        "active": true,
+        "country": "s21d",
+        "created": 542,
+        "description": "s21f",
+        "display_name": "s220",
+        "effective_percentage": 545,
+        "flat_amount": "s222",
+        "id": "TAX_RATE02",
+        "inclusive": true,
+        "jurisdiction": "s225",
+        "jurisdiction_level": "s226",
+        "livemode": false,
+        "metadata": {},
+        "object": "s229",
+        "percentage": 554,
+        "rate_type": "s22b",
+        "state": "s22c",
+        "tax_type": "s22d"
+      }
+    }
+  },
+  "new": {
+    "tax_rate": {
+      "tax_rate_ref01": {
+        "active": true,
+        "country": "s2d1",
+        "created": 722,
+        "description": "s2d3",
+        "display_name": "s2d4",
+        "effective_percentage": 725,
+        "flat_amount": "s2d6",
+        "inclusive": true,
+        "jurisdiction": "s2d9",
+        "jurisdiction_level": "s2da",
+        "livemode": false,
+        "metadata": {},
+        "object": "s2dd",
+        "percentage": 734,
+        "rate_type": "s2df",
+        "state": "s2e0",
+        "tax_type": "s2e1"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/tax_rates/{tax_rate}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/tax_rates": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/tax_rates": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/tax_rates/{tax_rate}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

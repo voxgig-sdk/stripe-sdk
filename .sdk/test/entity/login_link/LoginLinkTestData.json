@@ -1,0 +1,43 @@
+{
+  "existing": {
+    "login_link": {
+      "LOGIN_LINK00": {
+        "created": 30,
+        "object": "s1f",
+        "url": "s20",
+        "account_id": "ACCOUNT01",
+        "id": "LOGIN_LINK00"
+      },
+      "LOGIN_LINK01": {
+        "created": 60,
+        "object": "s3d",
+        "url": "s3e",
+        "account_id": "ACCOUNT01",
+        "id": "LOGIN_LINK01"
+      },
+      "LOGIN_LINK02": {
+        "created": 90,
+        "object": "s5b",
+        "url": "s5c",
+        "account_id": "ACCOUNT01",
+        "id": "LOGIN_LINK02"
+      }
+    }
+  },
+  "new": {
+    "login_link": {
+      "login_link_ref01": {
+        "created": 120,
+        "object": "s79",
+        "url": "s7a"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/accounts/{account}/login_links": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

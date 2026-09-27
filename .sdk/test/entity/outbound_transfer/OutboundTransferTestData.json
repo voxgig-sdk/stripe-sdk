@@ -1,0 +1,139 @@
+{
+  "existing": {
+    "outbound_transfer": {
+      "OUTBOUND_TRANSFER00": {
+        "amount": 200,
+        "cancelable": false,
+        "created": 202,
+        "currency": "scb",
+        "description": "scc",
+        "destination_payment_method": "scd",
+        "destination_payment_method_details": {},
+        "expected_arrival_date": 207,
+        "financial_account": "sd0",
+        "hosted_regulatory_receipt_url": "sd1",
+        "id": "OUTBOUND_TRANSFER00",
+        "livemode": false,
+        "metadata": {},
+        "object": "sd5",
+        "returned_details": "sd6",
+        "statement_descriptor": "sd7",
+        "status": "sd8",
+        "status_transitions": {},
+        "tracking_details": "sda",
+        "transaction": "sdb"
+      },
+      "OUTBOUND_TRANSFER01": {
+        "amount": 400,
+        "cancelable": false,
+        "created": 402,
+        "currency": "s193",
+        "description": "s194",
+        "destination_payment_method": "s195",
+        "destination_payment_method_details": {},
+        "expected_arrival_date": 407,
+        "financial_account": "s198",
+        "hosted_regulatory_receipt_url": "s199",
+        "id": "OUTBOUND_TRANSFER01",
+        "livemode": false,
+        "metadata": {},
+        "object": "s19d",
+        "returned_details": "s19e",
+        "statement_descriptor": "s19f",
+        "status": "s1a0",
+        "status_transitions": {},
+        "tracking_details": "s1a2",
+        "transaction": "s1a3"
+      },
+      "OUTBOUND_TRANSFER02": {
+        "amount": 600,
+        "cancelable": false,
+        "created": 602,
+        "currency": "s25b",
+        "description": "s25c",
+        "destination_payment_method": "s25d",
+        "destination_payment_method_details": {},
+        "expected_arrival_date": 607,
+        "financial_account": "s260",
+        "hosted_regulatory_receipt_url": "s261",
+        "id": "OUTBOUND_TRANSFER02",
+        "livemode": false,
+        "metadata": {},
+        "object": "s265",
+        "returned_details": "s266",
+        "statement_descriptor": "s267",
+        "status": "s268",
+        "status_transitions": {},
+        "tracking_details": "s26a",
+        "transaction": "s26b"
+      }
+    }
+  },
+  "new": {
+    "outbound_transfer": {
+      "outbound_transfer_ref01": {
+        "amount": 800,
+        "cancelable": false,
+        "created": 802,
+        "currency": "s323",
+        "description": "s324",
+        "destination_payment_method": "s325",
+        "destination_payment_method_details": {},
+        "expected_arrival_date": 807,
+        "financial_account": "s328",
+        "hosted_regulatory_receipt_url": "s329",
+        "livemode": false,
+        "metadata": {},
+        "object": "s32d",
+        "returned_details": "s32e",
+        "statement_descriptor": "s32f",
+        "status": "s330",
+        "status_transitions": {},
+        "tracking_details": "s332",
+        "transaction": "s333"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/treasury/outbound_transfers/{outbound_transfer}/cancel": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/fail": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/post": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/return": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/treasury/outbound_transfers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/treasury/outbound_transfers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/treasury/outbound_transfers/{outbound_transfer}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

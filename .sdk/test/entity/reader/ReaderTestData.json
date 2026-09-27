@@ -1,0 +1,151 @@
+{
+  "existing": {
+    "reader": {
+      "READER00": {
+        "action": "s82",
+        "device_sw_version": "s83",
+        "device_type": "s84",
+        "id": "READER00",
+        "ip_address": "s86",
+        "label": "s87",
+        "last_seen_at": 136,
+        "livemode": false,
+        "location": "s8a",
+        "metadata": {},
+        "object": "s8c",
+        "serial_number": "s8d",
+        "status": "s8e"
+      },
+      "READER01": {
+        "action": "s104",
+        "device_sw_version": "s105",
+        "device_type": "s106",
+        "id": "READER01",
+        "ip_address": "s108",
+        "label": "s109",
+        "last_seen_at": 266,
+        "livemode": false,
+        "location": "s10c",
+        "metadata": {},
+        "object": "s10e",
+        "serial_number": "s10f",
+        "status": "s110"
+      },
+      "READER02": {
+        "action": "s186",
+        "device_sw_version": "s187",
+        "device_type": "s188",
+        "id": "READER02",
+        "ip_address": "s18a",
+        "label": "s18b",
+        "last_seen_at": 396,
+        "livemode": false,
+        "location": "s18e",
+        "metadata": {},
+        "object": "s190",
+        "serial_number": "s191",
+        "status": "s192"
+      }
+    }
+  },
+  "new": {
+    "reader": {
+      "reader_ref01": {
+        "action": "s208",
+        "device_sw_version": "s209",
+        "device_type": "s20a",
+        "ip_address": "s20c",
+        "label": "s20d",
+        "last_seen_at": 526,
+        "livemode": false,
+        "location": "s210",
+        "metadata": {},
+        "object": "s212",
+        "serial_number": "s213",
+        "status": "s214"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/terminal/readers/{reader}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/terminal/readers/{reader}/cancel_action": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/terminal/readers/{reader}/collect_inputs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/terminal/readers/{reader}/collect_payment_method": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/terminal/readers/{reader}/confirm_payment_intent": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/terminal/readers/{reader}/present_payment_method": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/terminal/readers/{reader}/process_payment_intent": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/terminal/readers/{reader}/process_setup_intent": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/terminal/readers/{reader}/refund_payment": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/terminal/readers/{reader}/set_reader_display": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/terminal/readers/{reader}/succeed_input_collection": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/terminal/readers/{reader}/timeout_input_collection": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/terminal/readers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/terminal/readers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/terminal/readers/{reader}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /v1/terminal/readers/{reader}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

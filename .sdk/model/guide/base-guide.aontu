@@ -1,0 +1,2507 @@
+# Generated from the API definition and overwritten on every build: do not
+# edit this file. Put customizations in the guide entry file, which includes
+# this one and overrides its defaults:
+#   guide.aontu
+
+guide: {
+  metrics: count: entity: 148
+  metrics: count: path: 431
+  metrics: count: method: 612
+
+  entity: account: {
+    path: "/v1/account": {
+      op: load: method: *GET
+    }
+    path: "/v1/accounts": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/accounts/{account}": {
+      rename: param: "account": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/accounts/{account}/reject": {
+      action: "reject": {}
+      rename: param: "account": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/accounts/{account}/unreject": {
+      action: "unreject": {}
+      rename: param: "account": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/financial_connections/accounts": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/financial_connections/accounts/{account}": {
+      rename: param: "account": *"id"
+      op: load: method: *GET
+    }
+    path: "/v1/financial_connections/accounts/{account}/disconnect": {
+      action: "disconnect": {}
+      rename: param: "account": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/financial_connections/accounts/{account}/refresh": {
+      action: "refresh": {}
+      rename: param: "account": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/financial_connections/accounts/{account}/subscribe": {
+      action: "subscribe": {}
+      rename: param: "account": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/financial_connections/accounts/{account}/unsubscribe": {
+      action: "unsubscribe": {}
+      rename: param: "account": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/linked_accounts/{account}": {
+      op: load: method: *GET
+    }
+    path: "/v1/linked_accounts/{account}/disconnect": {
+      action: "disconnect": {}
+      rename: param: "account": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/linked_accounts/{account}/refresh": {
+      action: "refresh": {}
+      rename: param: "account": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: account_link: {
+    path: "/v1/account_links": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: account_owner: {
+    path: "/v1/financial_connections/accounts/{account}/owners": {
+      rename: param: "account": *"id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: account_session: {
+    path: "/v1/account_sessions": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.components`")|top
+    }
+  }
+
+  entity: active_entitlement: {
+    path: "/v1/entitlements/active_entitlements": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/entitlements/active_entitlements/{id}": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.feature`")|top
+    }
+  }
+
+  entity: alert: {
+    path: "/v1/billing/alerts": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.usage_threshold`")|top
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/billing/alerts/{id}": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.usage_threshold`")|top
+    }
+    path: "/v1/billing/alerts/{id}/activate": {
+      action: "activate": {}
+      op: create: method: *POST
+      op: create: transform: res: *("`body.usage_threshold`")|top
+    }
+    path: "/v1/billing/alerts/{id}/archive": {
+      action: "archive": {}
+      op: create: method: *POST
+      op: create: transform: res: *("`body.usage_threshold`")|top
+    }
+    path: "/v1/billing/alerts/{id}/deactivate": {
+      action: "deactivate": {}
+      op: create: method: *POST
+      op: create: transform: res: *("`body.usage_threshold`")|top
+    }
+  }
+
+  entity: apple_pay_domain: {
+    path: "/v1/apple_pay/domains": {
+      op: create: method: *POST
+    }
+    path: "/v1/apple_pay/domains/{domain}": {
+      rename: param: "domain": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: application_fee: {
+    path: "/v1/application_fees": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/application_fees/{id}": {
+      op: load: method: *GET
+    }
+    path: "/v1/application_fees/{id}/refund": {
+      action: "refund": {}
+      op: create: method: *POST
+    }
+  }
+
+  entity: association: {
+    path: "/v1/tax/associations/find": {
+      action: "find": {}
+      op: list: method: *GET
+      op: list: transform: res: *("`body.tax_transaction_attempts`")|top
+    }
+  }
+
+  entity: authentication: {
+    path: "/v1/three_d_secure/authentications": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/three_d_secure/authentications/{authentication}": {
+      rename: param: "authentication": *"id"
+      op: load: method: *GET
+    }
+    path: "/v1/three_d_secure/authentications/{authentication}/cancel": {
+      action: "cancel": {}
+      rename: param: "authentication": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/three_d_secure/authentications/{authentication}/submit": {
+      action: "submit": {}
+      rename: param: "authentication": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: authorization: {
+    path: "/v1/issuing/authorizations": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/issuing/authorizations/{authorization}": {
+      rename: param: "authorization": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/issuing/authorizations/{authorization}/approve": {
+      action: "approve": {}
+      rename: param: "authorization": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/issuing/authorizations/{authorization}/decline": {
+      action: "decline": {}
+      rename: param: "authorization": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/issuing/authorizations": {
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/issuing/authorizations/{authorization}/capture": {
+      action: "capture": {}
+      rename: param: "authorization": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/issuing/authorizations/{authorization}/expire": {
+      action: "expire": {}
+      rename: param: "authorization": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/issuing/authorizations/{authorization}/finalize_amount": {
+      action: "finalize_amount": {}
+      rename: param: "authorization": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/issuing/authorizations/{authorization}/fraud_challenges/respond": {
+      rename: param: "authorization": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/issuing/authorizations/{authorization}/increment": {
+      action: "increment": {}
+      rename: param: "authorization": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/issuing/authorizations/{authorization}/reverse": {
+      action: "reverse": {}
+      rename: param: "authorization": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: balance: {
+    path: "/v1/balance": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: balance_setting: {
+    path: "/v1/balance_settings": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.payments`")|top
+      op: load: method: *GET
+      op: load: transform: res: *("`body.payments`")|top
+    }
+  }
+
+  entity: balance_transaction: {
+    path: "/v1/balance/history/{id}": {
+      op: load: method: *GET
+    }
+    path: "/v1/balance_transactions": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/balance_transactions/{id}": {
+      op: load: method: *GET
+    }
+    path: "/v1/customers/{customer}/balance_transactions": {
+      rename: param: "customer": *"customer_id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: bank_account: {
+    path: "/v1/customers/{customer}/bank_accounts": {
+      rename: param: "customer": *"customer_id"
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/customers/{customer}/bank_accounts/{id}": {
+      rename: param: "customer": *"customer_id"
+      op: create: method: *POST
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+    path: "/v1/customers/{customer}/bank_accounts/{id}/verify": {
+      action: "verify": {}
+      rename: param: "customer": *"customer_id"
+      op: create: method: *POST
+    }
+    path: "/v1/customers/{customer}/sources/{id}/verify": {
+      rename: param: "customer": *"customer_id"
+      rename: param: "id": *"source_id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: calculation: {
+    path: "/v1/tax/calculations": {
+      op: create: method: *POST
+    }
+    path: "/v1/tax/calculations/{calculation}": {
+      rename: param: "calculation": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: capability: {
+    path: "/v1/accounts/{account}/capabilities": {
+      rename: param: "account": *"account_id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/accounts/{account}/capabilities/{capability}": {
+      rename: param: "account": *"account_id"
+      rename: param: "capability": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: card: {
+    path: "/v1/customers/{customer}/cards": {
+      rename: param: "customer": *"customer_id"
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/customers/{customer}/cards/{id}": {
+      rename: param: "customer": *"customer_id"
+      op: create: method: *POST
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+    path: "/v1/issuing/cards": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/issuing/cards/{card}": {
+      rename: param: "card": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/test_helpers/issuing/cards/{card}/shipping/deliver": {
+      rename: param: "card": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/issuing/cards/{card}/shipping/fail": {
+      rename: param: "card": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/issuing/cards/{card}/shipping/return": {
+      rename: param: "card": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/issuing/cards/{card}/shipping/ship": {
+      rename: param: "card": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/issuing/cards/{card}/shipping/submit": {
+      rename: param: "card": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: cardholder: {
+    path: "/v1/issuing/cardholders": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/issuing/cardholders/{cardholder}": {
+      rename: param: "cardholder": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: cash_balance: {
+    path: "/v1/customers/{customer}/cash_balance": {
+      rename: param: "customer": *"customer_id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: cash_balance_transaction: {
+    path: "/v1/customers/{customer}/cash_balance_transactions": {
+      rename: param: "customer": *"customer_id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/customers/{customer}/cash_balance_transactions/{transaction}": {
+      rename: param: "customer": *"customer_id"
+      rename: param: "transaction": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: charge: {
+    path: "/v1/charges": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/charges/{charge}": {
+      rename: param: "charge": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/charges/{charge}/capture": {
+      action: "capture": {}
+      rename: param: "charge": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/charges/{charge}/refund": {
+      action: "refund": {}
+      rename: param: "charge": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: configuration: {
+    path: "/v1/billing_portal/configurations": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/billing_portal/configurations/{configuration}": {
+      rename: param: "configuration": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/terminal/configurations": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/terminal/configurations/{configuration}": {
+      rename: param: "configuration": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: confirmation_token: {
+    path: "/v1/confirmation_tokens/{confirmation_token}": {
+      rename: param: "confirmation_token": *"id"
+      op: load: method: *GET
+    }
+    path: "/v1/test_helpers/confirmation_tokens": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: connection_token: {
+    path: "/v1/terminal/connection_tokens": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: country_spec: {
+    path: "/v1/country_specs": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/country_specs/{country}": {
+      rename: param: "country": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: coupon: {
+    path: "/v1/coupons": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/coupons/{coupon}": {
+      rename: param: "coupon": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: credit_balance_summary: {
+    path: "/v1/billing/credit_balance_summary": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: credit_balance_transaction: {
+    path: "/v1/billing/credit_balance_transactions": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/billing/credit_balance_transactions/{id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: credit_grant: {
+    path: "/v1/billing/credit_grants": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/billing/credit_grants/{id}": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/billing/credit_grants/{id}/expire": {
+      action: "expire": {}
+      op: create: method: *POST
+    }
+    path: "/v1/billing/credit_grants/{id}/void": {
+      action: "void": {}
+      op: create: method: *POST
+    }
+  }
+
+  entity: credit_note: {
+    path: "/v1/credit_notes": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/credit_notes/preview": {
+      action: "preview": {}
+      op: list: method: *GET
+    }
+    path: "/v1/credit_notes/{id}": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/credit_notes/{id}/void": {
+      action: "void": {}
+      op: create: method: *POST
+    }
+  }
+
+  entity: credit_note_line: {
+    path: "/v1/credit_notes/{credit_note}/lines": {
+      rename: param: "credit_note": *"id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: credit_reversal: {
+    path: "/v1/treasury/credit_reversals": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/treasury/credit_reversals/{credit_reversal}": {
+      rename: param: "credit_reversal": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: customer: {
+    path: "/v1/customers": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/customers/{customer}": {
+      rename: param: "customer": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: customer_balance_transaction: {
+    path: "/v1/customers/{customer}/balance_transactions": {
+      rename: param: "customer": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/customers/{customer}/balance_transactions/{transaction}": {
+      rename: param: "customer": *"customer_id"
+      rename: param: "transaction": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: customer_session: {
+    path: "/v1/customer_sessions": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: debit_reversal: {
+    path: "/v1/treasury/debit_reversals": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/treasury/debit_reversals/{debit_reversal}": {
+      rename: param: "debit_reversal": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: deleted_account: {
+    path: "/v1/accounts/{account}": {
+      rename: param: "account": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: deleted_apple_pay_domain: {
+    path: "/v1/apple_pay/domains/{domain}": {
+      rename: param: "domain": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: deleted_coupon: {
+    path: "/v1/coupons/{coupon}": {
+      rename: param: "coupon": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: deleted_external_account: {
+    path: "/v1/accounts/{account}/bank_accounts/{id}": {
+      rename: param: "account": *"account_id"
+      op: remove: method: *DELETE
+    }
+    path: "/v1/accounts/{account}/external_accounts/{id}": {
+      rename: param: "account": *"account_id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: deleted_invoiceitem: {
+    path: "/v1/invoiceitems/{invoiceitem}": {
+      rename: param: "invoiceitem": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: deleted_person: {
+    path: "/v1/accounts/{account}/people/{person}": {
+      rename: param: "account": *"account_id"
+      rename: param: "person": *"id"
+      op: remove: method: *DELETE
+    }
+    path: "/v1/accounts/{account}/persons/{person}": {
+      rename: param: "account": *"account_id"
+      rename: param: "person": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: deleted_plan: {
+    path: "/v1/plans/{plan}": {
+      rename: param: "plan": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: deleted_product_feature: {
+    path: "/v1/products/{product}/features/{id}": {
+      rename: param: "product": *"product_id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: deleted_subscription_item: {
+    path: "/v1/subscription_items/{item}": {
+      rename: param: "item": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: deleted_webhook_endpoint: {
+    path: "/v1/webhook_endpoints/{webhook_endpoint}": {
+      rename: param: "webhook_endpoint": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: discount: {
+    path: "/v1/customers/{customer}/discount": {
+      rename: param: "customer": *"customer_id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+    path: "/v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount": {
+      rename: param: "customer": *"customer_id"
+      rename: param: "subscription_exposed_id": *"subscription_id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+    path: "/v1/subscriptions/{subscription_exposed_id}/discount": {
+      rename: param: "subscription_exposed_id": *"subscription_id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: dispute: {
+    path: "/v1/charges/{charge}/dispute": {
+      rename: param: "charge": *"charge_id"
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/v1/charges/{charge}/dispute/close": {
+      action: "close": {}
+      rename: param: "charge": *"charge_id"
+      op: create: method: *POST
+    }
+    path: "/v1/disputes": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/disputes/{dispute}": {
+      rename: param: "dispute": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/disputes/{dispute}/close": {
+      action: "close": {}
+      rename: param: "dispute": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/issuing/disputes": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/issuing/disputes/{dispute}": {
+      rename: param: "dispute": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/issuing/disputes/{dispute}/submit": {
+      action: "submit": {}
+      rename: param: "dispute": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: domain: {
+    path: "/v1/apple_pay/domains": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: early_fraud_warning: {
+    path: "/v1/radar/early_fraud_warnings": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/radar/early_fraud_warnings/{early_fraud_warning}": {
+      rename: param: "early_fraud_warning": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: ephemeral_key: {
+    path: "/v1/ephemeral_keys": {
+      op: create: method: *POST
+    }
+    path: "/v1/ephemeral_keys/{key}": {
+      rename: param: "key": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: event: {
+    path: "/v1/events": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/events/{id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: exchange_rate: {
+    path: "/v1/exchange_rates": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/exchange_rates/{rate_id}": {
+      rename: param: "rate_id": *"id"
+      op: load: method: *GET
+      op: load: transform: res: *("`body.rates`")|top
+    }
+  }
+
+  entity: external_account: {
+    path: "/v1/accounts/{account}/bank_accounts": {
+      rename: param: "account": *"account_id"
+      op: create: method: *POST
+    }
+    path: "/v1/accounts/{account}/bank_accounts/{id}": {
+      rename: param: "account": *"account_id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/accounts/{account}/external_accounts": {
+      rename: param: "account": *"account_id"
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/accounts/{account}/external_accounts/{id}": {
+      rename: param: "account": *"account_id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/external_accounts/{id}": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: feature: {
+    path: "/v1/entitlements/features": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.metadata`")|top
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/entitlements/features/{id}": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.metadata`")|top
+      op: load: method: *GET
+      op: load: transform: res: *("`body.metadata`")|top
+    }
+    path: "/v1/products/{product}/features": {
+      rename: param: "product": *"product_id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: feedback_option: {
+    path: "/v1/billing/feedback_options": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.status_transitions`")|top
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/billing/feedback_options/{id}": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.status_transitions`")|top
+      op: load: method: *GET
+      op: load: transform: res: *("`body.status_transitions`")|top
+    }
+    path: "/v1/billing/feedback_options/{id}/deactivate": {
+      action: "deactivate": {}
+      op: create: method: *POST
+      op: create: transform: res: *("`body.status_transitions`")|top
+    }
+  }
+
+  entity: file: {
+    path: "/v1/files": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.links`")|top
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/files/{file}": {
+      rename: param: "file": *"id"
+      op: load: method: *GET
+      op: load: transform: res: *("`body.links`")|top
+    }
+  }
+
+  entity: file_link: {
+    path: "/v1/file_links": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/file_links/{link}": {
+      rename: param: "link": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: financial_account: {
+    path: "/v1/treasury/financial_accounts": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/treasury/financial_accounts/{financial_account}": {
+      rename: param: "financial_account": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/treasury/financial_accounts/{financial_account}/close": {
+      action: "close": {}
+      rename: param: "financial_account": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: financial_account_feature: {
+    path: "/v1/treasury/financial_accounts/{financial_account}/features": {
+      rename: param: "financial_account": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: fund_cash_balance: {
+    path: "/v1/test_helpers/customers/{customer}/fund_cash_balance": {
+      rename: param: "customer": *"customer_id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: funding_instruction: {
+    path: "/v1/customers/{customer}/funding_instructions": {
+      rename: param: "customer": *"customer_id"
+      op: create: method: *POST
+      op: create: transform: res: *("`body.bank_transfer`")|top
+    }
+  }
+
+  entity: history: {
+    path: "/v1/balance/history": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: inbound_transfer: {
+    path: "/v1/test_helpers/treasury/inbound_transfers/{id}/fail": {
+      action: "fail": {}
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/treasury/inbound_transfers/{id}/return": {
+      action: "return": {}
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/treasury/inbound_transfers/{id}/succeed": {
+      action: "succeed": {}
+      op: create: method: *POST
+    }
+    path: "/v1/treasury/inbound_transfers": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/treasury/inbound_transfers/{id}": {
+      op: load: method: *GET
+    }
+    path: "/v1/treasury/inbound_transfers/{inbound_transfer}/cancel": {
+      action: "cancel": {}
+      rename: param: "inbound_transfer": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: install: {
+    path: "/v1/apps/installs": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/apps/installs/{id}": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/apps/installs/{id}/uninstall": {
+      action: "uninstall": {}
+      op: create: method: *POST
+    }
+  }
+
+  entity: invoice: {
+    path: "/v1/invoices": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/invoices/create_preview": {
+      action: "create_preview": {}
+      op: create: method: *POST
+    }
+    path: "/v1/invoices/{invoice}": {
+      rename: param: "invoice": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+    path: "/v1/invoices/{invoice}/add_lines": {
+      action: "add_line": {}
+      rename: param: "invoice": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/invoices/{invoice}/attach_payment": {
+      action: "attach_payment": {}
+      rename: param: "invoice": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/invoices/{invoice}/finalize": {
+      action: "finalize": {}
+      rename: param: "invoice": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/invoices/{invoice}/mark_uncollectible": {
+      action: "mark_uncollectible": {}
+      rename: param: "invoice": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/invoices/{invoice}/pay": {
+      action: "pay": {}
+      rename: param: "invoice": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/invoices/{invoice}/remove_lines": {
+      action: "remove_line": {}
+      rename: param: "invoice": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/invoices/{invoice}/send": {
+      action: "send": {}
+      rename: param: "invoice": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/invoices/{invoice}/update_lines": {
+      action: "update_line": {}
+      rename: param: "invoice": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/invoices/{invoice}/void": {
+      action: "void": {}
+      rename: param: "invoice": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: invoice_payment: {
+    path: "/v1/invoice_payments": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/invoice_payments/{invoice_payment}": {
+      rename: param: "invoice_payment": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: invoice_rendering_template: {
+    path: "/v1/invoice_rendering_templates": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/invoice_rendering_templates/{template}": {
+      rename: param: "template": *"id"
+      op: load: method: *GET
+      op: load: transform: res: *("`body.metadata`")|top
+    }
+    path: "/v1/invoice_rendering_templates/{template}/archive": {
+      action: "archive": {}
+      op: create: method: *POST
+      op: create: transform: res: *("`body.metadata`")|top
+    }
+    path: "/v1/invoice_rendering_templates/{template}/unarchive": {
+      action: "unarchive": {}
+      op: create: method: *POST
+      op: create: transform: res: *("`body.metadata`")|top
+    }
+  }
+
+  entity: invoiceitem: {
+    path: "/v1/invoiceitems": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/invoiceitems/{invoiceitem}": {
+      rename: param: "invoiceitem": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: line: {
+    path: "/v1/credit_notes/preview/lines": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/invoices/{invoice}/lines": {
+      rename: param: "invoice": *"invoice_id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/invoices/{invoice}/lines/{line_item_id}": {
+      rename: param: "invoice": *"invoice_id"
+      rename: param: "line_item_id": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: line_item: {
+    path: "/v1/checkout/sessions/{session}/line_items": {
+      rename: param: "session": *"session_id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/payment_links/{payment_link}/line_items": {
+      rename: param: "payment_link": *"payment_link_id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/quotes/{quote}/line_items": {
+      rename: param: "quote": *"quote_id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/tax/calculations/{calculation}/line_items": {
+      rename: param: "calculation": *"calculation_id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/tax/transactions/{transaction}/line_items": {
+      rename: param: "transaction": *"transaction_id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: linked_account: {
+    path: "/v1/linked_accounts": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: linked_account_owner: {
+    path: "/v1/linked_accounts/{account}/owners": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: location: {
+    path: "/v1/tax/locations": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.address`")|top
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/tax/locations/{location}": {
+      rename: param: "location": *"id"
+      op: load: method: *GET
+      op: load: transform: res: *("`body.address`")|top
+    }
+    path: "/v1/terminal/locations": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/terminal/locations/{location}": {
+      rename: param: "location": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: login_link: {
+    path: "/v1/accounts/{account}/login_links": {
+      rename: param: "account": *"account_id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: mandate: {
+    path: "/v1/mandates/{mandate}": {
+      rename: param: "mandate": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: meter: {
+    path: "/v1/billing/meters": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/billing/meters/{id}": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/billing/meters/{id}/deactivate": {
+      action: "deactivate": {}
+      op: create: method: *POST
+    }
+    path: "/v1/billing/meters/{id}/reactivate": {
+      action: "reactivate": {}
+      op: create: method: *POST
+    }
+  }
+
+  entity: meter_event: {
+    path: "/v1/billing/meter_events": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.payload`")|top
+    }
+  }
+
+  entity: meter_event_adjustment: {
+    path: "/v1/billing/meter_event_adjustments": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.cancel`")|top
+    }
+  }
+
+  entity: meter_event_summary: {
+    path: "/v1/billing/meters/{id}/event_summaries": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: onboarding_link: {
+    path: "/v1/terminal/onboarding_links": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.link_options`")|top
+    }
+  }
+
+  entity: order: {
+    path: "/v1/climate/orders": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/climate/orders/{order}": {
+      rename: param: "order": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/climate/orders/{order}/cancel": {
+      action: "cancel": {}
+      rename: param: "order": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: outbound_payment: {
+    path: "/v1/test_helpers/treasury/outbound_payments/{id}": {
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/treasury/outbound_payments/{id}/fail": {
+      action: "fail": {}
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/treasury/outbound_payments/{id}/post": {
+      action: "post": {}
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/treasury/outbound_payments/{id}/return": {
+      action: "return": {}
+      op: create: method: *POST
+    }
+    path: "/v1/treasury/outbound_payments": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/treasury/outbound_payments/{id}": {
+      op: load: method: *GET
+    }
+    path: "/v1/treasury/outbound_payments/{id}/cancel": {
+      action: "cancel": {}
+      op: create: method: *POST
+    }
+  }
+
+  entity: outbound_transfer: {
+    path: "/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}": {
+      rename: param: "outbound_transfer": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/fail": {
+      action: "fail": {}
+      rename: param: "outbound_transfer": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/post": {
+      action: "post": {}
+      rename: param: "outbound_transfer": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/treasury/outbound_transfers/{outbound_transfer}/return": {
+      action: "return": {}
+      rename: param: "outbound_transfer": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/treasury/outbound_transfers": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/treasury/outbound_transfers/{outbound_transfer}": {
+      rename: param: "outbound_transfer": *"id"
+      op: load: method: *GET
+    }
+    path: "/v1/treasury/outbound_transfers/{outbound_transfer}/cancel": {
+      action: "cancel": {}
+      rename: param: "outbound_transfer": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: payment_attempt_record: {
+    path: "/v1/payment_attempt_records": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/payment_attempt_records/{id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: payment_evaluation: {
+    path: "/v1/radar/payment_evaluations": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: payment_intent: {
+    path: "/v1/payment_intents": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/payment_intents/{intent}": {
+      rename: param: "intent": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/payment_intents/{intent}/apply_customer_balance": {
+      action: "apply_customer_balance": {}
+      op: create: method: *POST
+    }
+    path: "/v1/payment_intents/{intent}/cancel": {
+      action: "cancel": {}
+      op: create: method: *POST
+    }
+    path: "/v1/payment_intents/{intent}/capture": {
+      action: "capture": {}
+      op: create: method: *POST
+    }
+    path: "/v1/payment_intents/{intent}/confirm": {
+      action: "confirm": {}
+      op: create: method: *POST
+    }
+    path: "/v1/payment_intents/{intent}/increment_authorization": {
+      action: "increment_authorization": {}
+      op: create: method: *POST
+    }
+    path: "/v1/payment_intents/{intent}/verify_microdeposits": {
+      action: "verify_microdeposit": {}
+      op: create: method: *POST
+    }
+  }
+
+  entity: payment_intent_amount_details_line_item: {
+    path: "/v1/payment_intents/{intent}/amount_details_line_items": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: payment_link: {
+    path: "/v1/payment_links": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/payment_links/{payment_link}": {
+      rename: param: "payment_link": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: payment_method: {
+    path: "/v1/customers/{customer}/payment_methods": {
+      rename: param: "customer": *"customer_id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/customers/{customer}/payment_methods/{payment_method}": {
+      rename: param: "customer": *"customer_id"
+      rename: param: "payment_method": *"id"
+      op: load: method: *GET
+    }
+    path: "/v1/payment_methods": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/payment_methods/{payment_method}": {
+      rename: param: "payment_method": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/payment_methods/{payment_method}/attach": {
+      action: "attach": {}
+      rename: param: "payment_method": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/payment_methods/{payment_method}/detach": {
+      action: "detach": {}
+      rename: param: "payment_method": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: payment_method_configuration: {
+    path: "/v1/payment_method_configurations": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/payment_method_configurations/{configuration}": {
+      rename: param: "configuration": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: payment_method_domain: {
+    path: "/v1/payment_method_domains": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/payment_method_domains/{payment_method_domain}": {
+      rename: param: "payment_method_domain": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/payment_method_domains/{payment_method_domain}/validate": {
+      action: "validate": {}
+      rename: param: "payment_method_domain": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: payment_record: {
+    path: "/v1/payment_records": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/payment_records/report_payment": {
+      action: "report_payment": {}
+      op: create: method: *POST
+    }
+    path: "/v1/payment_records/{id}": {
+      op: load: method: *GET
+    }
+    path: "/v1/payment_records/{id}/report_payment_attempt": {
+      action: "report_payment_attempt": {}
+      op: create: method: *POST
+    }
+    path: "/v1/payment_records/{id}/report_payment_attempt_canceled": {
+      action: "report_payment_attempt_canceled": {}
+      op: create: method: *POST
+    }
+    path: "/v1/payment_records/{id}/report_payment_attempt_failed": {
+      action: "report_payment_attempt_failed": {}
+      op: create: method: *POST
+    }
+    path: "/v1/payment_records/{id}/report_payment_attempt_guaranteed": {
+      action: "report_payment_attempt_guaranteed": {}
+      op: create: method: *POST
+    }
+    path: "/v1/payment_records/{id}/report_payment_attempt_informational": {
+      action: "report_payment_attempt_informational": {}
+      op: create: method: *POST
+    }
+    path: "/v1/payment_records/{id}/report_refund": {
+      action: "report_refund": {}
+      op: create: method: *POST
+    }
+  }
+
+  entity: payout: {
+    path: "/v1/payouts": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/payouts/{payout}": {
+      rename: param: "payout": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/payouts/{payout}/cancel": {
+      action: "cancel": {}
+      rename: param: "payout": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/payouts/{payout}/reverse": {
+      action: "reverse": {}
+      rename: param: "payout": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: person: {
+    path: "/v1/accounts/{account}/people": {
+      rename: param: "account": *"account_id"
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/accounts/{account}/people/{person}": {
+      rename: param: "account": *"account_id"
+      rename: param: "person": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/accounts/{account}/persons": {
+      rename: param: "account": *"account_id"
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/accounts/{account}/persons/{person}": {
+      rename: param: "account": *"account_id"
+      rename: param: "person": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: personalization_design: {
+    path: "/v1/issuing/personalization_designs": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/issuing/personalization_designs/{personalization_design}": {
+      rename: param: "personalization_design": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/test_helpers/issuing/personalization_designs/{personalization_design}/activate": {
+      action: "activate": {}
+      rename: param: "personalization_design": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/issuing/personalization_designs/{personalization_design}/deactivate": {
+      action: "deactivate": {}
+      rename: param: "personalization_design": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/issuing/personalization_designs/{personalization_design}/reject": {
+      action: "reject": {}
+      rename: param: "personalization_design": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: physical_bundle: {
+    path: "/v1/issuing/physical_bundles": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/issuing/physical_bundles/{physical_bundle}": {
+      rename: param: "physical_bundle": *"id"
+      op: load: method: *GET
+      op: load: transform: res: *("`body.features`")|top
+    }
+  }
+
+  entity: plan: {
+    path: "/v1/plans": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/plans/{plan}": {
+      rename: param: "plan": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: price: {
+    path: "/v1/prices": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/prices/{price}": {
+      rename: param: "price": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: product: {
+    path: "/v1/climate/products": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/climate/products/{product}": {
+      rename: param: "product": *"id"
+      op: load: method: *GET
+    }
+    path: "/v1/products": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/products/{id}": {
+      op: create: method: *POST
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: product_feature: {
+    path: "/v1/products/{product}/features": {
+      rename: param: "product": *"id"
+      op: create: method: *POST
+      op: create: transform: res: *("`body.entitlement_feature`")|top
+    }
+    path: "/v1/products/{product}/features/{id}": {
+      rename: param: "product": *"product_id"
+      op: load: method: *GET
+      op: load: transform: res: *("`body.entitlement_feature`")|top
+    }
+  }
+
+  entity: promotion_code: {
+    path: "/v1/promotion_codes": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/promotion_codes/{promotion_code}": {
+      rename: param: "promotion_code": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: quote: {
+    path: "/v1/quotes": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/quotes/{quote}": {
+      rename: param: "quote": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/quotes/{quote}/accept": {
+      action: "accept": {}
+      rename: param: "quote": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/quotes/{quote}/cancel": {
+      action: "cancel": {}
+      rename: param: "quote": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/quotes/{quote}/finalize": {
+      action: "finalize": {}
+      rename: param: "quote": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: quote_computed_upfront_line_item: {
+    path: "/v1/quotes/{quote}/computed_upfront_line_items": {
+      rename: param: "quote": *"id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: quote_pdf: {
+    path: "/v1/quotes/{quote}/pdf": {
+      rename: param: "quote": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: reader: {
+    path: "/v1/terminal/readers": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/terminal/readers/{reader}": {
+      rename: param: "reader": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+    path: "/v1/terminal/readers/{reader}/cancel_action": {
+      action: "cancel_action": {}
+      rename: param: "reader": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/terminal/readers/{reader}/collect_inputs": {
+      action: "collect_input": {}
+      rename: param: "reader": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/terminal/readers/{reader}/collect_payment_method": {
+      action: "collect_payment_method": {}
+      rename: param: "reader": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/terminal/readers/{reader}/confirm_payment_intent": {
+      action: "confirm_payment_intent": {}
+      rename: param: "reader": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/terminal/readers/{reader}/process_payment_intent": {
+      action: "process_payment_intent": {}
+      rename: param: "reader": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/terminal/readers/{reader}/process_setup_intent": {
+      action: "process_setup_intent": {}
+      rename: param: "reader": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/terminal/readers/{reader}/refund_payment": {
+      action: "refund_payment": {}
+      rename: param: "reader": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/terminal/readers/{reader}/set_reader_display": {
+      action: "set_reader_display": {}
+      rename: param: "reader": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/terminal/readers/{reader}/present_payment_method": {
+      action: "present_payment_method": {}
+      rename: param: "reader": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/terminal/readers/{reader}/succeed_input_collection": {
+      action: "succeed_input_collection": {}
+      rename: param: "reader": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/terminal/readers/{reader}/timeout_input_collection": {
+      action: "timeout_input_collection": {}
+      rename: param: "reader": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: received_credit: {
+    path: "/v1/test_helpers/treasury/received_credits": {
+      op: create: method: *POST
+    }
+    path: "/v1/treasury/received_credits": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/treasury/received_credits/{id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: received_debit: {
+    path: "/v1/test_helpers/treasury/received_debits": {
+      op: create: method: *POST
+    }
+    path: "/v1/treasury/received_debits": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/treasury/received_debits/{id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: refund: {
+    path: "/v1/application_fees/{fee}/refunds/{id}": {
+      rename: param: "fee": *"application_fee_id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/application_fees/{id}/refunds": {
+      rename: param: "id": *"application_fee_id"
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/charges/{charge}/refunds": {
+      rename: param: "charge": *"charge_id"
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/charges/{charge}/refunds/{refund}": {
+      rename: param: "charge": *"charge_id"
+      rename: param: "refund": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/refunds": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/refunds/{refund}": {
+      rename: param: "refund": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/refunds/{refund}/cancel": {
+      action: "cancel": {}
+      rename: param: "refund": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/terminal/refunds": {
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/refunds/{refund}/expire": {
+      action: "expire": {}
+      rename: param: "refund": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: registration: {
+    path: "/v1/tax/registrations": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.country_options`")|top
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/tax/registrations/{id}": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.country_options`")|top
+      op: load: method: *GET
+      op: load: transform: res: *("`body.country_options`")|top
+    }
+  }
+
+  entity: report_run: {
+    path: "/v1/reporting/report_runs": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/reporting/report_runs/{report_run}": {
+      rename: param: "report_run": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: report_type: {
+    path: "/v1/reporting/report_types": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/reporting/report_types/{report_type}": {
+      rename: param: "report_type": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: request: {
+    path: "/v1/forwarding/requests": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/forwarding/requests/{id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: reversal: {
+    path: "/v1/transfers/{id}/reversals": {
+      rename: param: "id": *"transfer_id"
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/transfers/{transfer}/reversals/{id}": {
+      rename: param: "transfer": *"transfer_id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: review: {
+    path: "/v1/reviews": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/reviews/{review}": {
+      rename: param: "review": *"id"
+      op: load: method: *GET
+    }
+    path: "/v1/reviews/{review}/approve": {
+      action: "approve": {}
+      rename: param: "review": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: scheduled_query_run: {
+    path: "/v1/sigma/scheduled_query_runs": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/sigma/scheduled_query_runs/{scheduled_query_run}": {
+      rename: param: "scheduled_query_run": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: search: {
+    path: "/v1/charges/search": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/customers/search": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/invoices/search": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/payment_intents/search": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/prices/search": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/products/search": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/subscriptions/search": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: secret: {
+    path: "/v1/apps/secrets": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.scope`")|top
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/apps/secrets/delete": {
+      action: "delete": {}
+      op: create: method: *POST
+      op: create: transform: res: *("`body.scope`")|top
+    }
+    path: "/v1/apps/secrets/find": {
+      action: "find": {}
+      op: load: method: *GET
+      op: load: transform: res: *("`body.scope`")|top
+    }
+  }
+
+  entity: session: {
+    path: "/v1/billing_portal/sessions": {
+      op: create: method: *POST
+    }
+    path: "/v1/checkout/sessions": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/checkout/sessions/{session}": {
+      rename: param: "session": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/checkout/sessions/{session}/expire": {
+      action: "expire": {}
+      rename: param: "session": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/financial_connections/sessions": {
+      op: create: method: *POST
+    }
+    path: "/v1/financial_connections/sessions/{session}": {
+      rename: param: "session": *"id"
+      op: load: method: *GET
+    }
+    path: "/v1/link_account_sessions": {
+      op: create: method: *POST
+    }
+    path: "/v1/link_account_sessions/{session}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: setting: {
+    path: "/v1/tax/settings": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: settlement: {
+    path: "/v1/issuing/settlements/{settlement}": {
+      rename: param: "settlement": *"id"
+      op: create: method: *POST
+      op: create: transform: res: *("`body.metadata`")|top
+      op: load: method: *GET
+      op: load: transform: res: *("`body.metadata`")|top
+    }
+    path: "/v1/test_helpers/issuing/settlements": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.metadata`")|top
+    }
+    path: "/v1/test_helpers/issuing/settlements/{settlement}/complete": {
+      action: "complete": {}
+      rename: param: "settlement": *"id"
+      op: create: method: *POST
+      op: create: transform: res: *("`body.metadata`")|top
+    }
+  }
+
+  entity: setup_attempt: {
+    path: "/v1/setup_attempts": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+  }
+
+  entity: setup_intent: {
+    path: "/v1/setup_intents": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/setup_intents/{intent}": {
+      rename: param: "intent": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/setup_intents/{intent}/cancel": {
+      action: "cancel": {}
+      op: create: method: *POST
+    }
+    path: "/v1/setup_intents/{intent}/confirm": {
+      action: "confirm": {}
+      op: create: method: *POST
+    }
+    path: "/v1/setup_intents/{intent}/verify_microdeposits": {
+      action: "verify_microdeposit": {}
+      op: create: method: *POST
+    }
+  }
+
+  entity: shipping_rate: {
+    path: "/v1/shipping_rates": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/shipping_rates/{shipping_rate_token}": {
+      rename: param: "shipping_rate_token": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: sigma_api_query: {
+    path: "/v1/sigma/saved_queries/{id}": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: source: {
+    path: "/v1/customers/{customer}/sources": {
+      rename: param: "customer": *"customer_id"
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/customers/{customer}/sources/{id}": {
+      rename: param: "customer": *"customer_id"
+      op: create: method: *POST
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+    path: "/v1/sources": {
+      op: create: method: *POST
+    }
+    path: "/v1/sources/{source}": {
+      rename: param: "source": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/sources/{source}/verify": {
+      action: "verify": {}
+      rename: param: "source": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: source_mandate_notification: {
+    path: "/v1/sources/{source}/mandate_notifications/{mandate_notification}": {
+      rename: param: "mandate_notification": *"id"
+      rename: param: "source": *"source_id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: source_transaction: {
+    path: "/v1/sources/{source}/source_transactions": {
+      rename: param: "source": *"id"
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/sources/{source}/source_transactions/{source_transaction}": {
+      rename: param: "source": *"source_id"
+      rename: param: "source_transaction": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: subscription: {
+    path: "/v1/customers/{customer}/subscriptions": {
+      rename: param: "customer": *"customer_id"
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/customers/{customer}/subscriptions/{subscription_exposed_id}": {
+      rename: param: "customer": *"customer_id"
+      rename: param: "subscription_exposed_id": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+    path: "/v1/subscriptions": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/subscriptions/{subscription_exposed_id}": {
+      rename: param: "subscription_exposed_id": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+    path: "/v1/subscriptions/{subscription}/migrate": {
+      action: "migrate": {}
+      rename: param: "subscription": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/subscriptions/{subscription}/pause": {
+      action: "pause": {}
+      rename: param: "subscription": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/subscriptions/{subscription}/resume": {
+      action: "resume": {}
+      rename: param: "subscription": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: subscription_item: {
+    path: "/v1/subscription_items": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/subscription_items/{item}": {
+      rename: param: "item": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: subscription_schedule: {
+    path: "/v1/subscription_schedules": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/subscription_schedules/{schedule}": {
+      rename: param: "schedule": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/subscription_schedules/{schedule}/cancel": {
+      action: "cancel": {}
+      op: create: method: *POST
+    }
+    path: "/v1/subscription_schedules/{schedule}/release": {
+      action: "release": {}
+      op: create: method: *POST
+    }
+  }
+
+  entity: supplier: {
+    path: "/v1/climate/suppliers": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/climate/suppliers/{supplier}": {
+      rename: param: "supplier": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: tax_code: {
+    path: "/v1/tax_codes": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/tax_codes/{id}": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.requirements`")|top
+    }
+  }
+
+  entity: tax_id: {
+    path: "/v1/customers/{customer}/tax_ids": {
+      rename: param: "customer": *"customer_id"
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/customers/{customer}/tax_ids/{id}": {
+      rename: param: "customer": *"customer_id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+    path: "/v1/tax_ids": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/tax_ids/{id}": {
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: tax_rate: {
+    path: "/v1/tax_rates": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/tax_rates/{tax_rate}": {
+      rename: param: "tax_rate": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: test_clock: {
+    path: "/v1/test_helpers/test_clocks": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.status_details`")|top
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/test_helpers/test_clocks/{test_clock}": {
+      rename: param: "test_clock": *"id"
+      op: load: method: *GET
+      op: load: transform: res: *("`body.status_details`")|top
+      op: remove: method: *DELETE
+    }
+    path: "/v1/test_helpers/test_clocks/{test_clock}/advance": {
+      action: "advance": {}
+      rename: param: "test_clock": *"id"
+      op: create: method: *POST
+      op: create: transform: res: *("`body.status_details`")|top
+    }
+  }
+
+  entity: token: {
+    path: "/v1/issuing/tokens": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/issuing/tokens/{token}": {
+      rename: param: "token": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/tokens": {
+      op: create: method: *POST
+    }
+    path: "/v1/tokens/{token}": {
+      rename: param: "token": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: topup: {
+    path: "/v1/topups": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/topups/{topup}": {
+      rename: param: "topup": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/topups/{topup}/cancel": {
+      action: "cancel": {}
+      rename: param: "topup": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: transaction: {
+    path: "/v1/financial_connections/transactions": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/financial_connections/transactions/{transaction}": {
+      rename: param: "transaction": *"id"
+      op: load: method: *GET
+      op: load: transform: res: *("`body.status_transitions`")|top
+    }
+    path: "/v1/issuing/transactions": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/issuing/transactions/{transaction}": {
+      rename: param: "transaction": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/tax/transactions/create_from_calculation": {
+      action: "create_from_calculation": {}
+      op: create: method: *POST
+    }
+    path: "/v1/tax/transactions/create_reversal": {
+      action: "create_reversal": {}
+      op: create: method: *POST
+    }
+    path: "/v1/tax/transactions/{transaction}": {
+      rename: param: "transaction": *"id"
+      op: load: method: *GET
+    }
+    path: "/v1/test_helpers/issuing/transactions/create_force_capture": {
+      action: "create_force_capture": {}
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/issuing/transactions/create_unlinked_refund": {
+      action: "create_unlinked_refund": {}
+      op: create: method: *POST
+    }
+    path: "/v1/test_helpers/issuing/transactions/{transaction}/refund": {
+      action: "refund": {}
+      rename: param: "transaction": *"id"
+      op: create: method: *POST
+    }
+    path: "/v1/treasury/transactions": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/treasury/transactions/{id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: transaction_entry: {
+    path: "/v1/treasury/transaction_entries": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/treasury/transaction_entries/{id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: transfer: {
+    path: "/v1/transfers": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/transfers/{transfer}": {
+      rename: param: "transfer": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: trial_offer: {
+    path: "/v1/product_catalog/trial_offers": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/product_catalog/trial_offers/{id}": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+  entity: value_list: {
+    path: "/v1/radar/value_lists": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/radar/value_lists/{value_list}": {
+      rename: param: "value_list": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: value_list_item: {
+    path: "/v1/radar/value_list_items": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/radar/value_list_items/{item}": {
+      rename: param: "item": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: verification_report: {
+    path: "/v1/identity/verification_reports": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/identity/verification_reports/{report}": {
+      rename: param: "report": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: verification_session: {
+    path: "/v1/identity/verification_sessions": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/identity/verification_sessions/{session}": {
+      rename: param: "session": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/v1/identity/verification_sessions/{session}/cancel": {
+      action: "cancel": {}
+      op: create: method: *POST
+    }
+    path: "/v1/identity/verification_sessions/{session}/redact": {
+      action: "redact": {}
+      op: create: method: *POST
+    }
+  }
+
+  entity: webhook_endpoint: {
+    path: "/v1/webhook_endpoints": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/v1/webhook_endpoints/{webhook_endpoint}": {
+      rename: param: "webhook_endpoint": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+  }
+
+}

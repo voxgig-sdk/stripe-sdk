@@ -1,0 +1,107 @@
+{
+  "existing": {
+    "coupon": {
+      "COUPON00": {
+        "amount_off": 170,
+        "applies_to": {},
+        "created": 172,
+        "currency": "sad",
+        "currency_options": {},
+        "duration": "saf",
+        "duration_in_months": 176,
+        "id": "COUPON00",
+        "livemode": true,
+        "max_redemptions": 179,
+        "metadata": {},
+        "name": "sb5",
+        "object": "sb6",
+        "percent_off": 183,
+        "redeem_by": 184,
+        "times_redeemed": 185,
+        "valid": true
+      },
+      "COUPON01": {
+        "amount_off": 340,
+        "applies_to": {},
+        "created": 342,
+        "currency": "s157",
+        "currency_options": {},
+        "duration": "s159",
+        "duration_in_months": 346,
+        "id": "COUPON01",
+        "livemode": true,
+        "max_redemptions": 349,
+        "metadata": {},
+        "name": "s15f",
+        "object": "s160",
+        "percent_off": 353,
+        "redeem_by": 354,
+        "times_redeemed": 355,
+        "valid": true
+      },
+      "COUPON02": {
+        "amount_off": 510,
+        "applies_to": {},
+        "created": 512,
+        "currency": "s201",
+        "currency_options": {},
+        "duration": "s203",
+        "duration_in_months": 516,
+        "id": "COUPON02",
+        "livemode": true,
+        "max_redemptions": 519,
+        "metadata": {},
+        "name": "s209",
+        "object": "s20a",
+        "percent_off": 523,
+        "redeem_by": 524,
+        "times_redeemed": 525,
+        "valid": true
+      }
+    }
+  },
+  "new": {
+    "coupon": {
+      "coupon_ref01": {
+        "amount_off": 680,
+        "applies_to": {},
+        "created": 682,
+        "currency": "s2ab",
+        "currency_options": {},
+        "duration": "s2ad",
+        "duration_in_months": 686,
+        "livemode": true,
+        "max_redemptions": 689,
+        "metadata": {},
+        "name": "s2b3",
+        "object": "s2b4",
+        "percent_off": 693,
+        "redeem_by": 694,
+        "times_redeemed": 695,
+        "valid": true
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/coupons/{coupon}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/coupons": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/coupons": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/coupons/{coupon}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

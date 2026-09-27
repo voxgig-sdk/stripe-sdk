@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "deleted_subscription_item": {
+      "DELETED_SUBSCRIPTION_ITEM00": {
+        "id": "DELETED_SUBSCRIPTION_ITEM00"
+      },
+      "DELETED_SUBSCRIPTION_ITEM01": {
+        "id": "DELETED_SUBSCRIPTION_ITEM01"
+      },
+      "DELETED_SUBSCRIPTION_ITEM02": {
+        "id": "DELETED_SUBSCRIPTION_ITEM02"
+      }
+    }
+  },
+  "new": {
+    "deleted_subscription_item": {
+      "deleted_subscription_item_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /v1/subscription_items/{item}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

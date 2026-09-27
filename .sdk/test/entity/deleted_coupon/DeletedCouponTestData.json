@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "deleted_coupon": {
+      "DELETED_COUPON00": {
+        "id": "DELETED_COUPON00"
+      },
+      "DELETED_COUPON01": {
+        "id": "DELETED_COUPON01"
+      },
+      "DELETED_COUPON02": {
+        "id": "DELETED_COUPON02"
+      }
+    }
+  },
+  "new": {
+    "deleted_coupon": {
+      "deleted_coupon_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /v1/coupons/{coupon}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

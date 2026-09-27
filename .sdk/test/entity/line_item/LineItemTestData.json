@@ -1,0 +1,155 @@
+{
+  "existing": {
+    "line_item": {
+      "LINE_ITEM00": {
+        "adjustable_quantity": "sf0",
+        "amount": 241,
+        "amount_discount": 242,
+        "amount_subtotal": 243,
+        "amount_tax": 244,
+        "amount_total": 245,
+        "currency": "sf6",
+        "description": "sf7",
+        "discounts": [],
+        "id": "LINE_ITEM00",
+        "livemode": true,
+        "metadata": {},
+        "object": "sfc",
+        "performance_location": "sfd",
+        "price": 254,
+        "product": "sff",
+        "quantity": 256,
+        "reference": "s101",
+        "reversal": "s102",
+        "tax_behavior": "s103",
+        "tax_breakdown": [],
+        "tax_code": "s105",
+        "taxes": [],
+        "type": "s107",
+        "calculation_id": "CALCULATION01",
+        "payment_link_id": "PAYMENT_LINK01",
+        "quote_id": "QUOTE01",
+        "session_id": "SESSION01",
+        "transaction_id": "TRANSACTION01"
+      },
+      "LINE_ITEM01": {
+        "adjustable_quantity": "s1e0",
+        "amount": 481,
+        "amount_discount": 482,
+        "amount_subtotal": 483,
+        "amount_tax": 484,
+        "amount_total": 485,
+        "currency": "s1e6",
+        "description": "s1e7",
+        "discounts": [],
+        "id": "LINE_ITEM01",
+        "livemode": true,
+        "metadata": {},
+        "object": "s1ec",
+        "performance_location": "s1ed",
+        "price": 494,
+        "product": "s1ef",
+        "quantity": 496,
+        "reference": "s1f1",
+        "reversal": "s1f2",
+        "tax_behavior": "s1f3",
+        "tax_breakdown": [],
+        "tax_code": "s1f5",
+        "taxes": [],
+        "type": "s1f7",
+        "calculation_id": "CALCULATION01",
+        "payment_link_id": "PAYMENT_LINK01",
+        "quote_id": "QUOTE01",
+        "session_id": "SESSION01",
+        "transaction_id": "TRANSACTION01"
+      },
+      "LINE_ITEM02": {
+        "adjustable_quantity": "s2d0",
+        "amount": 721,
+        "amount_discount": 722,
+        "amount_subtotal": 723,
+        "amount_tax": 724,
+        "amount_total": 725,
+        "currency": "s2d6",
+        "description": "s2d7",
+        "discounts": [],
+        "id": "LINE_ITEM02",
+        "livemode": true,
+        "metadata": {},
+        "object": "s2dc",
+        "performance_location": "s2dd",
+        "price": 734,
+        "product": "s2df",
+        "quantity": 736,
+        "reference": "s2e1",
+        "reversal": "s2e2",
+        "tax_behavior": "s2e3",
+        "tax_breakdown": [],
+        "tax_code": "s2e5",
+        "taxes": [],
+        "type": "s2e7",
+        "calculation_id": "CALCULATION01",
+        "payment_link_id": "PAYMENT_LINK01",
+        "quote_id": "QUOTE01",
+        "session_id": "SESSION01",
+        "transaction_id": "TRANSACTION01"
+      }
+    }
+  },
+  "new": {
+    "line_item": {
+      "line_item_ref01": {
+        "adjustable_quantity": "s3c0",
+        "amount": 961,
+        "amount_discount": 962,
+        "amount_subtotal": 963,
+        "amount_tax": 964,
+        "amount_total": 965,
+        "currency": "s3c6",
+        "description": "s3c7",
+        "discounts": [],
+        "livemode": true,
+        "metadata": {},
+        "object": "s3cc",
+        "performance_location": "s3cd",
+        "price": 974,
+        "product": "s3cf",
+        "quantity": 976,
+        "reference": "s3d1",
+        "reversal": "s3d2",
+        "tax_behavior": "s3d3",
+        "tax_breakdown": [],
+        "tax_code": "s3d5",
+        "taxes": [],
+        "type": "s3d7"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/tax/calculations/{calculation}/line_items": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/payment_links/{payment_link}/line_items": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/quotes/{quote}/line_items": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/checkout/sessions/{session}/line_items": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/tax/transactions/{transaction}/line_items": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

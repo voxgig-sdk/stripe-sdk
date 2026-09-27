@@ -1,0 +1,26 @@
+# BasicPaymentIntentAmountDetailsLineItemFlow
+
+main: kit: flow: BasicPaymentIntentAmountDetailsLineItemFlow:
+{
+  entity: "payment_intent_amount_details_line_item",
+  kind: "basic",
+  name: "BasicPaymentIntentAmountDetailsLineItemFlow",
+  step: [
+    {
+      m: {
+        intent: "intent01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "payment_intent_amount_details_line_item_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPaymentIntentAmountDetailsLineItemFlow"
+}

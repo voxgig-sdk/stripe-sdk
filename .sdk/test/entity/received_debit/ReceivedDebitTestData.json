@@ -1,0 +1,98 @@
+{
+  "existing": {
+    "received_debit": {
+      "RECEIVED_DEBIT00": {
+        "amount": 160,
+        "created": 161,
+        "currency": "sa2",
+        "description": "sa3",
+        "failure_code": "sa4",
+        "financial_account": "sa5",
+        "hosted_regulatory_receipt_url": "sa6",
+        "id": "RECEIVED_DEBIT00",
+        "initiating_payment_method_details": {},
+        "linked_flows": {},
+        "livemode": true,
+        "network": "sab",
+        "object": "sac",
+        "reversal_details": "sad",
+        "status": "sae",
+        "transaction": "saf"
+      },
+      "RECEIVED_DEBIT01": {
+        "amount": 320,
+        "created": 321,
+        "currency": "s142",
+        "description": "s143",
+        "failure_code": "s144",
+        "financial_account": "s145",
+        "hosted_regulatory_receipt_url": "s146",
+        "id": "RECEIVED_DEBIT01",
+        "initiating_payment_method_details": {},
+        "linked_flows": {},
+        "livemode": true,
+        "network": "s14b",
+        "object": "s14c",
+        "reversal_details": "s14d",
+        "status": "s14e",
+        "transaction": "s14f"
+      },
+      "RECEIVED_DEBIT02": {
+        "amount": 480,
+        "created": 481,
+        "currency": "s1e2",
+        "description": "s1e3",
+        "failure_code": "s1e4",
+        "financial_account": "s1e5",
+        "hosted_regulatory_receipt_url": "s1e6",
+        "id": "RECEIVED_DEBIT02",
+        "initiating_payment_method_details": {},
+        "linked_flows": {},
+        "livemode": true,
+        "network": "s1eb",
+        "object": "s1ec",
+        "reversal_details": "s1ed",
+        "status": "s1ee",
+        "transaction": "s1ef"
+      }
+    }
+  },
+  "new": {
+    "received_debit": {
+      "received_debit_ref01": {
+        "amount": 640,
+        "created": 641,
+        "currency": "s282",
+        "description": "s283",
+        "failure_code": "s284",
+        "financial_account": "s285",
+        "hosted_regulatory_receipt_url": "s286",
+        "initiating_payment_method_details": {},
+        "linked_flows": {},
+        "livemode": true,
+        "network": "s28b",
+        "object": "s28c",
+        "reversal_details": "s28d",
+        "status": "s28e",
+        "transaction": "s28f"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/test_helpers/treasury/received_debits": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/treasury/received_debits": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/treasury/received_debits/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

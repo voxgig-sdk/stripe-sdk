@@ -1,0 +1,48 @@
+{
+  "existing": {
+    "sigma_api_query": {
+      "SIGMA_API_QUERY00": {
+        "created": 60,
+        "id": "SIGMA_API_QUERY00",
+        "livemode": true,
+        "name": "s3f",
+        "object": "s40",
+        "sql": "s41"
+      },
+      "SIGMA_API_QUERY01": {
+        "created": 120,
+        "id": "SIGMA_API_QUERY01",
+        "livemode": true,
+        "name": "s7b",
+        "object": "s7c",
+        "sql": "s7d"
+      },
+      "SIGMA_API_QUERY02": {
+        "created": 180,
+        "id": "SIGMA_API_QUERY02",
+        "livemode": true,
+        "name": "sb7",
+        "object": "sb8",
+        "sql": "sb9"
+      }
+    }
+  },
+  "new": {
+    "sigma_api_query": {
+      "sigma_api_query_ref01": {
+        "created": 240,
+        "livemode": true,
+        "name": "sf3",
+        "object": "sf4",
+        "sql": "sf5"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/sigma/saved_queries/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

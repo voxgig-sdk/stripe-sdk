@@ -1,0 +1,40 @@
+# BasicApplePayDomainFlow
+
+main: kit: flow: BasicApplePayDomainFlow:
+{
+  entity: "apple_pay_domain",
+  kind: "basic",
+  name: "BasicApplePayDomainFlow",
+  step: [
+    {
+      i: {
+        ref: "apple_pay_domain_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "apple_pay_domain_ref01",
+        srcdatavar: "apple_pay_domain_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "apple_pay_domain01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-apple_pay_domain_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicApplePayDomainFlow"
+}

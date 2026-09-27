@@ -1,0 +1,40 @@
+# BasicCalculationFlow
+
+main: kit: flow: BasicCalculationFlow:
+{
+  entity: "calculation",
+  kind: "basic",
+  name: "BasicCalculationFlow",
+  step: [
+    {
+      i: {
+        ref: "calculation_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "calculation_ref01",
+        srcdatavar: "calculation_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "calculation01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-calculation_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCalculationFlow"
+}

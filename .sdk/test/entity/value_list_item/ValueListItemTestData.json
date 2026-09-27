@@ -1,0 +1,67 @@
+{
+  "existing": {
+    "value_list_item": {
+      "VALUE_LIST_ITEM00": {
+        "created": 70,
+        "created_by": "s47",
+        "id": "VALUE_LIST_ITEM00",
+        "livemode": false,
+        "object": "s4a",
+        "value": "s4b",
+        "value_list": "s4c"
+      },
+      "VALUE_LIST_ITEM01": {
+        "created": 140,
+        "created_by": "s8d",
+        "id": "VALUE_LIST_ITEM01",
+        "livemode": false,
+        "object": "s90",
+        "value": "s91",
+        "value_list": "s92"
+      },
+      "VALUE_LIST_ITEM02": {
+        "created": 210,
+        "created_by": "sd3",
+        "id": "VALUE_LIST_ITEM02",
+        "livemode": false,
+        "object": "sd6",
+        "value": "sd7",
+        "value_list": "sd8"
+      }
+    }
+  },
+  "new": {
+    "value_list_item": {
+      "value_list_item_ref01": {
+        "created": 280,
+        "created_by": "s119",
+        "livemode": false,
+        "object": "s11c",
+        "value": "s11d",
+        "value_list": "s11e"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/radar/value_list_items": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/radar/value_list_items": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/radar/value_list_items/{item}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /v1/radar/value_list_items/{item}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

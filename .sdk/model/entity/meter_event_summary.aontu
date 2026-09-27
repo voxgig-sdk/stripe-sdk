@@ -1,0 +1,189 @@
+# Entity: meter_event_summary
+
+main: kit: entity: meter_event_summary: {
+
+  alias: field: {}
+
+  fields: {
+    aggregated_value: {
+      h: "Aggregated Value"
+      n: "aggregated_value"
+      r: true
+      sh: "Aggregated value of all the events within `start_time` (inclusive) and `end_time` (inclusive)."
+      t: "`$NUMBER`"
+    }
+    end_time: {
+      fo: "unix-time"
+      h: "End Time"
+      n: "end_time"
+      r: true
+      sh: "End timestamp for this event summary (exclusive)."
+      t: "`$INTEGER`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    meter: {
+      h: "Meter"
+      n: "meter"
+      r: true
+      sh: "The meter associated with this event summary."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    start_time: {
+      fo: "unix-time"
+      h: "Start Time"
+      n: "start_time"
+      r: true
+      sh: "Start timestamp for this event summary (inclusive)."
+      t: "`$INTEGER`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "meter_event_summary"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/billing/meters/{id}/event_summaries"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "customer"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "end_time"
+                or: "end_time"
+                r: true
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "start_time"
+                or: "start_time"
+                r: true
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "value_grouping_window"
+                or: "value_grouping_window"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/billing/meters/{id}/event_summaries"
+          q: {
+            exist: [
+              "customer"
+              "end_time"
+              "ending_before"
+              "expand"
+              "id"
+              "limit"
+              "start_time"
+              "starting_after"
+              "value_grouping_window"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "billing"
+            }
+            {
+              lit: "meters"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "event_summaries"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

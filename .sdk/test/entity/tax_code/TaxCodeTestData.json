@@ -1,0 +1,49 @@
+{
+  "existing": {
+    "tax_code": {
+      "TAX_CODE00": {
+        "description": "s32",
+        "id": "TAX_CODE00",
+        "name": "s34",
+        "object": "s35",
+        "requirements": "s36"
+      },
+      "TAX_CODE01": {
+        "description": "s64",
+        "id": "TAX_CODE01",
+        "name": "s66",
+        "object": "s67",
+        "requirements": "s68"
+      },
+      "TAX_CODE02": {
+        "description": "s96",
+        "id": "TAX_CODE02",
+        "name": "s98",
+        "object": "s99",
+        "requirements": "s9a"
+      }
+    }
+  },
+  "new": {
+    "tax_code": {
+      "tax_code_ref01": {
+        "description": "sc8",
+        "name": "sca",
+        "object": "scb",
+        "requirements": "scc"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/tax_codes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/tax_codes/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

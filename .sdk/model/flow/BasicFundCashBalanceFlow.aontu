@@ -1,0 +1,22 @@
+# BasicFundCashBalanceFlow
+
+main: kit: flow: BasicFundCashBalanceFlow:
+{
+  entity: "fund_cash_balance",
+  kind: "basic",
+  name: "BasicFundCashBalanceFlow",
+  step: [
+    {
+      i: {
+        ref: "fund_cash_balance_ref01"
+      }
+
+      m: {
+        customer_id: "customer01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicFundCashBalanceFlow"
+}

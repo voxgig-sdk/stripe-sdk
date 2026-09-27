@@ -1,0 +1,173 @@
+{
+  "existing": {
+    "setup_intent": {
+      "SETUP_INTENT00": {
+        "allowed_payment_method_types": [],
+        "application": "s123",
+        "attach_to_self": true,
+        "automatic_payment_methods": "s125",
+        "cancellation_reason": "s126",
+        "client_secret": "s127",
+        "created": 296,
+        "customer": "s129",
+        "customer_account": "s12a",
+        "description": "s12b",
+        "excluded_payment_method_types": [],
+        "flow_directions": [],
+        "id": "SETUP_INTENT00",
+        "last_setup_error": "s12f",
+        "latest_attempt": "s130",
+        "livemode": false,
+        "managed_payments": "s132",
+        "mandate": "s133",
+        "metadata": {},
+        "next_action": "s135",
+        "object": "s136",
+        "on_behalf_of": "s137",
+        "payment_method": "s138",
+        "payment_method_configuration_details": "s139",
+        "payment_method_options": "s13a",
+        "payment_method_types": [],
+        "single_use_mandate": "s13c",
+        "status": "s13d",
+        "usage": "s13e",
+        "intent": "INTENT01"
+      },
+      "SETUP_INTENT01": {
+        "allowed_payment_method_types": [],
+        "application": "s245",
+        "attach_to_self": true,
+        "automatic_payment_methods": "s247",
+        "cancellation_reason": "s248",
+        "client_secret": "s249",
+        "created": 586,
+        "customer": "s24b",
+        "customer_account": "s24c",
+        "description": "s24d",
+        "excluded_payment_method_types": [],
+        "flow_directions": [],
+        "id": "SETUP_INTENT01",
+        "last_setup_error": "s251",
+        "latest_attempt": "s252",
+        "livemode": false,
+        "managed_payments": "s254",
+        "mandate": "s255",
+        "metadata": {},
+        "next_action": "s257",
+        "object": "s258",
+        "on_behalf_of": "s259",
+        "payment_method": "s25a",
+        "payment_method_configuration_details": "s25b",
+        "payment_method_options": "s25c",
+        "payment_method_types": [],
+        "single_use_mandate": "s25e",
+        "status": "s25f",
+        "usage": "s260",
+        "intent": "INTENT01"
+      },
+      "SETUP_INTENT02": {
+        "allowed_payment_method_types": [],
+        "application": "s367",
+        "attach_to_self": true,
+        "automatic_payment_methods": "s369",
+        "cancellation_reason": "s36a",
+        "client_secret": "s36b",
+        "created": 876,
+        "customer": "s36d",
+        "customer_account": "s36e",
+        "description": "s36f",
+        "excluded_payment_method_types": [],
+        "flow_directions": [],
+        "id": "SETUP_INTENT02",
+        "last_setup_error": "s373",
+        "latest_attempt": "s374",
+        "livemode": false,
+        "managed_payments": "s376",
+        "mandate": "s377",
+        "metadata": {},
+        "next_action": "s379",
+        "object": "s37a",
+        "on_behalf_of": "s37b",
+        "payment_method": "s37c",
+        "payment_method_configuration_details": "s37d",
+        "payment_method_options": "s37e",
+        "payment_method_types": [],
+        "single_use_mandate": "s380",
+        "status": "s381",
+        "usage": "s382",
+        "intent": "INTENT01"
+      }
+    }
+  },
+  "new": {
+    "setup_intent": {
+      "setup_intent_ref01": {
+        "allowed_payment_method_types": [],
+        "application": "s489",
+        "attach_to_self": true,
+        "automatic_payment_methods": "s48b",
+        "cancellation_reason": "s48c",
+        "client_secret": "s48d",
+        "created": 1166,
+        "customer": "s48f",
+        "customer_account": "s490",
+        "description": "s491",
+        "excluded_payment_method_types": [],
+        "flow_directions": [],
+        "last_setup_error": "s495",
+        "latest_attempt": "s496",
+        "livemode": false,
+        "managed_payments": "s498",
+        "mandate": "s499",
+        "metadata": {},
+        "next_action": "s49b",
+        "object": "s49c",
+        "on_behalf_of": "s49d",
+        "payment_method": "s49e",
+        "payment_method_configuration_details": "s49f",
+        "payment_method_options": "s4a0",
+        "payment_method_types": [],
+        "single_use_mandate": "s4a2",
+        "status": "s4a3",
+        "usage": "s4a4"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/setup_intents/{intent}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/setup_intents/{intent}/cancel": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/setup_intents/{intent}/confirm": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/setup_intents/{intent}/verify_microdeposits": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/setup_intents": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/setup_intents": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/setup_intents/{intent}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

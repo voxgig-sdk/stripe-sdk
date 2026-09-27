@@ -1,0 +1,9 @@
+# BasicDeletedApplePayDomainFlow
+
+main: kit: flow: BasicDeletedApplePayDomainFlow:
+{
+  entity: "deleted_apple_pay_domain",
+  kind: "basic",
+  name: "BasicDeletedApplePayDomainFlow",
+  "key$": "BasicDeletedApplePayDomainFlow"
+}

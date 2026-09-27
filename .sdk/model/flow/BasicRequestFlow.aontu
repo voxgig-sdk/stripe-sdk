@@ -1,0 +1,52 @@
+# BasicRequestFlow
+
+main: kit: flow: BasicRequestFlow:
+{
+  entity: "request",
+  kind: "basic",
+  name: "BasicRequestFlow",
+  step: [
+    {
+      i: {
+        ref: "request_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "request_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "request_ref01",
+        srcdatavar: "request_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "request01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-request_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicRequestFlow"
+}

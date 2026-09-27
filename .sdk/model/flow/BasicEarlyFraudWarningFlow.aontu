@@ -1,0 +1,44 @@
+# BasicEarlyFraudWarningFlow
+
+main: kit: flow: BasicEarlyFraudWarningFlow:
+{
+  entity: "early_fraud_warning",
+  kind: "basic",
+  name: "BasicEarlyFraudWarningFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "early_fraud_warning_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "early_fraud_warning_ref01",
+        srcdatavar: "early_fraud_warning_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "early_fraud_warning01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-early_fraud_warning_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicEarlyFraudWarningFlow"
+}

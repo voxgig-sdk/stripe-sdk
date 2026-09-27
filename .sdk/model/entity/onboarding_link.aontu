@@ -1,0 +1,52 @@
+# Entity: onboarding_link
+
+main: kit: entity: onboarding_link: {
+
+  alias: field: {}
+
+  fields: {
+    apple_terms_and_conditions: {
+      h: "Apple Terms And Conditions"
+      n: "apple_terms_and_conditions"
+      r: false
+      sh: "The options associated with the Apple Terms and Conditions link type."
+      t: "`$ANY`"
+    }
+  }
+
+  name: "onboarding_link"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/terminal/onboarding_links"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/terminal/onboarding_links"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "onboarding_links"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.link_options`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

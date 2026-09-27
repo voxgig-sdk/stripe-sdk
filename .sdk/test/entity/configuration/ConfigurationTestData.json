@@ -1,0 +1,180 @@
+{
+  "existing": {
+    "configuration": {
+      "CONFIGURATION00": {
+        "active": true,
+        "application": "s123",
+        "bbpos_wisepad3": {},
+        "bbpos_wisepos_e": {},
+        "business_profile": {},
+        "cellular": {},
+        "created": 296,
+        "default_return_url": "s129",
+        "features": {},
+        "id": "CONFIGURATION00",
+        "is_account_default": true,
+        "is_default": false,
+        "livemode": true,
+        "login_page": {},
+        "metadata": {},
+        "name": "s131",
+        "object": "s132",
+        "offline": {},
+        "reboot_window": {},
+        "stripe_s700": {},
+        "stripe_s710": {},
+        "tipping": {},
+        "updated": 312,
+        "verifone_m425": {},
+        "verifone_p400": {},
+        "verifone_p630": {},
+        "verifone_ux700": {},
+        "verifone_v660p": {},
+        "wifi": {}
+      },
+      "CONFIGURATION01": {
+        "active": true,
+        "application": "s245",
+        "bbpos_wisepad3": {},
+        "bbpos_wisepos_e": {},
+        "business_profile": {},
+        "cellular": {},
+        "created": 586,
+        "default_return_url": "s24b",
+        "features": {},
+        "id": "CONFIGURATION01",
+        "is_account_default": true,
+        "is_default": false,
+        "livemode": true,
+        "login_page": {},
+        "metadata": {},
+        "name": "s253",
+        "object": "s254",
+        "offline": {},
+        "reboot_window": {},
+        "stripe_s700": {},
+        "stripe_s710": {},
+        "tipping": {},
+        "updated": 602,
+        "verifone_m425": {},
+        "verifone_p400": {},
+        "verifone_p630": {},
+        "verifone_ux700": {},
+        "verifone_v660p": {},
+        "wifi": {}
+      },
+      "CONFIGURATION02": {
+        "active": true,
+        "application": "s367",
+        "bbpos_wisepad3": {},
+        "bbpos_wisepos_e": {},
+        "business_profile": {},
+        "cellular": {},
+        "created": 876,
+        "default_return_url": "s36d",
+        "features": {},
+        "id": "CONFIGURATION02",
+        "is_account_default": true,
+        "is_default": false,
+        "livemode": true,
+        "login_page": {},
+        "metadata": {},
+        "name": "s375",
+        "object": "s376",
+        "offline": {},
+        "reboot_window": {},
+        "stripe_s700": {},
+        "stripe_s710": {},
+        "tipping": {},
+        "updated": 892,
+        "verifone_m425": {},
+        "verifone_p400": {},
+        "verifone_p630": {},
+        "verifone_ux700": {},
+        "verifone_v660p": {},
+        "wifi": {}
+      }
+    }
+  },
+  "new": {
+    "configuration": {
+      "configuration_ref01": {
+        "active": true,
+        "application": "s489",
+        "bbpos_wisepad3": {},
+        "bbpos_wisepos_e": {},
+        "business_profile": {},
+        "cellular": {},
+        "created": 1166,
+        "default_return_url": "s48f",
+        "features": {},
+        "is_account_default": true,
+        "is_default": false,
+        "livemode": true,
+        "login_page": {},
+        "metadata": {},
+        "name": "s497",
+        "object": "s498",
+        "offline": {},
+        "reboot_window": {},
+        "stripe_s700": {},
+        "stripe_s710": {},
+        "tipping": {},
+        "updated": 1182,
+        "verifone_m425": {},
+        "verifone_p400": {},
+        "verifone_p630": {},
+        "verifone_ux700": {},
+        "verifone_v660p": {},
+        "wifi": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/billing_portal/configurations/{configuration}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/terminal/configurations/{configuration}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/billing_portal/configurations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/terminal/configurations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/billing_portal/configurations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/terminal/configurations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/billing_portal/configurations/{configuration}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/terminal/configurations/{configuration}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /v1/terminal/configurations/{configuration}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

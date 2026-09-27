@@ -1,0 +1,72 @@
+{
+  "existing": {
+    "feedback_option": {
+      "FEEDBACK_OPTION00": {
+        "deactivated_at": 70,
+        "description": "s47",
+        "id": "FEEDBACK_OPTION00",
+        "livemode": false,
+        "object": "s4a",
+        "status": "s4b",
+        "status_transitions": {}
+      },
+      "FEEDBACK_OPTION01": {
+        "deactivated_at": 140,
+        "description": "s8d",
+        "id": "FEEDBACK_OPTION01",
+        "livemode": false,
+        "object": "s90",
+        "status": "s91",
+        "status_transitions": {}
+      },
+      "FEEDBACK_OPTION02": {
+        "deactivated_at": 210,
+        "description": "sd3",
+        "id": "FEEDBACK_OPTION02",
+        "livemode": false,
+        "object": "sd6",
+        "status": "sd7",
+        "status_transitions": {}
+      }
+    }
+  },
+  "new": {
+    "feedback_option": {
+      "feedback_option_ref01": {
+        "deactivated_at": 280,
+        "description": "s119",
+        "livemode": false,
+        "object": "s11c",
+        "status": "s11d",
+        "status_transitions": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/billing/feedback_options/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/billing/feedback_options/{id}/deactivate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/billing/feedback_options": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/billing/feedback_options": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/billing/feedback_options/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

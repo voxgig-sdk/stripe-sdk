@@ -1,0 +1,21 @@
+{
+  "existing": {
+    "association": {
+      "ASSOCIATION00": {},
+      "ASSOCIATION01": {},
+      "ASSOCIATION02": {}
+    }
+  },
+  "new": {
+    "association": {
+      "association_ref01": {}
+    }
+  },
+  "requests": {
+    "GET /v1/tax/associations/find": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

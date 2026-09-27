@@ -1,0 +1,85 @@
+{
+  "existing": {
+    "verification_report": {
+      "VERIFICATION_REPORT00": {
+        "client_reference_id": "CLIENT_REFERENCE01",
+        "created": 141,
+        "document": {},
+        "email": {},
+        "id": "VERIFICATION_REPORT00",
+        "id_number": {},
+        "livemode": true,
+        "object": "s93",
+        "options": {},
+        "phone": {},
+        "selfie": {},
+        "type": "s97",
+        "verification_flow": "s98",
+        "verification_session": "s99"
+      },
+      "VERIFICATION_REPORT01": {
+        "client_reference_id": "CLIENT_REFERENCE01",
+        "created": 281,
+        "document": {},
+        "email": {},
+        "id": "VERIFICATION_REPORT01",
+        "id_number": {},
+        "livemode": true,
+        "object": "s11f",
+        "options": {},
+        "phone": {},
+        "selfie": {},
+        "type": "s123",
+        "verification_flow": "s124",
+        "verification_session": "s125"
+      },
+      "VERIFICATION_REPORT02": {
+        "client_reference_id": "CLIENT_REFERENCE01",
+        "created": 421,
+        "document": {},
+        "email": {},
+        "id": "VERIFICATION_REPORT02",
+        "id_number": {},
+        "livemode": true,
+        "object": "s1ab",
+        "options": {},
+        "phone": {},
+        "selfie": {},
+        "type": "s1af",
+        "verification_flow": "s1b0",
+        "verification_session": "s1b1"
+      }
+    }
+  },
+  "new": {
+    "verification_report": {
+      "verification_report_ref01": {
+        "client_reference_id": "CLIENT_REFERENCE01",
+        "created": 561,
+        "document": {},
+        "email": {},
+        "id_number": {},
+        "livemode": true,
+        "object": "s237",
+        "options": {},
+        "phone": {},
+        "selfie": {},
+        "type": "s23b",
+        "verification_flow": "s23c",
+        "verification_session": "s23d"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/identity/verification_reports": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/identity/verification_reports/{report}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

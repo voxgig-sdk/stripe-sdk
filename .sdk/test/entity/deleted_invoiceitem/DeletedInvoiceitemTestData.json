@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "deleted_invoiceitem": {
+      "DELETED_INVOICEITEM00": {
+        "id": "DELETED_INVOICEITEM00"
+      },
+      "DELETED_INVOICEITEM01": {
+        "id": "DELETED_INVOICEITEM01"
+      },
+      "DELETED_INVOICEITEM02": {
+        "id": "DELETED_INVOICEITEM02"
+      }
+    }
+  },
+  "new": {
+    "deleted_invoiceitem": {
+      "deleted_invoiceitem_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /v1/invoiceitems/{invoiceitem}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

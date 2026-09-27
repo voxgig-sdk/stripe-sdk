@@ -1,0 +1,22 @@
+# BasicLinkedAccountFlow
+
+main: kit: flow: BasicLinkedAccountFlow:
+{
+  entity: "linked_account",
+  kind: "basic",
+  name: "BasicLinkedAccountFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "linked_account_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLinkedAccountFlow"
+}

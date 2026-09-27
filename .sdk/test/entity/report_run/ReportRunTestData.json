@@ -1,0 +1,74 @@
+{
+  "existing": {
+    "report_run": {
+      "REPORT_RUN00": {
+        "created": 100,
+        "error": "s65",
+        "id": "REPORT_RUN00",
+        "livemode": false,
+        "object": "s68",
+        "parameters": {},
+        "report_type": "s6a",
+        "result": "s6b",
+        "status": "s6c",
+        "succeeded_at": 109
+      },
+      "REPORT_RUN01": {
+        "created": 200,
+        "error": "sc9",
+        "id": "REPORT_RUN01",
+        "livemode": false,
+        "object": "scc",
+        "parameters": {},
+        "report_type": "sce",
+        "result": "scf",
+        "status": "sd0",
+        "succeeded_at": 209
+      },
+      "REPORT_RUN02": {
+        "created": 300,
+        "error": "s12d",
+        "id": "REPORT_RUN02",
+        "livemode": false,
+        "object": "s130",
+        "parameters": {},
+        "report_type": "s132",
+        "result": "s133",
+        "status": "s134",
+        "succeeded_at": 309
+      }
+    }
+  },
+  "new": {
+    "report_run": {
+      "report_run_ref01": {
+        "created": 400,
+        "error": "s191",
+        "livemode": false,
+        "object": "s194",
+        "parameters": {},
+        "report_type": "s196",
+        "result": "s197",
+        "status": "s198",
+        "succeeded_at": 409
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/reporting/report_runs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/reporting/report_runs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/reporting/report_runs/{report_run}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

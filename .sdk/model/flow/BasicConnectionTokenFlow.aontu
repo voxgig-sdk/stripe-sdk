@@ -1,0 +1,18 @@
+# BasicConnectionTokenFlow
+
+main: kit: flow: BasicConnectionTokenFlow:
+{
+  entity: "connection_token",
+  kind: "basic",
+  name: "BasicConnectionTokenFlow",
+  step: [
+    {
+      i: {
+        ref: "connection_token_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicConnectionTokenFlow"
+}

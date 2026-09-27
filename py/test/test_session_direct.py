@@ -25,7 +25,7 @@ class TestSessionDirect:
 
 
         result = client.direct({
-            "path": "checkout/sessions",
+            "path": "v1/checkout/sessions",
             "method": "GET",
             "params": {},
         })
@@ -70,7 +70,7 @@ class TestSessionDirect:
             params["id"] = "direct01"
 
         result = client.direct({
-            "path": "checkout/sessions/{id}",
+            "path": "v1/checkout/sessions/{id}",
             "method": "GET",
             "params": params,
             "query": query,

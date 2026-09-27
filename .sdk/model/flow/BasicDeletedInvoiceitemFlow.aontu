@@ -1,0 +1,9 @@
+# BasicDeletedInvoiceitemFlow
+
+main: kit: flow: BasicDeletedInvoiceitemFlow:
+{
+  entity: "deleted_invoiceitem",
+  kind: "basic",
+  name: "BasicDeletedInvoiceitemFlow",
+  "key$": "BasicDeletedInvoiceitemFlow"
+}

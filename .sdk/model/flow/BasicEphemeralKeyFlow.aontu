@@ -1,0 +1,31 @@
+# BasicEphemeralKeyFlow
+
+main: kit: flow: BasicEphemeralKeyFlow:
+{
+  entity: "ephemeral_key",
+  kind: "basic",
+  name: "BasicEphemeralKeyFlow",
+  step: [
+    {
+      i: {
+        ref: "ephemeral_key_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "ephemeral_key_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        id: "ephemeral_key01"
+      }
+
+      o: "remove"
+    }
+  ],
+  "key$": "BasicEphemeralKeyFlow"
+}

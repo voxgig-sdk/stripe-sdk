@@ -1,0 +1,509 @@
+# Entity: verification_session
+
+main: kit: entity: verification_session: {
+
+  alias: field: {}
+
+  fields: {
+    client_reference_id: {
+      h: "Client Reference Id"
+      n: "client_reference_id"
+      r: false
+      sh: "A string to reference this user."
+      t: "`$STRING`"
+    }
+    client_secret: {
+      h: "Client Secret"
+      n: "client_secret"
+      r: false
+      sh: "The short-lived client secret used by Stripe.js to [show a verification modal](https://docs.stripe.com/js/identity/modal) inside your app."
+      t: "`$STRING`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    last_error: {
+      h: "Last Error"
+      n: "last_error"
+      r: false
+      sh: "If present, this property tells you the last error encountered when processing the verification."
+      t: "`$ANY`"
+    }
+    last_verification_report: {
+      h: "Last Verification Report"
+      n: "last_verification_report"
+      r: false
+      sh: "ID of the most recent VerificationReport."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: true
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    options: {
+      h: "Options"
+      n: "options"
+      r: false
+      sh: "A set of options for the session’s verification checks."
+      t: "`$ANY`"
+    }
+    provided_details: {
+      h: "Provided Details"
+      n: "provided_details"
+      r: false
+      sh: "Details provided about the user being verified."
+      t: "`$ANY`"
+    }
+    redaction: {
+      h: "Redaction"
+      n: "redaction"
+      r: false
+      sh: "Redaction status of this VerificationSession."
+      t: "`$ANY`"
+    }
+    related_customer: {
+      h: "Related Customer"
+      n: "related_customer"
+      r: false
+      sh: "Customer ID"
+      t: "`$STRING`"
+    }
+    related_customer_account: {
+      h: "Related Customer Account"
+      n: "related_customer_account"
+      r: false
+      sh: "The ID of the Account representing a customer."
+      t: "`$STRING`"
+    }
+    related_person: {
+      h: "Related Person"
+      n: "related_person"
+      r: true
+      t: "`$OBJECT`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "Status of this VerificationSession."
+      t: "`$STRING`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "The type of [verification check](https://docs.stripe.com/identity/verification-checks) to be performed."
+      t: "`$STRING`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: false
+      sh: "The short-lived URL that you use to redirect a user to Stripe to submit their identity information."
+      t: "`$STRING`"
+    }
+    verification_flow: {
+      h: "Verification Flow"
+      n: "verification_flow"
+      r: false
+      sh: "The configuration token of a verification flow from the dashboard."
+      t: "`$STRING`"
+    }
+    verified_outputs: {
+      h: "Verified Outputs"
+      n: "verified_outputs"
+      r: false
+      sh: "The user’s verified data."
+      t: "`$ANY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "verification_session"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/identity/verification_sessions/{session}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "session"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/identity/verification_sessions/{session}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              session: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "identity"
+            }
+            {
+              lit: "verification_sessions"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/identity/verification_sessions/{session}/cancel"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "session"
+                or: "session"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/identity/verification_sessions/{session}/cancel"
+          q: {
+            "$action": "cancel"
+            exist: [
+              "session"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "identity"
+            }
+            {
+              lit: "verification_sessions"
+            }
+            {
+              var: "session"
+            }
+            {
+              lit: "cancel"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/identity/verification_sessions/{session}/redact"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "session"
+                or: "session"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/identity/verification_sessions/{session}/redact"
+          q: {
+            "$action": "redact"
+            exist: [
+              "session"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "identity"
+            }
+            {
+              lit: "verification_sessions"
+            }
+            {
+              var: "session"
+            }
+            {
+              lit: "redact"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/identity/verification_sessions"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/identity/verification_sessions"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "identity"
+            }
+            {
+              lit: "verification_sessions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/identity/verification_sessions"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "client_reference_id"
+                or: "client_reference_id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "related_customer"
+                or: "related_customer"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "related_customer_account"
+                or: "related_customer_account"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/identity/verification_sessions"
+          q: {
+            exist: [
+              "client_reference_id"
+              "created"
+              "ending_before"
+              "expand"
+              "limit"
+              "related_customer"
+              "related_customer_account"
+              "starting_after"
+              "status"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "identity"
+            }
+            {
+              lit: "verification_sessions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/identity/verification_sessions/{session}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "session"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/identity/verification_sessions/{session}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              session: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "identity"
+            }
+            {
+              lit: "verification_sessions"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,964 @@
+# Entity: payment_method
+
+main: kit: entity: payment_method: {
+
+  alias: field: {}
+
+  fields: {
+    acss_debit: {
+      h: "Acss Debit"
+      n: "acss_debit"
+      r: false
+      t: "`$OBJECT`"
+    }
+    affirm: {
+      h: "Affirm"
+      n: "affirm"
+      r: false
+      t: "`$OBJECT`"
+    }
+    afterpay_clearpay: {
+      h: "Afterpay Clearpay"
+      n: "afterpay_clearpay"
+      r: false
+      t: "`$OBJECT`"
+    }
+    alipay: {
+      h: "Alipay"
+      n: "alipay"
+      r: false
+      t: "`$OBJECT`"
+    }
+    allow_redisplay: {
+      h: "Allow Redisplay"
+      n: "allow_redisplay"
+      r: false
+      sh: "This field indicates whether this payment method can be shown again to its customer in a checkout flow."
+      t: "`$BOOLEAN`"
+    }
+    alma: {
+      h: "Alma"
+      n: "alma"
+      r: false
+      t: "`$OBJECT`"
+    }
+    amazon_pay: {
+      h: "Amazon Pay"
+      n: "amazon_pay"
+      r: false
+      t: "`$OBJECT`"
+    }
+    au_becs_debit: {
+      h: "Au Becs Debit"
+      n: "au_becs_debit"
+      r: false
+      t: "`$OBJECT`"
+    }
+    bacs_debit: {
+      h: "Bacs Debit"
+      n: "bacs_debit"
+      r: false
+      t: "`$OBJECT`"
+    }
+    bancontact: {
+      h: "Bancontact"
+      n: "bancontact"
+      r: false
+      t: "`$OBJECT`"
+    }
+    billie: {
+      h: "Billie"
+      n: "billie"
+      r: false
+      t: "`$OBJECT`"
+    }
+    billing_details: {
+      h: "Billing Details"
+      n: "billing_details"
+      r: true
+      t: "`$OBJECT`"
+    }
+    bizum: {
+      h: "Bizum"
+      n: "bizum"
+      r: false
+      t: "`$OBJECT`"
+    }
+    blik: {
+      h: "Blik"
+      n: "blik"
+      r: false
+      t: "`$OBJECT`"
+    }
+    boleto: {
+      h: "Boleto"
+      n: "boleto"
+      r: true
+      t: "`$OBJECT`"
+    }
+    card: {
+      h: "Card"
+      n: "card"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 17
+        count: 18388
+        depth: 64
+      }
+    }
+    card_present: {
+      h: "Card Present"
+      n: "card_present"
+      r: true
+      t: "`$OBJECT`"
+    }
+    cashapp: {
+      h: "Cashapp"
+      n: "cashapp"
+      r: false
+      t: "`$OBJECT`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    crypto: {
+      h: "Crypto"
+      n: "crypto"
+      r: false
+      t: "`$OBJECT`"
+    }
+    custom: {
+      h: "Custom"
+      n: "custom"
+      r: true
+      t: "`$OBJECT`"
+    }
+    customer: {
+      h: "Customer"
+      n: "customer"
+      r: false
+      sh: "The ID of the Customer to which this PaymentMethod is saved."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    customer_account: {
+      h: "Customer Account"
+      n: "customer_account"
+      r: false
+      t: "`$STRING`"
+    }
+    customer_balance: {
+      h: "Customer Balance"
+      n: "customer_balance"
+      r: false
+      t: "`$OBJECT`"
+    }
+    eps: {
+      h: "Eps"
+      n: "eps"
+      r: false
+      t: "`$OBJECT`"
+    }
+    fpx: {
+      h: "Fpx"
+      n: "fpx"
+      r: true
+      t: "`$OBJECT`"
+    }
+    giropay: {
+      h: "Giropay"
+      n: "giropay"
+      r: false
+      t: "`$OBJECT`"
+    }
+    grabpay: {
+      h: "Grabpay"
+      n: "grabpay"
+      r: false
+      t: "`$OBJECT`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    ideal: {
+      h: "Ideal"
+      n: "ideal"
+      r: false
+      t: "`$OBJECT`"
+    }
+    interac_present: {
+      h: "Interac Present"
+      n: "interac_present"
+      r: true
+      t: "`$OBJECT`"
+    }
+    kakao_pay: {
+      h: "Kakao Pay"
+      n: "kakao_pay"
+      r: false
+      t: "`$OBJECT`"
+    }
+    klarna: {
+      h: "Klarna"
+      n: "klarna"
+      r: false
+      t: "`$OBJECT`"
+    }
+    konbini: {
+      h: "Konbini"
+      n: "konbini"
+      r: false
+      t: "`$OBJECT`"
+    }
+    kr_card: {
+      h: "Kr Card"
+      n: "kr_card"
+      r: false
+      t: "`$OBJECT`"
+    }
+    link: {
+      h: "Link"
+      n: "link"
+      r: false
+      t: "`$OBJECT`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    mb_way: {
+      h: "Mb Way"
+      n: "mb_way"
+      r: false
+      t: "`$OBJECT`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    mobilepay: {
+      h: "Mobilepay"
+      n: "mobilepay"
+      r: false
+      t: "`$OBJECT`"
+    }
+    multibanco: {
+      h: "Multibanco"
+      n: "multibanco"
+      r: false
+      t: "`$OBJECT`"
+    }
+    naver_pay: {
+      h: "Naver Pay"
+      n: "naver_pay"
+      r: true
+      t: "`$OBJECT`"
+    }
+    nz_bank_account: {
+      h: "Nz Bank Account"
+      n: "nz_bank_account"
+      r: true
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    oxxo: {
+      h: "Oxxo"
+      n: "oxxo"
+      r: false
+      t: "`$OBJECT`"
+    }
+    p24: {
+      h: "P24"
+      n: "p24"
+      r: false
+      t: "`$OBJECT`"
+    }
+    pay_by_bank: {
+      h: "Pay By Bank"
+      n: "pay_by_bank"
+      r: false
+      t: "`$OBJECT`"
+    }
+    payco: {
+      h: "Payco"
+      n: "payco"
+      r: false
+      t: "`$OBJECT`"
+    }
+    paynow: {
+      h: "Paynow"
+      n: "paynow"
+      r: false
+      t: "`$OBJECT`"
+    }
+    paypal: {
+      h: "Paypal"
+      n: "paypal"
+      r: false
+      t: "`$OBJECT`"
+    }
+    paypay: {
+      h: "Paypay"
+      n: "paypay"
+      r: false
+      t: "`$OBJECT`"
+    }
+    payto: {
+      h: "Payto"
+      n: "payto"
+      r: false
+      t: "`$OBJECT`"
+    }
+    pix: {
+      h: "Pix"
+      n: "pix"
+      r: false
+      t: "`$OBJECT`"
+    }
+    promptpay: {
+      h: "Promptpay"
+      n: "promptpay"
+      r: false
+      t: "`$OBJECT`"
+    }
+    radar_options: {
+      h: "Radar Options"
+      n: "radar_options"
+      r: false
+      sh: "Options to configure Radar."
+      t: "`$OBJECT`"
+    }
+    revolut_pay: {
+      h: "Revolut Pay"
+      n: "revolut_pay"
+      r: false
+      t: "`$OBJECT`"
+    }
+    samsung_pay: {
+      h: "Samsung Pay"
+      n: "samsung_pay"
+      r: false
+      t: "`$OBJECT`"
+    }
+    satispay: {
+      h: "Satispay"
+      n: "satispay"
+      r: false
+      t: "`$OBJECT`"
+    }
+    scalapay: {
+      h: "Scalapay"
+      n: "scalapay"
+      r: false
+      t: "`$OBJECT`"
+    }
+    sepa_debit: {
+      h: "Sepa Debit"
+      n: "sepa_debit"
+      r: false
+      t: "`$OBJECT`"
+      union: {
+        branches: 17
+        count: 22996
+        depth: 55
+      }
+    }
+    sequra: {
+      h: "Sequra"
+      n: "sequra"
+      r: false
+      t: "`$OBJECT`"
+    }
+    sofort: {
+      h: "Sofort"
+      n: "sofort"
+      r: false
+      t: "`$OBJECT`"
+    }
+    sunbit: {
+      h: "Sunbit"
+      n: "sunbit"
+      r: false
+      t: "`$OBJECT`"
+    }
+    swish: {
+      h: "Swish"
+      n: "swish"
+      r: false
+      t: "`$OBJECT`"
+    }
+    twint: {
+      h: "Twint"
+      n: "twint"
+      r: false
+      t: "`$OBJECT`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "The type of the PaymentMethod."
+      t: "`$STRING`"
+    }
+    upi: {
+      h: "Upi"
+      n: "upi"
+      r: false
+      t: "`$OBJECT`"
+    }
+    us_bank_account: {
+      h: "Us Bank Account"
+      n: "us_bank_account"
+      r: false
+      t: "`$OBJECT`"
+    }
+    wechat_pay: {
+      h: "Wechat Pay"
+      n: "wechat_pay"
+      r: false
+      t: "`$OBJECT`"
+    }
+    zip: {
+      h: "Zip"
+      n: "zip"
+      r: false
+      t: "`$OBJECT`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "payment_method"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/payment_methods/{payment_method}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "payment_method"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/payment_methods/{payment_method}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              payment_method: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_methods"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/payment_methods/{payment_method}/attach"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "payment_method"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/payment_methods/{payment_method}/attach"
+          q: {
+            "$action": "attach"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              payment_method: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_methods"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "attach"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/payment_methods/{payment_method}/detach"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "payment_method"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/payment_methods/{payment_method}/detach"
+          q: {
+            "$action": "detach"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              payment_method: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_methods"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "detach"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/payment_methods"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/payment_methods"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_methods"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/payment_methods"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "allow_redisplay"
+                or: "allow_redisplay"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "customer"
+                or: "customer"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "customer_account"
+                or: "customer_account"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "type"
+                or: "type"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/payment_methods"
+          q: {
+            exist: [
+              "allow_redisplay"
+              "customer"
+              "customer_account"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+              "type"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_methods"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/customers/{customer}/payment_methods"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "allow_redisplay"
+                or: "allow_redisplay"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "type"
+                or: "type"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/customers/{customer}/payment_methods"
+          q: {
+            exist: [
+              "allow_redisplay"
+              "customer_id"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+              "type"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "payment_methods"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/customers/{customer}/payment_methods/{payment_method}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "payment_method"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/customers/{customer}/payment_methods/{payment_method}"
+          q: {
+            exist: [
+              "customer_id"
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+              payment_method: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "payment_methods"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/payment_methods/{payment_method}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "payment_method"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/payment_methods/{payment_method}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              payment_method: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_methods"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.customer")]
+  ]
+
+}

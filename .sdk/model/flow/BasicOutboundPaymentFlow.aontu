@@ -1,0 +1,52 @@
+# BasicOutboundPaymentFlow
+
+main: kit: flow: BasicOutboundPaymentFlow:
+{
+  entity: "outbound_payment",
+  kind: "basic",
+  name: "BasicOutboundPaymentFlow",
+  step: [
+    {
+      i: {
+        ref: "outbound_payment_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "outbound_payment_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "outbound_payment_ref01",
+        srcdatavar: "outbound_payment_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "outbound_payment01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-outbound_payment_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicOutboundPaymentFlow"
+}

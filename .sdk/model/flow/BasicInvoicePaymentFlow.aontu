@@ -1,0 +1,44 @@
+# BasicInvoicePaymentFlow
+
+main: kit: flow: BasicInvoicePaymentFlow:
+{
+  entity: "invoice_payment",
+  kind: "basic",
+  name: "BasicInvoicePaymentFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "invoice_payment_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "invoice_payment_ref01",
+        srcdatavar: "invoice_payment_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "invoice_payment01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-invoice_payment_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicInvoicePaymentFlow"
+}

@@ -21,7 +21,7 @@ describe("SessionDirect", function()
 
 
     local result, err = client:direct({
-      path = "checkout/sessions",
+      path = "v1/checkout/sessions",
       method = "GET",
       params = {},
     })
@@ -72,7 +72,7 @@ describe("SessionDirect", function()
     end
 
     local result, err = client:direct({
-      path = "checkout/sessions/{id}",
+      path = "v1/checkout/sessions/{id}",
       method = "GET",
       params = params,
       query = query,

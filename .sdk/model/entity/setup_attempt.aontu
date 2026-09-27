@@ -1,0 +1,250 @@
+# Entity: setup_attempt
+
+main: kit: entity: setup_attempt: {
+
+  alias: field: {}
+
+  fields: {
+    application: {
+      h: "Application"
+      n: "application"
+      r: false
+      sh: "The value of [application](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-application) on the SetupIntent at the time of this confirmation."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    attach_to_self: {
+      h: "Attach To Self"
+      n: "attach_to_self"
+      r: false
+      sh: "If present, the SetupIntent's payment method will be attached to the in-context Stripe Account."
+      t: "`$BOOLEAN`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    customer: {
+      h: "Customer"
+      n: "customer"
+      r: false
+      sh: "The value of [customer](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-customer) on the SetupIntent at the time of this confirmation."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 2
+        depth: 1
+      }
+    }
+    customer_account: {
+      h: "Customer Account"
+      n: "customer_account"
+      r: false
+      sh: "The value of [customer_account](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-customer_account) on the SetupIntent at the time of this confirmation."
+      t: "`$STRING`"
+    }
+    flow_directions: {
+      h: "Flow Directions"
+      n: "flow_directions"
+      r: false
+      sh: "Indicates the directions of money movement for which this payment method is intended to be used."
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    on_behalf_of: {
+      h: "On Behalf Of"
+      n: "on_behalf_of"
+      r: false
+      sh: "The value of [on_behalf_of](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-on_behalf_of) on the SetupIntent at the time of this confirmation."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    payment_method: {
+      h: "Payment Method"
+      n: "payment_method"
+      r: true
+      sh: "ID of the payment method used with this SetupAttempt."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    payment_method_details: {
+      h: "Payment Method Details"
+      n: "payment_method_details"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 13
+        depth: 9
+      }
+    }
+    setup_error: {
+      h: "Setup Error"
+      n: "setup_error"
+      r: false
+      sh: "The error encountered during this attempt to confirm the SetupIntent, if any."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 16375
+        depth: 55
+      }
+    }
+    setup_intent: {
+      h: "Setup Intent"
+      n: "setup_intent"
+      r: true
+      sh: "ID of the SetupIntent that this attempt belongs to."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 55
+        depth: 10
+      }
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "Status of this SetupAttempt, one of `requires_confirmation`, `requires_action`, `processing`, `succeeded`, `failed`, or `abandoned`."
+      t: "`$STRING`"
+    }
+    usage: {
+      h: "Usage"
+      n: "usage"
+      r: true
+      sh: "The value of [usage](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-usage) on the SetupIntent at the time of this confirmation, one of `off_session` or `on_session`."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "setup_attempt"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/setup_attempts"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "setup_intent"
+                or: "setup_intent"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/setup_attempts"
+          q: {
+            exist: [
+              "created"
+              "ending_before"
+              "expand"
+              "limit"
+              "setup_intent"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "setup_attempts"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

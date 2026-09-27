@@ -1,0 +1,65 @@
+{
+  "existing": {
+    "financial_account_feature": {
+      "FINANCIAL_ACCOUNT_FEATURE00": {
+        "card_issuing": {},
+        "deposit_insurance": {},
+        "financial_addresses": {},
+        "id": "FINANCIAL_ACCOUNT_FEATURE00",
+        "inbound_transfers": {},
+        "intra_stripe_flows": {},
+        "object": "s60",
+        "outbound_payments": {},
+        "outbound_transfers": {}
+      },
+      "FINANCIAL_ACCOUNT_FEATURE01": {
+        "card_issuing": {},
+        "deposit_insurance": {},
+        "financial_addresses": {},
+        "id": "FINANCIAL_ACCOUNT_FEATURE01",
+        "inbound_transfers": {},
+        "intra_stripe_flows": {},
+        "object": "sba",
+        "outbound_payments": {},
+        "outbound_transfers": {}
+      },
+      "FINANCIAL_ACCOUNT_FEATURE02": {
+        "card_issuing": {},
+        "deposit_insurance": {},
+        "financial_addresses": {},
+        "id": "FINANCIAL_ACCOUNT_FEATURE02",
+        "inbound_transfers": {},
+        "intra_stripe_flows": {},
+        "object": "s114",
+        "outbound_payments": {},
+        "outbound_transfers": {}
+      }
+    }
+  },
+  "new": {
+    "financial_account_feature": {
+      "financial_account_feature_ref01": {
+        "card_issuing": {},
+        "deposit_insurance": {},
+        "financial_addresses": {},
+        "inbound_transfers": {},
+        "intra_stripe_flows": {},
+        "object": "s16e",
+        "outbound_payments": {},
+        "outbound_transfers": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/treasury/financial_accounts/{financial_account}/features": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/treasury/financial_accounts/{financial_account}/features": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

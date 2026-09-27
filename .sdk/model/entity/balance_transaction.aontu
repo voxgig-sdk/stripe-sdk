@@ -1,0 +1,532 @@
+# Entity: balance_transaction
+
+main: kit: entity: balance_transaction: {
+
+  alias: field: {}
+
+  fields: {
+    amount: {
+      h: "Amount"
+      n: "amount"
+      r: true
+      sh: "Gross amount of this transaction (in cents (or local equivalent))."
+      t: "`$INTEGER`"
+    }
+    available_on: {
+      fo: "unix-time"
+      h: "Available On"
+      n: "available_on"
+      r: true
+      sh: "The date that the transaction's net funds become available in the Stripe balance."
+      t: "`$INTEGER`"
+    }
+    balance_type: {
+      h: "Balance Type"
+      n: "balance_type"
+      r: true
+      sh: "The balance that this transaction impacts."
+      t: "`$STRING`"
+    }
+    checkout_session: {
+      h: "Checkout Session"
+      n: "checkout_session"
+      r: false
+      sh: "The ID of the checkout session (if any) that created the transaction."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 200864
+        depth: 64
+      }
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    credit_note: {
+      h: "Credit Note"
+      n: "credit_note"
+      r: false
+      sh: "The ID of the credit note (if any) related to the transaction."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    customer: {
+      h: "Customer"
+      n: "customer"
+      r: true
+      sh: "The ID of the customer the transaction belongs to."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 107010
+        depth: 64
+      }
+    }
+    customer_account: {
+      h: "Customer Account"
+      n: "customer_account"
+      r: false
+      sh: "The ID of an Account representing a customer that the transaction belongs to."
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "An arbitrary string attached to the object."
+      t: "`$STRING`"
+    }
+    ending_balance: {
+      h: "Ending Balance"
+      n: "ending_balance"
+      r: true
+      sh: "The customer's `balance` after the transaction was applied."
+      t: "`$INTEGER`"
+    }
+    exchange_rate: {
+      h: "Exchange Rate"
+      n: "exchange_rate"
+      r: false
+      sh: "If applicable, this transaction uses an exchange rate."
+      t: "`$NUMBER`"
+    }
+    fee: {
+      h: "Fee"
+      n: "fee"
+      r: true
+      sh: "Fees (in cents (or local equivalent)) paid for this transaction."
+      t: "`$INTEGER`"
+    }
+    fee_details: {
+      h: "Fee Details"
+      n: "fee_details"
+      r: true
+      sh: "Detailed breakdown of fees (in cents (or local equivalent)) paid for this transaction."
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    invoice: {
+      h: "Invoice"
+      n: "invoice"
+      r: false
+      sh: "The ID of the invoice (if any) related to the transaction."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 68509
+        depth: 64
+      }
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    net: {
+      h: "Net"
+      n: "net"
+      r: true
+      sh: "Net impact to a Stripe balance (in cents (or local equivalent))."
+      t: "`$INTEGER`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    reporting_category: {
+      h: "Reporting Category"
+      n: "reporting_category"
+      r: true
+      sh: "Learn more about how [reporting categories](https://stripe.com/docs/reports/reporting-categories) can help you understand balance transactions from an accounting perspective."
+      t: "`$STRING`"
+    }
+    source: {
+      h: "Source"
+      n: "source"
+      r: false
+      sh: "This transaction relates to the Stripe object."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 1367
+        depth: 37
+      }
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "The transaction's net funds status in the Stripe balance, which are either `available` or `pending`."
+      t: "`$STRING`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "Transaction type: `tax_fund`, `adjustment`, `advance`, `advance_funding`, `anticipation_repayment`, `application_fee`, `application_fee_refund`, `charge`, `climate_order_purchase`, `climate_order_refund`, `connect_collection_transfer`, `co…"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "balance_transaction"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/balance_transactions"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "currency"
+                or: "currency"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "payout"
+                or: "payout"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "source"
+                or: "source"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "type"
+                or: "type"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/balance_transactions"
+          q: {
+            exist: [
+              "created"
+              "currency"
+              "ending_before"
+              "expand"
+              "limit"
+              "payout"
+              "source"
+              "starting_after"
+              "type"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "balance_transactions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/customers/{customer}/balance_transactions"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "invoice"
+                or: "invoice"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/customers/{customer}/balance_transactions"
+          q: {
+            exist: [
+              "created"
+              "customer_id"
+              "ending_before"
+              "expand"
+              "invoice"
+              "limit"
+              "starting_after"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "balance_transactions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/balance/history/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/balance/history/{id}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "balance"
+            }
+            {
+              lit: "history"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/balance_transactions/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/balance_transactions/{id}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "balance_transactions"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.customer")]
+  ]
+
+}

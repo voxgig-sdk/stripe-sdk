@@ -1,0 +1,795 @@
+# Entity: person
+
+main: kit: entity: person: {
+
+  alias: field: {}
+
+  fields: {
+    account: {
+      h: "Account"
+      n: "account"
+      r: true
+      sh: "The account the person is associated with."
+      t: "`$STRING`"
+    }
+    additional_tos_acceptances: {
+      h: "Additional Tos Acceptances"
+      n: "additional_tos_acceptances"
+      r: false
+      t: "`$OBJECT`"
+    }
+    address: {
+      h: "Address"
+      n: "address"
+      r: false
+      t: "`$OBJECT`"
+    }
+    address_kana: {
+      h: "Address Kana"
+      n: "address_kana"
+      r: false
+      t: "`$ANY`"
+    }
+    address_kanji: {
+      h: "Address Kanji"
+      n: "address_kanji"
+      r: false
+      t: "`$ANY`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    dob: {
+      h: "Dob"
+      n: "dob"
+      r: false
+      t: "`$OBJECT`"
+    }
+    email: {
+      h: "Email"
+      n: "email"
+      r: false
+      sh: "The person's email address."
+      t: "`$STRING`"
+    }
+    first_name: {
+      h: "First Name"
+      n: "first_name"
+      r: false
+      sh: "The person's first name."
+      t: "`$STRING`"
+    }
+    first_name_kana: {
+      h: "First Name Kana"
+      n: "first_name_kana"
+      r: false
+      sh: "The Kana variation of the person's first name (Japan only)."
+      t: "`$STRING`"
+    }
+    first_name_kanji: {
+      h: "First Name Kanji"
+      n: "first_name_kanji"
+      r: false
+      sh: "The Kanji variation of the person's first name (Japan only)."
+      t: "`$STRING`"
+    }
+    full_name_aliases: {
+      h: "Full Name Aliases"
+      n: "full_name_aliases"
+      r: false
+      sh: "A list of alternate names or aliases that the person is known by."
+      t: "`$ARRAY`"
+    }
+    future_requirements: {
+      h: "Future Requirements"
+      n: "future_requirements"
+      r: false
+      t: "`$ANY`"
+    }
+    gender: {
+      h: "Gender"
+      n: "gender"
+      r: false
+      sh: "The person's gender."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    id_number_provided: {
+      h: "Id Number Provided"
+      n: "id_number_provided"
+      r: false
+      sh: "Whether the person's `id_number` was provided."
+      t: "`$BOOLEAN`"
+    }
+    id_number_secondary_provided: {
+      h: "Id Number Secondary Provided"
+      n: "id_number_secondary_provided"
+      r: false
+      sh: "Whether the person's `id_number_secondary` was provided."
+      t: "`$BOOLEAN`"
+    }
+    last_name: {
+      h: "Last Name"
+      n: "last_name"
+      r: false
+      sh: "The person's last name."
+      t: "`$STRING`"
+    }
+    last_name_kana: {
+      h: "Last Name Kana"
+      n: "last_name_kana"
+      r: false
+      sh: "The Kana variation of the person's last name (Japan only)."
+      t: "`$STRING`"
+    }
+    last_name_kanji: {
+      h: "Last Name Kanji"
+      n: "last_name_kanji"
+      r: false
+      sh: "The Kanji variation of the person's last name (Japan only)."
+      t: "`$STRING`"
+    }
+    maiden_name: {
+      h: "Maiden Name"
+      n: "maiden_name"
+      r: false
+      sh: "The person's maiden name."
+      t: "`$STRING`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    nationality: {
+      h: "Nationality"
+      n: "nationality"
+      r: false
+      sh: "The country where the person is a national."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    phone: {
+      h: "Phone"
+      n: "phone"
+      r: false
+      sh: "The person's phone number."
+      t: "`$STRING`"
+    }
+    political_exposure: {
+      h: "Political Exposure"
+      n: "political_exposure"
+      r: false
+      sh: "Indicates if the person or any of their representatives, family members, or other closely related persons, declares that they hold or have held an important public job or function, in any jurisdiction."
+      t: "`$STRING`"
+    }
+    registered_address: {
+      h: "Registered Address"
+      n: "registered_address"
+      r: false
+      t: "`$OBJECT`"
+    }
+    relationship: {
+      h: "Relationship"
+      n: "relationship"
+      r: false
+      t: "`$OBJECT`"
+    }
+    requirements: {
+      h: "Requirements"
+      n: "requirements"
+      r: false
+      t: "`$ANY`"
+    }
+    ssn_last_4_provided: {
+      h: "Ssn Last 4 Provided"
+      n: "ssn_last_4_provided"
+      r: false
+      sh: "Whether the last four digits of the person's Social Security number have been provided (U.S."
+      t: "`$BOOLEAN`"
+    }
+    us_cfpb_data: {
+      h: "Us Cfpb Data"
+      n: "us_cfpb_data"
+      r: false
+      sh: "Demographic data related to the person."
+      t: "`$ANY`"
+    }
+    verification: {
+      h: "Verification"
+      n: "verification"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 12
+        depth: 16
+      }
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "person"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/accounts/{account}/people/{person}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "person"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/accounts/{account}/people/{person}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              account: "account_id"
+              person: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "people"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/accounts/{account}/persons/{person}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "person"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/accounts/{account}/persons/{person}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              account: "account_id"
+              person: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "persons"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/accounts/{account}/people"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/accounts/{account}/people"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          r: {
+            param: {
+              account: "account_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "people"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/accounts/{account}/persons"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/accounts/{account}/persons"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          r: {
+            param: {
+              account: "account_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "persons"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/accounts/{account}/people"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "relationship"
+                or: "relationship"
+                r: false
+                t: "`$OBJECT`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/accounts/{account}/people"
+          q: {
+            exist: [
+              "account_id"
+              "ending_before"
+              "expand"
+              "limit"
+              "relationship"
+              "starting_after"
+            ]
+          }
+          r: {
+            param: {
+              account: "account_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "people"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/accounts/{account}/persons"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "relationship"
+                or: "relationship"
+                r: false
+                t: "`$OBJECT`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/accounts/{account}/persons"
+          q: {
+            exist: [
+              "account_id"
+              "ending_before"
+              "expand"
+              "limit"
+              "relationship"
+              "starting_after"
+            ]
+          }
+          r: {
+            param: {
+              account: "account_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "persons"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/accounts/{account}/people/{person}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "person"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/accounts/{account}/people/{person}"
+          q: {
+            exist: [
+              "account_id"
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              account: "account_id"
+              person: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "people"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/accounts/{account}/persons/{person}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "person"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/accounts/{account}/persons/{person}"
+          q: {
+            exist: [
+              "account_id"
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              account: "account_id"
+              person: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "persons"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.account")]
+  ]
+
+}

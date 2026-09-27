@@ -1,0 +1,323 @@
+# Entity: cash_balance_transaction
+
+main: kit: entity: cash_balance_transaction: {
+
+  alias: field: {}
+
+  fields: {
+    adjusted_for_overdraft: {
+      h: "Adjusted For Overdraft"
+      n: "adjusted_for_overdraft"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 2
+        depth: 2
+      }
+    }
+    applied_to_payment: {
+      h: "Applied To Payment"
+      n: "applied_to_payment"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 2
+      }
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    customer: {
+      h: "Customer"
+      n: "customer"
+      r: true
+      sh: "The customer whose available cash balance changed as a result of this transaction."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    customer_account: {
+      h: "Customer Account"
+      n: "customer_account"
+      r: false
+      sh: "The ID of an Account representing a customer whose available cash balance changed as a result of this transaction."
+      t: "`$STRING`"
+    }
+    ending_balance: {
+      h: "Ending Balance"
+      n: "ending_balance"
+      r: true
+      sh: "The total available cash balance for the specified currency after this transaction was applied."
+      t: "`$INTEGER`"
+    }
+    funded: {
+      h: "Funded"
+      n: "funded"
+      r: true
+      t: "`$OBJECT`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    net_amount: {
+      h: "Net Amount"
+      n: "net_amount"
+      r: true
+      sh: "The amount by which the cash balance changed, represented in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal)."
+      t: "`$INTEGER`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    refunded_from_payment: {
+      h: "Refunded From Payment"
+      n: "refunded_from_payment"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 3
+        count: 115
+        depth: 17
+      }
+    }
+    transferred_to_balance: {
+      h: "Transferred To Balance"
+      n: "transferred_to_balance"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 2
+      }
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "The type of the cash balance transaction."
+      t: "`$STRING`"
+    }
+    unapplied_from_payment: {
+      h: "Unapplied From Payment"
+      n: "unapplied_from_payment"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 2
+      }
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "cash_balance_transaction"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/customers/{customer}/cash_balance_transactions"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/customers/{customer}/cash_balance_transactions"
+          q: {
+            exist: [
+              "customer_id"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "cash_balance_transactions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/customers/{customer}/cash_balance_transactions/{transaction}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "transaction"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/customers/{customer}/cash_balance_transactions/{transaction}"
+          q: {
+            exist: [
+              "customer_id"
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+              transaction: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "cash_balance_transactions"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.customer")]
+  ]
+
+}

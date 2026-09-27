@@ -1,0 +1,94 @@
+{
+  "existing": {
+    "application_fee": {
+      "APPLICATION_FEE00": {
+        "account": "s96",
+        "amount": 151,
+        "amount_refunded": 152,
+        "application": "s99",
+        "balance_transaction": "s9a",
+        "charge": "s9b",
+        "created": 156,
+        "currency": "s9d",
+        "fee_source": "s9e",
+        "id": "APPLICATION_FEE00",
+        "livemode": true,
+        "object": "sa1",
+        "originating_transaction": "sa2",
+        "refunded": false,
+        "refunds": {}
+      },
+      "APPLICATION_FEE01": {
+        "account": "s12c",
+        "amount": 301,
+        "amount_refunded": 302,
+        "application": "s12f",
+        "balance_transaction": "s130",
+        "charge": "s131",
+        "created": 306,
+        "currency": "s133",
+        "fee_source": "s134",
+        "id": "APPLICATION_FEE01",
+        "livemode": true,
+        "object": "s137",
+        "originating_transaction": "s138",
+        "refunded": false,
+        "refunds": {}
+      },
+      "APPLICATION_FEE02": {
+        "account": "s1c2",
+        "amount": 451,
+        "amount_refunded": 452,
+        "application": "s1c5",
+        "balance_transaction": "s1c6",
+        "charge": "s1c7",
+        "created": 456,
+        "currency": "s1c9",
+        "fee_source": "s1ca",
+        "id": "APPLICATION_FEE02",
+        "livemode": true,
+        "object": "s1cd",
+        "originating_transaction": "s1ce",
+        "refunded": false,
+        "refunds": {}
+      }
+    }
+  },
+  "new": {
+    "application_fee": {
+      "application_fee_ref01": {
+        "account": "s258",
+        "amount": 601,
+        "amount_refunded": 602,
+        "application": "s25b",
+        "balance_transaction": "s25c",
+        "charge": "s25d",
+        "created": 606,
+        "currency": "s25f",
+        "fee_source": "s260",
+        "livemode": true,
+        "object": "s263",
+        "originating_transaction": "s264",
+        "refunded": false,
+        "refunds": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/application_fees/{id}/refund": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/application_fees": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/application_fees/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

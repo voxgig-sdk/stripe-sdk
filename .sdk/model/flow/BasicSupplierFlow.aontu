@@ -1,0 +1,44 @@
+# BasicSupplierFlow
+
+main: kit: flow: BasicSupplierFlow:
+{
+  entity: "supplier",
+  kind: "basic",
+  name: "BasicSupplierFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "supplier_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "supplier_ref01",
+        srcdatavar: "supplier_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "supplier01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-supplier_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSupplierFlow"
+}

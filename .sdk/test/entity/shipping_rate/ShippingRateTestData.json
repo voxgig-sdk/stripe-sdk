@@ -1,0 +1,87 @@
+{
+  "existing": {
+    "shipping_rate": {
+      "SHIPPING_RATE00": {
+        "active": true,
+        "created": 121,
+        "delivery_estimate": "s7a",
+        "display_name": "s7b",
+        "fixed_amount": {},
+        "id": "SHIPPING_RATE00",
+        "livemode": true,
+        "metadata": {},
+        "object": "s80",
+        "tax_behavior": "s81",
+        "tax_code": "s82",
+        "type": "s83"
+      },
+      "SHIPPING_RATE01": {
+        "active": true,
+        "created": 241,
+        "delivery_estimate": "sf2",
+        "display_name": "sf3",
+        "fixed_amount": {},
+        "id": "SHIPPING_RATE01",
+        "livemode": true,
+        "metadata": {},
+        "object": "sf8",
+        "tax_behavior": "sf9",
+        "tax_code": "sfa",
+        "type": "sfb"
+      },
+      "SHIPPING_RATE02": {
+        "active": true,
+        "created": 361,
+        "delivery_estimate": "s16a",
+        "display_name": "s16b",
+        "fixed_amount": {},
+        "id": "SHIPPING_RATE02",
+        "livemode": true,
+        "metadata": {},
+        "object": "s170",
+        "tax_behavior": "s171",
+        "tax_code": "s172",
+        "type": "s173"
+      }
+    }
+  },
+  "new": {
+    "shipping_rate": {
+      "shipping_rate_ref01": {
+        "active": true,
+        "created": 481,
+        "delivery_estimate": "s1e2",
+        "display_name": "s1e3",
+        "fixed_amount": {},
+        "livemode": true,
+        "metadata": {},
+        "object": "s1e8",
+        "tax_behavior": "s1e9",
+        "tax_code": "s1ea",
+        "type": "s1eb"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/shipping_rates/{shipping_rate_token}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/shipping_rates": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/shipping_rates": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/shipping_rates/{shipping_rate_token}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

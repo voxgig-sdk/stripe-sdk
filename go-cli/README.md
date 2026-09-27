@@ -19,16 +19,17 @@ make build
 export STRIPE_APIKEY=sk_live_xxx
 
 # 4. Each command line is ONE boru expression, run against the API:
-./stripe-cli list session
-./stripe-cli load 1 session            # {id:1} shorthand
-./stripe-cli load '{id:1}' session       # explicit match map
+./stripe-cli list account
+./stripe-cli load 1 account            # {id:1} shorthand
+./stripe-cli load '{id:1}' account       # explicit match map
+./stripe-cli list account_link
 
 # 5. Override the API base URL for a single call
-STRIPE_BASE=https://api.example.com ./stripe-cli list session
+STRIPE_BASE=https://api.example.com ./stripe-cli list account
 
 # 6. No arguments -> interactive REPL
 ./stripe-cli
-stripe> list session
+stripe> list account
 stripe> /quit
 ```
 
@@ -54,7 +55,7 @@ stripe> /quit
    arguments to open the REPL):
 
    ```sh
-   ./dist/*/stripe-cli list session
+   ./dist/*/stripe-cli list account
    ```
 
 4. **Go interactive.** Run the binary with no arguments to open the REPL, then
@@ -67,7 +68,7 @@ That is the whole loop: *build → set key → evaluate boru expressions*.
 ### List the records of an entity
 
 ```sh
-./stripe-cli list session
+./stripe-cli list account
 ```
 
 `list <entity>` returns the first page of records. `<entity>` is a bareword —
@@ -76,8 +77,8 @@ it is auto-quoted as an boru atom, so no quotes are needed.
 ### Load a single record
 
 ```sh
-./stripe-cli load 1 session          # scalar shorthand for {id:1}
-./stripe-cli load '{id:1}' session     # explicit match map
+./stripe-cli load 1 account          # scalar shorthand for {id:1}
+./stripe-cli load '{id:1}' account     # explicit match map
 ```
 
 The query is either a **scalar** (`1`, treated as `{id:1}`) or a **match map**
@@ -90,7 +91,7 @@ Configuration is read from the environment — nothing is written to disk:
 ```sh
 export STRIPE_APIKEY=sk_live_xxx            # API key
 export STRIPE_BASE=https://api.example.com  # optional: override the API base URL
-./stripe-cli list session
+./stripe-cli list account
 ```
 
 Both are injectable by a secrets vault, so the key never has to be typed inline.
@@ -102,7 +103,7 @@ evaluated as its own boru expression:
 
 ```text
 $ ./stripe-cli
-stripe> list session
+stripe> list account
 stripe> /help
 stripe> /quit
 ```
@@ -117,7 +118,7 @@ make build-all   # linux/darwin/windows x amd64/arm64, under dist/<os>-<arch>/
 ### Discover the available entities
 
 `/help` in the REPL prints the full entity list, or see [Entities](#entities)
-below — this SDK exposes 1 entity.
+below — this SDK exposes 148 entities.
 
 ## Reference
 
@@ -130,7 +131,7 @@ The CLI registers these boru words, each bound to the SDK:
 | `list`   | `list <entity>` · `list <query> <entity>`     | First page of records          |
 | `load`   | `load <entity>` · `load <query> <entity>`     | A single record                |
 
-- `<entity>` is a bareword, auto-quoted as an boru atom (e.g. `session`).
+- `<entity>` is a bareword, auto-quoted as an boru atom (e.g. `account`).
 - `<query>` is either a **Map** (`{id:1}`) or a **Scalar** (`1`, treated as
   `{id:1}`). A scalar is always wrapped as `{id:<value>}`.
 
@@ -171,9 +172,9 @@ Meta-commands use the `/` prefix (everything else on a line is evaluated as boru
 
 ### Entities
 
-The 1 entity this SDK exposes (any is valid as `<entity>`):
+The 148 entities this SDK exposes (any is valid as `<entity>`):
 
-session
+account account_link account_owner account_session active_entitlement alert apple_pay_domain application_fee association authentication authorization balance balance_setting balance_transaction bank_account calculation capability card cardholder cash_balance cash_balance_transaction charge configuration confirmation_token connection_token country_spec coupon credit_balance_summary credit_balance_transaction credit_grant credit_note credit_note_line credit_reversal customer customer_balance_transaction customer_session debit_reversal deleted_account deleted_apple_pay_domain deleted_coupon deleted_external_account deleted_invoiceitem deleted_person deleted_plan deleted_product_feature deleted_subscription_item deleted_webhook_endpoint discount dispute domain early_fraud_warning ephemeral_key event exchange_rate external_account feature feedback_option file file_link financial_account financial_account_feature fund_cash_balance funding_instruction history inbound_transfer install invoice invoice_payment invoice_rendering_template invoiceitem line line_item linked_account linked_account_owner location login_link mandate meter meter_event meter_event_adjustment meter_event_summary onboarding_link order outbound_payment outbound_transfer payment_attempt_record payment_evaluation payment_intent payment_intent_amount_details_line_item payment_link payment_method payment_method_configuration payment_method_domain payment_record payout person personalization_design physical_bundle plan price product product_feature promotion_code quote quote_computed_upfront_line_item quote_pdf reader received_credit received_debit refund registration report_run report_type request reversal review scheduled_query_run search secret session setting settlement setup_attempt setup_intent shipping_rate sigma_api_query source source_mandate_notification source_transaction subscription subscription_item subscription_schedule supplier tax_code tax_id tax_rate test_clock token topup transaction transaction_entry transfer trial_offer value_list value_list_item verification_report verification_session webhook_endpoint
 
 ## Explanation
 

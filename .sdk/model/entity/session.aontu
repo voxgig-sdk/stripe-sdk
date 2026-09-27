@@ -1,0 +1,1176 @@
+# Entity: session
+
+main: kit: entity: session: {
+
+  alias: field: {}
+
+  fields: {
+    account_holder: {
+      h: "Account Holder"
+      n: "account_holder"
+      r: false
+      sh: "The account holder for whom accounts are collected in this session."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 107346
+        depth: 64
+      }
+    }
+    accounts: {
+      h: "Accounts"
+      n: "accounts"
+      r: true
+      sh: "The accounts that were collected as part of this Session."
+      t: "`$OBJECT`"
+      union: {
+        branches: 17
+        count: 93066
+        depth: 64
+      }
+    }
+    adaptive_pricing: {
+      h: "Adaptive Pricing"
+      n: "adaptive_pricing"
+      r: false
+      sh: "Settings for price localization with [Adaptive Pricing](https://docs.stripe.com/payments/checkout/adaptive-pricing)."
+      t: "`$ANY`"
+    }
+    after_expiration: {
+      h: "After Expiration"
+      n: "after_expiration"
+      r: false
+      sh: "When set, provides configuration for actions to take if this Checkout Session expires."
+      t: "`$ANY`"
+    }
+    allow_promotion_codes: {
+      h: "Allow Promotion Codes"
+      n: "allow_promotion_codes"
+      r: false
+      sh: "Enables user redeemable promotion codes."
+      t: "`$BOOLEAN`"
+    }
+    allowed_payment_method_types: {
+      h: "Allowed Payment Method Types"
+      n: "allowed_payment_method_types"
+      r: false
+      sh: "A list of the types of payment methods (e.g., `card`) this Checkout Session can accept."
+      t: "`$ARRAY`"
+    }
+    amount_subtotal: {
+      h: "Amount Subtotal"
+      n: "amount_subtotal"
+      r: false
+      sh: "Total of all items before discounts or taxes are applied."
+      t: "`$INTEGER`"
+    }
+    amount_total: {
+      h: "Amount Total"
+      n: "amount_total"
+      r: false
+      sh: "Total of all items after discounts and taxes are applied."
+      t: "`$INTEGER`"
+    }
+    automatic_tax: {
+      h: "Automatic Tax"
+      n: "automatic_tax"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 6
+      }
+    }
+    bank_account_token: {
+      h: "Bank Account Token"
+      n: "bank_account_token"
+      r: true
+      sh: "Tokenization is the process Stripe uses to collect sensitive card or bank account details, or personally identifiable information (PII), directly from your customers in a secure manner."
+      t: "`$OBJECT`"
+      union: {
+        branches: 17
+        count: 106764
+        depth: 64
+      }
+    }
+    billing_address_collection: {
+      h: "Billing Address Collection"
+      n: "billing_address_collection"
+      r: false
+      sh: "Describes whether Checkout should collect the customer's billing address."
+      t: "`$STRING`"
+    }
+    branding_settings: {
+      h: "Branding Settings"
+      n: "branding_settings"
+      r: true
+      t: "`$OBJECT`"
+    }
+    cancel_url: {
+      h: "Cancel Url"
+      n: "cancel_url"
+      r: false
+      sh: "If set, Checkout displays a back button and customers will be directed to this URL if they decide to cancel payment and return to your website."
+      t: "`$STRING`"
+    }
+    client_reference_id: {
+      h: "Client Reference Id"
+      n: "client_reference_id"
+      r: false
+      sh: "A unique string to reference the Checkout Session."
+      t: "`$STRING`"
+    }
+    client_secret: {
+      h: "Client Secret"
+      n: "client_secret"
+      r: false
+      sh: "The client secret of your Checkout Session."
+      t: "`$STRING`"
+    }
+    collected_information: {
+      h: "Collected Information"
+      n: "collected_information"
+      r: false
+      sh: "Information about the customer collected within the Checkout Session."
+      t: "`$ANY`"
+    }
+    configuration: {
+      h: "Configuration"
+      n: "configuration"
+      r: true
+      sh: "The configuration used by this session, describing the features available."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 4
+        depth: 11
+      }
+    }
+    consent: {
+      h: "Consent"
+      n: "consent"
+      r: false
+      sh: "Results of `consent_collection` for this session."
+      t: "`$ANY`"
+    }
+    consent_collection: {
+      h: "Consent Collection"
+      n: "consent_collection"
+      r: false
+      sh: "When set, provides configuration for the Checkout Session to gather active consent from customers."
+      t: "`$ANY`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: false
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    currency_conversion: {
+      h: "Currency Conversion"
+      n: "currency_conversion"
+      r: false
+      sh: "Currency conversion details for [Adaptive Pricing](https://docs.stripe.com/payments/checkout/adaptive-pricing) sessions created before 2025-03-31."
+      t: "`$ANY`"
+    }
+    custom_fields: {
+      h: "Custom Fields"
+      n: "custom_fields"
+      r: true
+      sh: "Collect additional information from your customer using custom fields."
+      t: "`$ARRAY`"
+    }
+    custom_text: {
+      h: "Custom Text"
+      n: "custom_text"
+      r: true
+      t: "`$OBJECT`"
+    }
+    customer: {
+      h: "Customer"
+      n: "customer"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      sh: "The ID of the customer for this Session."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 108733
+        depth: 64
+      }
+    }
+    customer_account: {
+      h: "Customer Account"
+      n: "customer_account"
+      r: false
+      sh: "The ID of the account for this Session."
+      t: "`$STRING`"
+    }
+    customer_creation: {
+      h: "Customer Creation"
+      n: "customer_creation"
+      r: false
+      sh: "Configure whether a Checkout Session creates a Customer when the Checkout Session completes."
+      t: "`$STRING`"
+    }
+    customer_details: {
+      h: "Customer Details"
+      n: "customer_details"
+      r: false
+      sh: "The customer details including the customer's tax exempt status and the customer's tax IDs."
+      t: "`$ANY`"
+    }
+    customer_email: {
+      h: "Customer Email"
+      n: "customer_email"
+      r: false
+      sh: "If provided, this value will be used when the Customer object is created."
+      t: "`$STRING`"
+    }
+    discounts: {
+      h: "Discounts"
+      n: "discounts"
+      r: false
+      sh: "List of coupons and promotion codes attached to the Checkout Session."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 8
+        depth: 10
+      }
+    }
+    excluded_payment_method_types: {
+      h: "Excluded Payment Method Types"
+      n: "excluded_payment_method_types"
+      r: false
+      sh: "A list of the types of payment methods (e.g., `card`) that should be excluded from this Checkout Session."
+      t: "`$ARRAY`"
+    }
+    expires_at: {
+      fo: "unix-time"
+      h: "Expires At"
+      n: "expires_at"
+      r: true
+      sh: "The timestamp at which the Checkout Session will expire."
+      t: "`$INTEGER`"
+    }
+    filters: {
+      h: "Filters"
+      n: "filters"
+      r: false
+      t: "`$OBJECT`"
+    }
+    flow: {
+      h: "Flow"
+      n: "flow"
+      r: false
+      sh: "Information about a specific flow for the customer to go through."
+      t: "`$ANY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    integration_identifier: {
+      h: "Integration Identifier"
+      n: "integration_identifier"
+      r: false
+      sh: "The integration identifier for this Checkout Session."
+      t: "`$STRING`"
+    }
+    invoice: {
+      h: "Invoice"
+      n: "invoice"
+      r: false
+      sh: "ID of the invoice created by the Checkout Session, if it exists."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 70910
+        depth: 64
+      }
+    }
+    invoice_creation: {
+      h: "Invoice Creation"
+      n: "invoice_creation"
+      r: false
+      sh: "Details on the state of invoice creation for the Checkout Session."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 11
+        depth: 16
+      }
+    }
+    limits: {
+      h: "Limits"
+      n: "limits"
+      r: true
+      t: "`$OBJECT`"
+    }
+    line_items: {
+      h: "Line Items"
+      n: "line_items"
+      r: true
+      sh: "The line items purchased by the customer."
+      t: "`$OBJECT`"
+      union: {
+        branches: 3
+        count: 16
+        depth: 17
+      }
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    locale: {
+      h: "Locale"
+      n: "locale"
+      r: false
+      sh: "The IETF language tag of the locale Checkout is displayed in."
+      t: "`$STRING`"
+    }
+    managed_payments: {
+      h: "Managed Payments"
+      n: "managed_payments"
+      r: false
+      sh: "Settings for Managed Payments for this Checkout Session and resulting [PaymentIntents](/api/payment_intents/object), [Invoices](/api/invoices/object), and [Subscriptions](/api/subscriptions/object)."
+      t: "`$ANY`"
+    }
+    manual_entry: {
+      h: "Manual Entry"
+      n: "manual_entry"
+      r: false
+      t: "`$OBJECT`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    mode: {
+      h: "Mode"
+      n: "mode"
+      r: true
+      sh: "The mode of the Checkout Session."
+      t: "`$STRING`"
+    }
+    name_collection: {
+      h: "Name Collection"
+      n: "name_collection"
+      r: false
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    on_behalf_of: {
+      h: "On Behalf Of"
+      n: "on_behalf_of"
+      r: false
+      sh: "The account for which the session was created on behalf of."
+      t: "`$STRING`"
+    }
+    optional_items: {
+      h: "Optional Items"
+      n: "optional_items"
+      r: false
+      sh: "The optional items presented to the customer at checkout."
+      t: "`$ARRAY`"
+    }
+    origin_context: {
+      h: "Origin Context"
+      n: "origin_context"
+      r: false
+      sh: "Where the user is coming from."
+      t: "`$STRING`"
+    }
+    payment_intent: {
+      h: "Payment Intent"
+      n: "payment_intent"
+      r: false
+      sh: "The ID of the PaymentIntent for Checkout Sessions in `payment` mode."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 23564
+        depth: 53
+      }
+    }
+    payment_link: {
+      h: "Payment Link"
+      n: "payment_link"
+      r: false
+      sh: "The ID of the Payment Link that created this Session."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 102079
+        depth: 64
+      }
+    }
+    payment_method_collection: {
+      h: "Payment Method Collection"
+      n: "payment_method_collection"
+      r: false
+      sh: "Configure whether a Checkout Session should collect a payment method for sessions with mode `payment`."
+      t: "`$STRING`"
+    }
+    payment_method_configuration_details: {
+      h: "Payment Method Configuration Details"
+      n: "payment_method_configuration_details"
+      r: false
+      sh: "Information about the payment method configuration used for this Checkout session if using dynamic payment methods."
+      t: "`$ANY`"
+    }
+    payment_method_options: {
+      h: "Payment Method Options"
+      n: "payment_method_options"
+      r: false
+      sh: "Payment-method-specific configuration for the PaymentIntent or SetupIntent of this CheckoutSession."
+      t: "`$ANY`"
+    }
+    payment_method_types: {
+      h: "Payment Method Types"
+      n: "payment_method_types"
+      r: true
+      sh: "A list of the types of payment methods (e.g."
+      t: "`$ARRAY`"
+    }
+    payment_status: {
+      h: "Payment Status"
+      n: "payment_status"
+      r: true
+      sh: "The payment status of the Checkout Session, one of `paid`, `unpaid`, or `no_payment_required`."
+      t: "`$STRING`"
+    }
+    permissions: {
+      h: "Permissions"
+      n: "permissions"
+      op: {
+        create: {
+          req: true
+          type: "`$ARRAY`"
+        }
+        load: {
+          req: true
+          type: "`$ARRAY`"
+        }
+      }
+      r: false
+      sh: "This property is used to set up permissions for various actions (e.g., update) on the CheckoutSession object."
+      t: "`$ANY`"
+    }
+    phone_number_collection: {
+      h: "Phone Number Collection"
+      n: "phone_number_collection"
+      r: true
+      t: "`$OBJECT`"
+    }
+    prefetch: {
+      h: "Prefetch"
+      n: "prefetch"
+      r: false
+      sh: "Data features requested to be retrieved upon account creation."
+      t: "`$ARRAY`"
+    }
+    presentment_details: {
+      h: "Presentment Details"
+      n: "presentment_details"
+      r: true
+      t: "`$OBJECT`"
+    }
+    recovered_from: {
+      h: "Recovered From"
+      n: "recovered_from"
+      r: false
+      sh: "The ID of the original expired Checkout Session that triggered the recovery flow."
+      t: "`$STRING`"
+    }
+    redirect_on_completion: {
+      h: "Redirect On Completion"
+      n: "redirect_on_completion"
+      r: false
+      sh: "This parameter applies to `ui_mode: embedded_page`."
+      t: "`$STRING`"
+    }
+    return_url: {
+      h: "Return Url"
+      n: "return_url"
+      r: false
+      sh: "Applies to Checkout Sessions with `ui_mode: embedded_page` or `ui_mode: elements`."
+      t: "`$STRING`"
+    }
+    saved_payment_method_options: {
+      h: "Saved Payment Method Options"
+      n: "saved_payment_method_options"
+      r: false
+      sh: "Controls saved payment method settings for the session."
+      t: "`$ANY`"
+    }
+    setup_intent: {
+      h: "Setup Intent"
+      n: "setup_intent"
+      r: false
+      sh: "The ID of the SetupIntent for Checkout Sessions in `setup` mode."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 55
+        depth: 10
+      }
+    }
+    shipping_address_collection: {
+      h: "Shipping Address Collection"
+      n: "shipping_address_collection"
+      r: false
+      sh: "When set, provides configuration for Checkout to collect a shipping address from a customer."
+      t: "`$ANY`"
+    }
+    shipping_cost: {
+      h: "Shipping Cost"
+      n: "shipping_cost"
+      r: false
+      sh: "The details of the customer cost of shipping, including the customer chosen ShippingRate."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 3
+        depth: 9
+      }
+    }
+    shipping_options: {
+      h: "Shipping Options"
+      n: "shipping_options"
+      r: true
+      sh: "The shipping rate options applied to this Session."
+      t: "`$ARRAY`"
+      union: {
+        branches: 2
+        count: 3
+        depth: 8
+      }
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      sh: "The status of the Checkout Session, one of `open`, `complete`, or `expired`."
+      t: "`$STRING`"
+    }
+    submit_type: {
+      h: "Submit Type"
+      n: "submit_type"
+      r: false
+      sh: "Describes the type of transaction being performed by Checkout in order to customize relevant text on the page, such as the submit button."
+      t: "`$STRING`"
+    }
+    subscription: {
+      h: "Subscription"
+      n: "subscription"
+      r: false
+      sh: "The ID of the [Subscription](https://docs.stripe.com/api/subscriptions) for Checkout Sessions in `subscription` mode."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 115979
+        depth: 64
+      }
+    }
+    success_url: {
+      h: "Success Url"
+      n: "success_url"
+      r: false
+      sh: "The URL the customer will be directed to after the payment or subscription creation is successful."
+      t: "`$STRING`"
+    }
+    tax_id_collection: {
+      h: "Tax Id Collection"
+      n: "tax_id_collection"
+      r: true
+      t: "`$OBJECT`"
+    }
+    total_details: {
+      h: "Total Details"
+      n: "total_details"
+      r: false
+      sh: "Tax and discount details for the computed total amount."
+      t: "`$INTEGER`"
+      union: {
+        branches: 3
+        count: 10
+        depth: 18
+      }
+    }
+    ui_mode: {
+      h: "Ui Mode"
+      n: "ui_mode"
+      r: false
+      sh: "The UI mode of the Session."
+      t: "`$STRING`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      sh: "The URL to the Checkout Session."
+      t: "`$STRING`"
+    }
+    wallet_options: {
+      h: "Wallet Options"
+      n: "wallet_options"
+      r: false
+      sh: "Wallet-specific configuration for this Checkout Session."
+      t: "`$ANY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "session"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/checkout/sessions/{session}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "session"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/checkout/sessions/{session}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              session: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "checkout"
+            }
+            {
+              lit: "sessions"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/checkout/sessions/{session}/expire"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "session"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/checkout/sessions/{session}/expire"
+          q: {
+            "$action": "expire"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              session: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "checkout"
+            }
+            {
+              lit: "sessions"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "expire"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/billing_portal/sessions"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/billing_portal/sessions"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "billing_portal"
+            }
+            {
+              lit: "sessions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/checkout/sessions"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/checkout/sessions"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "checkout"
+            }
+            {
+              lit: "sessions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/financial_connections/sessions"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/financial_connections/sessions"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "financial_connections"
+            }
+            {
+              lit: "sessions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/link_account_sessions"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/link_account_sessions"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "link_account_sessions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/checkout/sessions"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "customer"
+                or: "customer"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "customer_account"
+                or: "customer_account"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "customer_detail"
+                or: "customer_detail"
+                r: false
+                t: "`$OBJECT`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "payment_intent"
+                or: "payment_intent"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "payment_link"
+                or: "payment_link"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "subscription"
+                or: "subscription"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/checkout/sessions"
+          q: {
+            exist: [
+              "created"
+              "customer"
+              "customer_account"
+              "customer_detail"
+              "ending_before"
+              "expand"
+              "limit"
+              "payment_intent"
+              "payment_link"
+              "starting_after"
+              "status"
+              "subscription"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "checkout"
+            }
+            {
+              lit: "sessions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/checkout/sessions/{session}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "session"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/checkout/sessions/{session}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              session: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "checkout"
+            }
+            {
+              lit: "sessions"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/financial_connections/sessions/{session}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "session"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/financial_connections/sessions/{session}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              session: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "financial_connections"
+            }
+            {
+              lit: "sessions"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/link_account_sessions/{session}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "session"
+                or: "session"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/link_account_sessions/{session}"
+          q: {
+            exist: [
+              "expand"
+              "session"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "link_account_sessions"
+            }
+            {
+              var: "session"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

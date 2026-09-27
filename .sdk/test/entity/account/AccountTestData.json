@@ -1,0 +1,266 @@
+{
+  "existing": {
+    "account": {
+      "ACCOUNT00": {
+        "account_holder": "s19a",
+        "account_numbers": [],
+        "balance": "s19c",
+        "balance_refresh": "s19d",
+        "business_profile": "s19e",
+        "business_type": "s19f",
+        "capabilities": {},
+        "category": "s1a1",
+        "charges_enabled": true,
+        "company": {},
+        "controller": {},
+        "country": "s1a5",
+        "created": 422,
+        "default_currency": "s1a7",
+        "details_submitted": true,
+        "display_name": "s1a9",
+        "email": "s1aa",
+        "external_accounts": {},
+        "future_requirements": {},
+        "groups": "s1ad",
+        "id": "ACCOUNT00",
+        "individual": {},
+        "institution_name": "s1b0",
+        "last4": "s1b1",
+        "livemode": true,
+        "metadata": {},
+        "object": "s1b4",
+        "ownership": "s1b5",
+        "ownership_refresh": "s1b6",
+        "payouts_enabled": false,
+        "permissions": [],
+        "requirements": {},
+        "settings": "s1ba",
+        "status": "s1bb",
+        "status_details": {},
+        "subcategory": "s1bd",
+        "subscriptions": [],
+        "supported_payment_method_types": [],
+        "tos_acceptance": {},
+        "transaction_refresh": "s1c1",
+        "type": "s1c2",
+        "account": "ACCOUNT01"
+      },
+      "ACCOUNT01": {
+        "account_holder": "s334",
+        "account_numbers": [],
+        "balance": "s336",
+        "balance_refresh": "s337",
+        "business_profile": "s338",
+        "business_type": "s339",
+        "capabilities": {},
+        "category": "s33b",
+        "charges_enabled": true,
+        "company": {},
+        "controller": {},
+        "country": "s33f",
+        "created": 832,
+        "default_currency": "s341",
+        "details_submitted": true,
+        "display_name": "s343",
+        "email": "s344",
+        "external_accounts": {},
+        "future_requirements": {},
+        "groups": "s347",
+        "id": "ACCOUNT01",
+        "individual": {},
+        "institution_name": "s34a",
+        "last4": "s34b",
+        "livemode": true,
+        "metadata": {},
+        "object": "s34e",
+        "ownership": "s34f",
+        "ownership_refresh": "s350",
+        "payouts_enabled": false,
+        "permissions": [],
+        "requirements": {},
+        "settings": "s354",
+        "status": "s355",
+        "status_details": {},
+        "subcategory": "s357",
+        "subscriptions": [],
+        "supported_payment_method_types": [],
+        "tos_acceptance": {},
+        "transaction_refresh": "s35b",
+        "type": "s35c",
+        "account": "ACCOUNT01"
+      },
+      "ACCOUNT02": {
+        "account_holder": "s4ce",
+        "account_numbers": [],
+        "balance": "s4d0",
+        "balance_refresh": "s4d1",
+        "business_profile": "s4d2",
+        "business_type": "s4d3",
+        "capabilities": {},
+        "category": "s4d5",
+        "charges_enabled": true,
+        "company": {},
+        "controller": {},
+        "country": "s4d9",
+        "created": 1242,
+        "default_currency": "s4db",
+        "details_submitted": true,
+        "display_name": "s4dd",
+        "email": "s4de",
+        "external_accounts": {},
+        "future_requirements": {},
+        "groups": "s4e1",
+        "id": "ACCOUNT02",
+        "individual": {},
+        "institution_name": "s4e4",
+        "last4": "s4e5",
+        "livemode": true,
+        "metadata": {},
+        "object": "s4e8",
+        "ownership": "s4e9",
+        "ownership_refresh": "s4ea",
+        "payouts_enabled": false,
+        "permissions": [],
+        "requirements": {},
+        "settings": "s4ee",
+        "status": "s4ef",
+        "status_details": {},
+        "subcategory": "s4f1",
+        "subscriptions": [],
+        "supported_payment_method_types": [],
+        "tos_acceptance": {},
+        "transaction_refresh": "s4f5",
+        "type": "s4f6",
+        "account": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "account": {
+      "account_ref01": {
+        "account_holder": "s668",
+        "account_numbers": [],
+        "balance": "s66a",
+        "balance_refresh": "s66b",
+        "business_profile": "s66c",
+        "business_type": "s66d",
+        "capabilities": {},
+        "category": "s66f",
+        "charges_enabled": true,
+        "company": {},
+        "controller": {},
+        "country": "s673",
+        "created": 1652,
+        "default_currency": "s675",
+        "details_submitted": true,
+        "display_name": "s677",
+        "email": "s678",
+        "external_accounts": {},
+        "future_requirements": {},
+        "groups": "s67b",
+        "individual": {},
+        "institution_name": "s67e",
+        "last4": "s67f",
+        "livemode": true,
+        "metadata": {},
+        "object": "s682",
+        "ownership": "s683",
+        "ownership_refresh": "s684",
+        "payouts_enabled": false,
+        "permissions": [],
+        "requirements": {},
+        "settings": "s688",
+        "status": "s689",
+        "status_details": {},
+        "subcategory": "s68b",
+        "subscriptions": [],
+        "supported_payment_method_types": [],
+        "tos_acceptance": {},
+        "transaction_refresh": "s68f",
+        "type": "s690"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/accounts/{account}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/financial_connections/accounts/{account}/disconnect": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/linked_accounts/{account}/disconnect": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/financial_connections/accounts/{account}/refresh": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/linked_accounts/{account}/refresh": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/accounts/{account}/reject": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/financial_connections/accounts/{account}/subscribe": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/accounts/{account}/unreject": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/financial_connections/accounts/{account}/unsubscribe": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/accounts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/financial_connections/accounts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/accounts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/linked_accounts/{account}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/accounts/{account}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/financial_connections/accounts/{account}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/account": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

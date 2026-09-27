@@ -1,0 +1,128 @@
+{
+  "existing": {
+    "authentication": {
+      "AUTHENTICATION00": {
+        "acquirer_details": {},
+        "amount": 211,
+        "challenge_url": "sd4",
+        "channel": {},
+        "created": 214,
+        "currency": "sd7",
+        "directory_server": "sd8",
+        "fingerprinting_url": "sd9",
+        "flow_preference": {},
+        "future_usage": {},
+        "id": "AUTHENTICATION00",
+        "livemode": false,
+        "message_category": "sde",
+        "metadata": {},
+        "object": "se0",
+        "outcome": "se1",
+        "outcome_details": {},
+        "payment_method": "se3",
+        "reason": "se4",
+        "shipping_address": {},
+        "status": "se6"
+      },
+      "AUTHENTICATION01": {
+        "acquirer_details": {},
+        "amount": 421,
+        "challenge_url": "s1a6",
+        "channel": {},
+        "created": 424,
+        "currency": "s1a9",
+        "directory_server": "s1aa",
+        "fingerprinting_url": "s1ab",
+        "flow_preference": {},
+        "future_usage": {},
+        "id": "AUTHENTICATION01",
+        "livemode": false,
+        "message_category": "s1b0",
+        "metadata": {},
+        "object": "s1b2",
+        "outcome": "s1b3",
+        "outcome_details": {},
+        "payment_method": "s1b5",
+        "reason": "s1b6",
+        "shipping_address": {},
+        "status": "s1b8"
+      },
+      "AUTHENTICATION02": {
+        "acquirer_details": {},
+        "amount": 631,
+        "challenge_url": "s278",
+        "channel": {},
+        "created": 634,
+        "currency": "s27b",
+        "directory_server": "s27c",
+        "fingerprinting_url": "s27d",
+        "flow_preference": {},
+        "future_usage": {},
+        "id": "AUTHENTICATION02",
+        "livemode": false,
+        "message_category": "s282",
+        "metadata": {},
+        "object": "s284",
+        "outcome": "s285",
+        "outcome_details": {},
+        "payment_method": "s287",
+        "reason": "s288",
+        "shipping_address": {},
+        "status": "s28a"
+      }
+    }
+  },
+  "new": {
+    "authentication": {
+      "authentication_ref01": {
+        "acquirer_details": {},
+        "amount": 841,
+        "challenge_url": "s34a",
+        "channel": {},
+        "created": 844,
+        "currency": "s34d",
+        "directory_server": "s34e",
+        "fingerprinting_url": "s34f",
+        "flow_preference": {},
+        "future_usage": {},
+        "livemode": false,
+        "message_category": "s354",
+        "metadata": {},
+        "object": "s356",
+        "outcome": "s357",
+        "outcome_details": {},
+        "payment_method": "s359",
+        "reason": "s35a",
+        "shipping_address": {},
+        "status": "s35c"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/three_d_secure/authentications/{authentication}/cancel": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/three_d_secure/authentications/{authentication}/submit": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/three_d_secure/authentications": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/three_d_secure/authentications": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/three_d_secure/authentications/{authentication}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

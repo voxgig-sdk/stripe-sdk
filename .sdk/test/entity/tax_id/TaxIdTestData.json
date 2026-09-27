@@ -1,0 +1,106 @@
+{
+  "existing": {
+    "tax_id": {
+      "TAX_ID00": {
+        "country": "s6e",
+        "created": 111,
+        "customer": "s70",
+        "customer_account": "s71",
+        "id": "TAX_ID00",
+        "livemode": false,
+        "object": "s74",
+        "owner": "s75",
+        "type": "s76",
+        "value": "s77",
+        "verification": "s78",
+        "customer_id": "CUSTOMER01"
+      },
+      "TAX_ID01": {
+        "country": "sdc",
+        "created": 221,
+        "customer": "sde",
+        "customer_account": "sdf",
+        "id": "TAX_ID01",
+        "livemode": false,
+        "object": "se2",
+        "owner": "se3",
+        "type": "se4",
+        "value": "se5",
+        "verification": "se6",
+        "customer_id": "CUSTOMER01"
+      },
+      "TAX_ID02": {
+        "country": "s14a",
+        "created": 331,
+        "customer": "s14c",
+        "customer_account": "s14d",
+        "id": "TAX_ID02",
+        "livemode": false,
+        "object": "s150",
+        "owner": "s151",
+        "type": "s152",
+        "value": "s153",
+        "verification": "s154",
+        "customer_id": "CUSTOMER01"
+      }
+    }
+  },
+  "new": {
+    "tax_id": {
+      "tax_id_ref01": {
+        "country": "s1b8",
+        "created": 441,
+        "customer": "s1ba",
+        "customer_account": "s1bb",
+        "livemode": false,
+        "object": "s1be",
+        "owner": "s1bf",
+        "type": "s1c0",
+        "value": "s1c1",
+        "verification": "s1c2"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/customers/{customer}/tax_ids": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/tax_ids": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/customers/{customer}/tax_ids": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/tax_ids": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/customers/{customer}/tax_ids/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/tax_ids/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /v1/customers/{customer}/tax_ids/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /v1/tax_ids/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

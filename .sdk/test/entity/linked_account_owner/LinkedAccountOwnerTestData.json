@@ -1,0 +1,59 @@
+{
+  "existing": {
+    "linked_account_owner": {
+      "LINKED_ACCOUNT_OWNER00": {
+        "email": "s50",
+        "id": "LINKED_ACCOUNT_OWNER00",
+        "name": "s52",
+        "object": "s53",
+        "ownership": "s54",
+        "phone": "s55",
+        "raw_address": "s56",
+        "refreshed_at": 87,
+        "account": "ACCOUNT01"
+      },
+      "LINKED_ACCOUNT_OWNER01": {
+        "email": "sa0",
+        "id": "LINKED_ACCOUNT_OWNER01",
+        "name": "sa2",
+        "object": "sa3",
+        "ownership": "sa4",
+        "phone": "sa5",
+        "raw_address": "sa6",
+        "refreshed_at": 167,
+        "account": "ACCOUNT01"
+      },
+      "LINKED_ACCOUNT_OWNER02": {
+        "email": "sf0",
+        "id": "LINKED_ACCOUNT_OWNER02",
+        "name": "sf2",
+        "object": "sf3",
+        "ownership": "sf4",
+        "phone": "sf5",
+        "raw_address": "sf6",
+        "refreshed_at": 247,
+        "account": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "linked_account_owner": {
+      "linked_account_owner_ref01": {
+        "email": "s140",
+        "name": "s142",
+        "object": "s143",
+        "ownership": "s144",
+        "phone": "s145",
+        "raw_address": "s146",
+        "refreshed_at": 327
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/linked_accounts/{account}/owners": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

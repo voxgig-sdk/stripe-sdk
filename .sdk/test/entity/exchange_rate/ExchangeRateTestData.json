@@ -1,0 +1,41 @@
+{
+  "existing": {
+    "exchange_rate": {
+      "EXCHANGE_RATE00": {
+        "id": "EXCHANGE_RATE00",
+        "object": "s1f",
+        "rates": {}
+      },
+      "EXCHANGE_RATE01": {
+        "id": "EXCHANGE_RATE01",
+        "object": "s3d",
+        "rates": {}
+      },
+      "EXCHANGE_RATE02": {
+        "id": "EXCHANGE_RATE02",
+        "object": "s5b",
+        "rates": {}
+      }
+    }
+  },
+  "new": {
+    "exchange_rate": {
+      "exchange_rate_ref01": {
+        "object": "s79",
+        "rates": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/exchange_rates": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/exchange_rates/{rate_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

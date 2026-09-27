@@ -1,0 +1,106 @@
+{
+  "existing": {
+    "personalization_design": {
+      "PERSONALIZATION_DESIGN00": {
+        "card_logo": "s82",
+        "carrier_text": "s83",
+        "created": 132,
+        "id": "PERSONALIZATION_DESIGN00",
+        "livemode": true,
+        "lookup_key": "s87",
+        "metadata": {},
+        "name": "s89",
+        "object": "s8a",
+        "physical_bundle": "s8b",
+        "preferences": {},
+        "rejection_reasons": {},
+        "status": "s8e"
+      },
+      "PERSONALIZATION_DESIGN01": {
+        "card_logo": "s104",
+        "carrier_text": "s105",
+        "created": 262,
+        "id": "PERSONALIZATION_DESIGN01",
+        "livemode": true,
+        "lookup_key": "s109",
+        "metadata": {},
+        "name": "s10b",
+        "object": "s10c",
+        "physical_bundle": "s10d",
+        "preferences": {},
+        "rejection_reasons": {},
+        "status": "s110"
+      },
+      "PERSONALIZATION_DESIGN02": {
+        "card_logo": "s186",
+        "carrier_text": "s187",
+        "created": 392,
+        "id": "PERSONALIZATION_DESIGN02",
+        "livemode": true,
+        "lookup_key": "s18b",
+        "metadata": {},
+        "name": "s18d",
+        "object": "s18e",
+        "physical_bundle": "s18f",
+        "preferences": {},
+        "rejection_reasons": {},
+        "status": "s192"
+      }
+    }
+  },
+  "new": {
+    "personalization_design": {
+      "personalization_design_ref01": {
+        "card_logo": "s208",
+        "carrier_text": "s209",
+        "created": 522,
+        "livemode": true,
+        "lookup_key": "s20d",
+        "metadata": {},
+        "name": "s20f",
+        "object": "s210",
+        "physical_bundle": "s211",
+        "preferences": {},
+        "rejection_reasons": {},
+        "status": "s214"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/issuing/personalization_designs/{personalization_design}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/activate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/deactivate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/reject": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/issuing/personalization_designs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/issuing/personalization_designs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/issuing/personalization_designs/{personalization_design}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

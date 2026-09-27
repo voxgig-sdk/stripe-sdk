@@ -31,7 +31,7 @@ func TestSessionDirect(t *testing.T) {
 
 
 		result, err := client.Direct(map[string]any{
-			"path":   "checkout/sessions",
+			"path":   "v1/checkout/sessions",
 			"method": "GET",
 			"params": map[string]any{},
 		})
@@ -97,7 +97,7 @@ func TestSessionDirect(t *testing.T) {
 		if setup.live {
 			listParams := map[string]any{}
 			listResult, listErr := client.Direct(map[string]any{
-				"path":   "checkout/sessions",
+				"path":   "v1/checkout/sessions",
 				"method": "GET",
 				"params": listParams,
 			})
@@ -120,7 +120,7 @@ func TestSessionDirect(t *testing.T) {
 		}
 
 		result, err := client.Direct(map[string]any{
-			"path":   "checkout/sessions/{id}",
+			"path":   "v1/checkout/sessions/{id}",
 			"method": "GET",
 			"params": params,
 			"query":  query,

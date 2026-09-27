@@ -1,0 +1,313 @@
+# Entity: received_debit
+
+main: kit: entity: received_debit: {
+
+  alias: field: {}
+
+  fields: {
+    amount: {
+      h: "Amount"
+      n: "amount"
+      r: true
+      sh: "Amount (in cents) transferred."
+      t: "`$INTEGER`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: true
+      sh: "An arbitrary string attached to the object."
+      t: "`$STRING`"
+    }
+    failure_code: {
+      h: "Failure Code"
+      n: "failure_code"
+      r: false
+      sh: "Reason for the failure."
+      t: "`$STRING`"
+    }
+    financial_account: {
+      h: "Financial Account"
+      n: "financial_account"
+      r: false
+      sh: "The FinancialAccount that funds were pulled from."
+      t: "`$STRING`"
+    }
+    hosted_regulatory_receipt_url: {
+      h: "Hosted Regulatory Receipt Url"
+      n: "hosted_regulatory_receipt_url"
+      r: false
+      sh: "A [hosted transaction receipt](https://docs.stripe.com/treasury/moving-money/regulatory-receipts) URL that is provided when money movement is considered regulated under Stripe's money transmission licenses."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    initiating_payment_method_details: {
+      h: "Initiating Payment Method Details"
+      n: "initiating_payment_method_details"
+      r: true
+      t: "`$OBJECT`"
+    }
+    linked_flows: {
+      h: "Linked Flows"
+      n: "linked_flows"
+      r: true
+      t: "`$OBJECT`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    network: {
+      h: "Network"
+      n: "network"
+      r: true
+      sh: "The network used for the ReceivedDebit."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    reversal_details: {
+      h: "Reversal Details"
+      n: "reversal_details"
+      r: false
+      sh: "Details describing when a ReceivedDebit might be reversed."
+      t: "`$ANY`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "Status of the ReceivedDebit."
+      t: "`$STRING`"
+    }
+    transaction: {
+      h: "Transaction"
+      n: "transaction"
+      r: false
+      sh: "The Transaction associated with this object."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "received_debit"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/test_helpers/treasury/received_debits"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/test_helpers/treasury/received_debits"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "received_debits"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/treasury/received_debits"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "financial_account"
+                or: "financial_account"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/treasury/received_debits"
+          q: {
+            exist: [
+              "ending_before"
+              "expand"
+              "financial_account"
+              "limit"
+              "starting_after"
+              "status"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "received_debits"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/treasury/received_debits/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/treasury/received_debits/{id}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "received_debits"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

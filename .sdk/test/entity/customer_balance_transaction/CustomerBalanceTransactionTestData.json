@@ -1,0 +1,97 @@
+{
+  "existing": {
+    "customer_balance_transaction": {
+      "CUSTOMER_BALANCE_TRANSACTION00": {
+        "amount": 150,
+        "checkout_session": "s97",
+        "created": 152,
+        "credit_note": "s99",
+        "currency": "s9a",
+        "customer": "s9b",
+        "customer_account": "s9c",
+        "description": "s9d",
+        "ending_balance": 158,
+        "id": "CUSTOMER_BALANCE_TRANSACTION00",
+        "invoice": "sa0",
+        "livemode": false,
+        "metadata": {},
+        "object": "sa3",
+        "type": "sa4",
+        "customer_id": "CUSTOMER01"
+      },
+      "CUSTOMER_BALANCE_TRANSACTION01": {
+        "amount": 300,
+        "checkout_session": "s12d",
+        "created": 302,
+        "credit_note": "s12f",
+        "currency": "s130",
+        "customer": "s131",
+        "customer_account": "s132",
+        "description": "s133",
+        "ending_balance": 308,
+        "id": "CUSTOMER_BALANCE_TRANSACTION01",
+        "invoice": "s136",
+        "livemode": false,
+        "metadata": {},
+        "object": "s139",
+        "type": "s13a",
+        "customer_id": "CUSTOMER01"
+      },
+      "CUSTOMER_BALANCE_TRANSACTION02": {
+        "amount": 450,
+        "checkout_session": "s1c3",
+        "created": 452,
+        "credit_note": "s1c5",
+        "currency": "s1c6",
+        "customer": "s1c7",
+        "customer_account": "s1c8",
+        "description": "s1c9",
+        "ending_balance": 458,
+        "id": "CUSTOMER_BALANCE_TRANSACTION02",
+        "invoice": "s1cc",
+        "livemode": false,
+        "metadata": {},
+        "object": "s1cf",
+        "type": "s1d0",
+        "customer_id": "CUSTOMER01"
+      }
+    }
+  },
+  "new": {
+    "customer_balance_transaction": {
+      "customer_balance_transaction_ref01": {
+        "amount": 600,
+        "checkout_session": "s259",
+        "created": 602,
+        "credit_note": "s25b",
+        "currency": "s25c",
+        "customer": "s25d",
+        "customer_account": "s25e",
+        "description": "s25f",
+        "ending_balance": 608,
+        "invoice": "s262",
+        "livemode": false,
+        "metadata": {},
+        "object": "s265",
+        "type": "s266"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/customers/{customer}/balance_transactions/{transaction}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/customers/{customer}/balance_transactions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/customers/{customer}/balance_transactions/{transaction}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

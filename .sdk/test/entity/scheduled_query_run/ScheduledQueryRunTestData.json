@@ -1,0 +1,73 @@
+{
+  "existing": {
+    "scheduled_query_run": {
+      "SCHEDULED_QUERY_RUN00": {
+        "created": 110,
+        "data_load_time": 111,
+        "error": {},
+        "file": "s71",
+        "id": "SCHEDULED_QUERY_RUN00",
+        "livemode": false,
+        "object": "s74",
+        "result_available_until": 117,
+        "sql": "s76",
+        "status": "s77",
+        "title": "s78"
+      },
+      "SCHEDULED_QUERY_RUN01": {
+        "created": 220,
+        "data_load_time": 221,
+        "error": {},
+        "file": "sdf",
+        "id": "SCHEDULED_QUERY_RUN01",
+        "livemode": false,
+        "object": "se2",
+        "result_available_until": 227,
+        "sql": "se4",
+        "status": "se5",
+        "title": "se6"
+      },
+      "SCHEDULED_QUERY_RUN02": {
+        "created": 330,
+        "data_load_time": 331,
+        "error": {},
+        "file": "s14d",
+        "id": "SCHEDULED_QUERY_RUN02",
+        "livemode": false,
+        "object": "s150",
+        "result_available_until": 337,
+        "sql": "s152",
+        "status": "s153",
+        "title": "s154"
+      }
+    }
+  },
+  "new": {
+    "scheduled_query_run": {
+      "scheduled_query_run_ref01": {
+        "created": 440,
+        "data_load_time": 441,
+        "error": {},
+        "file": "s1bb",
+        "livemode": false,
+        "object": "s1be",
+        "result_available_until": 447,
+        "sql": "s1c0",
+        "status": "s1c1",
+        "title": "s1c2"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/sigma/scheduled_query_runs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/sigma/scheduled_query_runs/{scheduled_query_run}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

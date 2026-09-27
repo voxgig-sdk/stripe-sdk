@@ -1,0 +1,46 @@
+# BasicProductFeatureFlow
+
+main: kit: flow: BasicProductFeatureFlow:
+{
+  entity: "product_feature",
+  kind: "basic",
+  name: "BasicProductFeatureFlow",
+  step: [
+    {
+      i: {
+        ref: "product_feature_ref01"
+      }
+
+      m: {
+        product: "product01",
+        product_id: "product01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "product_feature_ref01",
+        srcdatavar: "product_feature_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "product_feature01",
+        product_id: "product01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-product_feature_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicProductFeatureFlow"
+}

@@ -1,0 +1,44 @@
+# BasicTransactionEntryFlow
+
+main: kit: flow: BasicTransactionEntryFlow:
+{
+  entity: "transaction_entry",
+  kind: "basic",
+  name: "BasicTransactionEntryFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "transaction_entry_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "transaction_entry_ref01",
+        srcdatavar: "transaction_entry_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "transaction_entry01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-transaction_entry_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTransactionEntryFlow"
+}

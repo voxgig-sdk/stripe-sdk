@@ -1,0 +1,205 @@
+# Entity: financial_account_feature
+
+main: kit: entity: financial_account_feature: {
+
+  alias: field: {}
+
+  fields: {
+    card_issuing: {
+      h: "Card Issuing"
+      n: "card_issuing"
+      r: true
+      sh: "Toggle settings for enabling/disabling a feature"
+      t: "`$OBJECT`"
+    }
+    deposit_insurance: {
+      h: "Deposit Insurance"
+      n: "deposit_insurance"
+      r: true
+      sh: "Toggle settings for enabling/disabling a feature"
+      t: "`$OBJECT`"
+    }
+    financial_addresses: {
+      h: "Financial Addresses"
+      n: "financial_addresses"
+      r: false
+      sh: "Settings related to Financial Addresses features on a Financial Account"
+      t: "`$OBJECT`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    inbound_transfers: {
+      h: "Inbound Transfers"
+      n: "inbound_transfers"
+      r: false
+      sh: "InboundTransfers contains inbound transfers features for a FinancialAccount."
+      t: "`$OBJECT`"
+    }
+    intra_stripe_flows: {
+      h: "Intra Stripe Flows"
+      n: "intra_stripe_flows"
+      r: true
+      sh: "Toggle settings for enabling/disabling a feature"
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    outbound_payments: {
+      h: "Outbound Payments"
+      n: "outbound_payments"
+      r: false
+      sh: "Settings related to Outbound Payments features on a Financial Account"
+      t: "`$OBJECT`"
+    }
+    outbound_transfers: {
+      h: "Outbound Transfers"
+      n: "outbound_transfers"
+      r: false
+      sh: "OutboundTransfers contains outbound transfers features for a FinancialAccount."
+      t: "`$OBJECT`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "financial_account_feature"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/treasury/financial_accounts/{financial_account}/features"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "financial_account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/treasury/financial_accounts/{financial_account}/features"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              financial_account: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "financial_accounts"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "features"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/treasury/financial_accounts/{financial_account}/features"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "financial_account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/treasury/financial_accounts/{financial_account}/features"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              financial_account: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "financial_accounts"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "features"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

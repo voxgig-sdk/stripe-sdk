@@ -1,0 +1,72 @@
+# Entity: account_link
+
+main: kit: entity: account_link: {
+
+  alias: field: {}
+
+  fields: {
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    expires_at: {
+      fo: "unix-time"
+      h: "Expires At"
+      n: "expires_at"
+      r: true
+      sh: "The timestamp at which this account link will expire."
+      t: "`$INTEGER`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: true
+      sh: "The URL for the account link."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "account_link"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/account_links"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/account_links"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "account_links"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

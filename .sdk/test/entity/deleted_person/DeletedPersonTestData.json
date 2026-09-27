@@ -1,0 +1,35 @@
+{
+  "existing": {
+    "deleted_person": {
+      "DELETED_PERSON00": {
+        "id": "DELETED_PERSON00",
+        "account_id": "ACCOUNT01"
+      },
+      "DELETED_PERSON01": {
+        "id": "DELETED_PERSON01",
+        "account_id": "ACCOUNT01"
+      },
+      "DELETED_PERSON02": {
+        "id": "DELETED_PERSON02",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "deleted_person": {
+      "deleted_person_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /v1/accounts/{account}/people/{person}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /v1/accounts/{account}/persons/{person}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

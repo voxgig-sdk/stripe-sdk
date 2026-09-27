@@ -1,0 +1,45 @@
+{
+  "existing": {
+    "balance_setting": {
+      "BALANCE_SETTING00": {
+        "debit_negative_balances": true,
+        "payouts": "s1f",
+        "settlement_timing": {},
+        "id": "BALANCE_SETTING00"
+      },
+      "BALANCE_SETTING01": {
+        "debit_negative_balances": true,
+        "payouts": "s3d",
+        "settlement_timing": {},
+        "id": "BALANCE_SETTING01"
+      },
+      "BALANCE_SETTING02": {
+        "debit_negative_balances": true,
+        "payouts": "s5b",
+        "settlement_timing": {},
+        "id": "BALANCE_SETTING02"
+      }
+    }
+  },
+  "new": {
+    "balance_setting": {
+      "balance_setting_ref01": {
+        "debit_negative_balances": true,
+        "payouts": "s79",
+        "settlement_timing": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/balance_settings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/balance_settings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

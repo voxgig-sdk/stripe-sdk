@@ -1,0 +1,650 @@
+# Entity: payment_method_configuration
+
+main: kit: entity: payment_method_configuration: {
+
+  alias: field: {}
+
+  fields: {
+    acss_debit: {
+      h: "Acss Debit"
+      n: "acss_debit"
+      r: true
+      t: "`$OBJECT`"
+    }
+    active: {
+      h: "Active"
+      n: "active"
+      r: true
+      sh: "Whether the configuration can be used for new payments."
+      t: "`$BOOLEAN`"
+    }
+    affirm: {
+      h: "Affirm"
+      n: "affirm"
+      r: true
+      t: "`$OBJECT`"
+    }
+    afterpay_clearpay: {
+      h: "Afterpay Clearpay"
+      n: "afterpay_clearpay"
+      r: true
+      t: "`$OBJECT`"
+    }
+    alipay: {
+      h: "Alipay"
+      n: "alipay"
+      r: true
+      t: "`$OBJECT`"
+    }
+    alma: {
+      h: "Alma"
+      n: "alma"
+      r: true
+      t: "`$OBJECT`"
+    }
+    amazon_pay: {
+      h: "Amazon Pay"
+      n: "amazon_pay"
+      r: true
+      t: "`$OBJECT`"
+    }
+    apple_pay: {
+      h: "Apple Pay"
+      n: "apple_pay"
+      r: true
+      t: "`$OBJECT`"
+    }
+    application: {
+      h: "Application"
+      n: "application"
+      r: false
+      sh: "For child configs, the Connect application associated with the configuration."
+      t: "`$STRING`"
+    }
+    au_becs_debit: {
+      h: "Au Becs Debit"
+      n: "au_becs_debit"
+      r: true
+      t: "`$OBJECT`"
+    }
+    bacs_debit: {
+      h: "Bacs Debit"
+      n: "bacs_debit"
+      r: true
+      t: "`$OBJECT`"
+    }
+    bancontact: {
+      h: "Bancontact"
+      n: "bancontact"
+      r: true
+      t: "`$OBJECT`"
+    }
+    billie: {
+      h: "Billie"
+      n: "billie"
+      r: true
+      t: "`$OBJECT`"
+    }
+    bizum: {
+      h: "Bizum"
+      n: "bizum"
+      r: true
+      t: "`$OBJECT`"
+    }
+    blik: {
+      h: "Blik"
+      n: "blik"
+      r: true
+      t: "`$OBJECT`"
+    }
+    boleto: {
+      h: "Boleto"
+      n: "boleto"
+      r: true
+      t: "`$OBJECT`"
+    }
+    card: {
+      h: "Card"
+      n: "card"
+      r: true
+      t: "`$OBJECT`"
+    }
+    cartes_bancaires: {
+      h: "Cartes Bancaires"
+      n: "cartes_bancaires"
+      r: true
+      t: "`$OBJECT`"
+    }
+    cashapp: {
+      h: "Cashapp"
+      n: "cashapp"
+      r: true
+      t: "`$OBJECT`"
+    }
+    crypto: {
+      h: "Crypto"
+      n: "crypto"
+      r: true
+      t: "`$OBJECT`"
+    }
+    customer_balance: {
+      h: "Customer Balance"
+      n: "customer_balance"
+      r: true
+      t: "`$OBJECT`"
+    }
+    eps: {
+      h: "Eps"
+      n: "eps"
+      r: true
+      t: "`$OBJECT`"
+    }
+    fpx: {
+      h: "Fpx"
+      n: "fpx"
+      r: true
+      t: "`$OBJECT`"
+    }
+    giropay: {
+      h: "Giropay"
+      n: "giropay"
+      r: true
+      t: "`$OBJECT`"
+    }
+    google_pay: {
+      h: "Google Pay"
+      n: "google_pay"
+      r: true
+      t: "`$OBJECT`"
+    }
+    grabpay: {
+      h: "Grabpay"
+      n: "grabpay"
+      r: true
+      t: "`$OBJECT`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    ideal: {
+      h: "Ideal"
+      n: "ideal"
+      r: true
+      t: "`$OBJECT`"
+    }
+    is_default: {
+      h: "Is Default"
+      n: "is_default"
+      r: true
+      sh: "The default configuration is used whenever a payment method configuration is not specified."
+      t: "`$BOOLEAN`"
+    }
+    jcb: {
+      h: "Jcb"
+      n: "jcb"
+      r: true
+      t: "`$OBJECT`"
+    }
+    kakao_pay: {
+      h: "Kakao Pay"
+      n: "kakao_pay"
+      r: true
+      t: "`$OBJECT`"
+    }
+    klarna: {
+      h: "Klarna"
+      n: "klarna"
+      r: true
+      t: "`$OBJECT`"
+    }
+    konbini: {
+      h: "Konbini"
+      n: "konbini"
+      r: true
+      t: "`$OBJECT`"
+    }
+    kr_card: {
+      h: "Kr Card"
+      n: "kr_card"
+      r: true
+      t: "`$OBJECT`"
+    }
+    link: {
+      h: "Link"
+      n: "link"
+      r: true
+      t: "`$OBJECT`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    mb_way: {
+      h: "Mb Way"
+      n: "mb_way"
+      r: true
+      t: "`$OBJECT`"
+    }
+    mobilepay: {
+      h: "Mobilepay"
+      n: "mobilepay"
+      r: true
+      t: "`$OBJECT`"
+    }
+    multibanco: {
+      h: "Multibanco"
+      n: "multibanco"
+      r: true
+      t: "`$OBJECT`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "The configuration's name."
+      t: "`$STRING`"
+    }
+    naver_pay: {
+      h: "Naver Pay"
+      n: "naver_pay"
+      r: true
+      t: "`$OBJECT`"
+    }
+    nz_bank_account: {
+      h: "Nz Bank Account"
+      n: "nz_bank_account"
+      r: true
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    oxxo: {
+      h: "Oxxo"
+      n: "oxxo"
+      r: true
+      t: "`$OBJECT`"
+    }
+    p24: {
+      h: "P24"
+      n: "p24"
+      r: true
+      t: "`$OBJECT`"
+    }
+    parent: {
+      h: "Parent"
+      n: "parent"
+      r: false
+      sh: "For child configs, the configuration's parent configuration."
+      t: "`$STRING`"
+    }
+    pay_by_bank: {
+      h: "Pay By Bank"
+      n: "pay_by_bank"
+      r: true
+      t: "`$OBJECT`"
+    }
+    payco: {
+      h: "Payco"
+      n: "payco"
+      r: true
+      t: "`$OBJECT`"
+    }
+    paynow: {
+      h: "Paynow"
+      n: "paynow"
+      r: true
+      t: "`$OBJECT`"
+    }
+    paypal: {
+      h: "Paypal"
+      n: "paypal"
+      r: true
+      t: "`$OBJECT`"
+    }
+    paypay: {
+      h: "Paypay"
+      n: "paypay"
+      r: true
+      t: "`$OBJECT`"
+    }
+    payto: {
+      h: "Payto"
+      n: "payto"
+      r: true
+      t: "`$OBJECT`"
+    }
+    pix: {
+      h: "Pix"
+      n: "pix"
+      r: true
+      t: "`$OBJECT`"
+    }
+    promptpay: {
+      h: "Promptpay"
+      n: "promptpay"
+      r: true
+      t: "`$OBJECT`"
+    }
+    revolut_pay: {
+      h: "Revolut Pay"
+      n: "revolut_pay"
+      r: true
+      t: "`$OBJECT`"
+    }
+    samsung_pay: {
+      h: "Samsung Pay"
+      n: "samsung_pay"
+      r: true
+      t: "`$OBJECT`"
+    }
+    satispay: {
+      h: "Satispay"
+      n: "satispay"
+      r: true
+      t: "`$OBJECT`"
+    }
+    scalapay: {
+      h: "Scalapay"
+      n: "scalapay"
+      r: true
+      t: "`$OBJECT`"
+    }
+    sepa_debit: {
+      h: "Sepa Debit"
+      n: "sepa_debit"
+      r: true
+      t: "`$OBJECT`"
+    }
+    sequra: {
+      h: "Sequra"
+      n: "sequra"
+      r: true
+      t: "`$OBJECT`"
+    }
+    sofort: {
+      h: "Sofort"
+      n: "sofort"
+      r: true
+      t: "`$OBJECT`"
+    }
+    sunbit: {
+      h: "Sunbit"
+      n: "sunbit"
+      r: true
+      t: "`$OBJECT`"
+    }
+    swish: {
+      h: "Swish"
+      n: "swish"
+      r: true
+      t: "`$OBJECT`"
+    }
+    twint: {
+      h: "Twint"
+      n: "twint"
+      r: true
+      t: "`$OBJECT`"
+    }
+    upi: {
+      h: "Upi"
+      n: "upi"
+      r: true
+      t: "`$OBJECT`"
+    }
+    us_bank_account: {
+      h: "Us Bank Account"
+      n: "us_bank_account"
+      r: true
+      t: "`$OBJECT`"
+    }
+    wechat_pay: {
+      h: "Wechat Pay"
+      n: "wechat_pay"
+      r: true
+      t: "`$OBJECT`"
+    }
+    zip: {
+      h: "Zip"
+      n: "zip"
+      r: true
+      t: "`$OBJECT`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "payment_method_configuration"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/payment_method_configurations/{configuration}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "configuration"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/payment_method_configurations/{configuration}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              configuration: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_method_configurations"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/payment_method_configurations"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/payment_method_configurations"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_method_configurations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/payment_method_configurations"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "active"
+                or: "active"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "application"
+                or: "application"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/payment_method_configurations"
+          q: {
+            exist: [
+              "active"
+              "application"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_method_configurations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/payment_method_configurations/{configuration}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "configuration"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/payment_method_configurations/{configuration}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              configuration: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_method_configurations"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,49 @@
+{
+  "existing": {
+    "active_entitlement": {
+      "ACTIVE_ENTITLEMENT00": {
+        "feature": "s32",
+        "id": "ACTIVE_ENTITLEMENT00",
+        "livemode": true,
+        "lookup_key": "s35",
+        "object": "s36"
+      },
+      "ACTIVE_ENTITLEMENT01": {
+        "feature": "s64",
+        "id": "ACTIVE_ENTITLEMENT01",
+        "livemode": true,
+        "lookup_key": "s67",
+        "object": "s68"
+      },
+      "ACTIVE_ENTITLEMENT02": {
+        "feature": "s96",
+        "id": "ACTIVE_ENTITLEMENT02",
+        "livemode": true,
+        "lookup_key": "s99",
+        "object": "s9a"
+      }
+    }
+  },
+  "new": {
+    "active_entitlement": {
+      "active_entitlement_ref01": {
+        "feature": "sc8",
+        "livemode": true,
+        "lookup_key": "scb",
+        "object": "scc"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/entitlements/active_entitlements": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/entitlements/active_entitlements/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

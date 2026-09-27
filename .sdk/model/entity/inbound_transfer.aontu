@@ -1,0 +1,545 @@
+# Entity: inbound_transfer
+
+main: kit: entity: inbound_transfer: {
+
+  alias: field: {}
+
+  fields: {
+    amount: {
+      h: "Amount"
+      n: "amount"
+      r: true
+      sh: "Amount (in cents) transferred."
+      t: "`$INTEGER`"
+    }
+    cancelable: {
+      h: "Cancelable"
+      n: "cancelable"
+      r: true
+      sh: "Returns `true` if the InboundTransfer is able to be canceled."
+      t: "`$BOOLEAN`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "An arbitrary string attached to the object."
+      t: "`$STRING`"
+    }
+    failure_details: {
+      h: "Failure Details"
+      n: "failure_details"
+      r: false
+      sh: "Details about this InboundTransfer's failure."
+      t: "`$ANY`"
+    }
+    financial_account: {
+      h: "Financial Account"
+      n: "financial_account"
+      r: true
+      sh: "The FinancialAccount that received the funds."
+      t: "`$STRING`"
+    }
+    hosted_regulatory_receipt_url: {
+      h: "Hosted Regulatory Receipt Url"
+      n: "hosted_regulatory_receipt_url"
+      r: false
+      sh: "A [hosted transaction receipt](https://docs.stripe.com/treasury/moving-money/regulatory-receipts) URL that is provided when money movement is considered regulated under Stripe's money transmission licenses."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    linked_flows: {
+      h: "Linked Flows"
+      n: "linked_flows"
+      r: true
+      t: "`$OBJECT`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: true
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    origin_payment_method: {
+      h: "Origin Payment Method"
+      n: "origin_payment_method"
+      r: false
+      sh: "The origin payment method to be debited for an InboundTransfer."
+      t: "`$STRING`"
+    }
+    origin_payment_method_details: {
+      h: "Origin Payment Method Details"
+      n: "origin_payment_method_details"
+      r: false
+      sh: "Details about the PaymentMethod for an InboundTransfer."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 3
+        depth: 11
+      }
+    }
+    returned: {
+      h: "Returned"
+      n: "returned"
+      r: false
+      sh: "Returns `true` if the funds for an InboundTransfer were returned after the InboundTransfer went to the `succeeded` state."
+      t: "`$BOOLEAN`"
+    }
+    statement_descriptor: {
+      h: "Statement Descriptor"
+      n: "statement_descriptor"
+      r: true
+      sh: "Statement descriptor shown when funds are debited from the source."
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "Status of the InboundTransfer: `processing`, `succeeded`, `failed`, and `canceled`."
+      t: "`$STRING`"
+    }
+    status_transitions: {
+      h: "Status Transitions"
+      n: "status_transitions"
+      r: true
+      t: "`$OBJECT`"
+    }
+    transaction: {
+      h: "Transaction"
+      n: "transaction"
+      r: false
+      sh: "The Transaction associated with this object."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "inbound_transfer"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/treasury/inbound_transfers/{inbound_transfer}/cancel"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "inbound_transfer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/treasury/inbound_transfers/{inbound_transfer}/cancel"
+          q: {
+            "$action": "cancel"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              inbound_transfer: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "inbound_transfers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "cancel"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/treasury/inbound_transfers/{id}/fail"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/treasury/inbound_transfers/{id}/fail"
+          q: {
+            "$action": "fail"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "inbound_transfers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "fail"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/treasury/inbound_transfers/{id}/return"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/treasury/inbound_transfers/{id}/return"
+          q: {
+            "$action": "return"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "inbound_transfers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "return"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/treasury/inbound_transfers/{id}/succeed"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/treasury/inbound_transfers/{id}/succeed"
+          q: {
+            "$action": "succeed"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "inbound_transfers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "succeed"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/treasury/inbound_transfers"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/treasury/inbound_transfers"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "inbound_transfers"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/treasury/inbound_transfers"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "financial_account"
+                or: "financial_account"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/treasury/inbound_transfers"
+          q: {
+            exist: [
+              "ending_before"
+              "expand"
+              "financial_account"
+              "limit"
+              "starting_after"
+              "status"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "inbound_transfers"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/treasury/inbound_transfers/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/treasury/inbound_transfers/{id}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "inbound_transfers"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

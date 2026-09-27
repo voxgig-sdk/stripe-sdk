@@ -1,0 +1,39 @@
+# BasicLineFlow
+
+main: kit: flow: BasicLineFlow:
+{
+  entity: "line",
+  kind: "basic",
+  name: "BasicLineFlow",
+  step: [
+    {
+      i: {
+        ref: "line_ref01"
+      }
+
+      m: {
+        invoice_id: "invoice01",
+        line_item_id: "line_item01"
+      }
+
+      o: "create"
+    }
+
+    {
+      m: {
+        invoice_id: "invoice01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "line_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLineFlow"
+}

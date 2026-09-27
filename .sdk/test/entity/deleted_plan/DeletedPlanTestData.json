@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "deleted_plan": {
+      "DELETED_PLAN00": {
+        "id": "DELETED_PLAN00"
+      },
+      "DELETED_PLAN01": {
+        "id": "DELETED_PLAN01"
+      },
+      "DELETED_PLAN02": {
+        "id": "DELETED_PLAN02"
+      }
+    }
+  },
+  "new": {
+    "deleted_plan": {
+      "deleted_plan_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /v1/plans/{plan}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

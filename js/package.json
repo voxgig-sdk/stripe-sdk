@@ -1,7 +1,7 @@
 {
-  "name": "@voxgig-sdk/stripe-js",
+  "name": "@voxgig-sdk/stripe-sdk-js",
   "version": "0.0.1",
-  "description": "Unofficial generated JavaScript SDK for the Stripe Checkout Sessions public API. Not affiliated with or endorsed by the upstream API provider.",
+  "description": "Unofficial generated JavaScript SDK for the Stripe public API. Not affiliated with or endorsed by the upstream API provider.",
   "keywords": [
     "voxgig",
     "sdk",
@@ -21,7 +21,8 @@
   "main": "src/StripeSDK.js",
   "type": "commonjs",
   "files": [
-    "src"
+    "src",
+    "README.md"
   ],
   "scripts": {
     "test": "node --test 'test/**/*.test.js'",

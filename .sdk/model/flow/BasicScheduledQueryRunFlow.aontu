@@ -1,0 +1,44 @@
+# BasicScheduledQueryRunFlow
+
+main: kit: flow: BasicScheduledQueryRunFlow:
+{
+  entity: "scheduled_query_run",
+  kind: "basic",
+  name: "BasicScheduledQueryRunFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "scheduled_query_run_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "scheduled_query_run_ref01",
+        srcdatavar: "scheduled_query_run_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "scheduled_query_run01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-scheduled_query_run_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicScheduledQueryRunFlow"
+}

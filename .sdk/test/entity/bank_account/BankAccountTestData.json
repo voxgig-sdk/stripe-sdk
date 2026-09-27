@@ -1,0 +1,136 @@
+{
+  "existing": {
+    "bank_account": {
+      "BANK_ACCOUNT00": {
+        "account": "sbe",
+        "account_holder_name": "sbf",
+        "account_holder_type": "sc0",
+        "account_type": "sc1",
+        "available_payout_methods": [],
+        "bank_name": "sc3",
+        "country": "sc4",
+        "currency": "sc5",
+        "customer": "sc6",
+        "default_for_currency": false,
+        "fingerprint": "sc8",
+        "future_requirements": "sc9",
+        "id": "BANK_ACCOUNT00",
+        "last4": "scb",
+        "metadata": {},
+        "object": "scd",
+        "requirements": "sce",
+        "routing_number": "scf",
+        "status": "sd0",
+        "customer_id": "CUSTOMER01",
+        "source_id": "SOURCE01"
+      },
+      "BANK_ACCOUNT01": {
+        "account": "s17c",
+        "account_holder_name": "s17d",
+        "account_holder_type": "s17e",
+        "account_type": "s17f",
+        "available_payout_methods": [],
+        "bank_name": "s181",
+        "country": "s182",
+        "currency": "s183",
+        "customer": "s184",
+        "default_for_currency": false,
+        "fingerprint": "s186",
+        "future_requirements": "s187",
+        "id": "BANK_ACCOUNT01",
+        "last4": "s189",
+        "metadata": {},
+        "object": "s18b",
+        "requirements": "s18c",
+        "routing_number": "s18d",
+        "status": "s18e",
+        "customer_id": "CUSTOMER01",
+        "source_id": "SOURCE01"
+      },
+      "BANK_ACCOUNT02": {
+        "account": "s23a",
+        "account_holder_name": "s23b",
+        "account_holder_type": "s23c",
+        "account_type": "s23d",
+        "available_payout_methods": [],
+        "bank_name": "s23f",
+        "country": "s240",
+        "currency": "s241",
+        "customer": "s242",
+        "default_for_currency": false,
+        "fingerprint": "s244",
+        "future_requirements": "s245",
+        "id": "BANK_ACCOUNT02",
+        "last4": "s247",
+        "metadata": {},
+        "object": "s249",
+        "requirements": "s24a",
+        "routing_number": "s24b",
+        "status": "s24c",
+        "customer_id": "CUSTOMER01",
+        "source_id": "SOURCE01"
+      }
+    }
+  },
+  "new": {
+    "bank_account": {
+      "bank_account_ref01": {
+        "account": "s2f8",
+        "account_holder_name": "s2f9",
+        "account_holder_type": "s2fa",
+        "account_type": "s2fb",
+        "available_payout_methods": [],
+        "bank_name": "s2fd",
+        "country": "s2fe",
+        "currency": "s2ff",
+        "customer": "s300",
+        "default_for_currency": false,
+        "fingerprint": "s302",
+        "future_requirements": "s303",
+        "last4": "s305",
+        "metadata": {},
+        "object": "s307",
+        "requirements": "s308",
+        "routing_number": "s309",
+        "status": "s30a"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/customers/{customer}/bank_accounts/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/customers/{customer}/bank_accounts/{id}/verify": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/customers/{customer}/sources/{id}/verify": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/customers/{customer}/bank_accounts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/customers/{customer}/bank_accounts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/customers/{customer}/bank_accounts/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /v1/customers/{customer}/bank_accounts/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

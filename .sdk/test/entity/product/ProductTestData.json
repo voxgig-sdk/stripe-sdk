@@ -1,0 +1,146 @@
+{
+  "existing": {
+    "product": {
+      "PRODUCT00": {
+        "active": true,
+        "created": 231,
+        "current_prices_per_metric_ton": {},
+        "default_price": "se9",
+        "delivery_year": 234,
+        "description": "seb",
+        "id": "PRODUCT00",
+        "images": [],
+        "livemode": true,
+        "marketing_features": [],
+        "metadata": {},
+        "metric_tons_available": "sf1",
+        "name": "sf2",
+        "object": "sf3",
+        "package_dimensions": "sf4",
+        "shippable": false,
+        "statement_descriptor": "sf6",
+        "suppliers": [],
+        "tax_code": "sf8",
+        "tax_details": "sf9",
+        "unit_label": "sfa",
+        "updated": 251,
+        "url": "sfc"
+      },
+      "PRODUCT01": {
+        "active": true,
+        "created": 461,
+        "current_prices_per_metric_ton": {},
+        "default_price": "s1cf",
+        "delivery_year": 464,
+        "description": "s1d1",
+        "id": "PRODUCT01",
+        "images": [],
+        "livemode": true,
+        "marketing_features": [],
+        "metadata": {},
+        "metric_tons_available": "s1d7",
+        "name": "s1d8",
+        "object": "s1d9",
+        "package_dimensions": "s1da",
+        "shippable": false,
+        "statement_descriptor": "s1dc",
+        "suppliers": [],
+        "tax_code": "s1de",
+        "tax_details": "s1df",
+        "unit_label": "s1e0",
+        "updated": 481,
+        "url": "s1e2"
+      },
+      "PRODUCT02": {
+        "active": true,
+        "created": 691,
+        "current_prices_per_metric_ton": {},
+        "default_price": "s2b5",
+        "delivery_year": 694,
+        "description": "s2b7",
+        "id": "PRODUCT02",
+        "images": [],
+        "livemode": true,
+        "marketing_features": [],
+        "metadata": {},
+        "metric_tons_available": "s2bd",
+        "name": "s2be",
+        "object": "s2bf",
+        "package_dimensions": "s2c0",
+        "shippable": false,
+        "statement_descriptor": "s2c2",
+        "suppliers": [],
+        "tax_code": "s2c4",
+        "tax_details": "s2c5",
+        "unit_label": "s2c6",
+        "updated": 711,
+        "url": "s2c8"
+      }
+    }
+  },
+  "new": {
+    "product": {
+      "product_ref01": {
+        "active": true,
+        "created": 921,
+        "current_prices_per_metric_ton": {},
+        "default_price": "s39b",
+        "delivery_year": 924,
+        "description": "s39d",
+        "images": [],
+        "livemode": true,
+        "marketing_features": [],
+        "metadata": {},
+        "metric_tons_available": "s3a3",
+        "name": "s3a4",
+        "object": "s3a5",
+        "package_dimensions": "s3a6",
+        "shippable": false,
+        "statement_descriptor": "s3a8",
+        "suppliers": [],
+        "tax_code": "s3aa",
+        "tax_details": "s3ab",
+        "unit_label": "s3ac",
+        "updated": 941,
+        "url": "s3ae"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/products/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/products": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/products": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/climate/products": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/climate/products/{product}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/products/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /v1/products/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

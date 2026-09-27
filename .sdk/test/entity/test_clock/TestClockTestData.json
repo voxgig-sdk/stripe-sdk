@@ -1,0 +1,84 @@
+{
+  "existing": {
+    "test_clock": {
+      "TEST_CLOCK00": {
+        "advancing": {},
+        "created": 101,
+        "deletes_after": 102,
+        "frozen_time": 103,
+        "id": "TEST_CLOCK00",
+        "livemode": false,
+        "name": "s6a",
+        "object": "s6b",
+        "status": "s6c",
+        "status_details": {}
+      },
+      "TEST_CLOCK01": {
+        "advancing": {},
+        "created": 201,
+        "deletes_after": 202,
+        "frozen_time": 203,
+        "id": "TEST_CLOCK01",
+        "livemode": false,
+        "name": "sce",
+        "object": "scf",
+        "status": "sd0",
+        "status_details": {}
+      },
+      "TEST_CLOCK02": {
+        "advancing": {},
+        "created": 301,
+        "deletes_after": 302,
+        "frozen_time": 303,
+        "id": "TEST_CLOCK02",
+        "livemode": false,
+        "name": "s132",
+        "object": "s133",
+        "status": "s134",
+        "status_details": {}
+      }
+    }
+  },
+  "new": {
+    "test_clock": {
+      "test_clock_ref01": {
+        "advancing": {},
+        "created": 401,
+        "deletes_after": 402,
+        "frozen_time": 403,
+        "livemode": false,
+        "name": "s196",
+        "object": "s197",
+        "status": "s198",
+        "status_details": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/test_helpers/test_clocks/{test_clock}/advance": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/test_clocks": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/test_helpers/test_clocks": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/test_helpers/test_clocks/{test_clock}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /v1/test_helpers/test_clocks/{test_clock}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

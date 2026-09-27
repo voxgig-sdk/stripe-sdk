@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "deleted_product_feature": {
+      "DELETED_PRODUCT_FEATURE00": {
+        "id": "DELETED_PRODUCT_FEATURE00",
+        "product_id": "PRODUCT01"
+      },
+      "DELETED_PRODUCT_FEATURE01": {
+        "id": "DELETED_PRODUCT_FEATURE01",
+        "product_id": "PRODUCT01"
+      },
+      "DELETED_PRODUCT_FEATURE02": {
+        "id": "DELETED_PRODUCT_FEATURE02",
+        "product_id": "PRODUCT01"
+      }
+    }
+  },
+  "new": {
+    "deleted_product_feature": {
+      "deleted_product_feature_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /v1/products/{product}/features/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

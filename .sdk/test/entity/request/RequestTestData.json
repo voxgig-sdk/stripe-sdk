@@ -1,0 +1,78 @@
+{
+  "existing": {
+    "request": {
+      "REQUEST00": {
+        "created": 110,
+        "id": "REQUEST00",
+        "livemode": true,
+        "metadata": {},
+        "object": "s72",
+        "payment_method": "s73",
+        "replacements": [],
+        "request_context": "s75",
+        "request_details": "s76",
+        "response_details": "s77",
+        "url": "s78"
+      },
+      "REQUEST01": {
+        "created": 220,
+        "id": "REQUEST01",
+        "livemode": true,
+        "metadata": {},
+        "object": "se0",
+        "payment_method": "se1",
+        "replacements": [],
+        "request_context": "se3",
+        "request_details": "se4",
+        "response_details": "se5",
+        "url": "se6"
+      },
+      "REQUEST02": {
+        "created": 330,
+        "id": "REQUEST02",
+        "livemode": true,
+        "metadata": {},
+        "object": "s14e",
+        "payment_method": "s14f",
+        "replacements": [],
+        "request_context": "s151",
+        "request_details": "s152",
+        "response_details": "s153",
+        "url": "s154"
+      }
+    }
+  },
+  "new": {
+    "request": {
+      "request_ref01": {
+        "created": 440,
+        "livemode": true,
+        "metadata": {},
+        "object": "s1bc",
+        "payment_method": "s1bd",
+        "replacements": [],
+        "request_context": "s1bf",
+        "request_details": "s1c0",
+        "response_details": "s1c1",
+        "url": "s1c2"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/forwarding/requests": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/forwarding/requests": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/forwarding/requests/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

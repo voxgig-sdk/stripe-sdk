@@ -8,10 +8,6 @@ const node_assert_1 = __importDefault(require("node:assert"));
 const live_runner_1 = require("../../live-runner");
 const __1 = require("../../..");
 const utility_1 = require("../../utility");
-// AFTER the imports on purpose: TypeScript hoists `import` above any
-// statement in the emitted CommonJS, so a loader placed above them would
-// run only after every imported module had already been evaluated - and
-// anything reading process.env at module scope would miss these values.
 (0, utility_1.loadEnvLocal)(__dirname + '/../../../.env.local');
 (0, node_test_1.describe)('SessionDirect', async () => {
     // Per-test live pacing. Delay is read from sdk-test-control.json's
@@ -19,9 +15,6 @@ const utility_1 = require("../../utility");
     (0, node_test_1.afterEach)((0, utility_1.liveDelay)('STRIPE_TEST_LIVE'));
     (0, node_test_1.test)('direct-exists', async () => {
         const sdk = new __1.StripeSDK({
-            // Concrete base: a live construction must satisfy any server
-            // variables a templated base URL declares; overriding base with a
-            // literal (as the direct flow tests do) sidesteps the requirement.
             base: 'http://localhost:8080',
             system: { fetch: async () => ({}) }
         });
@@ -41,7 +34,7 @@ const utility_1 = require("../../utility");
         const query = {};
         if (setup.live) {
             const listResult = await client.direct({
-                path: 'checkout/sessions',
+                path: 'v1/checkout/sessions',
                 method: 'GET',
                 params: {},
             });
@@ -60,7 +53,7 @@ const utility_1 = require("../../utility");
             params.id = 'direct01';
         }
         const result = await client.direct({
-            path: 'checkout/sessions/{id}',
+            path: 'v1/checkout/sessions/{id}',
             method: 'GET',
             params,
             query,
@@ -100,7 +93,7 @@ const utility_1 = require("../../utility");
         const params = {};
         const query = {};
         const result = await client.direct({
-            path: 'checkout/sessions',
+            path: 'v1/checkout/sessions',
             method: 'GET',
             params,
             query,
@@ -137,6 +130,7 @@ function directSetup(mockres) {
         'STRIPE_TEST_SESSION_ENTID': {},
         'STRIPE_TEST_LIVE': 'FALSE',
         'STRIPE_APIKEY': '',
+        'STRIPE_SECRET': '',
     });
     const live = 'TRUE' === env.STRIPE_TEST_LIVE;
     if (live) {
@@ -145,6 +139,7 @@ function directSetup(mockres) {
         // test.client.options adds to the live client, it does not redirect it.
         const client = new __1.StripeSDK(Object.assign({}, (0, utility_1.liveClientOptions)(), { system: { fetch: transport.fetch },
             apikey: env.STRIPE_APIKEY,
+            secret: env.STRIPE_SECRET,
         }));
         let idmap = env['STRIPE_TEST_SESSION_ENTID'];
         if ('string' === typeof idmap && idmap.startsWith('{')) {

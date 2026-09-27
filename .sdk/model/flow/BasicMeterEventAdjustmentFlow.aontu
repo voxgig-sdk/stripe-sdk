@@ -1,0 +1,18 @@
+# BasicMeterEventAdjustmentFlow
+
+main: kit: flow: BasicMeterEventAdjustmentFlow:
+{
+  entity: "meter_event_adjustment",
+  kind: "basic",
+  name: "BasicMeterEventAdjustmentFlow",
+  step: [
+    {
+      i: {
+        ref: "meter_event_adjustment_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicMeterEventAdjustmentFlow"
+}

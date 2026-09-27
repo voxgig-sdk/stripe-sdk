@@ -1,0 +1,26 @@
+# BasicAccountOwnerFlow
+
+main: kit: flow: BasicAccountOwnerFlow:
+{
+  entity: "account_owner",
+  kind: "basic",
+  name: "BasicAccountOwnerFlow",
+  step: [
+    {
+      m: {
+        account: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "account_owner_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicAccountOwnerFlow"
+}

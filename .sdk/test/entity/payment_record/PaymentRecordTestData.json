@@ -1,0 +1,148 @@
+{
+  "existing": {
+    "payment_record": {
+      "PAYMENT_RECORD00": {
+        "amount": {},
+        "amount_authorized": {},
+        "amount_canceled": {},
+        "amount_failed": {},
+        "amount_guaranteed": {},
+        "amount_refunded": {},
+        "amount_requested": {},
+        "application": "sd9",
+        "created": 218,
+        "customer_details": "sdb",
+        "customer_presence": "sdc",
+        "description": "sdd",
+        "id": "PAYMENT_RECORD00",
+        "latest_payment_attempt_record": "sdf",
+        "livemode": true,
+        "metadata": {},
+        "object": "se2",
+        "payment_method_details": "se3",
+        "processor_details": {},
+        "reported_by": "se5",
+        "shipping_details": "se6"
+      },
+      "PAYMENT_RECORD01": {
+        "amount": {},
+        "amount_authorized": {},
+        "amount_canceled": {},
+        "amount_failed": {},
+        "amount_guaranteed": {},
+        "amount_refunded": {},
+        "amount_requested": {},
+        "application": "s1ab",
+        "created": 428,
+        "customer_details": "s1ad",
+        "customer_presence": "s1ae",
+        "description": "s1af",
+        "id": "PAYMENT_RECORD01",
+        "latest_payment_attempt_record": "s1b1",
+        "livemode": true,
+        "metadata": {},
+        "object": "s1b4",
+        "payment_method_details": "s1b5",
+        "processor_details": {},
+        "reported_by": "s1b7",
+        "shipping_details": "s1b8"
+      },
+      "PAYMENT_RECORD02": {
+        "amount": {},
+        "amount_authorized": {},
+        "amount_canceled": {},
+        "amount_failed": {},
+        "amount_guaranteed": {},
+        "amount_refunded": {},
+        "amount_requested": {},
+        "application": "s27d",
+        "created": 638,
+        "customer_details": "s27f",
+        "customer_presence": "s280",
+        "description": "s281",
+        "id": "PAYMENT_RECORD02",
+        "latest_payment_attempt_record": "s283",
+        "livemode": true,
+        "metadata": {},
+        "object": "s286",
+        "payment_method_details": "s287",
+        "processor_details": {},
+        "reported_by": "s289",
+        "shipping_details": "s28a"
+      }
+    }
+  },
+  "new": {
+    "payment_record": {
+      "payment_record_ref01": {
+        "amount": {},
+        "amount_authorized": {},
+        "amount_canceled": {},
+        "amount_failed": {},
+        "amount_guaranteed": {},
+        "amount_refunded": {},
+        "amount_requested": {},
+        "application": "s34f",
+        "created": 848,
+        "customer_details": "s351",
+        "customer_presence": "s352",
+        "description": "s353",
+        "latest_payment_attempt_record": "s355",
+        "livemode": true,
+        "metadata": {},
+        "object": "s358",
+        "payment_method_details": "s359",
+        "processor_details": {},
+        "reported_by": "s35b",
+        "shipping_details": "s35c"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/payment_records/{id}/report_payment_attempt": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/payment_records/{id}/report_payment_attempt_canceled": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/payment_records/{id}/report_payment_attempt_failed": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/payment_records/{id}/report_payment_attempt_guaranteed": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/payment_records/{id}/report_payment_attempt_informational": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/payment_records/{id}/report_refund": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/payment_records/report_payment": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/payment_records": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/payment_records/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

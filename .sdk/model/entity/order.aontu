@@ -1,0 +1,447 @@
+# Entity: order
+
+main: kit: entity: order: {
+
+  alias: field: {}
+
+  fields: {
+    amount_fees: {
+      h: "Amount Fees"
+      n: "amount_fees"
+      r: true
+      sh: "Total amount of [Frontier](https://frontierclimate.com/)'s service fees in the currency's smallest unit."
+      t: "`$INTEGER`"
+    }
+    amount_subtotal: {
+      h: "Amount Subtotal"
+      n: "amount_subtotal"
+      r: true
+      sh: "Total amount of the carbon removal in the currency's smallest unit."
+      t: "`$INTEGER`"
+    }
+    amount_total: {
+      h: "Amount Total"
+      n: "amount_total"
+      r: true
+      sh: "Total amount of the order including fees in the currency's smallest unit."
+      t: "`$INTEGER`"
+    }
+    beneficiary: {
+      h: "Beneficiary"
+      n: "beneficiary"
+      r: true
+      t: "`$OBJECT`"
+    }
+    canceled_at: {
+      fo: "unix-time"
+      h: "Canceled At"
+      n: "canceled_at"
+      r: false
+      sh: "Time at which the order was canceled."
+      t: "`$INTEGER`"
+    }
+    cancellation_reason: {
+      h: "Cancellation Reason"
+      n: "cancellation_reason"
+      r: false
+      sh: "Reason for the cancellation of this order."
+      t: "`$STRING`"
+    }
+    certificate: {
+      h: "Certificate"
+      n: "certificate"
+      r: false
+      sh: "For delivered orders, a URL to a delivery certificate for the order."
+      t: "`$STRING`"
+    }
+    confirmed_at: {
+      fo: "unix-time"
+      h: "Confirmed At"
+      n: "confirmed_at"
+      r: false
+      sh: "Time at which the order was confirmed."
+      t: "`$INTEGER`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase, representing the currency for this order."
+      t: "`$STRING`"
+    }
+    delayed_at: {
+      fo: "unix-time"
+      h: "Delayed At"
+      n: "delayed_at"
+      r: false
+      sh: "Time at which the order's expected_delivery_year was delayed."
+      t: "`$INTEGER`"
+    }
+    delivered_at: {
+      fo: "unix-time"
+      h: "Delivered At"
+      n: "delivered_at"
+      r: false
+      sh: "Time at which the order was delivered."
+      t: "`$INTEGER`"
+    }
+    delivery_details: {
+      h: "Delivery Details"
+      n: "delivery_details"
+      r: true
+      sh: "Details about the delivery of carbon removal for this order."
+      t: "`$ARRAY`"
+    }
+    expected_delivery_year: {
+      h: "Expected Delivery Year"
+      n: "expected_delivery_year"
+      r: true
+      sh: "The year this order is expected to be delivered."
+      t: "`$INTEGER`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: true
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    metric_tons: {
+      fo: "decimal"
+      h: "Metric Tons"
+      n: "metric_tons"
+      r: true
+      sh: "Quantity of carbon removal that is included in this order."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    product: {
+      h: "Product"
+      n: "product"
+      r: true
+      sh: "Unique ID for the Climate `Product` this order is purchasing."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    product_substituted_at: {
+      fo: "unix-time"
+      h: "Product Substituted At"
+      n: "product_substituted_at"
+      r: false
+      sh: "Time at which the order's product was substituted for a different product."
+      t: "`$INTEGER`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "The current status of this order."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "order"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/climate/orders/{order}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "order"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/climate/orders/{order}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              order: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "climate"
+            }
+            {
+              lit: "orders"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/climate/orders/{order}/cancel"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "order"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/climate/orders/{order}/cancel"
+          q: {
+            "$action": "cancel"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              order: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "climate"
+            }
+            {
+              lit: "orders"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "cancel"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/climate/orders"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/climate/orders"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "climate"
+            }
+            {
+              lit: "orders"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/climate/orders"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/climate/orders"
+          q: {
+            exist: [
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "climate"
+            }
+            {
+              lit: "orders"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/climate/orders/{order}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "order"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/climate/orders/{order}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              order: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "climate"
+            }
+            {
+              lit: "orders"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,52 @@
+# BasicRegistrationFlow
+
+main: kit: flow: BasicRegistrationFlow:
+{
+  entity: "registration",
+  kind: "basic",
+  name: "BasicRegistrationFlow",
+  step: [
+    {
+      i: {
+        ref: "registration_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "registration_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "registration_ref01",
+        srcdatavar: "registration_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "registration01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-registration_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicRegistrationFlow"
+}

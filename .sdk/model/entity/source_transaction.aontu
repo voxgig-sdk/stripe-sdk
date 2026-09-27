@@ -1,0 +1,281 @@
+# Entity: source_transaction
+
+main: kit: entity: source_transaction: {
+
+  alias: field: {}
+
+  fields: {
+    ach_credit_transfer: {
+      h: "Ach Credit Transfer"
+      n: "ach_credit_transfer"
+      r: false
+      t: "`$OBJECT`"
+    }
+    amount: {
+      h: "Amount"
+      n: "amount"
+      r: true
+      sh: "A positive integer in the smallest currency unit (that is, 100 cents for $1.00, or 1 for ¥1, Japanese Yen being a zero-decimal currency) representing the amount your customer has pushed to the receiver."
+      t: "`$INTEGER`"
+    }
+    chf_credit_transfer: {
+      h: "Chf Credit Transfer"
+      n: "chf_credit_transfer"
+      r: false
+      t: "`$OBJECT`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    gbp_credit_transfer: {
+      h: "Gbp Credit Transfer"
+      n: "gbp_credit_transfer"
+      r: false
+      t: "`$OBJECT`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    paper_check: {
+      h: "Paper Check"
+      n: "paper_check"
+      r: false
+      t: "`$OBJECT`"
+    }
+    sepa_credit_transfer: {
+      h: "Sepa Credit Transfer"
+      n: "sepa_credit_transfer"
+      r: false
+      t: "`$OBJECT`"
+    }
+    source: {
+      h: "Source"
+      n: "source"
+      r: true
+      sh: "The ID of the source this transaction is attached to."
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "The status of the transaction, one of `succeeded`, `pending`, or `failed`."
+      t: "`$STRING`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "The type of source this transaction is attached to."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "source_transaction"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/sources/{source}/source_transactions"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "source"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/sources/{source}/source_transactions"
+          q: {
+            exist: [
+              "ending_before"
+              "expand"
+              "id"
+              "limit"
+              "starting_after"
+            ]
+          }
+          r: {
+            param: {
+              source: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "sources"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "source_transactions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/sources/{source}/source_transactions/{source_transaction}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "source_transaction"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "source_id"
+                or: "source"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/sources/{source}/source_transactions/{source_transaction}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+              "source_id"
+            ]
+          }
+          r: {
+            param: {
+              source: "source_id"
+              source_transaction: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "sources"
+            }
+            {
+              var: "source_id"
+            }
+            {
+              lit: "source_transactions"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.source")]
+  ]
+
+}

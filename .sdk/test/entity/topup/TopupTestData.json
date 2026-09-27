@@ -1,0 +1,120 @@
+{
+  "existing": {
+    "topup": {
+      "TOPUP00": {
+        "amount": 190,
+        "balance_transaction": "sbf",
+        "created": 192,
+        "currency": "sc1",
+        "description": "sc2",
+        "expected_availability_date": 195,
+        "failure_code": "sc4",
+        "failure_message": "sc5",
+        "id": "TOPUP00",
+        "initiated_by": "sc7",
+        "livemode": true,
+        "metadata": {},
+        "object": "sca",
+        "payment_method": "scb",
+        "payment_method_options": "scc",
+        "source": "scd",
+        "statement_descriptor": "sce",
+        "status": "scf",
+        "transfer_group": "sd0"
+      },
+      "TOPUP01": {
+        "amount": 380,
+        "balance_transaction": "s17d",
+        "created": 382,
+        "currency": "s17f",
+        "description": "s180",
+        "expected_availability_date": 385,
+        "failure_code": "s182",
+        "failure_message": "s183",
+        "id": "TOPUP01",
+        "initiated_by": "s185",
+        "livemode": true,
+        "metadata": {},
+        "object": "s188",
+        "payment_method": "s189",
+        "payment_method_options": "s18a",
+        "source": "s18b",
+        "statement_descriptor": "s18c",
+        "status": "s18d",
+        "transfer_group": "s18e"
+      },
+      "TOPUP02": {
+        "amount": 570,
+        "balance_transaction": "s23b",
+        "created": 572,
+        "currency": "s23d",
+        "description": "s23e",
+        "expected_availability_date": 575,
+        "failure_code": "s240",
+        "failure_message": "s241",
+        "id": "TOPUP02",
+        "initiated_by": "s243",
+        "livemode": true,
+        "metadata": {},
+        "object": "s246",
+        "payment_method": "s247",
+        "payment_method_options": "s248",
+        "source": "s249",
+        "statement_descriptor": "s24a",
+        "status": "s24b",
+        "transfer_group": "s24c"
+      }
+    }
+  },
+  "new": {
+    "topup": {
+      "topup_ref01": {
+        "amount": 760,
+        "balance_transaction": "s2f9",
+        "created": 762,
+        "currency": "s2fb",
+        "description": "s2fc",
+        "expected_availability_date": 765,
+        "failure_code": "s2fe",
+        "failure_message": "s2ff",
+        "initiated_by": "s301",
+        "livemode": true,
+        "metadata": {},
+        "object": "s304",
+        "payment_method": "s305",
+        "payment_method_options": "s306",
+        "source": "s307",
+        "statement_descriptor": "s308",
+        "status": "s309",
+        "transfer_group": "s30a"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/topups/{topup}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/topups/{topup}/cancel": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/topups": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/topups": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/topups/{topup}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

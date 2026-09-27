@@ -1,0 +1,9 @@
+# BasicDeletedWebhookEndpointFlow
+
+main: kit: flow: BasicDeletedWebhookEndpointFlow:
+{
+  entity: "deleted_webhook_endpoint",
+  kind: "basic",
+  name: "BasicDeletedWebhookEndpointFlow",
+  "key$": "BasicDeletedWebhookEndpointFlow"
+}

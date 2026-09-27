@@ -1,0 +1,44 @@
+{
+  "existing": {
+    "domain": {
+      "DOMAIN00": {
+        "created": 50,
+        "domain_name": "s33",
+        "id": "DOMAIN00",
+        "livemode": false,
+        "object": "s36"
+      },
+      "DOMAIN01": {
+        "created": 100,
+        "domain_name": "s65",
+        "id": "DOMAIN01",
+        "livemode": false,
+        "object": "s68"
+      },
+      "DOMAIN02": {
+        "created": 150,
+        "domain_name": "s97",
+        "id": "DOMAIN02",
+        "livemode": false,
+        "object": "s9a"
+      }
+    }
+  },
+  "new": {
+    "domain": {
+      "domain_ref01": {
+        "created": 200,
+        "domain_name": "sc9",
+        "livemode": false,
+        "object": "scc"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/apple_pay/domains": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

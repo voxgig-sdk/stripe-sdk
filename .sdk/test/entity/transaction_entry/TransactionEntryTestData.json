@@ -1,0 +1,81 @@
+{
+  "existing": {
+    "transaction_entry": {
+      "TRANSACTION_ENTRY00": {
+        "balance_impact": {},
+        "created": 131,
+        "currency": "s84",
+        "effective_at": 133,
+        "financial_account": "s86",
+        "flow": "s87",
+        "flow_details": "s88",
+        "flow_type": "s89",
+        "id": "TRANSACTION_ENTRY00",
+        "livemode": false,
+        "object": "s8c",
+        "transaction": "s8d",
+        "type": "s8e"
+      },
+      "TRANSACTION_ENTRY01": {
+        "balance_impact": {},
+        "created": 261,
+        "currency": "s106",
+        "effective_at": 263,
+        "financial_account": "s108",
+        "flow": "s109",
+        "flow_details": "s10a",
+        "flow_type": "s10b",
+        "id": "TRANSACTION_ENTRY01",
+        "livemode": false,
+        "object": "s10e",
+        "transaction": "s10f",
+        "type": "s110"
+      },
+      "TRANSACTION_ENTRY02": {
+        "balance_impact": {},
+        "created": 391,
+        "currency": "s188",
+        "effective_at": 393,
+        "financial_account": "s18a",
+        "flow": "s18b",
+        "flow_details": "s18c",
+        "flow_type": "s18d",
+        "id": "TRANSACTION_ENTRY02",
+        "livemode": false,
+        "object": "s190",
+        "transaction": "s191",
+        "type": "s192"
+      }
+    }
+  },
+  "new": {
+    "transaction_entry": {
+      "transaction_entry_ref01": {
+        "balance_impact": {},
+        "created": 521,
+        "currency": "s20a",
+        "effective_at": 523,
+        "financial_account": "s20c",
+        "flow": "s20d",
+        "flow_details": "s20e",
+        "flow_type": "s20f",
+        "livemode": false,
+        "object": "s212",
+        "transaction": "s213",
+        "type": "s214"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/treasury/transaction_entries": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/treasury/transaction_entries/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

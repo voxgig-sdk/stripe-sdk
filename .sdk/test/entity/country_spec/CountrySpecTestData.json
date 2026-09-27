@@ -1,0 +1,61 @@
+{
+  "existing": {
+    "country_spec": {
+      "COUNTRY_SPEC00": {
+        "default_currency": "s50",
+        "id": "COUNTRY_SPEC00",
+        "object": "s52",
+        "supported_bank_account_currencies": {},
+        "supported_payment_currencies": [],
+        "supported_payment_methods": [],
+        "supported_transfer_countries": [],
+        "verification_fields": {}
+      },
+      "COUNTRY_SPEC01": {
+        "default_currency": "sa0",
+        "id": "COUNTRY_SPEC01",
+        "object": "sa2",
+        "supported_bank_account_currencies": {},
+        "supported_payment_currencies": [],
+        "supported_payment_methods": [],
+        "supported_transfer_countries": [],
+        "verification_fields": {}
+      },
+      "COUNTRY_SPEC02": {
+        "default_currency": "sf0",
+        "id": "COUNTRY_SPEC02",
+        "object": "sf2",
+        "supported_bank_account_currencies": {},
+        "supported_payment_currencies": [],
+        "supported_payment_methods": [],
+        "supported_transfer_countries": [],
+        "verification_fields": {}
+      }
+    }
+  },
+  "new": {
+    "country_spec": {
+      "country_spec_ref01": {
+        "default_currency": "s140",
+        "object": "s142",
+        "supported_bank_account_currencies": {},
+        "supported_payment_currencies": [],
+        "supported_payment_methods": [],
+        "supported_transfer_countries": [],
+        "verification_fields": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/country_specs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/country_specs/{country}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

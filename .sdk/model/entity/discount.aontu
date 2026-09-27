@@ -1,0 +1,432 @@
+# Entity: discount
+
+main: kit: entity: discount: {
+
+  alias: field: {}
+
+  fields: {
+    checkout_session: {
+      h: "Checkout Session"
+      n: "checkout_session"
+      r: false
+      sh: "The Checkout session that this coupon is applied to, if it is applied to a particular session in payment mode."
+      t: "`$STRING`"
+    }
+    customer: {
+      h: "Customer"
+      n: "customer"
+      r: false
+      sh: "The ID of the customer associated with this discount."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 2
+        depth: 1
+      }
+    }
+    customer_account: {
+      h: "Customer Account"
+      n: "customer_account"
+      r: false
+      sh: "The ID of the account representing the customer associated with this discount."
+      t: "`$STRING`"
+    }
+    end: {
+      fo: "unix-time"
+      h: "End"
+      n: "end"
+      r: false
+      sh: "If the coupon has a duration of `repeating`, the date that this discount will end."
+      t: "`$INTEGER`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "The ID of the discount object."
+      t: "`$STRING`"
+    }
+    invoice: {
+      h: "Invoice"
+      n: "invoice"
+      r: false
+      sh: "The invoice that the discount's coupon was applied to, if it was applied directly to a particular invoice."
+      t: "`$STRING`"
+    }
+    invoice_item: {
+      h: "Invoice Item"
+      n: "invoice_item"
+      r: false
+      sh: "The invoice item `id` (or invoice line item `id` for invoice line items of type='subscription') that the discount's coupon was applied to, if it was applied directly to a particular invoice item or invoice line item."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    promotion_code: {
+      h: "Promotion Code"
+      n: "promotion_code"
+      r: false
+      sh: "The promotion code applied to create this discount."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 7
+        depth: 7
+      }
+    }
+    source: {
+      h: "Source"
+      n: "source"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 2
+      }
+    }
+    start: {
+      fo: "unix-time"
+      h: "Start"
+      n: "start"
+      r: true
+      sh: "Date that the coupon was applied."
+      t: "`$INTEGER`"
+    }
+    subscription: {
+      h: "Subscription"
+      n: "subscription"
+      r: false
+      sh: "The subscription that this coupon is applied to, if it is applied to a particular subscription."
+      t: "`$STRING`"
+    }
+    subscription_item: {
+      h: "Subscription Item"
+      n: "subscription_item"
+      r: false
+      sh: "The subscription item that this coupon is applied to, if it is applied to a particular subscription item."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "discount"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "subscription_id"
+                or: "subscription_exposed_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount"
+          q: {
+            exist: [
+              "customer_id"
+              "expand"
+              "subscription_id"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+              subscription_exposed_id: "subscription_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "subscriptions"
+            }
+            {
+              var: "subscription_id"
+            }
+            {
+              lit: "discount"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/customers/{customer}/discount"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/customers/{customer}/discount"
+          q: {
+            exist: [
+              "customer_id"
+              "expand"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "discount"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "subscription_id"
+                or: "subscription_exposed_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount"
+          q: {
+            exist: [
+              "customer_id"
+              "subscription_id"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+              subscription_exposed_id: "subscription_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "subscriptions"
+            }
+            {
+              var: "subscription_id"
+            }
+            {
+              lit: "discount"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /v1/customers/{customer}/discount"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/v1/customers/{customer}/discount"
+          q: {
+            exist: [
+              "customer_id"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "discount"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /v1/subscriptions/{subscription_exposed_id}/discount"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "subscription_id"
+                or: "subscription_exposed_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/v1/subscriptions/{subscription_exposed_id}/discount"
+          q: {
+            exist: [
+              "subscription_id"
+            ]
+          }
+          r: {
+            param: {
+              subscription_exposed_id: "subscription_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "subscriptions"
+            }
+            {
+              var: "subscription_id"
+            }
+            {
+              lit: "discount"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.customer")]
+    [path("$.main.kit.entity.customer") path("$.main.kit.entity.subscription")]
+  ]
+
+}

@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "quote_pdf": {
+      "QUOTE_PDF00": {
+        "id": "QUOTE_PDF00"
+      },
+      "QUOTE_PDF01": {
+        "id": "QUOTE_PDF01"
+      },
+      "QUOTE_PDF02": {
+        "id": "QUOTE_PDF02"
+      }
+    }
+  },
+  "new": {
+    "quote_pdf": {
+      "quote_pdf_ref01": {}
+    }
+  },
+  "requests": {
+    "GET /v1/quotes/{quote}/pdf": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

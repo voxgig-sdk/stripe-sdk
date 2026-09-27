@@ -1,0 +1,222 @@
+# Entity: confirmation_token
+
+main: kit: entity: confirmation_token: {
+
+  alias: field: {}
+
+  fields: {
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    expires_at: {
+      fo: "unix-time"
+      h: "Expires At"
+      n: "expires_at"
+      r: false
+      sh: "Time at which this ConfirmationToken expires and can no longer be used to confirm a PaymentIntent or SetupIntent."
+      t: "`$INTEGER`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    mandate_data: {
+      h: "Mandate Data"
+      n: "mandate_data"
+      r: false
+      sh: "Data used for generating a Mandate."
+      t: "`$ANY`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Set of key-value pairs that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    payment_intent: {
+      h: "Payment Intent"
+      n: "payment_intent"
+      r: false
+      sh: "ID of the PaymentIntent that this ConfirmationToken was used to confirm, or null if this ConfirmationToken has not yet been used."
+      t: "`$STRING`"
+    }
+    payment_method_options: {
+      h: "Payment Method Options"
+      n: "payment_method_options"
+      r: false
+      sh: "Payment-method-specific configuration for this ConfirmationToken."
+      t: "`$ANY`"
+    }
+    payment_method_preview: {
+      h: "Payment Method Preview"
+      n: "payment_method_preview"
+      r: false
+      sh: "Payment details collected by the Payment Element, used to create a PaymentMethod when a PaymentIntent or SetupIntent is confirmed with this ConfirmationToken."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 105848
+        depth: 64
+      }
+    }
+    return_url: {
+      h: "Return Url"
+      n: "return_url"
+      r: false
+      sh: "Return URL used to confirm the Intent."
+      t: "`$STRING`"
+    }
+    setup_future_usage: {
+      h: "Setup Future Usage"
+      n: "setup_future_usage"
+      r: false
+      sh: "Indicates that you intend to make future payments with this ConfirmationToken's payment method."
+      t: "`$STRING`"
+    }
+    setup_intent: {
+      h: "Setup Intent"
+      n: "setup_intent"
+      r: false
+      sh: "ID of the SetupIntent that this ConfirmationToken was used to confirm, or null if this ConfirmationToken has not yet been used."
+      t: "`$STRING`"
+    }
+    shipping: {
+      h: "Shipping"
+      n: "shipping"
+      r: false
+      sh: "Shipping information collected on this ConfirmationToken."
+      t: "`$ANY`"
+    }
+    use_stripe_sdk: {
+      h: "Use Stripe Sdk"
+      n: "use_stripe_sdk"
+      r: true
+      sh: "Indicates whether the Stripe SDK is used to handle confirmation flow."
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "confirmation_token"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/test_helpers/confirmation_tokens"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/test_helpers/confirmation_tokens"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "confirmation_tokens"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/confirmation_tokens/{confirmation_token}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "confirmation_token"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/confirmation_tokens/{confirmation_token}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              confirmation_token: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "confirmation_tokens"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

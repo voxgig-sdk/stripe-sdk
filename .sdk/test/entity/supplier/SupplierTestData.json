@@ -1,0 +1,57 @@
+{
+  "existing": {
+    "supplier": {
+      "SUPPLIER00": {
+        "id": "SUPPLIER00",
+        "info_url": "s47",
+        "livemode": true,
+        "locations": [],
+        "name": "s4a",
+        "object": "s4b",
+        "removal_pathway": "s4c"
+      },
+      "SUPPLIER01": {
+        "id": "SUPPLIER01",
+        "info_url": "s8d",
+        "livemode": true,
+        "locations": [],
+        "name": "s90",
+        "object": "s91",
+        "removal_pathway": "s92"
+      },
+      "SUPPLIER02": {
+        "id": "SUPPLIER02",
+        "info_url": "sd3",
+        "livemode": true,
+        "locations": [],
+        "name": "sd6",
+        "object": "sd7",
+        "removal_pathway": "sd8"
+      }
+    }
+  },
+  "new": {
+    "supplier": {
+      "supplier_ref01": {
+        "info_url": "s119",
+        "livemode": true,
+        "locations": [],
+        "name": "s11c",
+        "object": "s11d",
+        "removal_pathway": "s11e"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/climate/suppliers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/climate/suppliers/{supplier}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

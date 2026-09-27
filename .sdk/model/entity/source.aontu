@@ -1,0 +1,819 @@
+# Entity: source
+
+main: kit: entity: source: {
+
+  alias: field: {}
+
+  fields: {
+    ach_credit_transfer: {
+      h: "Ach Credit Transfer"
+      n: "ach_credit_transfer"
+      r: false
+      t: "`$OBJECT`"
+    }
+    ach_debit: {
+      h: "Ach Debit"
+      n: "ach_debit"
+      r: false
+      t: "`$OBJECT`"
+    }
+    acss_debit: {
+      h: "Acss Debit"
+      n: "acss_debit"
+      r: false
+      t: "`$OBJECT`"
+    }
+    alipay: {
+      h: "Alipay"
+      n: "alipay"
+      r: false
+      t: "`$OBJECT`"
+    }
+    allow_redisplay: {
+      h: "Allow Redisplay"
+      n: "allow_redisplay"
+      r: false
+      sh: "This field indicates whether this payment method can be shown again to its customer in a checkout flow."
+      t: "`$BOOLEAN`"
+    }
+    amount: {
+      h: "Amount"
+      n: "amount"
+      r: false
+      sh: "A positive integer in the smallest currency unit (that is, 100 cents for $1.00, or 1 for ¥1, Japanese Yen being a zero-decimal currency) representing the total amount associated with the source."
+      t: "`$INTEGER`"
+    }
+    au_becs_debit: {
+      h: "Au Becs Debit"
+      n: "au_becs_debit"
+      r: false
+      t: "`$OBJECT`"
+    }
+    bancontact: {
+      h: "Bancontact"
+      n: "bancontact"
+      r: false
+      t: "`$OBJECT`"
+    }
+    card: {
+      h: "Card"
+      n: "card"
+      r: false
+      t: "`$OBJECT`"
+    }
+    card_present: {
+      h: "Card Present"
+      n: "card_present"
+      r: false
+      t: "`$OBJECT`"
+    }
+    client_secret: {
+      h: "Client Secret"
+      n: "client_secret"
+      r: true
+      sh: "The client secret of the source."
+      t: "`$STRING`"
+    }
+    code_verification: {
+      h: "Code Verification"
+      n: "code_verification"
+      r: true
+      t: "`$OBJECT`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: false
+      sh: "Three-letter [ISO code for the currency](https://stripe.com/docs/currencies) associated with the source."
+      t: "`$STRING`"
+    }
+    customer: {
+      h: "Customer"
+      n: "customer"
+      r: false
+      sh: "The ID of the customer to which this source is attached."
+      t: "`$STRING`"
+    }
+    data: {
+      h: "Data"
+      n: "data"
+      r: true
+      sh: "Details about each object."
+      t: "`$ARRAY`"
+      union: {
+        branches: 17
+        count: 106523
+        depth: 64
+      }
+    }
+    eps: {
+      h: "Eps"
+      n: "eps"
+      r: false
+      t: "`$OBJECT`"
+    }
+    flow: {
+      h: "Flow"
+      n: "flow"
+      r: true
+      sh: "The authentication `flow` of the source."
+      t: "`$STRING`"
+    }
+    giropay: {
+      h: "Giropay"
+      n: "giropay"
+      r: false
+      t: "`$OBJECT`"
+    }
+    has_more: {
+      h: "Has More"
+      n: "has_more"
+      r: true
+      sh: "True if this list has another page of items after this one that can be fetched."
+      t: "`$BOOLEAN`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    ideal: {
+      h: "Ideal"
+      n: "ideal"
+      r: false
+      t: "`$OBJECT`"
+    }
+    klarna: {
+      h: "Klarna"
+      n: "klarna"
+      r: false
+      t: "`$OBJECT`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    multibanco: {
+      h: "Multibanco"
+      n: "multibanco"
+      r: false
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    owner: {
+      h: "Owner"
+      n: "owner"
+      r: false
+      sh: "Information about the owner of the payment instrument that may be used or required by particular source types."
+      t: "`$ANY`"
+    }
+    p24: {
+      h: "P24"
+      n: "p24"
+      r: false
+      t: "`$OBJECT`"
+    }
+    receiver: {
+      h: "Receiver"
+      n: "receiver"
+      r: true
+      t: "`$OBJECT`"
+    }
+    redirect: {
+      h: "Redirect"
+      n: "redirect"
+      r: true
+      t: "`$OBJECT`"
+    }
+    sepa_debit: {
+      h: "Sepa Debit"
+      n: "sepa_debit"
+      r: false
+      t: "`$OBJECT`"
+    }
+    sofort: {
+      h: "Sofort"
+      n: "sofort"
+      r: false
+      t: "`$OBJECT`"
+    }
+    source_order: {
+      h: "Source Order"
+      n: "source_order"
+      r: true
+      t: "`$OBJECT`"
+    }
+    statement_descriptor: {
+      h: "Statement Descriptor"
+      n: "statement_descriptor"
+      r: false
+      sh: "Extra information about a source."
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "The status of the source, one of `canceled`, `chargeable`, `consumed`, `failed`, or `pending`."
+      t: "`$STRING`"
+    }
+    three_d_secure: {
+      h: "Three D Secure"
+      n: "three_d_secure"
+      r: false
+      t: "`$OBJECT`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "The `type` of the source."
+      t: "`$STRING`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: true
+      sh: "The URL where this list can be accessed."
+      t: "`$STRING`"
+    }
+    usage: {
+      h: "Usage"
+      n: "usage"
+      r: false
+      sh: "Either `reusable` or `single_use`."
+      t: "`$STRING`"
+    }
+    wechat: {
+      h: "Wechat"
+      n: "wechat"
+      r: false
+      t: "`$OBJECT`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "source"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/customers/{customer}/sources/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/customers/{customer}/sources/{id}"
+          q: {
+            exist: [
+              "customer_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "sources"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/customers/{customer}/sources"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/customers/{customer}/sources"
+          q: {
+            exist: [
+              "customer_id"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "sources"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/sources/{source}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "source"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/sources/{source}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              source: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "sources"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/sources/{source}/verify"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "source"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/sources/{source}/verify"
+          q: {
+            "$action": "verify"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              source: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "sources"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "verify"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/sources"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/sources"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "sources"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/customers/{customer}/sources"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "object"
+                or: "object"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/customers/{customer}/sources"
+          q: {
+            exist: [
+              "customer_id"
+              "ending_before"
+              "expand"
+              "limit"
+              "object"
+              "starting_after"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "sources"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/sources/{source}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "source"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "client_secret"
+                or: "client_secret"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/sources/{source}"
+          q: {
+            exist: [
+              "client_secret"
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              source: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "sources"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/customers/{customer}/sources/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/customers/{customer}/sources/{id}"
+          q: {
+            exist: [
+              "customer_id"
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "sources"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /v1/customers/{customer}/sources/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/v1/customers/{customer}/sources/{id}"
+          q: {
+            exist: [
+              "customer_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "sources"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.customer")]
+  ]
+
+}

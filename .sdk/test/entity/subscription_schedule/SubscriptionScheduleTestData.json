@@ -1,0 +1,136 @@
+{
+  "existing": {
+    "subscription_schedule": {
+      "SUBSCRIPTION_SCHEDULE00": {
+        "application": "sd2",
+        "billing_mode": {},
+        "canceled_at": 212,
+        "completed_at": 213,
+        "created": 214,
+        "current_phase": "sd7",
+        "customer": "sd8",
+        "customer_account": "sd9",
+        "default_settings": {},
+        "end_behavior": "sdb",
+        "id": "SUBSCRIPTION_SCHEDULE00",
+        "livemode": false,
+        "metadata": {},
+        "object": "sdf",
+        "pause_schedules": [],
+        "phases": [],
+        "released_at": 226,
+        "released_subscription": "se3",
+        "status": "se4",
+        "subscription": "se5",
+        "test_clock": "se6",
+        "schedule": "SCHEDULE01"
+      },
+      "SUBSCRIPTION_SCHEDULE01": {
+        "application": "s1a4",
+        "billing_mode": {},
+        "canceled_at": 422,
+        "completed_at": 423,
+        "created": 424,
+        "current_phase": "s1a9",
+        "customer": "s1aa",
+        "customer_account": "s1ab",
+        "default_settings": {},
+        "end_behavior": "s1ad",
+        "id": "SUBSCRIPTION_SCHEDULE01",
+        "livemode": false,
+        "metadata": {},
+        "object": "s1b1",
+        "pause_schedules": [],
+        "phases": [],
+        "released_at": 436,
+        "released_subscription": "s1b5",
+        "status": "s1b6",
+        "subscription": "s1b7",
+        "test_clock": "s1b8",
+        "schedule": "SCHEDULE01"
+      },
+      "SUBSCRIPTION_SCHEDULE02": {
+        "application": "s276",
+        "billing_mode": {},
+        "canceled_at": 632,
+        "completed_at": 633,
+        "created": 634,
+        "current_phase": "s27b",
+        "customer": "s27c",
+        "customer_account": "s27d",
+        "default_settings": {},
+        "end_behavior": "s27f",
+        "id": "SUBSCRIPTION_SCHEDULE02",
+        "livemode": false,
+        "metadata": {},
+        "object": "s283",
+        "pause_schedules": [],
+        "phases": [],
+        "released_at": 646,
+        "released_subscription": "s287",
+        "status": "s288",
+        "subscription": "s289",
+        "test_clock": "s28a",
+        "schedule": "SCHEDULE01"
+      }
+    }
+  },
+  "new": {
+    "subscription_schedule": {
+      "subscription_schedule_ref01": {
+        "application": "s348",
+        "billing_mode": {},
+        "canceled_at": 842,
+        "completed_at": 843,
+        "created": 844,
+        "current_phase": "s34d",
+        "customer": "s34e",
+        "customer_account": "s34f",
+        "default_settings": {},
+        "end_behavior": "s351",
+        "livemode": false,
+        "metadata": {},
+        "object": "s355",
+        "pause_schedules": [],
+        "phases": [],
+        "released_at": 856,
+        "released_subscription": "s359",
+        "status": "s35a",
+        "subscription": "s35b",
+        "test_clock": "s35c"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/subscription_schedules/{schedule}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/subscription_schedules/{schedule}/cancel": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/subscription_schedules/{schedule}/release": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/subscription_schedules": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/subscription_schedules": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/subscription_schedules/{schedule}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

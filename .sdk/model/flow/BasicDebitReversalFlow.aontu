@@ -1,0 +1,52 @@
+# BasicDebitReversalFlow
+
+main: kit: flow: BasicDebitReversalFlow:
+{
+  entity: "debit_reversal",
+  kind: "basic",
+  name: "BasicDebitReversalFlow",
+  step: [
+    {
+      i: {
+        ref: "debit_reversal_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "debit_reversal_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "debit_reversal_ref01",
+        srcdatavar: "debit_reversal_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "debit_reversal01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-debit_reversal_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDebitReversalFlow"
+}

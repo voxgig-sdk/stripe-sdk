@@ -1,0 +1,77 @@
+{
+  "existing": {
+    "invoice_payment": {
+      "INVOICE_PAYMENT00": {
+        "amount_paid": 120,
+        "amount_requested": 121,
+        "created": 122,
+        "currency": "s7b",
+        "id": "INVOICE_PAYMENT00",
+        "invoice": "s7d",
+        "is_default": true,
+        "livemode": false,
+        "object": "s80",
+        "payment": {},
+        "status": "s82",
+        "status_transitions": {}
+      },
+      "INVOICE_PAYMENT01": {
+        "amount_paid": 240,
+        "amount_requested": 241,
+        "created": 242,
+        "currency": "sf3",
+        "id": "INVOICE_PAYMENT01",
+        "invoice": "sf5",
+        "is_default": true,
+        "livemode": false,
+        "object": "sf8",
+        "payment": {},
+        "status": "sfa",
+        "status_transitions": {}
+      },
+      "INVOICE_PAYMENT02": {
+        "amount_paid": 360,
+        "amount_requested": 361,
+        "created": 362,
+        "currency": "s16b",
+        "id": "INVOICE_PAYMENT02",
+        "invoice": "s16d",
+        "is_default": true,
+        "livemode": false,
+        "object": "s170",
+        "payment": {},
+        "status": "s172",
+        "status_transitions": {}
+      }
+    }
+  },
+  "new": {
+    "invoice_payment": {
+      "invoice_payment_ref01": {
+        "amount_paid": 480,
+        "amount_requested": 481,
+        "created": 482,
+        "currency": "s1e3",
+        "invoice": "s1e5",
+        "is_default": true,
+        "livemode": false,
+        "object": "s1e8",
+        "payment": {},
+        "status": "s1ea",
+        "status_transitions": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/invoice_payments": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/invoice_payments/{invoice_payment}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

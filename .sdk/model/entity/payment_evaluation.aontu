@@ -1,0 +1,140 @@
+# Entity: payment_evaluation
+
+main: kit: entity: payment_evaluation: {
+
+  alias: field: {}
+
+  fields: {
+    client_device_metadata_details: {
+      h: "Client Device Metadata Details"
+      n: "client_device_metadata_details"
+      r: true
+      sh: "Client device metadata attached to this payment evaluation."
+      t: "`$OBJECT`"
+    }
+    created_at: {
+      fo: "unix-time"
+      h: "Created At"
+      n: "created_at"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    customer_details: {
+      h: "Customer Details"
+      n: "customer_details"
+      r: false
+      sh: "Customer details attached to this payment evaluation."
+      t: "`$OBJECT`"
+    }
+    events: {
+      h: "Events"
+      n: "events"
+      r: true
+      sh: "Event information associated with the payment evaluation, such as refunds, dispute, early fraud warnings, or user interventions."
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    outcome: {
+      h: "Outcome"
+      n: "outcome"
+      r: false
+      sh: "Indicates the final outcome for the payment evaluation."
+      t: "`$ANY`"
+    }
+    payment_details: {
+      h: "Payment Details"
+      n: "payment_details"
+      r: true
+      sh: "Payment details attached to this payment evaluation."
+      t: "`$OBJECT`"
+      union: {
+        branches: 17
+        count: 25227
+        depth: 64
+      }
+    }
+    recommended_action: {
+      h: "Recommended Action"
+      n: "recommended_action"
+      r: true
+      sh: "Recommended action based on the score of the `fraudulent_payment` signal."
+      t: "`$STRING`"
+    }
+    signals: {
+      h: "Signals"
+      n: "signals"
+      r: true
+      sh: "Collection of signals for this payment evaluation."
+      t: "`$OBJECT`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "payment_evaluation"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/radar/payment_evaluations"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/radar/payment_evaluations"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "radar"
+            }
+            {
+              lit: "payment_evaluations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,147 @@
+{
+  "existing": {
+    "outbound_payment": {
+      "OUTBOUND_PAYMENT00": {
+        "amount": 220,
+        "cancelable": false,
+        "created": 222,
+        "currency": "sdf",
+        "customer": "se0",
+        "description": "se1",
+        "destination_payment_method": "se2",
+        "destination_payment_method_details": "se3",
+        "end_user_details": "se4",
+        "expected_arrival_date": 229,
+        "financial_account": "se6",
+        "hosted_regulatory_receipt_url": "se7",
+        "id": "OUTBOUND_PAYMENT00",
+        "livemode": false,
+        "metadata": {},
+        "object": "seb",
+        "returned_details": "sec",
+        "statement_descriptor": "sed",
+        "status": "see",
+        "status_transitions": {},
+        "tracking_details": "sf0",
+        "transaction": "sf1"
+      },
+      "OUTBOUND_PAYMENT01": {
+        "amount": 440,
+        "cancelable": false,
+        "created": 442,
+        "currency": "s1bb",
+        "customer": "s1bc",
+        "description": "s1bd",
+        "destination_payment_method": "s1be",
+        "destination_payment_method_details": "s1bf",
+        "end_user_details": "s1c0",
+        "expected_arrival_date": 449,
+        "financial_account": "s1c2",
+        "hosted_regulatory_receipt_url": "s1c3",
+        "id": "OUTBOUND_PAYMENT01",
+        "livemode": false,
+        "metadata": {},
+        "object": "s1c7",
+        "returned_details": "s1c8",
+        "statement_descriptor": "s1c9",
+        "status": "s1ca",
+        "status_transitions": {},
+        "tracking_details": "s1cc",
+        "transaction": "s1cd"
+      },
+      "OUTBOUND_PAYMENT02": {
+        "amount": 660,
+        "cancelable": false,
+        "created": 662,
+        "currency": "s297",
+        "customer": "s298",
+        "description": "s299",
+        "destination_payment_method": "s29a",
+        "destination_payment_method_details": "s29b",
+        "end_user_details": "s29c",
+        "expected_arrival_date": 669,
+        "financial_account": "s29e",
+        "hosted_regulatory_receipt_url": "s29f",
+        "id": "OUTBOUND_PAYMENT02",
+        "livemode": false,
+        "metadata": {},
+        "object": "s2a3",
+        "returned_details": "s2a4",
+        "statement_descriptor": "s2a5",
+        "status": "s2a6",
+        "status_transitions": {},
+        "tracking_details": "s2a8",
+        "transaction": "s2a9"
+      }
+    }
+  },
+  "new": {
+    "outbound_payment": {
+      "outbound_payment_ref01": {
+        "amount": 880,
+        "cancelable": false,
+        "created": 882,
+        "currency": "s373",
+        "customer": "s374",
+        "description": "s375",
+        "destination_payment_method": "s376",
+        "destination_payment_method_details": "s377",
+        "end_user_details": "s378",
+        "expected_arrival_date": 889,
+        "financial_account": "s37a",
+        "hosted_regulatory_receipt_url": "s37b",
+        "livemode": false,
+        "metadata": {},
+        "object": "s37f",
+        "returned_details": "s380",
+        "statement_descriptor": "s381",
+        "status": "s382",
+        "status_transitions": {},
+        "tracking_details": "s384",
+        "transaction": "s385"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/test_helpers/treasury/outbound_payments/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/treasury/outbound_payments/{id}/cancel": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/treasury/outbound_payments/{id}/fail": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/treasury/outbound_payments/{id}/post": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/treasury/outbound_payments/{id}/return": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/treasury/outbound_payments": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/treasury/outbound_payments": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/treasury/outbound_payments/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,441 @@
+# Entity: install
+
+main: kit: entity: install: {
+
+  alias: field: {}
+
+  fields: {
+    account: {
+      h: "Account"
+      n: "account"
+      r: true
+      sh: "The ID of the account that the app install belongs to."
+      t: "`$STRING`"
+    }
+    app: {
+      h: "App"
+      n: "app"
+      r: true
+      sh: "The ID of the app installed."
+      t: "`$STRING`"
+    }
+    approval_required: {
+      h: "Approval Required"
+      n: "approval_required"
+      r: true
+      sh: "Whether the installer must authorize pending permissions, content security policy entries, or endpoints."
+      t: "`$BOOLEAN`"
+    }
+    auth_code: {
+      h: "Auth Code"
+      n: "auth_code"
+      r: false
+      sh: "The authorization code for an oauth app install."
+      t: "`$STRING`"
+    }
+    channel: {
+      h: "Channel"
+      n: "channel"
+      r: true
+      sh: "The distribution channel associated with the app install."
+      t: "`$STRING`"
+    }
+    content_security_policy_granted: {
+      h: "Content Security Policy Granted"
+      n: "content_security_policy_granted"
+      r: true
+      t: "`$OBJECT`"
+    }
+    content_security_policy_pending: {
+      h: "Content Security Policy Pending"
+      n: "content_security_policy_pending"
+      r: true
+      t: "`$OBJECT`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    created_by: {
+      h: "Created By"
+      n: "created_by"
+      r: false
+      sh: "The ID of the embedding platform that created the install, if applicable."
+      t: "`$STRING`"
+    }
+    endpoints_granted: {
+      h: "Endpoints Granted"
+      n: "endpoints_granted"
+      r: true
+      sh: "The endpoint URLs authorized by the installer."
+      t: "`$ARRAY`"
+    }
+    endpoints_pending: {
+      h: "Endpoints Pending"
+      n: "endpoints_pending"
+      r: true
+      sh: "The endpoint URLs requested by the latest app version that the installer has not authorized."
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    permissions_granted: {
+      h: "Permissions Granted"
+      n: "permissions_granted"
+      r: true
+      sh: "The permissions authorized by the installer."
+      t: "`$ARRAY`"
+    }
+    permissions_pending: {
+      h: "Permissions Pending"
+      n: "permissions_pending"
+      r: true
+      sh: "The permissions requested by the latest app version that the installer has not authorized."
+      t: "`$ARRAY`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "The status of the app install."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "install"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/apps/installs/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/apps/installs/{id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "apps"
+            }
+            {
+              lit: "installs"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/apps/installs/{id}/uninstall"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/apps/installs/{id}/uninstall"
+          q: {
+            "$action": "uninstall"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "apps"
+            }
+            {
+              lit: "installs"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "uninstall"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/apps/installs"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/apps/installs"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "apps"
+            }
+            {
+              lit: "installs"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/apps/installs"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "account"
+                or: "account"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "app"
+                or: "app"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "approval_required"
+                or: "approval_required"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "channel"
+                or: "channel"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "created_by"
+                or: "created_by"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/apps/installs"
+          q: {
+            exist: [
+              "account"
+              "app"
+              "approval_required"
+              "channel"
+              "created"
+              "created_by"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+              "status"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "apps"
+            }
+            {
+              lit: "installs"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/apps/installs/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/apps/installs/{id}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "apps"
+            }
+            {
+              lit: "installs"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

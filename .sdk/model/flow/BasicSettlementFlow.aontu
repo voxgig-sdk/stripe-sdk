@@ -1,0 +1,40 @@
+# BasicSettlementFlow
+
+main: kit: flow: BasicSettlementFlow:
+{
+  entity: "settlement",
+  kind: "basic",
+  name: "BasicSettlementFlow",
+  step: [
+    {
+      i: {
+        ref: "settlement_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "settlement_ref01",
+        srcdatavar: "settlement_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "settlement01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-settlement_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSettlementFlow"
+}

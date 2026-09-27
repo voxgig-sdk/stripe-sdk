@@ -1,0 +1,733 @@
+# Entity: charge
+
+main: kit: entity: charge: {
+
+  alias: field: {}
+
+  fields: {
+    amount: {
+      h: "Amount"
+      n: "amount"
+      r: true
+      sh: "Amount intended to be collected by this payment."
+      t: "`$INTEGER`"
+    }
+    amount_captured: {
+      h: "Amount Captured"
+      n: "amount_captured"
+      r: true
+      sh: "Amount in cents (or local equivalent) captured (can be less than the amount attribute on the charge if a partial capture was made)."
+      t: "`$INTEGER`"
+    }
+    amount_refunded: {
+      h: "Amount Refunded"
+      n: "amount_refunded"
+      r: true
+      sh: "Amount in cents (or local equivalent) refunded (can be less than the amount attribute on the charge if a partial refund was issued)."
+      t: "`$INTEGER`"
+    }
+    application: {
+      h: "Application"
+      n: "application"
+      r: false
+      sh: "ID of the Connect application that created the charge."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    application_fee: {
+      h: "Application Fee"
+      n: "application_fee"
+      r: false
+      sh: "The application fee (if any) for the charge."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 4118
+        depth: 45
+      }
+    }
+    application_fee_amount: {
+      h: "Application Fee Amount"
+      n: "application_fee_amount"
+      r: false
+      sh: "The amount of the application fee (if any) requested for the charge."
+      t: "`$INTEGER`"
+    }
+    balance_transaction: {
+      h: "Balance Transaction"
+      n: "balance_transaction"
+      r: false
+      sh: "ID of the balance transaction that describes the impact of this charge on your account balance (not including refunds or disputes)."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 2418
+        depth: 41
+      }
+    }
+    billing_details: {
+      h: "Billing Details"
+      n: "billing_details"
+      r: true
+      t: "`$OBJECT`"
+    }
+    calculated_statement_descriptor: {
+      h: "Calculated Statement Descriptor"
+      n: "calculated_statement_descriptor"
+      r: false
+      sh: "The full statement descriptor that is passed to card networks, and that is displayed on your customers' credit card and bank statements."
+      t: "`$STRING`"
+    }
+    captured: {
+      h: "Captured"
+      n: "captured"
+      r: true
+      sh: "If the charge was created without capturing, this Boolean represents whether it is still uncaptured or has since been captured."
+      t: "`$BOOLEAN`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    customer: {
+      h: "Customer"
+      n: "customer"
+      r: false
+      sh: "ID of the customer this charge is for if one exists."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 2
+        depth: 1
+      }
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "An arbitrary string attached to the object."
+      t: "`$STRING`"
+    }
+    disputed: {
+      h: "Disputed"
+      n: "disputed"
+      r: true
+      sh: "Whether the charge has been disputed."
+      t: "`$BOOLEAN`"
+    }
+    failure_balance_transaction: {
+      h: "Failure Balance Transaction"
+      n: "failure_balance_transaction"
+      r: false
+      sh: "ID of the balance transaction that describes the reversal of the balance on your account due to payment failure."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 2552
+        depth: 41
+      }
+    }
+    failure_code: {
+      h: "Failure Code"
+      n: "failure_code"
+      r: false
+      sh: "Error code explaining reason for charge failure if available (see [the errors section](https://docs.stripe.com/error-codes) for a list of codes)."
+      t: "`$STRING`"
+    }
+    failure_message: {
+      h: "Failure Message"
+      n: "failure_message"
+      r: false
+      sh: "Message to user further explaining reason for charge failure if available."
+      t: "`$STRING`"
+    }
+    fraud_details: {
+      h: "Fraud Details"
+      n: "fraud_details"
+      r: false
+      sh: "Information on fraud assessments for the charge."
+      t: "`$ANY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: true
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    on_behalf_of: {
+      h: "On Behalf Of"
+      n: "on_behalf_of"
+      r: false
+      sh: "The account (if any) the charge was made on behalf of without triggering an automatic transfer."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    outcome: {
+      h: "Outcome"
+      n: "outcome"
+      r: false
+      sh: "Details about whether the payment was accepted, and why."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 4
+      }
+    }
+    paid: {
+      h: "Paid"
+      n: "paid"
+      r: true
+      sh: "`true` if the charge succeeded, or was successfully authorized for later capture."
+      t: "`$BOOLEAN`"
+    }
+    payment_intent: {
+      h: "Payment Intent"
+      n: "payment_intent"
+      r: false
+      sh: "ID of the PaymentIntent associated with this charge, if one exists."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    payment_method: {
+      h: "Payment Method"
+      n: "payment_method"
+      r: false
+      sh: "ID of the payment method used in this charge."
+      t: "`$STRING`"
+    }
+    payment_method_details: {
+      h: "Payment Method Details"
+      n: "payment_method_details"
+      r: false
+      sh: "Details about the payment method at the time of the transaction."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 18
+        depth: 11
+      }
+    }
+    presentment_details: {
+      h: "Presentment Details"
+      n: "presentment_details"
+      r: true
+      t: "`$OBJECT`"
+    }
+    radar_options: {
+      h: "Radar Options"
+      n: "radar_options"
+      r: false
+      sh: "Options to configure Radar."
+      t: "`$OBJECT`"
+    }
+    receipt_email: {
+      h: "Receipt Email"
+      n: "receipt_email"
+      r: false
+      sh: "This is the email address that the receipt for this charge was sent to."
+      t: "`$STRING`"
+    }
+    receipt_number: {
+      h: "Receipt Number"
+      n: "receipt_number"
+      r: false
+      sh: "This is the transaction number that appears on email receipts sent for this charge."
+      t: "`$STRING`"
+    }
+    receipt_url: {
+      h: "Receipt Url"
+      n: "receipt_url"
+      r: false
+      sh: "This is the URL to view the receipt for this charge."
+      t: "`$STRING`"
+    }
+    refunded: {
+      h: "Refunded"
+      n: "refunded"
+      r: true
+      sh: "Whether the charge has been fully refunded."
+      t: "`$BOOLEAN`"
+    }
+    refunds: {
+      h: "Refunds"
+      n: "refunds"
+      r: true
+      sh: "A list of refunds that have been applied to the charge."
+      t: "`$OBJECT`"
+      union: {
+        branches: 3
+        count: 57
+        depth: 15
+      }
+    }
+    review: {
+      h: "Review"
+      n: "review"
+      r: false
+      sh: "ID of the review associated with this charge if one exists."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 5
+        depth: 5
+      }
+    }
+    shipping: {
+      h: "Shipping"
+      n: "shipping"
+      r: false
+      sh: "Shipping information for the charge."
+      t: "`$ANY`"
+    }
+    source_transfer: {
+      h: "Source Transfer"
+      n: "source_transfer"
+      r: false
+      sh: "The transfer ID which created this charge."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 9
+        depth: 5
+      }
+    }
+    statement_descriptor: {
+      h: "Statement Descriptor"
+      n: "statement_descriptor"
+      r: false
+      sh: "For a non-card charge, text that appears on the customer's statement as the statement descriptor."
+      t: "`$STRING`"
+    }
+    statement_descriptor_suffix: {
+      h: "Statement Descriptor Suffix"
+      n: "statement_descriptor_suffix"
+      r: false
+      sh: "Provides information about a card charge."
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "The status of the payment is either `succeeded`, `pending`, or `failed`."
+      t: "`$STRING`"
+    }
+    transfer: {
+      h: "Transfer"
+      n: "transfer"
+      r: false
+      sh: "ID of the transfer to the `destination` account (only applicable if the charge was created using the `destination` parameter)."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 9
+        depth: 5
+      }
+    }
+    transfer_data: {
+      h: "Transfer Data"
+      n: "transfer_data"
+      r: false
+      sh: "An optional dictionary including the account to automatically transfer to as part of a destination charge."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 4
+      }
+    }
+    transfer_group: {
+      h: "Transfer Group"
+      n: "transfer_group"
+      r: false
+      sh: "A string that identifies this transaction as part of a group."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "charge"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/charges/{charge}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "charge"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/charges/{charge}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              charge: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "charges"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/charges/{charge}/capture"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "charge"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/charges/{charge}/capture"
+          q: {
+            "$action": "capture"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              charge: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "charges"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "capture"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/charges/{charge}/refund"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "charge"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/charges/{charge}/refund"
+          q: {
+            "$action": "refund"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              charge: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "charges"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "refund"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/charges"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/charges"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "charges"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/charges"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "customer"
+                or: "customer"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "payment_intent"
+                or: "payment_intent"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "transfer_group"
+                or: "transfer_group"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/charges"
+          q: {
+            exist: [
+              "created"
+              "customer"
+              "ending_before"
+              "expand"
+              "limit"
+              "payment_intent"
+              "starting_after"
+              "transfer_group"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "charges"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/charges/{charge}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "charge"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/charges/{charge}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              charge: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "charges"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,73 @@
+# Entity: association
+
+main: kit: entity: association: {
+
+  alias: field: {}
+
+  name: "association"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/tax/associations/find"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "payment_intent"
+                or: "payment_intent"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/tax/associations/find"
+          q: {
+            "$action": "find"
+            exist: [
+              "expand"
+              "payment_intent"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "tax"
+            }
+            {
+              lit: "associations"
+            }
+            {
+              lit: "find"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.tax_transaction_attempts`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

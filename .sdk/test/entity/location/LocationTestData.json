@@ -1,0 +1,139 @@
+{
+  "existing": {
+    "location": {
+      "LOCATION00": {
+        "address": {},
+        "address_kana": {},
+        "address_kanji": {},
+        "city": "scb",
+        "configuration_overrides": "scc",
+        "country": "scd",
+        "description": "sce",
+        "display_name": "scf",
+        "display_name_kana": "sd0",
+        "display_name_kanji": "sd1",
+        "id": "LOCATION00",
+        "line1": "sd3",
+        "line2": "sd4",
+        "livemode": false,
+        "metadata": {},
+        "object": "sd7",
+        "phone": "sd8",
+        "postal_code": "sd9",
+        "state": "sda",
+        "type": "sdb"
+      },
+      "LOCATION01": {
+        "address": {},
+        "address_kana": {},
+        "address_kanji": {},
+        "city": "s193",
+        "configuration_overrides": "s194",
+        "country": "s195",
+        "description": "s196",
+        "display_name": "s197",
+        "display_name_kana": "s198",
+        "display_name_kanji": "s199",
+        "id": "LOCATION01",
+        "line1": "s19b",
+        "line2": "s19c",
+        "livemode": false,
+        "metadata": {},
+        "object": "s19f",
+        "phone": "s1a0",
+        "postal_code": "s1a1",
+        "state": "s1a2",
+        "type": "s1a3"
+      },
+      "LOCATION02": {
+        "address": {},
+        "address_kana": {},
+        "address_kanji": {},
+        "city": "s25b",
+        "configuration_overrides": "s25c",
+        "country": "s25d",
+        "description": "s25e",
+        "display_name": "s25f",
+        "display_name_kana": "s260",
+        "display_name_kanji": "s261",
+        "id": "LOCATION02",
+        "line1": "s263",
+        "line2": "s264",
+        "livemode": false,
+        "metadata": {},
+        "object": "s267",
+        "phone": "s268",
+        "postal_code": "s269",
+        "state": "s26a",
+        "type": "s26b"
+      }
+    }
+  },
+  "new": {
+    "location": {
+      "location_ref01": {
+        "address": {},
+        "address_kana": {},
+        "address_kanji": {},
+        "city": "s323",
+        "configuration_overrides": "s324",
+        "country": "s325",
+        "description": "s326",
+        "display_name": "s327",
+        "display_name_kana": "s328",
+        "display_name_kanji": "s329",
+        "line1": "s32b",
+        "line2": "s32c",
+        "livemode": false,
+        "metadata": {},
+        "object": "s32f",
+        "phone": "s330",
+        "postal_code": "s331",
+        "state": "s332",
+        "type": "s333"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/terminal/locations/{location}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/tax/locations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/terminal/locations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/tax/locations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/terminal/locations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/tax/locations/{location}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/terminal/locations/{location}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /v1/terminal/locations/{location}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

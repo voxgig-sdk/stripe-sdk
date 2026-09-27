@@ -1,0 +1,162 @@
+
+const envlocal = __dirname + '/../../../.env.local'
+require('../../utility').loadEnvLocal(envlocal)
+
+const Path = require('node:path')
+const Fs = require('node:fs')
+
+const { test, describe, afterEach } = require('node:test')
+const assert = require('node:assert')
+const { createLiveTransport } = require('../../live-runner')
+const { runLiveEntity } = require('../../live-entity')
+
+
+const { StripeSDK, BaseFeature, stdutil, config } = require('../../..')
+
+const {
+  envOverride,
+  liveClientOptions,
+  liveDelay,
+  makeCtrl,
+  makeMatch,
+  makeReqdata,
+  makeStepData,
+  makeValid,
+} = require('../../utility')
+
+
+describe('SubscriptionScheduleEntity', async () => {
+
+  // Per-test live pacing. Delay is read from sdk-test-control.json's
+  // `test.live.delayMs`; only sleeps when STRIPE_TEST_LIVE=TRUE.
+  afterEach(liveDelay('STRIPE_TEST_LIVE'))
+
+  test('instance', async () => {
+    const testsdk = StripeSDK.test()
+    const ent = testsdk.SubscriptionSchedule()
+    assert(null != ent)
+  })
+
+
+  test('basic', async (t) => {
+
+    
+    const setup = basicSetup()
+    if (setup.live) {
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"application":{"a":true,"h":"Application","n":"application","r":false,"sh":"ID of the Connect Application that created the schedule.","t":"`$ANY`","union":{"branches":3,"count":2,"depth":1},"key$":"application","index$":0},"billing_mode":{"a":true,"h":"Billing Mode","n":"billing_mode","r":true,"sh":"The billing mode of the subscription.","t":"`$OBJECT`","key$":"billing_mode","index$":1},"canceled_at":{"a":true,"fo":"unix-time","h":"Canceled At","n":"canceled_at","r":false,"sh":"Time at which the subscription schedule was canceled.","t":"`$INTEGER`","key$":"canceled_at","index$":2},"completed_at":{"a":true,"fo":"unix-time","h":"Completed At","n":"completed_at","r":false,"sh":"Time at which the subscription schedule was completed.","t":"`$INTEGER`","key$":"completed_at","index$":3},"created":{"a":true,"fo":"unix-time","h":"Created","n":"created","r":true,"sh":"Time at which the object was created.","t":"`$INTEGER`","key$":"created","index$":4},"current_phase":{"a":true,"h":"Current Phase","n":"current_phase","r":false,"sh":"Object representing the start and end dates for the current phase of the subscription schedule, if it is `active`.","t":"`$ANY`","key$":"current_phase","index$":5},"customer":{"a":true,"h":"Customer","n":"customer","r":true,"sh":"ID of the customer who owns the subscription schedule.","t":"`$ANY`","union":{"branches":3,"count":2,"depth":1},"key$":"customer","index$":6},"customer_account":{"a":true,"h":"Customer Account","n":"customer_account","r":false,"sh":"ID of the account who owns the subscription schedule.","t":"`$STRING`","key$":"customer_account","index$":7},"default_settings":{"a":true,"h":"Default Settings","n":"default_settings","r":true,"t":"`$OBJECT`","union":{"branches":17,"count":29796,"depth":64},"key$":"default_settings","index$":8},"end_behavior":{"a":true,"h":"End Behavior","n":"end_behavior","r":true,"sh":"Behavior of the subscription schedule and underlying subscription when it ends.","t":"`$STRING`","key$":"end_behavior","index$":9},"id":{"a":true,"h":"Id","n":"id","r":true,"sh":"Unique identifier for the object.","t":"`$STRING`","key$":"id","index$":10},"livemode":{"a":true,"h":"Livemode","n":"livemode","r":true,"sh":"If the object exists in live mode, the value is `true`.","t":"`$BOOLEAN`","key$":"livemode","index$":11},"metadata":{"a":true,"h":"Metadata","n":"metadata","r":false,"sh":"Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object.","t":"`$OBJECT`","key$":"metadata","index$":12},"object":{"a":true,"h":"Object","n":"object","r":true,"sh":"String representing the object's type.","t":"`$STRING`","key$":"object","index$":13},"pause_schedules":{"a":true,"h":"Pause Schedules","n":"pause_schedules","r":false,"sh":"The pause schedules for this subscription schedule.","t":"`$ARRAY`","key$":"pause_schedules","index$":14},"phases":{"a":true,"h":"Phases","n":"phases","r":true,"sh":"Configuration for the subscription schedule's phases.","t":"`$ARRAY`","union":{"branches":17,"count":29207,"depth":64},"key$":"phases","index$":15},"released_at":{"a":true,"fo":"unix-time","h":"Released At","n":"released_at","r":false,"sh":"Time at which the subscription schedule was released.","t":"`$INTEGER`","key$":"released_at","index$":16},"released_subscription":{"a":true,"h":"Released Subscription","n":"released_subscription","r":false,"sh":"ID of the subscription once managed by the subscription schedule (if it is released).","t":"`$STRING`","key$":"released_subscription","index$":17},"status":{"a":true,"h":"Status","n":"status","r":true,"sh":"The present status of the subscription schedule.","t":"`$STRING`","key$":"status","index$":18},"subscription":{"a":true,"h":"Subscription","n":"subscription","r":false,"sh":"ID of the subscription managed by the subscription schedule.","t":"`$ANY`","union":{"branches":2,"count":1,"depth":0},"key$":"subscription","index$":19},"test_clock":{"a":true,"h":"Test Clock","n":"test_clock","r":false,"sh":"ID of the test clock this subscription schedule belongs to.","t":"`$ANY`","union":{"branches":2,"count":1,"depth":0},"key$":"test_clock","index$":20}},"id":{"field":"id","name":"id"},"name":"subscription_schedule","op":{"create":{"input":"data","name":"create","points":[{"a":true,"co":{"id":"POST /v1/subscription_schedules/{schedule}","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"id","or":"schedule","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"POST","o":"/v1/subscription_schedules/{schedule}","q":{"exist":["id"]},"r":{"param":{"schedule":"id"}},"s":[{"lit":"v1"},{"lit":"subscription_schedules"},{"var":"id"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0},{"a":true,"co":{"id":"POST /v1/subscription_schedules/{schedule}/cancel","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"schedule","or":"schedule","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"POST","o":"/v1/subscription_schedules/{schedule}/cancel","q":{"$action":"cancel","exist":["schedule"]},"r":{},"s":[{"lit":"v1"},{"lit":"subscription_schedules"},{"var":"schedule"},{"lit":"cancel"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":1},{"a":true,"co":{"id":"POST /v1/subscription_schedules/{schedule}/release","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"schedule","or":"schedule","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"POST","o":"/v1/subscription_schedules/{schedule}/release","q":{"$action":"release","exist":["schedule"]},"r":{},"s":[{"lit":"v1"},{"lit":"subscription_schedules"},{"var":"schedule"},{"lit":"release"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":2},{"a":true,"co":{"id":"POST /v1/subscription_schedules","source":"openapi3","version":2},"g":{},"k":"http","m":"POST","o":"/v1/subscription_schedules","q":{},"r":{},"s":[{"lit":"v1"},{"lit":"subscription_schedules"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":3}],"key$":"create"},"list":{"input":"data","name":"list","points":[{"a":true,"co":{"id":"GET /v1/subscription_schedules","source":"openapi3","version":2},"g":{"query":[{"a":true,"k":"query","n":"canceled_at","or":"canceled_at","r":false,"t":"`$ANY`","index$":0},{"a":true,"k":"query","n":"completed_at","or":"completed_at","r":false,"t":"`$ANY`","index$":1},{"a":true,"k":"query","n":"created","or":"created","r":false,"t":"`$ANY`","index$":2},{"a":true,"k":"query","n":"customer","or":"customer","r":false,"t":"`$STRING`","index$":3},{"a":true,"k":"query","n":"customer_account","or":"customer_account","r":false,"t":"`$STRING`","index$":4},{"a":true,"k":"query","n":"ending_before","or":"ending_before","r":false,"t":"`$STRING`","index$":5},{"a":true,"k":"query","n":"expand","or":"expand","r":false,"t":"`$ARRAY`","index$":6},{"a":true,"k":"query","n":"limit","or":"limit","r":false,"t":"`$INTEGER`","index$":7},{"a":true,"k":"query","n":"released_at","or":"released_at","r":false,"t":"`$ANY`","index$":8},{"a":true,"k":"query","n":"scheduled","or":"scheduled","r":false,"t":"`$BOOLEAN`","index$":9},{"a":true,"k":"query","n":"starting_after","or":"starting_after","r":false,"t":"`$STRING`","index$":10}]},"k":"http","m":"GET","o":"/v1/subscription_schedules","q":{"exist":["canceled_at","completed_at","created","customer","customer_account","ending_before","expand","limit","released_at","scheduled","starting_after"]},"r":{},"s":[{"lit":"v1"},{"lit":"subscription_schedules"}],"t":{"req":"`reqdata`","res":"`body.data`"},"index$":0}],"key$":"list"},"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /v1/subscription_schedules/{schedule}","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"id","or":"schedule","r":true,"t":"`$STRING`","index$":0}],"query":[{"a":true,"k":"query","n":"expand","or":"expand","r":false,"t":"`$ARRAY`","index$":0}]},"k":"http","m":"GET","o":"/v1/subscription_schedules/{schedule}","q":{"exist":["expand","id"]},"r":{"param":{"schedule":"id"}},"s":[{"lit":"v1"},{"lit":"subscription_schedules"},{"var":"id"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"subscription_schedule","name__orig":"subscription_schedule","Name":"SubscriptionSchedule","name_":"subscription_schedule","name-":"subscription-schedule","NAME":"SUBSCRIPTION_SCHEDULE","index$":131}, {"active":true,"entity":"subscription_schedule","key$":"BasicSubscriptionScheduleFlow","kind":"basic","name":"BasicSubscriptionScheduleFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"subscription_schedule_ref01"},"m":{},"o":"create","s":[],"v":[],"index$":0},{"a":true,"d":{},"i":{},"m":{},"o":"list","s":[],"v":[{"apply":"ItemExists","def":{"ref":"subscription_schedule_ref01"}}],"index$":1},{"a":true,"d":{},"i":{"ref":"subscription_schedule_ref01","srcdatavar":"subscription_schedule_ref01_data","suffix":"_dt0"},"m":{"id":"subscription_schedule01"},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-subscription_schedule_ref01"}}],"index$":2}]}, 'SubscriptionSchedule', {"POST /v1/subscription_schedules/{schedule}":{"protocol":"http","requestBody":{"content":{"application/x-www-form-urlencoded":{"encoding":{"default_settings":{"explode":true,"style":"deepObject"},"expand":{"explode":true,"style":"deepObject"},"metadata":{"explode":true,"style":"deepObject"},"pause_schedules":{"explode":true,"style":"deepObject"},"phases":{"explode":true,"style":"deepObject"}},"schema":{"additionalProperties":false,"properties":{"default_settings":{"description":"Object representing the subscription schedule's default settings.","properties":{"application_fee_percent":{"type":"number"},"automatic_tax":{"properties":{"enabled":{},"liability":{}},"required":["enabled"],"title":"automatic_tax_config","type":"object"},"billing_cycle_anchor":{"enum":["automatic","phase_start"],"type":"string"},"billing_thresholds":{"anyOf":[{},{}]},"collection_method":{"enum":["charge_automatically","send_invoice"],"type":"string"},"default_payment_method":{"maxLength":5000,"type":"string"},"description":{"anyOf":[{},{}]},"invoice_settings":{"properties":{"account_tax_ids":{},"custom_fields":{},"days_until_due":{},"description":{},"footer":{},"issuer":{}},"title":"subscription_schedule_default_settings_param","type":"object"},"on_behalf_of":{"anyOf":[{},{}]},"transfer_data":{"anyOf":[{},{}]}},"title":"default_settings_params","type":"object"},"end_behavior":{"description":"Behavior of the subscription schedule and underlying subscription when it ends. Possible values are `release` or `cancel` with the default being `release`. `release` will end the subscription schedule and keep the underlying subscription running. `cancel` will end the subscription schedule and cancel the underlying subscription.","enum":["cancel","none","release","renew"],"type":"string"},"expand":{"description":"Specifies which fields in the response should be expanded.","items":{"maxLength":5000,"type":"string"},"type":"array"},"metadata":{"anyOf":[{"additionalProperties":{"type":"string"},"type":"object"},{"enum":[""],"type":"string"}],"description":"Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`."},"pause_schedules":{"anyOf":[{"items":{"properties":{},"title":"pause_schedules_update_params","type":"object"},"type":"array"},{"enum":[""],"type":"string"}],"description":"Configures the subscription's pause behavior and, optionally, its resume behavior. Only one entry is supported. Include a key to update an existing entry. Omit to leave an existing pause schedule unchanged, or pass \"\" to clear it."},"phases":{"description":"List representing phases of the subscription schedule. Each phase can be customized to have different durations, plans, and coupons. If there are multiple phases, the `end_date` of one phase will always equal the `start_date` of the next phase. Note that past phases can be omitted.","items":{"properties":{"add_invoice_items":{"items":{},"type":"array"},"application_fee_percent":{"type":"number"},"automatic_tax":{"properties":{},"required":[],"title":"automatic_tax_config","type":"object"},"billing_cycle_anchor":{"enum":[],"type":"string"},"billing_thresholds":{"anyOf":[]},"collection_method":{"enum":[],"type":"string"},"default_payment_method":{"maxLength":5000,"type":"string"},"default_tax_rates":{"anyOf":[]},"description":{"anyOf":[]},"discounts":{"anyOf":[]},"duration":{"properties":{},"required":[],"title":"duration_params","type":"object"},"end_date":{"anyOf":[]},"invoice_settings":{"properties":{},"title":"schedule_phase_invoice_settings","type":"object"},"items":{"items":{},"type":"array"},"metadata":{"additionalProperties":{},"type":"object"},"on_behalf_of":{"type":"string"},"proration_behavior":{"enum":[],"type":"string"},"start_date":{"anyOf":[]},"transfer_data":{"properties":{},"required":[],"title":"transfer_data_specs","type":"object"},"trial":{"type":"boolean"},"trial_end":{"anyOf":[]}},"required":["items"],"title":"phase_configuration_params","type":"object"},"type":"array"},"proration_behavior":{"description":"If the update changes the billing configuration (item price, quantity, etc.) of the current phase, indicates how prorations from this change should be handled. The default value is `create_prorations`.","enum":["always_invoice","create_prorations","none"],"type":"string"}},"type":"object"}}},"required":false},"parameters":[{"in":"path","name":"schedule","required":true,"schema":{"maxLength":5000,"type":"string"},"style":"simple","index$":0}]},"POST /v1/subscription_schedules/{schedule}/cancel":{"protocol":"http","requestBody":{"content":{"application/x-www-form-urlencoded":{"encoding":{"expand":{"explode":true,"style":"deepObject"}},"schema":{"additionalProperties":false,"properties":{"expand":{"description":"Specifies which fields in the response should be expanded.","items":{"maxLength":5000,"type":"string"},"type":"array"},"invoice_now":{"description":"If the subscription schedule is `active`, indicates if a final invoice will be generated that contains any un-invoiced metered usage and new/pending proration invoice items. Defaults to `true`.","type":"boolean"},"prorate":{"description":"If the subscription schedule is `active`, indicates if the cancellation should be prorated. Defaults to `true`.","type":"boolean"}},"type":"object"}}},"required":false},"parameters":[{"in":"path","name":"schedule","required":true,"schema":{"maxLength":5000,"type":"string"},"style":"simple","index$":0}]},"POST /v1/subscription_schedules/{schedule}/release":{"protocol":"http","requestBody":{"content":{"application/x-www-form-urlencoded":{"encoding":{"expand":{"explode":true,"style":"deepObject"}},"schema":{"additionalProperties":false,"properties":{"expand":{"description":"Specifies which fields in the response should be expanded.","items":{"maxLength":5000,"type":"string"},"type":"array"},"preserve_cancel_date":{"description":"Keep any cancellation on the subscription that the schedule has set","type":"boolean"}},"type":"object"}}},"required":false},"parameters":[{"in":"path","name":"schedule","required":true,"schema":{"maxLength":5000,"type":"string"},"style":"simple","index$":0}]},"POST /v1/subscription_schedules":{"protocol":"http","requestBody":{"content":{"application/x-www-form-urlencoded":{"encoding":{"billing_mode":{"explode":true,"style":"deepObject"},"default_settings":{"explode":true,"style":"deepObject"},"expand":{"explode":true,"style":"deepObject"},"metadata":{"explode":true,"style":"deepObject"},"pause_schedules":{"explode":true,"style":"deepObject"},"phases":{"explode":true,"style":"deepObject"},"start_date":{"explode":true,"style":"deepObject"}},"schema":{"additionalProperties":false,"properties":{"billing_mode":{"description":"Controls how prorations and invoices for subscriptions are calculated and orchestrated.","properties":{"flexible":{"properties":{"proration_discounts":{}},"title":"flexible_params","type":"object"},"type":{"enum":["classic","flexible"],"type":"string"}},"required":["type"],"title":"billing_mode","type":"object"},"customer":{"description":"The identifier of the customer to create the subscription schedule for.","maxLength":5000,"type":"string"},"customer_account":{"description":"The identifier of the account to create the subscription schedule for.","maxLength":5000,"type":"string"},"default_settings":{"description":"Object representing the subscription schedule's default settings.","properties":{"application_fee_percent":{"type":"number"},"automatic_tax":{"properties":{"enabled":{},"liability":{}},"required":["enabled"],"title":"automatic_tax_config","type":"object"},"billing_cycle_anchor":{"enum":["automatic","phase_start"],"type":"string"},"billing_thresholds":{"anyOf":[{},{}]},"collection_method":{"enum":["charge_automatically","send_invoice"],"type":"string"},"default_payment_method":{"maxLength":5000,"type":"string"},"description":{"anyOf":[{},{}]},"invoice_settings":{"properties":{"account_tax_ids":{},"custom_fields":{},"days_until_due":{},"description":{},"footer":{},"issuer":{}},"title":"subscription_schedule_default_settings_param","type":"object"},"on_behalf_of":{"anyOf":[{},{}]},"transfer_data":{"anyOf":[{},{}]}},"title":"default_settings_params","type":"object"},"end_behavior":{"description":"Behavior of the subscription schedule and underlying subscription when it ends. Possible values are `release` or `cancel` with the default being `release`. `release` will end the subscription schedule and keep the underlying subscription running. `cancel` will end the subscription schedule and cancel the underlying subscription.","enum":["cancel","none","release","renew"],"type":"string"},"expand":{"description":"Specifies which fields in the response should be expanded.","items":{"maxLength":5000,"type":"string"},"type":"array"},"from_subscription":{"description":"Migrate an existing subscription to be managed by a subscription schedule. If this parameter is set, a subscription schedule will be created using the subscription's item(s), set to auto-renew using the subscription's interval. When using this parameter, other parameters (such as phase values) cannot be set. To create a subscription schedule with other modifications, we recommend making two separate API calls.","maxLength":5000,"type":"string"},"metadata":{"anyOf":[{"additionalProperties":{"type":"string"},"type":"object"},{"enum":[""],"type":"string"}],"description":"Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`."},"pause_schedules":{"description":"Configures the subscription's pause behavior and, optionally, its resume behavior. Only one entry is supported.","items":{"properties":{"key":{"maxLength":40,"type":"string"},"pause":{"properties":{},"required":[],"title":"pause_schedule_create_pause_params","type":"object"},"resume":{"properties":{},"required":[],"title":"pause_schedule_create_resume_params","type":"object"}},"title":"pause_schedules_create_params","type":"object"},"type":"array"},"phases":{"description":"List representing phases of the subscription schedule. Each phase can be customized to have different durations, plans, and coupons. If there are multiple phases, the `end_date` of one phase will always equal the `start_date` of the next phase.","items":{"properties":{"add_invoice_items":{"items":{},"type":"array"},"application_fee_percent":{"type":"number"},"automatic_tax":{"properties":{},"required":[],"title":"automatic_tax_config","type":"object"},"billing_cycle_anchor":{"enum":[],"type":"string"},"billing_thresholds":{"anyOf":[]},"collection_method":{"enum":[],"type":"string"},"currency":{"format":"currency","type":"string"},"default_payment_method":{"maxLength":5000,"type":"string"},"default_tax_rates":{"anyOf":[]},"description":{"anyOf":[]},"discounts":{"anyOf":[]},"duration":{"properties":{},"required":[],"title":"duration_params","type":"object"},"end_date":{"format":"unix-time","type":"integer"},"invoice_settings":{"properties":{},"title":"schedule_phase_invoice_settings","type":"object"},"items":{"items":{},"type":"array"},"metadata":{"additionalProperties":{},"type":"object"},"on_behalf_of":{"type":"string"},"proration_behavior":{"enum":[],"type":"string"},"transfer_data":{"properties":{},"required":[],"title":"transfer_data_specs","type":"object"},"trial":{"type":"boolean"},"trial_end":{"format":"unix-time","type":"integer"}},"required":["items"],"title":"phase_configuration_params","type":"object"},"type":"array"},"start_date":{"anyOf":[{"format":"unix-time","type":"integer"},{"enum":["now"],"maxLength":5000,"type":"string"}],"description":"When the subscription schedule starts. We recommend using `now` so that it starts the subscription immediately, and to avoid unexpected behavior due to request delays or clock skew resulting in a slightly backdated or postdated start. You can also use a Unix timestamp to backdate the subscription so that it starts on a past date, or set a future date for the subscription to start on."}},"type":"object"}}},"required":false},"parameters":[]},"GET /v1/subscription_schedules":{"protocol":"http","requestBody":{"content":{"application/x-www-form-urlencoded":{"encoding":{},"schema":{"additionalProperties":false,"properties":{},"type":"object"}}},"required":false},"parameters":[{"description":"Only return subscription schedules that were created canceled the given date interval.","explode":true,"in":"query","name":"canceled_at","required":false,"schema":{"anyOf":[{"properties":{"gt":{"type":"integer"},"gte":{"type":"integer"},"lt":{"type":"integer"},"lte":{"type":"integer"}},"title":"range_query_specs","type":"object"},{"type":"integer"}]},"style":"deepObject","index$":0},{"description":"Only return subscription schedules that completed during the given date interval.","explode":true,"in":"query","name":"completed_at","required":false,"schema":{"anyOf":[{"properties":{"gt":{"type":"integer"},"gte":{"type":"integer"},"lt":{"type":"integer"},"lte":{"type":"integer"}},"title":"range_query_specs","type":"object"},{"type":"integer"}]},"style":"deepObject","index$":1},{"description":"Only return subscription schedules that were created during the given date interval.","explode":true,"in":"query","name":"created","required":false,"schema":{"anyOf":[{"properties":{"gt":{"type":"integer"},"gte":{"type":"integer"},"lt":{"type":"integer"},"lte":{"type":"integer"}},"title":"range_query_specs","type":"object"},{"type":"integer"}]},"style":"deepObject","index$":2},{"description":"Only return subscription schedules for the given customer. The response will not include subscription schedules for customers with a test clock attached if this parameter is not set.","in":"query","name":"customer","required":false,"schema":{"maxLength":5000,"type":"string"},"style":"form","index$":3},{"description":"Only return subscription schedules for the given account.","in":"query","name":"customer_account","required":false,"schema":{"maxLength":5000,"type":"string"},"style":"form","index$":4},{"description":"A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.","in":"query","name":"ending_before","required":false,"schema":{"maxLength":5000,"type":"string"},"style":"form","index$":5},{"description":"Specifies which fields in the response should be expanded.","explode":true,"in":"query","name":"expand","required":false,"schema":{"items":{"maxLength":5000,"type":"string"},"type":"array"},"style":"deepObject","index$":6},{"description":"A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 10.","in":"query","name":"limit","required":false,"schema":{"type":"integer"},"style":"form","index$":7},{"description":"Only return subscription schedules that were released during the given date interval.","explode":true,"in":"query","name":"released_at","required":false,"schema":{"anyOf":[{"properties":{"gt":{"type":"integer"},"gte":{"type":"integer"},"lt":{"type":"integer"},"lte":{"type":"integer"}},"title":"range_query_specs","type":"object"},{"type":"integer"}]},"style":"deepObject","index$":8},{"description":"Only return subscription schedules that have not started yet.","in":"query","name":"scheduled","required":false,"schema":{"type":"boolean"},"style":"form","index$":9},{"description":"A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list.","in":"query","name":"starting_after","required":false,"schema":{"maxLength":5000,"type":"string"},"style":"form","index$":10}]},"GET /v1/subscription_schedules/{schedule}":{"protocol":"http","requestBody":{"content":{"application/x-www-form-urlencoded":{"encoding":{},"schema":{"additionalProperties":false,"properties":{},"type":"object"}}},"required":false},"parameters":[{"description":"Specifies which fields in the response should be expanded.","explode":true,"in":"query","name":"expand","required":false,"schema":{"items":{"maxLength":5000,"type":"string"},"type":"array"},"style":"deepObject","index$":0},{"in":"path","name":"schedule","required":true,"schema":{"maxLength":5000,"type":"string"},"style":"simple","index$":1}]}})
+    }
+    const client = setup.client
+    const struct = setup.struct
+
+    const isempty = struct.isempty
+    const select = struct.select
+
+
+    // CREATE
+    const subscription_schedule_ref01_ent = client.SubscriptionSchedule()
+    let subscription_schedule_ref01_data = setup.data.new.subscription_schedule['subscription_schedule_ref01']
+
+    subscription_schedule_ref01_data = (await subscription_schedule_ref01_ent.create(subscription_schedule_ref01_data)).data()
+    assert(null != subscription_schedule_ref01_data.id)
+
+
+    // LIST
+    const subscription_schedule_ref01_match = {}
+
+    const subscription_schedule_ref01_list = (await subscription_schedule_ref01_ent.list(subscription_schedule_ref01_match)).map((e) => e.data())
+
+    assert(!isempty(select(subscription_schedule_ref01_list, { id: subscription_schedule_ref01_data.id })))
+
+
+    // LOAD
+    const subscription_schedule_ref01_match_dt0 = {}
+    subscription_schedule_ref01_match_dt0.id = subscription_schedule_ref01_data.id
+    const subscription_schedule_ref01_data_dt0 = (await subscription_schedule_ref01_ent.load(subscription_schedule_ref01_match_dt0)).data()
+    assert(subscription_schedule_ref01_data_dt0.id === subscription_schedule_ref01_data.id)
+
+
+  })
+})
+
+
+
+function basicSetup(extra) {
+  // TODO: fix test def options
+  const options = {} // null
+
+  // TODO: needs test utility to resolve path
+  const entityDataFile =
+    Path.resolve(__dirname,
+      '../../../../.sdk/test/entity/subscription_schedule/SubscriptionScheduleTestData.json')
+
+  // TODO: file ready util needed?
+  const entityDataSource = Fs.readFileSync(entityDataFile).toString('utf8')
+
+  // TODO: need a xlang JSON parse utility in voxgig/struct with better error msgs
+  const entityData = JSON.parse(entityDataSource)
+
+  options.entity = entityData.existing
+
+  let client = StripeSDK.test(options, extra)
+  const struct = client.utility().struct
+  const merge = struct.merge
+  const transform = struct.transform
+
+  let idmap = transform(
+    ['subscription_schedule01','subscription_schedule02','subscription_schedule03'],
+    {
+      '`$PACK`': ['', {
+        '`$KEY`': '`$COPY`',
+        '`$VAL`': ['`$FORMAT`', 'upper', '`$COPY`']
+      }]
+    })
+
+  const env = envOverride({
+    'STRIPE_TEST_SUBSCRIPTION_SCHEDULE_ENTID': idmap,
+    'STRIPE_TEST_LIVE': 'FALSE',
+    'STRIPE_TEST_EXPLAIN': 'FALSE',
+    'STRIPE_APIKEY': '',
+  })
+
+  idmap = env['STRIPE_TEST_SUBSCRIPTION_SCHEDULE_ENTID']
+
+  const live = 'TRUE' === env.STRIPE_TEST_LIVE
+  const transport = createLiveTransport()
+  if (live) {
+    const rawIds = process.env['STRIPE_TEST_SUBSCRIPTION_SCHEDULE_ENTID']
+    idmap = rawIds && rawIds.trim() ? JSON.parse(rawIds) : {}
+    if (!idmap || Array.isArray(idmap) || typeof idmap !== 'object') {
+      throw new Error('Live ENTID must be a JSON object')
+    }
+    client = new StripeSDK(merge([
+      // FIRST, so the generated fields below win: sdk-test-control.json's
+      // test.client.options adds to the live client, it does not redirect it.
+      liveClientOptions(),
+      {
+        apikey: env.STRIPE_APIKEY,
+      },
+      // 'extra || {}', not a bare 'extra': struct.merge returns UNDEFINED when
+      // the last entry is undefined, and basicSetup is normally called with no
+      // argument at all - so a bare 'extra' silently discarded the apikey and
+      // server values above and handed the SDK undefined.
+      extra || {},
+      { system: { fetch: transport.fetch } }
+    ]))
+  }
+
+  const setup = {
+    idmap,
+    env,
+    options,
+    client,
+    struct,
+    data: entityData,
+    explain: 'TRUE' === env.STRIPE_TEST_EXPLAIN,
+    live,
+    transport,
+    now: Date.now(),
+  }
+
+  return setup
+}
+  

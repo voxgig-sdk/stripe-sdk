@@ -1,0 +1,132 @@
+{
+  "existing": {
+    "verification_session": {
+      "VERIFICATION_SESSION00": {
+        "client_reference_id": "CLIENT_REFERENCE01",
+        "client_secret": "sc9",
+        "created": 202,
+        "id": "VERIFICATION_SESSION00",
+        "last_error": "scc",
+        "last_verification_report": "scd",
+        "livemode": true,
+        "metadata": {},
+        "object": "sd0",
+        "options": "sd1",
+        "provided_details": "sd2",
+        "redaction": "sd3",
+        "related_customer": "sd4",
+        "related_customer_account": "sd5",
+        "related_person": {},
+        "status": "sd7",
+        "type": "sd8",
+        "url": "sd9",
+        "verification_flow": "sda",
+        "verified_outputs": "sdb",
+        "session": "SESSION01"
+      },
+      "VERIFICATION_SESSION01": {
+        "client_reference_id": "CLIENT_REFERENCE01",
+        "client_secret": "s191",
+        "created": 402,
+        "id": "VERIFICATION_SESSION01",
+        "last_error": "s194",
+        "last_verification_report": "s195",
+        "livemode": true,
+        "metadata": {},
+        "object": "s198",
+        "options": "s199",
+        "provided_details": "s19a",
+        "redaction": "s19b",
+        "related_customer": "s19c",
+        "related_customer_account": "s19d",
+        "related_person": {},
+        "status": "s19f",
+        "type": "s1a0",
+        "url": "s1a1",
+        "verification_flow": "s1a2",
+        "verified_outputs": "s1a3",
+        "session": "SESSION01"
+      },
+      "VERIFICATION_SESSION02": {
+        "client_reference_id": "CLIENT_REFERENCE01",
+        "client_secret": "s259",
+        "created": 602,
+        "id": "VERIFICATION_SESSION02",
+        "last_error": "s25c",
+        "last_verification_report": "s25d",
+        "livemode": true,
+        "metadata": {},
+        "object": "s260",
+        "options": "s261",
+        "provided_details": "s262",
+        "redaction": "s263",
+        "related_customer": "s264",
+        "related_customer_account": "s265",
+        "related_person": {},
+        "status": "s267",
+        "type": "s268",
+        "url": "s269",
+        "verification_flow": "s26a",
+        "verified_outputs": "s26b",
+        "session": "SESSION01"
+      }
+    }
+  },
+  "new": {
+    "verification_session": {
+      "verification_session_ref01": {
+        "client_reference_id": "CLIENT_REFERENCE01",
+        "client_secret": "s321",
+        "created": 802,
+        "last_error": "s324",
+        "last_verification_report": "s325",
+        "livemode": true,
+        "metadata": {},
+        "object": "s328",
+        "options": "s329",
+        "provided_details": "s32a",
+        "redaction": "s32b",
+        "related_customer": "s32c",
+        "related_customer_account": "s32d",
+        "related_person": {},
+        "status": "s32f",
+        "type": "s330",
+        "url": "s331",
+        "verification_flow": "s332",
+        "verified_outputs": "s333"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/identity/verification_sessions/{session}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/identity/verification_sessions/{session}/cancel": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/identity/verification_sessions/{session}/redact": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/identity/verification_sessions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/identity/verification_sessions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/identity/verification_sessions/{session}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

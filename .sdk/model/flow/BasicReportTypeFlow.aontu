@@ -1,0 +1,44 @@
+# BasicReportTypeFlow
+
+main: kit: flow: BasicReportTypeFlow:
+{
+  entity: "report_type",
+  kind: "basic",
+  name: "BasicReportTypeFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "report_type_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "report_type_ref01",
+        srcdatavar: "report_type_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "report_type01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-report_type_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicReportTypeFlow"
+}

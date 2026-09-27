@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "onboarding_link": {
+      "ONBOARDING_LINK00": {
+        "apple_terms_and_conditions": "sa",
+        "id": "ONBOARDING_LINK00"
+      },
+      "ONBOARDING_LINK01": {
+        "apple_terms_and_conditions": "s14",
+        "id": "ONBOARDING_LINK01"
+      },
+      "ONBOARDING_LINK02": {
+        "apple_terms_and_conditions": "s1e",
+        "id": "ONBOARDING_LINK02"
+      }
+    }
+  },
+  "new": {
+    "onboarding_link": {
+      "onboarding_link_ref01": {
+        "apple_terms_and_conditions": "s28"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/terminal/onboarding_links": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

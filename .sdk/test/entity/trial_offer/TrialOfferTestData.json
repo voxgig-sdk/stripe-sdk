@@ -1,0 +1,71 @@
+{
+  "existing": {
+    "trial_offer": {
+      "TRIAL_OFFER00": {
+        "active": true,
+        "duration": {},
+        "end_behavior": {},
+        "id": "TRIAL_OFFER00",
+        "livemode": true,
+        "nickname": "s55",
+        "object": "s56",
+        "price": 87
+      },
+      "TRIAL_OFFER01": {
+        "active": true,
+        "duration": {},
+        "end_behavior": {},
+        "id": "TRIAL_OFFER01",
+        "livemode": true,
+        "nickname": "sa5",
+        "object": "sa6",
+        "price": 167
+      },
+      "TRIAL_OFFER02": {
+        "active": true,
+        "duration": {},
+        "end_behavior": {},
+        "id": "TRIAL_OFFER02",
+        "livemode": true,
+        "nickname": "sf5",
+        "object": "sf6",
+        "price": 247
+      }
+    }
+  },
+  "new": {
+    "trial_offer": {
+      "trial_offer_ref01": {
+        "active": true,
+        "duration": {},
+        "end_behavior": {},
+        "livemode": true,
+        "nickname": "s145",
+        "object": "s146",
+        "price": 327
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/product_catalog/trial_offers/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/product_catalog/trial_offers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/product_catalog/trial_offers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/product_catalog/trial_offers/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

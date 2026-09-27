@@ -1,0 +1,88 @@
+{
+  "existing": {
+    "source_transaction": {
+      "SOURCE_TRANSACTION00": {
+        "ach_credit_transfer": {},
+        "amount": 141,
+        "chf_credit_transfer": {},
+        "created": 143,
+        "currency": "s90",
+        "gbp_credit_transfer": {},
+        "id": "SOURCE_TRANSACTION00",
+        "livemode": false,
+        "object": "s94",
+        "paper_check": {},
+        "sepa_credit_transfer": {},
+        "source": "s97",
+        "status": "s98",
+        "type": "s99",
+        "source_id": "SOURCE01"
+      },
+      "SOURCE_TRANSACTION01": {
+        "ach_credit_transfer": {},
+        "amount": 281,
+        "chf_credit_transfer": {},
+        "created": 283,
+        "currency": "s11c",
+        "gbp_credit_transfer": {},
+        "id": "SOURCE_TRANSACTION01",
+        "livemode": false,
+        "object": "s120",
+        "paper_check": {},
+        "sepa_credit_transfer": {},
+        "source": "s123",
+        "status": "s124",
+        "type": "s125",
+        "source_id": "SOURCE01"
+      },
+      "SOURCE_TRANSACTION02": {
+        "ach_credit_transfer": {},
+        "amount": 421,
+        "chf_credit_transfer": {},
+        "created": 423,
+        "currency": "s1a8",
+        "gbp_credit_transfer": {},
+        "id": "SOURCE_TRANSACTION02",
+        "livemode": false,
+        "object": "s1ac",
+        "paper_check": {},
+        "sepa_credit_transfer": {},
+        "source": "s1af",
+        "status": "s1b0",
+        "type": "s1b1",
+        "source_id": "SOURCE01"
+      }
+    }
+  },
+  "new": {
+    "source_transaction": {
+      "source_transaction_ref01": {
+        "ach_credit_transfer": {},
+        "amount": 561,
+        "chf_credit_transfer": {},
+        "created": 563,
+        "currency": "s234",
+        "gbp_credit_transfer": {},
+        "livemode": false,
+        "object": "s238",
+        "paper_check": {},
+        "sepa_credit_transfer": {},
+        "source": "s23b",
+        "status": "s23c",
+        "type": "s23d"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/sources/{source}/source_transactions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/sources/{source}/source_transactions/{source_transaction}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

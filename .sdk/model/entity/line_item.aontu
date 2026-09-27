@@ -1,0 +1,636 @@
+# Entity: line_item
+
+main: kit: entity: line_item: {
+
+  alias: field: {}
+
+  fields: {
+    adjustable_quantity: {
+      h: "Adjustable Quantity"
+      n: "adjustable_quantity"
+      r: false
+      t: "`$ANY`"
+    }
+    amount: {
+      h: "Amount"
+      n: "amount"
+      r: true
+      sh: "The line item amount in the [smallest currency unit](https://docs.stripe.com/currencies#minor-units)."
+      t: "`$INTEGER`"
+    }
+    amount_discount: {
+      h: "Amount Discount"
+      n: "amount_discount"
+      r: true
+      sh: "Total discount amount applied."
+      t: "`$INTEGER`"
+    }
+    amount_subtotal: {
+      h: "Amount Subtotal"
+      n: "amount_subtotal"
+      r: true
+      sh: "Total before any discounts or taxes are applied."
+      t: "`$INTEGER`"
+    }
+    amount_tax: {
+      h: "Amount Tax"
+      n: "amount_tax"
+      r: true
+      sh: "The amount of tax calculated for this line item, in the [smallest currency unit](https://docs.stripe.com/currencies#minor-units)."
+      t: "`$INTEGER`"
+    }
+    amount_total: {
+      h: "Amount Total"
+      n: "amount_total"
+      r: true
+      sh: "Total after discounts and taxes."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "An arbitrary string attached to the object."
+      t: "`$STRING`"
+    }
+    discounts: {
+      h: "Discounts"
+      n: "discounts"
+      r: false
+      sh: "The discounts applied to the line item."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 10
+        depth: 12
+      }
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    performance_location: {
+      h: "Performance Location"
+      n: "performance_location"
+      r: false
+      sh: "Indicates the line item represents a performance where the venue location might determine the tax, not the customer address."
+      t: "`$STRING`"
+    }
+    price: {
+      h: "Price"
+      n: "price"
+      r: false
+      sh: "The price used to generate the line item."
+      t: "`$NUMBER`"
+      union: {
+        branches: 3
+        count: 6
+        depth: 9
+      }
+    }
+    product: {
+      h: "Product"
+      n: "product"
+      r: false
+      sh: "The ID of an existing [Product](https://docs.stripe.com/api/products/object)."
+      t: "`$STRING`"
+    }
+    quantity: {
+      h: "Quantity"
+      n: "quantity"
+      op: {
+        list: {
+          req: false
+          type: "`$INTEGER`"
+        }
+      }
+      r: true
+      sh: "The number of units of the item being purchased."
+      t: "`$INTEGER`"
+    }
+    reference: {
+      h: "Reference"
+      n: "reference"
+      r: true
+      sh: "A custom identifier for this line item."
+      t: "`$STRING`"
+    }
+    reversal: {
+      h: "Reversal"
+      n: "reversal"
+      r: false
+      sh: "If `type=reversal`, contains information about what was reversed."
+      t: "`$ANY`"
+    }
+    tax_behavior: {
+      h: "Tax Behavior"
+      n: "tax_behavior"
+      r: true
+      sh: "Specifies whether the `amount` includes taxes."
+      t: "`$STRING`"
+    }
+    tax_breakdown: {
+      h: "Tax Breakdown"
+      n: "tax_breakdown"
+      r: false
+      sh: "Detailed account of taxes relevant to this line item."
+      t: "`$ARRAY`"
+    }
+    tax_code: {
+      h: "Tax Code"
+      n: "tax_code"
+      r: true
+      sh: "The [tax code](https://docs.stripe.com/tax/tax-categories) ID used for this resource."
+      t: "`$STRING`"
+    }
+    taxes: {
+      h: "Taxes"
+      n: "taxes"
+      r: false
+      sh: "The taxes applied to the line item."
+      t: "`$ARRAY`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "If `reversal`, this line item reverses an earlier transaction."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "line_item"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/tax/calculations/{calculation}/line_items"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "calculation_id"
+                or: "calculation"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/tax/calculations/{calculation}/line_items"
+          q: {
+            exist: [
+              "calculation_id"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+            ]
+          }
+          r: {
+            param: {
+              calculation: "calculation_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "tax"
+            }
+            {
+              lit: "calculations"
+            }
+            {
+              var: "calculation_id"
+            }
+            {
+              lit: "line_items"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/payment_links/{payment_link}/line_items"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "payment_link_id"
+                or: "payment_link"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/payment_links/{payment_link}/line_items"
+          q: {
+            exist: [
+              "ending_before"
+              "expand"
+              "limit"
+              "payment_link_id"
+              "starting_after"
+            ]
+          }
+          r: {
+            param: {
+              payment_link: "payment_link_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_links"
+            }
+            {
+              var: "payment_link_id"
+            }
+            {
+              lit: "line_items"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/quotes/{quote}/line_items"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "quote_id"
+                or: "quote"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/quotes/{quote}/line_items"
+          q: {
+            exist: [
+              "ending_before"
+              "expand"
+              "limit"
+              "quote_id"
+              "starting_after"
+            ]
+          }
+          r: {
+            param: {
+              quote: "quote_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "quotes"
+            }
+            {
+              var: "quote_id"
+            }
+            {
+              lit: "line_items"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/checkout/sessions/{session}/line_items"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "session_id"
+                or: "session"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/checkout/sessions/{session}/line_items"
+          q: {
+            exist: [
+              "ending_before"
+              "expand"
+              "limit"
+              "session_id"
+              "starting_after"
+            ]
+          }
+          r: {
+            param: {
+              session: "session_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "checkout"
+            }
+            {
+              lit: "sessions"
+            }
+            {
+              var: "session_id"
+            }
+            {
+              lit: "line_items"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/tax/transactions/{transaction}/line_items"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "transaction_id"
+                or: "transaction"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/tax/transactions/{transaction}/line_items"
+          q: {
+            exist: [
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+              "transaction_id"
+            ]
+          }
+          r: {
+            param: {
+              transaction: "transaction_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "tax"
+            }
+            {
+              lit: "transactions"
+            }
+            {
+              var: "transaction_id"
+            }
+            {
+              lit: "line_items"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.session")]
+    [path("$.main.kit.entity.payment_link")]
+    [path("$.main.kit.entity.quote")]
+    [path("$.main.kit.entity.calculation")]
+    [path("$.main.kit.entity.transaction")]
+  ]
+
+}

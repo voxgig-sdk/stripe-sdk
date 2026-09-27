@@ -1,0 +1,45 @@
+# Entity: meter_event
+
+main: kit: entity: meter_event: {
+
+  alias: field: {}
+
+  name: "meter_event"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/billing/meter_events"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/billing/meter_events"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "billing"
+            }
+            {
+              lit: "meter_events"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.payload`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

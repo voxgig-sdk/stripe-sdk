@@ -1,0 +1,190 @@
+{
+  "existing": {
+    "person": {
+      "PERSON00": {
+        "account": "s140",
+        "additional_tos_acceptances": {},
+        "address": {},
+        "address_kana": "s143",
+        "address_kanji": "s144",
+        "created": 325,
+        "dob": {},
+        "email": "s147",
+        "first_name": "s148",
+        "first_name_kana": "s149",
+        "first_name_kanji": "s14a",
+        "full_name_aliases": [],
+        "future_requirements": "s14c",
+        "gender": "s14d",
+        "id": "PERSON00",
+        "id_number_provided": false,
+        "id_number_secondary_provided": true,
+        "last_name": "s151",
+        "last_name_kana": "s152",
+        "last_name_kanji": "s153",
+        "maiden_name": "s154",
+        "metadata": {},
+        "nationality": "s156",
+        "object": "s157",
+        "phone": "s158",
+        "political_exposure": "s159",
+        "registered_address": {},
+        "relationship": {},
+        "requirements": "s15c",
+        "ssn_last_4_provided": false,
+        "us_cfpb_data": "s15e",
+        "verification": {},
+        "account_id": "ACCOUNT01"
+      },
+      "PERSON01": {
+        "account": "s280",
+        "additional_tos_acceptances": {},
+        "address": {},
+        "address_kana": "s283",
+        "address_kanji": "s284",
+        "created": 645,
+        "dob": {},
+        "email": "s287",
+        "first_name": "s288",
+        "first_name_kana": "s289",
+        "first_name_kanji": "s28a",
+        "full_name_aliases": [],
+        "future_requirements": "s28c",
+        "gender": "s28d",
+        "id": "PERSON01",
+        "id_number_provided": false,
+        "id_number_secondary_provided": true,
+        "last_name": "s291",
+        "last_name_kana": "s292",
+        "last_name_kanji": "s293",
+        "maiden_name": "s294",
+        "metadata": {},
+        "nationality": "s296",
+        "object": "s297",
+        "phone": "s298",
+        "political_exposure": "s299",
+        "registered_address": {},
+        "relationship": {},
+        "requirements": "s29c",
+        "ssn_last_4_provided": false,
+        "us_cfpb_data": "s29e",
+        "verification": {},
+        "account_id": "ACCOUNT01"
+      },
+      "PERSON02": {
+        "account": "s3c0",
+        "additional_tos_acceptances": {},
+        "address": {},
+        "address_kana": "s3c3",
+        "address_kanji": "s3c4",
+        "created": 965,
+        "dob": {},
+        "email": "s3c7",
+        "first_name": "s3c8",
+        "first_name_kana": "s3c9",
+        "first_name_kanji": "s3ca",
+        "full_name_aliases": [],
+        "future_requirements": "s3cc",
+        "gender": "s3cd",
+        "id": "PERSON02",
+        "id_number_provided": false,
+        "id_number_secondary_provided": true,
+        "last_name": "s3d1",
+        "last_name_kana": "s3d2",
+        "last_name_kanji": "s3d3",
+        "maiden_name": "s3d4",
+        "metadata": {},
+        "nationality": "s3d6",
+        "object": "s3d7",
+        "phone": "s3d8",
+        "political_exposure": "s3d9",
+        "registered_address": {},
+        "relationship": {},
+        "requirements": "s3dc",
+        "ssn_last_4_provided": false,
+        "us_cfpb_data": "s3de",
+        "verification": {},
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "person": {
+      "person_ref01": {
+        "account": "s500",
+        "additional_tos_acceptances": {},
+        "address": {},
+        "address_kana": "s503",
+        "address_kanji": "s504",
+        "created": 1285,
+        "dob": {},
+        "email": "s507",
+        "first_name": "s508",
+        "first_name_kana": "s509",
+        "first_name_kanji": "s50a",
+        "full_name_aliases": [],
+        "future_requirements": "s50c",
+        "gender": "s50d",
+        "id_number_provided": false,
+        "id_number_secondary_provided": true,
+        "last_name": "s511",
+        "last_name_kana": "s512",
+        "last_name_kanji": "s513",
+        "maiden_name": "s514",
+        "metadata": {},
+        "nationality": "s516",
+        "object": "s517",
+        "phone": "s518",
+        "political_exposure": "s519",
+        "registered_address": {},
+        "relationship": {},
+        "requirements": "s51c",
+        "ssn_last_4_provided": false,
+        "us_cfpb_data": "s51e",
+        "verification": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/accounts/{account}/people/{person}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/accounts/{account}/persons/{person}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/accounts/{account}/people": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/accounts/{account}/persons": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/accounts/{account}/people": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/accounts/{account}/persons": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/accounts/{account}/people/{person}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/accounts/{account}/persons/{person}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

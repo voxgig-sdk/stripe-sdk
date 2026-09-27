@@ -1,0 +1,52 @@
+# BasicInstallFlow
+
+main: kit: flow: BasicInstallFlow:
+{
+  entity: "install",
+  kind: "basic",
+  name: "BasicInstallFlow",
+  step: [
+    {
+      i: {
+        ref: "install_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "install_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "install_ref01",
+        srcdatavar: "install_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "install01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-install_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicInstallFlow"
+}

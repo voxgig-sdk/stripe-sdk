@@ -1,0 +1,95 @@
+{
+  "existing": {
+    "promotion_code": {
+      "PROMOTION_CODE00": {
+        "active": true,
+        "code": "s8d",
+        "created": 142,
+        "customer": "s8f",
+        "customer_account": "s90",
+        "expires_at": 145,
+        "id": "PROMOTION_CODE00",
+        "livemode": false,
+        "max_redemptions": 148,
+        "metadata": {},
+        "object": "s96",
+        "promotion": {},
+        "restrictions": {},
+        "times_redeemed": 153
+      },
+      "PROMOTION_CODE01": {
+        "active": true,
+        "code": "s119",
+        "created": 282,
+        "customer": "s11b",
+        "customer_account": "s11c",
+        "expires_at": 285,
+        "id": "PROMOTION_CODE01",
+        "livemode": false,
+        "max_redemptions": 288,
+        "metadata": {},
+        "object": "s122",
+        "promotion": {},
+        "restrictions": {},
+        "times_redeemed": 293
+      },
+      "PROMOTION_CODE02": {
+        "active": true,
+        "code": "s1a5",
+        "created": 422,
+        "customer": "s1a7",
+        "customer_account": "s1a8",
+        "expires_at": 425,
+        "id": "PROMOTION_CODE02",
+        "livemode": false,
+        "max_redemptions": 428,
+        "metadata": {},
+        "object": "s1ae",
+        "promotion": {},
+        "restrictions": {},
+        "times_redeemed": 433
+      }
+    }
+  },
+  "new": {
+    "promotion_code": {
+      "promotion_code_ref01": {
+        "active": true,
+        "code": "s231",
+        "created": 562,
+        "customer": "s233",
+        "customer_account": "s234",
+        "expires_at": 565,
+        "livemode": false,
+        "max_redemptions": 568,
+        "metadata": {},
+        "object": "s23a",
+        "promotion": {},
+        "restrictions": {},
+        "times_redeemed": 573
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/promotion_codes/{promotion_code}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/promotion_codes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/promotion_codes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/promotion_codes/{promotion_code}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

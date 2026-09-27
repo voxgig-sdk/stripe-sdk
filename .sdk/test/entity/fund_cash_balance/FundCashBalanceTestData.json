@@ -1,0 +1,91 @@
+{
+  "existing": {
+    "fund_cash_balance": {
+      "FUND_CASH_BALANCE00": {
+        "adjusted_for_overdraft": {},
+        "applied_to_payment": {},
+        "created": 162,
+        "currency": "sa3",
+        "customer": "sa4",
+        "customer_account": "sa5",
+        "ending_balance": 166,
+        "funded": {},
+        "id": "FUND_CASH_BALANCE00",
+        "livemode": false,
+        "net_amount": 170,
+        "object": "sab",
+        "refunded_from_payment": {},
+        "transferred_to_balance": {},
+        "type": "sae",
+        "unapplied_from_payment": {},
+        "customer_id": "CUSTOMER01"
+      },
+      "FUND_CASH_BALANCE01": {
+        "adjusted_for_overdraft": {},
+        "applied_to_payment": {},
+        "created": 322,
+        "currency": "s143",
+        "customer": "s144",
+        "customer_account": "s145",
+        "ending_balance": 326,
+        "funded": {},
+        "id": "FUND_CASH_BALANCE01",
+        "livemode": false,
+        "net_amount": 330,
+        "object": "s14b",
+        "refunded_from_payment": {},
+        "transferred_to_balance": {},
+        "type": "s14e",
+        "unapplied_from_payment": {},
+        "customer_id": "CUSTOMER01"
+      },
+      "FUND_CASH_BALANCE02": {
+        "adjusted_for_overdraft": {},
+        "applied_to_payment": {},
+        "created": 482,
+        "currency": "s1e3",
+        "customer": "s1e4",
+        "customer_account": "s1e5",
+        "ending_balance": 486,
+        "funded": {},
+        "id": "FUND_CASH_BALANCE02",
+        "livemode": false,
+        "net_amount": 490,
+        "object": "s1eb",
+        "refunded_from_payment": {},
+        "transferred_to_balance": {},
+        "type": "s1ee",
+        "unapplied_from_payment": {},
+        "customer_id": "CUSTOMER01"
+      }
+    }
+  },
+  "new": {
+    "fund_cash_balance": {
+      "fund_cash_balance_ref01": {
+        "adjusted_for_overdraft": {},
+        "applied_to_payment": {},
+        "created": 642,
+        "currency": "s283",
+        "customer": "s284",
+        "customer_account": "s285",
+        "ending_balance": 646,
+        "funded": {},
+        "livemode": false,
+        "net_amount": 650,
+        "object": "s28b",
+        "refunded_from_payment": {},
+        "transferred_to_balance": {},
+        "type": "s28e",
+        "unapplied_from_payment": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/test_helpers/customers/{customer}/fund_cash_balance": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

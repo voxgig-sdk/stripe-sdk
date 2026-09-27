@@ -1,0 +1,138 @@
+{
+  "existing": {
+    "balance_transaction": {
+      "BALANCE_TRANSACTION00": {
+        "amount": 240,
+        "available_on": 241,
+        "balance_type": "sf2",
+        "checkout_session": "sf3",
+        "created": 244,
+        "credit_note": "sf5",
+        "currency": "sf6",
+        "customer": "sf7",
+        "customer_account": "sf8",
+        "description": "sf9",
+        "ending_balance": 250,
+        "exchange_rate": 251,
+        "fee": 252,
+        "fee_details": [],
+        "id": "BALANCE_TRANSACTION00",
+        "invoice": "sff",
+        "livemode": true,
+        "metadata": {},
+        "net": 258,
+        "object": "s103",
+        "reporting_category": "s104",
+        "source": "s105",
+        "status": "s106",
+        "type": "s107",
+        "customer_id": "CUSTOMER01"
+      },
+      "BALANCE_TRANSACTION01": {
+        "amount": 480,
+        "available_on": 481,
+        "balance_type": "s1e2",
+        "checkout_session": "s1e3",
+        "created": 484,
+        "credit_note": "s1e5",
+        "currency": "s1e6",
+        "customer": "s1e7",
+        "customer_account": "s1e8",
+        "description": "s1e9",
+        "ending_balance": 490,
+        "exchange_rate": 491,
+        "fee": 492,
+        "fee_details": [],
+        "id": "BALANCE_TRANSACTION01",
+        "invoice": "s1ef",
+        "livemode": true,
+        "metadata": {},
+        "net": 498,
+        "object": "s1f3",
+        "reporting_category": "s1f4",
+        "source": "s1f5",
+        "status": "s1f6",
+        "type": "s1f7",
+        "customer_id": "CUSTOMER01"
+      },
+      "BALANCE_TRANSACTION02": {
+        "amount": 720,
+        "available_on": 721,
+        "balance_type": "s2d2",
+        "checkout_session": "s2d3",
+        "created": 724,
+        "credit_note": "s2d5",
+        "currency": "s2d6",
+        "customer": "s2d7",
+        "customer_account": "s2d8",
+        "description": "s2d9",
+        "ending_balance": 730,
+        "exchange_rate": 731,
+        "fee": 732,
+        "fee_details": [],
+        "id": "BALANCE_TRANSACTION02",
+        "invoice": "s2df",
+        "livemode": true,
+        "metadata": {},
+        "net": 738,
+        "object": "s2e3",
+        "reporting_category": "s2e4",
+        "source": "s2e5",
+        "status": "s2e6",
+        "type": "s2e7",
+        "customer_id": "CUSTOMER01"
+      }
+    }
+  },
+  "new": {
+    "balance_transaction": {
+      "balance_transaction_ref01": {
+        "amount": 960,
+        "available_on": 961,
+        "balance_type": "s3c2",
+        "checkout_session": "s3c3",
+        "created": 964,
+        "credit_note": "s3c5",
+        "currency": "s3c6",
+        "customer": "s3c7",
+        "customer_account": "s3c8",
+        "description": "s3c9",
+        "ending_balance": 970,
+        "exchange_rate": 971,
+        "fee": 972,
+        "fee_details": [],
+        "invoice": "s3cf",
+        "livemode": true,
+        "metadata": {},
+        "net": 978,
+        "object": "s3d3",
+        "reporting_category": "s3d4",
+        "source": "s3d5",
+        "status": "s3d6",
+        "type": "s3d7"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/balance_transactions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/customers/{customer}/balance_transactions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/balance/history/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/balance_transactions/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

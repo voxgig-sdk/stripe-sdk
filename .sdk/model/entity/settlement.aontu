@@ -1,0 +1,225 @@
+# Entity: settlement
+
+main: kit: entity: settlement: {
+
+  alias: field: {}
+
+  fields: {
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "settlement"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/issuing/settlements/{settlement}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "settlement"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/issuing/settlements/{settlement}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              settlement: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "settlements"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.metadata`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/settlements/{settlement}/complete"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "settlement"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/settlements/{settlement}/complete"
+          q: {
+            "$action": "complete"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              settlement: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "settlements"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "complete"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.metadata`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/settlements"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/settlements"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "settlements"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.metadata`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/issuing/settlements/{settlement}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "settlement"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/issuing/settlements/{settlement}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              settlement: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "settlements"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.metadata`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

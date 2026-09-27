@@ -1,0 +1,107 @@
+{
+  "existing": {
+    "transfer": {
+      "TRANSFER00": {
+        "amount": 170,
+        "amount_reversed": 171,
+        "balance_transaction": "sac",
+        "created": 173,
+        "currency": "sae",
+        "description": "saf",
+        "destination": "sb0",
+        "destination_payment": "sb1",
+        "id": "TRANSFER00",
+        "livemode": false,
+        "metadata": {},
+        "object": "sb5",
+        "reversals": {},
+        "reversed": false,
+        "source_transaction": "sb8",
+        "source_type": "sb9",
+        "transfer_group": "sba"
+      },
+      "TRANSFER01": {
+        "amount": 340,
+        "amount_reversed": 341,
+        "balance_transaction": "s156",
+        "created": 343,
+        "currency": "s158",
+        "description": "s159",
+        "destination": "s15a",
+        "destination_payment": "s15b",
+        "id": "TRANSFER01",
+        "livemode": false,
+        "metadata": {},
+        "object": "s15f",
+        "reversals": {},
+        "reversed": false,
+        "source_transaction": "s162",
+        "source_type": "s163",
+        "transfer_group": "s164"
+      },
+      "TRANSFER02": {
+        "amount": 510,
+        "amount_reversed": 511,
+        "balance_transaction": "s200",
+        "created": 513,
+        "currency": "s202",
+        "description": "s203",
+        "destination": "s204",
+        "destination_payment": "s205",
+        "id": "TRANSFER02",
+        "livemode": false,
+        "metadata": {},
+        "object": "s209",
+        "reversals": {},
+        "reversed": false,
+        "source_transaction": "s20c",
+        "source_type": "s20d",
+        "transfer_group": "s20e"
+      }
+    }
+  },
+  "new": {
+    "transfer": {
+      "transfer_ref01": {
+        "amount": 680,
+        "amount_reversed": 681,
+        "balance_transaction": "s2aa",
+        "created": 683,
+        "currency": "s2ac",
+        "description": "s2ad",
+        "destination": "s2ae",
+        "destination_payment": "s2af",
+        "livemode": false,
+        "metadata": {},
+        "object": "s2b3",
+        "reversals": {},
+        "reversed": false,
+        "source_transaction": "s2b6",
+        "source_type": "s2b7",
+        "transfer_group": "s2b8"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/transfers/{transfer}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/transfers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/transfers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/transfers/{transfer}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

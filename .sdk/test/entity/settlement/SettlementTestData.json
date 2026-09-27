@@ -1,0 +1,42 @@
+{
+  "existing": {
+    "settlement": {
+      "SETTLEMENT00": {
+        "id": "SETTLEMENT00"
+      },
+      "SETTLEMENT01": {
+        "id": "SETTLEMENT01"
+      },
+      "SETTLEMENT02": {
+        "id": "SETTLEMENT02"
+      }
+    }
+  },
+  "new": {
+    "settlement": {
+      "settlement_ref01": {}
+    }
+  },
+  "requests": {
+    "POST /v1/issuing/settlements/{settlement}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/issuing/settlements/{settlement}/complete": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/issuing/settlements": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/issuing/settlements/{settlement}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

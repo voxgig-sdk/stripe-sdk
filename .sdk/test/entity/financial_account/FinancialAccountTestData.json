@@ -1,0 +1,116 @@
+{
+  "existing": {
+    "financial_account": {
+      "FINANCIAL_ACCOUNT00": {
+        "active_features": [],
+        "balance": {},
+        "country": "sb6",
+        "created": 183,
+        "features": {},
+        "financial_addresses": [],
+        "id": "FINANCIAL_ACCOUNT00",
+        "is_default": false,
+        "livemode": true,
+        "metadata": {},
+        "nickname": "sbe",
+        "object": "sbf",
+        "pending_features": [],
+        "platform_restrictions": "sc1",
+        "restricted_features": [],
+        "status": "sc3",
+        "status_details": {},
+        "supported_currencies": []
+      },
+      "FINANCIAL_ACCOUNT01": {
+        "active_features": [],
+        "balance": {},
+        "country": "s16a",
+        "created": 363,
+        "features": {},
+        "financial_addresses": [],
+        "id": "FINANCIAL_ACCOUNT01",
+        "is_default": false,
+        "livemode": true,
+        "metadata": {},
+        "nickname": "s172",
+        "object": "s173",
+        "pending_features": [],
+        "platform_restrictions": "s175",
+        "restricted_features": [],
+        "status": "s177",
+        "status_details": {},
+        "supported_currencies": []
+      },
+      "FINANCIAL_ACCOUNT02": {
+        "active_features": [],
+        "balance": {},
+        "country": "s21e",
+        "created": 543,
+        "features": {},
+        "financial_addresses": [],
+        "id": "FINANCIAL_ACCOUNT02",
+        "is_default": false,
+        "livemode": true,
+        "metadata": {},
+        "nickname": "s226",
+        "object": "s227",
+        "pending_features": [],
+        "platform_restrictions": "s229",
+        "restricted_features": [],
+        "status": "s22b",
+        "status_details": {},
+        "supported_currencies": []
+      }
+    }
+  },
+  "new": {
+    "financial_account": {
+      "financial_account_ref01": {
+        "active_features": [],
+        "balance": {},
+        "country": "s2d2",
+        "created": 723,
+        "features": {},
+        "financial_addresses": [],
+        "is_default": false,
+        "livemode": true,
+        "metadata": {},
+        "nickname": "s2da",
+        "object": "s2db",
+        "pending_features": [],
+        "platform_restrictions": "s2dd",
+        "restricted_features": [],
+        "status": "s2df",
+        "status_details": {},
+        "supported_currencies": []
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/treasury/financial_accounts/{financial_account}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/treasury/financial_accounts/{financial_account}/close": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/treasury/financial_accounts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/treasury/financial_accounts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/treasury/financial_accounts/{financial_account}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

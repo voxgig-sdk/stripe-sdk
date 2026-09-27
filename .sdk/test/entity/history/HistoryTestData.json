@@ -1,0 +1,88 @@
+{
+  "existing": {
+    "history": {
+      "HISTORY00": {
+        "amount": 160,
+        "available_on": 161,
+        "balance_type": "sa2",
+        "created": 163,
+        "currency": "sa4",
+        "description": "sa5",
+        "exchange_rate": 166,
+        "fee": 167,
+        "fee_details": [],
+        "id": "HISTORY00",
+        "net": 170,
+        "object": "sab",
+        "reporting_category": "sac",
+        "source": "sad",
+        "status": "sae",
+        "type": "saf"
+      },
+      "HISTORY01": {
+        "amount": 320,
+        "available_on": 321,
+        "balance_type": "s142",
+        "created": 323,
+        "currency": "s144",
+        "description": "s145",
+        "exchange_rate": 326,
+        "fee": 327,
+        "fee_details": [],
+        "id": "HISTORY01",
+        "net": 330,
+        "object": "s14b",
+        "reporting_category": "s14c",
+        "source": "s14d",
+        "status": "s14e",
+        "type": "s14f"
+      },
+      "HISTORY02": {
+        "amount": 480,
+        "available_on": 481,
+        "balance_type": "s1e2",
+        "created": 483,
+        "currency": "s1e4",
+        "description": "s1e5",
+        "exchange_rate": 486,
+        "fee": 487,
+        "fee_details": [],
+        "id": "HISTORY02",
+        "net": 490,
+        "object": "s1eb",
+        "reporting_category": "s1ec",
+        "source": "s1ed",
+        "status": "s1ee",
+        "type": "s1ef"
+      }
+    }
+  },
+  "new": {
+    "history": {
+      "history_ref01": {
+        "amount": 640,
+        "available_on": 641,
+        "balance_type": "s282",
+        "created": 643,
+        "currency": "s284",
+        "description": "s285",
+        "exchange_rate": 646,
+        "fee": 647,
+        "fee_details": [],
+        "net": 650,
+        "object": "s28b",
+        "reporting_category": "s28c",
+        "source": "s28d",
+        "status": "s28e",
+        "type": "s28f"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/balance/history": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

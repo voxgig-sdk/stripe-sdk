@@ -1,0 +1,60 @@
+{
+  "existing": {
+    "customer_session": {
+      "CUSTOMER_SESSION00": {
+        "client_secret": "s50",
+        "components": {},
+        "created": 82,
+        "customer": "s53",
+        "customer_account": "s54",
+        "expires_at": 85,
+        "livemode": true,
+        "object": "s57",
+        "id": "CUSTOMER_SESSION00"
+      },
+      "CUSTOMER_SESSION01": {
+        "client_secret": "sa0",
+        "components": {},
+        "created": 162,
+        "customer": "sa3",
+        "customer_account": "sa4",
+        "expires_at": 165,
+        "livemode": true,
+        "object": "sa7",
+        "id": "CUSTOMER_SESSION01"
+      },
+      "CUSTOMER_SESSION02": {
+        "client_secret": "sf0",
+        "components": {},
+        "created": 242,
+        "customer": "sf3",
+        "customer_account": "sf4",
+        "expires_at": 245,
+        "livemode": true,
+        "object": "sf7",
+        "id": "CUSTOMER_SESSION02"
+      }
+    }
+  },
+  "new": {
+    "customer_session": {
+      "customer_session_ref01": {
+        "client_secret": "s140",
+        "components": {},
+        "created": 322,
+        "customer": "s143",
+        "customer_account": "s144",
+        "expires_at": 325,
+        "livemode": true,
+        "object": "s147"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/customer_sessions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

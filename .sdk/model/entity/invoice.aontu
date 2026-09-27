@@ -1,0 +1,1448 @@
+# Entity: invoice
+
+main: kit: entity: invoice: {
+
+  alias: field: {}
+
+  fields: {
+    account_country: {
+      h: "Account Country"
+      n: "account_country"
+      r: false
+      sh: "The country of the business associated with this invoice, most often the business creating the invoice."
+      t: "`$STRING`"
+    }
+    account_name: {
+      h: "Account Name"
+      n: "account_name"
+      r: false
+      sh: "The public name of the business associated with this invoice, most often the business creating the invoice."
+      t: "`$STRING`"
+    }
+    account_tax_ids: {
+      h: "Account Tax Ids"
+      n: "account_tax_ids"
+      r: false
+      sh: "The account tax IDs associated with the invoice."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 10
+        depth: 10
+      }
+    }
+    amount_due: {
+      h: "Amount Due"
+      n: "amount_due"
+      r: true
+      sh: "Final amount due at this time for this invoice."
+      t: "`$INTEGER`"
+    }
+    amount_overpaid: {
+      h: "Amount Overpaid"
+      n: "amount_overpaid"
+      r: true
+      sh: "Amount that was overpaid on the invoice."
+      t: "`$INTEGER`"
+    }
+    amount_paid: {
+      h: "Amount Paid"
+      n: "amount_paid"
+      r: true
+      sh: "The amount, in cents (or local equivalent), that was paid."
+      t: "`$INTEGER`"
+    }
+    amount_paid_off_stripe: {
+      h: "Amount Paid Off Stripe"
+      n: "amount_paid_off_stripe"
+      r: true
+      sh: "Amount, in cents (or local equivalent), that was paid on the invoice outside of Stripe."
+      t: "`$INTEGER`"
+    }
+    amount_remaining: {
+      h: "Amount Remaining"
+      n: "amount_remaining"
+      r: true
+      sh: "The difference between amount_due and amount_paid, in cents (or local equivalent)."
+      t: "`$INTEGER`"
+    }
+    amount_shipping: {
+      h: "Amount Shipping"
+      n: "amount_shipping"
+      r: true
+      sh: "This is the sum of all the shipping amounts."
+      t: "`$INTEGER`"
+    }
+    application: {
+      h: "Application"
+      n: "application"
+      r: false
+      sh: "ID of the Connect Application that created the invoice."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 2
+        depth: 1
+      }
+    }
+    attempt_count: {
+      h: "Attempt Count"
+      n: "attempt_count"
+      r: true
+      sh: "Number of payment attempts made for this invoice, from the perspective of the payment retry schedule."
+      t: "`$INTEGER`"
+    }
+    attempted: {
+      h: "Attempted"
+      n: "attempted"
+      r: true
+      sh: "Whether an attempt has been made to pay the invoice."
+      t: "`$BOOLEAN`"
+    }
+    auto_advance: {
+      h: "Auto Advance"
+      n: "auto_advance"
+      r: true
+      sh: "Controls whether Stripe performs [automatic collection](https://docs.stripe.com/invoicing/integration/automatic-advancement-collection) of the invoice."
+      t: "`$BOOLEAN`"
+    }
+    automatic_tax: {
+      h: "Automatic Tax"
+      n: "automatic_tax"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 6
+      }
+    }
+    automatically_finalizes_at: {
+      fo: "unix-time"
+      h: "Automatically Finalizes At"
+      n: "automatically_finalizes_at"
+      r: false
+      sh: "The time when this invoice is currently scheduled to be automatically finalized."
+      t: "`$INTEGER`"
+    }
+    billing_reason: {
+      h: "Billing Reason"
+      n: "billing_reason"
+      r: false
+      sh: "Indicates the reason why the invoice was created."
+      t: "`$STRING`"
+    }
+    collection_method: {
+      h: "Collection Method"
+      n: "collection_method"
+      r: true
+      sh: "Either `charge_automatically`, or `send_invoice`."
+      t: "`$STRING`"
+    }
+    confirmation_secret: {
+      h: "Confirmation Secret"
+      n: "confirmation_secret"
+      r: false
+      sh: "The confirmation secret associated with this invoice."
+      t: "`$ANY`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    custom_fields: {
+      h: "Custom Fields"
+      n: "custom_fields"
+      r: false
+      sh: "Custom fields displayed on the invoice."
+      t: "`$ARRAY`"
+    }
+    customer: {
+      h: "Customer"
+      n: "customer"
+      r: true
+      sh: "The ID of the customer to bill."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 2
+        depth: 1
+      }
+    }
+    customer_account: {
+      h: "Customer Account"
+      n: "customer_account"
+      r: false
+      sh: "The ID of the account representing the customer to bill."
+      t: "`$STRING`"
+    }
+    customer_address: {
+      h: "Customer Address"
+      n: "customer_address"
+      r: false
+      sh: "The customer's address."
+      t: "`$ANY`"
+    }
+    customer_email: {
+      h: "Customer Email"
+      n: "customer_email"
+      r: false
+      sh: "The customer's email."
+      t: "`$STRING`"
+    }
+    customer_name: {
+      h: "Customer Name"
+      n: "customer_name"
+      r: false
+      sh: "The customer's name."
+      t: "`$STRING`"
+    }
+    customer_phone: {
+      h: "Customer Phone"
+      n: "customer_phone"
+      r: false
+      sh: "The customer's phone number."
+      t: "`$STRING`"
+    }
+    customer_shipping: {
+      h: "Customer Shipping"
+      n: "customer_shipping"
+      r: false
+      sh: "The customer's shipping information."
+      t: "`$ANY`"
+    }
+    customer_tax_exempt: {
+      h: "Customer Tax Exempt"
+      n: "customer_tax_exempt"
+      r: false
+      sh: "The customer's tax exempt status."
+      t: "`$STRING`"
+    }
+    customer_tax_ids: {
+      h: "Customer Tax Ids"
+      n: "customer_tax_ids"
+      r: false
+      sh: "The customer's tax IDs."
+      t: "`$ARRAY`"
+    }
+    default_payment_method: {
+      h: "Default Payment Method"
+      n: "default_payment_method"
+      r: false
+      sh: "ID of the default payment method for the invoice."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 30903
+        depth: 64
+      }
+    }
+    default_source: {
+      h: "Default Source"
+      n: "default_source"
+      r: false
+      sh: "ID of the default payment source for the invoice."
+      t: "`$ANY`"
+      union: {
+        branches: 4
+        count: 8
+        depth: 6
+      }
+    }
+    default_tax_rates: {
+      h: "Default Tax Rates"
+      n: "default_tax_rates"
+      r: true
+      sh: "The tax rates applied to this invoice, if any."
+      t: "`$ARRAY`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "An arbitrary string attached to the object."
+      t: "`$STRING`"
+    }
+    discounts: {
+      h: "Discounts"
+      n: "discounts"
+      r: true
+      sh: "The discounts applied to the invoice."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 42
+        depth: 13
+      }
+    }
+    due_date: {
+      fo: "unix-time"
+      h: "Due Date"
+      n: "due_date"
+      r: false
+      sh: "The date on which payment for this invoice is due."
+      t: "`$INTEGER`"
+    }
+    effective_at: {
+      fo: "unix-time"
+      h: "Effective At"
+      n: "effective_at"
+      r: false
+      sh: "The date when this invoice is in effect."
+      t: "`$INTEGER`"
+    }
+    ending_balance: {
+      h: "Ending Balance"
+      n: "ending_balance"
+      r: false
+      sh: "Ending customer balance after the invoice is finalized."
+      t: "`$INTEGER`"
+    }
+    footer: {
+      h: "Footer"
+      n: "footer"
+      r: false
+      sh: "Footer displayed on the invoice."
+      t: "`$STRING`"
+    }
+    from_invoice: {
+      h: "From Invoice"
+      n: "from_invoice"
+      r: false
+      sh: "Details of the invoice that was cloned."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 4
+      }
+    }
+    hosted_invoice_url: {
+      h: "Hosted Invoice Url"
+      n: "hosted_invoice_url"
+      r: false
+      sh: "The URL for the hosted invoice page, which allows customers to view and pay an invoice."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    invoice_pdf: {
+      h: "Invoice Pdf"
+      n: "invoice_pdf"
+      r: false
+      sh: "The link to download the PDF for the invoice."
+      t: "`$STRING`"
+    }
+    issuer: {
+      h: "Issuer"
+      n: "issuer"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 2
+      }
+    }
+    last_finalization_error: {
+      h: "Last Finalization Error"
+      n: "last_finalization_error"
+      r: false
+      sh: "The error encountered during the previous attempt to finalize the invoice."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 16375
+        depth: 55
+      }
+    }
+    latest_revision: {
+      h: "Latest Revision"
+      n: "latest_revision"
+      r: false
+      sh: "The ID of the most recent non-draft revision of this invoice"
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    lines: {
+      h: "Lines"
+      n: "lines"
+      r: true
+      sh: "The individual line items that make up the invoice."
+      t: "`$OBJECT`"
+      union: {
+        branches: 3
+        count: 141
+        depth: 21
+      }
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    next_payment_attempt: {
+      fo: "unix-time"
+      h: "Next Payment Attempt"
+      n: "next_payment_attempt"
+      r: false
+      sh: "The time at which payment will next be attempted."
+      t: "`$INTEGER`"
+    }
+    number: {
+      h: "Number"
+      n: "number"
+      r: false
+      sh: "A unique, identifying string that appears on emails sent to the customer for this invoice."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    on_behalf_of: {
+      h: "On Behalf Of"
+      n: "on_behalf_of"
+      r: false
+      sh: "The account (if any) for which the funds of the invoice payment are intended."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    parent: {
+      h: "Parent"
+      n: "parent"
+      r: false
+      sh: "The parent that generated this invoice"
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 8
+      }
+    }
+    payment_settings: {
+      h: "Payment Settings"
+      n: "payment_settings"
+      r: true
+      t: "`$OBJECT`"
+    }
+    payments: {
+      h: "Payments"
+      n: "payments"
+      r: true
+      sh: "Payments for this invoice."
+      t: "`$OBJECT`"
+      union: {
+        branches: 17
+        count: 26935
+        depth: 56
+      }
+    }
+    period_end: {
+      fo: "unix-time"
+      h: "Period End"
+      n: "period_end"
+      r: true
+      sh: "The latest timestamp at which invoice items can be associated with this invoice."
+      t: "`$INTEGER`"
+    }
+    period_start: {
+      fo: "unix-time"
+      h: "Period Start"
+      n: "period_start"
+      r: true
+      sh: "The earliest timestamp at which invoice items can be associated with this invoice."
+      t: "`$INTEGER`"
+    }
+    post_payment_credit_notes_amount: {
+      h: "Post Payment Credit Notes Amount"
+      n: "post_payment_credit_notes_amount"
+      r: true
+      sh: "Total amount of all post-payment credit notes issued for this invoice."
+      t: "`$INTEGER`"
+    }
+    pre_payment_credit_notes_amount: {
+      h: "Pre Payment Credit Notes Amount"
+      n: "pre_payment_credit_notes_amount"
+      r: true
+      sh: "Total amount of all pre-payment credit notes issued for this invoice."
+      t: "`$INTEGER`"
+    }
+    receipt_number: {
+      h: "Receipt Number"
+      n: "receipt_number"
+      r: false
+      sh: "This is the transaction number that appears on email receipts sent for this invoice."
+      t: "`$STRING`"
+    }
+    rendering: {
+      h: "Rendering"
+      n: "rendering"
+      r: false
+      sh: "The rendering-related settings that control how invoices render in customer-facing interfaces such as the PDF or hosted invoice page."
+      t: "`$ANY`"
+    }
+    shipping_cost: {
+      h: "Shipping Cost"
+      n: "shipping_cost"
+      r: false
+      sh: "The details of the cost of shipping, including the ShippingRate applied on the invoice."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 3
+        depth: 9
+      }
+    }
+    shipping_details: {
+      h: "Shipping Details"
+      n: "shipping_details"
+      r: false
+      sh: "Shipping details for the invoice."
+      t: "`$ANY`"
+    }
+    starting_balance: {
+      h: "Starting Balance"
+      n: "starting_balance"
+      r: true
+      sh: "Starting customer balance before the invoice is finalized."
+      t: "`$INTEGER`"
+    }
+    statement_descriptor: {
+      h: "Statement Descriptor"
+      n: "statement_descriptor"
+      r: false
+      sh: "Extra information about an invoice for the customer's credit card statement."
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      sh: "The status of the invoice, one of `draft`, `open`, `paid`, `uncollectible`, or `void`."
+      t: "`$STRING`"
+    }
+    status_details: {
+      h: "Status Details"
+      n: "status_details"
+      r: false
+      t: "`$OBJECT`"
+    }
+    status_transitions: {
+      h: "Status Transitions"
+      n: "status_transitions"
+      r: true
+      t: "`$OBJECT`"
+    }
+    subtotal: {
+      h: "Subtotal"
+      n: "subtotal"
+      r: true
+      sh: "Total of all subscriptions, invoice items, and prorations on the invoice before any invoice level discount or exclusive tax is applied."
+      t: "`$INTEGER`"
+    }
+    subtotal_excluding_tax: {
+      h: "Subtotal Excluding Tax"
+      n: "subtotal_excluding_tax"
+      r: false
+      sh: "The integer amount in cents (or local equivalent) representing the subtotal of the invoice before any invoice level discount or tax is applied."
+      t: "`$INTEGER`"
+    }
+    test_clock: {
+      h: "Test Clock"
+      n: "test_clock"
+      r: false
+      sh: "ID of the test clock this invoice belongs to."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    threshold_reason: {
+      h: "Threshold Reason"
+      n: "threshold_reason"
+      r: true
+      t: "`$OBJECT`"
+    }
+    total: {
+      h: "Total"
+      n: "total"
+      r: true
+      sh: "Total after discounts and taxes."
+      t: "`$INTEGER`"
+    }
+    total_discount_amounts: {
+      h: "Total Discount Amounts"
+      n: "total_discount_amounts"
+      r: false
+      sh: "The aggregate amounts calculated per discount across all line items."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 42
+        depth: 15
+      }
+    }
+    total_excluding_tax: {
+      h: "Total Excluding Tax"
+      n: "total_excluding_tax"
+      r: false
+      sh: "The integer amount in cents (or local equivalent) representing the total amount of the invoice including all discounts but excluding all tax."
+      t: "`$INTEGER`"
+    }
+    total_pretax_credit_amounts: {
+      h: "Total Pretax Credit Amounts"
+      n: "total_pretax_credit_amounts"
+      r: false
+      sh: "Contains pretax credit amounts (ex: discount, credit grants, etc) that apply to this invoice."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 63
+        depth: 16
+      }
+    }
+    total_taxes: {
+      h: "Total Taxes"
+      n: "total_taxes"
+      r: false
+      sh: "The aggregate tax information of all line items."
+      t: "`$ARRAY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 7
+      }
+    }
+    webhooks_delivered_at: {
+      fo: "unix-time"
+      h: "Webhooks Delivered At"
+      n: "webhooks_delivered_at"
+      r: false
+      sh: "Invoices are automatically paid or sent 1 hour after webhooks are delivered, or until all webhook delivery attempts have [been exhausted](https://docs.stripe.com/billing/webhooks#understand)."
+      t: "`$INTEGER`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "invoice"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/invoices/{invoice}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "invoice"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/invoices/{invoice}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              invoice: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoices"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/invoices/{invoice}/add_lines"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "invoice"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/invoices/{invoice}/add_lines"
+          q: {
+            "$action": "add_line"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              invoice: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoices"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "add_lines"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/invoices/{invoice}/attach_payment"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "invoice"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/invoices/{invoice}/attach_payment"
+          q: {
+            "$action": "attach_payment"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              invoice: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoices"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "attach_payment"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/invoices/{invoice}/finalize"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "invoice"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/invoices/{invoice}/finalize"
+          q: {
+            "$action": "finalize"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              invoice: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoices"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "finalize"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/invoices/{invoice}/mark_uncollectible"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "invoice"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/invoices/{invoice}/mark_uncollectible"
+          q: {
+            "$action": "mark_uncollectible"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              invoice: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoices"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "mark_uncollectible"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/invoices/{invoice}/pay"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "invoice"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/invoices/{invoice}/pay"
+          q: {
+            "$action": "pay"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              invoice: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoices"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "pay"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/invoices/{invoice}/remove_lines"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "invoice"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/invoices/{invoice}/remove_lines"
+          q: {
+            "$action": "remove_line"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              invoice: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoices"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "remove_lines"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/invoices/{invoice}/send"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "invoice"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/invoices/{invoice}/send"
+          q: {
+            "$action": "send"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              invoice: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoices"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "send"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/invoices/{invoice}/update_lines"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "invoice"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/invoices/{invoice}/update_lines"
+          q: {
+            "$action": "update_line"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              invoice: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoices"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "update_lines"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/invoices/{invoice}/void"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "invoice"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/invoices/{invoice}/void"
+          q: {
+            "$action": "void"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              invoice: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoices"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "void"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/invoices"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/invoices"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoices"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/invoices/create_preview"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/invoices/create_preview"
+          q: {
+            "$action": "create_preview"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoices"
+            }
+            {
+              lit: "create_preview"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/invoices"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "collection_method"
+                or: "collection_method"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "customer"
+                or: "customer"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "customer_account"
+                or: "customer_account"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "due_date"
+                or: "due_date"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "subscription"
+                or: "subscription"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/invoices"
+          q: {
+            exist: [
+              "collection_method"
+              "created"
+              "customer"
+              "customer_account"
+              "due_date"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+              "status"
+              "subscription"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoices"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/invoices/{invoice}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "invoice"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/invoices/{invoice}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              invoice: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoices"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /v1/invoices/{invoice}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "invoice"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/v1/invoices/{invoice}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              invoice: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoices"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

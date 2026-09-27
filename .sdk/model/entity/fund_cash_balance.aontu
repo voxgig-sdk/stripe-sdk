@@ -1,0 +1,217 @@
+# Entity: fund_cash_balance
+
+main: kit: entity: fund_cash_balance: {
+
+  alias: field: {}
+
+  fields: {
+    adjusted_for_overdraft: {
+      h: "Adjusted For Overdraft"
+      n: "adjusted_for_overdraft"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 2
+        depth: 2
+      }
+    }
+    applied_to_payment: {
+      h: "Applied To Payment"
+      n: "applied_to_payment"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 2
+      }
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    customer: {
+      h: "Customer"
+      n: "customer"
+      r: true
+      sh: "The customer whose available cash balance changed as a result of this transaction."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    customer_account: {
+      h: "Customer Account"
+      n: "customer_account"
+      r: false
+      sh: "The ID of an Account representing a customer whose available cash balance changed as a result of this transaction."
+      t: "`$STRING`"
+    }
+    ending_balance: {
+      h: "Ending Balance"
+      n: "ending_balance"
+      r: true
+      sh: "The total available cash balance for the specified currency after this transaction was applied."
+      t: "`$INTEGER`"
+    }
+    funded: {
+      h: "Funded"
+      n: "funded"
+      r: true
+      t: "`$OBJECT`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    net_amount: {
+      h: "Net Amount"
+      n: "net_amount"
+      r: true
+      sh: "The amount by which the cash balance changed, represented in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal)."
+      t: "`$INTEGER`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    refunded_from_payment: {
+      h: "Refunded From Payment"
+      n: "refunded_from_payment"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 3
+        count: 115
+        depth: 17
+      }
+    }
+    transferred_to_balance: {
+      h: "Transferred To Balance"
+      n: "transferred_to_balance"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 2
+      }
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "The type of the cash balance transaction."
+      t: "`$STRING`"
+    }
+    unapplied_from_payment: {
+      h: "Unapplied From Payment"
+      n: "unapplied_from_payment"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 2
+      }
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "fund_cash_balance"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/test_helpers/customers/{customer}/fund_cash_balance"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/customers/{customer}/fund_cash_balance"
+          q: {
+            exist: [
+              "customer_id"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "fund_cash_balance"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.customer")]
+  ]
+
+}

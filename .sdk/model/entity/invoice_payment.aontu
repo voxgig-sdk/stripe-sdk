@@ -1,0 +1,272 @@
+# Entity: invoice_payment
+
+main: kit: entity: invoice_payment: {
+
+  alias: field: {}
+
+  fields: {
+    amount_paid: {
+      h: "Amount Paid"
+      n: "amount_paid"
+      r: false
+      sh: "Amount that was actually paid for this invoice, in cents (or local equivalent)."
+      t: "`$INTEGER`"
+    }
+    amount_requested: {
+      h: "Amount Requested"
+      n: "amount_requested"
+      r: true
+      sh: "Amount intended to be paid toward this invoice, in cents (or local equivalent)"
+      t: "`$INTEGER`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    invoice: {
+      h: "Invoice"
+      n: "invoice"
+      r: true
+      sh: "The invoice that was paid."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 2
+        depth: 1
+      }
+    }
+    is_default: {
+      h: "Is Default"
+      n: "is_default"
+      r: true
+      sh: "Stripe automatically creates a default InvoicePayment when the invoice is finalized, and keeps it synchronized with the invoice’s `amount_remaining`."
+      t: "`$BOOLEAN`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    payment: {
+      h: "Payment"
+      n: "payment"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 17
+        count: 27992
+        depth: 51
+      }
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "The status of the payment, one of `open`, `paid`, or `canceled`."
+      t: "`$STRING`"
+    }
+    status_transitions: {
+      h: "Status Transitions"
+      n: "status_transitions"
+      r: true
+      t: "`$OBJECT`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "invoice_payment"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/invoice_payments"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "invoice"
+                or: "invoice"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "payment"
+                or: "payment"
+                r: false
+                t: "`$OBJECT`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/invoice_payments"
+          q: {
+            exist: [
+              "created"
+              "ending_before"
+              "expand"
+              "invoice"
+              "limit"
+              "payment"
+              "starting_after"
+              "status"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoice_payments"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/invoice_payments/{invoice_payment}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "invoice_payment"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/invoice_payments/{invoice_payment}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              invoice_payment: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoice_payments"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

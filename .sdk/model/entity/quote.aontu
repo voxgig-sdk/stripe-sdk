@@ -1,0 +1,725 @@
+# Entity: quote
+
+main: kit: entity: quote: {
+
+  alias: field: {}
+
+  fields: {
+    amount_subtotal: {
+      h: "Amount Subtotal"
+      n: "amount_subtotal"
+      r: true
+      sh: "Total before any discounts or taxes are applied."
+      t: "`$INTEGER`"
+    }
+    amount_total: {
+      h: "Amount Total"
+      n: "amount_total"
+      r: true
+      sh: "Total after discounts and taxes are applied."
+      t: "`$INTEGER`"
+    }
+    application: {
+      h: "Application"
+      n: "application"
+      r: false
+      sh: "ID of the Connect Application that created the quote."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 2
+        depth: 1
+      }
+    }
+    application_fee_amount: {
+      h: "Application Fee Amount"
+      n: "application_fee_amount"
+      r: false
+      sh: "The amount of the application fee (if any) that will be requested to be applied to the payment and transferred to the application owner's Stripe account."
+      t: "`$INTEGER`"
+    }
+    application_fee_percent: {
+      h: "Application Fee Percent"
+      n: "application_fee_percent"
+      r: false
+      sh: "A non-negative decimal between 0 and 100, with at most two decimal places."
+      t: "`$NUMBER`"
+    }
+    automatic_tax: {
+      h: "Automatic Tax"
+      n: "automatic_tax"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 6
+      }
+    }
+    collection_method: {
+      h: "Collection Method"
+      n: "collection_method"
+      r: true
+      sh: "Either `charge_automatically`, or `send_invoice`."
+      t: "`$STRING`"
+    }
+    computed: {
+      h: "Computed"
+      n: "computed"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 3
+        count: 28
+        depth: 22
+      }
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      h: "Currency"
+      n: "currency"
+      r: false
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    customer: {
+      h: "Customer"
+      n: "customer"
+      r: false
+      sh: "The customer who received this quote."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 105039
+        depth: 64
+      }
+    }
+    customer_account: {
+      h: "Customer Account"
+      n: "customer_account"
+      r: false
+      sh: "The account representing the customer who received this quote."
+      t: "`$STRING`"
+    }
+    default_tax_rates: {
+      h: "Default Tax Rates"
+      n: "default_tax_rates"
+      r: false
+      sh: "The tax rates applied to this quote."
+      t: "`$ARRAY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 1
+      }
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "A description that will be displayed on the quote PDF."
+      t: "`$STRING`"
+    }
+    discounts: {
+      h: "Discounts"
+      n: "discounts"
+      r: true
+      sh: "The discounts applied to this quote."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 21
+        depth: 13
+      }
+    }
+    expires_at: {
+      fo: "unix-time"
+      h: "Expires At"
+      n: "expires_at"
+      r: true
+      sh: "The date on which the quote will be canceled if in `open` or `draft` status."
+      t: "`$INTEGER`"
+    }
+    footer: {
+      h: "Footer"
+      n: "footer"
+      r: false
+      sh: "A footer that will be displayed on the quote PDF."
+      t: "`$STRING`"
+    }
+    from_quote: {
+      h: "From Quote"
+      n: "from_quote"
+      r: false
+      sh: "Details of the quote that was cloned."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 4
+      }
+    }
+    header: {
+      h: "Header"
+      n: "header"
+      r: false
+      sh: "A header that will be displayed on the quote PDF."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    invoice: {
+      h: "Invoice"
+      n: "invoice"
+      r: false
+      sh: "The invoice that was created from this quote."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 55895
+        depth: 64
+      }
+    }
+    invoice_settings: {
+      h: "Invoice Settings"
+      n: "invoice_settings"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 4
+      }
+    }
+    line_items: {
+      h: "Line Items"
+      n: "line_items"
+      r: true
+      sh: "A list of items the customer is being quoted for."
+      t: "`$OBJECT`"
+      union: {
+        branches: 3
+        count: 16
+        depth: 17
+      }
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: true
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    number: {
+      h: "Number"
+      n: "number"
+      r: false
+      sh: "A unique number that identifies this particular quote."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    on_behalf_of: {
+      h: "On Behalf Of"
+      n: "on_behalf_of"
+      r: false
+      sh: "The account on behalf of which to charge."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 102710
+        depth: 64
+      }
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "The status of the quote."
+      t: "`$STRING`"
+    }
+    status_transitions: {
+      h: "Status Transitions"
+      n: "status_transitions"
+      r: true
+      t: "`$OBJECT`"
+    }
+    subscription: {
+      h: "Subscription"
+      n: "subscription"
+      r: false
+      sh: "The subscription that was created or updated from this quote."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 100069
+        depth: 64
+      }
+    }
+    subscription_data: {
+      h: "Subscription Data"
+      n: "subscription_data"
+      r: true
+      t: "`$OBJECT`"
+    }
+    subscription_schedule: {
+      h: "Subscription Schedule"
+      n: "subscription_schedule"
+      r: false
+      sh: "The subscription schedule that was created or updated from this quote."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 35175
+        depth: 64
+      }
+    }
+    test_clock: {
+      h: "Test Clock"
+      n: "test_clock"
+      r: false
+      sh: "ID of the test clock this quote belongs to."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    total_details: {
+      h: "Total Details"
+      n: "total_details"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 3
+        count: 10
+        depth: 16
+      }
+    }
+    transfer_data: {
+      h: "Transfer Data"
+      n: "transfer_data"
+      r: false
+      sh: "The account (if any) the payments will be attributed to for tax reporting, and where funds from each payment will be transferred to for each of the invoices."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 99088
+        depth: 64
+      }
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "quote"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/quotes/{quote}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "quote"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/quotes/{quote}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              quote: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "quotes"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/quotes/{quote}/accept"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "quote"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/quotes/{quote}/accept"
+          q: {
+            "$action": "accept"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              quote: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "quotes"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "accept"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/quotes/{quote}/cancel"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "quote"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/quotes/{quote}/cancel"
+          q: {
+            "$action": "cancel"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              quote: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "quotes"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "cancel"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/quotes/{quote}/finalize"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "quote"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/quotes/{quote}/finalize"
+          q: {
+            "$action": "finalize"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              quote: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "quotes"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "finalize"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/quotes"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/quotes"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "quotes"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/quotes"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "customer"
+                or: "customer"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "customer_account"
+                or: "customer_account"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "test_clock"
+                or: "test_clock"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/quotes"
+          q: {
+            exist: [
+              "customer"
+              "customer_account"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+              "status"
+              "test_clock"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "quotes"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/quotes/{quote}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "quote"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/quotes/{quote}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              quote: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "quotes"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,52 @@
+# BasicTopupFlow
+
+main: kit: flow: BasicTopupFlow:
+{
+  entity: "topup",
+  kind: "basic",
+  name: "BasicTopupFlow",
+  step: [
+    {
+      i: {
+        ref: "topup_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "topup_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "topup_ref01",
+        srcdatavar: "topup_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "topup01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-topup_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTopupFlow"
+}

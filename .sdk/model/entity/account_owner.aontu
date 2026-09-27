@@ -1,0 +1,176 @@
+# Entity: account_owner
+
+main: kit: entity: account_owner: {
+
+  alias: field: {}
+
+  fields: {
+    email: {
+      h: "Email"
+      n: "email"
+      r: false
+      sh: "The email address of the owner."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      sh: "The full name of the owner."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    ownership: {
+      h: "Ownership"
+      n: "ownership"
+      r: true
+      sh: "The ownership object that this owner belongs to."
+      t: "`$STRING`"
+    }
+    phone: {
+      h: "Phone"
+      n: "phone"
+      r: false
+      sh: "The raw phone number of the owner."
+      t: "`$STRING`"
+    }
+    raw_address: {
+      h: "Raw Address"
+      n: "raw_address"
+      r: false
+      sh: "The raw physical address of the owner."
+      t: "`$STRING`"
+    }
+    refreshed_at: {
+      fo: "unix-time"
+      h: "Refreshed At"
+      n: "refreshed_at"
+      r: false
+      sh: "The timestamp of the refresh that updated this owner."
+      t: "`$INTEGER`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "account_owner"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/financial_connections/accounts/{account}/owners"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "ownership"
+                or: "ownership"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/financial_connections/accounts/{account}/owners"
+          q: {
+            exist: [
+              "ending_before"
+              "expand"
+              "id"
+              "limit"
+              "ownership"
+              "starting_after"
+            ]
+          }
+          r: {
+            param: {
+              account: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "financial_connections"
+            }
+            {
+              lit: "accounts"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "owners"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

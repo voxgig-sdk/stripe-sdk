@@ -1,0 +1,44 @@
+# BasicActiveEntitlementFlow
+
+main: kit: flow: BasicActiveEntitlementFlow:
+{
+  entity: "active_entitlement",
+  kind: "basic",
+  name: "BasicActiveEntitlementFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "active_entitlement_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "active_entitlement_ref01",
+        srcdatavar: "active_entitlement_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "active_entitlement01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-active_entitlement_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicActiveEntitlementFlow"
+}

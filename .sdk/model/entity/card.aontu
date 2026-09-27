@@ -1,0 +1,1318 @@
+# Entity: card
+
+main: kit: entity: card: {
+
+  alias: field: {}
+
+  fields: {
+    account: {
+      h: "Account"
+      n: "account"
+      r: false
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    address_city: {
+      h: "Address City"
+      n: "address_city"
+      r: false
+      sh: "City/District/Suburb/Town/Village."
+      t: "`$STRING`"
+    }
+    address_country: {
+      h: "Address Country"
+      n: "address_country"
+      r: false
+      sh: "Billing address country, if provided when creating card."
+      t: "`$STRING`"
+    }
+    address_line1: {
+      h: "Address Line1"
+      n: "address_line1"
+      r: false
+      sh: "Address line 1 (Street address/PO Box/Company name)."
+      t: "`$STRING`"
+    }
+    address_line1_check: {
+      h: "Address Line1 Check"
+      n: "address_line1_check"
+      r: false
+      sh: "If `address_line1` was provided, results of the check: `pass`, `fail`, `unavailable`, or `unchecked`."
+      t: "`$STRING`"
+    }
+    address_line2: {
+      h: "Address Line2"
+      n: "address_line2"
+      r: false
+      sh: "Address line 2 (Apartment/Suite/Unit/Building)."
+      t: "`$STRING`"
+    }
+    address_state: {
+      h: "Address State"
+      n: "address_state"
+      r: false
+      sh: "State/County/Province/Region."
+      t: "`$STRING`"
+    }
+    address_zip: {
+      h: "Address Zip"
+      n: "address_zip"
+      r: false
+      sh: "ZIP or postal code."
+      t: "`$STRING`"
+    }
+    address_zip_check: {
+      h: "Address Zip Check"
+      n: "address_zip_check"
+      r: false
+      sh: "If `address_zip` was provided, results of the check: `pass`, `fail`, `unavailable`, or `unchecked`."
+      t: "`$STRING`"
+    }
+    allow_redisplay: {
+      h: "Allow Redisplay"
+      n: "allow_redisplay"
+      r: false
+      sh: "This field indicates whether this payment method can be shown again to its customer in a checkout flow."
+      t: "`$BOOLEAN`"
+    }
+    available_payout_methods: {
+      h: "Available Payout Methods"
+      n: "available_payout_methods"
+      r: false
+      sh: "A set of available payout methods for this card."
+      t: "`$ARRAY`"
+    }
+    brand: {
+      h: "Brand"
+      n: "brand"
+      r: true
+      sh: "Card brand."
+      t: "`$STRING`"
+    }
+    cancellation_reason: {
+      h: "Cancellation Reason"
+      n: "cancellation_reason"
+      r: false
+      sh: "The reason why the card was canceled."
+      t: "`$STRING`"
+    }
+    cardholder: {
+      h: "Cardholder"
+      n: "cardholder"
+      r: true
+      sh: "An Issuing `Cardholder` object represents an individual or business entity who is [issued](https://docs.stripe.com/issuing) cards."
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 6
+        depth: 24
+      }
+    }
+    country: {
+      h: "Country"
+      n: "country"
+      r: false
+      sh: "Two-letter ISO code representing the country of the card."
+      t: "`$STRING`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+        list: {
+          req: true
+          type: "`$STRING`"
+        }
+        load: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      sh: "Three-letter [ISO code for currency](https://www.iso.org/iso-4217-currency-codes.html) in lowercase."
+      t: "`$STRING`"
+    }
+    customer: {
+      h: "Customer"
+      n: "customer"
+      r: false
+      sh: "The customer that this card belongs to."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 2
+        depth: 1
+      }
+    }
+    cvc: {
+      h: "Cvc"
+      n: "cvc"
+      r: false
+      sh: "The card's CVC."
+      t: "`$STRING`"
+    }
+    cvc_check: {
+      h: "Cvc Check"
+      n: "cvc_check"
+      r: false
+      sh: "If a CVC was provided, results of the check: `pass`, `fail`, `unavailable`, or `unchecked`."
+      t: "`$STRING`"
+    }
+    default_for_currency: {
+      h: "Default For Currency"
+      n: "default_for_currency"
+      r: false
+      sh: "Whether this card is the default external account for its currency."
+      t: "`$BOOLEAN`"
+    }
+    dynamic_last4: {
+      h: "Dynamic Last4"
+      n: "dynamic_last4"
+      r: false
+      sh: "(For tokenized numbers only.) The last four digits of the device account number."
+      t: "`$STRING`"
+    }
+    exp_month: {
+      h: "Exp Month"
+      n: "exp_month"
+      r: true
+      sh: "Two-digit number representing the card's expiration month."
+      t: "`$INTEGER`"
+    }
+    exp_year: {
+      h: "Exp Year"
+      n: "exp_year"
+      r: true
+      sh: "Four-digit number representing the card's expiration year."
+      t: "`$INTEGER`"
+    }
+    financial_account: {
+      h: "Financial Account"
+      n: "financial_account"
+      r: false
+      sh: "The financial account this card is attached to."
+      t: "`$STRING`"
+    }
+    fingerprint: {
+      h: "Fingerprint"
+      n: "fingerprint"
+      r: false
+      sh: "Uniquely identifies this particular card number."
+      t: "`$STRING`"
+    }
+    funding: {
+      h: "Funding"
+      n: "funding"
+      r: true
+      sh: "Card funding type."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    last4: {
+      h: "Last4"
+      n: "last4"
+      r: true
+      sh: "The last four digits of the card."
+      t: "`$STRING`"
+    }
+    latest_fraud_warning: {
+      h: "Latest Fraud Warning"
+      n: "latest_fraud_warning"
+      r: false
+      sh: "Stripe’s assessment of whether this card’s details have been compromised."
+      t: "`$ANY`"
+    }
+    lifecycle_controls: {
+      h: "Lifecycle Controls"
+      n: "lifecycle_controls"
+      r: false
+      sh: "Rules that control the lifecycle of this card, such as automatic cancellation."
+      t: "`$ANY`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      op: {
+        create: {
+          req: true
+          type: "`$OBJECT`"
+        }
+        list: {
+          req: true
+          type: "`$OBJECT`"
+        }
+        load: {
+          req: true
+          type: "`$OBJECT`"
+        }
+      }
+      r: false
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "Cardholder name."
+      t: "`$STRING`"
+    }
+    networks: {
+      h: "Networks"
+      n: "networks"
+      r: false
+      t: "`$OBJECT`"
+    }
+    number: {
+      h: "Number"
+      n: "number"
+      r: false
+      sh: "The full unredacted card number."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    personalization_design: {
+      h: "Personalization Design"
+      n: "personalization_design"
+      r: false
+      sh: "The personalization design object belonging to this card."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 9
+        depth: 15
+      }
+    }
+    regulated_status: {
+      h: "Regulated Status"
+      n: "regulated_status"
+      r: false
+      sh: "Status of a card based on the card issuer."
+      t: "`$STRING`"
+    }
+    replaced_by: {
+      h: "Replaced By"
+      n: "replaced_by"
+      r: false
+      sh: "The latest card that replaces this card, if any."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    replacement_for: {
+      h: "Replacement For"
+      n: "replacement_for"
+      r: false
+      sh: "The card this card replaces, if any."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    replacement_reason: {
+      h: "Replacement Reason"
+      n: "replacement_reason"
+      r: false
+      sh: "The reason why the previous card needed to be replaced."
+      t: "`$STRING`"
+    }
+    second_line: {
+      h: "Second Line"
+      n: "second_line"
+      r: false
+      sh: "Text separate from cardholder name, printed on the card."
+      t: "`$STRING`"
+    }
+    shipping: {
+      h: "Shipping"
+      n: "shipping"
+      r: false
+      sh: "Where and how the card will be shipped."
+      t: "`$ANY`"
+    }
+    spending_controls: {
+      h: "Spending Controls"
+      n: "spending_controls"
+      r: true
+      t: "`$OBJECT`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+        list: {
+          req: true
+          type: "`$STRING`"
+        }
+        load: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      sh: "For external accounts that are cards, possible values are `new` and `errored`."
+      t: "`$STRING`"
+    }
+    tokenization_method: {
+      h: "Tokenization Method"
+      n: "tokenization_method"
+      r: false
+      sh: "If the card number is tokenized, this is the method that was used."
+      t: "`$STRING`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "The type of the card."
+      t: "`$STRING`"
+    }
+    wallets: {
+      h: "Wallets"
+      n: "wallets"
+      r: false
+      sh: "Information relating to digital wallets (like Apple Pay and Google Pay)."
+      t: "`$ANY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "card"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/customers/{customer}/cards/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/customers/{customer}/cards/{id}"
+          q: {
+            exist: [
+              "customer_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "cards"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/customers/{customer}/cards"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/customers/{customer}/cards"
+          q: {
+            exist: [
+              "customer_id"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "cards"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/issuing/cards/{card}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "card"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/issuing/cards/{card}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              card: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "cards"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/cards/{card}/shipping/deliver"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "card"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/cards/{card}/shipping/deliver"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              card: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "cards"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "shipping"
+            }
+            {
+              lit: "deliver"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/cards/{card}/shipping/fail"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "card"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/cards/{card}/shipping/fail"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              card: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "cards"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "shipping"
+            }
+            {
+              lit: "fail"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/cards/{card}/shipping/return"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "card"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/cards/{card}/shipping/return"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              card: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "cards"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "shipping"
+            }
+            {
+              lit: "return"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/cards/{card}/shipping/ship"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "card"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/cards/{card}/shipping/ship"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              card: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "cards"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "shipping"
+            }
+            {
+              lit: "ship"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/cards/{card}/shipping/submit"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "card"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/cards/{card}/shipping/submit"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              card: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "cards"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "shipping"
+            }
+            {
+              lit: "submit"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/issuing/cards"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/issuing/cards"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "cards"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/issuing/cards"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "cardholder"
+                or: "cardholder"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "exp_month"
+                or: "exp_month"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "exp_year"
+                or: "exp_year"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "last4"
+                or: "last4"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "personalization_design"
+                or: "personalization_design"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "type"
+                or: "type"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/issuing/cards"
+          q: {
+            exist: [
+              "cardholder"
+              "created"
+              "ending_before"
+              "exp_month"
+              "exp_year"
+              "expand"
+              "last4"
+              "limit"
+              "personalization_design"
+              "starting_after"
+              "status"
+              "type"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "cards"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/customers/{customer}/cards"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/customers/{customer}/cards"
+          q: {
+            exist: [
+              "customer_id"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "cards"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/customers/{customer}/cards/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/customers/{customer}/cards/{id}"
+          q: {
+            exist: [
+              "customer_id"
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "cards"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/issuing/cards/{card}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "card"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/issuing/cards/{card}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              card: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "cards"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /v1/customers/{customer}/cards/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/v1/customers/{customer}/cards/{id}"
+          q: {
+            exist: [
+              "customer_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "cards"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.customer")]
+  ]
+
+}

@@ -1,0 +1,44 @@
+# BasicVerificationReportFlow
+
+main: kit: flow: BasicVerificationReportFlow:
+{
+  entity: "verification_report",
+  kind: "basic",
+  name: "BasicVerificationReportFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "verification_report_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "verification_report_ref01",
+        srcdatavar: "verification_report_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "verification_report01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-verification_report_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicVerificationReportFlow"
+}

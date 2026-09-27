@@ -1,0 +1,9 @@
+# BasicDeletedSubscriptionItemFlow
+
+main: kit: flow: BasicDeletedSubscriptionItemFlow:
+{
+  entity: "deleted_subscription_item",
+  kind: "basic",
+  name: "BasicDeletedSubscriptionItemFlow",
+  "key$": "BasicDeletedSubscriptionItemFlow"
+}

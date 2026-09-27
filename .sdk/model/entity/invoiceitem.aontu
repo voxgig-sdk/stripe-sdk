@@ -1,0 +1,464 @@
+# Entity: invoiceitem
+
+main: kit: entity: invoiceitem: {
+
+  alias: field: {}
+
+  fields: {
+    amount: {
+      h: "Amount"
+      n: "amount"
+      r: true
+      sh: "Amount (in the `currency` specified) of the invoice item."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    customer: {
+      h: "Customer"
+      n: "customer"
+      r: true
+      sh: "The ID of the customer to bill for this invoice item."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 105131
+        depth: 64
+      }
+    }
+    customer_account: {
+      h: "Customer Account"
+      n: "customer_account"
+      r: false
+      sh: "The ID of the account to bill for this invoice item."
+      t: "`$STRING`"
+    }
+    date: {
+      fo: "unix-time"
+      h: "Date"
+      n: "date"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "An arbitrary string attached to the object."
+      t: "`$STRING`"
+    }
+    discountable: {
+      h: "Discountable"
+      n: "discountable"
+      r: true
+      sh: "If true, discounts will apply to this invoice item."
+      t: "`$BOOLEAN`"
+    }
+    discounts: {
+      h: "Discounts"
+      n: "discounts"
+      r: false
+      sh: "The discounts which apply to the invoice item."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 21
+        depth: 13
+      }
+    }
+    frozen_fields: {
+      h: "Frozen Fields"
+      n: "frozen_fields"
+      r: false
+      sh: "Array of field names that can't be modified."
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    invoice: {
+      h: "Invoice"
+      n: "invoice"
+      r: false
+      sh: "The ID of the invoice this invoice item belongs to."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 56716
+        depth: 64
+      }
+    }
+    invoicing_rules: {
+      h: "Invoicing Rules"
+      n: "invoicing_rules"
+      r: false
+      sh: "The rules that control when this invoice item is eligible for invoicing."
+      t: "`$ARRAY`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    net_amount: {
+      h: "Net Amount"
+      n: "net_amount"
+      r: false
+      sh: "The amount after discounts, but before credits and taxes."
+      t: "`$INTEGER`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    parent: {
+      h: "Parent"
+      n: "parent"
+      r: false
+      sh: "The parent that generated this invoice item."
+      t: "`$ANY`"
+    }
+    period: {
+      h: "Period"
+      n: "period"
+      r: true
+      t: "`$OBJECT`"
+    }
+    pricing: {
+      h: "Pricing"
+      n: "pricing"
+      r: false
+      sh: "The pricing information of the invoice item."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 13
+        depth: 16
+      }
+    }
+    proration: {
+      h: "Proration"
+      n: "proration"
+      r: true
+      sh: "Whether the invoice item was created automatically as a proration adjustment when the customer switched plans."
+      t: "`$BOOLEAN`"
+    }
+    proration_details: {
+      h: "Proration Details"
+      n: "proration_details"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 3
+        count: 42
+        depth: 17
+      }
+    }
+    quantity: {
+      h: "Quantity"
+      n: "quantity"
+      r: true
+      sh: "Quantity of units for the invoice item in integer format, with any decimal precision truncated."
+      t: "`$INTEGER`"
+    }
+    quantity_decimal: {
+      fo: "decimal"
+      h: "Quantity Decimal"
+      n: "quantity_decimal"
+      r: true
+      sh: "Non-negative decimal with at most 12 decimal places."
+      t: "`$STRING`"
+    }
+    tax_rates: {
+      h: "Tax Rates"
+      n: "tax_rates"
+      r: false
+      sh: "The tax rates which apply to the invoice item."
+      t: "`$ARRAY`"
+    }
+    test_clock: {
+      h: "Test Clock"
+      n: "test_clock"
+      r: false
+      sh: "ID of the test clock this invoice item belongs to."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "invoiceitem"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/invoiceitems/{invoiceitem}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "invoiceitem"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/invoiceitems/{invoiceitem}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              invoiceitem: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoiceitems"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/invoiceitems"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/invoiceitems"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoiceitems"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/invoiceitems"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "customer"
+                or: "customer"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "customer_account"
+                or: "customer_account"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "invoice"
+                or: "invoice"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "pending"
+                or: "pending"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/invoiceitems"
+          q: {
+            exist: [
+              "created"
+              "customer"
+              "customer_account"
+              "ending_before"
+              "expand"
+              "invoice"
+              "limit"
+              "pending"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoiceitems"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/invoiceitems/{invoiceitem}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "invoiceitem"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/invoiceitems/{invoiceitem}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              invoiceitem: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoiceitems"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

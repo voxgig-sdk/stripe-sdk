@@ -1,0 +1,87 @@
+{
+  "existing": {
+    "webhook_endpoint": {
+      "WEBHOOK_ENDPOINT00": {
+        "api_version": "s78",
+        "application": "s79",
+        "created": 122,
+        "description": "s7b",
+        "enabled_events": [],
+        "id": "WEBHOOK_ENDPOINT00",
+        "livemode": true,
+        "metadata": {},
+        "object": "s80",
+        "secret": "s81",
+        "status": "s82",
+        "url": "s83"
+      },
+      "WEBHOOK_ENDPOINT01": {
+        "api_version": "sf0",
+        "application": "sf1",
+        "created": 242,
+        "description": "sf3",
+        "enabled_events": [],
+        "id": "WEBHOOK_ENDPOINT01",
+        "livemode": true,
+        "metadata": {},
+        "object": "sf8",
+        "secret": "sf9",
+        "status": "sfa",
+        "url": "sfb"
+      },
+      "WEBHOOK_ENDPOINT02": {
+        "api_version": "s168",
+        "application": "s169",
+        "created": 362,
+        "description": "s16b",
+        "enabled_events": [],
+        "id": "WEBHOOK_ENDPOINT02",
+        "livemode": true,
+        "metadata": {},
+        "object": "s170",
+        "secret": "s171",
+        "status": "s172",
+        "url": "s173"
+      }
+    }
+  },
+  "new": {
+    "webhook_endpoint": {
+      "webhook_endpoint_ref01": {
+        "api_version": "s1e0",
+        "application": "s1e1",
+        "created": 482,
+        "description": "s1e3",
+        "enabled_events": [],
+        "livemode": true,
+        "metadata": {},
+        "object": "s1e8",
+        "secret": "s1e9",
+        "status": "s1ea",
+        "url": "s1eb"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/webhook_endpoints/{webhook_endpoint}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/webhook_endpoints": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/webhook_endpoints": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/webhook_endpoints/{webhook_endpoint}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

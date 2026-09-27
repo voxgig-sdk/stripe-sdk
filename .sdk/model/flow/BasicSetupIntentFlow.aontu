@@ -1,0 +1,52 @@
+# BasicSetupIntentFlow
+
+main: kit: flow: BasicSetupIntentFlow:
+{
+  entity: "setup_intent",
+  kind: "basic",
+  name: "BasicSetupIntentFlow",
+  step: [
+    {
+      i: {
+        ref: "setup_intent_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "setup_intent_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "setup_intent_ref01",
+        srcdatavar: "setup_intent_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "setup_intent01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-setup_intent_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSetupIntentFlow"
+}

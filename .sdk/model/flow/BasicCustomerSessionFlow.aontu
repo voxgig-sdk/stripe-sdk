@@ -1,0 +1,18 @@
+# BasicCustomerSessionFlow
+
+main: kit: flow: BasicCustomerSessionFlow:
+{
+  entity: "customer_session",
+  kind: "basic",
+  name: "BasicCustomerSessionFlow",
+  step: [
+    {
+      i: {
+        ref: "customer_session_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicCustomerSessionFlow"
+}

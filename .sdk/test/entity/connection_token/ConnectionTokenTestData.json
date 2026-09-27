@@ -1,0 +1,40 @@
+{
+  "existing": {
+    "connection_token": {
+      "CONNECTION_TOKEN00": {
+        "location": "s1e",
+        "object": "s1f",
+        "secret": "s20",
+        "id": "CONNECTION_TOKEN00"
+      },
+      "CONNECTION_TOKEN01": {
+        "location": "s3c",
+        "object": "s3d",
+        "secret": "s3e",
+        "id": "CONNECTION_TOKEN01"
+      },
+      "CONNECTION_TOKEN02": {
+        "location": "s5a",
+        "object": "s5b",
+        "secret": "s5c",
+        "id": "CONNECTION_TOKEN02"
+      }
+    }
+  },
+  "new": {
+    "connection_token": {
+      "connection_token_ref01": {
+        "location": "s78",
+        "object": "s79",
+        "secret": "s7a"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/terminal/connection_tokens": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

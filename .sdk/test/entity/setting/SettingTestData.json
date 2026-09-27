@@ -1,0 +1,57 @@
+{
+  "existing": {
+    "setting": {
+      "SETTING00": {
+        "defaults": {},
+        "head_office": "s3d",
+        "livemode": true,
+        "object": "s3f",
+        "status": "s40",
+        "status_details": {},
+        "id": "SETTING00"
+      },
+      "SETTING01": {
+        "defaults": {},
+        "head_office": "s79",
+        "livemode": true,
+        "object": "s7b",
+        "status": "s7c",
+        "status_details": {},
+        "id": "SETTING01"
+      },
+      "SETTING02": {
+        "defaults": {},
+        "head_office": "sb5",
+        "livemode": true,
+        "object": "sb7",
+        "status": "sb8",
+        "status_details": {},
+        "id": "SETTING02"
+      }
+    }
+  },
+  "new": {
+    "setting": {
+      "setting_ref01": {
+        "defaults": {},
+        "head_office": "sf1",
+        "livemode": true,
+        "object": "sf3",
+        "status": "sf4",
+        "status_details": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/tax/settings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/tax/settings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

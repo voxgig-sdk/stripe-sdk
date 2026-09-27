@@ -1,0 +1,90 @@
+{
+  "existing": {
+    "credit_reversal": {
+      "CREDIT_REVERSAL00": {
+        "amount": 140,
+        "created": 141,
+        "currency": "s8e",
+        "financial_account": "s8f",
+        "hosted_regulatory_receipt_url": "s90",
+        "id": "CREDIT_REVERSAL00",
+        "livemode": true,
+        "metadata": {},
+        "network": "s94",
+        "object": "s95",
+        "received_credit": "s96",
+        "status": "s97",
+        "status_transitions": {},
+        "transaction": "s99"
+      },
+      "CREDIT_REVERSAL01": {
+        "amount": 280,
+        "created": 281,
+        "currency": "s11a",
+        "financial_account": "s11b",
+        "hosted_regulatory_receipt_url": "s11c",
+        "id": "CREDIT_REVERSAL01",
+        "livemode": true,
+        "metadata": {},
+        "network": "s120",
+        "object": "s121",
+        "received_credit": "s122",
+        "status": "s123",
+        "status_transitions": {},
+        "transaction": "s125"
+      },
+      "CREDIT_REVERSAL02": {
+        "amount": 420,
+        "created": 421,
+        "currency": "s1a6",
+        "financial_account": "s1a7",
+        "hosted_regulatory_receipt_url": "s1a8",
+        "id": "CREDIT_REVERSAL02",
+        "livemode": true,
+        "metadata": {},
+        "network": "s1ac",
+        "object": "s1ad",
+        "received_credit": "s1ae",
+        "status": "s1af",
+        "status_transitions": {},
+        "transaction": "s1b1"
+      }
+    }
+  },
+  "new": {
+    "credit_reversal": {
+      "credit_reversal_ref01": {
+        "amount": 560,
+        "created": 561,
+        "currency": "s232",
+        "financial_account": "s233",
+        "hosted_regulatory_receipt_url": "s234",
+        "livemode": true,
+        "metadata": {},
+        "network": "s238",
+        "object": "s239",
+        "received_credit": "s23a",
+        "status": "s23b",
+        "status_transitions": {},
+        "transaction": "s23d"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/treasury/credit_reversals": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/treasury/credit_reversals": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/treasury/credit_reversals/{credit_reversal}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

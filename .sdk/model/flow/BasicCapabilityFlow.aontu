@@ -1,0 +1,62 @@
+# BasicCapabilityFlow
+
+main: kit: flow: BasicCapabilityFlow:
+{
+  entity: "capability",
+  kind: "basic",
+  name: "BasicCapabilityFlow",
+  step: [
+    {
+      i: {
+        ref: "capability_ref01"
+      }
+
+      m: {
+        account_id: "account01",
+        capability: "capability01"
+      }
+
+      o: "create"
+    }
+
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "capability_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "capability_ref01",
+        srcdatavar: "capability_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "capability01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-capability_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCapabilityFlow"
+}

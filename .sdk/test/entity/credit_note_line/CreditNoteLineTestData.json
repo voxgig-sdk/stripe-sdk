@@ -1,0 +1,88 @@
+{
+  "existing": {
+    "credit_note_line": {
+      "CREDIT_NOTE_LINE00": {
+        "amount": 160,
+        "description": "sa1",
+        "discount_amount": 162,
+        "discount_amounts": [],
+        "id": "CREDIT_NOTE_LINE00",
+        "invoice_line_item": "sa5",
+        "livemode": true,
+        "metadata": {},
+        "object": "sa8",
+        "pretax_credit_amounts": [],
+        "quantity": 170,
+        "tax_rates": [],
+        "taxes": [],
+        "type": "sad",
+        "unit_amount": 174,
+        "unit_amount_decimal": "saf"
+      },
+      "CREDIT_NOTE_LINE01": {
+        "amount": 320,
+        "description": "s141",
+        "discount_amount": 322,
+        "discount_amounts": [],
+        "id": "CREDIT_NOTE_LINE01",
+        "invoice_line_item": "s145",
+        "livemode": true,
+        "metadata": {},
+        "object": "s148",
+        "pretax_credit_amounts": [],
+        "quantity": 330,
+        "tax_rates": [],
+        "taxes": [],
+        "type": "s14d",
+        "unit_amount": 334,
+        "unit_amount_decimal": "s14f"
+      },
+      "CREDIT_NOTE_LINE02": {
+        "amount": 480,
+        "description": "s1e1",
+        "discount_amount": 482,
+        "discount_amounts": [],
+        "id": "CREDIT_NOTE_LINE02",
+        "invoice_line_item": "s1e5",
+        "livemode": true,
+        "metadata": {},
+        "object": "s1e8",
+        "pretax_credit_amounts": [],
+        "quantity": 490,
+        "tax_rates": [],
+        "taxes": [],
+        "type": "s1ed",
+        "unit_amount": 494,
+        "unit_amount_decimal": "s1ef"
+      }
+    }
+  },
+  "new": {
+    "credit_note_line": {
+      "credit_note_line_ref01": {
+        "amount": 640,
+        "description": "s281",
+        "discount_amount": 642,
+        "discount_amounts": [],
+        "invoice_line_item": "s285",
+        "livemode": true,
+        "metadata": {},
+        "object": "s288",
+        "pretax_credit_amounts": [],
+        "quantity": 650,
+        "tax_rates": [],
+        "taxes": [],
+        "type": "s28d",
+        "unit_amount": 654,
+        "unit_amount_decimal": "s28f"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/credit_notes/{credit_note}/lines": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

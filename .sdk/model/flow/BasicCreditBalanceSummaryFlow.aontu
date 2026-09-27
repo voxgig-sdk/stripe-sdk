@@ -1,0 +1,22 @@
+# BasicCreditBalanceSummaryFlow
+
+main: kit: flow: BasicCreditBalanceSummaryFlow:
+{
+  entity: "credit_balance_summary",
+  kind: "basic",
+  name: "BasicCreditBalanceSummaryFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "credit_balance_summary_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCreditBalanceSummaryFlow"
+}

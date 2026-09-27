@@ -1,0 +1,44 @@
+# BasicCashBalanceFlow
+
+main: kit: flow: BasicCashBalanceFlow:
+{
+  entity: "cash_balance",
+  kind: "basic",
+  name: "BasicCashBalanceFlow",
+  step: [
+    {
+      i: {
+        ref: "cash_balance_ref01"
+      }
+
+      m: {
+        customer_id: "customer01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "cash_balance_ref01",
+        srcdatavar: "cash_balance_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "cash_balance01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-cash_balance_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCashBalanceFlow"
+}

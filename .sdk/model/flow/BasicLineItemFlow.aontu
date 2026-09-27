@@ -1,0 +1,26 @@
+# BasicLineItemFlow
+
+main: kit: flow: BasicLineItemFlow:
+{
+  entity: "line_item",
+  kind: "basic",
+  name: "BasicLineItemFlow",
+  step: [
+    {
+      m: {
+        transaction_id: "transaction01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "line_item_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicLineItemFlow"
+}

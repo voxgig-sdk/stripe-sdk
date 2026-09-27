@@ -1,0 +1,90 @@
+{
+  "existing": {
+    "review": {
+      "REVIEW00": {
+        "billing_zip": "s8c",
+        "charge": "s8d",
+        "closed_reason": "s8e",
+        "created": 143,
+        "id": "REVIEW00",
+        "ip_address": "s91",
+        "ip_address_location": "s92",
+        "livemode": false,
+        "object": "s94",
+        "open": false,
+        "opened_reason": "s96",
+        "payment_intent": "s97",
+        "reason": "s98",
+        "session": "s99"
+      },
+      "REVIEW01": {
+        "billing_zip": "s118",
+        "charge": "s119",
+        "closed_reason": "s11a",
+        "created": 283,
+        "id": "REVIEW01",
+        "ip_address": "s11d",
+        "ip_address_location": "s11e",
+        "livemode": false,
+        "object": "s120",
+        "open": false,
+        "opened_reason": "s122",
+        "payment_intent": "s123",
+        "reason": "s124",
+        "session": "s125"
+      },
+      "REVIEW02": {
+        "billing_zip": "s1a4",
+        "charge": "s1a5",
+        "closed_reason": "s1a6",
+        "created": 423,
+        "id": "REVIEW02",
+        "ip_address": "s1a9",
+        "ip_address_location": "s1aa",
+        "livemode": false,
+        "object": "s1ac",
+        "open": false,
+        "opened_reason": "s1ae",
+        "payment_intent": "s1af",
+        "reason": "s1b0",
+        "session": "s1b1"
+      }
+    }
+  },
+  "new": {
+    "review": {
+      "review_ref01": {
+        "billing_zip": "s230",
+        "charge": "s231",
+        "closed_reason": "s232",
+        "created": 563,
+        "ip_address": "s235",
+        "ip_address_location": "s236",
+        "livemode": false,
+        "object": "s238",
+        "open": false,
+        "opened_reason": "s23a",
+        "payment_intent": "s23b",
+        "reason": "s23c",
+        "session": "s23d"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/reviews/{review}/approve": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/reviews": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/reviews/{review}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

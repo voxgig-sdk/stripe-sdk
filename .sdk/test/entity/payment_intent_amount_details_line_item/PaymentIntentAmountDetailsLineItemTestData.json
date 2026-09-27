@@ -1,0 +1,67 @@
+{
+  "existing": {
+    "payment_intent_amount_details_line_item": {
+      "PAYMENT_INTENT_AMOUNT_DETAILS_LINE_ITEM00": {
+        "discount_amount": 100,
+        "id": "PAYMENT_INTENT_AMOUNT_DETAILS_LINE_ITEM00",
+        "object": "s66",
+        "payment_method_options": "s67",
+        "product_code": "s68",
+        "product_name": "s69",
+        "quantity": 106,
+        "tax": "s6b",
+        "unit_cost": 108,
+        "unit_of_measure": "s6d",
+        "intent": "INTENT01"
+      },
+      "PAYMENT_INTENT_AMOUNT_DETAILS_LINE_ITEM01": {
+        "discount_amount": 200,
+        "id": "PAYMENT_INTENT_AMOUNT_DETAILS_LINE_ITEM01",
+        "object": "sca",
+        "payment_method_options": "scb",
+        "product_code": "scc",
+        "product_name": "scd",
+        "quantity": 206,
+        "tax": "scf",
+        "unit_cost": 208,
+        "unit_of_measure": "sd1",
+        "intent": "INTENT01"
+      },
+      "PAYMENT_INTENT_AMOUNT_DETAILS_LINE_ITEM02": {
+        "discount_amount": 300,
+        "id": "PAYMENT_INTENT_AMOUNT_DETAILS_LINE_ITEM02",
+        "object": "s12e",
+        "payment_method_options": "s12f",
+        "product_code": "s130",
+        "product_name": "s131",
+        "quantity": 306,
+        "tax": "s133",
+        "unit_cost": 308,
+        "unit_of_measure": "s135",
+        "intent": "INTENT01"
+      }
+    }
+  },
+  "new": {
+    "payment_intent_amount_details_line_item": {
+      "payment_intent_amount_details_line_item_ref01": {
+        "discount_amount": 400,
+        "object": "s192",
+        "payment_method_options": "s193",
+        "product_code": "s194",
+        "product_name": "s195",
+        "quantity": 406,
+        "tax": "s197",
+        "unit_cost": 408,
+        "unit_of_measure": "s199"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/payment_intents/{intent}/amount_details_line_items": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

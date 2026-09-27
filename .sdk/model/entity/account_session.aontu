@@ -1,0 +1,174 @@
+# Entity: account_session
+
+main: kit: entity: account_session: {
+
+  alias: field: {}
+
+  fields: {
+    account_management: {
+      h: "Account Management"
+      n: "account_management"
+      r: true
+      t: "`$OBJECT`"
+    }
+    account_onboarding: {
+      h: "Account Onboarding"
+      n: "account_onboarding"
+      r: true
+      t: "`$OBJECT`"
+    }
+    balance_report: {
+      h: "Balance Report"
+      n: "balance_report"
+      r: true
+      t: "`$OBJECT`"
+    }
+    balances: {
+      h: "Balances"
+      n: "balances"
+      r: true
+      t: "`$OBJECT`"
+    }
+    disputes_list: {
+      h: "Disputes List"
+      n: "disputes_list"
+      r: true
+      t: "`$OBJECT`"
+    }
+    documents: {
+      h: "Documents"
+      n: "documents"
+      r: true
+      t: "`$OBJECT`"
+    }
+    financial_account: {
+      h: "Financial Account"
+      n: "financial_account"
+      r: true
+      t: "`$OBJECT`"
+    }
+    financial_account_transactions: {
+      h: "Financial Account Transactions"
+      n: "financial_account_transactions"
+      r: true
+      t: "`$OBJECT`"
+    }
+    instant_payouts_promotion: {
+      h: "Instant Payouts Promotion"
+      n: "instant_payouts_promotion"
+      r: true
+      t: "`$OBJECT`"
+    }
+    issuing_card: {
+      h: "Issuing Card"
+      n: "issuing_card"
+      r: true
+      t: "`$OBJECT`"
+    }
+    issuing_cards_list: {
+      h: "Issuing Cards List"
+      n: "issuing_cards_list"
+      r: true
+      t: "`$OBJECT`"
+    }
+    notification_banner: {
+      h: "Notification Banner"
+      n: "notification_banner"
+      r: true
+      t: "`$OBJECT`"
+    }
+    payment_details: {
+      h: "Payment Details"
+      n: "payment_details"
+      r: true
+      t: "`$OBJECT`"
+    }
+    payment_disputes: {
+      h: "Payment Disputes"
+      n: "payment_disputes"
+      r: true
+      t: "`$OBJECT`"
+    }
+    payment_method_settings: {
+      h: "Payment Method Settings"
+      n: "payment_method_settings"
+      r: true
+      t: "`$OBJECT`"
+    }
+    payments: {
+      h: "Payments"
+      n: "payments"
+      r: true
+      t: "`$OBJECT`"
+    }
+    payout_details: {
+      h: "Payout Details"
+      n: "payout_details"
+      r: true
+      t: "`$OBJECT`"
+    }
+    payout_reconciliation_report: {
+      h: "Payout Reconciliation Report"
+      n: "payout_reconciliation_report"
+      r: true
+      t: "`$OBJECT`"
+    }
+    payouts: {
+      h: "Payouts"
+      n: "payouts"
+      r: true
+      t: "`$OBJECT`"
+    }
+    payouts_list: {
+      h: "Payouts List"
+      n: "payouts_list"
+      r: true
+      t: "`$OBJECT`"
+    }
+    tax_registrations: {
+      h: "Tax Registrations"
+      n: "tax_registrations"
+      r: true
+      t: "`$OBJECT`"
+    }
+    tax_settings: {
+      h: "Tax Settings"
+      n: "tax_settings"
+      r: true
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "account_session"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/account_sessions"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/account_sessions"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "account_sessions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.components`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

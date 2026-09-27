@@ -1,0 +1,69 @@
+{
+  "existing": {
+    "capability": {
+      "CAPABILITY00": {
+        "account": "s50",
+        "future_requirements": {},
+        "id": "CAPABILITY00",
+        "object": "s53",
+        "requested": true,
+        "requested_at": 85,
+        "requirements": {},
+        "status": "s57",
+        "account_id": "ACCOUNT01"
+      },
+      "CAPABILITY01": {
+        "account": "sa0",
+        "future_requirements": {},
+        "id": "CAPABILITY01",
+        "object": "sa3",
+        "requested": true,
+        "requested_at": 165,
+        "requirements": {},
+        "status": "sa7",
+        "account_id": "ACCOUNT01"
+      },
+      "CAPABILITY02": {
+        "account": "sf0",
+        "future_requirements": {},
+        "id": "CAPABILITY02",
+        "object": "sf3",
+        "requested": true,
+        "requested_at": 245,
+        "requirements": {},
+        "status": "sf7",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "capability": {
+      "capability_ref01": {
+        "account": "s140",
+        "future_requirements": {},
+        "object": "s143",
+        "requested": true,
+        "requested_at": 325,
+        "requirements": {},
+        "status": "s147"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/accounts/{account}/capabilities/{capability}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/accounts/{account}/capabilities": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/accounts/{account}/capabilities/{capability}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

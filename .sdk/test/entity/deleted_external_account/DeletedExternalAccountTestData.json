@@ -1,0 +1,35 @@
+{
+  "existing": {
+    "deleted_external_account": {
+      "DELETED_EXTERNAL_ACCOUNT00": {
+        "id": "DELETED_EXTERNAL_ACCOUNT00",
+        "account_id": "ACCOUNT01"
+      },
+      "DELETED_EXTERNAL_ACCOUNT01": {
+        "id": "DELETED_EXTERNAL_ACCOUNT01",
+        "account_id": "ACCOUNT01"
+      },
+      "DELETED_EXTERNAL_ACCOUNT02": {
+        "id": "DELETED_EXTERNAL_ACCOUNT02",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "deleted_external_account": {
+      "deleted_external_account_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /v1/accounts/{account}/bank_accounts/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /v1/accounts/{account}/external_accounts/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

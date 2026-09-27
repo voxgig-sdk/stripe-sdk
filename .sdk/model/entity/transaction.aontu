@@ -1,0 +1,1160 @@
+# Entity: transaction
+
+main: kit: entity: transaction: {
+
+  alias: field: {}
+
+  fields: {
+    account: {
+      h: "Account"
+      n: "account"
+      r: true
+      sh: "The ID of the Financial Connections Account this transaction belongs to."
+      t: "`$STRING`"
+    }
+    amount: {
+      h: "Amount"
+      n: "amount"
+      r: true
+      sh: "The transaction amount, which will be reflected in your balance."
+      t: "`$INTEGER`"
+    }
+    amount_details: {
+      h: "Amount Details"
+      n: "amount_details"
+      r: false
+      sh: "Detailed breakdown of amount components."
+      t: "`$ANY`"
+    }
+    authorization: {
+      h: "Authorization"
+      n: "authorization"
+      r: false
+      sh: "The `Authorization` object that led to this transaction."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    balance_impact: {
+      h: "Balance Impact"
+      n: "balance_impact"
+      r: true
+      sh: "Change to a FinancialAccount's balance"
+      t: "`$OBJECT`"
+    }
+    balance_transaction: {
+      h: "Balance Transaction"
+      n: "balance_transaction"
+      r: false
+      sh: "ID of the [balance transaction](https://docs.stripe.com/api/balance_transactions) associated with this transaction."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    card: {
+      h: "Card"
+      n: "card"
+      r: true
+      sh: "The card used to make this transaction."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 35
+        depth: 29
+      }
+    }
+    cardholder: {
+      h: "Cardholder"
+      n: "cardholder"
+      r: false
+      sh: "The cardholder to whom this transaction belongs."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 13
+        depth: 27
+      }
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    customer: {
+      h: "Customer"
+      n: "customer"
+      r: false
+      sh: "The ID of an existing [Customer](https://docs.stripe.com/api/customers/object) used for the resource."
+      t: "`$STRING`"
+    }
+    customer_details: {
+      h: "Customer Details"
+      n: "customer_details"
+      r: true
+      t: "`$OBJECT`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: true
+      sh: "An arbitrary string attached to the object."
+      t: "`$STRING`"
+    }
+    dispute: {
+      h: "Dispute"
+      n: "dispute"
+      r: false
+      sh: "If you've disputed the transaction, the ID of the dispute."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 69
+        depth: 19
+      }
+    }
+    entries: {
+      h: "Entries"
+      n: "entries"
+      r: true
+      sh: "A list of TransactionEntries that are part of this Transaction."
+      t: "`$OBJECT`"
+      union: {
+        branches: 5
+        count: 308
+        depth: 44
+      }
+    }
+    financial_account: {
+      h: "Financial Account"
+      n: "financial_account"
+      r: true
+      sh: "The FinancialAccount associated with this object."
+      t: "`$STRING`"
+    }
+    flow: {
+      h: "Flow"
+      n: "flow"
+      r: false
+      sh: "ID of the flow that created the Transaction."
+      t: "`$STRING`"
+    }
+    flow_details: {
+      h: "Flow Details"
+      n: "flow_details"
+      r: false
+      sh: "Details of the flow that created the Transaction."
+      t: "`$ANY`"
+      union: {
+        branches: 5
+        count: 307
+        depth: 39
+      }
+    }
+    flow_type: {
+      h: "Flow Type"
+      n: "flow_type"
+      r: true
+      sh: "Type of the flow that created the Transaction."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    line_items: {
+      h: "Line Items"
+      n: "line_items"
+      r: true
+      sh: "The tax collected or refunded, by line item."
+      t: "`$OBJECT`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    merchant_amount: {
+      h: "Merchant Amount"
+      n: "merchant_amount"
+      r: true
+      sh: "The amount that the merchant will receive, denominated in `merchant_currency` and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal)."
+      t: "`$INTEGER`"
+    }
+    merchant_currency: {
+      fo: "currency"
+      h: "Merchant Currency"
+      n: "merchant_currency"
+      r: true
+      sh: "The currency with which the merchant is taking payment."
+      t: "`$STRING`"
+    }
+    merchant_data: {
+      h: "Merchant Data"
+      n: "merchant_data"
+      r: true
+      t: "`$OBJECT`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      op: {
+        create: {
+          req: false
+          type: "`$OBJECT`"
+        }
+        load: {
+          req: false
+          type: "`$OBJECT`"
+        }
+      }
+      r: true
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    network_data: {
+      h: "Network Data"
+      n: "network_data"
+      r: false
+      sh: "Details about the transaction, such as processing dates, set by the card network."
+      t: "`$ANY`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    posted_at: {
+      fo: "unix-time"
+      h: "Posted At"
+      n: "posted_at"
+      op: {
+        create: {
+          req: true
+          type: "`$INTEGER`"
+        }
+        load: {
+          req: true
+          type: "`$INTEGER`"
+        }
+      }
+      r: false
+      sh: "Time at which this transaction posted."
+      t: "`$INTEGER`"
+    }
+    purchase_details: {
+      h: "Purchase Details"
+      n: "purchase_details"
+      r: false
+      sh: "Additional purchase information that is optionally provided by the merchant."
+      t: "`$ANY`"
+    }
+    reference: {
+      h: "Reference"
+      n: "reference"
+      r: true
+      sh: "A custom unique identifier, such as 'myOrder_123'."
+      t: "`$STRING`"
+    }
+    reversal: {
+      h: "Reversal"
+      n: "reversal"
+      r: false
+      sh: "If `type=reversal`, contains information about what was reversed."
+      t: "`$ANY`"
+    }
+    ship_from_details: {
+      h: "Ship From Details"
+      n: "ship_from_details"
+      r: false
+      sh: "The details of the ship from location, such as the address."
+      t: "`$ANY`"
+    }
+    shipping_cost: {
+      h: "Shipping Cost"
+      n: "shipping_cost"
+      r: false
+      sh: "The shipping cost details for the transaction."
+      t: "`$ANY`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "Status of the Transaction."
+      t: "`$STRING`"
+    }
+    status_transitions: {
+      h: "Status Transitions"
+      n: "status_transitions"
+      r: true
+      t: "`$OBJECT`"
+    }
+    tax_date: {
+      fo: "unix-time"
+      h: "Tax Date"
+      n: "tax_date"
+      r: true
+      sh: "The calculation uses the tax rules and rates that are in effect at this timestamp."
+      t: "`$INTEGER`"
+    }
+    token: {
+      h: "Token"
+      n: "token"
+      r: false
+      sh: "[Token](https://docs.stripe.com/api/issuing/tokens/object) object used for this transaction."
+      t: "`$STRING`"
+      union: {
+        branches: 2
+        count: 63
+        depth: 33
+      }
+    }
+    transacted_at: {
+      fo: "unix-time"
+      h: "Transacted At"
+      n: "transacted_at"
+      r: true
+      sh: "Time at which the transaction was transacted."
+      t: "`$INTEGER`"
+    }
+    transaction_refresh: {
+      h: "Transaction Refresh"
+      n: "transaction_refresh"
+      r: true
+      sh: "The token of the transaction refresh that last updated or created this transaction."
+      t: "`$STRING`"
+    }
+    treasury: {
+      h: "Treasury"
+      n: "treasury"
+      r: false
+      sh: "[Treasury](https://docs.stripe.com/api/treasury) details related to this transaction if it was created on a [FinancialAccount](/docs/api/treasury/financial_accounts"
+      t: "`$ANY`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "The nature of the transaction."
+      t: "`$STRING`"
+    }
+    updated: {
+      fo: "unix-time"
+      h: "Updated"
+      n: "updated"
+      r: true
+      sh: "Time at which the object was last updated."
+      t: "`$INTEGER`"
+    }
+    void_at: {
+      fo: "unix-time"
+      h: "Void At"
+      n: "void_at"
+      r: false
+      sh: "Time at which this transaction was voided."
+      t: "`$INTEGER`"
+    }
+    wallet: {
+      h: "Wallet"
+      n: "wallet"
+      r: false
+      sh: "The digital wallet used for this transaction."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "transaction"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/issuing/transactions/{transaction}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "transaction"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/issuing/transactions/{transaction}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              transaction: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "transactions"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/transactions/{transaction}/refund"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "transaction"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/transactions/{transaction}/refund"
+          q: {
+            "$action": "refund"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              transaction: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "transactions"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "refund"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/transactions/create_force_capture"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/transactions/create_force_capture"
+          q: {
+            "$action": "create_force_capture"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "transactions"
+            }
+            {
+              lit: "create_force_capture"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/tax/transactions/create_from_calculation"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/tax/transactions/create_from_calculation"
+          q: {
+            "$action": "create_from_calculation"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "tax"
+            }
+            {
+              lit: "transactions"
+            }
+            {
+              lit: "create_from_calculation"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/tax/transactions/create_reversal"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/tax/transactions/create_reversal"
+          q: {
+            "$action": "create_reversal"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "tax"
+            }
+            {
+              lit: "transactions"
+            }
+            {
+              lit: "create_reversal"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/transactions/create_unlinked_refund"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/transactions/create_unlinked_refund"
+          q: {
+            "$action": "create_unlinked_refund"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "transactions"
+            }
+            {
+              lit: "create_unlinked_refund"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/treasury/transactions"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "financial_account"
+                or: "financial_account"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "order_by"
+                or: "order_by"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status_transition"
+                or: "status_transition"
+                r: false
+                t: "`$OBJECT`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/treasury/transactions"
+          q: {
+            exist: [
+              "created"
+              "ending_before"
+              "expand"
+              "financial_account"
+              "limit"
+              "order_by"
+              "starting_after"
+              "status"
+              "status_transition"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "transactions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/issuing/transactions"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "card"
+                or: "card"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "cardholder"
+                or: "cardholder"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "type"
+                or: "type"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/issuing/transactions"
+          q: {
+            exist: [
+              "card"
+              "cardholder"
+              "created"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+              "type"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "transactions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/financial_connections/transactions"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "account"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "transacted_at"
+                or: "transacted_at"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "transaction_refresh"
+                or: "transaction_refresh"
+                r: false
+                t: "`$OBJECT`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/financial_connections/transactions"
+          q: {
+            exist: [
+              "account"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+              "transacted_at"
+              "transaction_refresh"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "financial_connections"
+            }
+            {
+              lit: "transactions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/financial_connections/transactions/{transaction}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "transaction"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/financial_connections/transactions/{transaction}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              transaction: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "financial_connections"
+            }
+            {
+              lit: "transactions"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.status_transitions`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/issuing/transactions/{transaction}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "transaction"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/issuing/transactions/{transaction}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              transaction: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "transactions"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/tax/transactions/{transaction}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "transaction"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/tax/transactions/{transaction}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              transaction: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "tax"
+            }
+            {
+              lit: "transactions"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/treasury/transactions/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/treasury/transactions/{id}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "transactions"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

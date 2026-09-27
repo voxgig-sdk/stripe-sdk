@@ -1,0 +1,9 @@
+# BasicDeletedCouponFlow
+
+main: kit: flow: BasicDeletedCouponFlow:
+{
+  entity: "deleted_coupon",
+  kind: "basic",
+  name: "BasicDeletedCouponFlow",
+  "key$": "BasicDeletedCouponFlow"
+}

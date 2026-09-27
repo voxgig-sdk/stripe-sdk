@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "deleted_apple_pay_domain": {
+      "DELETED_APPLE_PAY_DOMAIN00": {
+        "id": "DELETED_APPLE_PAY_DOMAIN00"
+      },
+      "DELETED_APPLE_PAY_DOMAIN01": {
+        "id": "DELETED_APPLE_PAY_DOMAIN01"
+      },
+      "DELETED_APPLE_PAY_DOMAIN02": {
+        "id": "DELETED_APPLE_PAY_DOMAIN02"
+      }
+    }
+  },
+  "new": {
+    "deleted_apple_pay_domain": {
+      "deleted_apple_pay_domain_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /v1/apple_pay/domains/{domain}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

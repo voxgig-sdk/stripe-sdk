@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "credit_balance_summary": {
+      "CREDIT_BALANCE_SUMMARY00": {
+        "available_balance": {},
+        "ledger_balance": {}
+      },
+      "CREDIT_BALANCE_SUMMARY01": {
+        "available_balance": {},
+        "ledger_balance": {}
+      },
+      "CREDIT_BALANCE_SUMMARY02": {
+        "available_balance": {},
+        "ledger_balance": {}
+      }
+    }
+  },
+  "new": {
+    "credit_balance_summary": {
+      "credit_balance_summary_ref01": {
+        "available_balance": {},
+        "ledger_balance": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/billing/credit_balance_summary": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

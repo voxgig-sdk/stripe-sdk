@@ -1,0 +1,337 @@
+# Entity: subscription_item
+
+main: kit: entity: subscription_item: {
+
+  alias: field: {}
+
+  fields: {
+    billed_until: {
+      fo: "unix-time"
+      h: "Billed Until"
+      n: "billed_until"
+      r: false
+      sh: "The time period the subscription item has been billed for."
+      t: "`$INTEGER`"
+    }
+    billing_thresholds: {
+      h: "Billing Thresholds"
+      n: "billing_thresholds"
+      r: false
+      sh: "Define thresholds at which an invoice will be sent, and the related subscription advanced to a new billing period"
+      t: "`$ANY`"
+    }
+    created: {
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    current_period_end: {
+      fo: "unix-time"
+      h: "Current Period End"
+      n: "current_period_end"
+      r: true
+      sh: "The end time of this subscription item's current billing period."
+      t: "`$INTEGER`"
+    }
+    current_period_start: {
+      fo: "unix-time"
+      h: "Current Period Start"
+      n: "current_period_start"
+      r: true
+      sh: "The start time of this subscription item's current billing period."
+      t: "`$INTEGER`"
+    }
+    current_trial: {
+      h: "Current Trial"
+      n: "current_trial"
+      r: false
+      sh: "The current trial that is applied to this subscription item."
+      t: "`$ANY`"
+    }
+    discounts: {
+      h: "Discounts"
+      n: "discounts"
+      r: true
+      sh: "The discounts applied to the subscription item."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 21
+        depth: 13
+      }
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: true
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    price: {
+      h: "Price"
+      n: "price"
+      r: true
+      sh: "Prices define the unit cost, currency, and (optional) billing cycle for both recurring and one-time purchases of products."
+      t: "`$OBJECT`"
+      union: {
+        branches: 3
+        count: 6
+        depth: 7
+      }
+    }
+    quantity: {
+      h: "Quantity"
+      n: "quantity"
+      r: false
+      sh: "The [quantity](https://docs.stripe.com/subscriptions/quantities) of the plan to which the customer should be subscribed."
+      t: "`$INTEGER`"
+    }
+    subscription: {
+      h: "Subscription"
+      n: "subscription"
+      r: true
+      sh: "The `subscription` this `subscription_item` belongs to."
+      t: "`$STRING`"
+    }
+    tax_rates: {
+      h: "Tax Rates"
+      n: "tax_rates"
+      r: false
+      sh: "The tax rates which apply to this `subscription_item`."
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "subscription_item"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/subscription_items/{item}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "item"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/subscription_items/{item}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              item: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "subscription_items"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/subscription_items"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/subscription_items"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "subscription_items"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/subscription_items"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "subscription"
+                or: "subscription"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/subscription_items"
+          q: {
+            exist: [
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+              "subscription"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "subscription_items"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/subscription_items/{item}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "item"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/subscription_items/{item}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              item: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "subscription_items"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

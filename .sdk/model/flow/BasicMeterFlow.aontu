@@ -1,0 +1,52 @@
+# BasicMeterFlow
+
+main: kit: flow: BasicMeterFlow:
+{
+  entity: "meter",
+  kind: "basic",
+  name: "BasicMeterFlow",
+  step: [
+    {
+      i: {
+        ref: "meter_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "meter_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "meter_ref01",
+        srcdatavar: "meter_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "meter01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-meter_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicMeterFlow"
+}

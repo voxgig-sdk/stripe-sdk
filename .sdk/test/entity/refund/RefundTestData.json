@@ -1,0 +1,204 @@
+{
+  "existing": {
+    "refund": {
+      "REFUND00": {
+        "amount": 260,
+        "balance_transaction": "s105",
+        "charge": "s106",
+        "created": 263,
+        "currency": "s108",
+        "customer": "s109",
+        "customer_account": "s10a",
+        "description": "s10b",
+        "destination_details": {},
+        "failure_balance_transaction": "s10d",
+        "failure_reason": "s10e",
+        "fee": "s10f",
+        "id": "REFUND00",
+        "instructions_email": "s111",
+        "metadata": {},
+        "next_action": {},
+        "object": "s114",
+        "payment_intent": "s115",
+        "payment_method": "s116",
+        "pending_reason": "s117",
+        "presentment_details": {},
+        "reason": "s119",
+        "receipt_number": "s11a",
+        "source_transfer_reversal": "s11b",
+        "status": "s11c",
+        "transfer_reversal": "s11d",
+        "application_fee_id": "APPLICATION_FEE01",
+        "charge_id": "CHARGE01"
+      },
+      "REFUND01": {
+        "amount": 520,
+        "balance_transaction": "s209",
+        "charge": "s20a",
+        "created": 523,
+        "currency": "s20c",
+        "customer": "s20d",
+        "customer_account": "s20e",
+        "description": "s20f",
+        "destination_details": {},
+        "failure_balance_transaction": "s211",
+        "failure_reason": "s212",
+        "fee": "s213",
+        "id": "REFUND01",
+        "instructions_email": "s215",
+        "metadata": {},
+        "next_action": {},
+        "object": "s218",
+        "payment_intent": "s219",
+        "payment_method": "s21a",
+        "pending_reason": "s21b",
+        "presentment_details": {},
+        "reason": "s21d",
+        "receipt_number": "s21e",
+        "source_transfer_reversal": "s21f",
+        "status": "s220",
+        "transfer_reversal": "s221",
+        "application_fee_id": "APPLICATION_FEE01",
+        "charge_id": "CHARGE01"
+      },
+      "REFUND02": {
+        "amount": 780,
+        "balance_transaction": "s30d",
+        "charge": "s30e",
+        "created": 783,
+        "currency": "s310",
+        "customer": "s311",
+        "customer_account": "s312",
+        "description": "s313",
+        "destination_details": {},
+        "failure_balance_transaction": "s315",
+        "failure_reason": "s316",
+        "fee": "s317",
+        "id": "REFUND02",
+        "instructions_email": "s319",
+        "metadata": {},
+        "next_action": {},
+        "object": "s31c",
+        "payment_intent": "s31d",
+        "payment_method": "s31e",
+        "pending_reason": "s31f",
+        "presentment_details": {},
+        "reason": "s321",
+        "receipt_number": "s322",
+        "source_transfer_reversal": "s323",
+        "status": "s324",
+        "transfer_reversal": "s325",
+        "application_fee_id": "APPLICATION_FEE01",
+        "charge_id": "CHARGE01"
+      }
+    }
+  },
+  "new": {
+    "refund": {
+      "refund_ref01": {
+        "amount": 1040,
+        "balance_transaction": "s411",
+        "charge": "s412",
+        "created": 1043,
+        "currency": "s414",
+        "customer": "s415",
+        "customer_account": "s416",
+        "description": "s417",
+        "destination_details": {},
+        "failure_balance_transaction": "s419",
+        "failure_reason": "s41a",
+        "fee": "s41b",
+        "instructions_email": "s41d",
+        "metadata": {},
+        "next_action": {},
+        "object": "s420",
+        "payment_intent": "s421",
+        "payment_method": "s422",
+        "pending_reason": "s423",
+        "presentment_details": {},
+        "reason": "s425",
+        "receipt_number": "s426",
+        "source_transfer_reversal": "s427",
+        "status": "s428",
+        "transfer_reversal": "s429"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/application_fees/{fee}/refunds/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/charges/{charge}/refunds/{refund}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/application_fees/{id}/refunds": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/charges/{charge}/refunds": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/refunds/{refund}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/refunds/{refund}/cancel": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/refunds/{refund}/expire": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/refunds": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/terminal/refunds": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/refunds": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/application_fees/{id}/refunds": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/charges/{charge}/refunds": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/application_fees/{fee}/refunds/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/charges/{charge}/refunds/{refund}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/refunds/{refund}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -42,7 +42,7 @@ describe('SessionDirect', async () => {
     const params = {}
     if (setup.live) {
       const listResult = await client.direct({
-        path: 'checkout/sessions',
+        path: 'v1/checkout/sessions',
         method: 'GET',
         params: {
 
@@ -60,7 +60,7 @@ describe('SessionDirect', async () => {
     }
 
     const result = await client.direct({
-      path: 'checkout/sessions/{id}',
+      path: 'v1/checkout/sessions/{id}',
       method: 'GET',
       params,
     })
@@ -85,7 +85,7 @@ describe('SessionDirect', async () => {
     const params = {}
 
     const result = await client.direct({
-      path: 'checkout/sessions',
+      path: 'v1/checkout/sessions',
       method: 'GET',
       params,
     })

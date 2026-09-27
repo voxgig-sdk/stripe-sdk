@@ -1,0 +1,89 @@
+{
+  "existing": {
+    "confirmation_token": {
+      "CONFIRMATION_TOKEN00": {
+        "created": 150,
+        "expires_at": 151,
+        "id": "CONFIRMATION_TOKEN00",
+        "livemode": false,
+        "mandate_data": "s9a",
+        "metadata": {},
+        "object": "s9c",
+        "payment_intent": "s9d",
+        "payment_method_options": "s9e",
+        "payment_method_preview": "s9f",
+        "return_url": "sa0",
+        "setup_future_usage": "sa1",
+        "setup_intent": "sa2",
+        "shipping": "sa3",
+        "use_stripe_sdk": true
+      },
+      "CONFIRMATION_TOKEN01": {
+        "created": 300,
+        "expires_at": 301,
+        "id": "CONFIRMATION_TOKEN01",
+        "livemode": false,
+        "mandate_data": "s130",
+        "metadata": {},
+        "object": "s132",
+        "payment_intent": "s133",
+        "payment_method_options": "s134",
+        "payment_method_preview": "s135",
+        "return_url": "s136",
+        "setup_future_usage": "s137",
+        "setup_intent": "s138",
+        "shipping": "s139",
+        "use_stripe_sdk": true
+      },
+      "CONFIRMATION_TOKEN02": {
+        "created": 450,
+        "expires_at": 451,
+        "id": "CONFIRMATION_TOKEN02",
+        "livemode": false,
+        "mandate_data": "s1c6",
+        "metadata": {},
+        "object": "s1c8",
+        "payment_intent": "s1c9",
+        "payment_method_options": "s1ca",
+        "payment_method_preview": "s1cb",
+        "return_url": "s1cc",
+        "setup_future_usage": "s1cd",
+        "setup_intent": "s1ce",
+        "shipping": "s1cf",
+        "use_stripe_sdk": true
+      }
+    }
+  },
+  "new": {
+    "confirmation_token": {
+      "confirmation_token_ref01": {
+        "created": 600,
+        "expires_at": 601,
+        "livemode": false,
+        "mandate_data": "s25c",
+        "metadata": {},
+        "object": "s25e",
+        "payment_intent": "s25f",
+        "payment_method_options": "s260",
+        "payment_method_preview": "s261",
+        "return_url": "s262",
+        "setup_future_usage": "s263",
+        "setup_intent": "s264",
+        "shipping": "s265",
+        "use_stripe_sdk": true
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/test_helpers/confirmation_tokens": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/confirmation_tokens/{confirmation_token}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

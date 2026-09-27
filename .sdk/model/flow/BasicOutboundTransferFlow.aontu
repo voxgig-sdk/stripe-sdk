@@ -1,0 +1,52 @@
+# BasicOutboundTransferFlow
+
+main: kit: flow: BasicOutboundTransferFlow:
+{
+  entity: "outbound_transfer",
+  kind: "basic",
+  name: "BasicOutboundTransferFlow",
+  step: [
+    {
+      i: {
+        ref: "outbound_transfer_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "outbound_transfer_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "outbound_transfer_ref01",
+        srcdatavar: "outbound_transfer_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "outbound_transfer01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-outbound_transfer_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicOutboundTransferFlow"
+}

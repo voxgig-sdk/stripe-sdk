@@ -1,0 +1,89 @@
+{
+  "existing": {
+    "calculation": {
+      "CALCULATION00": {
+        "amount_total": 150,
+        "currency": "s97",
+        "customer": "s98",
+        "customer_details": {},
+        "expires_at": 154,
+        "id": "CALCULATION00",
+        "line_items": {},
+        "livemode": false,
+        "object": "s9e",
+        "ship_from_details": "s9f",
+        "shipping_cost": "sa0",
+        "tax_amount_exclusive": 161,
+        "tax_amount_inclusive": 162,
+        "tax_breakdown": [],
+        "tax_date": 164
+      },
+      "CALCULATION01": {
+        "amount_total": 300,
+        "currency": "s12d",
+        "customer": "s12e",
+        "customer_details": {},
+        "expires_at": 304,
+        "id": "CALCULATION01",
+        "line_items": {},
+        "livemode": false,
+        "object": "s134",
+        "ship_from_details": "s135",
+        "shipping_cost": "s136",
+        "tax_amount_exclusive": 311,
+        "tax_amount_inclusive": 312,
+        "tax_breakdown": [],
+        "tax_date": 314
+      },
+      "CALCULATION02": {
+        "amount_total": 450,
+        "currency": "s1c3",
+        "customer": "s1c4",
+        "customer_details": {},
+        "expires_at": 454,
+        "id": "CALCULATION02",
+        "line_items": {},
+        "livemode": false,
+        "object": "s1ca",
+        "ship_from_details": "s1cb",
+        "shipping_cost": "s1cc",
+        "tax_amount_exclusive": 461,
+        "tax_amount_inclusive": 462,
+        "tax_breakdown": [],
+        "tax_date": 464
+      }
+    }
+  },
+  "new": {
+    "calculation": {
+      "calculation_ref01": {
+        "amount_total": 600,
+        "currency": "s259",
+        "customer": "s25a",
+        "customer_details": {},
+        "expires_at": 604,
+        "line_items": {},
+        "livemode": false,
+        "object": "s260",
+        "ship_from_details": "s261",
+        "shipping_cost": "s262",
+        "tax_amount_exclusive": 611,
+        "tax_amount_inclusive": 612,
+        "tax_breakdown": [],
+        "tax_date": 614
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/tax/calculations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/tax/calculations/{calculation}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

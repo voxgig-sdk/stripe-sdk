@@ -1,0 +1,117 @@
+{
+  "existing": {
+    "credit_grant": {
+      "CREDIT_GRANT00": {
+        "amount": {},
+        "applicability_config": {},
+        "category": "sac",
+        "created": 173,
+        "customer": "sae",
+        "customer_account": "saf",
+        "effective_at": 176,
+        "expires_at": 177,
+        "id": "CREDIT_GRANT00",
+        "livemode": false,
+        "metadata": {},
+        "name": "sb5",
+        "object": "sb6",
+        "priority": 183,
+        "test_clock": "sb8",
+        "updated": 185,
+        "voided_at": 186
+      },
+      "CREDIT_GRANT01": {
+        "amount": {},
+        "applicability_config": {},
+        "category": "s156",
+        "created": 343,
+        "customer": "s158",
+        "customer_account": "s159",
+        "effective_at": 346,
+        "expires_at": 347,
+        "id": "CREDIT_GRANT01",
+        "livemode": false,
+        "metadata": {},
+        "name": "s15f",
+        "object": "s160",
+        "priority": 353,
+        "test_clock": "s162",
+        "updated": 355,
+        "voided_at": 356
+      },
+      "CREDIT_GRANT02": {
+        "amount": {},
+        "applicability_config": {},
+        "category": "s200",
+        "created": 513,
+        "customer": "s202",
+        "customer_account": "s203",
+        "effective_at": 516,
+        "expires_at": 517,
+        "id": "CREDIT_GRANT02",
+        "livemode": false,
+        "metadata": {},
+        "name": "s209",
+        "object": "s20a",
+        "priority": 523,
+        "test_clock": "s20c",
+        "updated": 525,
+        "voided_at": 526
+      }
+    }
+  },
+  "new": {
+    "credit_grant": {
+      "credit_grant_ref01": {
+        "amount": {},
+        "applicability_config": {},
+        "category": "s2aa",
+        "created": 683,
+        "customer": "s2ac",
+        "customer_account": "s2ad",
+        "effective_at": 686,
+        "expires_at": 687,
+        "livemode": false,
+        "metadata": {},
+        "name": "s2b3",
+        "object": "s2b4",
+        "priority": 693,
+        "test_clock": "s2b6",
+        "updated": 695,
+        "voided_at": 696
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/billing/credit_grants/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/billing/credit_grants/{id}/expire": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/billing/credit_grants/{id}/void": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/billing/credit_grants": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/billing/credit_grants": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/billing/credit_grants/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

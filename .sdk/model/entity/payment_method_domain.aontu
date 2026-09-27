@@ -1,0 +1,368 @@
+# Entity: payment_method_domain
+
+main: kit: entity: payment_method_domain: {
+
+  alias: field: {}
+
+  fields: {
+    amazon_pay: {
+      h: "Amazon Pay"
+      n: "amazon_pay"
+      r: true
+      sh: "Indicates the status of a specific payment method on a payment method domain."
+      t: "`$OBJECT`"
+    }
+    apple_pay: {
+      h: "Apple Pay"
+      n: "apple_pay"
+      r: true
+      sh: "Indicates the status of a specific payment method on a payment method domain."
+      t: "`$OBJECT`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    domain_name: {
+      h: "Domain Name"
+      n: "domain_name"
+      r: true
+      sh: "The domain name that this payment method domain object represents."
+      t: "`$STRING`"
+    }
+    enabled: {
+      h: "Enabled"
+      n: "enabled"
+      r: true
+      sh: "Whether this payment method domain is enabled."
+      t: "`$BOOLEAN`"
+    }
+    google_pay: {
+      h: "Google Pay"
+      n: "google_pay"
+      r: true
+      sh: "Indicates the status of a specific payment method on a payment method domain."
+      t: "`$OBJECT`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    klarna: {
+      h: "Klarna"
+      n: "klarna"
+      r: true
+      sh: "Indicates the status of a specific payment method on a payment method domain."
+      t: "`$OBJECT`"
+    }
+    link: {
+      h: "Link"
+      n: "link"
+      r: true
+      sh: "Indicates the status of a specific payment method on a payment method domain."
+      t: "`$OBJECT`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    paypal: {
+      h: "Paypal"
+      n: "paypal"
+      r: true
+      sh: "Indicates the status of a specific payment method on a payment method domain."
+      t: "`$OBJECT`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "payment_method_domain"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/payment_method_domains/{payment_method_domain}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "payment_method_domain"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/payment_method_domains/{payment_method_domain}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              payment_method_domain: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_method_domains"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/payment_method_domains/{payment_method_domain}/validate"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "payment_method_domain"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/payment_method_domains/{payment_method_domain}/validate"
+          q: {
+            "$action": "validate"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              payment_method_domain: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_method_domains"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "validate"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/payment_method_domains"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/payment_method_domains"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_method_domains"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/payment_method_domains"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "domain_name"
+                or: "domain_name"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "enabled"
+                or: "enabled"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/payment_method_domains"
+          q: {
+            exist: [
+              "domain_name"
+              "enabled"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_method_domains"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/payment_method_domains/{payment_method_domain}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "payment_method_domain"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/payment_method_domains/{payment_method_domain}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              payment_method_domain: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_method_domains"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

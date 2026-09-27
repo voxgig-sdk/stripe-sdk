@@ -1,0 +1,244 @@
+# Entity: early_fraud_warning
+
+main: kit: entity: early_fraud_warning: {
+
+  alias: field: {}
+
+  fields: {
+    actionable: {
+      h: "Actionable"
+      n: "actionable"
+      r: true
+      sh: "An EFW is actionable if it has not received a dispute and has not been fully refunded."
+      t: "`$BOOLEAN`"
+    }
+    charge: {
+      h: "Charge"
+      n: "charge"
+      r: true
+      sh: "ID of the charge this early fraud warning is for, optionally expanded."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 9097
+        depth: 49
+      }
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    fraud_type: {
+      h: "Fraud Type"
+      n: "fraud_type"
+      r: true
+      sh: "The type of fraud labelled by the issuer."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    payment_intent: {
+      h: "Payment Intent"
+      n: "payment_intent"
+      r: false
+      sh: "ID of the Payment Intent this early fraud warning is for, optionally expanded."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 16842
+        depth: 53
+      }
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "early_fraud_warning"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/radar/early_fraud_warnings"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "charge"
+                or: "charge"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "payment_intent"
+                or: "payment_intent"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/radar/early_fraud_warnings"
+          q: {
+            exist: [
+              "charge"
+              "created"
+              "ending_before"
+              "expand"
+              "limit"
+              "payment_intent"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "radar"
+            }
+            {
+              lit: "early_fraud_warnings"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/radar/early_fraud_warnings/{early_fraud_warning}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "early_fraud_warning"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/radar/early_fraud_warnings/{early_fraud_warning}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              early_fraud_warning: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "radar"
+            }
+            {
+              lit: "early_fraud_warnings"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

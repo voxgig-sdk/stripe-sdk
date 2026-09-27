@@ -1,0 +1,44 @@
+# BasicCreditBalanceTransactionFlow
+
+main: kit: flow: BasicCreditBalanceTransactionFlow:
+{
+  entity: "credit_balance_transaction",
+  kind: "basic",
+  name: "BasicCreditBalanceTransactionFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "credit_balance_transaction_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "credit_balance_transaction_ref01",
+        srcdatavar: "credit_balance_transaction_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "credit_balance_transaction01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-credit_balance_transaction_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCreditBalanceTransactionFlow"
+}

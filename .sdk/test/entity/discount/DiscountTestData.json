@@ -1,0 +1,102 @@
+{
+  "existing": {
+    "discount": {
+      "DISCOUNT00": {
+        "checkout_session": "s82",
+        "customer": "s83",
+        "customer_account": "s84",
+        "end": 133,
+        "id": "DISCOUNT00",
+        "invoice": "s87",
+        "invoice_item": "s88",
+        "object": "s89",
+        "promotion_code": "s8a",
+        "source": {},
+        "start": 140,
+        "subscription": "s8d",
+        "subscription_item": "s8e",
+        "customer_id": "CUSTOMER01",
+        "subscription_id": "SUBSCRIPTION01"
+      },
+      "DISCOUNT01": {
+        "checkout_session": "s104",
+        "customer": "s105",
+        "customer_account": "s106",
+        "end": 263,
+        "id": "DISCOUNT01",
+        "invoice": "s109",
+        "invoice_item": "s10a",
+        "object": "s10b",
+        "promotion_code": "s10c",
+        "source": {},
+        "start": 270,
+        "subscription": "s10f",
+        "subscription_item": "s110",
+        "customer_id": "CUSTOMER01",
+        "subscription_id": "SUBSCRIPTION01"
+      },
+      "DISCOUNT02": {
+        "checkout_session": "s186",
+        "customer": "s187",
+        "customer_account": "s188",
+        "end": 393,
+        "id": "DISCOUNT02",
+        "invoice": "s18b",
+        "invoice_item": "s18c",
+        "object": "s18d",
+        "promotion_code": "s18e",
+        "source": {},
+        "start": 400,
+        "subscription": "s191",
+        "subscription_item": "s192",
+        "customer_id": "CUSTOMER01",
+        "subscription_id": "SUBSCRIPTION01"
+      }
+    }
+  },
+  "new": {
+    "discount": {
+      "discount_ref01": {
+        "checkout_session": "s208",
+        "customer": "s209",
+        "customer_account": "s20a",
+        "end": 523,
+        "invoice": "s20d",
+        "invoice_item": "s20e",
+        "object": "s20f",
+        "promotion_code": "s210",
+        "source": {},
+        "start": 530,
+        "subscription": "s213",
+        "subscription_item": "s214"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/customers/{customer}/discount": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /v1/customers/{customer}/subscriptions/{subscription_exposed_id}/discount": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /v1/customers/{customer}/discount": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /v1/subscriptions/{subscription_exposed_id}/discount": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

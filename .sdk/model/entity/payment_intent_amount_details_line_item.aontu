@@ -1,0 +1,176 @@
+# Entity: payment_intent_amount_details_line_item
+
+main: kit: entity: payment_intent_amount_details_line_item: {
+
+  alias: field: {}
+
+  fields: {
+    discount_amount: {
+      h: "Discount Amount"
+      n: "discount_amount"
+      r: false
+      sh: "The discount applied on this line item represented in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal)."
+      t: "`$INTEGER`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    payment_method_options: {
+      h: "Payment Method Options"
+      n: "payment_method_options"
+      r: false
+      sh: "Payment method-specific information for line items."
+      t: "`$ANY`"
+    }
+    product_code: {
+      h: "Product Code"
+      n: "product_code"
+      r: false
+      sh: "The product code of the line item, such as an SKU."
+      t: "`$STRING`"
+    }
+    product_name: {
+      h: "Product Name"
+      n: "product_name"
+      r: true
+      sh: "The product name of the line item."
+      t: "`$STRING`"
+    }
+    quantity: {
+      h: "Quantity"
+      n: "quantity"
+      r: true
+      sh: "The quantity of items."
+      t: "`$INTEGER`"
+    }
+    tax: {
+      h: "Tax"
+      n: "tax"
+      r: false
+      sh: "Contains information about the tax on the item."
+      t: "`$ANY`"
+    }
+    unit_cost: {
+      h: "Unit Cost"
+      n: "unit_cost"
+      r: true
+      sh: "The unit cost of the line item represented in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal)."
+      t: "`$INTEGER`"
+    }
+    unit_of_measure: {
+      h: "Unit Of Measure"
+      n: "unit_of_measure"
+      r: false
+      sh: "A unit of measure for the line item, such as gallons, feet, meters, etc."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "payment_intent_amount_details_line_item"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/payment_intents/{intent}/amount_details_line_items"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "intent"
+                or: "intent"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/payment_intents/{intent}/amount_details_line_items"
+          q: {
+            exist: [
+              "ending_before"
+              "expand"
+              "intent"
+              "limit"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_intents"
+            }
+            {
+              var: "intent"
+            }
+            {
+              lit: "amount_details_line_items"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.payment_intent")]
+  ]
+
+}

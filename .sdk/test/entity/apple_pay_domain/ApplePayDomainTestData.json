@@ -1,0 +1,49 @@
+{
+  "existing": {
+    "apple_pay_domain": {
+      "APPLE_PAY_DOMAIN00": {
+        "created": 50,
+        "domain_name": "s33",
+        "id": "APPLE_PAY_DOMAIN00",
+        "livemode": false,
+        "object": "s36"
+      },
+      "APPLE_PAY_DOMAIN01": {
+        "created": 100,
+        "domain_name": "s65",
+        "id": "APPLE_PAY_DOMAIN01",
+        "livemode": false,
+        "object": "s68"
+      },
+      "APPLE_PAY_DOMAIN02": {
+        "created": 150,
+        "domain_name": "s97",
+        "id": "APPLE_PAY_DOMAIN02",
+        "livemode": false,
+        "object": "s9a"
+      }
+    }
+  },
+  "new": {
+    "apple_pay_domain": {
+      "apple_pay_domain_ref01": {
+        "created": 200,
+        "domain_name": "sc9",
+        "livemode": false,
+        "object": "scc"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/apple_pay/domains": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/apple_pay/domains/{domain}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

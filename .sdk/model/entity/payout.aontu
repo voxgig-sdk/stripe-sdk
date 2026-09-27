@@ -1,0 +1,570 @@
+# Entity: payout
+
+main: kit: entity: payout: {
+
+  alias: field: {}
+
+  fields: {
+    amount: {
+      h: "Amount"
+      n: "amount"
+      r: true
+      sh: "The amount (in cents (or local equivalent)) that transfers to your bank account or debit card."
+      t: "`$INTEGER`"
+    }
+    application_fee: {
+      h: "Application Fee"
+      n: "application_fee"
+      r: false
+      sh: "The application fee (if any) for the payout."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    application_fee_amount: {
+      h: "Application Fee Amount"
+      n: "application_fee_amount"
+      r: false
+      sh: "The amount of the application fee (if any) requested for the payout."
+      t: "`$INTEGER`"
+    }
+    arrival_date: {
+      fo: "unix-time"
+      h: "Arrival Date"
+      n: "arrival_date"
+      r: true
+      sh: "Date that you can expect the payout to arrive in the bank."
+      t: "`$INTEGER`"
+    }
+    automatic: {
+      h: "Automatic"
+      n: "automatic"
+      r: true
+      sh: "Returns `true` if the payout is created by an [automated payout schedule](https://docs.stripe.com/payouts#payout-schedule) and `false` if it's [requested manually](https://stripe.com/docs/payouts#manual-payouts)."
+      t: "`$BOOLEAN`"
+    }
+    balance_transaction: {
+      h: "Balance Transaction"
+      n: "balance_transaction"
+      r: false
+      sh: "ID of the balance transaction that describes the impact of this payout on your account balance."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "An arbitrary string attached to the object."
+      t: "`$STRING`"
+    }
+    destination: {
+      h: "Destination"
+      n: "destination"
+      r: false
+      sh: "ID of the bank account or card the payout is sent to."
+      t: "`$ANY`"
+      union: {
+        branches: 5
+        count: 8
+        depth: 6
+      }
+    }
+    failure_balance_transaction: {
+      h: "Failure Balance Transaction"
+      n: "failure_balance_transaction"
+      r: false
+      sh: "If the payout fails or cancels, this is the ID of the balance transaction that reverses the initial balance transaction and returns the funds from the failed payout back in your balance."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    failure_code: {
+      h: "Failure Code"
+      n: "failure_code"
+      r: false
+      sh: "Error code that provides a reason for a payout failure, if available."
+      t: "`$STRING`"
+    }
+    failure_message: {
+      h: "Failure Message"
+      n: "failure_message"
+      r: false
+      sh: "Message that provides the reason for a payout failure, if available."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    method: {
+      h: "Method"
+      n: "method"
+      r: true
+      sh: "The method used to send this payout, which can be `standard` or `instant`."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    original_payout: {
+      h: "Original Payout"
+      n: "original_payout"
+      r: false
+      sh: "If the payout reverses another, this is the ID of the original payout."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    payout_method: {
+      h: "Payout Method"
+      n: "payout_method"
+      r: false
+      sh: "ID of the v2 FinancialAccount the funds are sent to."
+      t: "`$STRING`"
+    }
+    reconciliation_status: {
+      h: "Reconciliation Status"
+      n: "reconciliation_status"
+      r: true
+      sh: "If `completed`, you can use the [Balance Transactions API](https://docs.stripe.com/api/balance_transactions/list#balance_transaction_list-payout) to list all balance transactions that are paid out in this payout."
+      t: "`$STRING`"
+    }
+    reversed_by: {
+      h: "Reversed By"
+      n: "reversed_by"
+      r: false
+      sh: "If the payout reverses, this is the ID of the payout that reverses this payout."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    source_type: {
+      h: "Source Type"
+      n: "source_type"
+      r: true
+      sh: "The source balance this payout came from, which can be one of the following: `card`, `fpx`, or `bank_account`."
+      t: "`$STRING`"
+    }
+    statement_descriptor: {
+      h: "Statement Descriptor"
+      n: "statement_descriptor"
+      r: false
+      sh: "Extra information about a payout that displays on the user's bank statement."
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "Current status of the payout: `paid`, `pending`, `in_transit`, `canceled` or `failed`."
+      t: "`$STRING`"
+    }
+    trace_id: {
+      h: "Trace Id"
+      n: "trace_id"
+      r: false
+      sh: "A value that generates from the beneficiary's bank that allows users to track payouts with their bank."
+      t: "`$STRING`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "Can be `bank_account` or `card`."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "payout"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/payouts/{payout}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "payout"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/payouts/{payout}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              payout: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payouts"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/payouts/{payout}/cancel"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "payout"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/payouts/{payout}/cancel"
+          q: {
+            "$action": "cancel"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              payout: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payouts"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "cancel"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/payouts/{payout}/reverse"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "payout"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/payouts/{payout}/reverse"
+          q: {
+            "$action": "reverse"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              payout: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payouts"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "reverse"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/payouts"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/payouts"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payouts"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/payouts"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "arrival_date"
+                or: "arrival_date"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "destination"
+                or: "destination"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/payouts"
+          q: {
+            exist: [
+              "arrival_date"
+              "created"
+              "destination"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+              "status"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payouts"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/payouts/{payout}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "payout"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/payouts/{payout}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              payout: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payouts"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

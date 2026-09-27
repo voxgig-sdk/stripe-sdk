@@ -1,0 +1,116 @@
+{
+  "existing": {
+    "account_session": {
+      "ACCOUNT_SESSION00": {
+        "account_management": {},
+        "account_onboarding": {},
+        "balance_report": {},
+        "balances": {},
+        "disputes_list": {},
+        "documents": {},
+        "financial_account": {},
+        "financial_account_transactions": {},
+        "instant_payouts_promotion": {},
+        "issuing_card": {},
+        "issuing_cards_list": {},
+        "notification_banner": {},
+        "payment_details": {},
+        "payment_disputes": {},
+        "payment_method_settings": {},
+        "payments": {},
+        "payout_details": {},
+        "payout_reconciliation_report": {},
+        "payouts": {},
+        "payouts_list": {},
+        "tax_registrations": {},
+        "tax_settings": {},
+        "id": "ACCOUNT_SESSION00"
+      },
+      "ACCOUNT_SESSION01": {
+        "account_management": {},
+        "account_onboarding": {},
+        "balance_report": {},
+        "balances": {},
+        "disputes_list": {},
+        "documents": {},
+        "financial_account": {},
+        "financial_account_transactions": {},
+        "instant_payouts_promotion": {},
+        "issuing_card": {},
+        "issuing_cards_list": {},
+        "notification_banner": {},
+        "payment_details": {},
+        "payment_disputes": {},
+        "payment_method_settings": {},
+        "payments": {},
+        "payout_details": {},
+        "payout_reconciliation_report": {},
+        "payouts": {},
+        "payouts_list": {},
+        "tax_registrations": {},
+        "tax_settings": {},
+        "id": "ACCOUNT_SESSION01"
+      },
+      "ACCOUNT_SESSION02": {
+        "account_management": {},
+        "account_onboarding": {},
+        "balance_report": {},
+        "balances": {},
+        "disputes_list": {},
+        "documents": {},
+        "financial_account": {},
+        "financial_account_transactions": {},
+        "instant_payouts_promotion": {},
+        "issuing_card": {},
+        "issuing_cards_list": {},
+        "notification_banner": {},
+        "payment_details": {},
+        "payment_disputes": {},
+        "payment_method_settings": {},
+        "payments": {},
+        "payout_details": {},
+        "payout_reconciliation_report": {},
+        "payouts": {},
+        "payouts_list": {},
+        "tax_registrations": {},
+        "tax_settings": {},
+        "id": "ACCOUNT_SESSION02"
+      }
+    }
+  },
+  "new": {
+    "account_session": {
+      "account_session_ref01": {
+        "account_management": {},
+        "account_onboarding": {},
+        "balance_report": {},
+        "balances": {},
+        "disputes_list": {},
+        "documents": {},
+        "financial_account": {},
+        "financial_account_transactions": {},
+        "instant_payouts_promotion": {},
+        "issuing_card": {},
+        "issuing_cards_list": {},
+        "notification_banner": {},
+        "payment_details": {},
+        "payment_disputes": {},
+        "payment_method_settings": {},
+        "payments": {},
+        "payout_details": {},
+        "payout_reconciliation_report": {},
+        "payouts": {},
+        "payouts_list": {},
+        "tax_registrations": {},
+        "tax_settings": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/account_sessions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

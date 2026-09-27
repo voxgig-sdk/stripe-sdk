@@ -1,0 +1,52 @@
+{
+  "existing": {
+    "meter_event_summary": {
+      "METER_EVENT_SUMMARY00": {
+        "aggregated_value": 70,
+        "end_time": 71,
+        "id": "METER_EVENT_SUMMARY00",
+        "livemode": false,
+        "meter": "s4a",
+        "object": "s4b",
+        "start_time": 76
+      },
+      "METER_EVENT_SUMMARY01": {
+        "aggregated_value": 140,
+        "end_time": 141,
+        "id": "METER_EVENT_SUMMARY01",
+        "livemode": false,
+        "meter": "s90",
+        "object": "s91",
+        "start_time": 146
+      },
+      "METER_EVENT_SUMMARY02": {
+        "aggregated_value": 210,
+        "end_time": 211,
+        "id": "METER_EVENT_SUMMARY02",
+        "livemode": false,
+        "meter": "sd6",
+        "object": "sd7",
+        "start_time": 216
+      }
+    }
+  },
+  "new": {
+    "meter_event_summary": {
+      "meter_event_summary_ref01": {
+        "aggregated_value": 280,
+        "end_time": 281,
+        "livemode": false,
+        "meter": "s11c",
+        "object": "s11d",
+        "start_time": 286
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/billing/meters/{id}/event_summaries": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

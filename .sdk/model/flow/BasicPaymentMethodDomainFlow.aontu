@@ -1,0 +1,52 @@
+# BasicPaymentMethodDomainFlow
+
+main: kit: flow: BasicPaymentMethodDomainFlow:
+{
+  entity: "payment_method_domain",
+  kind: "basic",
+  name: "BasicPaymentMethodDomainFlow",
+  step: [
+    {
+      i: {
+        ref: "payment_method_domain_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "payment_method_domain_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "payment_method_domain_ref01",
+        srcdatavar: "payment_method_domain_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "payment_method_domain01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-payment_method_domain_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPaymentMethodDomainFlow"
+}

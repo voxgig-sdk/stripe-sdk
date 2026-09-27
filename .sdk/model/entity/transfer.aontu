@@ -1,0 +1,383 @@
+# Entity: transfer
+
+main: kit: entity: transfer: {
+
+  alias: field: {}
+
+  fields: {
+    amount: {
+      h: "Amount"
+      n: "amount"
+      r: true
+      sh: "Amount in cents (or local equivalent) to be transferred."
+      t: "`$INTEGER`"
+    }
+    amount_reversed: {
+      h: "Amount Reversed"
+      n: "amount_reversed"
+      r: true
+      sh: "Amount in cents (or local equivalent) reversed (can be less than the amount attribute on the transfer if a partial reversal was issued)."
+      t: "`$INTEGER`"
+    }
+    balance_transaction: {
+      h: "Balance Transaction"
+      n: "balance_transaction"
+      r: false
+      sh: "Balance transaction that describes the impact of this transfer on your account balance."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time that this record of the transfer was first created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "An arbitrary string attached to the object."
+      t: "`$STRING`"
+    }
+    destination: {
+      h: "Destination"
+      n: "destination"
+      r: false
+      sh: "ID of the Stripe account the transfer was sent to."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    destination_payment: {
+      h: "Destination Payment"
+      n: "destination_payment"
+      r: false
+      sh: "If the destination is a Stripe account, this will be the ID of the payment that the destination account received for the transfer."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: true
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    reversals: {
+      h: "Reversals"
+      n: "reversals"
+      r: true
+      sh: "A list of reversals that have been applied to the transfer."
+      t: "`$OBJECT`"
+    }
+    reversed: {
+      h: "Reversed"
+      n: "reversed"
+      r: true
+      sh: "Whether the transfer has been fully reversed."
+      t: "`$BOOLEAN`"
+    }
+    source_transaction: {
+      h: "Source Transaction"
+      n: "source_transaction"
+      r: false
+      sh: "ID of the charge that was used to fund the transfer."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    source_type: {
+      h: "Source Type"
+      n: "source_type"
+      r: false
+      sh: "The source balance this transfer came from."
+      t: "`$STRING`"
+    }
+    transfer_group: {
+      h: "Transfer Group"
+      n: "transfer_group"
+      r: false
+      sh: "A string that identifies this transaction as part of a group."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "transfer"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/transfers/{transfer}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "transfer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/transfers/{transfer}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              transfer: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "transfers"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/transfers"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/transfers"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "transfers"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/transfers"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "destination"
+                or: "destination"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "transfer_group"
+                or: "transfer_group"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/transfers"
+          q: {
+            exist: [
+              "created"
+              "destination"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+              "transfer_group"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "transfers"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/transfers/{transfer}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "transfer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/transfers/{transfer}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              transfer: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "transfers"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

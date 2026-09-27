@@ -1,0 +1,44 @@
+# BasicPhysicalBundleFlow
+
+main: kit: flow: BasicPhysicalBundleFlow:
+{
+  entity: "physical_bundle",
+  kind: "basic",
+  name: "BasicPhysicalBundleFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "physical_bundle_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "physical_bundle_ref01",
+        srcdatavar: "physical_bundle_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "physical_bundle01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-physical_bundle_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPhysicalBundleFlow"
+}

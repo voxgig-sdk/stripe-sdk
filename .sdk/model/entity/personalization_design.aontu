@@ -1,0 +1,519 @@
+# Entity: personalization_design
+
+main: kit: entity: personalization_design: {
+
+  alias: field: {}
+
+  fields: {
+    card_logo: {
+      h: "Card Logo"
+      n: "card_logo"
+      r: false
+      sh: "The file for the card logo to use with physical bundles that support card logos."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 3
+        depth: 10
+      }
+    }
+    carrier_text: {
+      h: "Carrier Text"
+      n: "carrier_text"
+      r: false
+      sh: "Hash containing carrier text, for use with physical bundles that support carrier text."
+      t: "`$ANY`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    lookup_key: {
+      h: "Lookup Key"
+      n: "lookup_key"
+      r: false
+      sh: "A lookup key used to retrieve personalization designs dynamically from a static string."
+      t: "`$STRING`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: true
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "Friendly display name."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    physical_bundle: {
+      h: "Physical Bundle"
+      n: "physical_bundle"
+      r: true
+      sh: "The physical bundle object belonging to this personalization design."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    preferences: {
+      h: "Preferences"
+      n: "preferences"
+      r: true
+      t: "`$OBJECT`"
+    }
+    rejection_reasons: {
+      h: "Rejection Reasons"
+      n: "rejection_reasons"
+      r: true
+      t: "`$OBJECT`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "Whether this personalization design can be used to create cards."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "personalization_design"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/issuing/personalization_designs/{personalization_design}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "personalization_design"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/issuing/personalization_designs/{personalization_design}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              personalization_design: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "personalization_designs"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/activate"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "personalization_design"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/personalization_designs/{personalization_design}/activate"
+          q: {
+            "$action": "activate"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              personalization_design: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "personalization_designs"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "activate"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/deactivate"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "personalization_design"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/personalization_designs/{personalization_design}/deactivate"
+          q: {
+            "$action": "deactivate"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              personalization_design: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "personalization_designs"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "deactivate"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/personalization_designs/{personalization_design}/reject"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "personalization_design"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/personalization_designs/{personalization_design}/reject"
+          q: {
+            "$action": "reject"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              personalization_design: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "personalization_designs"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "reject"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/issuing/personalization_designs"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/issuing/personalization_designs"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "personalization_designs"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/issuing/personalization_designs"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "lookup_key"
+                or: "lookup_key"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "preference"
+                or: "preference"
+                r: false
+                t: "`$OBJECT`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/issuing/personalization_designs"
+          q: {
+            exist: [
+              "ending_before"
+              "expand"
+              "limit"
+              "lookup_key"
+              "preference"
+              "starting_after"
+              "status"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "personalization_designs"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/issuing/personalization_designs/{personalization_design}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "personalization_design"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/issuing/personalization_designs/{personalization_design}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              personalization_design: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "personalization_designs"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,97 @@
+# Entity: credit_balance_summary
+
+main: kit: entity: credit_balance_summary: {
+
+  alias: field: {}
+
+  fields: {
+    available_balance: {
+      h: "Available Balance"
+      n: "available_balance"
+      r: true
+      t: "`$OBJECT`"
+    }
+    ledger_balance: {
+      h: "Ledger Balance"
+      n: "ledger_balance"
+      r: true
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "credit_balance_summary"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/billing/credit_balance_summary"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "customer"
+                or: "customer"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "customer_account"
+                or: "customer_account"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "filter"
+                or: "filter"
+                r: true
+                t: "`$OBJECT`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/billing/credit_balance_summary"
+          q: {
+            exist: [
+              "customer"
+              "customer_account"
+              "expand"
+              "filter"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "billing"
+            }
+            {
+              lit: "credit_balance_summary"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

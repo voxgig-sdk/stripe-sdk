@@ -1,0 +1,66 @@
+# Entity: connection_token
+
+main: kit: entity: connection_token: {
+
+  alias: field: {}
+
+  fields: {
+    location: {
+      h: "Location"
+      n: "location"
+      r: false
+      sh: "The id of the location that this connection token is scoped to."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    secret: {
+      h: "Secret"
+      n: "secret"
+      r: true
+      sh: "Your application should pass this token to the Stripe Terminal SDK."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "connection_token"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/terminal/connection_tokens"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/terminal/connection_tokens"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "connection_tokens"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

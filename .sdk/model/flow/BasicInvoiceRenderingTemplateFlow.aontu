@@ -1,0 +1,56 @@
+# BasicInvoiceRenderingTemplateFlow
+
+main: kit: flow: BasicInvoiceRenderingTemplateFlow:
+{
+  entity: "invoice_rendering_template",
+  kind: "basic",
+  name: "BasicInvoiceRenderingTemplateFlow",
+  step: [
+    {
+      i: {
+        ref: "invoice_rendering_template_ref01"
+      }
+
+      m: {
+        template: "template01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "invoice_rendering_template_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "invoice_rendering_template_ref01",
+        srcdatavar: "invoice_rendering_template_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "invoice_rendering_template01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-invoice_rendering_template_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicInvoiceRenderingTemplateFlow"
+}

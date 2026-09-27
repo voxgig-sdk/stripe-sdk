@@ -1,0 +1,108 @@
+{
+  "existing": {
+    "token": {
+      "TOKEN00": {
+        "bank_account": {},
+        "card": "sa1",
+        "client_ip": "sa2",
+        "created": 163,
+        "device_fingerprint": "sa4",
+        "id": "TOKEN00",
+        "last4": "sa6",
+        "livemode": false,
+        "network": "sa8",
+        "network_data": {},
+        "network_updated_at": 170,
+        "object": "sab",
+        "status": "sac",
+        "type": "sad",
+        "used": true,
+        "wallet_provider": "saf"
+      },
+      "TOKEN01": {
+        "bank_account": {},
+        "card": "s141",
+        "client_ip": "s142",
+        "created": 323,
+        "device_fingerprint": "s144",
+        "id": "TOKEN01",
+        "last4": "s146",
+        "livemode": false,
+        "network": "s148",
+        "network_data": {},
+        "network_updated_at": 330,
+        "object": "s14b",
+        "status": "s14c",
+        "type": "s14d",
+        "used": true,
+        "wallet_provider": "s14f"
+      },
+      "TOKEN02": {
+        "bank_account": {},
+        "card": "s1e1",
+        "client_ip": "s1e2",
+        "created": 483,
+        "device_fingerprint": "s1e4",
+        "id": "TOKEN02",
+        "last4": "s1e6",
+        "livemode": false,
+        "network": "s1e8",
+        "network_data": {},
+        "network_updated_at": 490,
+        "object": "s1eb",
+        "status": "s1ec",
+        "type": "s1ed",
+        "used": true,
+        "wallet_provider": "s1ef"
+      }
+    }
+  },
+  "new": {
+    "token": {
+      "token_ref01": {
+        "bank_account": {},
+        "card": "s281",
+        "client_ip": "s282",
+        "created": 643,
+        "device_fingerprint": "s284",
+        "last4": "s286",
+        "livemode": false,
+        "network": "s288",
+        "network_data": {},
+        "network_updated_at": 650,
+        "object": "s28b",
+        "status": "s28c",
+        "type": "s28d",
+        "used": true,
+        "wallet_provider": "s28f"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/issuing/tokens/{token}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/tokens": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/issuing/tokens": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/issuing/tokens/{token}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/tokens/{token}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+# BasicQuotePdfFlow
+
+main: kit: flow: BasicQuotePdfFlow:
+{
+  entity: "quote_pdf",
+  kind: "basic",
+  name: "BasicQuotePdfFlow",
+  step: [
+    {
+      i: {
+        ref: "quote_pdf_ref01",
+        srcdatavar: "quote_pdf_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "quote_pdf01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-quote_pdf_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicQuotePdfFlow"
+}

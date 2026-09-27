@@ -1,0 +1,22 @@
+# BasicSetupAttemptFlow
+
+main: kit: flow: BasicSetupAttemptFlow:
+{
+  entity: "setup_attempt",
+  kind: "basic",
+  name: "BasicSetupAttemptFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "setup_attempt_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSetupAttemptFlow"
+}

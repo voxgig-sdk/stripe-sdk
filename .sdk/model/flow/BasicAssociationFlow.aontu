@@ -1,0 +1,22 @@
+# BasicAssociationFlow
+
+main: kit: flow: BasicAssociationFlow:
+{
+  entity: "association",
+  kind: "basic",
+  name: "BasicAssociationFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "association_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicAssociationFlow"
+}

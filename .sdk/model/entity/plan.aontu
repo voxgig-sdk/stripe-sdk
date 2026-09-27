@@ -1,0 +1,390 @@
+# Entity: plan
+
+main: kit: entity: plan: {
+
+  alias: field: {}
+
+  fields: {
+    active: {
+      h: "Active"
+      n: "active"
+      r: true
+      sh: "Whether the plan can be used for new purchases."
+      t: "`$BOOLEAN`"
+    }
+    amount: {
+      h: "Amount"
+      n: "amount"
+      r: false
+      sh: "The unit amount in cents (or local equivalent) to be charged, represented as a whole integer if possible."
+      t: "`$INTEGER`"
+    }
+    amount_decimal: {
+      fo: "decimal"
+      h: "Amount Decimal"
+      n: "amount_decimal"
+      r: false
+      sh: "The unit amount in cents (or local equivalent) to be charged, represented as a decimal string with at most 12 decimal places."
+      t: "`$STRING`"
+    }
+    billing_scheme: {
+      h: "Billing Scheme"
+      n: "billing_scheme"
+      r: true
+      sh: "Describes how to compute the price per period."
+      t: "`$STRING`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    interval: {
+      h: "Interval"
+      n: "interval"
+      r: true
+      sh: "The frequency at which a subscription is billed."
+      t: "`$STRING`"
+    }
+    interval_count: {
+      h: "Interval Count"
+      n: "interval_count"
+      r: true
+      sh: "The number of intervals (specified in the `interval` attribute) between subscription billings."
+      t: "`$INTEGER`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    meter: {
+      h: "Meter"
+      n: "meter"
+      r: false
+      sh: "The meter tracking the usage of a metered price"
+      t: "`$STRING`"
+    }
+    nickname: {
+      h: "Nickname"
+      n: "nickname"
+      r: false
+      sh: "A brief description of the plan, hidden from customers."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    product: {
+      h: "Product"
+      n: "product"
+      r: false
+      sh: "The product whose pricing this plan determines."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 6
+        depth: 5
+      }
+    }
+    tiers: {
+      h: "Tiers"
+      n: "tiers"
+      r: false
+      sh: "Each element represents a pricing tier."
+      t: "`$ARRAY`"
+    }
+    tiers_mode: {
+      h: "Tiers Mode"
+      n: "tiers_mode"
+      r: false
+      sh: "Defines if the tiering price should be `graduated` or `volume` based."
+      t: "`$STRING`"
+    }
+    transform_usage: {
+      h: "Transform Usage"
+      n: "transform_usage"
+      r: false
+      sh: "Apply a transformation to the reported usage or set quantity before computing the amount billed."
+      t: "`$ANY`"
+    }
+    trial_period_days: {
+      h: "Trial Period Days"
+      n: "trial_period_days"
+      r: false
+      sh: "Default number of trial days when subscribing a customer to this plan using [`trial_from_plan=true`](https://docs.stripe.com/api#create_subscription-trial_from_plan)."
+      t: "`$INTEGER`"
+    }
+    usage_type: {
+      h: "Usage Type"
+      n: "usage_type"
+      r: true
+      sh: "Configures how the quantity per period should be determined."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "plan"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/plans/{plan}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "plan"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/plans/{plan}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              plan: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "plans"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/plans"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/plans"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "plans"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/plans"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "active"
+                or: "active"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "product"
+                or: "product"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/plans"
+          q: {
+            exist: [
+              "active"
+              "created"
+              "ending_before"
+              "expand"
+              "limit"
+              "product"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "plans"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/plans/{plan}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "plan"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/plans/{plan}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              plan: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "plans"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

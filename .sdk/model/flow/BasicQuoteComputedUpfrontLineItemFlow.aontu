@@ -1,0 +1,26 @@
+# BasicQuoteComputedUpfrontLineItemFlow
+
+main: kit: flow: BasicQuoteComputedUpfrontLineItemFlow:
+{
+  entity: "quote_computed_upfront_line_item",
+  kind: "basic",
+  name: "BasicQuoteComputedUpfrontLineItemFlow",
+  step: [
+    {
+      m: {
+        quote: "quote01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "quote_computed_upfront_line_item_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicQuoteComputedUpfrontLineItemFlow"
+}

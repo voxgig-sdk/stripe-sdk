@@ -1,0 +1,119 @@
+{
+  "existing": {
+    "plan": {
+      "PLAN00": {
+        "active": true,
+        "amount": 201,
+        "amount_decimal": "sca",
+        "billing_scheme": "scb",
+        "created": 204,
+        "currency": "scd",
+        "id": "PLAN00",
+        "interval": "scf",
+        "interval_count": 208,
+        "livemode": false,
+        "metadata": {},
+        "meter": "sd3",
+        "nickname": "sd4",
+        "object": "sd5",
+        "product": "sd6",
+        "tiers": [],
+        "tiers_mode": "sd8",
+        "transform_usage": "sd9",
+        "trial_period_days": 218,
+        "usage_type": "sdb"
+      },
+      "PLAN01": {
+        "active": true,
+        "amount": 401,
+        "amount_decimal": "s192",
+        "billing_scheme": "s193",
+        "created": 404,
+        "currency": "s195",
+        "id": "PLAN01",
+        "interval": "s197",
+        "interval_count": 408,
+        "livemode": false,
+        "metadata": {},
+        "meter": "s19b",
+        "nickname": "s19c",
+        "object": "s19d",
+        "product": "s19e",
+        "tiers": [],
+        "tiers_mode": "s1a0",
+        "transform_usage": "s1a1",
+        "trial_period_days": 418,
+        "usage_type": "s1a3"
+      },
+      "PLAN02": {
+        "active": true,
+        "amount": 601,
+        "amount_decimal": "s25a",
+        "billing_scheme": "s25b",
+        "created": 604,
+        "currency": "s25d",
+        "id": "PLAN02",
+        "interval": "s25f",
+        "interval_count": 608,
+        "livemode": false,
+        "metadata": {},
+        "meter": "s263",
+        "nickname": "s264",
+        "object": "s265",
+        "product": "s266",
+        "tiers": [],
+        "tiers_mode": "s268",
+        "transform_usage": "s269",
+        "trial_period_days": 618,
+        "usage_type": "s26b"
+      }
+    }
+  },
+  "new": {
+    "plan": {
+      "plan_ref01": {
+        "active": true,
+        "amount": 801,
+        "amount_decimal": "s322",
+        "billing_scheme": "s323",
+        "created": 804,
+        "currency": "s325",
+        "interval": "s327",
+        "interval_count": 808,
+        "livemode": false,
+        "metadata": {},
+        "meter": "s32b",
+        "nickname": "s32c",
+        "object": "s32d",
+        "product": "s32e",
+        "tiers": [],
+        "tiers_mode": "s330",
+        "transform_usage": "s331",
+        "trial_period_days": 818,
+        "usage_type": "s333"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/plans/{plan}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/plans": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/plans": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/plans/{plan}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

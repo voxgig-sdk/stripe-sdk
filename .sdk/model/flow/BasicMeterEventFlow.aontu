@@ -1,0 +1,18 @@
+# BasicMeterEventFlow
+
+main: kit: flow: BasicMeterEventFlow:
+{
+  entity: "meter_event",
+  kind: "basic",
+  name: "BasicMeterEventFlow",
+  step: [
+    {
+      i: {
+        ref: "meter_event_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicMeterEventFlow"
+}

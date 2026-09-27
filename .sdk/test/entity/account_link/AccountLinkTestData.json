@@ -1,0 +1,44 @@
+{
+  "existing": {
+    "account_link": {
+      "ACCOUNT_LINK00": {
+        "created": 40,
+        "expires_at": 41,
+        "object": "s2a",
+        "url": "s2b",
+        "id": "ACCOUNT_LINK00"
+      },
+      "ACCOUNT_LINK01": {
+        "created": 80,
+        "expires_at": 81,
+        "object": "s52",
+        "url": "s53",
+        "id": "ACCOUNT_LINK01"
+      },
+      "ACCOUNT_LINK02": {
+        "created": 120,
+        "expires_at": 121,
+        "object": "s7a",
+        "url": "s7b",
+        "id": "ACCOUNT_LINK02"
+      }
+    }
+  },
+  "new": {
+    "account_link": {
+      "account_link_ref01": {
+        "created": 160,
+        "expires_at": 161,
+        "object": "sa2",
+        "url": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/account_links": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

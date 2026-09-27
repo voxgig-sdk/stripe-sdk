@@ -1,0 +1,283 @@
+# Entity: verification_report
+
+main: kit: entity: verification_report: {
+
+  alias: field: {}
+
+  fields: {
+    client_reference_id: {
+      h: "Client Reference Id"
+      n: "client_reference_id"
+      r: false
+      sh: "A string to reference this user."
+      t: "`$STRING`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    document: {
+      h: "Document"
+      n: "document"
+      r: true
+      sh: "Result from a document check"
+      t: "`$OBJECT`"
+    }
+    email: {
+      h: "Email"
+      n: "email"
+      r: true
+      sh: "Result from a email check"
+      t: "`$OBJECT`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    id_number: {
+      h: "Id Number"
+      n: "id_number"
+      r: true
+      sh: "Result from an id_number check"
+      t: "`$OBJECT`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    options: {
+      h: "Options"
+      n: "options"
+      r: false
+      t: "`$OBJECT`"
+    }
+    phone: {
+      h: "Phone"
+      n: "phone"
+      r: true
+      sh: "Result from a phone check"
+      t: "`$OBJECT`"
+    }
+    selfie: {
+      h: "Selfie"
+      n: "selfie"
+      r: true
+      sh: "Result from a selfie check"
+      t: "`$OBJECT`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "Type of report."
+      t: "`$STRING`"
+    }
+    verification_flow: {
+      h: "Verification Flow"
+      n: "verification_flow"
+      r: false
+      sh: "The configuration token of a verification flow from the dashboard."
+      t: "`$STRING`"
+    }
+    verification_session: {
+      h: "Verification Session"
+      n: "verification_session"
+      r: false
+      sh: "ID of the VerificationSession that created this report."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "verification_report"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/identity/verification_reports"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "client_reference_id"
+                or: "client_reference_id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "type"
+                or: "type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "verification_session"
+                or: "verification_session"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/identity/verification_reports"
+          q: {
+            exist: [
+              "client_reference_id"
+              "created"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+              "type"
+              "verification_session"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "identity"
+            }
+            {
+              lit: "verification_reports"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/identity/verification_reports/{report}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "report"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/identity/verification_reports/{report}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              report: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "identity"
+            }
+            {
+              lit: "verification_reports"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

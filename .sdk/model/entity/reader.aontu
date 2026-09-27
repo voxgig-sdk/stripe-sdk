@@ -1,0 +1,998 @@
+# Entity: reader
+
+main: kit: entity: reader: {
+
+  alias: field: {}
+
+  fields: {
+    action: {
+      h: "Action"
+      n: "action"
+      r: false
+      sh: "The most recent action performed by the reader."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 48472
+        depth: 59
+      }
+    }
+    device_sw_version: {
+      h: "Device Sw Version"
+      n: "device_sw_version"
+      r: false
+      sh: "The current software version of the reader."
+      t: "`$STRING`"
+    }
+    device_type: {
+      h: "Device Type"
+      n: "device_type"
+      r: true
+      sh: "Device type of the reader."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    ip_address: {
+      h: "Ip Address"
+      n: "ip_address"
+      r: false
+      sh: "The local IP address of the reader."
+      t: "`$STRING`"
+    }
+    label: {
+      h: "Label"
+      n: "label"
+      r: true
+      sh: "Custom label given to the reader for easier identification."
+      t: "`$STRING`"
+    }
+    last_seen_at: {
+      fo: "unix-time"
+      h: "Last Seen At"
+      n: "last_seen_at"
+      r: false
+      sh: "The last time this reader reported to Stripe backend."
+      t: "`$INTEGER`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    location: {
+      h: "Location"
+      n: "location"
+      r: false
+      sh: "The location identifier of the reader."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: true
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    serial_number: {
+      h: "Serial Number"
+      n: "serial_number"
+      r: true
+      sh: "Serial number of the reader."
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      sh: "The networking status of the reader."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "reader"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/terminal/readers/{reader}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "reader"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/terminal/readers/{reader}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              reader: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "readers"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/terminal/readers/{reader}/cancel_action"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "reader"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/terminal/readers/{reader}/cancel_action"
+          q: {
+            "$action": "cancel_action"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              reader: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "readers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "cancel_action"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/terminal/readers/{reader}/collect_inputs"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "reader"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/terminal/readers/{reader}/collect_inputs"
+          q: {
+            "$action": "collect_input"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              reader: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "readers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "collect_inputs"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/terminal/readers/{reader}/collect_payment_method"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "reader"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/terminal/readers/{reader}/collect_payment_method"
+          q: {
+            "$action": "collect_payment_method"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              reader: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "readers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "collect_payment_method"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/terminal/readers/{reader}/confirm_payment_intent"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "reader"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/terminal/readers/{reader}/confirm_payment_intent"
+          q: {
+            "$action": "confirm_payment_intent"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              reader: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "readers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "confirm_payment_intent"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/terminal/readers/{reader}/present_payment_method"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "reader"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/terminal/readers/{reader}/present_payment_method"
+          q: {
+            "$action": "present_payment_method"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              reader: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "readers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "present_payment_method"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/terminal/readers/{reader}/process_payment_intent"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "reader"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/terminal/readers/{reader}/process_payment_intent"
+          q: {
+            "$action": "process_payment_intent"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              reader: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "readers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "process_payment_intent"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/terminal/readers/{reader}/process_setup_intent"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "reader"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/terminal/readers/{reader}/process_setup_intent"
+          q: {
+            "$action": "process_setup_intent"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              reader: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "readers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "process_setup_intent"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/terminal/readers/{reader}/refund_payment"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "reader"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/terminal/readers/{reader}/refund_payment"
+          q: {
+            "$action": "refund_payment"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              reader: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "readers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "refund_payment"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/terminal/readers/{reader}/set_reader_display"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "reader"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/terminal/readers/{reader}/set_reader_display"
+          q: {
+            "$action": "set_reader_display"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              reader: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "readers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "set_reader_display"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/terminal/readers/{reader}/succeed_input_collection"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "reader"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/terminal/readers/{reader}/succeed_input_collection"
+          q: {
+            "$action": "succeed_input_collection"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              reader: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "readers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "succeed_input_collection"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/terminal/readers/{reader}/timeout_input_collection"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "reader"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/terminal/readers/{reader}/timeout_input_collection"
+          q: {
+            "$action": "timeout_input_collection"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              reader: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "readers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "timeout_input_collection"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/terminal/readers"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/terminal/readers"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "readers"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/terminal/readers"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "device_type"
+                or: "device_type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "location"
+                or: "location"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "serial_number"
+                or: "serial_number"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/terminal/readers"
+          q: {
+            exist: [
+              "device_type"
+              "ending_before"
+              "expand"
+              "limit"
+              "location"
+              "serial_number"
+              "starting_after"
+              "status"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "readers"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/terminal/readers/{reader}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "reader"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/terminal/readers/{reader}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              reader: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "readers"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /v1/terminal/readers/{reader}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "reader"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/v1/terminal/readers/{reader}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              reader: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "terminal"
+            }
+            {
+              lit: "readers"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

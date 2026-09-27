@@ -1,0 +1,123 @@
+{
+  "existing": {
+    "price": {
+      "PRICE00": {
+        "active": true,
+        "billing_scheme": "sd3",
+        "created": 212,
+        "currency": "sd5",
+        "currency_options": {},
+        "custom_unit_amount": "sd7",
+        "id": "PRICE00",
+        "livemode": false,
+        "lookup_key": "sda",
+        "metadata": {},
+        "nickname": "sdc",
+        "object": "sdd",
+        "product": "sde",
+        "recurring": "sdf",
+        "tax_behavior": "se0",
+        "tiers": [],
+        "tiers_mode": "se2",
+        "transform_quantity": "se3",
+        "type": "se4",
+        "unit_amount": 229,
+        "unit_amount_decimal": "se6"
+      },
+      "PRICE01": {
+        "active": true,
+        "billing_scheme": "s1a5",
+        "created": 422,
+        "currency": "s1a7",
+        "currency_options": {},
+        "custom_unit_amount": "s1a9",
+        "id": "PRICE01",
+        "livemode": false,
+        "lookup_key": "s1ac",
+        "metadata": {},
+        "nickname": "s1ae",
+        "object": "s1af",
+        "product": "s1b0",
+        "recurring": "s1b1",
+        "tax_behavior": "s1b2",
+        "tiers": [],
+        "tiers_mode": "s1b4",
+        "transform_quantity": "s1b5",
+        "type": "s1b6",
+        "unit_amount": 439,
+        "unit_amount_decimal": "s1b8"
+      },
+      "PRICE02": {
+        "active": true,
+        "billing_scheme": "s277",
+        "created": 632,
+        "currency": "s279",
+        "currency_options": {},
+        "custom_unit_amount": "s27b",
+        "id": "PRICE02",
+        "livemode": false,
+        "lookup_key": "s27e",
+        "metadata": {},
+        "nickname": "s280",
+        "object": "s281",
+        "product": "s282",
+        "recurring": "s283",
+        "tax_behavior": "s284",
+        "tiers": [],
+        "tiers_mode": "s286",
+        "transform_quantity": "s287",
+        "type": "s288",
+        "unit_amount": 649,
+        "unit_amount_decimal": "s28a"
+      }
+    }
+  },
+  "new": {
+    "price": {
+      "price_ref01": {
+        "active": true,
+        "billing_scheme": "s349",
+        "created": 842,
+        "currency": "s34b",
+        "currency_options": {},
+        "custom_unit_amount": "s34d",
+        "livemode": false,
+        "lookup_key": "s350",
+        "metadata": {},
+        "nickname": "s352",
+        "object": "s353",
+        "product": "s354",
+        "recurring": "s355",
+        "tax_behavior": "s356",
+        "tiers": [],
+        "tiers_mode": "s358",
+        "transform_quantity": "s359",
+        "type": "s35a",
+        "unit_amount": 859,
+        "unit_amount_decimal": "s35c"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/prices/{price}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/prices": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/prices": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/prices/{price}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

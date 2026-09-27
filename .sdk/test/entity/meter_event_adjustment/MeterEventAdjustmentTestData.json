@@ -1,0 +1,27 @@
+{
+  "existing": {
+    "meter_event_adjustment": {
+      "METER_EVENT_ADJUSTMENT00": {
+        "id": "METER_EVENT_ADJUSTMENT00"
+      },
+      "METER_EVENT_ADJUSTMENT01": {
+        "id": "METER_EVENT_ADJUSTMENT01"
+      },
+      "METER_EVENT_ADJUSTMENT02": {
+        "id": "METER_EVENT_ADJUSTMENT02"
+      }
+    }
+  },
+  "new": {
+    "meter_event_adjustment": {
+      "meter_event_adjustment_ref01": {}
+    }
+  },
+  "requests": {
+    "POST /v1/billing/meter_event_adjustments": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

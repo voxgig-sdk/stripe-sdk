@@ -1,0 +1,199 @@
+{
+  "existing": {
+    "authorization": {
+      "AUTHORIZATION00": {
+        "amount": 300,
+        "amount_details": "s12d",
+        "approved": true,
+        "authorization_method": "s12f",
+        "balance_transactions": [],
+        "card": {},
+        "card_presence": "s132",
+        "cardholder": "s133",
+        "created": 308,
+        "currency": "s135",
+        "fleet": "s136",
+        "fraud_challenges": [],
+        "fuel": "s138",
+        "id": "AUTHORIZATION00",
+        "livemode": true,
+        "merchant_amount": 315,
+        "merchant_currency": "s13c",
+        "merchant_data": {},
+        "metadata": {},
+        "network_data": "s13f",
+        "object": "s140",
+        "pending_request": "s141",
+        "request_history": [],
+        "status": "s143",
+        "token": "s144",
+        "transactions": [],
+        "treasury": "s146",
+        "verification_data": {},
+        "verified_by_fraud_challenge": true,
+        "wallet": "s149"
+      },
+      "AUTHORIZATION01": {
+        "amount": 600,
+        "amount_details": "s259",
+        "approved": true,
+        "authorization_method": "s25b",
+        "balance_transactions": [],
+        "card": {},
+        "card_presence": "s25e",
+        "cardholder": "s25f",
+        "created": 608,
+        "currency": "s261",
+        "fleet": "s262",
+        "fraud_challenges": [],
+        "fuel": "s264",
+        "id": "AUTHORIZATION01",
+        "livemode": true,
+        "merchant_amount": 615,
+        "merchant_currency": "s268",
+        "merchant_data": {},
+        "metadata": {},
+        "network_data": "s26b",
+        "object": "s26c",
+        "pending_request": "s26d",
+        "request_history": [],
+        "status": "s26f",
+        "token": "s270",
+        "transactions": [],
+        "treasury": "s272",
+        "verification_data": {},
+        "verified_by_fraud_challenge": true,
+        "wallet": "s275"
+      },
+      "AUTHORIZATION02": {
+        "amount": 900,
+        "amount_details": "s385",
+        "approved": true,
+        "authorization_method": "s387",
+        "balance_transactions": [],
+        "card": {},
+        "card_presence": "s38a",
+        "cardholder": "s38b",
+        "created": 908,
+        "currency": "s38d",
+        "fleet": "s38e",
+        "fraud_challenges": [],
+        "fuel": "s390",
+        "id": "AUTHORIZATION02",
+        "livemode": true,
+        "merchant_amount": 915,
+        "merchant_currency": "s394",
+        "merchant_data": {},
+        "metadata": {},
+        "network_data": "s397",
+        "object": "s398",
+        "pending_request": "s399",
+        "request_history": [],
+        "status": "s39b",
+        "token": "s39c",
+        "transactions": [],
+        "treasury": "s39e",
+        "verification_data": {},
+        "verified_by_fraud_challenge": true,
+        "wallet": "s3a1"
+      }
+    }
+  },
+  "new": {
+    "authorization": {
+      "authorization_ref01": {
+        "amount": 1200,
+        "amount_details": "s4b1",
+        "approved": true,
+        "authorization_method": "s4b3",
+        "balance_transactions": [],
+        "card": {},
+        "card_presence": "s4b6",
+        "cardholder": "s4b7",
+        "created": 1208,
+        "currency": "s4b9",
+        "fleet": "s4ba",
+        "fraud_challenges": [],
+        "fuel": "s4bc",
+        "livemode": true,
+        "merchant_amount": 1215,
+        "merchant_currency": "s4c0",
+        "merchant_data": {},
+        "metadata": {},
+        "network_data": "s4c3",
+        "object": "s4c4",
+        "pending_request": "s4c5",
+        "request_history": [],
+        "status": "s4c7",
+        "token": "s4c8",
+        "transactions": [],
+        "treasury": "s4ca",
+        "verification_data": {},
+        "verified_by_fraud_challenge": true,
+        "wallet": "s4cd"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/issuing/authorizations/{authorization}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/issuing/authorizations/{authorization}/approve": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/issuing/authorizations/{authorization}/capture": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/issuing/authorizations/{authorization}/decline": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/issuing/authorizations/{authorization}/expire": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/issuing/authorizations/{authorization}/finalize_amount": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/issuing/authorizations/{authorization}/fraud_challenges/respond": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/issuing/authorizations/{authorization}/increment": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/issuing/authorizations/{authorization}/reverse": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/issuing/authorizations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/issuing/authorizations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/issuing/authorizations/{authorization}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

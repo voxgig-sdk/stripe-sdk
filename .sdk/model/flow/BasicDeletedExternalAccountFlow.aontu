@@ -1,0 +1,9 @@
+# BasicDeletedExternalAccountFlow
+
+main: kit: flow: BasicDeletedExternalAccountFlow:
+{
+  entity: "deleted_external_account",
+  kind: "basic",
+  name: "BasicDeletedExternalAccountFlow",
+  "key$": "BasicDeletedExternalAccountFlow"
+}

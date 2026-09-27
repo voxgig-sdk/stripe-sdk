@@ -1,0 +1,77 @@
+{
+  "existing": {
+    "alert": {
+      "ALERT00": {
+        "alert_type": "s46",
+        "id": "ALERT00",
+        "livemode": true,
+        "object": "s49",
+        "status": "s4a",
+        "title": "s4b",
+        "usage_threshold": "s4c"
+      },
+      "ALERT01": {
+        "alert_type": "s8c",
+        "id": "ALERT01",
+        "livemode": true,
+        "object": "s8f",
+        "status": "s90",
+        "title": "s91",
+        "usage_threshold": "s92"
+      },
+      "ALERT02": {
+        "alert_type": "sd2",
+        "id": "ALERT02",
+        "livemode": true,
+        "object": "sd5",
+        "status": "sd6",
+        "title": "sd7",
+        "usage_threshold": "sd8"
+      }
+    }
+  },
+  "new": {
+    "alert": {
+      "alert_ref01": {
+        "alert_type": "s118",
+        "livemode": true,
+        "object": "s11b",
+        "status": "s11c",
+        "title": "s11d",
+        "usage_threshold": "s11e"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/billing/alerts/{id}/activate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/billing/alerts/{id}/archive": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/billing/alerts/{id}/deactivate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/billing/alerts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/billing/alerts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/billing/alerts/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

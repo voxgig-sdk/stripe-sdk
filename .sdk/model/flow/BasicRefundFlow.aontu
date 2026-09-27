@@ -1,0 +1,61 @@
+# BasicRefundFlow
+
+main: kit: flow: BasicRefundFlow:
+{
+  entity: "refund",
+  kind: "basic",
+  name: "BasicRefundFlow",
+  step: [
+    {
+      i: {
+        ref: "refund_ref01"
+      }
+
+      m: {
+        application_fee_id: "application_fee01",
+        charge_id: "charge01"
+      }
+
+      o: "create"
+    }
+
+    {
+      m: {
+        charge_id: "charge01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "refund_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "refund_ref01",
+        srcdatavar: "refund_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "refund01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-refund_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicRefundFlow"
+}

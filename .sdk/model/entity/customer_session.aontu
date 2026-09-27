@@ -1,0 +1,105 @@
+# Entity: customer_session
+
+main: kit: entity: customer_session: {
+
+  alias: field: {}
+
+  fields: {
+    client_secret: {
+      h: "Client Secret"
+      n: "client_secret"
+      r: true
+      sh: "The client secret of this Customer Session."
+      t: "`$STRING`"
+    }
+    components: {
+      h: "Components"
+      n: "components"
+      r: true
+      sh: "Configuration for the components supported by this Customer Session."
+      t: "`$OBJECT`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    customer: {
+      h: "Customer"
+      n: "customer"
+      r: true
+      sh: "The Customer the Customer Session was created for."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 105029
+        depth: 64
+      }
+    }
+    customer_account: {
+      h: "Customer Account"
+      n: "customer_account"
+      r: false
+      sh: "The Account that the Customer Session was created for."
+      t: "`$STRING`"
+    }
+    expires_at: {
+      fo: "unix-time"
+      h: "Expires At"
+      n: "expires_at"
+      r: true
+      sh: "The timestamp at which this Customer Session will expire."
+      t: "`$INTEGER`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "customer_session"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/customer_sessions"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/customer_sessions"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customer_sessions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

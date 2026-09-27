@@ -1,0 +1,18 @@
+# BasicPaymentEvaluationFlow
+
+main: kit: flow: BasicPaymentEvaluationFlow:
+{
+  entity: "payment_evaluation",
+  kind: "basic",
+  name: "BasicPaymentEvaluationFlow",
+  step: [
+    {
+      i: {
+        ref: "payment_evaluation_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicPaymentEvaluationFlow"
+}

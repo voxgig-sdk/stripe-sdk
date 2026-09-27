@@ -1,0 +1,104 @@
+# Entity: balance_setting
+
+main: kit: entity: balance_setting: {
+
+  alias: field: {}
+
+  fields: {
+    debit_negative_balances: {
+      h: "Debit Negative Balances"
+      n: "debit_negative_balances"
+      r: false
+      sh: "A Boolean indicating if Stripe should try to reclaim negative balances from an attached bank account."
+      t: "`$BOOLEAN`"
+    }
+    payouts: {
+      h: "Payouts"
+      n: "payouts"
+      r: false
+      sh: "Settings specific to the account's payouts."
+      t: "`$ANY`"
+    }
+    settlement_timing: {
+      h: "Settlement Timing"
+      n: "settlement_timing"
+      r: true
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "balance_setting"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/balance_settings"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/balance_settings"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "balance_settings"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.payments`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/balance_settings"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/balance_settings"
+          q: {
+            exist: [
+              "expand"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "balance_settings"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.payments`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,22 @@
+# BasicLoginLinkFlow
+
+main: kit: flow: BasicLoginLinkFlow:
+{
+  entity: "login_link",
+  kind: "basic",
+  name: "BasicLoginLinkFlow",
+  step: [
+    {
+      i: {
+        ref: "login_link_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicLoginLinkFlow"
+}

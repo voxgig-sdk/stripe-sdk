@@ -1,0 +1,46 @@
+# BasicCustomerBalanceTransactionFlow
+
+main: kit: flow: BasicCustomerBalanceTransactionFlow:
+{
+  entity: "customer_balance_transaction",
+  kind: "basic",
+  name: "BasicCustomerBalanceTransactionFlow",
+  step: [
+    {
+      i: {
+        ref: "customer_balance_transaction_ref01"
+      }
+
+      m: {
+        customer: "customer01",
+        customer_id: "customer01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "customer_balance_transaction_ref01",
+        srcdatavar: "customer_balance_transaction_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        customer_id: "customer01",
+        id: "customer_balance_transaction01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-customer_balance_transaction_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCustomerBalanceTransactionFlow"
+}

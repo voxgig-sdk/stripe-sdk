@@ -1,0 +1,94 @@
+{
+  "existing": {
+    "debit_reversal": {
+      "DEBIT_REVERSAL00": {
+        "amount": 150,
+        "created": 151,
+        "currency": "s98",
+        "financial_account": "s99",
+        "hosted_regulatory_receipt_url": "s9a",
+        "id": "DEBIT_REVERSAL00",
+        "linked_flows": "s9c",
+        "livemode": false,
+        "metadata": {},
+        "network": "s9f",
+        "object": "sa0",
+        "received_debit": "sa1",
+        "status": "sa2",
+        "status_transitions": {},
+        "transaction": "sa4"
+      },
+      "DEBIT_REVERSAL01": {
+        "amount": 300,
+        "created": 301,
+        "currency": "s12e",
+        "financial_account": "s12f",
+        "hosted_regulatory_receipt_url": "s130",
+        "id": "DEBIT_REVERSAL01",
+        "linked_flows": "s132",
+        "livemode": false,
+        "metadata": {},
+        "network": "s135",
+        "object": "s136",
+        "received_debit": "s137",
+        "status": "s138",
+        "status_transitions": {},
+        "transaction": "s13a"
+      },
+      "DEBIT_REVERSAL02": {
+        "amount": 450,
+        "created": 451,
+        "currency": "s1c4",
+        "financial_account": "s1c5",
+        "hosted_regulatory_receipt_url": "s1c6",
+        "id": "DEBIT_REVERSAL02",
+        "linked_flows": "s1c8",
+        "livemode": false,
+        "metadata": {},
+        "network": "s1cb",
+        "object": "s1cc",
+        "received_debit": "s1cd",
+        "status": "s1ce",
+        "status_transitions": {},
+        "transaction": "s1d0"
+      }
+    }
+  },
+  "new": {
+    "debit_reversal": {
+      "debit_reversal_ref01": {
+        "amount": 600,
+        "created": 601,
+        "currency": "s25a",
+        "financial_account": "s25b",
+        "hosted_regulatory_receipt_url": "s25c",
+        "linked_flows": "s25e",
+        "livemode": false,
+        "metadata": {},
+        "network": "s261",
+        "object": "s262",
+        "received_debit": "s263",
+        "status": "s264",
+        "status_transitions": {},
+        "transaction": "s266"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/treasury/debit_reversals": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/treasury/debit_reversals": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/treasury/debit_reversals/{debit_reversal}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

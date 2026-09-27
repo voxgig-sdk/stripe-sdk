@@ -1,0 +1,82 @@
+{
+  "existing": {
+    "reversal": {
+      "REVERSAL00": {
+        "amount": 100,
+        "balance_transaction": "s65",
+        "created": 102,
+        "currency": "s67",
+        "destination_payment_refund": "s68",
+        "id": "REVERSAL00",
+        "metadata": {},
+        "object": "s6b",
+        "source_refund": "s6c",
+        "transfer": "s6d",
+        "transfer_id": "TRANSFER01"
+      },
+      "REVERSAL01": {
+        "amount": 200,
+        "balance_transaction": "sc9",
+        "created": 202,
+        "currency": "scb",
+        "destination_payment_refund": "scc",
+        "id": "REVERSAL01",
+        "metadata": {},
+        "object": "scf",
+        "source_refund": "sd0",
+        "transfer": "sd1",
+        "transfer_id": "TRANSFER01"
+      },
+      "REVERSAL02": {
+        "amount": 300,
+        "balance_transaction": "s12d",
+        "created": 302,
+        "currency": "s12f",
+        "destination_payment_refund": "s130",
+        "id": "REVERSAL02",
+        "metadata": {},
+        "object": "s133",
+        "source_refund": "s134",
+        "transfer": "s135",
+        "transfer_id": "TRANSFER01"
+      }
+    }
+  },
+  "new": {
+    "reversal": {
+      "reversal_ref01": {
+        "amount": 400,
+        "balance_transaction": "s191",
+        "created": 402,
+        "currency": "s193",
+        "destination_payment_refund": "s194",
+        "metadata": {},
+        "object": "s197",
+        "source_refund": "s198",
+        "transfer": "s199"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/transfers/{transfer}/reversals/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/transfers/{id}/reversals": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/transfers/{id}/reversals": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/transfers/{transfer}/reversals/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

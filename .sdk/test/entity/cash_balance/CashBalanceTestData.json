@@ -1,0 +1,60 @@
+{
+  "existing": {
+    "cash_balance": {
+      "CASH_BALANCE00": {
+        "available": {},
+        "customer": "s3d",
+        "customer_account": "s3e",
+        "livemode": false,
+        "object": "s40",
+        "settings": {},
+        "customer_id": "CUSTOMER01",
+        "id": "CASH_BALANCE00"
+      },
+      "CASH_BALANCE01": {
+        "available": {},
+        "customer": "s79",
+        "customer_account": "s7a",
+        "livemode": false,
+        "object": "s7c",
+        "settings": {},
+        "customer_id": "CUSTOMER01",
+        "id": "CASH_BALANCE01"
+      },
+      "CASH_BALANCE02": {
+        "available": {},
+        "customer": "sb5",
+        "customer_account": "sb6",
+        "livemode": false,
+        "object": "sb8",
+        "settings": {},
+        "customer_id": "CUSTOMER01",
+        "id": "CASH_BALANCE02"
+      }
+    }
+  },
+  "new": {
+    "cash_balance": {
+      "cash_balance_ref01": {
+        "available": {},
+        "customer": "sf1",
+        "customer_account": "sf2",
+        "livemode": false,
+        "object": "sf4",
+        "settings": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/customers/{customer}/cash_balance": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/customers/{customer}/cash_balance": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

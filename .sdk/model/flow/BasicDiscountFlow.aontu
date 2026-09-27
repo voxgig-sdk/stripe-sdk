@@ -1,0 +1,32 @@
+# BasicDiscountFlow
+
+main: kit: flow: BasicDiscountFlow:
+{
+  entity: "discount",
+  kind: "basic",
+  name: "BasicDiscountFlow",
+  step: [
+    {
+      i: {
+        ref: "discount_ref01",
+        srcdatavar: "discount_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "discount01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-discount_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDiscountFlow"
+}

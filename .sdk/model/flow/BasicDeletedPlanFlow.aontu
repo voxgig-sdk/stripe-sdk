@@ -1,0 +1,9 @@
+# BasicDeletedPlanFlow
+
+main: kit: flow: BasicDeletedPlanFlow:
+{
+  entity: "deleted_plan",
+  kind: "basic",
+  name: "BasicDeletedPlanFlow",
+  "key$": "BasicDeletedPlanFlow"
+}

@@ -17,10 +17,6 @@ import {
 } from '../../utility'
 
 
-// AFTER the imports on purpose: TypeScript hoists `import` above any
-// statement in the emitted CommonJS, so a loader placed above them would
-// run only after every imported module had already been evaluated - and
-// anything reading process.env at module scope would miss these values.
 loadEnvLocal(__dirname + '/../../../.env.local')
 
 
@@ -32,9 +28,6 @@ describe('SessionDirect', async () => {
 
   test('direct-exists', async () => {
     const sdk = new StripeSDK({
-      // Concrete base: a live construction must satisfy any server
-      // variables a templated base URL declares; overriding base with a
-      // literal (as the direct flow tests do) sidesteps the requirement.
       base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
@@ -53,7 +46,7 @@ describe('SessionDirect', async () => {
     const query: any = {}
     if (setup.live) {
       const listResult: any = await client.direct({
-        path: 'checkout/sessions',
+        path: 'v1/checkout/sessions',
         method: 'GET',
         params: {
 
@@ -76,7 +69,7 @@ describe('SessionDirect', async () => {
     }
 
     const result: any = await client.direct({
-      path: 'checkout/sessions/{id}',
+      path: 'v1/checkout/sessions/{id}',
       method: 'GET',
       params,
       query,
@@ -116,7 +109,7 @@ describe('SessionDirect', async () => {
     const query: any = {}
 
     const result: any = await client.direct({
-      path: 'checkout/sessions',
+      path: 'v1/checkout/sessions',
       method: 'GET',
       params,
       query,
@@ -159,6 +152,7 @@ function directSetup(mockres?: any) {
     'STRIPE_TEST_SESSION_ENTID': {},
     'STRIPE_TEST_LIVE': 'FALSE',
     'STRIPE_APIKEY': '',
+    'STRIPE_SECRET': '',
   })
 
   const live = 'TRUE' === env.STRIPE_TEST_LIVE
@@ -170,6 +164,7 @@ function directSetup(mockres?: any) {
     const client = new StripeSDK(
       Object.assign({}, liveClientOptions(), { system: { fetch: transport.fetch },
       apikey: env.STRIPE_APIKEY,
+      secret: env.STRIPE_SECRET,
       }))
 
     let idmap: any = env['STRIPE_TEST_SESSION_ENTID']

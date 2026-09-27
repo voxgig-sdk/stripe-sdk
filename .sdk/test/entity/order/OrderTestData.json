@@ -1,0 +1,132 @@
+{
+  "existing": {
+    "order": {
+      "ORDER00": {
+        "amount_fees": 220,
+        "amount_subtotal": 221,
+        "amount_total": 222,
+        "beneficiary": {},
+        "canceled_at": 224,
+        "cancellation_reason": "se1",
+        "certificate": "se2",
+        "confirmed_at": 227,
+        "created": 228,
+        "currency": "se5",
+        "delayed_at": 230,
+        "delivered_at": 231,
+        "delivery_details": [],
+        "expected_delivery_year": 233,
+        "id": "ORDER00",
+        "livemode": false,
+        "metadata": {},
+        "metric_tons": "sed",
+        "object": "see",
+        "product": "sef",
+        "product_substituted_at": 240,
+        "status": "sf1"
+      },
+      "ORDER01": {
+        "amount_fees": 440,
+        "amount_subtotal": 441,
+        "amount_total": 442,
+        "beneficiary": {},
+        "canceled_at": 444,
+        "cancellation_reason": "s1bd",
+        "certificate": "s1be",
+        "confirmed_at": 447,
+        "created": 448,
+        "currency": "s1c1",
+        "delayed_at": 450,
+        "delivered_at": 451,
+        "delivery_details": [],
+        "expected_delivery_year": 453,
+        "id": "ORDER01",
+        "livemode": false,
+        "metadata": {},
+        "metric_tons": "s1c9",
+        "object": "s1ca",
+        "product": "s1cb",
+        "product_substituted_at": 460,
+        "status": "s1cd"
+      },
+      "ORDER02": {
+        "amount_fees": 660,
+        "amount_subtotal": 661,
+        "amount_total": 662,
+        "beneficiary": {},
+        "canceled_at": 664,
+        "cancellation_reason": "s299",
+        "certificate": "s29a",
+        "confirmed_at": 667,
+        "created": 668,
+        "currency": "s29d",
+        "delayed_at": 670,
+        "delivered_at": 671,
+        "delivery_details": [],
+        "expected_delivery_year": 673,
+        "id": "ORDER02",
+        "livemode": false,
+        "metadata": {},
+        "metric_tons": "s2a5",
+        "object": "s2a6",
+        "product": "s2a7",
+        "product_substituted_at": 680,
+        "status": "s2a9"
+      }
+    }
+  },
+  "new": {
+    "order": {
+      "order_ref01": {
+        "amount_fees": 880,
+        "amount_subtotal": 881,
+        "amount_total": 882,
+        "beneficiary": {},
+        "canceled_at": 884,
+        "cancellation_reason": "s375",
+        "certificate": "s376",
+        "confirmed_at": 887,
+        "created": 888,
+        "currency": "s379",
+        "delayed_at": 890,
+        "delivered_at": 891,
+        "delivery_details": [],
+        "expected_delivery_year": 893,
+        "livemode": false,
+        "metadata": {},
+        "metric_tons": "s381",
+        "object": "s382",
+        "product": "s383",
+        "product_substituted_at": 900,
+        "status": "s385"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/climate/orders/{order}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/climate/orders/{order}/cancel": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/climate/orders": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/climate/orders": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/climate/orders/{order}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

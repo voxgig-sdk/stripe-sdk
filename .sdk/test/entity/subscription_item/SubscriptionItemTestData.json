@@ -1,0 +1,95 @@
+{
+  "existing": {
+    "subscription_item": {
+      "SUBSCRIPTION_ITEM00": {
+        "billed_until": 140,
+        "billing_thresholds": "s8d",
+        "created": 142,
+        "current_period_end": 143,
+        "current_period_start": 144,
+        "current_trial": "s91",
+        "discounts": [],
+        "id": "SUBSCRIPTION_ITEM00",
+        "metadata": {},
+        "object": "s95",
+        "price": {},
+        "quantity": 151,
+        "subscription": "s98",
+        "tax_rates": []
+      },
+      "SUBSCRIPTION_ITEM01": {
+        "billed_until": 280,
+        "billing_thresholds": "s119",
+        "created": 282,
+        "current_period_end": 283,
+        "current_period_start": 284,
+        "current_trial": "s11d",
+        "discounts": [],
+        "id": "SUBSCRIPTION_ITEM01",
+        "metadata": {},
+        "object": "s121",
+        "price": {},
+        "quantity": 291,
+        "subscription": "s124",
+        "tax_rates": []
+      },
+      "SUBSCRIPTION_ITEM02": {
+        "billed_until": 420,
+        "billing_thresholds": "s1a5",
+        "created": 422,
+        "current_period_end": 423,
+        "current_period_start": 424,
+        "current_trial": "s1a9",
+        "discounts": [],
+        "id": "SUBSCRIPTION_ITEM02",
+        "metadata": {},
+        "object": "s1ad",
+        "price": {},
+        "quantity": 431,
+        "subscription": "s1b0",
+        "tax_rates": []
+      }
+    }
+  },
+  "new": {
+    "subscription_item": {
+      "subscription_item_ref01": {
+        "billed_until": 560,
+        "billing_thresholds": "s231",
+        "created": 562,
+        "current_period_end": 563,
+        "current_period_start": 564,
+        "current_trial": "s235",
+        "discounts": [],
+        "metadata": {},
+        "object": "s239",
+        "price": {},
+        "quantity": 571,
+        "subscription": "s23c",
+        "tax_rates": []
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/subscription_items/{item}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/subscription_items": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/subscription_items": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/subscription_items/{item}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

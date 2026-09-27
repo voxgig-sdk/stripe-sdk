@@ -1,0 +1,43 @@
+{
+  "existing": {
+    "funding_instruction": {
+      "FUNDING_INSTRUCTION00": {
+        "country": "s1e",
+        "financial_addresses": [],
+        "type": "s20",
+        "customer_id": "CUSTOMER01",
+        "id": "FUNDING_INSTRUCTION00"
+      },
+      "FUNDING_INSTRUCTION01": {
+        "country": "s3c",
+        "financial_addresses": [],
+        "type": "s3e",
+        "customer_id": "CUSTOMER01",
+        "id": "FUNDING_INSTRUCTION01"
+      },
+      "FUNDING_INSTRUCTION02": {
+        "country": "s5a",
+        "financial_addresses": [],
+        "type": "s5c",
+        "customer_id": "CUSTOMER01",
+        "id": "FUNDING_INSTRUCTION02"
+      }
+    }
+  },
+  "new": {
+    "funding_instruction": {
+      "funding_instruction_ref01": {
+        "country": "s78",
+        "financial_addresses": [],
+        "type": "s7a"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/customers/{customer}/funding_instructions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

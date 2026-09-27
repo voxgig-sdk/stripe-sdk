@@ -1,0 +1,578 @@
+# Entity: line
+
+main: kit: entity: line: {
+
+  alias: field: {}
+
+  fields: {
+    amount: {
+      h: "Amount"
+      n: "amount"
+      r: true
+      sh: "The amount, in cents (or local equivalent)."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "An arbitrary string attached to the object."
+      t: "`$STRING`"
+    }
+    discount_amount: {
+      h: "Discount Amount"
+      n: "discount_amount"
+      r: true
+      sh: "The integer amount in cents (or local equivalent) representing the discount being credited for this line item."
+      t: "`$INTEGER`"
+    }
+    discount_amounts: {
+      h: "Discount Amounts"
+      n: "discount_amounts"
+      op: {
+        list: {
+          req: true
+          type: "`$ARRAY`"
+        }
+      }
+      r: false
+      sh: "The amount of discount calculated per discount for this line item."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 42
+        depth: 15
+      }
+    }
+    discountable: {
+      h: "Discountable"
+      n: "discountable"
+      r: true
+      sh: "If true, discounts will apply to this line item."
+      t: "`$BOOLEAN`"
+    }
+    discounts: {
+      h: "Discounts"
+      n: "discounts"
+      r: true
+      sh: "The discounts applied to the invoice line item."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 21
+        depth: 13
+      }
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    invoice: {
+      h: "Invoice"
+      n: "invoice"
+      r: false
+      sh: "The ID of the invoice that contains this line item."
+      t: "`$STRING`"
+    }
+    invoice_line_item: {
+      h: "Invoice Line Item"
+      n: "invoice_line_item"
+      r: false
+      sh: "ID of the invoice line item being credited"
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      op: {
+        list: {
+          req: false
+          type: "`$OBJECT`"
+        }
+      }
+      r: true
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    parent: {
+      h: "Parent"
+      n: "parent"
+      r: false
+      sh: "The parent that generated this line item."
+      t: "`$ANY`"
+    }
+    period: {
+      h: "Period"
+      n: "period"
+      r: true
+      t: "`$OBJECT`"
+    }
+    pretax_credit_amounts: {
+      h: "Pretax Credit Amounts"
+      n: "pretax_credit_amounts"
+      op: {
+        list: {
+          req: true
+          type: "`$ARRAY`"
+        }
+      }
+      r: false
+      sh: "Contains pretax credit amounts (ex: discount, credit grants, etc) that apply to this line item."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 63
+        depth: 16
+      }
+    }
+    pricing: {
+      h: "Pricing"
+      n: "pricing"
+      r: false
+      sh: "The pricing information of the line item."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 13
+        depth: 16
+      }
+    }
+    quantity: {
+      h: "Quantity"
+      n: "quantity"
+      r: false
+      sh: "Quantity of units for the invoice line item in integer format, with any decimal precision truncated."
+      t: "`$INTEGER`"
+    }
+    quantity_decimal: {
+      fo: "decimal"
+      h: "Quantity Decimal"
+      n: "quantity_decimal"
+      r: false
+      sh: "Non-negative decimal with at most 12 decimal places."
+      t: "`$STRING`"
+    }
+    subscription: {
+      h: "Subscription"
+      n: "subscription"
+      r: false
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    subtotal: {
+      h: "Subtotal"
+      n: "subtotal"
+      r: true
+      sh: "The subtotal of the line item, in cents (or local equivalent), before any discounts or taxes."
+      t: "`$INTEGER`"
+    }
+    tax_rates: {
+      h: "Tax Rates"
+      n: "tax_rates"
+      r: true
+      sh: "The tax rates which apply to the line item."
+      t: "`$ARRAY`"
+    }
+    taxes: {
+      h: "Taxes"
+      n: "taxes"
+      r: false
+      sh: "The tax information of the line item."
+      t: "`$ARRAY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 7
+      }
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "The type of the credit note line item, one of `invoice_line_item` or `custom_line_item`."
+      t: "`$STRING`"
+    }
+    unit_amount: {
+      h: "Unit Amount"
+      n: "unit_amount"
+      r: false
+      sh: "The cost of each unit of product being credited."
+      t: "`$INTEGER`"
+    }
+    unit_amount_decimal: {
+      fo: "decimal"
+      h: "Unit Amount Decimal"
+      n: "unit_amount_decimal"
+      r: false
+      sh: "Same as `unit_amount`, but contains a decimal value with at most 12 decimal places."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "line"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/invoices/{invoice}/lines/{line_item_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "line_item_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "invoice_id"
+                or: "invoice"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/invoices/{invoice}/lines/{line_item_id}"
+          q: {
+            exist: [
+              "id"
+              "invoice_id"
+            ]
+          }
+          r: {
+            param: {
+              invoice: "invoice_id"
+              line_item_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoices"
+            }
+            {
+              var: "invoice_id"
+            }
+            {
+              lit: "lines"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/credit_notes/preview/lines"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "amount"
+                or: "amount"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "credit_amount"
+                or: "credit_amount"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "effective_at"
+                or: "effective_at"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "email_type"
+                or: "email_type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "invoice"
+                or: "invoice"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "line"
+                or: "line"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "memo"
+                or: "memo"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "metadata"
+                or: "metadata"
+                r: false
+                t: "`$OBJECT`"
+              }
+              {
+                k: "query"
+                n: "out_of_band_amount"
+                or: "out_of_band_amount"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "reason"
+                or: "reason"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "refund"
+                or: "refund"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "refund_amount"
+                or: "refund_amount"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "shipping_cost"
+                or: "shipping_cost"
+                r: false
+                t: "`$OBJECT`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/credit_notes/preview/lines"
+          q: {
+            exist: [
+              "amount"
+              "credit_amount"
+              "effective_at"
+              "email_type"
+              "ending_before"
+              "expand"
+              "invoice"
+              "limit"
+              "line"
+              "memo"
+              "metadata"
+              "out_of_band_amount"
+              "reason"
+              "refund"
+              "refund_amount"
+              "shipping_cost"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "credit_notes"
+            }
+            {
+              lit: "preview"
+            }
+            {
+              lit: "lines"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/invoices/{invoice}/lines"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "invoice_id"
+                or: "invoice"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/invoices/{invoice}/lines"
+          q: {
+            exist: [
+              "ending_before"
+              "expand"
+              "invoice_id"
+              "limit"
+              "starting_after"
+            ]
+          }
+          r: {
+            param: {
+              invoice: "invoice_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoices"
+            }
+            {
+              var: "invoice_id"
+            }
+            {
+              lit: "lines"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.invoice")]
+  ]
+
+}

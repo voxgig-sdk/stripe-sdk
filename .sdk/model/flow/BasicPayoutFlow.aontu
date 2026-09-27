@@ -1,0 +1,52 @@
+# BasicPayoutFlow
+
+main: kit: flow: BasicPayoutFlow:
+{
+  entity: "payout",
+  kind: "basic",
+  name: "BasicPayoutFlow",
+  step: [
+    {
+      i: {
+        ref: "payout_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "payout_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "payout_ref01",
+        srcdatavar: "payout_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "payout01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-payout_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPayoutFlow"
+}

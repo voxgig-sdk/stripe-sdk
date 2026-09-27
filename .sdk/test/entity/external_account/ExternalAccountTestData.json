@@ -1,0 +1,82 @@
+{
+  "existing": {
+    "external_account": {
+      "EXTERNAL_ACCOUNT00": {
+        "data": [],
+        "has_more": false,
+        "id": "EXTERNAL_ACCOUNT00",
+        "object": "s35",
+        "url": "s36",
+        "account_id": "ACCOUNT01"
+      },
+      "EXTERNAL_ACCOUNT01": {
+        "data": [],
+        "has_more": false,
+        "id": "EXTERNAL_ACCOUNT01",
+        "object": "s67",
+        "url": "s68",
+        "account_id": "ACCOUNT01"
+      },
+      "EXTERNAL_ACCOUNT02": {
+        "data": [],
+        "has_more": false,
+        "id": "EXTERNAL_ACCOUNT02",
+        "object": "s99",
+        "url": "s9a",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "external_account": {
+      "external_account_ref01": {
+        "data": [],
+        "has_more": false,
+        "object": "scb",
+        "url": "scc"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/accounts/{account}/bank_accounts/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/accounts/{account}/external_accounts/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/accounts/{account}/bank_accounts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/accounts/{account}/external_accounts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/external_accounts/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/accounts/{account}/external_accounts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/accounts/{account}/bank_accounts/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/accounts/{account}/external_accounts/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

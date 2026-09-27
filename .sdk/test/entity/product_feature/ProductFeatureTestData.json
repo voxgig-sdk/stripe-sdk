@@ -1,0 +1,60 @@
+{
+  "existing": {
+    "product_feature": {
+      "PRODUCT_FEATURE00": {
+        "active": true,
+        "id": "PRODUCT_FEATURE00",
+        "livemode": true,
+        "lookup_key": "s49",
+        "metadata": {},
+        "name": "s4b",
+        "object": "s4c",
+        "product_id": "PRODUCT01"
+      },
+      "PRODUCT_FEATURE01": {
+        "active": true,
+        "id": "PRODUCT_FEATURE01",
+        "livemode": true,
+        "lookup_key": "s8f",
+        "metadata": {},
+        "name": "s91",
+        "object": "s92",
+        "product_id": "PRODUCT01"
+      },
+      "PRODUCT_FEATURE02": {
+        "active": true,
+        "id": "PRODUCT_FEATURE02",
+        "livemode": true,
+        "lookup_key": "sd5",
+        "metadata": {},
+        "name": "sd7",
+        "object": "sd8",
+        "product_id": "PRODUCT01"
+      }
+    }
+  },
+  "new": {
+    "product_feature": {
+      "product_feature_ref01": {
+        "active": true,
+        "livemode": true,
+        "lookup_key": "s11b",
+        "metadata": {},
+        "name": "s11d",
+        "object": "s11e"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/products/{product}/features": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/products/{product}/features/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

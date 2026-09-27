@@ -1,0 +1,26 @@
+# BasicCreditNoteLineFlow
+
+main: kit: flow: BasicCreditNoteLineFlow:
+{
+  entity: "credit_note_line",
+  kind: "basic",
+  name: "BasicCreditNoteLineFlow",
+  step: [
+    {
+      m: {
+        credit_note: "credit_note01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "credit_note_line_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCreditNoteLineFlow"
+}

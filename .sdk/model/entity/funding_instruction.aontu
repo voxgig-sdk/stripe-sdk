@@ -1,0 +1,93 @@
+# Entity: funding_instruction
+
+main: kit: entity: funding_instruction: {
+
+  alias: field: {}
+
+  fields: {
+    country: {
+      h: "Country"
+      n: "country"
+      r: true
+      sh: "The country of the bank account to fund"
+      t: "`$STRING`"
+    }
+    financial_addresses: {
+      h: "Financial Addresses"
+      n: "financial_addresses"
+      r: true
+      sh: "A list of financial addresses that can be used to fund a particular balance"
+      t: "`$ARRAY`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "The bank_transfer type"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "funding_instruction"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/customers/{customer}/funding_instructions"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "customer_id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/customers/{customer}/funding_instructions"
+          q: {
+            exist: [
+              "customer_id"
+            ]
+          }
+          r: {
+            param: {
+              customer: "customer_id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "customer_id"
+            }
+            {
+              lit: "funding_instructions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.bank_transfer`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.customer")]
+  ]
+
+}

@@ -1,0 +1,101 @@
+{
+  "existing": {
+    "meter": {
+      "METER00": {
+        "created": 130,
+        "customer_mapping": {},
+        "default_aggregation": {},
+        "display_name": "s85",
+        "event_name": "s86",
+        "event_time_window": "s87",
+        "id": "METER00",
+        "livemode": false,
+        "object": "s8a",
+        "status": "s8b",
+        "status_transitions": {},
+        "updated": 141,
+        "value_settings": {}
+      },
+      "METER01": {
+        "created": 260,
+        "customer_mapping": {},
+        "default_aggregation": {},
+        "display_name": "s107",
+        "event_name": "s108",
+        "event_time_window": "s109",
+        "id": "METER01",
+        "livemode": false,
+        "object": "s10c",
+        "status": "s10d",
+        "status_transitions": {},
+        "updated": 271,
+        "value_settings": {}
+      },
+      "METER02": {
+        "created": 390,
+        "customer_mapping": {},
+        "default_aggregation": {},
+        "display_name": "s189",
+        "event_name": "s18a",
+        "event_time_window": "s18b",
+        "id": "METER02",
+        "livemode": false,
+        "object": "s18e",
+        "status": "s18f",
+        "status_transitions": {},
+        "updated": 401,
+        "value_settings": {}
+      }
+    }
+  },
+  "new": {
+    "meter": {
+      "meter_ref01": {
+        "created": 520,
+        "customer_mapping": {},
+        "default_aggregation": {},
+        "display_name": "s20b",
+        "event_name": "s20c",
+        "event_time_window": "s20d",
+        "livemode": false,
+        "object": "s210",
+        "status": "s211",
+        "status_transitions": {},
+        "updated": 531,
+        "value_settings": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/billing/meters/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/billing/meters/{id}/deactivate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/billing/meters/{id}/reactivate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/billing/meters": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/billing/meters": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/billing/meters/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

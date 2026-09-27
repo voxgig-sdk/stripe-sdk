@@ -1,0 +1,1183 @@
+# Entity: account
+
+main: kit: entity: account: {
+
+  alias: field: {}
+
+  fields: {
+    account_holder: {
+      h: "Account Holder"
+      n: "account_holder"
+      r: false
+      sh: "The account holder that this account belongs to."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 107346
+        depth: 64
+      }
+    }
+    account_numbers: {
+      h: "Account Numbers"
+      n: "account_numbers"
+      r: false
+      sh: "Details about the account numbers."
+      t: "`$ARRAY`"
+    }
+    balance: {
+      h: "Balance"
+      n: "balance"
+      r: false
+      sh: "The most recent information about the account's balance."
+      t: "`$ANY`"
+    }
+    balance_refresh: {
+      h: "Balance Refresh"
+      n: "balance_refresh"
+      r: false
+      sh: "The state of the most recent attempt to refresh the account balance."
+      t: "`$ANY`"
+    }
+    business_profile: {
+      h: "Business Profile"
+      n: "business_profile"
+      r: false
+      sh: "Business information about the account."
+      t: "`$ANY`"
+    }
+    business_type: {
+      h: "Business Type"
+      n: "business_type"
+      r: false
+      sh: "The business type."
+      t: "`$STRING`"
+    }
+    capabilities: {
+      h: "Capabilities"
+      n: "capabilities"
+      r: false
+      t: "`$OBJECT`"
+    }
+    category: {
+      h: "Category"
+      n: "category"
+      r: true
+      sh: "The type of the account."
+      t: "`$STRING`"
+    }
+    charges_enabled: {
+      h: "Charges Enabled"
+      n: "charges_enabled"
+      r: false
+      sh: "Whether the account can process charges."
+      t: "`$BOOLEAN`"
+    }
+    company: {
+      h: "Company"
+      n: "company"
+      r: false
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 6
+        depth: 18
+      }
+    }
+    controller: {
+      h: "Controller"
+      n: "controller"
+      r: true
+      t: "`$OBJECT`"
+    }
+    country: {
+      h: "Country"
+      n: "country"
+      r: false
+      sh: "The account's country."
+      t: "`$STRING`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      op: {
+        create: {
+          req: false
+          type: "`$INTEGER`"
+        }
+        list: {
+          req: false
+          type: "`$INTEGER`"
+        }
+        load: {
+          req: false
+          type: "`$INTEGER`"
+        }
+      }
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    default_currency: {
+      h: "Default Currency"
+      n: "default_currency"
+      r: false
+      sh: "Three-letter ISO currency code representing the default currency for the account."
+      t: "`$STRING`"
+    }
+    details_submitted: {
+      h: "Details Submitted"
+      n: "details_submitted"
+      r: false
+      sh: "Whether account details have been submitted."
+      t: "`$BOOLEAN`"
+    }
+    display_name: {
+      h: "Display Name"
+      n: "display_name"
+      r: false
+      sh: "A human-readable name that has been assigned to this account, either by the account holder or by the institution."
+      t: "`$STRING`"
+    }
+    email: {
+      h: "Email"
+      n: "email"
+      r: false
+      sh: "An email address associated with the account."
+      t: "`$STRING`"
+    }
+    external_accounts: {
+      h: "External Accounts"
+      n: "external_accounts"
+      r: true
+      sh: "External accounts (bank accounts and debit cards) currently attached to this account."
+      t: "`$OBJECT`"
+      union: {
+        branches: 17
+        count: 106505
+        depth: 64
+      }
+    }
+    future_requirements: {
+      h: "Future Requirements"
+      n: "future_requirements"
+      r: false
+      t: "`$OBJECT`"
+    }
+    groups: {
+      h: "Groups"
+      n: "groups"
+      r: false
+      sh: "The groups associated with the account."
+      t: "`$ANY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    individual: {
+      h: "Individual"
+      n: "individual"
+      r: true
+      sh: "This is an object representing a person associated with a Stripe account."
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 12
+        depth: 18
+      }
+    }
+    institution_name: {
+      h: "Institution Name"
+      n: "institution_name"
+      r: true
+      sh: "The name of the institution that holds this account."
+      t: "`$STRING`"
+    }
+    last4: {
+      h: "Last4"
+      n: "last4"
+      r: false
+      sh: "The last 4 digits of the account number."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    ownership: {
+      h: "Ownership"
+      n: "ownership"
+      r: false
+      sh: "The most recent information about the account's owners."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    ownership_refresh: {
+      h: "Ownership Refresh"
+      n: "ownership_refresh"
+      r: false
+      sh: "The state of the most recent attempt to refresh the account owners."
+      t: "`$ANY`"
+    }
+    payouts_enabled: {
+      h: "Payouts Enabled"
+      n: "payouts_enabled"
+      r: false
+      sh: "Whether the funds in this account can be paid out."
+      t: "`$BOOLEAN`"
+    }
+    permissions: {
+      h: "Permissions"
+      n: "permissions"
+      r: false
+      sh: "The list of permissions granted by this account."
+      t: "`$ARRAY`"
+    }
+    requirements: {
+      h: "Requirements"
+      n: "requirements"
+      r: false
+      t: "`$OBJECT`"
+    }
+    settings: {
+      h: "Settings"
+      n: "settings"
+      r: false
+      sh: "Options for customizing how the account functions within Stripe."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 15
+        depth: 16
+      }
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "The status of the link to the account."
+      t: "`$STRING`"
+    }
+    status_details: {
+      h: "Status Details"
+      n: "status_details"
+      r: false
+      t: "`$OBJECT`"
+    }
+    subcategory: {
+      h: "Subcategory"
+      n: "subcategory"
+      r: true
+      sh: "If `category` is `cash`, one of: - `checking` - `savings` - `other` If `category` is `credit`, one of: - `mortgage` - `line_of_credit` - `credit_card` - `other` If `category` is `investment` or `other`, this will be `other`."
+      t: "`$STRING`"
+    }
+    subscriptions: {
+      h: "Subscriptions"
+      n: "subscriptions"
+      r: false
+      sh: "The list of data refresh subscriptions requested on this account."
+      t: "`$ARRAY`"
+    }
+    supported_payment_method_types: {
+      h: "Supported Payment Method Types"
+      n: "supported_payment_method_types"
+      r: true
+      sh: "The [PaymentMethod type](https://docs.stripe.com/api/payment_methods/object#payment_method_object-type)(s) that can be created from this account."
+      t: "`$ARRAY`"
+    }
+    tos_acceptance: {
+      h: "Tos Acceptance"
+      n: "tos_acceptance"
+      r: false
+      t: "`$OBJECT`"
+    }
+    transaction_refresh: {
+      h: "Transaction Refresh"
+      n: "transaction_refresh"
+      r: false
+      sh: "The state of the most recent attempt to refresh the account transactions."
+      t: "`$ANY`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: false
+      sh: "The Stripe account type."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "account"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/accounts/{account}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/accounts/{account}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              account: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "accounts"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/financial_connections/accounts/{account}/disconnect"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/financial_connections/accounts/{account}/disconnect"
+          q: {
+            "$action": "disconnect"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              account: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "financial_connections"
+            }
+            {
+              lit: "accounts"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "disconnect"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/linked_accounts/{account}/disconnect"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/linked_accounts/{account}/disconnect"
+          q: {
+            "$action": "disconnect"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              account: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "linked_accounts"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "disconnect"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/financial_connections/accounts/{account}/refresh"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/financial_connections/accounts/{account}/refresh"
+          q: {
+            "$action": "refresh"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              account: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "financial_connections"
+            }
+            {
+              lit: "accounts"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "refresh"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/linked_accounts/{account}/refresh"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/linked_accounts/{account}/refresh"
+          q: {
+            "$action": "refresh"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              account: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "linked_accounts"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "refresh"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/accounts/{account}/reject"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/accounts/{account}/reject"
+          q: {
+            "$action": "reject"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              account: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "accounts"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "reject"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/financial_connections/accounts/{account}/subscribe"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/financial_connections/accounts/{account}/subscribe"
+          q: {
+            "$action": "subscribe"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              account: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "financial_connections"
+            }
+            {
+              lit: "accounts"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "subscribe"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/accounts/{account}/unreject"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/accounts/{account}/unreject"
+          q: {
+            "$action": "unreject"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              account: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "accounts"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "unreject"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/financial_connections/accounts/{account}/unsubscribe"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/financial_connections/accounts/{account}/unsubscribe"
+          q: {
+            "$action": "unsubscribe"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              account: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "financial_connections"
+            }
+            {
+              lit: "accounts"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "unsubscribe"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/accounts"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/accounts"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "accounts"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/financial_connections/accounts"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "account_holder"
+                or: "account_holder"
+                r: false
+                t: "`$OBJECT`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "session"
+                or: "session"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/financial_connections/accounts"
+          q: {
+            exist: [
+              "account_holder"
+              "ending_before"
+              "expand"
+              "limit"
+              "session"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "financial_connections"
+            }
+            {
+              lit: "accounts"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/accounts"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/accounts"
+          q: {
+            exist: [
+              "created"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "accounts"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/linked_accounts/{account}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/linked_accounts/{account}"
+          q: {
+            exist: [
+              "account"
+              "expand"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "linked_accounts"
+            }
+            {
+              var: "account"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/accounts/{account}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/accounts/{account}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              account: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "accounts"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/financial_connections/accounts/{account}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/financial_connections/accounts/{account}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              account: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "financial_connections"
+            }
+            {
+              lit: "accounts"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/account"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/account"
+          q: {
+            exist: [
+              "expand"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "account"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.linked_account")]
+  ]
+
+}

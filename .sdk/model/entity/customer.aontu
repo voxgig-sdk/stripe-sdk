@@ -1,0 +1,543 @@
+# Entity: customer
+
+main: kit: entity: customer: {
+
+  alias: field: {}
+
+  fields: {
+    address: {
+      h: "Address"
+      n: "address"
+      r: false
+      sh: "The customer's billing address."
+      t: "`$ANY`"
+    }
+    balance: {
+      h: "Balance"
+      n: "balance"
+      r: false
+      sh: "The current balance, if any, that's stored on the customer in their default currency."
+      t: "`$INTEGER`"
+    }
+    business_name: {
+      h: "Business Name"
+      n: "business_name"
+      r: false
+      sh: "The customer's business name."
+      t: "`$STRING`"
+    }
+    cash_balance: {
+      h: "Cash Balance"
+      n: "cash_balance"
+      r: false
+      sh: "The current funds being held by Stripe on behalf of the customer."
+      t: "`$ANY`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      h: "Currency"
+      n: "currency"
+      r: false
+      sh: "Three-letter [ISO code for the currency](https://stripe.com/docs/currencies) the customer can be charged in for recurring billing purposes."
+      t: "`$STRING`"
+    }
+    customer_account: {
+      h: "Customer Account"
+      n: "customer_account"
+      r: false
+      sh: "The ID of an Account representing a customer."
+      t: "`$STRING`"
+    }
+    default_source: {
+      h: "Default Source"
+      n: "default_source"
+      r: false
+      sh: "ID of the default payment source for the customer."
+      t: "`$ANY`"
+      union: {
+        branches: 4
+        count: 8
+        depth: 6
+      }
+    }
+    delinquent: {
+      h: "Delinquent"
+      n: "delinquent"
+      r: false
+      sh: "Tracks the most recent state change on any invoice belonging to the customer."
+      t: "`$BOOLEAN`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "An arbitrary string attached to the object."
+      t: "`$STRING`"
+    }
+    discount: {
+      h: "Discount"
+      n: "discount"
+      r: false
+      sh: "Describes the current discount active on the customer, if there is one."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 10
+        depth: 11
+      }
+    }
+    email: {
+      h: "Email"
+      n: "email"
+      r: false
+      sh: "The customer's email address."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    individual_name: {
+      h: "Individual Name"
+      n: "individual_name"
+      r: false
+      sh: "The customer's individual name."
+      t: "`$STRING`"
+    }
+    invoice_credit_balance: {
+      h: "Invoice Credit Balance"
+      n: "invoice_credit_balance"
+      r: false
+      sh: "The current multi-currency balances, if any, that's stored on the customer."
+      t: "`$OBJECT`"
+    }
+    invoice_prefix: {
+      h: "Invoice Prefix"
+      n: "invoice_prefix"
+      r: false
+      sh: "The prefix for the customer used to generate unique invoice numbers."
+      t: "`$STRING`"
+    }
+    invoice_settings: {
+      h: "Invoice Settings"
+      n: "invoice_settings"
+      r: false
+      t: "`$OBJECT`"
+      union: {
+        branches: 17
+        count: 27455
+        depth: 64
+      }
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "The customer's full name or business name."
+      t: "`$STRING`"
+    }
+    next_invoice_sequence: {
+      h: "Next Invoice Sequence"
+      n: "next_invoice_sequence"
+      r: false
+      sh: "The suffix of the customer's next invoice number (for example, 0001)."
+      t: "`$INTEGER`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    phone: {
+      h: "Phone"
+      n: "phone"
+      r: false
+      sh: "The customer's phone number."
+      t: "`$STRING`"
+    }
+    preferred_locales: {
+      h: "Preferred Locales"
+      n: "preferred_locales"
+      r: false
+      sh: "The customer's preferred locales (languages), ordered by preference."
+      t: "`$ARRAY`"
+    }
+    shipping: {
+      h: "Shipping"
+      n: "shipping"
+      r: false
+      sh: "Mailing and shipping address for the customer."
+      t: "`$ANY`"
+    }
+    sources: {
+      h: "Sources"
+      n: "sources"
+      r: true
+      sh: "The customer's payment sources, if any."
+      t: "`$OBJECT`"
+      union: {
+        branches: 3
+        count: 4
+        depth: 8
+      }
+    }
+    subscriptions: {
+      h: "Subscriptions"
+      n: "subscriptions"
+      r: true
+      sh: "The customer's current subscriptions, if any."
+      t: "`$OBJECT`"
+      union: {
+        branches: 17
+        count: 99785
+        depth: 64
+      }
+    }
+    tax: {
+      h: "Tax"
+      n: "tax"
+      r: true
+      t: "`$OBJECT`"
+    }
+    tax_exempt: {
+      h: "Tax Exempt"
+      n: "tax_exempt"
+      r: false
+      sh: "Describes the customer's tax exemption status, which is `none`, `exempt`, or `reverse`."
+      t: "`$STRING`"
+    }
+    tax_ids: {
+      h: "Tax Ids"
+      n: "tax_ids"
+      r: true
+      sh: "The customer's tax IDs."
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 4
+        depth: 9
+      }
+    }
+    test_clock: {
+      h: "Test Clock"
+      n: "test_clock"
+      r: false
+      sh: "ID of the test clock that this customer belongs to."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "customer"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/customers/{customer}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/customers/{customer}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              customer: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/customers"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/customers"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/customers"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "email"
+                or: "email"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "test_clock"
+                or: "test_clock"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/customers"
+          q: {
+            exist: [
+              "created"
+              "email"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+              "test_clock"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/customers/{customer}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/customers/{customer}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              customer: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /v1/customers/{customer}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "customer"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/v1/customers/{customer}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              customer: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

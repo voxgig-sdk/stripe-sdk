@@ -1,0 +1,103 @@
+{
+  "existing": {
+    "cardholder": {
+      "CARDHOLDER00": {
+        "billing": {},
+        "company": "sa1",
+        "created": 162,
+        "email": "sa3",
+        "id": "CARDHOLDER00",
+        "individual": "sa5",
+        "livemode": true,
+        "metadata": {},
+        "name": "sa8",
+        "object": "sa9",
+        "phone_number": "saa",
+        "preferred_locales": [],
+        "requirements": {},
+        "spending_controls": "sad",
+        "status": "sae",
+        "type": "saf"
+      },
+      "CARDHOLDER01": {
+        "billing": {},
+        "company": "s141",
+        "created": 322,
+        "email": "s143",
+        "id": "CARDHOLDER01",
+        "individual": "s145",
+        "livemode": true,
+        "metadata": {},
+        "name": "s148",
+        "object": "s149",
+        "phone_number": "s14a",
+        "preferred_locales": [],
+        "requirements": {},
+        "spending_controls": "s14d",
+        "status": "s14e",
+        "type": "s14f"
+      },
+      "CARDHOLDER02": {
+        "billing": {},
+        "company": "s1e1",
+        "created": 482,
+        "email": "s1e3",
+        "id": "CARDHOLDER02",
+        "individual": "s1e5",
+        "livemode": true,
+        "metadata": {},
+        "name": "s1e8",
+        "object": "s1e9",
+        "phone_number": "s1ea",
+        "preferred_locales": [],
+        "requirements": {},
+        "spending_controls": "s1ed",
+        "status": "s1ee",
+        "type": "s1ef"
+      }
+    }
+  },
+  "new": {
+    "cardholder": {
+      "cardholder_ref01": {
+        "billing": {},
+        "company": "s281",
+        "created": 642,
+        "email": "s283",
+        "individual": "s285",
+        "livemode": true,
+        "metadata": {},
+        "name": "s288",
+        "object": "s289",
+        "phone_number": "s28a",
+        "preferred_locales": [],
+        "requirements": {},
+        "spending_controls": "s28d",
+        "status": "s28e",
+        "type": "s28f"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/issuing/cardholders/{cardholder}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/issuing/cardholders": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/issuing/cardholders": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/issuing/cardholders/{cardholder}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

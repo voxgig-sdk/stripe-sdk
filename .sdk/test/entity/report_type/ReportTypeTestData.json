@@ -1,0 +1,65 @@
+{
+  "existing": {
+    "report_type": {
+      "REPORT_TYPE00": {
+        "data_available_end": 90,
+        "data_available_start": 91,
+        "default_columns": [],
+        "id": "REPORT_TYPE00",
+        "livemode": true,
+        "name": "s5f",
+        "object": "s60",
+        "updated": 97,
+        "version": 98
+      },
+      "REPORT_TYPE01": {
+        "data_available_end": 180,
+        "data_available_start": 181,
+        "default_columns": [],
+        "id": "REPORT_TYPE01",
+        "livemode": true,
+        "name": "sb9",
+        "object": "sba",
+        "updated": 187,
+        "version": 188
+      },
+      "REPORT_TYPE02": {
+        "data_available_end": 270,
+        "data_available_start": 271,
+        "default_columns": [],
+        "id": "REPORT_TYPE02",
+        "livemode": true,
+        "name": "s113",
+        "object": "s114",
+        "updated": 277,
+        "version": 278
+      }
+    }
+  },
+  "new": {
+    "report_type": {
+      "report_type_ref01": {
+        "data_available_end": 360,
+        "data_available_start": 361,
+        "default_columns": [],
+        "livemode": true,
+        "name": "s16d",
+        "object": "s16e",
+        "updated": 367,
+        "version": 368
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/reporting/report_types": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/reporting/report_types/{report_type}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

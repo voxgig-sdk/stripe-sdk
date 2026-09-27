@@ -1,0 +1,113 @@
+{
+  "existing": {
+    "payment_attempt_record": {
+      "PAYMENT_ATTEMPT_RECORD00": {
+        "amount": {},
+        "amount_authorized": {},
+        "amount_canceled": {},
+        "amount_failed": {},
+        "amount_guaranteed": {},
+        "amount_refunded": {},
+        "amount_requested": {},
+        "application": "sd9",
+        "created": 218,
+        "customer_details": "sdb",
+        "customer_presence": "sdc",
+        "description": "sdd",
+        "id": "PAYMENT_ATTEMPT_RECORD00",
+        "livemode": false,
+        "metadata": {},
+        "object": "se1",
+        "payment_method_details": "se2",
+        "payment_record": "se3",
+        "processor_details": {},
+        "reported_by": "se5",
+        "shipping_details": "se6"
+      },
+      "PAYMENT_ATTEMPT_RECORD01": {
+        "amount": {},
+        "amount_authorized": {},
+        "amount_canceled": {},
+        "amount_failed": {},
+        "amount_guaranteed": {},
+        "amount_refunded": {},
+        "amount_requested": {},
+        "application": "s1ab",
+        "created": 428,
+        "customer_details": "s1ad",
+        "customer_presence": "s1ae",
+        "description": "s1af",
+        "id": "PAYMENT_ATTEMPT_RECORD01",
+        "livemode": false,
+        "metadata": {},
+        "object": "s1b3",
+        "payment_method_details": "s1b4",
+        "payment_record": "s1b5",
+        "processor_details": {},
+        "reported_by": "s1b7",
+        "shipping_details": "s1b8"
+      },
+      "PAYMENT_ATTEMPT_RECORD02": {
+        "amount": {},
+        "amount_authorized": {},
+        "amount_canceled": {},
+        "amount_failed": {},
+        "amount_guaranteed": {},
+        "amount_refunded": {},
+        "amount_requested": {},
+        "application": "s27d",
+        "created": 638,
+        "customer_details": "s27f",
+        "customer_presence": "s280",
+        "description": "s281",
+        "id": "PAYMENT_ATTEMPT_RECORD02",
+        "livemode": false,
+        "metadata": {},
+        "object": "s285",
+        "payment_method_details": "s286",
+        "payment_record": "s287",
+        "processor_details": {},
+        "reported_by": "s289",
+        "shipping_details": "s28a"
+      }
+    }
+  },
+  "new": {
+    "payment_attempt_record": {
+      "payment_attempt_record_ref01": {
+        "amount": {},
+        "amount_authorized": {},
+        "amount_canceled": {},
+        "amount_failed": {},
+        "amount_guaranteed": {},
+        "amount_refunded": {},
+        "amount_requested": {},
+        "application": "s34f",
+        "created": 848,
+        "customer_details": "s351",
+        "customer_presence": "s352",
+        "description": "s353",
+        "livemode": false,
+        "metadata": {},
+        "object": "s357",
+        "payment_method_details": "s358",
+        "payment_record": "s359",
+        "processor_details": {},
+        "reported_by": "s35b",
+        "shipping_details": "s35c"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/payment_attempt_records": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/payment_attempt_records/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

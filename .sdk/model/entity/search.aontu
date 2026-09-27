@@ -1,0 +1,2206 @@
+# Entity: search
+
+main: kit: entity: search: {
+
+  alias: field: {}
+
+  fields: {
+    account_country: {
+      h: "Account Country"
+      n: "account_country"
+      r: false
+      sh: "The country of the business associated with this invoice, most often the business creating the invoice."
+      t: "`$STRING`"
+    }
+    account_name: {
+      h: "Account Name"
+      n: "account_name"
+      r: false
+      sh: "The public name of the business associated with this invoice, most often the business creating the invoice."
+      t: "`$STRING`"
+    }
+    account_tax_ids: {
+      h: "Account Tax Ids"
+      n: "account_tax_ids"
+      r: false
+      sh: "The account tax IDs associated with the invoice."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 10
+        depth: 10
+      }
+    }
+    active: {
+      h: "Active"
+      n: "active"
+      r: true
+      sh: "Whether the price can be used for new purchases."
+      t: "`$BOOLEAN`"
+    }
+    address: {
+      h: "Address"
+      n: "address"
+      r: false
+      sh: "The customer's billing address."
+      t: "`$ANY`"
+    }
+    allowed_payment_method_types: {
+      h: "Allowed Payment Method Types"
+      n: "allowed_payment_method_types"
+      r: false
+      sh: "The list of payment method types allowed for use with this payment."
+      t: "`$ARRAY`"
+    }
+    amount: {
+      h: "Amount"
+      n: "amount"
+      op: {
+        list: {
+          req: false
+          type: "`$INTEGER`"
+        }
+      }
+      r: true
+      sh: "Amount intended to be collected by this payment."
+      t: "`$INTEGER`"
+    }
+    amount_capturable: {
+      h: "Amount Capturable"
+      n: "amount_capturable"
+      r: false
+      sh: "Amount that can be captured from this PaymentIntent."
+      t: "`$INTEGER`"
+    }
+    amount_captured: {
+      h: "Amount Captured"
+      n: "amount_captured"
+      r: true
+      sh: "Amount in cents (or local equivalent) captured (can be less than the amount attribute on the charge if a partial capture was made)."
+      t: "`$INTEGER`"
+    }
+    amount_details: {
+      h: "Amount Details"
+      n: "amount_details"
+      r: false
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    amount_due: {
+      h: "Amount Due"
+      n: "amount_due"
+      r: true
+      sh: "Final amount due at this time for this invoice."
+      t: "`$INTEGER`"
+    }
+    amount_overpaid: {
+      h: "Amount Overpaid"
+      n: "amount_overpaid"
+      r: true
+      sh: "Amount that was overpaid on the invoice."
+      t: "`$INTEGER`"
+    }
+    amount_paid: {
+      h: "Amount Paid"
+      n: "amount_paid"
+      r: true
+      sh: "The amount, in cents (or local equivalent), that was paid."
+      t: "`$INTEGER`"
+    }
+    amount_paid_off_stripe: {
+      h: "Amount Paid Off Stripe"
+      n: "amount_paid_off_stripe"
+      r: true
+      sh: "Amount, in cents (or local equivalent), that was paid on the invoice outside of Stripe."
+      t: "`$INTEGER`"
+    }
+    amount_received: {
+      h: "Amount Received"
+      n: "amount_received"
+      r: false
+      sh: "Amount that this PaymentIntent collects."
+      t: "`$INTEGER`"
+    }
+    amount_refunded: {
+      h: "Amount Refunded"
+      n: "amount_refunded"
+      r: true
+      sh: "Amount in cents (or local equivalent) refunded (can be less than the amount attribute on the charge if a partial refund was issued)."
+      t: "`$INTEGER`"
+    }
+    amount_remaining: {
+      h: "Amount Remaining"
+      n: "amount_remaining"
+      r: true
+      sh: "The difference between amount_due and amount_paid, in cents (or local equivalent)."
+      t: "`$INTEGER`"
+    }
+    amount_shipping: {
+      h: "Amount Shipping"
+      n: "amount_shipping"
+      r: true
+      sh: "This is the sum of all the shipping amounts."
+      t: "`$INTEGER`"
+    }
+    application: {
+      h: "Application"
+      n: "application"
+      r: false
+      sh: "ID of the Connect application that created the charge."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    application_fee: {
+      h: "Application Fee"
+      n: "application_fee"
+      r: false
+      sh: "The application fee (if any) for the charge."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 4118
+        depth: 45
+      }
+    }
+    application_fee_amount: {
+      h: "Application Fee Amount"
+      n: "application_fee_amount"
+      r: false
+      sh: "The amount of the application fee (if any) requested for the charge."
+      t: "`$INTEGER`"
+    }
+    application_fee_percent: {
+      h: "Application Fee Percent"
+      n: "application_fee_percent"
+      r: false
+      sh: "A non-negative decimal between 0 and 100, with at most two decimal places."
+      t: "`$NUMBER`"
+    }
+    attempt_count: {
+      h: "Attempt Count"
+      n: "attempt_count"
+      r: true
+      sh: "Number of payment attempts made for this invoice, from the perspective of the payment retry schedule."
+      t: "`$INTEGER`"
+    }
+    attempted: {
+      h: "Attempted"
+      n: "attempted"
+      r: true
+      sh: "Whether an attempt has been made to pay the invoice."
+      t: "`$BOOLEAN`"
+    }
+    auto_advance: {
+      h: "Auto Advance"
+      n: "auto_advance"
+      r: true
+      sh: "Controls whether Stripe performs [automatic collection](https://docs.stripe.com/invoicing/integration/automatic-advancement-collection) of the invoice."
+      t: "`$BOOLEAN`"
+    }
+    automatic_payment_methods: {
+      h: "Automatic Payment Methods"
+      n: "automatic_payment_methods"
+      r: false
+      sh: "Settings to configure compatible payment methods from the [Stripe Dashboard](https://dashboard.stripe.com/settings/payment_methods)"
+      t: "`$ANY`"
+    }
+    automatic_tax: {
+      h: "Automatic Tax"
+      n: "automatic_tax"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 6
+      }
+    }
+    automatically_finalizes_at: {
+      fo: "unix-time"
+      h: "Automatically Finalizes At"
+      n: "automatically_finalizes_at"
+      r: false
+      sh: "The time when this invoice is currently scheduled to be automatically finalized."
+      t: "`$INTEGER`"
+    }
+    balance: {
+      h: "Balance"
+      n: "balance"
+      r: false
+      sh: "The current balance, if any, that's stored on the customer in their default currency."
+      t: "`$INTEGER`"
+    }
+    balance_transaction: {
+      h: "Balance Transaction"
+      n: "balance_transaction"
+      r: false
+      sh: "ID of the balance transaction that describes the impact of this charge on your account balance (not including refunds or disputes)."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 2418
+        depth: 41
+      }
+    }
+    billing_cycle_anchor: {
+      fo: "unix-time"
+      h: "Billing Cycle Anchor"
+      n: "billing_cycle_anchor"
+      r: true
+      sh: "The reference point that aligns future [billing cycle](https://docs.stripe.com/subscriptions/billing-cycle) dates."
+      t: "`$INTEGER`"
+    }
+    billing_cycle_anchor_config: {
+      h: "Billing Cycle Anchor Config"
+      n: "billing_cycle_anchor_config"
+      r: false
+      sh: "The fixed values used to calculate the `billing_cycle_anchor`."
+      t: "`$ANY`"
+    }
+    billing_details: {
+      h: "Billing Details"
+      n: "billing_details"
+      r: true
+      t: "`$OBJECT`"
+    }
+    billing_mode: {
+      h: "Billing Mode"
+      n: "billing_mode"
+      r: true
+      sh: "The billing mode of the subscription."
+      t: "`$OBJECT`"
+    }
+    billing_reason: {
+      h: "Billing Reason"
+      n: "billing_reason"
+      r: false
+      sh: "Indicates the reason why the invoice was created."
+      t: "`$STRING`"
+    }
+    billing_schedules: {
+      h: "Billing Schedules"
+      n: "billing_schedules"
+      r: true
+      sh: "Billing schedules for this subscription."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 13
+        depth: 16
+      }
+    }
+    billing_scheme: {
+      h: "Billing Scheme"
+      n: "billing_scheme"
+      r: true
+      sh: "Describes how to compute the price per period."
+      t: "`$STRING`"
+    }
+    billing_thresholds: {
+      h: "Billing Thresholds"
+      n: "billing_thresholds"
+      r: false
+      sh: "Define thresholds at which an invoice will be sent, and the subscription advanced to a new billing period"
+      t: "`$ANY`"
+    }
+    business_name: {
+      h: "Business Name"
+      n: "business_name"
+      r: false
+      sh: "The customer's business name."
+      t: "`$STRING`"
+    }
+    calculated_statement_descriptor: {
+      h: "Calculated Statement Descriptor"
+      n: "calculated_statement_descriptor"
+      r: false
+      sh: "The full statement descriptor that is passed to card networks, and that is displayed on your customers' credit card and bank statements."
+      t: "`$STRING`"
+    }
+    cancel_at: {
+      fo: "unix-time"
+      h: "Cancel At"
+      n: "cancel_at"
+      r: false
+      sh: "A date in the future at which the subscription will automatically get canceled"
+      t: "`$INTEGER`"
+    }
+    cancel_at_period_end: {
+      h: "Cancel At Period End"
+      n: "cancel_at_period_end"
+      r: true
+      sh: "Whether this subscription will (if `status=active`) or did (if `status=canceled`) cancel at the end of the current billing period."
+      t: "`$BOOLEAN`"
+    }
+    canceled_at: {
+      fo: "unix-time"
+      h: "Canceled At"
+      n: "canceled_at"
+      r: false
+      sh: "Populated when `status` is `canceled`, this is the time at which the PaymentIntent was canceled."
+      t: "`$INTEGER`"
+    }
+    cancellation_details: {
+      h: "Cancellation Details"
+      n: "cancellation_details"
+      r: false
+      sh: "Details about why this subscription was cancelled"
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 4
+      }
+    }
+    cancellation_reason: {
+      h: "Cancellation Reason"
+      n: "cancellation_reason"
+      r: false
+      sh: "Reason for cancellation of this PaymentIntent, either user-provided (`duplicate`, `fraudulent`, `requested_by_customer`, or `abandoned`) or generated by Stripe internally (`failed_invoice`, `void_invoice`, `automatic`, or `expired`)."
+      t: "`$STRING`"
+    }
+    capture_method: {
+      h: "Capture Method"
+      n: "capture_method"
+      r: false
+      sh: "Controls when the funds will be captured from the customer's account."
+      t: "`$STRING`"
+    }
+    captured: {
+      h: "Captured"
+      n: "captured"
+      r: true
+      sh: "If the charge was created without capturing, this Boolean represents whether it is still uncaptured or has since been captured."
+      t: "`$BOOLEAN`"
+    }
+    cash_balance: {
+      h: "Cash Balance"
+      n: "cash_balance"
+      r: false
+      sh: "The current funds being held by Stripe on behalf of the customer."
+      t: "`$ANY`"
+    }
+    client_secret: {
+      h: "Client Secret"
+      n: "client_secret"
+      r: false
+      sh: "The client secret of this PaymentIntent."
+      t: "`$STRING`"
+    }
+    collection_method: {
+      h: "Collection Method"
+      n: "collection_method"
+      r: true
+      sh: "Either `charge_automatically`, or `send_invoice`."
+      t: "`$STRING`"
+    }
+    confirmation_method: {
+      h: "Confirmation Method"
+      n: "confirmation_method"
+      r: false
+      sh: "Describes whether we can confirm this PaymentIntent automatically, or if it requires customer action to confirm the payment."
+      t: "`$STRING`"
+    }
+    confirmation_secret: {
+      h: "Confirmation Secret"
+      n: "confirmation_secret"
+      r: false
+      sh: "The confirmation secret associated with this invoice."
+      t: "`$ANY`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      op: {
+        list: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    currency_options: {
+      h: "Currency Options"
+      n: "currency_options"
+      r: false
+      sh: "Prices defined in each available currency option."
+      t: "`$OBJECT`"
+    }
+    custom_fields: {
+      h: "Custom Fields"
+      n: "custom_fields"
+      r: false
+      sh: "Custom fields displayed on the invoice."
+      t: "`$ARRAY`"
+    }
+    custom_unit_amount: {
+      h: "Custom Unit Amount"
+      n: "custom_unit_amount"
+      r: false
+      sh: "When set, provides configuration for the amount to be adjusted by the customer during Checkout Sessions and Payment Links."
+      t: "`$ANY`"
+    }
+    customer: {
+      h: "Customer"
+      n: "customer"
+      op: {
+        list: {
+          req: true
+          type: "`$ANY`"
+        }
+      }
+      r: false
+      sh: "ID of the customer this charge is for if one exists."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 2
+        depth: 1
+      }
+    }
+    customer_account: {
+      h: "Customer Account"
+      n: "customer_account"
+      r: false
+      sh: "The ID of an Account representing a customer."
+      t: "`$STRING`"
+    }
+    customer_address: {
+      h: "Customer Address"
+      n: "customer_address"
+      r: false
+      sh: "The customer's address."
+      t: "`$ANY`"
+    }
+    customer_email: {
+      h: "Customer Email"
+      n: "customer_email"
+      r: false
+      sh: "The customer's email."
+      t: "`$STRING`"
+    }
+    customer_name: {
+      h: "Customer Name"
+      n: "customer_name"
+      r: false
+      sh: "The customer's name."
+      t: "`$STRING`"
+    }
+    customer_phone: {
+      h: "Customer Phone"
+      n: "customer_phone"
+      r: false
+      sh: "The customer's phone number."
+      t: "`$STRING`"
+    }
+    customer_shipping: {
+      h: "Customer Shipping"
+      n: "customer_shipping"
+      r: false
+      sh: "The customer's shipping information."
+      t: "`$ANY`"
+    }
+    customer_tax_exempt: {
+      h: "Customer Tax Exempt"
+      n: "customer_tax_exempt"
+      r: false
+      sh: "The customer's tax exempt status."
+      t: "`$STRING`"
+    }
+    customer_tax_ids: {
+      h: "Customer Tax Ids"
+      n: "customer_tax_ids"
+      r: false
+      sh: "The customer's tax IDs."
+      t: "`$ARRAY`"
+    }
+    days_until_due: {
+      h: "Days Until Due"
+      n: "days_until_due"
+      r: false
+      sh: "Number of days a customer has to pay invoices generated by this subscription."
+      t: "`$INTEGER`"
+    }
+    default_payment_method: {
+      h: "Default Payment Method"
+      n: "default_payment_method"
+      r: false
+      sh: "ID of the default payment method for the invoice."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 30903
+        depth: 64
+      }
+    }
+    default_price: {
+      h: "Default Price"
+      n: "default_price"
+      r: false
+      sh: "The ID of the [Price](https://docs.stripe.com/api/prices) object that is the default price for this product."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    default_source: {
+      h: "Default Source"
+      n: "default_source"
+      r: false
+      sh: "ID of the default payment source for the customer."
+      t: "`$ANY`"
+      union: {
+        branches: 4
+        count: 8
+        depth: 6
+      }
+    }
+    default_tax_rates: {
+      h: "Default Tax Rates"
+      n: "default_tax_rates"
+      op: {
+        list: {
+          req: false
+          type: "`$ARRAY`"
+        }
+      }
+      r: true
+      sh: "The tax rates applied to this invoice, if any."
+      t: "`$ARRAY`"
+    }
+    delinquent: {
+      h: "Delinquent"
+      n: "delinquent"
+      r: false
+      sh: "Tracks the most recent state change on any invoice belonging to the customer."
+      t: "`$BOOLEAN`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "An arbitrary string attached to the object."
+      t: "`$STRING`"
+    }
+    discount: {
+      h: "Discount"
+      n: "discount"
+      r: false
+      sh: "Describes the current discount active on the customer, if there is one."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 10
+        depth: 11
+      }
+    }
+    discounts: {
+      h: "Discounts"
+      n: "discounts"
+      r: true
+      sh: "The discounts applied to the invoice."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 42
+        depth: 13
+      }
+    }
+    disputed: {
+      h: "Disputed"
+      n: "disputed"
+      r: true
+      sh: "Whether the charge has been disputed."
+      t: "`$BOOLEAN`"
+    }
+    due_date: {
+      fo: "unix-time"
+      h: "Due Date"
+      n: "due_date"
+      r: false
+      sh: "The date on which payment for this invoice is due."
+      t: "`$INTEGER`"
+    }
+    effective_at: {
+      fo: "unix-time"
+      h: "Effective At"
+      n: "effective_at"
+      r: false
+      sh: "The date when this invoice is in effect."
+      t: "`$INTEGER`"
+    }
+    email: {
+      h: "Email"
+      n: "email"
+      r: false
+      sh: "The customer's email address."
+      t: "`$STRING`"
+    }
+    ended_at: {
+      fo: "unix-time"
+      h: "Ended At"
+      n: "ended_at"
+      r: false
+      sh: "If the subscription has ended, the date the subscription ended."
+      t: "`$INTEGER`"
+    }
+    ending_balance: {
+      h: "Ending Balance"
+      n: "ending_balance"
+      r: false
+      sh: "Ending customer balance after the invoice is finalized."
+      t: "`$INTEGER`"
+    }
+    excluded_payment_method_types: {
+      h: "Excluded Payment Method Types"
+      n: "excluded_payment_method_types"
+      r: false
+      sh: "The list of payment method types to exclude from use with this payment."
+      t: "`$ARRAY`"
+    }
+    failure_balance_transaction: {
+      h: "Failure Balance Transaction"
+      n: "failure_balance_transaction"
+      r: false
+      sh: "ID of the balance transaction that describes the reversal of the balance on your account due to payment failure."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 2552
+        depth: 41
+      }
+    }
+    failure_code: {
+      h: "Failure Code"
+      n: "failure_code"
+      r: false
+      sh: "Error code explaining reason for charge failure if available (see [the errors section](https://docs.stripe.com/error-codes) for a list of codes)."
+      t: "`$STRING`"
+    }
+    failure_message: {
+      h: "Failure Message"
+      n: "failure_message"
+      r: false
+      sh: "Message to user further explaining reason for charge failure if available."
+      t: "`$STRING`"
+    }
+    footer: {
+      h: "Footer"
+      n: "footer"
+      r: false
+      sh: "Footer displayed on the invoice."
+      t: "`$STRING`"
+    }
+    fraud_details: {
+      h: "Fraud Details"
+      n: "fraud_details"
+      r: false
+      sh: "Information on fraud assessments for the charge."
+      t: "`$ANY`"
+    }
+    from_invoice: {
+      h: "From Invoice"
+      n: "from_invoice"
+      r: false
+      sh: "Details of the invoice that was cloned."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 4
+      }
+    }
+    hooks: {
+      h: "Hooks"
+      n: "hooks"
+      r: false
+      t: "`$OBJECT`"
+    }
+    hosted_invoice_url: {
+      h: "Hosted Invoice Url"
+      n: "hosted_invoice_url"
+      r: false
+      sh: "The URL for the hosted invoice page, which allows customers to view and pay an invoice."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    images: {
+      h: "Images"
+      n: "images"
+      r: true
+      sh: "A list of up to 8 URLs of images for this product, meant to be displayable to the customer."
+      t: "`$ARRAY`"
+    }
+    individual_name: {
+      h: "Individual Name"
+      n: "individual_name"
+      r: false
+      sh: "The customer's individual name."
+      t: "`$STRING`"
+    }
+    invoice_credit_balance: {
+      h: "Invoice Credit Balance"
+      n: "invoice_credit_balance"
+      r: false
+      sh: "The current multi-currency balances, if any, that's stored on the customer."
+      t: "`$OBJECT`"
+    }
+    invoice_pdf: {
+      h: "Invoice Pdf"
+      n: "invoice_pdf"
+      r: false
+      sh: "The link to download the PDF for the invoice."
+      t: "`$STRING`"
+    }
+    invoice_prefix: {
+      h: "Invoice Prefix"
+      n: "invoice_prefix"
+      r: false
+      sh: "The prefix for the customer used to generate unique invoice numbers."
+      t: "`$STRING`"
+    }
+    invoice_settings: {
+      h: "Invoice Settings"
+      n: "invoice_settings"
+      op: {
+        list: {
+          req: true
+          type: "`$OBJECT`"
+        }
+      }
+      r: false
+      t: "`$OBJECT`"
+      union: {
+        branches: 17
+        count: 27455
+        depth: 64
+      }
+    }
+    issuer: {
+      h: "Issuer"
+      n: "issuer"
+      r: true
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 2
+      }
+    }
+    items: {
+      h: "Items"
+      n: "items"
+      r: true
+      sh: "List of subscription items, each with an attached price."
+      t: "`$OBJECT`"
+      union: {
+        branches: 3
+        count: 27
+        depth: 18
+      }
+    }
+    last_finalization_error: {
+      h: "Last Finalization Error"
+      n: "last_finalization_error"
+      r: false
+      sh: "The error encountered during the previous attempt to finalize the invoice."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 16375
+        depth: 55
+      }
+    }
+    last_payment_error: {
+      h: "Last Payment Error"
+      n: "last_payment_error"
+      r: false
+      sh: "The payment error encountered in the previous PaymentIntent confirmation."
+      t: "`$ANY`"
+    }
+    latest_charge: {
+      h: "Latest Charge"
+      n: "latest_charge"
+      r: false
+      sh: "ID of the latest [Charge object](https://docs.stripe.com/api/charges) created by this PaymentIntent."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 13717
+        depth: 49
+      }
+    }
+    latest_invoice: {
+      h: "Latest Invoice"
+      n: "latest_invoice"
+      r: false
+      sh: "The most recent invoice this subscription has generated over its lifecycle (for example, when it cycles or is updated)."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 79298
+        depth: 64
+      }
+    }
+    latest_revision: {
+      h: "Latest Revision"
+      n: "latest_revision"
+      r: false
+      sh: "The ID of the most recent non-draft revision of this invoice"
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    lines: {
+      h: "Lines"
+      n: "lines"
+      r: true
+      sh: "The individual line items that make up the invoice."
+      t: "`$OBJECT`"
+      union: {
+        branches: 3
+        count: 141
+        depth: 21
+      }
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    lookup_key: {
+      h: "Lookup Key"
+      n: "lookup_key"
+      r: false
+      sh: "A lookup key used to retrieve prices dynamically from a static string."
+      t: "`$STRING`"
+    }
+    managed_payments: {
+      h: "Managed Payments"
+      n: "managed_payments"
+      r: false
+      sh: "Settings for Managed Payments."
+      t: "`$ANY`"
+    }
+    marketing_features: {
+      h: "Marketing Features"
+      n: "marketing_features"
+      r: true
+      sh: "A list of up to 15 marketing features for this product."
+      t: "`$ARRAY`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      op: {
+        list: {
+          req: false
+          type: "`$OBJECT`"
+        }
+      }
+      r: true
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      op: {
+        list: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      sh: "The customer's full name or business name."
+      t: "`$STRING`"
+    }
+    next_action: {
+      h: "Next Action"
+      n: "next_action"
+      r: false
+      sh: "If present, this property tells you what actions you need to take in order for your customer to fulfill a payment using the provided source."
+      t: "`$ANY`"
+    }
+    next_invoice_sequence: {
+      h: "Next Invoice Sequence"
+      n: "next_invoice_sequence"
+      r: false
+      sh: "The suffix of the customer's next invoice number (for example, 0001)."
+      t: "`$INTEGER`"
+    }
+    next_payment_attempt: {
+      fo: "unix-time"
+      h: "Next Payment Attempt"
+      n: "next_payment_attempt"
+      r: false
+      sh: "The time at which payment will next be attempted."
+      t: "`$INTEGER`"
+    }
+    next_pending_invoice_item_invoice: {
+      fo: "unix-time"
+      h: "Next Pending Invoice Item Invoice"
+      n: "next_pending_invoice_item_invoice"
+      r: false
+      sh: "Specifies the approximate timestamp on which any pending invoice items will be billed according to the schedule provided at `pending_invoice_item_interval`."
+      t: "`$INTEGER`"
+    }
+    nickname: {
+      h: "Nickname"
+      n: "nickname"
+      r: false
+      sh: "A brief description of the price, hidden from customers."
+      t: "`$STRING`"
+    }
+    number: {
+      h: "Number"
+      n: "number"
+      r: false
+      sh: "A unique, identifying string that appears on emails sent to the customer for this invoice."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    on_behalf_of: {
+      h: "On Behalf Of"
+      n: "on_behalf_of"
+      r: false
+      sh: "The account (if any) the charge was made on behalf of without triggering an automatic transfer."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    outcome: {
+      h: "Outcome"
+      n: "outcome"
+      r: false
+      sh: "Details about whether the payment was accepted, and why."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 4
+      }
+    }
+    package_dimensions: {
+      h: "Package Dimensions"
+      n: "package_dimensions"
+      r: false
+      sh: "The dimensions of this product for shipping purposes."
+      t: "`$ANY`"
+    }
+    paid: {
+      h: "Paid"
+      n: "paid"
+      r: true
+      sh: "`true` if the charge succeeded, or was successfully authorized for later capture."
+      t: "`$BOOLEAN`"
+    }
+    parent: {
+      h: "Parent"
+      n: "parent"
+      r: false
+      sh: "The parent that generated this invoice"
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 8
+      }
+    }
+    pause_collection: {
+      h: "Pause Collection"
+      n: "pause_collection"
+      r: false
+      sh: "If specified, payment collection for this subscription will be paused."
+      t: "`$ANY`"
+    }
+    payment_details: {
+      h: "Payment Details"
+      n: "payment_details"
+      r: false
+      t: "`$OBJECT`"
+    }
+    payment_intent: {
+      h: "Payment Intent"
+      n: "payment_intent"
+      r: false
+      sh: "ID of the PaymentIntent associated with this charge, if one exists."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    payment_method: {
+      h: "Payment Method"
+      n: "payment_method"
+      r: false
+      sh: "ID of the payment method used in this charge."
+      t: "`$STRING`"
+    }
+    payment_method_configuration_details: {
+      h: "Payment Method Configuration Details"
+      n: "payment_method_configuration_details"
+      r: false
+      sh: "Information about the [payment method configuration](https://docs.stripe.com/api/payment_method_configurations) used for this PaymentIntent."
+      t: "`$ANY`"
+    }
+    payment_method_details: {
+      h: "Payment Method Details"
+      n: "payment_method_details"
+      r: false
+      sh: "Details about the payment method at the time of the transaction."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 18
+        depth: 11
+      }
+    }
+    payment_method_options: {
+      h: "Payment Method Options"
+      n: "payment_method_options"
+      r: false
+      sh: "Payment-method-specific configuration for this PaymentIntent."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 58
+        depth: 4
+      }
+    }
+    payment_method_types: {
+      h: "Payment Method Types"
+      n: "payment_method_types"
+      r: false
+      sh: "The list of payment method types (e.g."
+      t: "`$ARRAY`"
+    }
+    payment_record: {
+      h: "Payment Record"
+      n: "payment_record"
+      r: false
+      sh: "ID of the [Payment Record object](https://docs.stripe.com/api/payment-record) created by this PaymentIntent."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 31
+        depth: 16
+      }
+    }
+    payment_settings: {
+      h: "Payment Settings"
+      n: "payment_settings"
+      op: {
+        list: {
+          req: false
+          type: "`$ANY`"
+        }
+      }
+      r: true
+      sh: "Payment settings passed on to invoices created by the subscription."
+      t: "`$OBJECT`"
+    }
+    payments: {
+      h: "Payments"
+      n: "payments"
+      r: true
+      sh: "Payments for this invoice."
+      t: "`$OBJECT`"
+      union: {
+        branches: 17
+        count: 26935
+        depth: 56
+      }
+    }
+    pending_invoice_item_interval: {
+      h: "Pending Invoice Item Interval"
+      n: "pending_invoice_item_interval"
+      r: false
+      sh: "Specifies an interval for how often to bill for any pending invoice items."
+      t: "`$ANY`"
+    }
+    pending_setup_intent: {
+      h: "Pending Setup Intent"
+      n: "pending_setup_intent"
+      r: false
+      sh: "You can use this [SetupIntent](https://docs.stripe.com/api/setup_intents) to collect user authentication when creating a subscription without immediate payment or updating a subscription's payment method, allowing you to optimize for off-s…"
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 55
+        depth: 10
+      }
+    }
+    pending_update: {
+      h: "Pending Update"
+      n: "pending_update"
+      r: false
+      sh: "If specified, [pending updates](https://docs.stripe.com/billing/subscriptions/pending-updates) that will be applied to the subscription once the `latest_invoice` has been paid."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 58
+        depth: 20
+      }
+    }
+    period_end: {
+      fo: "unix-time"
+      h: "Period End"
+      n: "period_end"
+      r: true
+      sh: "The latest timestamp at which invoice items can be associated with this invoice."
+      t: "`$INTEGER`"
+    }
+    period_start: {
+      fo: "unix-time"
+      h: "Period Start"
+      n: "period_start"
+      r: true
+      sh: "The earliest timestamp at which invoice items can be associated with this invoice."
+      t: "`$INTEGER`"
+    }
+    phone: {
+      h: "Phone"
+      n: "phone"
+      r: false
+      sh: "The customer's phone number."
+      t: "`$STRING`"
+    }
+    post_payment_credit_notes_amount: {
+      h: "Post Payment Credit Notes Amount"
+      n: "post_payment_credit_notes_amount"
+      r: true
+      sh: "Total amount of all post-payment credit notes issued for this invoice."
+      t: "`$INTEGER`"
+    }
+    pre_payment_credit_notes_amount: {
+      h: "Pre Payment Credit Notes Amount"
+      n: "pre_payment_credit_notes_amount"
+      r: true
+      sh: "Total amount of all pre-payment credit notes issued for this invoice."
+      t: "`$INTEGER`"
+    }
+    preferred_locales: {
+      h: "Preferred Locales"
+      n: "preferred_locales"
+      r: false
+      sh: "The customer's preferred locales (languages), ordered by preference."
+      t: "`$ARRAY`"
+    }
+    presentment_details: {
+      h: "Presentment Details"
+      n: "presentment_details"
+      r: true
+      t: "`$OBJECT`"
+    }
+    processing: {
+      h: "Processing"
+      n: "processing"
+      r: false
+      sh: "If present, this property tells you about the processing state of the payment."
+      t: "`$ANY`"
+    }
+    product: {
+      h: "Product"
+      n: "product"
+      r: true
+      sh: "The ID of the product this price is associated with."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 6
+        depth: 5
+      }
+    }
+    radar_options: {
+      h: "Radar Options"
+      n: "radar_options"
+      r: false
+      sh: "Options to configure Radar."
+      t: "`$OBJECT`"
+    }
+    receipt_email: {
+      h: "Receipt Email"
+      n: "receipt_email"
+      r: false
+      sh: "This is the email address that the receipt for this charge was sent to."
+      t: "`$STRING`"
+    }
+    receipt_number: {
+      h: "Receipt Number"
+      n: "receipt_number"
+      r: false
+      sh: "This is the transaction number that appears on email receipts sent for this charge."
+      t: "`$STRING`"
+    }
+    receipt_url: {
+      h: "Receipt Url"
+      n: "receipt_url"
+      r: false
+      sh: "This is the URL to view the receipt for this charge."
+      t: "`$STRING`"
+    }
+    recurring: {
+      h: "Recurring"
+      n: "recurring"
+      r: false
+      sh: "The recurring components of a price such as `interval` and `usage_type`."
+      t: "`$ANY`"
+    }
+    refunded: {
+      h: "Refunded"
+      n: "refunded"
+      r: true
+      sh: "Whether the charge has been fully refunded."
+      t: "`$BOOLEAN`"
+    }
+    refunds: {
+      h: "Refunds"
+      n: "refunds"
+      r: true
+      sh: "A list of refunds that have been applied to the charge."
+      t: "`$OBJECT`"
+      union: {
+        branches: 3
+        count: 57
+        depth: 15
+      }
+    }
+    rendering: {
+      h: "Rendering"
+      n: "rendering"
+      r: false
+      sh: "The rendering-related settings that control how invoices render in customer-facing interfaces such as the PDF or hosted invoice page."
+      t: "`$ANY`"
+    }
+    review: {
+      h: "Review"
+      n: "review"
+      r: false
+      sh: "ID of the review associated with this charge if one exists."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 5
+        depth: 5
+      }
+    }
+    schedule: {
+      h: "Schedule"
+      n: "schedule"
+      r: false
+      sh: "The schedule attached to the subscription"
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 38624
+        depth: 64
+      }
+    }
+    setup_future_usage: {
+      h: "Setup Future Usage"
+      n: "setup_future_usage"
+      r: false
+      sh: "Indicates that you intend to make future payments with this PaymentIntent's payment method."
+      t: "`$STRING`"
+    }
+    shippable: {
+      h: "Shippable"
+      n: "shippable"
+      r: false
+      sh: "Whether this product is shipped (i.e., physical goods)."
+      t: "`$BOOLEAN`"
+    }
+    shipping: {
+      h: "Shipping"
+      n: "shipping"
+      r: false
+      sh: "Shipping information for the charge."
+      t: "`$ANY`"
+    }
+    shipping_cost: {
+      h: "Shipping Cost"
+      n: "shipping_cost"
+      r: false
+      sh: "The details of the cost of shipping, including the ShippingRate applied on the invoice."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 3
+        depth: 9
+      }
+    }
+    shipping_details: {
+      h: "Shipping Details"
+      n: "shipping_details"
+      r: false
+      sh: "Shipping details for the invoice."
+      t: "`$ANY`"
+    }
+    source_transfer: {
+      h: "Source Transfer"
+      n: "source_transfer"
+      r: false
+      sh: "The transfer ID which created this charge."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 9
+        depth: 5
+      }
+    }
+    sources: {
+      h: "Sources"
+      n: "sources"
+      r: true
+      sh: "The customer's payment sources, if any."
+      t: "`$OBJECT`"
+      union: {
+        branches: 3
+        count: 4
+        depth: 8
+      }
+    }
+    start_date: {
+      fo: "unix-time"
+      h: "Start Date"
+      n: "start_date"
+      r: true
+      sh: "Date when the subscription was first created."
+      t: "`$INTEGER`"
+    }
+    starting_balance: {
+      h: "Starting Balance"
+      n: "starting_balance"
+      r: true
+      sh: "Starting customer balance before the invoice is finalized."
+      t: "`$INTEGER`"
+    }
+    statement_descriptor: {
+      h: "Statement Descriptor"
+      n: "statement_descriptor"
+      r: false
+      sh: "For a non-card charge, text that appears on the customer's statement as the statement descriptor."
+      t: "`$STRING`"
+    }
+    statement_descriptor_suffix: {
+      h: "Statement Descriptor Suffix"
+      n: "statement_descriptor_suffix"
+      r: false
+      sh: "Provides information about a card charge."
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      op: {
+        list: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "The status of the payment is either `succeeded`, `pending`, or `failed`."
+      t: "`$STRING`"
+    }
+    status_details: {
+      h: "Status Details"
+      n: "status_details"
+      op: {
+        list: {
+          req: true
+          type: "`$OBJECT`"
+        }
+      }
+      r: false
+      sh: "Describes changes to the subscription's status."
+      t: "`$OBJECT`"
+    }
+    status_transitions: {
+      h: "Status Transitions"
+      n: "status_transitions"
+      r: true
+      t: "`$OBJECT`"
+    }
+    subscriptions: {
+      h: "Subscriptions"
+      n: "subscriptions"
+      r: true
+      sh: "The customer's current subscriptions, if any."
+      t: "`$OBJECT`"
+      union: {
+        branches: 17
+        count: 99785
+        depth: 64
+      }
+    }
+    subtotal: {
+      h: "Subtotal"
+      n: "subtotal"
+      r: true
+      sh: "Total of all subscriptions, invoice items, and prorations on the invoice before any invoice level discount or exclusive tax is applied."
+      t: "`$INTEGER`"
+    }
+    subtotal_excluding_tax: {
+      h: "Subtotal Excluding Tax"
+      n: "subtotal_excluding_tax"
+      r: false
+      sh: "The integer amount in cents (or local equivalent) representing the subtotal of the invoice before any invoice level discount or tax is applied."
+      t: "`$INTEGER`"
+    }
+    tax: {
+      h: "Tax"
+      n: "tax"
+      r: true
+      t: "`$OBJECT`"
+    }
+    tax_behavior: {
+      h: "Tax Behavior"
+      n: "tax_behavior"
+      r: false
+      sh: "Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings."
+      t: "`$STRING`"
+    }
+    tax_code: {
+      h: "Tax Code"
+      n: "tax_code"
+      r: false
+      sh: "A [tax code](https://docs.stripe.com/tax/tax-categories) ID."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    tax_details: {
+      h: "Tax Details"
+      n: "tax_details"
+      r: false
+      sh: "Tax details for this product, including the [tax code](/tax/tax-codes) and an optional performance location."
+      t: "`$ANY`"
+    }
+    tax_exempt: {
+      h: "Tax Exempt"
+      n: "tax_exempt"
+      r: false
+      sh: "Describes the customer's tax exemption status, which is `none`, `exempt`, or `reverse`."
+      t: "`$STRING`"
+    }
+    tax_ids: {
+      h: "Tax Ids"
+      n: "tax_ids"
+      r: true
+      sh: "The customer's tax IDs."
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 4
+        depth: 9
+      }
+    }
+    test_clock: {
+      h: "Test Clock"
+      n: "test_clock"
+      r: false
+      sh: "ID of the test clock that this customer belongs to."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    threshold_reason: {
+      h: "Threshold Reason"
+      n: "threshold_reason"
+      r: true
+      t: "`$OBJECT`"
+    }
+    tiers: {
+      h: "Tiers"
+      n: "tiers"
+      r: false
+      sh: "Each element represents a pricing tier."
+      t: "`$ARRAY`"
+    }
+    tiers_mode: {
+      h: "Tiers Mode"
+      n: "tiers_mode"
+      r: false
+      sh: "Defines if the tiering price should be `graduated` or `volume` based."
+      t: "`$STRING`"
+    }
+    total: {
+      h: "Total"
+      n: "total"
+      r: true
+      sh: "Total after discounts and taxes."
+      t: "`$INTEGER`"
+    }
+    total_discount_amounts: {
+      h: "Total Discount Amounts"
+      n: "total_discount_amounts"
+      r: false
+      sh: "The aggregate amounts calculated per discount across all line items."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 42
+        depth: 15
+      }
+    }
+    total_excluding_tax: {
+      h: "Total Excluding Tax"
+      n: "total_excluding_tax"
+      r: false
+      sh: "The integer amount in cents (or local equivalent) representing the total amount of the invoice including all discounts but excluding all tax."
+      t: "`$INTEGER`"
+    }
+    total_pretax_credit_amounts: {
+      h: "Total Pretax Credit Amounts"
+      n: "total_pretax_credit_amounts"
+      r: false
+      sh: "Contains pretax credit amounts (ex: discount, credit grants, etc) that apply to this invoice."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 63
+        depth: 16
+      }
+    }
+    total_taxes: {
+      h: "Total Taxes"
+      n: "total_taxes"
+      r: false
+      sh: "The aggregate tax information of all line items."
+      t: "`$ARRAY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 7
+      }
+    }
+    transfer: {
+      h: "Transfer"
+      n: "transfer"
+      r: false
+      sh: "ID of the transfer to the `destination` account (only applicable if the charge was created using the `destination` parameter)."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 9
+        depth: 5
+      }
+    }
+    transfer_data: {
+      h: "Transfer Data"
+      n: "transfer_data"
+      r: false
+      sh: "An optional dictionary including the account to automatically transfer to as part of a destination charge."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 4
+      }
+    }
+    transfer_group: {
+      h: "Transfer Group"
+      n: "transfer_group"
+      r: false
+      sh: "A string that identifies this transaction as part of a group."
+      t: "`$STRING`"
+    }
+    transform_quantity: {
+      h: "Transform Quantity"
+      n: "transform_quantity"
+      r: false
+      sh: "Apply a transformation to the reported usage or set quantity before computing the amount billed."
+      t: "`$ANY`"
+    }
+    trial_end: {
+      fo: "unix-time"
+      h: "Trial End"
+      n: "trial_end"
+      r: false
+      sh: "If the subscription has a trial, the end of that trial."
+      t: "`$INTEGER`"
+    }
+    trial_settings: {
+      h: "Trial Settings"
+      n: "trial_settings"
+      r: false
+      sh: "Settings related to subscription trials."
+      t: "`$ANY`"
+    }
+    trial_start: {
+      fo: "unix-time"
+      h: "Trial Start"
+      n: "trial_start"
+      r: false
+      sh: "If the subscription has a trial, the beginning of that trial."
+      t: "`$INTEGER`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase."
+      t: "`$STRING`"
+    }
+    unit_amount: {
+      h: "Unit Amount"
+      n: "unit_amount"
+      r: false
+      sh: "The unit amount in cents (or local equivalent) to be charged, represented as a whole integer if possible."
+      t: "`$INTEGER`"
+    }
+    unit_amount_decimal: {
+      fo: "decimal"
+      h: "Unit Amount Decimal"
+      n: "unit_amount_decimal"
+      r: false
+      sh: "The unit amount in cents (or local equivalent) to be charged, represented as a decimal string with at most 12 decimal places."
+      t: "`$STRING`"
+    }
+    unit_label: {
+      h: "Unit Label"
+      n: "unit_label"
+      r: false
+      sh: "A label that represents units of this product."
+      t: "`$STRING`"
+    }
+    updated: {
+      fo: "unix-time"
+      h: "Updated"
+      n: "updated"
+      r: true
+      sh: "Time at which the object was last updated."
+      t: "`$INTEGER`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: false
+      sh: "A URL of a publicly-accessible webpage for this product."
+      t: "`$STRING`"
+    }
+    webhooks_delivered_at: {
+      fo: "unix-time"
+      h: "Webhooks Delivered At"
+      n: "webhooks_delivered_at"
+      r: false
+      sh: "Invoices are automatically paid or sent 1 hour after webhooks are delivered, or until all webhook delivery attempts have [been exhausted](https://docs.stripe.com/billing/webhooks#understand)."
+      t: "`$INTEGER`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "search"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/charges/search"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "query"
+                or: "query"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/charges/search"
+          q: {
+            exist: [
+              "expand"
+              "limit"
+              "page"
+              "query"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "charges"
+            }
+            {
+              lit: "search"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/customers/search"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "query"
+                or: "query"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/customers/search"
+          q: {
+            exist: [
+              "expand"
+              "limit"
+              "page"
+              "query"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "customers"
+            }
+            {
+              lit: "search"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/invoices/search"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "query"
+                or: "query"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/invoices/search"
+          q: {
+            exist: [
+              "expand"
+              "limit"
+              "page"
+              "query"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "invoices"
+            }
+            {
+              lit: "search"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/payment_intents/search"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "query"
+                or: "query"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/payment_intents/search"
+          q: {
+            exist: [
+              "expand"
+              "limit"
+              "page"
+              "query"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_intents"
+            }
+            {
+              lit: "search"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/prices/search"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "query"
+                or: "query"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/prices/search"
+          q: {
+            exist: [
+              "expand"
+              "limit"
+              "page"
+              "query"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "prices"
+            }
+            {
+              lit: "search"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/products/search"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "query"
+                or: "query"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/products/search"
+          q: {
+            exist: [
+              "expand"
+              "limit"
+              "page"
+              "query"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "products"
+            }
+            {
+              lit: "search"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/subscriptions/search"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "query"
+                or: "query"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/subscriptions/search"
+          q: {
+            exist: [
+              "expand"
+              "limit"
+              "page"
+              "query"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "subscriptions"
+            }
+            {
+              lit: "search"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

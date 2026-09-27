@@ -1,0 +1,44 @@
+# BasicPaymentAttemptRecordFlow
+
+main: kit: flow: BasicPaymentAttemptRecordFlow:
+{
+  entity: "payment_attempt_record",
+  kind: "basic",
+  name: "BasicPaymentAttemptRecordFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "payment_attempt_record_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "payment_attempt_record_ref01",
+        srcdatavar: "payment_attempt_record_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "payment_attempt_record01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-payment_attempt_record_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPaymentAttemptRecordFlow"
+}

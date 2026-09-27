@@ -1,0 +1,88 @@
+{
+  "existing": {
+    "setup_attempt": {
+      "SETUP_ATTEMPT00": {
+        "application": "sa0",
+        "attach_to_self": false,
+        "created": 162,
+        "customer": "sa3",
+        "customer_account": "sa4",
+        "flow_directions": [],
+        "id": "SETUP_ATTEMPT00",
+        "livemode": false,
+        "object": "sa8",
+        "on_behalf_of": "sa9",
+        "payment_method": "saa",
+        "payment_method_details": {},
+        "setup_error": "sac",
+        "setup_intent": "sad",
+        "status": "sae",
+        "usage": "saf"
+      },
+      "SETUP_ATTEMPT01": {
+        "application": "s140",
+        "attach_to_self": false,
+        "created": 322,
+        "customer": "s143",
+        "customer_account": "s144",
+        "flow_directions": [],
+        "id": "SETUP_ATTEMPT01",
+        "livemode": false,
+        "object": "s148",
+        "on_behalf_of": "s149",
+        "payment_method": "s14a",
+        "payment_method_details": {},
+        "setup_error": "s14c",
+        "setup_intent": "s14d",
+        "status": "s14e",
+        "usage": "s14f"
+      },
+      "SETUP_ATTEMPT02": {
+        "application": "s1e0",
+        "attach_to_self": false,
+        "created": 482,
+        "customer": "s1e3",
+        "customer_account": "s1e4",
+        "flow_directions": [],
+        "id": "SETUP_ATTEMPT02",
+        "livemode": false,
+        "object": "s1e8",
+        "on_behalf_of": "s1e9",
+        "payment_method": "s1ea",
+        "payment_method_details": {},
+        "setup_error": "s1ec",
+        "setup_intent": "s1ed",
+        "status": "s1ee",
+        "usage": "s1ef"
+      }
+    }
+  },
+  "new": {
+    "setup_attempt": {
+      "setup_attempt_ref01": {
+        "application": "s280",
+        "attach_to_self": false,
+        "created": 642,
+        "customer": "s283",
+        "customer_account": "s284",
+        "flow_directions": [],
+        "livemode": false,
+        "object": "s288",
+        "on_behalf_of": "s289",
+        "payment_method": "s28a",
+        "payment_method_details": {},
+        "setup_error": "s28c",
+        "setup_intent": "s28d",
+        "status": "s28e",
+        "usage": "s28f"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/setup_attempts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

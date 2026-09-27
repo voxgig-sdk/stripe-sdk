@@ -1,0 +1,61 @@
+{
+  "existing": {
+    "early_fraud_warning": {
+      "EARLY_FRAUD_WARNING00": {
+        "actionable": true,
+        "charge": "s51",
+        "created": 82,
+        "fraud_type": "s53",
+        "id": "EARLY_FRAUD_WARNING00",
+        "livemode": false,
+        "object": "s56",
+        "payment_intent": "s57"
+      },
+      "EARLY_FRAUD_WARNING01": {
+        "actionable": true,
+        "charge": "sa1",
+        "created": 162,
+        "fraud_type": "sa3",
+        "id": "EARLY_FRAUD_WARNING01",
+        "livemode": false,
+        "object": "sa6",
+        "payment_intent": "sa7"
+      },
+      "EARLY_FRAUD_WARNING02": {
+        "actionable": true,
+        "charge": "sf1",
+        "created": 242,
+        "fraud_type": "sf3",
+        "id": "EARLY_FRAUD_WARNING02",
+        "livemode": false,
+        "object": "sf6",
+        "payment_intent": "sf7"
+      }
+    }
+  },
+  "new": {
+    "early_fraud_warning": {
+      "early_fraud_warning_ref01": {
+        "actionable": true,
+        "charge": "s141",
+        "created": 322,
+        "fraud_type": "s143",
+        "livemode": false,
+        "object": "s146",
+        "payment_intent": "s147"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/radar/early_fraud_warnings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/radar/early_fraud_warnings/{early_fraud_warning}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

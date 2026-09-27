@@ -1,0 +1,68 @@
+{
+  "existing": {
+    "mandate": {
+      "MANDATE00": {
+        "customer_acceptance": {},
+        "id": "MANDATE00",
+        "livemode": true,
+        "multi_use": {},
+        "object": "s72",
+        "on_behalf_of": "s73",
+        "payment_method": "s74",
+        "payment_method_details": {},
+        "single_use": {},
+        "status": "s77",
+        "type": "s78"
+      },
+      "MANDATE01": {
+        "customer_acceptance": {},
+        "id": "MANDATE01",
+        "livemode": true,
+        "multi_use": {},
+        "object": "se0",
+        "on_behalf_of": "se1",
+        "payment_method": "se2",
+        "payment_method_details": {},
+        "single_use": {},
+        "status": "se5",
+        "type": "se6"
+      },
+      "MANDATE02": {
+        "customer_acceptance": {},
+        "id": "MANDATE02",
+        "livemode": true,
+        "multi_use": {},
+        "object": "s14e",
+        "on_behalf_of": "s14f",
+        "payment_method": "s150",
+        "payment_method_details": {},
+        "single_use": {},
+        "status": "s153",
+        "type": "s154"
+      }
+    }
+  },
+  "new": {
+    "mandate": {
+      "mandate_ref01": {
+        "customer_acceptance": {},
+        "livemode": true,
+        "multi_use": {},
+        "object": "s1bc",
+        "on_behalf_of": "s1bd",
+        "payment_method": "s1be",
+        "payment_method_details": {},
+        "single_use": {},
+        "status": "s1c1",
+        "type": "s1c2"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/mandates/{mandate}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

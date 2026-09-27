@@ -1,0 +1,80 @@
+{
+  "existing": {
+    "quote_computed_upfront_line_item": {
+      "QUOTE_COMPUTED_UPFRONT_LINE_ITEM00": {
+        "adjustable_quantity": "s8c",
+        "amount_discount": 141,
+        "amount_subtotal": 142,
+        "amount_tax": 143,
+        "amount_total": 144,
+        "currency": "s91",
+        "description": "s92",
+        "discounts": [],
+        "id": "QUOTE_COMPUTED_UPFRONT_LINE_ITEM00",
+        "metadata": {},
+        "object": "s96",
+        "price": 151,
+        "quantity": 152,
+        "taxes": []
+      },
+      "QUOTE_COMPUTED_UPFRONT_LINE_ITEM01": {
+        "adjustable_quantity": "s118",
+        "amount_discount": 281,
+        "amount_subtotal": 282,
+        "amount_tax": 283,
+        "amount_total": 284,
+        "currency": "s11d",
+        "description": "s11e",
+        "discounts": [],
+        "id": "QUOTE_COMPUTED_UPFRONT_LINE_ITEM01",
+        "metadata": {},
+        "object": "s122",
+        "price": 291,
+        "quantity": 292,
+        "taxes": []
+      },
+      "QUOTE_COMPUTED_UPFRONT_LINE_ITEM02": {
+        "adjustable_quantity": "s1a4",
+        "amount_discount": 421,
+        "amount_subtotal": 422,
+        "amount_tax": 423,
+        "amount_total": 424,
+        "currency": "s1a9",
+        "description": "s1aa",
+        "discounts": [],
+        "id": "QUOTE_COMPUTED_UPFRONT_LINE_ITEM02",
+        "metadata": {},
+        "object": "s1ae",
+        "price": 431,
+        "quantity": 432,
+        "taxes": []
+      }
+    }
+  },
+  "new": {
+    "quote_computed_upfront_line_item": {
+      "quote_computed_upfront_line_item_ref01": {
+        "adjustable_quantity": "s230",
+        "amount_discount": 561,
+        "amount_subtotal": 562,
+        "amount_tax": 563,
+        "amount_total": 564,
+        "currency": "s235",
+        "description": "s236",
+        "discounts": [],
+        "metadata": {},
+        "object": "s23a",
+        "price": 571,
+        "quantity": 572,
+        "taxes": []
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/quotes/{quote}/computed_upfront_line_items": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

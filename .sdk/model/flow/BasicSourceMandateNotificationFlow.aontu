@@ -1,0 +1,33 @@
+# BasicSourceMandateNotificationFlow
+
+main: kit: flow: BasicSourceMandateNotificationFlow:
+{
+  entity: "source_mandate_notification",
+  kind: "basic",
+  name: "BasicSourceMandateNotificationFlow",
+  step: [
+    {
+      i: {
+        ref: "source_mandate_notification_ref01",
+        srcdatavar: "source_mandate_notification_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "source_mandate_notification01",
+        source_id: "source01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-source_mandate_notification_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSourceMandateNotificationFlow"
+}

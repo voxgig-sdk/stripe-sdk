@@ -1,0 +1,237 @@
+# Entity: scheduled_query_run
+
+main: kit: entity: scheduled_query_run: {
+
+  alias: field: {}
+
+  fields: {
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    data_load_time: {
+      fo: "unix-time"
+      h: "Data Load Time"
+      n: "data_load_time"
+      r: true
+      sh: "When the query was run, Sigma contained a snapshot of your Stripe data at this time."
+      t: "`$INTEGER`"
+    }
+    error: {
+      h: "Error"
+      n: "error"
+      r: true
+      t: "`$OBJECT`"
+    }
+    file: {
+      h: "File"
+      n: "file"
+      r: false
+      sh: "The file object representing the results of the query."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 9
+      }
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    result_available_until: {
+      fo: "unix-time"
+      h: "Result Available Until"
+      n: "result_available_until"
+      r: true
+      sh: "Time at which the result expires and is no longer available for download."
+      t: "`$INTEGER`"
+    }
+    sql: {
+      h: "Sql"
+      n: "sql"
+      r: true
+      sh: "SQL for the query."
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "The query's execution status, which will be `completed` for successful runs, and `canceled`, `failed`, or `timed_out` otherwise."
+      t: "`$STRING`"
+    }
+    title: {
+      h: "Title"
+      n: "title"
+      r: true
+      sh: "Title of the query."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "scheduled_query_run"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/sigma/scheduled_query_runs"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/sigma/scheduled_query_runs"
+          q: {
+            exist: [
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "sigma"
+            }
+            {
+              lit: "scheduled_query_runs"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/sigma/scheduled_query_runs/{scheduled_query_run}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "scheduled_query_run"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/sigma/scheduled_query_runs/{scheduled_query_run}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              scheduled_query_run: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "sigma"
+            }
+            {
+              lit: "scheduled_query_runs"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

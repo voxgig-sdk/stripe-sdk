@@ -1,0 +1,81 @@
+# BasicValueListItemFlow
+
+main: kit: flow: BasicValueListItemFlow:
+{
+  entity: "value_list_item",
+  kind: "basic",
+  name: "BasicValueListItemFlow",
+  step: [
+    {
+      i: {
+        ref: "value_list_item_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "value_list_item_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "value_list_item_ref01",
+        srcdatavar: "value_list_item_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "value_list_item01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-value_list_item_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "value_list_item_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        id: "value_list_item01"
+      }
+
+      o: "remove"
+    }
+
+    {
+      i: {
+        suffix: "_rt0"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemNotExists",
+          def: {
+            ref: "value_list_item_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicValueListItemFlow"
+}

@@ -1,0 +1,75 @@
+{
+  "existing": {
+    "file_link": {
+      "FILE_LINK00": {
+        "created": 90,
+        "expired": false,
+        "expires_at": 92,
+        "file": "s5d",
+        "id": "FILE_LINK00",
+        "livemode": false,
+        "metadata": {},
+        "object": "s61",
+        "url": "s62"
+      },
+      "FILE_LINK01": {
+        "created": 180,
+        "expired": false,
+        "expires_at": 182,
+        "file": "sb7",
+        "id": "FILE_LINK01",
+        "livemode": false,
+        "metadata": {},
+        "object": "sbb",
+        "url": "sbc"
+      },
+      "FILE_LINK02": {
+        "created": 270,
+        "expired": false,
+        "expires_at": 272,
+        "file": "s111",
+        "id": "FILE_LINK02",
+        "livemode": false,
+        "metadata": {},
+        "object": "s115",
+        "url": "s116"
+      }
+    }
+  },
+  "new": {
+    "file_link": {
+      "file_link_ref01": {
+        "created": 360,
+        "expired": false,
+        "expires_at": 362,
+        "file": "s16b",
+        "livemode": false,
+        "metadata": {},
+        "object": "s16f",
+        "url": "s170"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/file_links/{link}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/file_links": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/file_links": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/file_links/{link}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,216 @@
+# Entity: quote_computed_upfront_line_item
+
+main: kit: entity: quote_computed_upfront_line_item: {
+
+  alias: field: {}
+
+  fields: {
+    adjustable_quantity: {
+      h: "Adjustable Quantity"
+      n: "adjustable_quantity"
+      r: false
+      t: "`$ANY`"
+    }
+    amount_discount: {
+      h: "Amount Discount"
+      n: "amount_discount"
+      r: true
+      sh: "Total discount amount applied."
+      t: "`$INTEGER`"
+    }
+    amount_subtotal: {
+      h: "Amount Subtotal"
+      n: "amount_subtotal"
+      r: true
+      sh: "Total before any discounts or taxes are applied."
+      t: "`$INTEGER`"
+    }
+    amount_tax: {
+      h: "Amount Tax"
+      n: "amount_tax"
+      r: true
+      sh: "Total tax amount applied."
+      t: "`$INTEGER`"
+    }
+    amount_total: {
+      h: "Amount Total"
+      n: "amount_total"
+      r: true
+      sh: "Total after discounts and taxes."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "An arbitrary string attached to the object."
+      t: "`$STRING`"
+    }
+    discounts: {
+      h: "Discounts"
+      n: "discounts"
+      r: false
+      sh: "The discounts applied to the line item."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 10
+        depth: 12
+      }
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    price: {
+      h: "Price"
+      n: "price"
+      r: false
+      sh: "The price used to generate the line item."
+      t: "`$NUMBER`"
+      union: {
+        branches: 3
+        count: 6
+        depth: 9
+      }
+    }
+    quantity: {
+      h: "Quantity"
+      n: "quantity"
+      r: false
+      sh: "The quantity of products being purchased."
+      t: "`$INTEGER`"
+    }
+    taxes: {
+      h: "Taxes"
+      n: "taxes"
+      r: false
+      sh: "The taxes applied to the line item."
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "quote_computed_upfront_line_item"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/quotes/{quote}/computed_upfront_line_items"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "quote"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/quotes/{quote}/computed_upfront_line_items"
+          q: {
+            exist: [
+              "ending_before"
+              "expand"
+              "id"
+              "limit"
+              "starting_after"
+            ]
+          }
+          r: {
+            param: {
+              quote: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "quotes"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "computed_upfront_line_items"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

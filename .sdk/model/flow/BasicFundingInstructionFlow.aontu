@@ -1,0 +1,22 @@
+# BasicFundingInstructionFlow
+
+main: kit: flow: BasicFundingInstructionFlow:
+{
+  entity: "funding_instruction",
+  kind: "basic",
+  name: "BasicFundingInstructionFlow",
+  step: [
+    {
+      i: {
+        ref: "funding_instruction_ref01"
+      }
+
+      m: {
+        customer_id: "customer01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicFundingInstructionFlow"
+}

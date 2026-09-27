@@ -1,0 +1,139 @@
+{
+  "existing": {
+    "invoiceitem": {
+      "INVOICEITEM00": {
+        "amount": 250,
+        "currency": "sfb",
+        "customer": "sfc",
+        "customer_account": "sfd",
+        "date": 254,
+        "description": "sff",
+        "discountable": true,
+        "discounts": [],
+        "frozen_fields": [],
+        "id": "INVOICEITEM00",
+        "invoice": "s104",
+        "invoicing_rules": [],
+        "livemode": true,
+        "metadata": {},
+        "net_amount": 264,
+        "object": "s109",
+        "parent": "s10a",
+        "period": {},
+        "pricing": "s10c",
+        "proration": false,
+        "proration_details": {},
+        "quantity": 271,
+        "quantity_decimal": "s110",
+        "tax_rates": [],
+        "test_clock": "s112"
+      },
+      "INVOICEITEM01": {
+        "amount": 500,
+        "currency": "s1f5",
+        "customer": "s1f6",
+        "customer_account": "s1f7",
+        "date": 504,
+        "description": "s1f9",
+        "discountable": true,
+        "discounts": [],
+        "frozen_fields": [],
+        "id": "INVOICEITEM01",
+        "invoice": "s1fe",
+        "invoicing_rules": [],
+        "livemode": true,
+        "metadata": {},
+        "net_amount": 514,
+        "object": "s203",
+        "parent": "s204",
+        "period": {},
+        "pricing": "s206",
+        "proration": false,
+        "proration_details": {},
+        "quantity": 521,
+        "quantity_decimal": "s20a",
+        "tax_rates": [],
+        "test_clock": "s20c"
+      },
+      "INVOICEITEM02": {
+        "amount": 750,
+        "currency": "s2ef",
+        "customer": "s2f0",
+        "customer_account": "s2f1",
+        "date": 754,
+        "description": "s2f3",
+        "discountable": true,
+        "discounts": [],
+        "frozen_fields": [],
+        "id": "INVOICEITEM02",
+        "invoice": "s2f8",
+        "invoicing_rules": [],
+        "livemode": true,
+        "metadata": {},
+        "net_amount": 764,
+        "object": "s2fd",
+        "parent": "s2fe",
+        "period": {},
+        "pricing": "s300",
+        "proration": false,
+        "proration_details": {},
+        "quantity": 771,
+        "quantity_decimal": "s304",
+        "tax_rates": [],
+        "test_clock": "s306"
+      }
+    }
+  },
+  "new": {
+    "invoiceitem": {
+      "invoiceitem_ref01": {
+        "amount": 1000,
+        "currency": "s3e9",
+        "customer": "s3ea",
+        "customer_account": "s3eb",
+        "date": 1004,
+        "description": "s3ed",
+        "discountable": true,
+        "discounts": [],
+        "frozen_fields": [],
+        "invoice": "s3f2",
+        "invoicing_rules": [],
+        "livemode": true,
+        "metadata": {},
+        "net_amount": 1014,
+        "object": "s3f7",
+        "parent": "s3f8",
+        "period": {},
+        "pricing": "s3fa",
+        "proration": false,
+        "proration_details": {},
+        "quantity": 1021,
+        "quantity_decimal": "s3fe",
+        "tax_rates": [],
+        "test_clock": "s400"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/invoiceitems/{invoiceitem}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/invoiceitems": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/invoiceitems": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/invoiceitems/{invoiceitem}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

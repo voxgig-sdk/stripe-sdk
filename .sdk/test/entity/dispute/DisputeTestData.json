@@ -1,0 +1,162 @@
+{
+  "existing": {
+    "dispute": {
+      "DISPUTE00": {
+        "amount": 200,
+        "balance_transactions": [],
+        "charge": "sca",
+        "created": 203,
+        "currency": "scc",
+        "enhanced_eligibility_types": [],
+        "evidence": {},
+        "evidence_details": {},
+        "id": "DISPUTE00",
+        "is_charge_refundable": false,
+        "livemode": true,
+        "loss_reason": "sd3",
+        "metadata": {},
+        "object": "sd5",
+        "payment_intent": "sd6",
+        "payment_method_details": {},
+        "reason": "sd8",
+        "status": "sd9",
+        "transaction": "sda",
+        "treasury": "sdb",
+        "charge_id": "CHARGE01"
+      },
+      "DISPUTE01": {
+        "amount": 400,
+        "balance_transactions": [],
+        "charge": "s192",
+        "created": 403,
+        "currency": "s194",
+        "enhanced_eligibility_types": [],
+        "evidence": {},
+        "evidence_details": {},
+        "id": "DISPUTE01",
+        "is_charge_refundable": false,
+        "livemode": true,
+        "loss_reason": "s19b",
+        "metadata": {},
+        "object": "s19d",
+        "payment_intent": "s19e",
+        "payment_method_details": {},
+        "reason": "s1a0",
+        "status": "s1a1",
+        "transaction": "s1a2",
+        "treasury": "s1a3",
+        "charge_id": "CHARGE01"
+      },
+      "DISPUTE02": {
+        "amount": 600,
+        "balance_transactions": [],
+        "charge": "s25a",
+        "created": 603,
+        "currency": "s25c",
+        "enhanced_eligibility_types": [],
+        "evidence": {},
+        "evidence_details": {},
+        "id": "DISPUTE02",
+        "is_charge_refundable": false,
+        "livemode": true,
+        "loss_reason": "s263",
+        "metadata": {},
+        "object": "s265",
+        "payment_intent": "s266",
+        "payment_method_details": {},
+        "reason": "s268",
+        "status": "s269",
+        "transaction": "s26a",
+        "treasury": "s26b",
+        "charge_id": "CHARGE01"
+      }
+    }
+  },
+  "new": {
+    "dispute": {
+      "dispute_ref01": {
+        "amount": 800,
+        "balance_transactions": [],
+        "charge": "s322",
+        "created": 803,
+        "currency": "s324",
+        "enhanced_eligibility_types": [],
+        "evidence": {},
+        "evidence_details": {},
+        "is_charge_refundable": false,
+        "livemode": true,
+        "loss_reason": "s32b",
+        "metadata": {},
+        "object": "s32d",
+        "payment_intent": "s32e",
+        "payment_method_details": {},
+        "reason": "s330",
+        "status": "s331",
+        "transaction": "s332",
+        "treasury": "s333"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/charges/{charge}/dispute": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/charges/{charge}/dispute/close": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/disputes/{dispute}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/disputes/{dispute}/close": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/issuing/disputes/{dispute}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/issuing/disputes/{dispute}/submit": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/issuing/disputes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/disputes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/issuing/disputes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/charges/{charge}/dispute": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/disputes/{dispute}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/issuing/disputes/{dispute}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

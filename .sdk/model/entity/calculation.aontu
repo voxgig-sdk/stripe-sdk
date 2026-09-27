@@ -1,0 +1,219 @@
+# Entity: calculation
+
+main: kit: entity: calculation: {
+
+  alias: field: {}
+
+  fields: {
+    amount_total: {
+      h: "Amount Total"
+      n: "amount_total"
+      r: true
+      sh: "Total amount after taxes in the [smallest currency unit](https://docs.stripe.com/currencies#minor-units)."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    customer: {
+      h: "Customer"
+      n: "customer"
+      r: false
+      sh: "The ID of an existing [Customer](https://docs.stripe.com/api/customers/object) used for the resource."
+      t: "`$STRING`"
+    }
+    customer_details: {
+      h: "Customer Details"
+      n: "customer_details"
+      r: true
+      t: "`$OBJECT`"
+    }
+    expires_at: {
+      fo: "unix-time"
+      h: "Expires At"
+      n: "expires_at"
+      r: false
+      sh: "Timestamp of date at which the tax calculation will expire."
+      t: "`$INTEGER`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      sh: "Unique identifier for the calculation."
+      t: "`$STRING`"
+    }
+    line_items: {
+      h: "Line Items"
+      n: "line_items"
+      r: true
+      sh: "The list of items the customer is purchasing."
+      t: "`$OBJECT`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    ship_from_details: {
+      h: "Ship From Details"
+      n: "ship_from_details"
+      r: false
+      sh: "The details of the ship from location, such as the address."
+      t: "`$ANY`"
+    }
+    shipping_cost: {
+      h: "Shipping Cost"
+      n: "shipping_cost"
+      r: false
+      sh: "The shipping cost details for the calculation."
+      t: "`$ANY`"
+    }
+    tax_amount_exclusive: {
+      h: "Tax Amount Exclusive"
+      n: "tax_amount_exclusive"
+      r: true
+      sh: "The amount of tax to be collected on top of the line item prices."
+      t: "`$INTEGER`"
+    }
+    tax_amount_inclusive: {
+      h: "Tax Amount Inclusive"
+      n: "tax_amount_inclusive"
+      r: true
+      sh: "The amount of tax already included in the line item prices."
+      t: "`$INTEGER`"
+    }
+    tax_breakdown: {
+      h: "Tax Breakdown"
+      n: "tax_breakdown"
+      r: true
+      sh: "Breakdown of individual tax amounts that add up to the total."
+      t: "`$ARRAY`"
+    }
+    tax_date: {
+      fo: "unix-time"
+      h: "Tax Date"
+      n: "tax_date"
+      r: true
+      sh: "The calculation uses the tax rules and rates that are in effect at this timestamp."
+      t: "`$INTEGER`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "calculation"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/tax/calculations"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/tax/calculations"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "tax"
+            }
+            {
+              lit: "calculations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/tax/calculations/{calculation}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "calculation"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/tax/calculations/{calculation}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              calculation: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "tax"
+            }
+            {
+              lit: "calculations"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

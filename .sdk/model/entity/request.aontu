@@ -1,0 +1,263 @@
+# Entity: request
+
+main: kit: entity: request: {
+
+  alias: field: {}
+
+  fields: {
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    payment_method: {
+      h: "Payment Method"
+      n: "payment_method"
+      r: true
+      sh: "The PaymentMethod to insert into the forwarded request."
+      t: "`$STRING`"
+    }
+    replacements: {
+      h: "Replacements"
+      n: "replacements"
+      r: true
+      sh: "The field kinds to be replaced in the forwarded request."
+      t: "`$ARRAY`"
+    }
+    request_context: {
+      h: "Request Context"
+      n: "request_context"
+      r: false
+      sh: "Context about the request from Stripe's servers to the destination endpoint."
+      t: "`$ANY`"
+    }
+    request_details: {
+      h: "Request Details"
+      n: "request_details"
+      r: false
+      sh: "The request that was sent to the destination endpoint."
+      t: "`$ANY`"
+    }
+    response_details: {
+      h: "Response Details"
+      n: "response_details"
+      r: false
+      sh: "The response that the destination endpoint returned to us."
+      t: "`$ANY`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: false
+      sh: "The destination URL for the forwarded request."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "request"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/forwarding/requests"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/forwarding/requests"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "forwarding"
+            }
+            {
+              lit: "requests"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/forwarding/requests"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$OBJECT`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/forwarding/requests"
+          q: {
+            exist: [
+              "created"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "forwarding"
+            }
+            {
+              lit: "requests"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/forwarding/requests/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/forwarding/requests/{id}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "forwarding"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

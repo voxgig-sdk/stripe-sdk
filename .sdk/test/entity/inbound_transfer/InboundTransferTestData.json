@@ -1,0 +1,134 @@
+{
+  "existing": {
+    "inbound_transfer": {
+      "INBOUND_TRANSFER00": {
+        "amount": 200,
+        "cancelable": false,
+        "created": 202,
+        "currency": "scb",
+        "description": "scc",
+        "failure_details": "scd",
+        "financial_account": "sce",
+        "hosted_regulatory_receipt_url": "scf",
+        "id": "INBOUND_TRANSFER00",
+        "linked_flows": {},
+        "livemode": true,
+        "metadata": {},
+        "object": "sd4",
+        "origin_payment_method": "sd5",
+        "origin_payment_method_details": "sd6",
+        "returned": false,
+        "statement_descriptor": "sd8",
+        "status": "sd9",
+        "status_transitions": {},
+        "transaction": "sdb"
+      },
+      "INBOUND_TRANSFER01": {
+        "amount": 400,
+        "cancelable": false,
+        "created": 402,
+        "currency": "s193",
+        "description": "s194",
+        "failure_details": "s195",
+        "financial_account": "s196",
+        "hosted_regulatory_receipt_url": "s197",
+        "id": "INBOUND_TRANSFER01",
+        "linked_flows": {},
+        "livemode": true,
+        "metadata": {},
+        "object": "s19c",
+        "origin_payment_method": "s19d",
+        "origin_payment_method_details": "s19e",
+        "returned": false,
+        "statement_descriptor": "s1a0",
+        "status": "s1a1",
+        "status_transitions": {},
+        "transaction": "s1a3"
+      },
+      "INBOUND_TRANSFER02": {
+        "amount": 600,
+        "cancelable": false,
+        "created": 602,
+        "currency": "s25b",
+        "description": "s25c",
+        "failure_details": "s25d",
+        "financial_account": "s25e",
+        "hosted_regulatory_receipt_url": "s25f",
+        "id": "INBOUND_TRANSFER02",
+        "linked_flows": {},
+        "livemode": true,
+        "metadata": {},
+        "object": "s264",
+        "origin_payment_method": "s265",
+        "origin_payment_method_details": "s266",
+        "returned": false,
+        "statement_descriptor": "s268",
+        "status": "s269",
+        "status_transitions": {},
+        "transaction": "s26b"
+      }
+    }
+  },
+  "new": {
+    "inbound_transfer": {
+      "inbound_transfer_ref01": {
+        "amount": 800,
+        "cancelable": false,
+        "created": 802,
+        "currency": "s323",
+        "description": "s324",
+        "failure_details": "s325",
+        "financial_account": "s326",
+        "hosted_regulatory_receipt_url": "s327",
+        "linked_flows": {},
+        "livemode": true,
+        "metadata": {},
+        "object": "s32c",
+        "origin_payment_method": "s32d",
+        "origin_payment_method_details": "s32e",
+        "returned": false,
+        "statement_descriptor": "s330",
+        "status": "s331",
+        "status_transitions": {},
+        "transaction": "s333"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/treasury/inbound_transfers/{inbound_transfer}/cancel": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/treasury/inbound_transfers/{id}/fail": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/treasury/inbound_transfers/{id}/return": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/test_helpers/treasury/inbound_transfers/{id}/succeed": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/treasury/inbound_transfers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/treasury/inbound_transfers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/treasury/inbound_transfers/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

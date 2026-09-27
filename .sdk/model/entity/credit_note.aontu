@@ -1,0 +1,716 @@
+# Entity: credit_note
+
+main: kit: entity: credit_note: {
+
+  alias: field: {}
+
+  fields: {
+    amount: {
+      h: "Amount"
+      n: "amount"
+      r: true
+      sh: "The integer amount in cents (or local equivalent) representing the total amount of the credit note, including tax."
+      t: "`$INTEGER`"
+    }
+    amount_shipping: {
+      h: "Amount Shipping"
+      n: "amount_shipping"
+      r: true
+      sh: "This is the sum of all the shipping amounts."
+      t: "`$INTEGER`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    customer: {
+      h: "Customer"
+      n: "customer"
+      r: true
+      sh: "ID of the customer."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 111742
+        depth: 64
+      }
+    }
+    customer_account: {
+      h: "Customer Account"
+      n: "customer_account"
+      r: false
+      sh: "ID of the account representing the customer."
+      t: "`$STRING`"
+    }
+    customer_balance_transaction: {
+      h: "Customer Balance Transaction"
+      n: "customer_balance_transaction"
+      r: false
+      sh: "Customer balance transaction related to this credit note."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 237055
+        depth: 64
+      }
+    }
+    discount_amount: {
+      h: "Discount Amount"
+      n: "discount_amount"
+      r: true
+      sh: "The integer amount in cents (or local equivalent) representing the total amount of discount that was credited."
+      t: "`$INTEGER`"
+    }
+    discount_amounts: {
+      h: "Discount Amounts"
+      n: "discount_amounts"
+      r: true
+      sh: "The aggregate amounts calculated per discount for all line items."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 42
+        depth: 15
+      }
+    }
+    effective_at: {
+      fo: "unix-time"
+      h: "Effective At"
+      n: "effective_at"
+      r: false
+      sh: "The date when this credit note is in effect."
+      t: "`$INTEGER`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    invoice: {
+      h: "Invoice"
+      n: "invoice"
+      r: true
+      sh: "ID of the invoice."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 66175
+        depth: 64
+      }
+    }
+    lines: {
+      h: "Lines"
+      n: "lines"
+      r: true
+      sh: "Line items that make up the credit note"
+      t: "`$OBJECT`"
+      union: {
+        branches: 3
+        count: 106
+        depth: 21
+      }
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    memo: {
+      h: "Memo"
+      n: "memo"
+      r: false
+      sh: "Customer-facing text that appears on the credit note PDF."
+      t: "`$STRING`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    number: {
+      h: "Number"
+      n: "number"
+      r: true
+      sh: "A unique number that identifies this particular credit note and appears on the PDF of the credit note and its associated invoice."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    out_of_band_amount: {
+      h: "Out Of Band Amount"
+      n: "out_of_band_amount"
+      r: false
+      sh: "Amount that was credited outside of Stripe."
+      t: "`$INTEGER`"
+    }
+    pdf: {
+      h: "Pdf"
+      n: "pdf"
+      r: true
+      sh: "The link to download the PDF of the credit note."
+      t: "`$STRING`"
+    }
+    post_payment_amount: {
+      h: "Post Payment Amount"
+      n: "post_payment_amount"
+      r: true
+      sh: "The amount of the credit note that was refunded to the customer, credited to the customer's balance, credited outside of Stripe, or any combination thereof."
+      t: "`$INTEGER`"
+    }
+    pre_payment_amount: {
+      h: "Pre Payment Amount"
+      n: "pre_payment_amount"
+      r: true
+      sh: "The amount of the credit note by which the invoice's `amount_remaining` and `amount_due` were reduced."
+      t: "`$INTEGER`"
+    }
+    pretax_credit_amounts: {
+      h: "Pretax Credit Amounts"
+      n: "pretax_credit_amounts"
+      r: true
+      sh: "The pretax credit amounts (ex: discount, credit grants, etc) for all line items."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 63
+        depth: 16
+      }
+    }
+    reason: {
+      h: "Reason"
+      n: "reason"
+      r: false
+      sh: "Reason for issuing this credit note, one of `duplicate`, `fraudulent`, `order_change`, or `product_unsatisfactory`"
+      t: "`$STRING`"
+    }
+    refunds: {
+      h: "Refunds"
+      n: "refunds"
+      r: true
+      sh: "Refunds related to this credit note."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 115
+        depth: 18
+      }
+    }
+    shipping_cost: {
+      h: "Shipping Cost"
+      n: "shipping_cost"
+      r: false
+      sh: "The details of the cost of shipping, including the ShippingRate applied to the invoice."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 3
+        depth: 9
+      }
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "Status of this credit note, one of `issued` or `void`."
+      t: "`$STRING`"
+    }
+    subtotal: {
+      h: "Subtotal"
+      n: "subtotal"
+      r: true
+      sh: "The integer amount in cents (or local equivalent) representing the amount of the credit note, excluding exclusive tax and invoice level discounts."
+      t: "`$INTEGER`"
+    }
+    subtotal_excluding_tax: {
+      h: "Subtotal Excluding Tax"
+      n: "subtotal_excluding_tax"
+      r: false
+      sh: "The integer amount in cents (or local equivalent) representing the amount of the credit note, excluding all tax and invoice level discounts."
+      t: "`$INTEGER`"
+    }
+    total: {
+      h: "Total"
+      n: "total"
+      r: true
+      sh: "The integer amount in cents (or local equivalent) representing the total amount of the credit note, including tax and all discount."
+      t: "`$INTEGER`"
+    }
+    total_excluding_tax: {
+      h: "Total Excluding Tax"
+      n: "total_excluding_tax"
+      r: false
+      sh: "The integer amount in cents (or local equivalent) representing the total amount of the credit note, excluding tax, but including discounts."
+      t: "`$INTEGER`"
+    }
+    total_taxes: {
+      h: "Total Taxes"
+      n: "total_taxes"
+      r: false
+      sh: "The aggregate tax information for all line items."
+      t: "`$ARRAY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 7
+      }
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "Type of this credit note, one of `pre_payment` or `post_payment`."
+      t: "`$STRING`"
+    }
+    voided_at: {
+      fo: "unix-time"
+      h: "Voided At"
+      n: "voided_at"
+      r: false
+      sh: "The time that the credit note was voided."
+      t: "`$INTEGER`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "credit_note"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/credit_notes/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/credit_notes/{id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "credit_notes"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/credit_notes/{id}/void"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/credit_notes/{id}/void"
+          q: {
+            "$action": "void"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "credit_notes"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "void"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/credit_notes"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/credit_notes"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "credit_notes"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/credit_notes/preview"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "amount"
+                or: "amount"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "credit_amount"
+                or: "credit_amount"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "effective_at"
+                or: "effective_at"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "email_type"
+                or: "email_type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "invoice"
+                or: "invoice"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "line"
+                or: "line"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "memo"
+                or: "memo"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "metadata"
+                or: "metadata"
+                r: false
+                t: "`$OBJECT`"
+              }
+              {
+                k: "query"
+                n: "out_of_band_amount"
+                or: "out_of_band_amount"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "reason"
+                or: "reason"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "refund"
+                or: "refund"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "refund_amount"
+                or: "refund_amount"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "shipping_cost"
+                or: "shipping_cost"
+                r: false
+                t: "`$OBJECT`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/credit_notes/preview"
+          q: {
+            "$action": "preview"
+            exist: [
+              "amount"
+              "credit_amount"
+              "effective_at"
+              "email_type"
+              "expand"
+              "invoice"
+              "line"
+              "memo"
+              "metadata"
+              "out_of_band_amount"
+              "reason"
+              "refund"
+              "refund_amount"
+              "shipping_cost"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "credit_notes"
+            }
+            {
+              lit: "preview"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/credit_notes"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "customer"
+                or: "customer"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "customer_account"
+                or: "customer_account"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "invoice"
+                or: "invoice"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/credit_notes"
+          q: {
+            exist: [
+              "created"
+              "customer"
+              "customer_account"
+              "ending_before"
+              "expand"
+              "invoice"
+              "limit"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "credit_notes"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/credit_notes/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/credit_notes/{id}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "credit_notes"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

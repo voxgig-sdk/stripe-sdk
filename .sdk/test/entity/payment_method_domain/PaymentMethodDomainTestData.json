@@ -1,0 +1,92 @@
+{
+  "existing": {
+    "payment_method_domain": {
+      "PAYMENT_METHOD_DOMAIN00": {
+        "amazon_pay": {},
+        "apple_pay": {},
+        "created": 122,
+        "domain_name": "s7b",
+        "enabled": true,
+        "google_pay": {},
+        "id": "PAYMENT_METHOD_DOMAIN00",
+        "klarna": {},
+        "link": {},
+        "livemode": false,
+        "object": "s82",
+        "paypal": {}
+      },
+      "PAYMENT_METHOD_DOMAIN01": {
+        "amazon_pay": {},
+        "apple_pay": {},
+        "created": 242,
+        "domain_name": "sf3",
+        "enabled": true,
+        "google_pay": {},
+        "id": "PAYMENT_METHOD_DOMAIN01",
+        "klarna": {},
+        "link": {},
+        "livemode": false,
+        "object": "sfa",
+        "paypal": {}
+      },
+      "PAYMENT_METHOD_DOMAIN02": {
+        "amazon_pay": {},
+        "apple_pay": {},
+        "created": 362,
+        "domain_name": "s16b",
+        "enabled": true,
+        "google_pay": {},
+        "id": "PAYMENT_METHOD_DOMAIN02",
+        "klarna": {},
+        "link": {},
+        "livemode": false,
+        "object": "s172",
+        "paypal": {}
+      }
+    }
+  },
+  "new": {
+    "payment_method_domain": {
+      "payment_method_domain_ref01": {
+        "amazon_pay": {},
+        "apple_pay": {},
+        "created": 482,
+        "domain_name": "s1e3",
+        "enabled": true,
+        "google_pay": {},
+        "klarna": {},
+        "link": {},
+        "livemode": false,
+        "object": "s1ea",
+        "paypal": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/payment_method_domains/{payment_method_domain}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/payment_method_domains/{payment_method_domain}/validate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/payment_method_domains": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/payment_method_domains": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/payment_method_domains/{payment_method_domain}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

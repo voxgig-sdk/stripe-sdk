@@ -1,0 +1,73 @@
+{
+  "existing": {
+    "event": {
+      "EVENT00": {
+        "account": "s6e",
+        "api_version": "s6f",
+        "context": "s70",
+        "created": 113,
+        "data": {},
+        "id": "EVENT00",
+        "livemode": true,
+        "object": "s75",
+        "pending_webhooks": 118,
+        "request": "s77",
+        "type": "s78"
+      },
+      "EVENT01": {
+        "account": "sdc",
+        "api_version": "sdd",
+        "context": "sde",
+        "created": 223,
+        "data": {},
+        "id": "EVENT01",
+        "livemode": true,
+        "object": "se3",
+        "pending_webhooks": 228,
+        "request": "se5",
+        "type": "se6"
+      },
+      "EVENT02": {
+        "account": "s14a",
+        "api_version": "s14b",
+        "context": "s14c",
+        "created": 333,
+        "data": {},
+        "id": "EVENT02",
+        "livemode": true,
+        "object": "s151",
+        "pending_webhooks": 338,
+        "request": "s153",
+        "type": "s154"
+      }
+    }
+  },
+  "new": {
+    "event": {
+      "event_ref01": {
+        "account": "s1b8",
+        "api_version": "s1b9",
+        "context": "s1ba",
+        "created": 443,
+        "data": {},
+        "livemode": true,
+        "object": "s1bf",
+        "pending_webhooks": 448,
+        "request": "s1c1",
+        "type": "s1c2"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/events": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/events/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,292 @@
+# Entity: transaction_entry
+
+main: kit: entity: transaction_entry: {
+
+  alias: field: {}
+
+  fields: {
+    balance_impact: {
+      h: "Balance Impact"
+      n: "balance_impact"
+      r: true
+      sh: "Change to a FinancialAccount's balance"
+      t: "`$OBJECT`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase."
+      t: "`$STRING`"
+    }
+    effective_at: {
+      fo: "unix-time"
+      h: "Effective At"
+      n: "effective_at"
+      r: true
+      sh: "When the TransactionEntry will impact the FinancialAccount's balance."
+      t: "`$INTEGER`"
+    }
+    financial_account: {
+      h: "Financial Account"
+      n: "financial_account"
+      r: true
+      sh: "The FinancialAccount associated with this object."
+      t: "`$STRING`"
+    }
+    flow: {
+      h: "Flow"
+      n: "flow"
+      r: false
+      sh: "Token of the flow associated with the TransactionEntry."
+      t: "`$STRING`"
+    }
+    flow_details: {
+      h: "Flow Details"
+      n: "flow_details"
+      r: false
+      sh: "Details of the flow associated with the TransactionEntry."
+      t: "`$ANY`"
+      union: {
+        branches: 5
+        count: 307
+        depth: 39
+      }
+    }
+    flow_type: {
+      h: "Flow Type"
+      n: "flow_type"
+      r: true
+      sh: "Type of the flow associated with the TransactionEntry."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    transaction: {
+      h: "Transaction"
+      n: "transaction"
+      r: true
+      sh: "The Transaction associated with this object."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      sh: "The specific money movement that generated the TransactionEntry."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "transaction_entry"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/treasury/transaction_entries"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "effective_at"
+                or: "effective_at"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "financial_account"
+                or: "financial_account"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "order_by"
+                or: "order_by"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "transaction"
+                or: "transaction"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/treasury/transaction_entries"
+          q: {
+            exist: [
+              "created"
+              "effective_at"
+              "ending_before"
+              "expand"
+              "financial_account"
+              "limit"
+              "order_by"
+              "starting_after"
+              "transaction"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "transaction_entries"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/treasury/transaction_entries/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/treasury/transaction_entries/{id}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "transaction_entries"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

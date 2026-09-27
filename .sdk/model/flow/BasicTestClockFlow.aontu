@@ -1,0 +1,81 @@
+# BasicTestClockFlow
+
+main: kit: flow: BasicTestClockFlow:
+{
+  entity: "test_clock",
+  kind: "basic",
+  name: "BasicTestClockFlow",
+  step: [
+    {
+      i: {
+        ref: "test_clock_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "test_clock_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "test_clock_ref01",
+        srcdatavar: "test_clock_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "test_clock01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-test_clock_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "test_clock_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        id: "test_clock01"
+      }
+
+      o: "remove"
+    }
+
+    {
+      i: {
+        suffix: "_rt0"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemNotExists",
+          def: {
+            ref: "test_clock_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTestClockFlow"
+}

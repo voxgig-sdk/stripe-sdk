@@ -1,0 +1,932 @@
+# Entity: authorization
+
+main: kit: entity: authorization: {
+
+  alias: field: {}
+
+  fields: {
+    amount: {
+      h: "Amount"
+      n: "amount"
+      r: true
+      sh: "The total amount that was authorized or rejected."
+      t: "`$INTEGER`"
+    }
+    amount_details: {
+      h: "Amount Details"
+      n: "amount_details"
+      r: false
+      sh: "Detailed breakdown of amount components."
+      t: "`$ANY`"
+    }
+    approved: {
+      h: "Approved"
+      n: "approved"
+      r: true
+      sh: "Whether the authorization has been approved."
+      t: "`$BOOLEAN`"
+    }
+    authorization_method: {
+      h: "Authorization Method"
+      n: "authorization_method"
+      r: true
+      sh: "How the card details were provided."
+      t: "`$STRING`"
+    }
+    balance_transactions: {
+      h: "Balance Transactions"
+      n: "balance_transactions"
+      r: true
+      sh: "List of balance transactions associated with this authorization."
+      t: "`$ARRAY`"
+    }
+    card: {
+      h: "Card"
+      n: "card"
+      r: true
+      sh: "You can [create physical or virtual cards](https://docs.stripe.com/issuing) that are issued to cardholders."
+      t: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 17
+        depth: 26
+      }
+    }
+    card_presence: {
+      h: "Card Presence"
+      n: "card_presence"
+      r: false
+      sh: "Whether the card was present at the point of sale for the authorization."
+      t: "`$STRING`"
+    }
+    cardholder: {
+      h: "Cardholder"
+      n: "cardholder"
+      r: false
+      sh: "The cardholder to whom this authorization belongs."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 13
+        depth: 27
+      }
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    currency: {
+      fo: "currency"
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "The currency of the cardholder."
+      t: "`$STRING`"
+    }
+    fleet: {
+      h: "Fleet"
+      n: "fleet"
+      r: false
+      sh: "Fleet-specific information for authorizations using Fleet cards."
+      t: "`$ANY`"
+    }
+    fraud_challenges: {
+      h: "Fraud Challenges"
+      n: "fraud_challenges"
+      r: false
+      sh: "Fraud challenges sent to the cardholder, if this authorization was declined for fraud risk reasons."
+      t: "`$ARRAY`"
+    }
+    fuel: {
+      h: "Fuel"
+      n: "fuel"
+      r: false
+      sh: "Information about fuel that was purchased with this transaction."
+      t: "`$ANY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    merchant_amount: {
+      h: "Merchant Amount"
+      n: "merchant_amount"
+      r: true
+      sh: "The total amount that was authorized or rejected."
+      t: "`$INTEGER`"
+    }
+    merchant_currency: {
+      fo: "currency"
+      h: "Merchant Currency"
+      n: "merchant_currency"
+      r: true
+      sh: "The local currency that was presented to the cardholder for the authorization."
+      t: "`$STRING`"
+    }
+    merchant_data: {
+      h: "Merchant Data"
+      n: "merchant_data"
+      r: true
+      t: "`$OBJECT`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: true
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    network_data: {
+      h: "Network Data"
+      n: "network_data"
+      r: false
+      sh: "Details about the authorization, such as identifiers, set by the card network."
+      t: "`$ANY`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    pending_request: {
+      h: "Pending Request"
+      n: "pending_request"
+      r: false
+      sh: "The pending authorization request."
+      t: "`$ANY`"
+    }
+    request_history: {
+      h: "Request History"
+      n: "request_history"
+      r: true
+      sh: "History of every time a `pending_request` authorization was approved/declined, either by you directly or by Stripe (e.g."
+      t: "`$ARRAY`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "The current status of the authorization in its lifecycle."
+      t: "`$STRING`"
+    }
+    token: {
+      h: "Token"
+      n: "token"
+      r: false
+      sh: "[Token](https://docs.stripe.com/api/issuing/tokens/object) object used for this authorization."
+      t: "`$STRING`"
+      union: {
+        branches: 2
+        count: 63
+        depth: 33
+      }
+    }
+    transactions: {
+      h: "Transactions"
+      n: "transactions"
+      r: true
+      sh: "List of [transactions](https://docs.stripe.com/api/issuing/transactions) associated with this authorization."
+      t: "`$ARRAY`"
+      union: {
+        branches: 2
+        count: 182
+        depth: 36
+      }
+    }
+    treasury: {
+      h: "Treasury"
+      n: "treasury"
+      r: false
+      sh: "[Treasury](https://docs.stripe.com/api/treasury) details related to this authorization if it was created on a [FinancialAccount](https://docs.stripe.com/api/treasury/financial_accounts)."
+      t: "`$ANY`"
+    }
+    verification_data: {
+      h: "Verification Data"
+      n: "verification_data"
+      r: true
+      t: "`$OBJECT`"
+    }
+    verified_by_fraud_challenge: {
+      h: "Verified By Fraud Challenge"
+      n: "verified_by_fraud_challenge"
+      r: false
+      sh: "Whether the authorization bypassed fraud risk checks because the cardholder has previously completed a fraud challenge on a similar high-risk authorization from the same merchant."
+      t: "`$BOOLEAN`"
+    }
+    wallet: {
+      h: "Wallet"
+      n: "wallet"
+      r: false
+      sh: "The digital wallet used for this transaction."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "authorization"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/issuing/authorizations/{authorization}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/issuing/authorizations/{authorization}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              authorization: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "authorizations"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/issuing/authorizations/{authorization}/approve"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/issuing/authorizations/{authorization}/approve"
+          q: {
+            "$action": "approve"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              authorization: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "authorizations"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "approve"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/authorizations/{authorization}/capture"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/authorizations/{authorization}/capture"
+          q: {
+            "$action": "capture"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              authorization: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "authorizations"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "capture"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/issuing/authorizations/{authorization}/decline"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/issuing/authorizations/{authorization}/decline"
+          q: {
+            "$action": "decline"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              authorization: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "authorizations"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "decline"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/authorizations/{authorization}/expire"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/authorizations/{authorization}/expire"
+          q: {
+            "$action": "expire"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              authorization: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "authorizations"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "expire"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/authorizations/{authorization}/finalize_amount"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/authorizations/{authorization}/finalize_amount"
+          q: {
+            "$action": "finalize_amount"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              authorization: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "authorizations"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "finalize_amount"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/authorizations/{authorization}/fraud_challenges/respond"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/authorizations/{authorization}/fraud_challenges/respond"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              authorization: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "authorizations"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "fraud_challenges"
+            }
+            {
+              lit: "respond"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/authorizations/{authorization}/increment"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/authorizations/{authorization}/increment"
+          q: {
+            "$action": "increment"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              authorization: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "authorizations"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "increment"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/authorizations/{authorization}/reverse"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/authorizations/{authorization}/reverse"
+          q: {
+            "$action": "reverse"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              authorization: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "authorizations"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "reverse"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/test_helpers/issuing/authorizations"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/test_helpers/issuing/authorizations"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "test_helpers"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "authorizations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/issuing/authorizations"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "card"
+                or: "card"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "cardholder"
+                or: "cardholder"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/issuing/authorizations"
+          q: {
+            exist: [
+              "card"
+              "cardholder"
+              "created"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+              "status"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "authorizations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/issuing/authorizations/{authorization}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "authorization"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/issuing/authorizations/{authorization}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              authorization: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "issuing"
+            }
+            {
+              lit: "authorizations"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

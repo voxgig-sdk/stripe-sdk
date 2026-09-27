@@ -1,0 +1,108 @@
+{
+  "existing": {
+    "linked_account": {
+      "LINKED_ACCOUNT00": {
+        "account_holder": "sd2",
+        "account_numbers": [],
+        "balance": "sd4",
+        "balance_refresh": "sd5",
+        "category": "sd6",
+        "created": 215,
+        "display_name": "sd8",
+        "id": "LINKED_ACCOUNT00",
+        "institution_name": "sda",
+        "last4": "sdb",
+        "livemode": true,
+        "object": "sdd",
+        "ownership": "sde",
+        "ownership_refresh": "sdf",
+        "permissions": [],
+        "status": "se1",
+        "status_details": {},
+        "subcategory": "se3",
+        "subscriptions": [],
+        "supported_payment_method_types": [],
+        "transaction_refresh": "se6"
+      },
+      "LINKED_ACCOUNT01": {
+        "account_holder": "s1a4",
+        "account_numbers": [],
+        "balance": "s1a6",
+        "balance_refresh": "s1a7",
+        "category": "s1a8",
+        "created": 425,
+        "display_name": "s1aa",
+        "id": "LINKED_ACCOUNT01",
+        "institution_name": "s1ac",
+        "last4": "s1ad",
+        "livemode": true,
+        "object": "s1af",
+        "ownership": "s1b0",
+        "ownership_refresh": "s1b1",
+        "permissions": [],
+        "status": "s1b3",
+        "status_details": {},
+        "subcategory": "s1b5",
+        "subscriptions": [],
+        "supported_payment_method_types": [],
+        "transaction_refresh": "s1b8"
+      },
+      "LINKED_ACCOUNT02": {
+        "account_holder": "s276",
+        "account_numbers": [],
+        "balance": "s278",
+        "balance_refresh": "s279",
+        "category": "s27a",
+        "created": 635,
+        "display_name": "s27c",
+        "id": "LINKED_ACCOUNT02",
+        "institution_name": "s27e",
+        "last4": "s27f",
+        "livemode": true,
+        "object": "s281",
+        "ownership": "s282",
+        "ownership_refresh": "s283",
+        "permissions": [],
+        "status": "s285",
+        "status_details": {},
+        "subcategory": "s287",
+        "subscriptions": [],
+        "supported_payment_method_types": [],
+        "transaction_refresh": "s28a"
+      }
+    }
+  },
+  "new": {
+    "linked_account": {
+      "linked_account_ref01": {
+        "account_holder": "s348",
+        "account_numbers": [],
+        "balance": "s34a",
+        "balance_refresh": "s34b",
+        "category": "s34c",
+        "created": 845,
+        "display_name": "s34e",
+        "institution_name": "s350",
+        "last4": "s351",
+        "livemode": true,
+        "object": "s353",
+        "ownership": "s354",
+        "ownership_refresh": "s355",
+        "permissions": [],
+        "status": "s357",
+        "status_details": {},
+        "subcategory": "s359",
+        "subscriptions": [],
+        "supported_payment_method_types": [],
+        "transaction_refresh": "s35c"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/linked_accounts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

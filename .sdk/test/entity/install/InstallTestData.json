@@ -1,0 +1,112 @@
+{
+  "existing": {
+    "install": {
+      "INSTALL00": {
+        "account": "saa",
+        "app": "sab",
+        "approval_required": true,
+        "auth_code": "sad",
+        "channel": "sae",
+        "content_security_policy_granted": {},
+        "content_security_policy_pending": {},
+        "created": 177,
+        "created_by": "sb2",
+        "endpoints_granted": [],
+        "endpoints_pending": [],
+        "id": "INSTALL00",
+        "livemode": true,
+        "object": "sb7",
+        "permissions_granted": [],
+        "permissions_pending": [],
+        "status": "sba"
+      },
+      "INSTALL01": {
+        "account": "s154",
+        "app": "s155",
+        "approval_required": true,
+        "auth_code": "s157",
+        "channel": "s158",
+        "content_security_policy_granted": {},
+        "content_security_policy_pending": {},
+        "created": 347,
+        "created_by": "s15c",
+        "endpoints_granted": [],
+        "endpoints_pending": [],
+        "id": "INSTALL01",
+        "livemode": true,
+        "object": "s161",
+        "permissions_granted": [],
+        "permissions_pending": [],
+        "status": "s164"
+      },
+      "INSTALL02": {
+        "account": "s1fe",
+        "app": "s1ff",
+        "approval_required": true,
+        "auth_code": "s201",
+        "channel": "s202",
+        "content_security_policy_granted": {},
+        "content_security_policy_pending": {},
+        "created": 517,
+        "created_by": "s206",
+        "endpoints_granted": [],
+        "endpoints_pending": [],
+        "id": "INSTALL02",
+        "livemode": true,
+        "object": "s20b",
+        "permissions_granted": [],
+        "permissions_pending": [],
+        "status": "s20e"
+      }
+    }
+  },
+  "new": {
+    "install": {
+      "install_ref01": {
+        "account": "s2a8",
+        "app": "s2a9",
+        "approval_required": true,
+        "auth_code": "s2ab",
+        "channel": "s2ac",
+        "content_security_policy_granted": {},
+        "content_security_policy_pending": {},
+        "created": 687,
+        "created_by": "s2b0",
+        "endpoints_granted": [],
+        "endpoints_pending": [],
+        "livemode": true,
+        "object": "s2b5",
+        "permissions_granted": [],
+        "permissions_pending": [],
+        "status": "s2b8"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/apps/installs/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/apps/installs/{id}/uninstall": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/apps/installs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/apps/installs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/apps/installs/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

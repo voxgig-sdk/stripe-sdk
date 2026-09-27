@@ -1,0 +1,52 @@
+# BasicInboundTransferFlow
+
+main: kit: flow: BasicInboundTransferFlow:
+{
+  entity: "inbound_transfer",
+  kind: "basic",
+  name: "BasicInboundTransferFlow",
+  step: [
+    {
+      i: {
+        ref: "inbound_transfer_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "inbound_transfer_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "inbound_transfer_ref01",
+        srcdatavar: "inbound_transfer_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "inbound_transfer01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-inbound_transfer_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicInboundTransferFlow"
+}

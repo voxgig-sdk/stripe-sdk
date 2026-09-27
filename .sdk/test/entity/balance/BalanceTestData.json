@@ -1,0 +1,57 @@
+{
+  "existing": {
+    "balance": {
+      "BALANCE00": {
+        "available": [],
+        "connect_reserved": [],
+        "instant_available": [],
+        "issuing": {},
+        "livemode": true,
+        "object": "s55",
+        "pending": [],
+        "refund_and_dispute_prefunding": {}
+      },
+      "BALANCE01": {
+        "available": [],
+        "connect_reserved": [],
+        "instant_available": [],
+        "issuing": {},
+        "livemode": true,
+        "object": "sa5",
+        "pending": [],
+        "refund_and_dispute_prefunding": {}
+      },
+      "BALANCE02": {
+        "available": [],
+        "connect_reserved": [],
+        "instant_available": [],
+        "issuing": {},
+        "livemode": true,
+        "object": "sf5",
+        "pending": [],
+        "refund_and_dispute_prefunding": {}
+      }
+    }
+  },
+  "new": {
+    "balance": {
+      "balance_ref01": {
+        "available": [],
+        "connect_reserved": [],
+        "instant_available": [],
+        "issuing": {},
+        "livemode": true,
+        "object": "s145",
+        "pending": [],
+        "refund_and_dispute_prefunding": {}
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/balance": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

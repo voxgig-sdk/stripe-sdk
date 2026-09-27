@@ -1,0 +1,45 @@
+# Entity: meter_event_adjustment
+
+main: kit: entity: meter_event_adjustment: {
+
+  alias: field: {}
+
+  name: "meter_event_adjustment"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/billing/meter_event_adjustments"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/billing/meter_event_adjustments"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "billing"
+            }
+            {
+              lit: "meter_event_adjustments"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.cancel`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

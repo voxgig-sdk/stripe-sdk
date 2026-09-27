@@ -1,43 +1,6699 @@
 -- Typed models for the Stripe SDK (LuaLS annotations).
 --
--- GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
--- params (op.<name>.points[].args.params[]). Field/param types come from the
+-- GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+-- params (op.<name>.points[].g.params[]). Field/param types come from the
 -- canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 -- @voxgig/apidef VALID_CANON). Annotations only — no runtime effect. Do not
 -- edit by hand.
 
----@class Session
----@field amount_total? number
----@field cancel_url? string
----@field created? number
----@field currency? string
----@field customer? string
----@field id? string
----@field mode? string
----@field object? string
----@field payment_status? string
----@field status? string
----@field success_url? string
+---@class Account
+---@field account_holder? any
+---@field account_numbers? table
+---@field balance? any
+---@field balance_refresh? any
+---@field business_profile? any
+---@field business_type? string
+---@field capabilities? table
+---@field category string
+---@field charges_enabled? boolean
+---@field company? table
+---@field controller table
+---@field country? string
+---@field created number
+---@field default_currency? string
+---@field details_submitted? boolean
+---@field display_name? string
+---@field email? string
+---@field external_accounts table
+---@field future_requirements? table
+---@field groups? any
+---@field id string
+---@field individual table
+---@field institution_name string
+---@field last4? string
+---@field livemode boolean
+---@field metadata? table
+---@field object string
+---@field ownership? any
+---@field ownership_refresh? any
+---@field payouts_enabled? boolean
+---@field permissions? table
+---@field requirements? table
+---@field settings? any
+---@field status string
+---@field status_details? table
+---@field subcategory string
+---@field subscriptions? table
+---@field supported_payment_method_types table
+---@field tos_acceptance? table
+---@field transaction_refresh? any
+---@field type? string
 
----@class SessionLoadMatch
+---@class AccountLoadMatch
+---@field account string
+---@field expand? table
+
+---@class AccountListMatch
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class AccountCreateData
+---@field id string
+---@field account_holder? any
+---@field account_numbers? table
+---@field balance? any
+---@field balance_refresh? any
+---@field business_profile? any
+---@field business_type? string
+---@field capabilities? table
+---@field category string
+---@field charges_enabled? boolean
+---@field company? table
+---@field controller table
+---@field country? string
+---@field created number
+---@field default_currency? string
+---@field details_submitted? boolean
+---@field display_name? string
+---@field email? string
+---@field external_accounts table
+---@field future_requirements? table
+---@field groups? any
+---@field individual table
+---@field institution_name string
+---@field last4? string
+---@field livemode boolean
+---@field metadata? table
+---@field object string
+---@field ownership? any
+---@field ownership_refresh? any
+---@field payouts_enabled? boolean
+---@field permissions? table
+---@field requirements? table
+---@field settings? any
+---@field status string
+---@field status_details? table
+---@field subcategory string
+---@field subscriptions? table
+---@field supported_payment_method_types table
+---@field tos_acceptance? table
+---@field transaction_refresh? any
+---@field type? string
+
+---@class AccountLink
+---@field created number
+---@field expires_at number
+---@field object string
+---@field url string
+
+---@class AccountLinkCreateData
+---@field created number
+---@field expires_at number
+---@field object string
+---@field url string
+
+---@class AccountOwner
+---@field email? string
+---@field id string
+---@field name string
+---@field object string
+---@field ownership string
+---@field phone? string
+---@field raw_address? string
+---@field refreshed_at? number
+
+---@class AccountOwnerListMatch
+---@field id string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field ownership string
+---@field starting_after? string
+
+---@class AccountSession
+---@field account_management table
+---@field account_onboarding table
+---@field balance_report table
+---@field balances table
+---@field disputes_list table
+---@field documents table
+---@field financial_account table
+---@field financial_account_transactions table
+---@field instant_payouts_promotion table
+---@field issuing_card table
+---@field issuing_cards_list table
+---@field notification_banner table
+---@field payment_details table
+---@field payment_disputes table
+---@field payment_method_settings table
+---@field payments table
+---@field payout_details table
+---@field payout_reconciliation_report table
+---@field payouts table
+---@field payouts_list table
+---@field tax_registrations table
+---@field tax_settings table
+
+---@class AccountSessionCreateData
+---@field account_management table
+---@field account_onboarding table
+---@field balance_report table
+---@field balances table
+---@field disputes_list table
+---@field documents table
+---@field financial_account table
+---@field financial_account_transactions table
+---@field instant_payouts_promotion table
+---@field issuing_card table
+---@field issuing_cards_list table
+---@field notification_banner table
+---@field payment_details table
+---@field payment_disputes table
+---@field payment_method_settings table
+---@field payments table
+---@field payout_details table
+---@field payout_reconciliation_report table
+---@field payouts table
+---@field payouts_list table
+---@field tax_registrations table
+---@field tax_settings table
+
+---@class ActiveEntitlement
+---@field feature any
+---@field id string
+---@field livemode boolean
+---@field lookup_key string
+---@field object string
+
+---@class ActiveEntitlementLoadMatch
+---@field id string
+---@field expand? table
+
+---@class ActiveEntitlementListMatch
+---@field customer string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class Alert
+---@field alert_type string
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field status? string
+---@field title string
+---@field usage_threshold? any
+
+---@class AlertLoadMatch
+---@field id string
+---@field expand? table
+
+---@class AlertListMatch
+---@field alert_type? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field meter? string
+---@field starting_after? string
+
+---@class AlertCreateData
+---@field alert_type string
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field status? string
+---@field title string
+---@field usage_threshold? any
+
+---@class ApplePayDomain
+---@field created number
+---@field domain_name string
+---@field id string
+---@field livemode boolean
+---@field object string
+
+---@class ApplePayDomainLoadMatch
+---@field id string
+---@field expand? table
+
+---@class ApplePayDomainCreateData
+---@field created number
+---@field domain_name string
+---@field id string
+---@field livemode boolean
+---@field object string
+
+---@class ApplicationFee
+---@field account any
+---@field amount number
+---@field amount_refunded number
+---@field application any
+---@field balance_transaction? any
+---@field charge any
+---@field created number
+---@field currency string
+---@field fee_source? any
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field originating_transaction? any
+---@field refunded boolean
+---@field refunds table
+
+---@class ApplicationFeeLoadMatch
+---@field id string
+---@field expand? table
+
+---@class ApplicationFeeListMatch
+---@field charge? string
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class ApplicationFeeCreateData
+---@field id string
+---@field account any
+---@field amount number
+---@field amount_refunded number
+---@field application any
+---@field balance_transaction? any
+---@field charge any
+---@field created number
+---@field currency string
+---@field fee_source? any
+---@field livemode boolean
+---@field object string
+---@field originating_transaction? any
+---@field refunded boolean
+---@field refunds table
+
+---@class Association
+
+---@class AssociationListMatch
+---@field expand? table
+---@field payment_intent string
+
+---@class Authentication
+---@field acquirer_details? table
+---@field amount? number
+---@field challenge_url? string
+---@field channel table
+---@field created number
+---@field currency? string
+---@field directory_server string
+---@field fingerprinting_url? string
+---@field flow_preference table
+---@field future_usage table
+---@field id string
+---@field livemode boolean
+---@field message_category string
+---@field metadata? table
+---@field object string
+---@field outcome? string
+---@field outcome_details table
+---@field payment_method any
+---@field reason? string
+---@field shipping_address? table
+---@field status string
+
+---@class AuthenticationLoadMatch
+---@field id string
+---@field expand? table
+
+---@class AuthenticationListMatch
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field status? string
+
+---@class AuthenticationCreateData
+---@field acquirer_details? table
+---@field amount? number
+---@field challenge_url? string
+---@field channel table
+---@field created number
+---@field currency? string
+---@field directory_server string
+---@field fingerprinting_url? string
+---@field flow_preference table
+---@field future_usage table
+---@field id string
+---@field livemode boolean
+---@field message_category string
+---@field metadata? table
+---@field object string
+---@field outcome? string
+---@field outcome_details table
+---@field payment_method any
+---@field reason? string
+---@field shipping_address? table
+---@field status string
+
+---@class Authorization
+---@field amount number
+---@field amount_details? any
+---@field approved boolean
+---@field authorization_method string
+---@field balance_transactions table
+---@field card table
+---@field card_presence? string
+---@field cardholder? any
+---@field created number
+---@field currency string
+---@field fleet? any
+---@field fraud_challenges? table
+---@field fuel? any
+---@field id string
+---@field livemode boolean
+---@field merchant_amount number
+---@field merchant_currency string
+---@field merchant_data table
+---@field metadata table
+---@field network_data? any
+---@field object string
+---@field pending_request? any
+---@field request_history table
+---@field status string
+---@field token? string
+---@field transactions table
+---@field treasury? any
+---@field verification_data table
+---@field verified_by_fraud_challenge? boolean
+---@field wallet? string
+
+---@class AuthorizationLoadMatch
+---@field id string
+---@field expand? table
+
+---@class AuthorizationListMatch
+---@field card? string
+---@field cardholder? string
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field status? string
+
+---@class AuthorizationCreateData
+---@field id string
+---@field amount number
+---@field amount_details? any
+---@field approved boolean
+---@field authorization_method string
+---@field balance_transactions table
+---@field card table
+---@field card_presence? string
+---@field cardholder? any
+---@field created number
+---@field currency string
+---@field fleet? any
+---@field fraud_challenges? table
+---@field fuel? any
+---@field livemode boolean
+---@field merchant_amount number
+---@field merchant_currency string
+---@field merchant_data table
+---@field metadata table
+---@field network_data? any
+---@field object string
+---@field pending_request? any
+---@field request_history table
+---@field status string
+---@field token? string
+---@field transactions table
+---@field treasury? any
+---@field verification_data table
+---@field verified_by_fraud_challenge? boolean
+---@field wallet? string
+
+---@class Balance
+---@field available table
+---@field connect_reserved? table
+---@field instant_available? table
+---@field issuing table
+---@field livemode boolean
+---@field object string
+---@field pending table
+---@field refund_and_dispute_prefunding table
+
+---@class BalanceListMatch
+---@field expand? table
+
+---@class BalanceSetting
+---@field debit_negative_balances? boolean
+---@field payouts? any
+---@field settlement_timing table
+
+---@class BalanceSettingLoadMatch
+---@field expand? table
+
+---@class BalanceSettingCreateData
+---@field debit_negative_balances? boolean
+---@field payouts? any
+---@field settlement_timing table
+
+---@class BalanceTransaction
+---@field amount number
+---@field available_on number
+---@field balance_type string
+---@field checkout_session? any
+---@field created number
+---@field credit_note? any
+---@field currency string
+---@field customer any
+---@field customer_account? string
+---@field description? string
+---@field ending_balance number
+---@field exchange_rate? number
+---@field fee number
+---@field fee_details table
+---@field id string
+---@field invoice? any
+---@field livemode boolean
+---@field metadata? table
+---@field net number
+---@field object string
+---@field reporting_category string
+---@field source? any
+---@field status string
+---@field type string
+
+---@class BalanceTransactionLoadMatch
+---@field id string
+---@field expand? table
+
+---@class BalanceTransactionListMatch
+---@field created? any
+---@field currency? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field payout? string
+---@field source? string
+---@field starting_after? string
+---@field type? string
+
+---@class BankAccount
+---@field account? any
+---@field account_holder_name? string
+---@field account_holder_type? string
+---@field account_type? string
+---@field available_payout_methods? table
+---@field bank_name? string
+---@field country string
+---@field currency string
+---@field customer? any
+---@field default_for_currency? boolean
+---@field fingerprint? string
+---@field future_requirements? any
+---@field id string
+---@field last4 string
+---@field metadata? table
+---@field object string
+---@field requirements? any
+---@field routing_number? string
+---@field status string
+
+---@class BankAccountLoadMatch
+---@field customer_id string
+---@field id string
+---@field expand? table
+
+---@class BankAccountListMatch
+---@field customer_id string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class BankAccountCreateData
+---@field customer_id string
+---@field id? string
+---@field source_id? string
+---@field account? any
+---@field account_holder_name? string
+---@field account_holder_type? string
+---@field account_type? string
+---@field available_payout_methods? table
+---@field bank_name? string
+---@field country string
+---@field currency string
+---@field customer? any
+---@field default_for_currency? boolean
+---@field fingerprint? string
+---@field future_requirements? any
+---@field last4 string
+---@field metadata? table
+---@field object string
+---@field requirements? any
+---@field routing_number? string
+---@field status string
+
+---@class BankAccountRemoveMatch
+---@field customer_id string
 ---@field id string
 
----@class SessionListMatch
+---@class Calculation
+---@field amount_total number
+---@field currency string
 ---@field customer? string
+---@field customer_details table
+---@field expires_at? number
+---@field id? string
+---@field line_items table
+---@field livemode boolean
+---@field object string
+---@field ship_from_details? any
+---@field shipping_cost? any
+---@field tax_amount_exclusive number
+---@field tax_amount_inclusive number
+---@field tax_breakdown table
+---@field tax_date number
+
+---@class CalculationLoadMatch
+---@field id string
+---@field expand? table
+
+---@class CalculationCreateData
+---@field amount_total number
+---@field currency string
+---@field customer? string
+---@field customer_details table
+---@field expires_at? number
+---@field id? string
+---@field line_items table
+---@field livemode boolean
+---@field object string
+---@field ship_from_details? any
+---@field shipping_cost? any
+---@field tax_amount_exclusive number
+---@field tax_amount_inclusive number
+---@field tax_breakdown table
+---@field tax_date number
+
+---@class Capability
+---@field account any
+---@field future_requirements table
+---@field id string
+---@field object string
+---@field requested boolean
+---@field requested_at? number
+---@field requirements table
+---@field status string
+
+---@class CapabilityLoadMatch
+---@field account_id string
+---@field id string
+---@field expand? table
+
+---@class CapabilityListMatch
+---@field account_id string
+---@field expand? table
+
+---@class CapabilityCreateData
+---@field account_id string
+---@field id string
+---@field account any
+---@field future_requirements table
+---@field object string
+---@field requested boolean
+---@field requested_at? number
+---@field requirements table
+---@field status string
+
+---@class Card
+---@field account? any
+---@field address_city? string
+---@field address_country? string
+---@field address_line1? string
+---@field address_line1_check? string
+---@field address_line2? string
+---@field address_state? string
+---@field address_zip? string
+---@field address_zip_check? string
+---@field allow_redisplay? boolean
+---@field available_payout_methods? table
+---@field brand string
+---@field cancellation_reason? string
+---@field cardholder table
+---@field country? string
+---@field created number
+---@field currency? string
+---@field customer? any
+---@field cvc? string
+---@field cvc_check? string
+---@field default_for_currency? boolean
+---@field dynamic_last4? string
+---@field exp_month number
+---@field exp_year number
+---@field financial_account? string
+---@field fingerprint? string
+---@field funding string
+---@field id string
+---@field last4 string
+---@field latest_fraud_warning? any
+---@field lifecycle_controls? any
+---@field livemode boolean
+---@field metadata? table
+---@field name? string
+---@field networks? table
+---@field number? string
+---@field object string
+---@field personalization_design? any
+---@field regulated_status? string
+---@field replaced_by? any
+---@field replacement_for? any
+---@field replacement_reason? string
+---@field second_line? string
+---@field shipping? any
+---@field spending_controls table
+---@field status? string
+---@field tokenization_method? string
+---@field type string
+---@field wallets? any
+
+---@class CardLoadMatch
+---@field customer_id? string
+---@field id string
+---@field expand? table
+
+---@class CardListMatch
+---@field cardholder? string
+---@field created? any
+---@field ending_before? string
+---@field exp_month? number
+---@field exp_year? number
+---@field expand? table
+---@field last4? string
 ---@field limit? number
+---@field personalization_design? string
+---@field starting_after? string
+---@field status? string
+---@field type? string
+
+---@class CardCreateData
+---@field id string
+---@field account? any
+---@field address_city? string
+---@field address_country? string
+---@field address_line1? string
+---@field address_line1_check? string
+---@field address_line2? string
+---@field address_state? string
+---@field address_zip? string
+---@field address_zip_check? string
+---@field allow_redisplay? boolean
+---@field available_payout_methods? table
+---@field brand string
+---@field cancellation_reason? string
+---@field cardholder table
+---@field country? string
+---@field created number
+---@field currency? string
+---@field customer? any
+---@field cvc? string
+---@field cvc_check? string
+---@field default_for_currency? boolean
+---@field dynamic_last4? string
+---@field exp_month number
+---@field exp_year number
+---@field financial_account? string
+---@field fingerprint? string
+---@field funding string
+---@field last4 string
+---@field latest_fraud_warning? any
+---@field lifecycle_controls? any
+---@field livemode boolean
+---@field metadata? table
+---@field name? string
+---@field networks? table
+---@field number? string
+---@field object string
+---@field personalization_design? any
+---@field regulated_status? string
+---@field replaced_by? any
+---@field replacement_for? any
+---@field replacement_reason? string
+---@field second_line? string
+---@field shipping? any
+---@field spending_controls table
+---@field status? string
+---@field tokenization_method? string
+---@field type string
+---@field wallets? any
+
+---@class CardRemoveMatch
+---@field customer_id string
+---@field id string
+
+---@class Cardholder
+---@field billing table
+---@field company? any
+---@field created number
+---@field email? string
+---@field id string
+---@field individual? any
+---@field livemode boolean
+---@field metadata table
+---@field name string
+---@field object string
+---@field phone_number? string
+---@field preferred_locales? table
+---@field requirements table
+---@field spending_controls? any
+---@field status string
+---@field type string
+
+---@class CardholderLoadMatch
+---@field id string
+---@field expand? table
+
+---@class CardholderListMatch
+---@field created? any
+---@field email? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field phone_number? string
+---@field starting_after? string
+---@field status? string
+---@field type? string
+
+---@class CardholderCreateData
+---@field id string
+---@field billing table
+---@field company? any
+---@field created number
+---@field email? string
+---@field individual? any
+---@field livemode boolean
+---@field metadata table
+---@field name string
+---@field object string
+---@field phone_number? string
+---@field preferred_locales? table
+---@field requirements table
+---@field spending_controls? any
+---@field status string
+---@field type string
+
+---@class CashBalance
+---@field available? table
+---@field customer string
+---@field customer_account? string
+---@field livemode boolean
+---@field object string
+---@field settings table
+
+---@class CashBalanceLoadMatch
+---@field customer_id string
+---@field expand? table
+
+---@class CashBalanceCreateData
+---@field customer_id string
+---@field available? table
+---@field customer string
+---@field customer_account? string
+---@field livemode boolean
+---@field object string
+---@field settings table
+
+---@class CashBalanceTransaction
+---@field adjusted_for_overdraft table
+---@field applied_to_payment table
+---@field created number
+---@field currency string
+---@field customer any
+---@field customer_account? string
+---@field ending_balance number
+---@field funded table
+---@field id string
+---@field livemode boolean
+---@field net_amount number
+---@field object string
+---@field refunded_from_payment table
+---@field transferred_to_balance table
+---@field type string
+---@field unapplied_from_payment table
+
+---@class CashBalanceTransactionLoadMatch
+---@field customer_id string
+---@field id string
+---@field expand? table
+
+---@class CashBalanceTransactionListMatch
+---@field customer_id string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class Charge
+---@field amount number
+---@field amount_captured number
+---@field amount_refunded number
+---@field application? any
+---@field application_fee? any
+---@field application_fee_amount? number
+---@field balance_transaction? any
+---@field billing_details table
+---@field calculated_statement_descriptor? string
+---@field captured boolean
+---@field created number
+---@field currency string
+---@field customer? any
+---@field description? string
+---@field disputed boolean
+---@field failure_balance_transaction? any
+---@field failure_code? string
+---@field failure_message? string
+---@field fraud_details? any
+---@field id string
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field on_behalf_of? any
+---@field outcome? any
+---@field paid boolean
+---@field payment_intent? any
+---@field payment_method? string
+---@field payment_method_details? any
+---@field presentment_details table
+---@field radar_options? table
+---@field receipt_email? string
+---@field receipt_number? string
+---@field receipt_url? string
+---@field refunded boolean
+---@field refunds table
+---@field review? any
+---@field shipping? any
+---@field source_transfer? any
+---@field statement_descriptor? string
+---@field statement_descriptor_suffix? string
+---@field status string
+---@field transfer? any
+---@field transfer_data? any
+---@field transfer_group? string
+
+---@class ChargeLoadMatch
+---@field id string
+---@field expand? table
+
+---@class ChargeListMatch
+---@field created? any
+---@field customer? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field payment_intent? string
+---@field starting_after? string
+---@field transfer_group? string
+
+---@class ChargeCreateData
+---@field id string
+---@field amount number
+---@field amount_captured number
+---@field amount_refunded number
+---@field application? any
+---@field application_fee? any
+---@field application_fee_amount? number
+---@field balance_transaction? any
+---@field billing_details table
+---@field calculated_statement_descriptor? string
+---@field captured boolean
+---@field created number
+---@field currency string
+---@field customer? any
+---@field description? string
+---@field disputed boolean
+---@field failure_balance_transaction? any
+---@field failure_code? string
+---@field failure_message? string
+---@field fraud_details? any
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field on_behalf_of? any
+---@field outcome? any
+---@field paid boolean
+---@field payment_intent? any
+---@field payment_method? string
+---@field payment_method_details? any
+---@field presentment_details table
+---@field radar_options? table
+---@field receipt_email? string
+---@field receipt_number? string
+---@field receipt_url? string
+---@field refunded boolean
+---@field refunds table
+---@field review? any
+---@field shipping? any
+---@field source_transfer? any
+---@field statement_descriptor? string
+---@field statement_descriptor_suffix? string
+---@field status string
+---@field transfer? any
+---@field transfer_data? any
+---@field transfer_group? string
+
+---@class Configuration
+---@field active boolean
+---@field application? any
+---@field bbpos_wisepad3? table
+---@field bbpos_wisepos_e? table
+---@field business_profile table
+---@field cellular table
+---@field created number
+---@field default_return_url? string
+---@field features table
+---@field id string
+---@field is_account_default? boolean
+---@field is_default boolean
+---@field livemode boolean
+---@field login_page table
+---@field metadata? table
+---@field name? string
+---@field object string
+---@field offline? table
+---@field reboot_window table
+---@field stripe_s700? table
+---@field stripe_s710? table
+---@field tipping? table
+---@field updated number
+---@field verifone_m425? table
+---@field verifone_p400? table
+---@field verifone_p630? table
+---@field verifone_ux700? table
+---@field verifone_v660p? table
+---@field wifi table
+
+---@class ConfigurationLoadMatch
+---@field id string
+---@field expand? table
+
+---@class ConfigurationListMatch
+---@field active? boolean
+---@field ending_before? string
+---@field expand? table
+---@field is_default? boolean
+---@field limit? number
+---@field starting_after? string
+
+---@class ConfigurationCreateData
+---@field id string
+---@field active boolean
+---@field application? any
+---@field bbpos_wisepad3? table
+---@field bbpos_wisepos_e? table
+---@field business_profile table
+---@field cellular table
+---@field created number
+---@field default_return_url? string
+---@field features table
+---@field is_account_default? boolean
+---@field is_default boolean
+---@field livemode boolean
+---@field login_page table
+---@field metadata? table
+---@field name? string
+---@field object string
+---@field offline? table
+---@field reboot_window table
+---@field stripe_s700? table
+---@field stripe_s710? table
+---@field tipping? table
+---@field updated number
+---@field verifone_m425? table
+---@field verifone_p400? table
+---@field verifone_p630? table
+---@field verifone_ux700? table
+---@field verifone_v660p? table
+---@field wifi table
+
+---@class ConfigurationRemoveMatch
+---@field id string
+
+---@class ConfirmationToken
+---@field created number
+---@field expires_at? number
+---@field id string
+---@field livemode boolean
+---@field mandate_data? any
+---@field metadata? table
+---@field object string
+---@field payment_intent? string
+---@field payment_method_options? any
+---@field payment_method_preview? any
+---@field return_url? string
+---@field setup_future_usage? string
+---@field setup_intent? string
+---@field shipping? any
+---@field use_stripe_sdk boolean
+
+---@class ConfirmationTokenLoadMatch
+---@field id string
+---@field expand? table
+
+---@class ConfirmationTokenCreateData
+---@field created number
+---@field expires_at? number
+---@field id string
+---@field livemode boolean
+---@field mandate_data? any
+---@field metadata? table
+---@field object string
+---@field payment_intent? string
+---@field payment_method_options? any
+---@field payment_method_preview? any
+---@field return_url? string
+---@field setup_future_usage? string
+---@field setup_intent? string
+---@field shipping? any
+---@field use_stripe_sdk boolean
+
+---@class ConnectionToken
+---@field location? string
+---@field object string
+---@field secret string
+
+---@class ConnectionTokenCreateData
+---@field location? string
+---@field object string
+---@field secret string
+
+---@class CountrySpec
+---@field default_currency string
+---@field id string
+---@field object string
+---@field supported_bank_account_currencies table
+---@field supported_payment_currencies table
+---@field supported_payment_methods table
+---@field supported_transfer_countries table
+---@field verification_fields table
+
+---@class CountrySpecLoadMatch
+---@field id string
+---@field expand? table
+
+---@class CountrySpecListMatch
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class Coupon
+---@field amount_off? number
+---@field applies_to table
+---@field created number
+---@field currency? string
+---@field currency_options? table
+---@field duration string
+---@field duration_in_months? number
+---@field id string
+---@field livemode boolean
+---@field max_redemptions? number
+---@field metadata? table
+---@field name? string
+---@field object string
+---@field percent_off? number
+---@field redeem_by? number
+---@field times_redeemed number
+---@field valid boolean
+
+---@class CouponLoadMatch
+---@field id string
+---@field expand? table
+
+---@class CouponListMatch
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class CouponCreateData
+---@field id string
+---@field amount_off? number
+---@field applies_to table
+---@field created number
+---@field currency? string
+---@field currency_options? table
+---@field duration string
+---@field duration_in_months? number
+---@field livemode boolean
+---@field max_redemptions? number
+---@field metadata? table
+---@field name? string
+---@field object string
+---@field percent_off? number
+---@field redeem_by? number
+---@field times_redeemed number
+---@field valid boolean
+
+---@class CreditBalanceSummary
+---@field available_balance table
+---@field ledger_balance table
+
+---@class CreditBalanceSummaryListMatch
+---@field customer? string
+---@field customer_account? string
+---@field expand? table
+---@field filter table
+
+---@class CreditBalanceTransaction
+---@field created number
+---@field credit? any
+---@field credit_grant any
+---@field debit? any
+---@field effective_at number
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field test_clock? any
+---@field type? string
+
+---@class CreditBalanceTransactionLoadMatch
+---@field id string
+---@field expand? table
+
+---@class CreditBalanceTransactionListMatch
+---@field credit_grant? string
+---@field customer? string
+---@field customer_account? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class CreditGrant
+---@field amount table
+---@field applicability_config table
+---@field category string
+---@field created number
+---@field customer any
+---@field customer_account? string
+---@field effective_at? number
+---@field expires_at? number
+---@field id string
+---@field livemode boolean
+---@field metadata table
+---@field name? string
+---@field object string
+---@field priority? number
+---@field test_clock? any
+---@field updated number
+---@field voided_at? number
+
+---@class CreditGrantLoadMatch
+---@field id string
+---@field expand? table
+
+---@class CreditGrantListMatch
+---@field customer? string
+---@field customer_account? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class CreditGrantCreateData
+---@field id string
+---@field amount table
+---@field applicability_config table
+---@field category string
+---@field created number
+---@field customer any
+---@field customer_account? string
+---@field effective_at? number
+---@field expires_at? number
+---@field livemode boolean
+---@field metadata table
+---@field name? string
+---@field object string
+---@field priority? number
+---@field test_clock? any
+---@field updated number
+---@field voided_at? number
+
+---@class CreditNote
+---@field amount number
+---@field amount_shipping number
+---@field created number
+---@field currency string
+---@field customer any
+---@field customer_account? string
+---@field customer_balance_transaction? any
+---@field discount_amount number
+---@field discount_amounts table
+---@field effective_at? number
+---@field id string
+---@field invoice any
+---@field lines table
+---@field livemode boolean
+---@field memo? string
+---@field metadata? table
+---@field number string
+---@field object string
+---@field out_of_band_amount? number
+---@field pdf string
+---@field post_payment_amount number
+---@field pre_payment_amount number
+---@field pretax_credit_amounts table
+---@field reason? string
+---@field refunds table
+---@field shipping_cost? any
+---@field status string
+---@field subtotal number
+---@field subtotal_excluding_tax? number
+---@field total number
+---@field total_excluding_tax? number
+---@field total_taxes? table
+---@field type string
+---@field voided_at? number
+
+---@class CreditNoteLoadMatch
+---@field id string
+---@field expand? table
+
+---@class CreditNoteListMatch
+---@field created? any
+---@field customer? string
+---@field customer_account? string
+---@field ending_before? string
+---@field expand? table
+---@field invoice? string
+---@field limit? number
+---@field starting_after? string
+
+---@class CreditNoteCreateData
+---@field id string
+---@field amount number
+---@field amount_shipping number
+---@field created number
+---@field currency string
+---@field customer any
+---@field customer_account? string
+---@field customer_balance_transaction? any
+---@field discount_amount number
+---@field discount_amounts table
+---@field effective_at? number
+---@field invoice any
+---@field lines table
+---@field livemode boolean
+---@field memo? string
+---@field metadata? table
+---@field number string
+---@field object string
+---@field out_of_band_amount? number
+---@field pdf string
+---@field post_payment_amount number
+---@field pre_payment_amount number
+---@field pretax_credit_amounts table
+---@field reason? string
+---@field refunds table
+---@field shipping_cost? any
+---@field status string
+---@field subtotal number
+---@field subtotal_excluding_tax? number
+---@field total number
+---@field total_excluding_tax? number
+---@field total_taxes? table
+---@field type string
+---@field voided_at? number
+
+---@class CreditNoteLine
+---@field amount number
+---@field description? string
+---@field discount_amount number
+---@field discount_amounts table
+---@field id string
+---@field invoice_line_item? string
+---@field livemode boolean
+---@field metadata? table
+---@field object string
+---@field pretax_credit_amounts table
+---@field quantity? number
+---@field tax_rates table
+---@field taxes? table
+---@field type string
+---@field unit_amount? number
+---@field unit_amount_decimal? string
+
+---@class CreditNoteLineListMatch
+---@field id string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class CreditReversal
+---@field amount number
+---@field created number
+---@field currency string
+---@field financial_account string
+---@field hosted_regulatory_receipt_url? string
+---@field id string
+---@field livemode boolean
+---@field metadata table
+---@field network string
+---@field object string
+---@field received_credit string
+---@field status string
+---@field status_transitions table
+---@field transaction? any
+
+---@class CreditReversalLoadMatch
+---@field id string
+---@field expand? table
+
+---@class CreditReversalListMatch
+---@field ending_before? string
+---@field expand? table
+---@field financial_account string
+---@field limit? number
+---@field received_credit? string
+---@field starting_after? string
+---@field status? string
+
+---@class CreditReversalCreateData
+---@field amount number
+---@field created number
+---@field currency string
+---@field financial_account string
+---@field hosted_regulatory_receipt_url? string
+---@field id string
+---@field livemode boolean
+---@field metadata table
+---@field network string
+---@field object string
+---@field received_credit string
+---@field status string
+---@field status_transitions table
+---@field transaction? any
+
+---@class Customer
+---@field address? any
+---@field balance? number
+---@field business_name? string
+---@field cash_balance? any
+---@field created number
+---@field currency? string
+---@field customer_account? string
+---@field default_source? any
+---@field delinquent? boolean
+---@field description? string
+---@field discount? any
+---@field email? string
+---@field id string
+---@field individual_name? string
+---@field invoice_credit_balance? table
+---@field invoice_prefix? string
+---@field invoice_settings? table
+---@field livemode boolean
+---@field metadata? table
+---@field name? string
+---@field next_invoice_sequence? number
+---@field object string
+---@field phone? string
+---@field preferred_locales? table
+---@field shipping? any
+---@field sources table
+---@field subscriptions table
+---@field tax table
+---@field tax_exempt? string
+---@field tax_ids table
+---@field test_clock? any
+
+---@class CustomerLoadMatch
+---@field id string
+---@field expand? table
+
+---@class CustomerListMatch
+---@field created? any
+---@field email? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field test_clock? string
+
+---@class CustomerCreateData
+---@field id string
+---@field address? any
+---@field balance? number
+---@field business_name? string
+---@field cash_balance? any
+---@field created number
+---@field currency? string
+---@field customer_account? string
+---@field default_source? any
+---@field delinquent? boolean
+---@field description? string
+---@field discount? any
+---@field email? string
+---@field individual_name? string
+---@field invoice_credit_balance? table
+---@field invoice_prefix? string
+---@field invoice_settings? table
+---@field livemode boolean
+---@field metadata? table
+---@field name? string
+---@field next_invoice_sequence? number
+---@field object string
+---@field phone? string
+---@field preferred_locales? table
+---@field shipping? any
+---@field sources table
+---@field subscriptions table
+---@field tax table
+---@field tax_exempt? string
+---@field tax_ids table
+---@field test_clock? any
+
+---@class CustomerRemoveMatch
+---@field id string
+
+---@class CustomerBalanceTransaction
+---@field amount number
+---@field checkout_session? any
+---@field created number
+---@field credit_note? any
+---@field currency string
+---@field customer any
+---@field customer_account? string
+---@field description? string
+---@field ending_balance number
+---@field id string
+---@field invoice? any
+---@field livemode boolean
+---@field metadata? table
+---@field object string
+---@field type string
+
+---@class CustomerBalanceTransactionLoadMatch
+---@field customer_id string
+---@field id string
+---@field expand? table
+
+---@class CustomerBalanceTransactionCreateData
+---@field customer_id? string
+---@field id string
+---@field amount number
+---@field checkout_session? any
+---@field created number
+---@field credit_note? any
+---@field currency string
+---@field customer any
+---@field customer_account? string
+---@field description? string
+---@field ending_balance number
+---@field invoice? any
+---@field livemode boolean
+---@field metadata? table
+---@field object string
+---@field type string
+
+---@class CustomerSession
+---@field client_secret string
+---@field components table
+---@field created number
+---@field customer any
+---@field customer_account? string
+---@field expires_at number
+---@field livemode boolean
+---@field object string
+
+---@class CustomerSessionCreateData
+---@field client_secret string
+---@field components table
+---@field created number
+---@field customer any
+---@field customer_account? string
+---@field expires_at number
+---@field livemode boolean
+---@field object string
+
+---@class DebitReversal
+---@field amount number
+---@field created number
+---@field currency string
+---@field financial_account? string
+---@field hosted_regulatory_receipt_url? string
+---@field id string
+---@field linked_flows? any
+---@field livemode boolean
+---@field metadata table
+---@field network string
+---@field object string
+---@field received_debit string
+---@field status string
+---@field status_transitions table
+---@field transaction? any
+
+---@class DebitReversalLoadMatch
+---@field id string
+---@field expand? table
+
+---@class DebitReversalListMatch
+---@field ending_before? string
+---@field expand? table
+---@field financial_account string
+---@field limit? number
+---@field received_debit? string
+---@field resolution? string
+---@field starting_after? string
+---@field status? string
+
+---@class DebitReversalCreateData
+---@field amount number
+---@field created number
+---@field currency string
+---@field financial_account? string
+---@field hosted_regulatory_receipt_url? string
+---@field id string
+---@field linked_flows? any
+---@field livemode boolean
+---@field metadata table
+---@field network string
+---@field object string
+---@field received_debit string
+---@field status string
+---@field status_transitions table
+---@field transaction? any
+
+---@class DeletedAccount
+---@field id? string
+
+---@class DeletedAccountRemoveMatch
+---@field id string
+
+---@class DeletedApplePayDomain
+---@field id? string
+
+---@class DeletedApplePayDomainRemoveMatch
+---@field id string
+
+---@class DeletedCoupon
+---@field id? string
+
+---@class DeletedCouponRemoveMatch
+---@field id string
+
+---@class DeletedExternalAccount
+---@field id? string
+
+---@class DeletedExternalAccountRemoveMatch
+---@field account_id string
+---@field id string
+
+---@class DeletedInvoiceitem
+---@field id? string
+
+---@class DeletedInvoiceitemRemoveMatch
+---@field id string
+
+---@class DeletedPerson
+---@field id? string
+
+---@class DeletedPersonRemoveMatch
+---@field account_id string
+---@field id string
+
+---@class DeletedPlan
+---@field id? string
+
+---@class DeletedPlanRemoveMatch
+---@field id string
+
+---@class DeletedProductFeature
+---@field id? string
+
+---@class DeletedProductFeatureRemoveMatch
+---@field id string
+---@field product_id string
+
+---@class DeletedSubscriptionItem
+---@field id? string
+
+---@class DeletedSubscriptionItemRemoveMatch
+---@field id string
+
+---@class DeletedWebhookEndpoint
+---@field id? string
+
+---@class DeletedWebhookEndpointRemoveMatch
+---@field id string
+
+---@class Discount
+---@field checkout_session? string
+---@field customer? any
+---@field customer_account? string
+---@field end? number
+---@field id string
+---@field invoice? string
+---@field invoice_item? string
+---@field object string
+---@field promotion_code? any
+---@field source table
+---@field start number
+---@field subscription? string
+---@field subscription_item? string
+
+---@class DiscountLoadMatch
+---@field customer_id string
+---@field subscription_id? string
+---@field expand? table
+
+---@class DiscountRemoveMatch
+---@field customer_id string
+
+---@class Dispute
+---@field amount number
+---@field balance_transactions table
+---@field charge any
+---@field created number
+---@field currency string
+---@field enhanced_eligibility_types table
+---@field evidence table
+---@field evidence_details table
+---@field id string
+---@field is_charge_refundable boolean
+---@field livemode boolean
+---@field loss_reason? string
+---@field metadata table
+---@field object string
+---@field payment_intent? any
+---@field payment_method_details table
+---@field reason string
+---@field status string
+---@field transaction any
+---@field treasury? any
+
+---@class DisputeLoadMatch
+---@field id string
+---@field expand? table
+
+---@class DisputeListMatch
+---@field charge? string
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field payment_intent? string
+---@field starting_after? string
+
+---@class DisputeCreateData
+---@field id string
+---@field amount number
+---@field balance_transactions table
+---@field charge any
+---@field created number
+---@field currency string
+---@field enhanced_eligibility_types table
+---@field evidence table
+---@field evidence_details table
+---@field is_charge_refundable boolean
+---@field livemode boolean
+---@field loss_reason? string
+---@field metadata table
+---@field object string
+---@field payment_intent? any
+---@field payment_method_details table
+---@field reason string
+---@field status string
+---@field transaction any
+---@field treasury? any
+
+---@class Domain
+---@field created number
+---@field domain_name string
+---@field id string
+---@field livemode boolean
+---@field object string
+
+---@class DomainListMatch
+---@field domain_name? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class EarlyFraudWarning
+---@field actionable boolean
+---@field charge any
+---@field created number
+---@field fraud_type string
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field payment_intent? any
+
+---@class EarlyFraudWarningLoadMatch
+---@field id string
+---@field expand? table
+
+---@class EarlyFraudWarningListMatch
+---@field charge? string
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field payment_intent? string
+---@field starting_after? string
+
+---@class EphemeralKey
+---@field created number
+---@field expires number
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field secret? string
+
+---@class EphemeralKeyCreateData
+---@field created number
+---@field expires number
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field secret? string
+
+---@class EphemeralKeyRemoveMatch
+---@field id string
+
+---@class Event
+---@field account? string
+---@field api_version? string
+---@field context? string
+---@field created number
+---@field data table
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field pending_webhooks number
+---@field request? any
+---@field type string
+
+---@class EventLoadMatch
+---@field id string
+---@field expand? table
+
+---@class EventListMatch
+---@field created? any
+---@field delivery_success? boolean
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field type? string
+
+---@class ExchangeRate
+---@field id string
+---@field object string
+---@field rates table
+
+---@class ExchangeRateLoadMatch
+---@field id string
+---@field expand? table
+
+---@class ExchangeRateListMatch
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class ExternalAccount
+---@field data table
+---@field has_more boolean
+---@field id? string
+---@field object string
+---@field url string
+
+---@class ExternalAccountLoadMatch
+---@field account_id string
+---@field id string
+---@field expand? table
+
+---@class ExternalAccountListMatch
+---@field account_id string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field object? string
+---@field starting_after? string
+
+---@class ExternalAccountCreateData
+---@field id string
+---@field data table
+---@field has_more boolean
+---@field object string
+---@field url string
+
+---@class Feature
+---@field active boolean
+---@field entitlement_feature table
+---@field id string
+---@field livemode boolean
+---@field lookup_key string
+---@field metadata table
+---@field name string
+---@field object string
+
+---@class FeatureLoadMatch
+---@field id string
+---@field expand? table
+
+---@class FeatureListMatch
+---@field archived? boolean
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field lookup_key? string
+---@field starting_after? string
+
+---@class FeatureCreateData
+---@field id string
+---@field active boolean
+---@field entitlement_feature table
+---@field livemode boolean
+---@field lookup_key string
+---@field metadata table
+---@field name string
+---@field object string
+
+---@class FeedbackOption
+---@field deactivated_at? number
+---@field description string
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field status string
+---@field status_transitions table
+
+---@class FeedbackOptionLoadMatch
+---@field id string
+---@field expand? table
+
+---@class FeedbackOptionListMatch
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field status? string
+
+---@class FeedbackOptionCreateData
+---@field id string
+---@field deactivated_at? number
+---@field description string
+---@field livemode boolean
+---@field object string
+---@field status string
+---@field status_transitions table
+
+---@class File
+---@field created number
+---@field data table
+---@field expires_at? number
+---@field filename? string
+---@field has_more boolean
+---@field id string
+---@field links table
+---@field object string
+---@field purpose string
+---@field size number
+---@field title? string
+---@field type? string
+---@field url string
+
+---@class FileLoadMatch
+---@field id string
+---@field expand? table
+
+---@class FileListMatch
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field purpose? string
+---@field starting_after? string
+
+---@class FileCreateData
+---@field created number
+---@field data table
+---@field expires_at? number
+---@field filename? string
+---@field has_more boolean
+---@field id string
+---@field links table
+---@field object string
+---@field purpose string
+---@field size number
+---@field title? string
+---@field type? string
+---@field url string
+
+---@class FileLink
+---@field created number
+---@field expired boolean
+---@field expires_at? number
+---@field file any
+---@field id string
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field url? string
+
+---@class FileLinkLoadMatch
+---@field id string
+---@field expand? table
+
+---@class FileLinkListMatch
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field expired? boolean
+---@field file? string
+---@field limit? number
+---@field starting_after? string
+
+---@class FileLinkCreateData
+---@field id string
+---@field created number
+---@field expired boolean
+---@field expires_at? number
+---@field file any
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field url? string
+
+---@class FinancialAccount
+---@field active_features? table
+---@field balance table
+---@field country string
+---@field created number
+---@field features table
+---@field financial_addresses table
+---@field id string
+---@field is_default? boolean
+---@field livemode boolean
+---@field metadata? table
+---@field nickname? string
+---@field object string
+---@field pending_features? table
+---@field platform_restrictions? any
+---@field restricted_features? table
+---@field status string
+---@field status_details table
+---@field supported_currencies table
+
+---@class FinancialAccountLoadMatch
+---@field id string
+---@field expand? table
+
+---@class FinancialAccountListMatch
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field status? string
+
+---@class FinancialAccountCreateData
+---@field id string
+---@field active_features? table
+---@field balance table
+---@field country string
+---@field created number
+---@field features table
+---@field financial_addresses table
+---@field is_default? boolean
+---@field livemode boolean
+---@field metadata? table
+---@field nickname? string
+---@field object string
+---@field pending_features? table
+---@field platform_restrictions? any
+---@field restricted_features? table
+---@field status string
+---@field status_details table
+---@field supported_currencies table
+
+---@class FinancialAccountFeature
+---@field card_issuing table
+---@field deposit_insurance table
+---@field financial_addresses? table
+---@field id? string
+---@field inbound_transfers? table
+---@field intra_stripe_flows table
+---@field object string
+---@field outbound_payments? table
+---@field outbound_transfers? table
+
+---@class FinancialAccountFeatureLoadMatch
+---@field id string
+---@field expand? table
+
+---@class FinancialAccountFeatureCreateData
+---@field id string
+---@field card_issuing table
+---@field deposit_insurance table
+---@field financial_addresses? table
+---@field inbound_transfers? table
+---@field intra_stripe_flows table
+---@field object string
+---@field outbound_payments? table
+---@field outbound_transfers? table
+
+---@class FundCashBalance
+---@field adjusted_for_overdraft table
+---@field applied_to_payment table
+---@field created number
+---@field currency string
+---@field customer any
+---@field customer_account? string
+---@field ending_balance number
+---@field funded table
+---@field id string
+---@field livemode boolean
+---@field net_amount number
+---@field object string
+---@field refunded_from_payment table
+---@field transferred_to_balance table
+---@field type string
+---@field unapplied_from_payment table
+
+---@class FundCashBalanceCreateData
+---@field customer_id string
+---@field adjusted_for_overdraft table
+---@field applied_to_payment table
+---@field created number
+---@field currency string
+---@field customer any
+---@field customer_account? string
+---@field ending_balance number
+---@field funded table
+---@field id string
+---@field livemode boolean
+---@field net_amount number
+---@field object string
+---@field refunded_from_payment table
+---@field transferred_to_balance table
+---@field type string
+---@field unapplied_from_payment table
+
+---@class FundingInstruction
+---@field country string
+---@field financial_addresses table
+---@field type string
+
+---@class FundingInstructionCreateData
+---@field customer_id string
+---@field country string
+---@field financial_addresses table
+---@field type string
+
+---@class History
+---@field amount number
+---@field available_on number
+---@field balance_type string
+---@field created number
+---@field currency string
+---@field description? string
+---@field exchange_rate? number
+---@field fee number
+---@field fee_details table
+---@field id string
+---@field net number
+---@field object string
+---@field reporting_category string
+---@field source? any
+---@field status string
+---@field type string
+
+---@class HistoryListMatch
+---@field created? any
+---@field currency? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field payout? string
+---@field source? string
+---@field starting_after? string
+---@field type? string
+
+---@class InboundTransfer
+---@field amount number
+---@field cancelable boolean
+---@field created number
+---@field currency string
+---@field description? string
+---@field failure_details? any
+---@field financial_account string
+---@field hosted_regulatory_receipt_url? string
+---@field id string
+---@field linked_flows table
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field origin_payment_method? string
+---@field origin_payment_method_details? any
+---@field returned? boolean
+---@field statement_descriptor string
+---@field status string
+---@field status_transitions table
+---@field transaction? any
+
+---@class InboundTransferLoadMatch
+---@field id string
+---@field expand? table
+
+---@class InboundTransferListMatch
+---@field ending_before? string
+---@field expand? table
+---@field financial_account string
+---@field limit? number
+---@field starting_after? string
+---@field status? string
+
+---@class InboundTransferCreateData
+---@field amount number
+---@field cancelable boolean
+---@field created number
+---@field currency string
+---@field description? string
+---@field failure_details? any
+---@field financial_account string
+---@field hosted_regulatory_receipt_url? string
+---@field id string
+---@field linked_flows table
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field origin_payment_method? string
+---@field origin_payment_method_details? any
+---@field returned? boolean
+---@field statement_descriptor string
+---@field status string
+---@field status_transitions table
+---@field transaction? any
+
+---@class Install
+---@field account string
+---@field app string
+---@field approval_required boolean
+---@field auth_code? string
+---@field channel string
+---@field content_security_policy_granted table
+---@field content_security_policy_pending table
+---@field created number
+---@field created_by? string
+---@field endpoints_granted table
+---@field endpoints_pending table
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field permissions_granted table
+---@field permissions_pending table
+---@field status string
+
+---@class InstallLoadMatch
+---@field id string
+---@field expand? table
+
+---@class InstallListMatch
+---@field account? string
+---@field app? string
+---@field approval_required? boolean
+---@field channel? string
+---@field created? any
+---@field created_by? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field status? string
+
+---@class InstallCreateData
+---@field id string
+---@field account string
+---@field app string
+---@field approval_required boolean
+---@field auth_code? string
+---@field channel string
+---@field content_security_policy_granted table
+---@field content_security_policy_pending table
+---@field created number
+---@field created_by? string
+---@field endpoints_granted table
+---@field endpoints_pending table
+---@field livemode boolean
+---@field object string
+---@field permissions_granted table
+---@field permissions_pending table
+---@field status string
+
+---@class Invoice
+---@field account_country? string
+---@field account_name? string
+---@field account_tax_ids? table
+---@field amount_due number
+---@field amount_overpaid number
+---@field amount_paid number
+---@field amount_paid_off_stripe number
+---@field amount_remaining number
+---@field amount_shipping number
+---@field application? any
+---@field attempt_count number
+---@field attempted boolean
+---@field auto_advance boolean
+---@field automatic_tax table
+---@field automatically_finalizes_at? number
+---@field billing_reason? string
+---@field collection_method string
+---@field confirmation_secret? any
+---@field created number
+---@field currency string
+---@field custom_fields? table
+---@field customer any
+---@field customer_account? string
+---@field customer_address? any
+---@field customer_email? string
+---@field customer_name? string
+---@field customer_phone? string
+---@field customer_shipping? any
+---@field customer_tax_exempt? string
+---@field customer_tax_ids? table
+---@field default_payment_method? any
+---@field default_source? any
+---@field default_tax_rates table
+---@field description? string
+---@field discounts table
+---@field due_date? number
+---@field effective_at? number
+---@field ending_balance? number
+---@field footer? string
+---@field from_invoice? any
+---@field hosted_invoice_url? string
+---@field id string
+---@field invoice_pdf? string
+---@field issuer table
+---@field last_finalization_error? any
+---@field latest_revision? any
+---@field lines table
+---@field livemode boolean
+---@field metadata? table
+---@field next_payment_attempt? number
+---@field number? string
+---@field object string
+---@field on_behalf_of? any
+---@field parent? any
+---@field payment_settings table
+---@field payments table
+---@field period_end number
+---@field period_start number
+---@field post_payment_credit_notes_amount number
+---@field pre_payment_credit_notes_amount number
+---@field receipt_number? string
+---@field rendering? any
+---@field shipping_cost? any
+---@field shipping_details? any
+---@field starting_balance number
+---@field statement_descriptor? string
+---@field status? string
+---@field status_details? table
+---@field status_transitions table
+---@field subtotal number
+---@field subtotal_excluding_tax? number
+---@field test_clock? any
+---@field threshold_reason table
+---@field total number
+---@field total_discount_amounts? table
+---@field total_excluding_tax? number
+---@field total_pretax_credit_amounts? table
+---@field total_taxes? table
+---@field webhooks_delivered_at? number
+
+---@class InvoiceLoadMatch
+---@field id string
+---@field expand? table
+
+---@class InvoiceListMatch
+---@field collection_method? string
+---@field created? any
+---@field customer? string
+---@field customer_account? string
+---@field due_date? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field status? string
+---@field subscription? string
+
+---@class InvoiceCreateData
+---@field id string
+---@field account_country? string
+---@field account_name? string
+---@field account_tax_ids? table
+---@field amount_due number
+---@field amount_overpaid number
+---@field amount_paid number
+---@field amount_paid_off_stripe number
+---@field amount_remaining number
+---@field amount_shipping number
+---@field application? any
+---@field attempt_count number
+---@field attempted boolean
+---@field auto_advance boolean
+---@field automatic_tax table
+---@field automatically_finalizes_at? number
+---@field billing_reason? string
+---@field collection_method string
+---@field confirmation_secret? any
+---@field created number
+---@field currency string
+---@field custom_fields? table
+---@field customer any
+---@field customer_account? string
+---@field customer_address? any
+---@field customer_email? string
+---@field customer_name? string
+---@field customer_phone? string
+---@field customer_shipping? any
+---@field customer_tax_exempt? string
+---@field customer_tax_ids? table
+---@field default_payment_method? any
+---@field default_source? any
+---@field default_tax_rates table
+---@field description? string
+---@field discounts table
+---@field due_date? number
+---@field effective_at? number
+---@field ending_balance? number
+---@field footer? string
+---@field from_invoice? any
+---@field hosted_invoice_url? string
+---@field invoice_pdf? string
+---@field issuer table
+---@field last_finalization_error? any
+---@field latest_revision? any
+---@field lines table
+---@field livemode boolean
+---@field metadata? table
+---@field next_payment_attempt? number
+---@field number? string
+---@field object string
+---@field on_behalf_of? any
+---@field parent? any
+---@field payment_settings table
+---@field payments table
+---@field period_end number
+---@field period_start number
+---@field post_payment_credit_notes_amount number
+---@field pre_payment_credit_notes_amount number
+---@field receipt_number? string
+---@field rendering? any
+---@field shipping_cost? any
+---@field shipping_details? any
+---@field starting_balance number
+---@field statement_descriptor? string
+---@field status? string
+---@field status_details? table
+---@field status_transitions table
+---@field subtotal number
+---@field subtotal_excluding_tax? number
+---@field test_clock? any
+---@field threshold_reason table
+---@field total number
+---@field total_discount_amounts? table
+---@field total_excluding_tax? number
+---@field total_pretax_credit_amounts? table
+---@field total_taxes? table
+---@field webhooks_delivered_at? number
+
+---@class InvoiceRemoveMatch
+---@field id string
+
+---@class InvoicePayment
+---@field amount_paid? number
+---@field amount_requested number
+---@field created number
+---@field currency string
+---@field id string
+---@field invoice any
+---@field is_default boolean
+---@field livemode boolean
+---@field object string
+---@field payment table
+---@field status string
+---@field status_transitions table
+
+---@class InvoicePaymentLoadMatch
+---@field id string
+---@field expand? table
+
+---@class InvoicePaymentListMatch
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field invoice? string
+---@field limit? number
+---@field payment? table
+---@field starting_after? string
+---@field status? string
+
+---@class InvoiceRenderingTemplate
+---@field created number
+---@field id string
+---@field livemode boolean
+---@field metadata? table
+---@field nickname? string
+---@field object string
+---@field status string
+---@field version number
+
+---@class InvoiceRenderingTemplateLoadMatch
+---@field id string
+---@field expand? table
+---@field version? number
+
+---@class InvoiceRenderingTemplateListMatch
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field status? string
+
+---@class InvoiceRenderingTemplateCreateData
+---@field template string
+---@field created number
+---@field id string
+---@field livemode boolean
+---@field metadata? table
+---@field nickname? string
+---@field object string
+---@field status string
+---@field version number
+
+---@class Invoiceitem
+---@field amount number
+---@field currency string
+---@field customer any
+---@field customer_account? string
+---@field date number
+---@field description? string
+---@field discountable boolean
+---@field discounts? table
+---@field frozen_fields? table
+---@field id string
+---@field invoice? any
+---@field invoicing_rules? table
+---@field livemode boolean
+---@field metadata? table
+---@field net_amount? number
+---@field object string
+---@field parent? any
+---@field period table
+---@field pricing? any
+---@field proration boolean
+---@field proration_details table
+---@field quantity number
+---@field quantity_decimal string
+---@field tax_rates? table
+---@field test_clock? any
+
+---@class InvoiceitemLoadMatch
+---@field id string
+---@field expand? table
+
+---@class InvoiceitemListMatch
+---@field created? any
+---@field customer? string
+---@field customer_account? string
+---@field ending_before? string
+---@field expand? table
+---@field invoice? string
+---@field limit? number
+---@field pending? boolean
+---@field starting_after? string
+
+---@class InvoiceitemCreateData
+---@field id string
+---@field amount number
+---@field currency string
+---@field customer any
+---@field customer_account? string
+---@field date number
+---@field description? string
+---@field discountable boolean
+---@field discounts? table
+---@field frozen_fields? table
+---@field invoice? any
+---@field invoicing_rules? table
+---@field livemode boolean
+---@field metadata? table
+---@field net_amount? number
+---@field object string
+---@field parent? any
+---@field period table
+---@field pricing? any
+---@field proration boolean
+---@field proration_details table
+---@field quantity number
+---@field quantity_decimal string
+---@field tax_rates? table
+---@field test_clock? any
+
+---@class Line
+---@field amount number
+---@field currency string
+---@field description? string
+---@field discount_amount number
+---@field discount_amounts? table
+---@field discountable boolean
+---@field discounts table
+---@field id string
+---@field invoice? string
+---@field invoice_line_item? string
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field parent? any
+---@field period table
+---@field pretax_credit_amounts? table
+---@field pricing? any
+---@field quantity? number
+---@field quantity_decimal? string
+---@field subscription? any
+---@field subtotal number
+---@field tax_rates table
+---@field taxes? table
+---@field type string
+---@field unit_amount? number
+---@field unit_amount_decimal? string
+
+---@class LineListMatch
+---@field amount? number
+---@field credit_amount? number
+---@field effective_at? number
+---@field email_type? string
+---@field ending_before? string
+---@field expand? table
+---@field invoice string
+---@field limit? number
+---@field line? table
+---@field memo? string
+---@field metadata? table
+---@field out_of_band_amount? number
+---@field reason? string
+---@field refund? table
+---@field refund_amount? number
+---@field shipping_cost? table
+---@field starting_after? string
+
+---@class LineCreateData
+---@field id string
+---@field invoice_id string
+---@field amount number
+---@field currency string
+---@field description? string
+---@field discount_amount number
+---@field discount_amounts? table
+---@field discountable boolean
+---@field discounts table
+---@field invoice? string
+---@field invoice_line_item? string
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field parent? any
+---@field period table
+---@field pretax_credit_amounts? table
+---@field pricing? any
+---@field quantity? number
+---@field quantity_decimal? string
+---@field subscription? any
+---@field subtotal number
+---@field tax_rates table
+---@field taxes? table
+---@field type string
+---@field unit_amount? number
+---@field unit_amount_decimal? string
+
+---@class LineItem
+---@field adjustable_quantity? any
+---@field amount number
+---@field amount_discount number
+---@field amount_subtotal number
+---@field amount_tax number
+---@field amount_total number
+---@field currency string
+---@field description? string
+---@field discounts? table
+---@field id string
+---@field livemode boolean
+---@field metadata? table
+---@field object string
+---@field performance_location? string
+---@field price? number
+---@field product? string
+---@field quantity number
+---@field reference string
+---@field reversal? any
+---@field tax_behavior string
+---@field tax_breakdown? table
+---@field tax_code string
+---@field taxes? table
+---@field type string
+
+---@class LineItemListMatch
+---@field payment_link_id string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class LinkedAccount
+---@field account_holder? any
+---@field account_numbers? table
+---@field balance? any
+---@field balance_refresh? any
+---@field category string
+---@field created number
+---@field display_name? string
+---@field id string
+---@field institution_name string
+---@field last4? string
+---@field livemode boolean
+---@field object string
+---@field ownership? any
+---@field ownership_refresh? any
+---@field permissions? table
+---@field status string
+---@field status_details? table
+---@field subcategory string
+---@field subscriptions? table
+---@field supported_payment_method_types table
+---@field transaction_refresh? any
+
+---@class LinkedAccountListMatch
+---@field account_holder? table
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field session? string
+---@field starting_after? string
+
+---@class LinkedAccountOwner
+---@field email? string
+---@field id string
+---@field name string
+---@field object string
+---@field ownership string
+---@field phone? string
+---@field raw_address? string
+---@field refreshed_at? number
+
+---@class LinkedAccountOwnerListMatch
+---@field account string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field ownership string
+---@field starting_after? string
+
+---@class Location
+---@field address table
+---@field address_kana? table
+---@field address_kanji? table
+---@field city? string
+---@field configuration_overrides? string
+---@field country? string
+---@field description? string
+---@field display_name string
+---@field display_name_kana? string
+---@field display_name_kanji? string
+---@field id string
+---@field line1? string
+---@field line2? string
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field phone? string
+---@field postal_code? string
+---@field state? string
+---@field type string
+
+---@class LocationLoadMatch
+---@field id string
+---@field expand? table
+
+---@class LocationListMatch
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field type string
+
+---@class LocationCreateData
+---@field id string
+---@field address table
+---@field address_kana? table
+---@field address_kanji? table
+---@field city? string
+---@field configuration_overrides? string
+---@field country? string
+---@field description? string
+---@field display_name string
+---@field display_name_kana? string
+---@field display_name_kanji? string
+---@field line1? string
+---@field line2? string
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field phone? string
+---@field postal_code? string
+---@field state? string
+---@field type string
+
+---@class LocationRemoveMatch
+---@field id string
+
+---@class LoginLink
+---@field created number
+---@field object string
+---@field url string
+
+---@class LoginLinkCreateData
+---@field account_id string
+---@field created number
+---@field object string
+---@field url string
+
+---@class Mandate
+---@field customer_acceptance table
+---@field id string
+---@field livemode boolean
+---@field multi_use? table
+---@field object string
+---@field on_behalf_of? string
+---@field payment_method any
+---@field payment_method_details table
+---@field single_use table
+---@field status string
+---@field type string
+
+---@class MandateLoadMatch
+---@field id string
+---@field expand? table
+
+---@class Meter
+---@field created number
+---@field customer_mapping table
+---@field default_aggregation table
+---@field display_name string
+---@field event_name string
+---@field event_time_window? string
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field status string
+---@field status_transitions table
+---@field updated number
+---@field value_settings table
+
+---@class MeterLoadMatch
+---@field id string
+---@field expand? table
+
+---@class MeterListMatch
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field status? string
+
+---@class MeterCreateData
+---@field id string
+---@field created number
+---@field customer_mapping table
+---@field default_aggregation table
+---@field display_name string
+---@field event_name string
+---@field event_time_window? string
+---@field livemode boolean
+---@field object string
+---@field status string
+---@field status_transitions table
+---@field updated number
+---@field value_settings table
+
+---@class MeterEvent
+
+---@class MeterEventCreateData
+
+---@class MeterEventAdjustment
+
+---@class MeterEventAdjustmentCreateData
+
+---@class MeterEventSummary
+---@field aggregated_value number
+---@field end_time number
+---@field id string
+---@field livemode boolean
+---@field meter string
+---@field object string
+---@field start_time number
+
+---@class MeterEventSummaryListMatch
+---@field id string
+---@field customer string
+---@field end_time number
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field start_time number
+---@field starting_after? string
+---@field value_grouping_window? string
+
+---@class OnboardingLink
+---@field apple_terms_and_conditions? any
+
+---@class OnboardingLinkCreateData
+---@field apple_terms_and_conditions? any
+
+---@class Order
+---@field amount_fees number
+---@field amount_subtotal number
+---@field amount_total number
+---@field beneficiary table
+---@field canceled_at? number
+---@field cancellation_reason? string
+---@field certificate? string
+---@field confirmed_at? number
+---@field created number
+---@field currency string
+---@field delayed_at? number
+---@field delivered_at? number
+---@field delivery_details table
+---@field expected_delivery_year number
+---@field id string
+---@field livemode boolean
+---@field metadata table
+---@field metric_tons string
+---@field object string
+---@field product any
+---@field product_substituted_at? number
+---@field status string
+
+---@class OrderLoadMatch
+---@field id string
+---@field expand? table
+
+---@class OrderListMatch
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class OrderCreateData
+---@field id string
+---@field amount_fees number
+---@field amount_subtotal number
+---@field amount_total number
+---@field beneficiary table
+---@field canceled_at? number
+---@field cancellation_reason? string
+---@field certificate? string
+---@field confirmed_at? number
+---@field created number
+---@field currency string
+---@field delayed_at? number
+---@field delivered_at? number
+---@field delivery_details table
+---@field expected_delivery_year number
+---@field livemode boolean
+---@field metadata table
+---@field metric_tons string
+---@field object string
+---@field product any
+---@field product_substituted_at? number
+---@field status string
+
+---@class OutboundPayment
+---@field amount number
+---@field cancelable boolean
+---@field created number
+---@field currency string
+---@field customer? string
+---@field description? string
+---@field destination_payment_method? string
+---@field destination_payment_method_details? any
+---@field end_user_details? any
+---@field expected_arrival_date number
+---@field financial_account string
+---@field hosted_regulatory_receipt_url? string
+---@field id string
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field returned_details? any
+---@field statement_descriptor string
+---@field status string
+---@field status_transitions table
+---@field tracking_details? any
+---@field transaction any
+
+---@class OutboundPaymentLoadMatch
+---@field id string
+---@field expand? table
+
+---@class OutboundPaymentListMatch
+---@field created? any
+---@field customer? string
+---@field ending_before? string
+---@field expand? table
+---@field financial_account string
+---@field limit? number
+---@field starting_after? string
+---@field status? string
+
+---@class OutboundPaymentCreateData
+---@field id string
+---@field amount number
+---@field cancelable boolean
+---@field created number
+---@field currency string
+---@field customer? string
+---@field description? string
+---@field destination_payment_method? string
+---@field destination_payment_method_details? any
+---@field end_user_details? any
+---@field expected_arrival_date number
+---@field financial_account string
+---@field hosted_regulatory_receipt_url? string
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field returned_details? any
+---@field statement_descriptor string
+---@field status string
+---@field status_transitions table
+---@field tracking_details? any
+---@field transaction any
+
+---@class OutboundTransfer
+---@field amount number
+---@field cancelable boolean
+---@field created number
+---@field currency string
+---@field description? string
+---@field destination_payment_method? string
+---@field destination_payment_method_details table
+---@field expected_arrival_date number
+---@field financial_account string
+---@field hosted_regulatory_receipt_url? string
+---@field id string
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field returned_details? any
+---@field statement_descriptor string
+---@field status string
+---@field status_transitions table
+---@field tracking_details? any
+---@field transaction any
+
+---@class OutboundTransferLoadMatch
+---@field id string
+---@field expand? table
+
+---@class OutboundTransferListMatch
+---@field ending_before? string
+---@field expand? table
+---@field financial_account string
+---@field limit? number
+---@field starting_after? string
+---@field status? string
+
+---@class OutboundTransferCreateData
+---@field id string
+---@field amount number
+---@field cancelable boolean
+---@field created number
+---@field currency string
+---@field description? string
+---@field destination_payment_method? string
+---@field destination_payment_method_details table
+---@field expected_arrival_date number
+---@field financial_account string
+---@field hosted_regulatory_receipt_url? string
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field returned_details? any
+---@field statement_descriptor string
+---@field status string
+---@field status_transitions table
+---@field tracking_details? any
+---@field transaction any
+
+---@class PaymentAttemptRecord
+---@field amount table
+---@field amount_authorized table
+---@field amount_canceled table
+---@field amount_failed table
+---@field amount_guaranteed table
+---@field amount_refunded table
+---@field amount_requested table
+---@field application? string
+---@field created number
+---@field customer_details? any
+---@field customer_presence? string
+---@field description? string
+---@field id string
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field payment_method_details? any
+---@field payment_record? string
+---@field processor_details table
+---@field reported_by string
+---@field shipping_details? any
+
+---@class PaymentAttemptRecordLoadMatch
+---@field id string
+---@field expand? table
+
+---@class PaymentAttemptRecordListMatch
+---@field expand? table
+---@field limit? number
+---@field payment_record string
+---@field starting_after? string
+
+---@class PaymentEvaluation
+---@field client_device_metadata_details table
+---@field created_at number
+---@field customer_details? table
+---@field events table
+---@field id string
+---@field livemode boolean
+---@field metadata? table
+---@field object string
+---@field outcome? any
+---@field payment_details table
+---@field recommended_action string
+---@field signals table
+
+---@class PaymentEvaluationCreateData
+---@field client_device_metadata_details table
+---@field created_at number
+---@field customer_details? table
+---@field events table
+---@field id string
+---@field livemode boolean
+---@field metadata? table
+---@field object string
+---@field outcome? any
+---@field payment_details table
+---@field recommended_action string
+---@field signals table
+
+---@class PaymentIntent
+---@field allowed_payment_method_types? table
+---@field amount? number
+---@field amount_capturable? number
+---@field amount_details? any
+---@field amount_received? number
+---@field application? any
+---@field application_fee_amount? number
+---@field automatic_payment_methods? any
+---@field canceled_at? number
+---@field cancellation_reason? string
+---@field capture_method? string
+---@field client_secret? string
+---@field confirmation_method? string
+---@field created number
+---@field currency? string
+---@field customer? any
+---@field customer_account? string
+---@field description? string
+---@field excluded_payment_method_types? table
+---@field hooks? table
+---@field id string
+---@field last_payment_error? any
+---@field latest_charge? any
+---@field livemode boolean
+---@field managed_payments? any
+---@field metadata? table
+---@field next_action? any
+---@field object string
+---@field on_behalf_of? any
+---@field payment_details? table
+---@field payment_method? any
+---@field payment_method_configuration_details? any
+---@field payment_method_options? any
+---@field payment_method_types? table
+---@field payment_record? any
+---@field presentment_details table
+---@field processing? any
+---@field receipt_email? string
+---@field review? any
+---@field setup_future_usage? string
+---@field shipping? any
+---@field statement_descriptor? string
+---@field statement_descriptor_suffix? string
+---@field status string
+---@field transfer_data? any
+---@field transfer_group? string
+
+---@class PaymentIntentLoadMatch
+---@field id string
+---@field client_secret? string
+---@field expand? table
+
+---@class PaymentIntentListMatch
+---@field created? any
+---@field customer? string
+---@field customer_account? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class PaymentIntentCreateData
+---@field id string
+---@field allowed_payment_method_types? table
+---@field amount? number
+---@field amount_capturable? number
+---@field amount_details? any
+---@field amount_received? number
+---@field application? any
+---@field application_fee_amount? number
+---@field automatic_payment_methods? any
+---@field canceled_at? number
+---@field cancellation_reason? string
+---@field capture_method? string
+---@field client_secret? string
+---@field confirmation_method? string
+---@field created number
+---@field currency? string
+---@field customer? any
+---@field customer_account? string
+---@field description? string
+---@field excluded_payment_method_types? table
+---@field hooks? table
+---@field last_payment_error? any
+---@field latest_charge? any
+---@field livemode boolean
+---@field managed_payments? any
+---@field metadata? table
+---@field next_action? any
+---@field object string
+---@field on_behalf_of? any
+---@field payment_details? table
+---@field payment_method? any
+---@field payment_method_configuration_details? any
+---@field payment_method_options? any
+---@field payment_method_types? table
+---@field payment_record? any
+---@field presentment_details table
+---@field processing? any
+---@field receipt_email? string
+---@field review? any
+---@field setup_future_usage? string
+---@field shipping? any
+---@field statement_descriptor? string
+---@field statement_descriptor_suffix? string
+---@field status string
+---@field transfer_data? any
+---@field transfer_group? string
+
+---@class PaymentIntentAmountDetailsLineItem
+---@field discount_amount? number
+---@field id string
+---@field object string
+---@field payment_method_options? any
+---@field product_code? string
+---@field product_name string
+---@field quantity number
+---@field tax? any
+---@field unit_cost number
+---@field unit_of_measure? string
+
+---@class PaymentIntentAmountDetailsLineItemListMatch
+---@field intent string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class PaymentLink
+---@field active boolean
+---@field after_completion table
+---@field allow_promotion_codes boolean
+---@field application? any
+---@field application_fee_amount? number
+---@field application_fee_percent? number
+---@field automatic_tax table
+---@field billing_address_collection string
+---@field consent_collection? any
+---@field currency string
+---@field custom_fields table
+---@field custom_text table
+---@field customer_creation string
+---@field id string
+---@field inactive_message? string
+---@field invoice_creation? any
+---@field line_items table
+---@field livemode boolean
+---@field managed_payments? any
+---@field metadata table
+---@field name_collection? table
+---@field object string
+---@field on_behalf_of? any
+---@field optional_items? table
+---@field payment_intent_data? any
+---@field payment_method_collection string
+---@field payment_method_options? any
+---@field payment_method_types? table
+---@field phone_number_collection table
+---@field restrictions? any
+---@field shipping_address_collection? any
+---@field shipping_options table
+---@field submit_type string
+---@field subscription_data? any
+---@field tax_id_collection table
+---@field transfer_data? any
+---@field url string
+
+---@class PaymentLinkLoadMatch
+---@field id string
+---@field expand? table
+
+---@class PaymentLinkListMatch
+---@field active? boolean
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class PaymentLinkCreateData
+---@field id string
+---@field active boolean
+---@field after_completion table
+---@field allow_promotion_codes boolean
+---@field application? any
+---@field application_fee_amount? number
+---@field application_fee_percent? number
+---@field automatic_tax table
+---@field billing_address_collection string
+---@field consent_collection? any
+---@field currency string
+---@field custom_fields table
+---@field custom_text table
+---@field customer_creation string
+---@field inactive_message? string
+---@field invoice_creation? any
+---@field line_items table
+---@field livemode boolean
+---@field managed_payments? any
+---@field metadata table
+---@field name_collection? table
+---@field object string
+---@field on_behalf_of? any
+---@field optional_items? table
+---@field payment_intent_data? any
+---@field payment_method_collection string
+---@field payment_method_options? any
+---@field payment_method_types? table
+---@field phone_number_collection table
+---@field restrictions? any
+---@field shipping_address_collection? any
+---@field shipping_options table
+---@field submit_type string
+---@field subscription_data? any
+---@field tax_id_collection table
+---@field transfer_data? any
+---@field url string
+
+---@class PaymentMethod
+---@field acss_debit? table
+---@field affirm? table
+---@field afterpay_clearpay? table
+---@field alipay? table
+---@field allow_redisplay? boolean
+---@field alma? table
+---@field amazon_pay? table
+---@field au_becs_debit? table
+---@field bacs_debit? table
+---@field bancontact? table
+---@field billie? table
+---@field billing_details table
+---@field bizum? table
+---@field blik? table
+---@field boleto table
+---@field card table
+---@field card_present table
+---@field cashapp? table
+---@field created number
+---@field crypto? table
+---@field custom table
+---@field customer? any
+---@field customer_account? string
+---@field customer_balance? table
+---@field eps? table
+---@field fpx table
+---@field giropay? table
+---@field grabpay? table
+---@field id string
+---@field ideal? table
+---@field interac_present table
+---@field kakao_pay? table
+---@field klarna? table
+---@field konbini? table
+---@field kr_card? table
+---@field link? table
+---@field livemode boolean
+---@field mb_way? table
+---@field metadata? table
+---@field mobilepay? table
+---@field multibanco? table
+---@field naver_pay table
+---@field nz_bank_account table
+---@field object string
+---@field oxxo? table
+---@field p24? table
+---@field pay_by_bank? table
+---@field payco? table
+---@field paynow? table
+---@field paypal? table
+---@field paypay? table
+---@field payto? table
+---@field pix? table
+---@field promptpay? table
+---@field radar_options? table
+---@field revolut_pay? table
+---@field samsung_pay? table
+---@field satispay? table
+---@field scalapay? table
+---@field sepa_debit? table
+---@field sequra? table
+---@field sofort? table
+---@field sunbit? table
+---@field swish? table
+---@field twint? table
+---@field type string
+---@field upi? table
+---@field us_bank_account? table
+---@field wechat_pay? table
+---@field zip? table
+
+---@class PaymentMethodLoadMatch
+---@field customer_id? string
+---@field id string
+---@field expand? table
+
+---@class PaymentMethodListMatch
+---@field allow_redisplay? boolean
+---@field customer? string
+---@field customer_account? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field type? string
+
+---@class PaymentMethodCreateData
+---@field id string
+---@field acss_debit? table
+---@field affirm? table
+---@field afterpay_clearpay? table
+---@field alipay? table
+---@field allow_redisplay? boolean
+---@field alma? table
+---@field amazon_pay? table
+---@field au_becs_debit? table
+---@field bacs_debit? table
+---@field bancontact? table
+---@field billie? table
+---@field billing_details table
+---@field bizum? table
+---@field blik? table
+---@field boleto table
+---@field card table
+---@field card_present table
+---@field cashapp? table
+---@field created number
+---@field crypto? table
+---@field custom table
+---@field customer? any
+---@field customer_account? string
+---@field customer_balance? table
+---@field eps? table
+---@field fpx table
+---@field giropay? table
+---@field grabpay? table
+---@field ideal? table
+---@field interac_present table
+---@field kakao_pay? table
+---@field klarna? table
+---@field konbini? table
+---@field kr_card? table
+---@field link? table
+---@field livemode boolean
+---@field mb_way? table
+---@field metadata? table
+---@field mobilepay? table
+---@field multibanco? table
+---@field naver_pay table
+---@field nz_bank_account table
+---@field object string
+---@field oxxo? table
+---@field p24? table
+---@field pay_by_bank? table
+---@field payco? table
+---@field paynow? table
+---@field paypal? table
+---@field paypay? table
+---@field payto? table
+---@field pix? table
+---@field promptpay? table
+---@field radar_options? table
+---@field revolut_pay? table
+---@field samsung_pay? table
+---@field satispay? table
+---@field scalapay? table
+---@field sepa_debit? table
+---@field sequra? table
+---@field sofort? table
+---@field sunbit? table
+---@field swish? table
+---@field twint? table
+---@field type string
+---@field upi? table
+---@field us_bank_account? table
+---@field wechat_pay? table
+---@field zip? table
+
+---@class PaymentMethodConfiguration
+---@field acss_debit table
+---@field active boolean
+---@field affirm table
+---@field afterpay_clearpay table
+---@field alipay table
+---@field alma table
+---@field amazon_pay table
+---@field apple_pay table
+---@field application? string
+---@field au_becs_debit table
+---@field bacs_debit table
+---@field bancontact table
+---@field billie table
+---@field bizum table
+---@field blik table
+---@field boleto table
+---@field card table
+---@field cartes_bancaires table
+---@field cashapp table
+---@field crypto table
+---@field customer_balance table
+---@field eps table
+---@field fpx table
+---@field giropay table
+---@field google_pay table
+---@field grabpay table
+---@field id string
+---@field ideal table
+---@field is_default boolean
+---@field jcb table
+---@field kakao_pay table
+---@field klarna table
+---@field konbini table
+---@field kr_card table
+---@field link table
+---@field livemode boolean
+---@field mb_way table
+---@field mobilepay table
+---@field multibanco table
+---@field name string
+---@field naver_pay table
+---@field nz_bank_account table
+---@field object string
+---@field oxxo table
+---@field p24 table
+---@field parent? string
+---@field pay_by_bank table
+---@field payco table
+---@field paynow table
+---@field paypal table
+---@field paypay table
+---@field payto table
+---@field pix table
+---@field promptpay table
+---@field revolut_pay table
+---@field samsung_pay table
+---@field satispay table
+---@field scalapay table
+---@field sepa_debit table
+---@field sequra table
+---@field sofort table
+---@field sunbit table
+---@field swish table
+---@field twint table
+---@field upi table
+---@field us_bank_account table
+---@field wechat_pay table
+---@field zip table
+
+---@class PaymentMethodConfigurationLoadMatch
+---@field id string
+---@field expand? table
+
+---@class PaymentMethodConfigurationListMatch
+---@field active? boolean
+---@field application? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class PaymentMethodConfigurationCreateData
+---@field id string
+---@field acss_debit table
+---@field active boolean
+---@field affirm table
+---@field afterpay_clearpay table
+---@field alipay table
+---@field alma table
+---@field amazon_pay table
+---@field apple_pay table
+---@field application? string
+---@field au_becs_debit table
+---@field bacs_debit table
+---@field bancontact table
+---@field billie table
+---@field bizum table
+---@field blik table
+---@field boleto table
+---@field card table
+---@field cartes_bancaires table
+---@field cashapp table
+---@field crypto table
+---@field customer_balance table
+---@field eps table
+---@field fpx table
+---@field giropay table
+---@field google_pay table
+---@field grabpay table
+---@field ideal table
+---@field is_default boolean
+---@field jcb table
+---@field kakao_pay table
+---@field klarna table
+---@field konbini table
+---@field kr_card table
+---@field link table
+---@field livemode boolean
+---@field mb_way table
+---@field mobilepay table
+---@field multibanco table
+---@field name string
+---@field naver_pay table
+---@field nz_bank_account table
+---@field object string
+---@field oxxo table
+---@field p24 table
+---@field parent? string
+---@field pay_by_bank table
+---@field payco table
+---@field paynow table
+---@field paypal table
+---@field paypay table
+---@field payto table
+---@field pix table
+---@field promptpay table
+---@field revolut_pay table
+---@field samsung_pay table
+---@field satispay table
+---@field scalapay table
+---@field sepa_debit table
+---@field sequra table
+---@field sofort table
+---@field sunbit table
+---@field swish table
+---@field twint table
+---@field upi table
+---@field us_bank_account table
+---@field wechat_pay table
+---@field zip table
+
+---@class PaymentMethodDomain
+---@field amazon_pay table
+---@field apple_pay table
+---@field created number
+---@field domain_name string
+---@field enabled boolean
+---@field google_pay table
+---@field id string
+---@field klarna table
+---@field link table
+---@field livemode boolean
+---@field object string
+---@field paypal table
+
+---@class PaymentMethodDomainLoadMatch
+---@field id string
+---@field expand? table
+
+---@class PaymentMethodDomainListMatch
+---@field domain_name? string
+---@field enabled? boolean
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class PaymentMethodDomainCreateData
+---@field id string
+---@field amazon_pay table
+---@field apple_pay table
+---@field created number
+---@field domain_name string
+---@field enabled boolean
+---@field google_pay table
+---@field klarna table
+---@field link table
+---@field livemode boolean
+---@field object string
+---@field paypal table
+
+---@class PaymentRecord
+---@field amount table
+---@field amount_authorized table
+---@field amount_canceled table
+---@field amount_failed table
+---@field amount_guaranteed table
+---@field amount_refunded table
+---@field amount_requested table
+---@field application? string
+---@field created number
+---@field customer_details? any
+---@field customer_presence? string
+---@field description? string
+---@field id string
+---@field latest_payment_attempt_record? string
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field payment_method_details? any
+---@field processor_details table
+---@field reported_by string
+---@field shipping_details? any
+
+---@class PaymentRecordLoadMatch
+---@field id string
+---@field expand? table
+
+---@class PaymentRecordListMatch
+---@field created_after? number
+---@field created_before? number
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class PaymentRecordCreateData
+---@field amount table
+---@field amount_authorized table
+---@field amount_canceled table
+---@field amount_failed table
+---@field amount_guaranteed table
+---@field amount_refunded table
+---@field amount_requested table
+---@field application? string
+---@field created number
+---@field customer_details? any
+---@field customer_presence? string
+---@field description? string
+---@field id string
+---@field latest_payment_attempt_record? string
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field payment_method_details? any
+---@field processor_details table
+---@field reported_by string
+---@field shipping_details? any
+
+---@class Payout
+---@field amount number
+---@field application_fee? any
+---@field application_fee_amount? number
+---@field arrival_date number
+---@field automatic boolean
+---@field balance_transaction? any
+---@field created number
+---@field currency string
+---@field description? string
+---@field destination? any
+---@field failure_balance_transaction? any
+---@field failure_code? string
+---@field failure_message? string
+---@field id string
+---@field livemode boolean
+---@field metadata? table
+---@field method string
+---@field object string
+---@field original_payout? any
+---@field payout_method? string
+---@field reconciliation_status string
+---@field reversed_by? any
+---@field source_type string
+---@field statement_descriptor? string
+---@field status string
+---@field trace_id? string
+---@field type string
+
+---@class PayoutLoadMatch
+---@field id string
+---@field expand? table
+
+---@class PayoutListMatch
+---@field arrival_date? any
+---@field created? any
+---@field destination? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field status? string
+
+---@class PayoutCreateData
+---@field id string
+---@field amount number
+---@field application_fee? any
+---@field application_fee_amount? number
+---@field arrival_date number
+---@field automatic boolean
+---@field balance_transaction? any
+---@field created number
+---@field currency string
+---@field description? string
+---@field destination? any
+---@field failure_balance_transaction? any
+---@field failure_code? string
+---@field failure_message? string
+---@field livemode boolean
+---@field metadata? table
+---@field method string
+---@field object string
+---@field original_payout? any
+---@field payout_method? string
+---@field reconciliation_status string
+---@field reversed_by? any
+---@field source_type string
+---@field statement_descriptor? string
+---@field status string
+---@field trace_id? string
+---@field type string
+
+---@class Person
+---@field account string
+---@field additional_tos_acceptances? table
+---@field address? table
+---@field address_kana? any
+---@field address_kanji? any
+---@field created number
+---@field dob? table
+---@field email? string
+---@field first_name? string
+---@field first_name_kana? string
+---@field first_name_kanji? string
+---@field full_name_aliases? table
+---@field future_requirements? any
+---@field gender? string
+---@field id string
+---@field id_number_provided? boolean
+---@field id_number_secondary_provided? boolean
+---@field last_name? string
+---@field last_name_kana? string
+---@field last_name_kanji? string
+---@field maiden_name? string
+---@field metadata? table
+---@field nationality? string
+---@field object string
+---@field phone? string
+---@field political_exposure? string
+---@field registered_address? table
+---@field relationship? table
+---@field requirements? any
+---@field ssn_last_4_provided? boolean
+---@field us_cfpb_data? any
+---@field verification table
+
+---@class PersonLoadMatch
+---@field account_id string
+---@field id string
+---@field expand? table
+
+---@class PersonListMatch
+---@field account_id string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field relationship? table
+---@field starting_after? string
+
+---@class PersonCreateData
+---@field account_id string
+---@field id? string
+---@field account string
+---@field additional_tos_acceptances? table
+---@field address? table
+---@field address_kana? any
+---@field address_kanji? any
+---@field created number
+---@field dob? table
+---@field email? string
+---@field first_name? string
+---@field first_name_kana? string
+---@field first_name_kanji? string
+---@field full_name_aliases? table
+---@field future_requirements? any
+---@field gender? string
+---@field id_number_provided? boolean
+---@field id_number_secondary_provided? boolean
+---@field last_name? string
+---@field last_name_kana? string
+---@field last_name_kanji? string
+---@field maiden_name? string
+---@field metadata? table
+---@field nationality? string
+---@field object string
+---@field phone? string
+---@field political_exposure? string
+---@field registered_address? table
+---@field relationship? table
+---@field requirements? any
+---@field ssn_last_4_provided? boolean
+---@field us_cfpb_data? any
+---@field verification table
+
+---@class PersonalizationDesign
+---@field card_logo? any
+---@field carrier_text? any
+---@field created number
+---@field id string
+---@field livemode boolean
+---@field lookup_key? string
+---@field metadata table
+---@field name? string
+---@field object string
+---@field physical_bundle any
+---@field preferences table
+---@field rejection_reasons table
+---@field status string
+
+---@class PersonalizationDesignLoadMatch
+---@field id string
+---@field expand? table
+
+---@class PersonalizationDesignListMatch
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field lookup_key? table
+---@field preference? table
+---@field starting_after? string
+---@field status? string
+
+---@class PersonalizationDesignCreateData
+---@field id string
+---@field card_logo? any
+---@field carrier_text? any
+---@field created number
+---@field livemode boolean
+---@field lookup_key? string
+---@field metadata table
+---@field name? string
+---@field object string
+---@field physical_bundle any
+---@field preferences table
+---@field rejection_reasons table
+---@field status string
+
+---@class PhysicalBundle
+---@field card_logo string
+---@field carrier_text string
+---@field features table
+---@field id string
+---@field livemode boolean
+---@field name string
+---@field object string
+---@field second_line string
+---@field status string
+---@field type string
+
+---@class PhysicalBundleLoadMatch
+---@field id string
+---@field expand? table
+
+---@class PhysicalBundleListMatch
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field status? string
+---@field type? string
+
+---@class Plan
+---@field active boolean
+---@field amount? number
+---@field amount_decimal? string
+---@field billing_scheme string
+---@field created number
+---@field currency string
+---@field id string
+---@field interval string
+---@field interval_count number
+---@field livemode boolean
+---@field metadata? table
+---@field meter? string
+---@field nickname? string
+---@field object string
+---@field product? any
+---@field tiers? table
+---@field tiers_mode? string
+---@field transform_usage? any
+---@field trial_period_days? number
+---@field usage_type string
+
+---@class PlanLoadMatch
+---@field id string
+---@field expand? table
+
+---@class PlanListMatch
+---@field active? boolean
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field product? string
+---@field starting_after? string
+
+---@class PlanCreateData
+---@field id string
+---@field active boolean
+---@field amount? number
+---@field amount_decimal? string
+---@field billing_scheme string
+---@field created number
+---@field currency string
+---@field interval string
+---@field interval_count number
+---@field livemode boolean
+---@field metadata? table
+---@field meter? string
+---@field nickname? string
+---@field object string
+---@field product? any
+---@field tiers? table
+---@field tiers_mode? string
+---@field transform_usage? any
+---@field trial_period_days? number
+---@field usage_type string
+
+---@class Price
+---@field active boolean
+---@field billing_scheme string
+---@field created number
+---@field currency string
+---@field currency_options? table
+---@field custom_unit_amount? any
+---@field id string
+---@field livemode boolean
+---@field lookup_key? string
+---@field metadata table
+---@field nickname? string
+---@field object string
+---@field product any
+---@field recurring? any
+---@field tax_behavior? string
+---@field tiers? table
+---@field tiers_mode? string
+---@field transform_quantity? any
+---@field type string
+---@field unit_amount? number
+---@field unit_amount_decimal? string
+
+---@class PriceLoadMatch
+---@field id string
+---@field expand? table
+
+---@class PriceListMatch
+---@field active? boolean
+---@field created? any
+---@field currency? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field lookup_key? table
+---@field product? string
+---@field recurring? table
+---@field starting_after? string
+---@field type? string
+
+---@class PriceCreateData
+---@field id string
+---@field active boolean
+---@field billing_scheme string
+---@field created number
+---@field currency string
+---@field currency_options? table
+---@field custom_unit_amount? any
+---@field livemode boolean
+---@field lookup_key? string
+---@field metadata table
+---@field nickname? string
+---@field object string
+---@field product any
+---@field recurring? any
+---@field tax_behavior? string
+---@field tiers? table
+---@field tiers_mode? string
+---@field transform_quantity? any
+---@field type string
+---@field unit_amount? number
+---@field unit_amount_decimal? string
+
+---@class Product
+---@field active boolean
+---@field created number
+---@field current_prices_per_metric_ton table
+---@field default_price? any
+---@field delivery_year? number
+---@field description? string
+---@field id string
+---@field images table
+---@field livemode boolean
+---@field marketing_features table
+---@field metadata table
+---@field metric_tons_available string
+---@field name string
+---@field object string
+---@field package_dimensions? any
+---@field shippable? boolean
+---@field statement_descriptor? string
+---@field suppliers table
+---@field tax_code? any
+---@field tax_details? any
+---@field unit_label? string
+---@field updated number
+---@field url? string
+
+---@class ProductLoadMatch
+---@field id string
+---@field expand? table
+
+---@class ProductListMatch
+---@field active? boolean
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field ids? table
+---@field limit? number
+---@field shippable? boolean
+---@field starting_after? string
+---@field url? string
+
+---@class ProductCreateData
+---@field id string
+---@field active boolean
+---@field created number
+---@field current_prices_per_metric_ton table
+---@field default_price? any
+---@field delivery_year? number
+---@field description? string
+---@field images table
+---@field livemode boolean
+---@field marketing_features table
+---@field metadata table
+---@field metric_tons_available string
+---@field name string
+---@field object string
+---@field package_dimensions? any
+---@field shippable? boolean
+---@field statement_descriptor? string
+---@field suppliers table
+---@field tax_code? any
+---@field tax_details? any
+---@field unit_label? string
+---@field updated number
+---@field url? string
+
+---@class ProductRemoveMatch
+---@field id string
+
+---@class ProductFeature
+---@field active boolean
+---@field id string
+---@field livemode boolean
+---@field lookup_key string
+---@field metadata table
+---@field name string
+---@field object string
+
+---@class ProductFeatureLoadMatch
+---@field id string
+---@field product_id string
+---@field expand? table
+
+---@class ProductFeatureCreateData
+---@field id string
+---@field active boolean
+---@field livemode boolean
+---@field lookup_key string
+---@field metadata table
+---@field name string
+---@field object string
+
+---@class PromotionCode
+---@field active boolean
+---@field code string
+---@field created number
+---@field customer? any
+---@field customer_account? string
+---@field expires_at? number
+---@field id string
+---@field livemode boolean
+---@field max_redemptions? number
+---@field metadata? table
+---@field object string
+---@field promotion table
+---@field restrictions table
+---@field times_redeemed number
+
+---@class PromotionCodeLoadMatch
+---@field id string
+---@field expand? table
+
+---@class PromotionCodeListMatch
+---@field active? boolean
+---@field code? string
+---@field coupon? string
+---@field created? any
+---@field customer? string
+---@field customer_account? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class PromotionCodeCreateData
+---@field id string
+---@field active boolean
+---@field code string
+---@field created number
+---@field customer? any
+---@field customer_account? string
+---@field expires_at? number
+---@field livemode boolean
+---@field max_redemptions? number
+---@field metadata? table
+---@field object string
+---@field promotion table
+---@field restrictions table
+---@field times_redeemed number
+
+---@class Quote
+---@field amount_subtotal number
+---@field amount_total number
+---@field application? any
+---@field application_fee_amount? number
+---@field application_fee_percent? number
+---@field automatic_tax table
+---@field collection_method string
+---@field computed table
+---@field created number
+---@field currency? string
+---@field customer? any
+---@field customer_account? string
+---@field default_tax_rates? table
+---@field description? string
+---@field discounts table
+---@field expires_at number
+---@field footer? string
+---@field from_quote? any
+---@field header? string
+---@field id string
+---@field invoice? any
+---@field invoice_settings table
+---@field line_items table
+---@field livemode boolean
+---@field metadata table
+---@field number? string
+---@field object string
+---@field on_behalf_of? any
+---@field status string
+---@field status_transitions table
+---@field subscription? any
+---@field subscription_data table
+---@field subscription_schedule? any
+---@field test_clock? any
+---@field total_details table
+---@field transfer_data? any
+
+---@class QuoteLoadMatch
+---@field id string
+---@field expand? table
+
+---@class QuoteListMatch
+---@field customer? string
+---@field customer_account? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field status? string
+---@field test_clock? string
+
+---@class QuoteCreateData
+---@field id string
+---@field amount_subtotal number
+---@field amount_total number
+---@field application? any
+---@field application_fee_amount? number
+---@field application_fee_percent? number
+---@field automatic_tax table
+---@field collection_method string
+---@field computed table
+---@field created number
+---@field currency? string
+---@field customer? any
+---@field customer_account? string
+---@field default_tax_rates? table
+---@field description? string
+---@field discounts table
+---@field expires_at number
+---@field footer? string
+---@field from_quote? any
+---@field header? string
+---@field invoice? any
+---@field invoice_settings table
+---@field line_items table
+---@field livemode boolean
+---@field metadata table
+---@field number? string
+---@field object string
+---@field on_behalf_of? any
+---@field status string
+---@field status_transitions table
+---@field subscription? any
+---@field subscription_data table
+---@field subscription_schedule? any
+---@field test_clock? any
+---@field total_details table
+---@field transfer_data? any
+
+---@class QuoteComputedUpfrontLineItem
+---@field adjustable_quantity? any
+---@field amount_discount number
+---@field amount_subtotal number
+---@field amount_tax number
+---@field amount_total number
+---@field currency string
+---@field description? string
+---@field discounts? table
+---@field id string
+---@field metadata? table
+---@field object string
+---@field price? number
+---@field quantity? number
+---@field taxes? table
+
+---@class QuoteComputedUpfrontLineItemListMatch
+---@field id string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class QuotePdf
+---@field id? string
+
+---@class QuotePdfLoadMatch
+---@field id string
+---@field expand? table
+
+---@class Reader
+---@field action? any
+---@field device_sw_version? string
+---@field device_type string
+---@field id string
+---@field ip_address? string
+---@field label string
+---@field last_seen_at? number
+---@field livemode boolean
+---@field location? any
+---@field metadata table
+---@field object string
+---@field serial_number string
+---@field status? string
+
+---@class ReaderLoadMatch
+---@field id string
+---@field expand? table
+
+---@class ReaderListMatch
+---@field device_type? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field location? string
+---@field serial_number? string
+---@field starting_after? string
+---@field status? string
+
+---@class ReaderCreateData
+---@field id string
+---@field action? any
+---@field device_sw_version? string
+---@field device_type string
+---@field ip_address? string
+---@field label string
+---@field last_seen_at? number
+---@field livemode boolean
+---@field location? any
+---@field metadata table
+---@field object string
+---@field serial_number string
+---@field status? string
+
+---@class ReaderRemoveMatch
+---@field id string
+
+---@class ReceivedCredit
+---@field amount number
+---@field created number
+---@field currency string
+---@field description string
+---@field failure_code? string
+---@field financial_account? string
+---@field hosted_regulatory_receipt_url? string
+---@field id string
+---@field initiating_payment_method_details table
+---@field linked_flows table
+---@field livemode boolean
+---@field network string
+---@field object string
+---@field reversal_details? any
+---@field status string
+---@field transaction? any
+
+---@class ReceivedCreditLoadMatch
+---@field id string
+---@field expand? table
+
+---@class ReceivedCreditListMatch
+---@field ending_before? string
+---@field expand? table
+---@field financial_account string
+---@field limit? number
+---@field linked_flow? table
+---@field starting_after? string
+---@field status? string
+
+---@class ReceivedCreditCreateData
+---@field amount number
+---@field created number
+---@field currency string
+---@field description string
+---@field failure_code? string
+---@field financial_account? string
+---@field hosted_regulatory_receipt_url? string
+---@field id string
+---@field initiating_payment_method_details table
+---@field linked_flows table
+---@field livemode boolean
+---@field network string
+---@field object string
+---@field reversal_details? any
+---@field status string
+---@field transaction? any
+
+---@class ReceivedDebit
+---@field amount number
+---@field created number
+---@field currency string
+---@field description string
+---@field failure_code? string
+---@field financial_account? string
+---@field hosted_regulatory_receipt_url? string
+---@field id string
+---@field initiating_payment_method_details table
+---@field linked_flows table
+---@field livemode boolean
+---@field network string
+---@field object string
+---@field reversal_details? any
+---@field status string
+---@field transaction? any
+
+---@class ReceivedDebitLoadMatch
+---@field id string
+---@field expand? table
+
+---@class ReceivedDebitListMatch
+---@field ending_before? string
+---@field expand? table
+---@field financial_account string
+---@field limit? number
+---@field starting_after? string
+---@field status? string
+
+---@class ReceivedDebitCreateData
+---@field amount number
+---@field created number
+---@field currency string
+---@field description string
+---@field failure_code? string
+---@field financial_account? string
+---@field hosted_regulatory_receipt_url? string
+---@field id string
+---@field initiating_payment_method_details table
+---@field linked_flows table
+---@field livemode boolean
+---@field network string
+---@field object string
+---@field reversal_details? any
+---@field status string
+---@field transaction? any
+
+---@class Refund
+---@field amount number
+---@field balance_transaction? any
+---@field charge? any
+---@field created number
+---@field currency string
+---@field customer? any
+---@field customer_account? string
+---@field description? string
+---@field destination_details table
+---@field failure_balance_transaction? any
+---@field failure_reason? string
+---@field fee any
+---@field id string
+---@field instructions_email? string
+---@field metadata? table
+---@field next_action table
+---@field object string
+---@field payment_intent? any
+---@field payment_method? any
+---@field pending_reason? string
+---@field presentment_details table
+---@field reason? string
+---@field receipt_number? string
+---@field source_transfer_reversal? any
+---@field status? string
+---@field transfer_reversal? any
+
+---@class RefundLoadMatch
+---@field application_fee_id? string
+---@field id string
+---@field expand? table
+---@field charge_id? string
+
+---@class RefundListMatch
+---@field charge? string
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field payment_intent? string
+---@field starting_after? string
+
+---@class RefundCreateData
+---@field id string
+---@field amount number
+---@field balance_transaction? any
+---@field charge? any
+---@field created number
+---@field currency string
+---@field customer? any
+---@field customer_account? string
+---@field description? string
+---@field destination_details table
+---@field failure_balance_transaction? any
+---@field failure_reason? string
+---@field fee any
+---@field instructions_email? string
+---@field metadata? table
+---@field next_action table
+---@field object string
+---@field payment_intent? any
+---@field payment_method? any
+---@field pending_reason? string
+---@field presentment_details table
+---@field reason? string
+---@field receipt_number? string
+---@field source_transfer_reversal? any
+---@field status? string
+---@field transfer_reversal? any
+
+---@class Registration
+---@field active_from number
+---@field ae table
+---@field al table
+---@field am table
+---@field ao table
+---@field at table
+---@field au table
+---@field aw table
+---@field az table
+---@field ba table
+---@field bb table
+---@field bd table
+---@field be table
+---@field bf table
+---@field bg table
+---@field bh table
+---@field bj table
+---@field bs table
+---@field by table
+---@field ca table
+---@field cd table
+---@field ch table
+---@field cl table
+---@field cm table
+---@field co table
+---@field country string
+---@field country_options table
+---@field cr table
+---@field created number
+---@field cv table
+---@field cy table
+---@field cz table
+---@field de table
+---@field dk table
+---@field ec table
+---@field ee table
+---@field eg table
+---@field es table
+---@field et table
+---@field expires_at? number
+---@field fi table
+---@field fr table
+---@field gb table
+---@field ge table
+---@field gn table
+---@field gr table
+---@field hr table
+---@field hu table
+---@field id table
+---@field ie table
+---@field in table
+---@field is table
+---@field it table
+---@field jp table
+---@field ke table
+---@field kg table
+---@field kh table
+---@field kr table
+---@field kz table
+---@field la table
+---@field livemode boolean
+---@field lk table
+---@field lt table
+---@field lu table
+---@field lv table
+---@field ma table
+---@field md table
+---@field me table
+---@field mk table
+---@field mr table
+---@field mt table
+---@field mx table
+---@field my table
+---@field ng table
+---@field nl table
+---@field no table
+---@field np table
+---@field nz table
+---@field object string
+---@field om table
+---@field pe table
+---@field ph table
+---@field pl table
+---@field pt table
+---@field ro table
+---@field rs table
+---@field ru table
+---@field sa table
+---@field se table
+---@field sg table
+---@field si table
+---@field sk table
+---@field sn table
+---@field sr table
+---@field status string
+---@field th table
+---@field tj table
+---@field tr table
+---@field tw table
+---@field tz table
+---@field ua table
+---@field ug table
+---@field us table
+---@field uy table
+---@field uz table
+---@field vn table
+---@field za table
+---@field zm table
+---@field zw table
+
+---@class RegistrationLoadMatch
+---@field id string
+---@field expand? table
+
+---@class RegistrationListMatch
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field status? string
+
+---@class RegistrationCreateData
+---@field id string
+---@field active_from number
+---@field ae table
+---@field al table
+---@field am table
+---@field ao table
+---@field at table
+---@field au table
+---@field aw table
+---@field az table
+---@field ba table
+---@field bb table
+---@field bd table
+---@field be table
+---@field bf table
+---@field bg table
+---@field bh table
+---@field bj table
+---@field bs table
+---@field by table
+---@field ca table
+---@field cd table
+---@field ch table
+---@field cl table
+---@field cm table
+---@field co table
+---@field country string
+---@field country_options table
+---@field cr table
+---@field created number
+---@field cv table
+---@field cy table
+---@field cz table
+---@field de table
+---@field dk table
+---@field ec table
+---@field ee table
+---@field eg table
+---@field es table
+---@field et table
+---@field expires_at? number
+---@field fi table
+---@field fr table
+---@field gb table
+---@field ge table
+---@field gn table
+---@field gr table
+---@field hr table
+---@field hu table
+---@field ie table
+---@field in table
+---@field is table
+---@field it table
+---@field jp table
+---@field ke table
+---@field kg table
+---@field kh table
+---@field kr table
+---@field kz table
+---@field la table
+---@field livemode boolean
+---@field lk table
+---@field lt table
+---@field lu table
+---@field lv table
+---@field ma table
+---@field md table
+---@field me table
+---@field mk table
+---@field mr table
+---@field mt table
+---@field mx table
+---@field my table
+---@field ng table
+---@field nl table
+---@field no table
+---@field np table
+---@field nz table
+---@field object string
+---@field om table
+---@field pe table
+---@field ph table
+---@field pl table
+---@field pt table
+---@field ro table
+---@field rs table
+---@field ru table
+---@field sa table
+---@field se table
+---@field sg table
+---@field si table
+---@field sk table
+---@field sn table
+---@field sr table
+---@field status string
+---@field th table
+---@field tj table
+---@field tr table
+---@field tw table
+---@field tz table
+---@field ua table
+---@field ug table
+---@field us table
+---@field uy table
+---@field uz table
+---@field vn table
+---@field za table
+---@field zm table
+---@field zw table
+
+---@class ReportRun
+---@field created number
+---@field error? string
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field parameters table
+---@field report_type string
+---@field result? any
+---@field status string
+---@field succeeded_at? number
+
+---@class ReportRunLoadMatch
+---@field id string
+---@field expand? table
+
+---@class ReportRunListMatch
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class ReportRunCreateData
+---@field created number
+---@field error? string
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field parameters table
+---@field report_type string
+---@field result? any
+---@field status string
+---@field succeeded_at? number
+
+---@class ReportType
+---@field data_available_end number
+---@field data_available_start number
+---@field default_columns? table
+---@field id string
+---@field livemode boolean
+---@field name string
+---@field object string
+---@field updated number
+---@field version number
+
+---@class ReportTypeLoadMatch
+---@field id string
+---@field expand? table
+
+---@class ReportTypeListMatch
+---@field expand? table
+
+---@class Request
+---@field created number
+---@field id string
+---@field livemode boolean
+---@field metadata? table
+---@field object string
+---@field payment_method string
+---@field replacements table
+---@field request_context? any
+---@field request_details? any
+---@field response_details? any
+---@field url? string
+
+---@class RequestLoadMatch
+---@field id string
+---@field expand? table
+
+---@class RequestListMatch
+---@field created? table
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class RequestCreateData
+---@field created number
+---@field id string
+---@field livemode boolean
+---@field metadata? table
+---@field object string
+---@field payment_method string
+---@field replacements table
+---@field request_context? any
+---@field request_details? any
+---@field response_details? any
+---@field url? string
+
+---@class Reversal
+---@field amount number
+---@field balance_transaction? any
+---@field created number
+---@field currency string
+---@field destination_payment_refund? any
+---@field id string
+---@field metadata? table
+---@field object string
+---@field source_refund? any
+---@field transfer any
+
+---@class ReversalLoadMatch
+---@field id string
+---@field transfer_id string
+---@field expand? table
+
+---@class ReversalListMatch
+---@field transfer_id string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class ReversalCreateData
+---@field id? string
+---@field transfer_id string
+---@field amount number
+---@field balance_transaction? any
+---@field created number
+---@field currency string
+---@field destination_payment_refund? any
+---@field metadata? table
+---@field object string
+---@field source_refund? any
+---@field transfer any
+
+---@class Review
+---@field billing_zip? string
+---@field charge? any
+---@field closed_reason? string
+---@field created number
+---@field id string
+---@field ip_address? string
+---@field ip_address_location? any
+---@field livemode boolean
+---@field object string
+---@field open boolean
+---@field opened_reason string
+---@field payment_intent? any
+---@field reason string
+---@field session? any
+
+---@class ReviewLoadMatch
+---@field id string
+---@field expand? table
+
+---@class ReviewListMatch
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class ReviewCreateData
+---@field id string
+---@field billing_zip? string
+---@field charge? any
+---@field closed_reason? string
+---@field created number
+---@field ip_address? string
+---@field ip_address_location? any
+---@field livemode boolean
+---@field object string
+---@field open boolean
+---@field opened_reason string
+---@field payment_intent? any
+---@field reason string
+---@field session? any
+
+---@class ScheduledQueryRun
+---@field created number
+---@field data_load_time number
+---@field error table
+---@field file? any
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field result_available_until number
+---@field sql string
+---@field status string
+---@field title string
+
+---@class ScheduledQueryRunLoadMatch
+---@field id string
+---@field expand? table
+
+---@class ScheduledQueryRunListMatch
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class Search
+---@field account_country? string
+---@field account_name? string
+---@field account_tax_ids? table
+---@field active boolean
+---@field address? any
+---@field allowed_payment_method_types? table
+---@field amount number
+---@field amount_capturable? number
+---@field amount_captured number
+---@field amount_details? any
+---@field amount_due number
+---@field amount_overpaid number
+---@field amount_paid number
+---@field amount_paid_off_stripe number
+---@field amount_received? number
+---@field amount_refunded number
+---@field amount_remaining number
+---@field amount_shipping number
+---@field application? any
+---@field application_fee? any
+---@field application_fee_amount? number
+---@field application_fee_percent? number
+---@field attempt_count number
+---@field attempted boolean
+---@field auto_advance boolean
+---@field automatic_payment_methods? any
+---@field automatic_tax table
+---@field automatically_finalizes_at? number
+---@field balance? number
+---@field balance_transaction? any
+---@field billing_cycle_anchor number
+---@field billing_cycle_anchor_config? any
+---@field billing_details table
+---@field billing_mode table
+---@field billing_reason? string
+---@field billing_schedules table
+---@field billing_scheme string
+---@field billing_thresholds? any
+---@field business_name? string
+---@field calculated_statement_descriptor? string
+---@field cancel_at? number
+---@field cancel_at_period_end boolean
+---@field canceled_at? number
+---@field cancellation_details? any
+---@field cancellation_reason? string
+---@field capture_method? string
+---@field captured boolean
+---@field cash_balance? any
+---@field client_secret? string
+---@field collection_method string
+---@field confirmation_method? string
+---@field confirmation_secret? any
+---@field created number
+---@field currency string
+---@field currency_options? table
+---@field custom_fields? table
+---@field custom_unit_amount? any
+---@field customer? any
+---@field customer_account? string
+---@field customer_address? any
+---@field customer_email? string
+---@field customer_name? string
+---@field customer_phone? string
+---@field customer_shipping? any
+---@field customer_tax_exempt? string
+---@field customer_tax_ids? table
+---@field days_until_due? number
+---@field default_payment_method? any
+---@field default_price? any
+---@field default_source? any
+---@field default_tax_rates table
+---@field delinquent? boolean
+---@field description? string
+---@field discount? any
+---@field discounts table
+---@field disputed boolean
+---@field due_date? number
+---@field effective_at? number
+---@field email? string
+---@field ended_at? number
+---@field ending_balance? number
+---@field excluded_payment_method_types? table
+---@field failure_balance_transaction? any
+---@field failure_code? string
+---@field failure_message? string
+---@field footer? string
+---@field fraud_details? any
+---@field from_invoice? any
+---@field hooks? table
+---@field hosted_invoice_url? string
+---@field id string
+---@field images table
+---@field individual_name? string
+---@field invoice_credit_balance? table
+---@field invoice_pdf? string
+---@field invoice_prefix? string
+---@field invoice_settings? table
+---@field issuer table
+---@field items table
+---@field last_finalization_error? any
+---@field last_payment_error? any
+---@field latest_charge? any
+---@field latest_invoice? any
+---@field latest_revision? any
+---@field lines table
+---@field livemode boolean
+---@field lookup_key? string
+---@field managed_payments? any
+---@field marketing_features table
+---@field metadata table
+---@field name? string
+---@field next_action? any
+---@field next_invoice_sequence? number
+---@field next_payment_attempt? number
+---@field next_pending_invoice_item_invoice? number
+---@field nickname? string
+---@field number? string
+---@field object string
+---@field on_behalf_of? any
+---@field outcome? any
+---@field package_dimensions? any
+---@field paid boolean
+---@field parent? any
+---@field pause_collection? any
+---@field payment_details? table
+---@field payment_intent? any
+---@field payment_method? string
+---@field payment_method_configuration_details? any
+---@field payment_method_details? any
+---@field payment_method_options? any
+---@field payment_method_types? table
+---@field payment_record? any
+---@field payment_settings table
+---@field payments table
+---@field pending_invoice_item_interval? any
+---@field pending_setup_intent? any
+---@field pending_update? any
+---@field period_end number
+---@field period_start number
+---@field phone? string
+---@field post_payment_credit_notes_amount number
+---@field pre_payment_credit_notes_amount number
+---@field preferred_locales? table
+---@field presentment_details table
+---@field processing? any
+---@field product any
+---@field radar_options? table
+---@field receipt_email? string
+---@field receipt_number? string
+---@field receipt_url? string
+---@field recurring? any
+---@field refunded boolean
+---@field refunds table
+---@field rendering? any
+---@field review? any
+---@field schedule? any
+---@field setup_future_usage? string
+---@field shippable? boolean
+---@field shipping? any
+---@field shipping_cost? any
+---@field shipping_details? any
+---@field source_transfer? any
+---@field sources table
+---@field start_date number
+---@field starting_balance number
+---@field statement_descriptor? string
+---@field statement_descriptor_suffix? string
+---@field status string
+---@field status_details? table
+---@field status_transitions table
+---@field subscriptions table
+---@field subtotal number
+---@field subtotal_excluding_tax? number
+---@field tax table
+---@field tax_behavior? string
+---@field tax_code? any
+---@field tax_details? any
+---@field tax_exempt? string
+---@field tax_ids table
+---@field test_clock? any
+---@field threshold_reason table
+---@field tiers? table
+---@field tiers_mode? string
+---@field total number
+---@field total_discount_amounts? table
+---@field total_excluding_tax? number
+---@field total_pretax_credit_amounts? table
+---@field total_taxes? table
+---@field transfer? any
+---@field transfer_data? any
+---@field transfer_group? string
+---@field transform_quantity? any
+---@field trial_end? number
+---@field trial_settings? any
+---@field trial_start? number
+---@field type string
+---@field unit_amount? number
+---@field unit_amount_decimal? string
+---@field unit_label? string
+---@field updated number
+---@field url? string
+---@field webhooks_delivered_at? number
+
+---@class SearchListMatch
+---@field expand? table
+---@field limit? number
+---@field page? string
+---@field query string
+
+---@class Secret
+---@field created number
+---@field deleted? boolean
+---@field expires_at? number
+---@field id string
+---@field livemode boolean
+---@field name string
+---@field object string
+---@field payload? string
+---@field scope table
+---@field type string
+---@field user? string
+
+---@class SecretLoadMatch
+---@field expand? table
+---@field name string
+---@field scope table
+
+---@class SecretListMatch
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field scope table
+---@field starting_after? string
+
+---@class SecretCreateData
+---@field created number
+---@field deleted? boolean
+---@field expires_at? number
+---@field id string
+---@field livemode boolean
+---@field name string
+---@field object string
+---@field payload? string
+---@field scope table
+---@field type string
+---@field user? string
+
+---@class Session
+---@field account_holder? any
+---@field accounts table
+---@field adaptive_pricing? any
+---@field after_expiration? any
+---@field allow_promotion_codes? boolean
+---@field allowed_payment_method_types? table
+---@field amount_subtotal? number
+---@field amount_total? number
+---@field automatic_tax table
+---@field bank_account_token table
+---@field billing_address_collection? string
+---@field branding_settings table
+---@field cancel_url? string
+---@field client_reference_id? string
+---@field client_secret? string
+---@field collected_information? any
+---@field configuration any
+---@field consent? any
+---@field consent_collection? any
+---@field created number
+---@field currency? string
+---@field currency_conversion? any
+---@field custom_fields table
+---@field custom_text table
+---@field customer? any
+---@field customer_account? string
+---@field customer_creation? string
+---@field customer_details? any
+---@field customer_email? string
+---@field discounts? table
+---@field excluded_payment_method_types? table
+---@field expires_at number
+---@field filters? table
+---@field flow? any
+---@field id string
+---@field integration_identifier? string
+---@field invoice? any
+---@field invoice_creation? any
+---@field limits table
+---@field line_items table
+---@field livemode boolean
+---@field locale? string
+---@field managed_payments? any
+---@field manual_entry? table
+---@field metadata? table
+---@field mode string
+---@field name_collection? table
+---@field object string
+---@field on_behalf_of? string
+---@field optional_items? table
+---@field origin_context? string
+---@field payment_intent? any
+---@field payment_link? any
+---@field payment_method_collection? string
+---@field payment_method_configuration_details? any
+---@field payment_method_options? any
+---@field payment_method_types table
+---@field payment_status string
+---@field permissions? any
+---@field phone_number_collection table
+---@field prefetch? table
+---@field presentment_details table
+---@field recovered_from? string
+---@field redirect_on_completion? string
+---@field return_url? string
+---@field saved_payment_method_options? any
+---@field setup_intent? any
+---@field shipping_address_collection? any
+---@field shipping_cost? any
+---@field shipping_options table
+---@field status? string
+---@field submit_type? string
+---@field subscription? any
+---@field success_url? string
+---@field tax_id_collection table
+---@field total_details? number
+---@field ui_mode? string
+---@field url? string
+---@field wallet_options? any
+
+---@class SessionLoadMatch
+---@field session string
+---@field expand? table
+
+---@class SessionListMatch
+---@field created? any
+---@field customer? string
+---@field customer_account? string
+---@field customer_detail? table
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field payment_intent? string
+---@field payment_link? string
+---@field starting_after? string
+---@field status? string
+---@field subscription? string
 
 ---@class SessionCreateData
+---@field id string
+---@field account_holder? any
+---@field accounts table
+---@field adaptive_pricing? any
+---@field after_expiration? any
+---@field allow_promotion_codes? boolean
+---@field allowed_payment_method_types? table
+---@field amount_subtotal? number
 ---@field amount_total? number
+---@field automatic_tax table
+---@field bank_account_token table
+---@field billing_address_collection? string
+---@field branding_settings table
 ---@field cancel_url? string
----@field created? number
+---@field client_reference_id? string
+---@field client_secret? string
+---@field collected_information? any
+---@field configuration any
+---@field consent? any
+---@field consent_collection? any
+---@field created number
+---@field currency? string
+---@field currency_conversion? any
+---@field custom_fields table
+---@field custom_text table
+---@field customer? any
+---@field customer_account? string
+---@field customer_creation? string
+---@field customer_details? any
+---@field customer_email? string
+---@field discounts? table
+---@field excluded_payment_method_types? table
+---@field expires_at number
+---@field filters? table
+---@field flow? any
+---@field integration_identifier? string
+---@field invoice? any
+---@field invoice_creation? any
+---@field limits table
+---@field line_items table
+---@field livemode boolean
+---@field locale? string
+---@field managed_payments? any
+---@field manual_entry? table
+---@field metadata? table
+---@field mode string
+---@field name_collection? table
+---@field object string
+---@field on_behalf_of? string
+---@field optional_items? table
+---@field origin_context? string
+---@field payment_intent? any
+---@field payment_link? any
+---@field payment_method_collection? string
+---@field payment_method_configuration_details? any
+---@field payment_method_options? any
+---@field payment_method_types table
+---@field payment_status string
+---@field permissions? any
+---@field phone_number_collection table
+---@field prefetch? table
+---@field presentment_details table
+---@field recovered_from? string
+---@field redirect_on_completion? string
+---@field return_url? string
+---@field saved_payment_method_options? any
+---@field setup_intent? any
+---@field shipping_address_collection? any
+---@field shipping_cost? any
+---@field shipping_options table
+---@field status? string
+---@field submit_type? string
+---@field subscription? any
+---@field success_url? string
+---@field tax_id_collection table
+---@field total_details? number
+---@field ui_mode? string
+---@field url? string
+---@field wallet_options? any
+
+---@class Setting
+---@field defaults table
+---@field head_office? any
+---@field livemode boolean
+---@field object string
+---@field status string
+---@field status_details table
+
+---@class SettingLoadMatch
+---@field expand? table
+
+---@class SettingCreateData
+---@field defaults table
+---@field head_office? any
+---@field livemode boolean
+---@field object string
+---@field status string
+---@field status_details table
+
+---@class Settlement
+---@field id? string
+
+---@class SettlementLoadMatch
+---@field id string
+---@field expand? table
+
+---@class SettlementCreateData
+---@field id string
+
+---@class SetupAttempt
+---@field application? any
+---@field attach_to_self? boolean
+---@field created number
+---@field customer? any
+---@field customer_account? string
+---@field flow_directions? table
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field on_behalf_of? any
+---@field payment_method any
+---@field payment_method_details table
+---@field setup_error? any
+---@field setup_intent any
+---@field status string
+---@field usage string
+
+---@class SetupAttemptListMatch
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field setup_intent string
+---@field starting_after? string
+
+---@class SetupIntent
+---@field allowed_payment_method_types? table
+---@field application? any
+---@field attach_to_self? boolean
+---@field automatic_payment_methods? any
+---@field cancellation_reason? string
+---@field client_secret? string
+---@field created number
+---@field customer? any
+---@field customer_account? string
+---@field description? string
+---@field excluded_payment_method_types? table
+---@field flow_directions? table
+---@field id string
+---@field last_setup_error? any
+---@field latest_attempt? any
+---@field livemode boolean
+---@field managed_payments? any
+---@field mandate? any
+---@field metadata? table
+---@field next_action? any
+---@field object string
+---@field on_behalf_of? any
+---@field payment_method? any
+---@field payment_method_configuration_details? any
+---@field payment_method_options? any
+---@field payment_method_types table
+---@field single_use_mandate? any
+---@field status string
+---@field usage string
+
+---@class SetupIntentLoadMatch
+---@field id string
+---@field client_secret? string
+---@field expand? table
+
+---@class SetupIntentListMatch
+---@field attach_to_self? boolean
+---@field created? any
+---@field customer? string
+---@field customer_account? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field payment_method? string
+---@field starting_after? string
+
+---@class SetupIntentCreateData
+---@field id string
+---@field allowed_payment_method_types? table
+---@field application? any
+---@field attach_to_self? boolean
+---@field automatic_payment_methods? any
+---@field cancellation_reason? string
+---@field client_secret? string
+---@field created number
+---@field customer? any
+---@field customer_account? string
+---@field description? string
+---@field excluded_payment_method_types? table
+---@field flow_directions? table
+---@field last_setup_error? any
+---@field latest_attempt? any
+---@field livemode boolean
+---@field managed_payments? any
+---@field mandate? any
+---@field metadata? table
+---@field next_action? any
+---@field object string
+---@field on_behalf_of? any
+---@field payment_method? any
+---@field payment_method_configuration_details? any
+---@field payment_method_options? any
+---@field payment_method_types table
+---@field single_use_mandate? any
+---@field status string
+---@field usage string
+
+---@class ShippingRate
+---@field active boolean
+---@field created number
+---@field delivery_estimate? any
+---@field display_name? string
+---@field fixed_amount table
+---@field id string
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field tax_behavior? string
+---@field tax_code? any
+---@field type string
+
+---@class ShippingRateLoadMatch
+---@field id string
+---@field expand? table
+
+---@class ShippingRateListMatch
+---@field active? boolean
+---@field created? any
+---@field currency? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class ShippingRateCreateData
+---@field id string
+---@field active boolean
+---@field created number
+---@field delivery_estimate? any
+---@field display_name? string
+---@field fixed_amount table
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field tax_behavior? string
+---@field tax_code? any
+---@field type string
+
+---@class SigmaApiQuery
+---@field created number
+---@field id string
+---@field livemode boolean
+---@field name string
+---@field object string
+---@field sql string
+
+---@class SigmaApiQueryCreateData
+---@field id string
+---@field created number
+---@field livemode boolean
+---@field name string
+---@field object string
+---@field sql string
+
+---@class Source
+---@field ach_credit_transfer? table
+---@field ach_debit? table
+---@field acss_debit? table
+---@field alipay? table
+---@field allow_redisplay? boolean
+---@field amount? number
+---@field au_becs_debit? table
+---@field bancontact? table
+---@field card? table
+---@field card_present? table
+---@field client_secret string
+---@field code_verification table
+---@field created number
 ---@field currency? string
 ---@field customer? string
----@field id? string
----@field mode? string
+---@field data table
+---@field eps? table
+---@field flow string
+---@field giropay? table
+---@field has_more boolean
+---@field id string
+---@field ideal? table
+---@field klarna? table
+---@field livemode boolean
+---@field metadata? table
+---@field multibanco? table
+---@field object string
+---@field owner? any
+---@field p24? table
+---@field receiver table
+---@field redirect table
+---@field sepa_debit? table
+---@field sofort? table
+---@field source_order table
+---@field statement_descriptor? string
+---@field status string
+---@field three_d_secure? table
+---@field type string
+---@field url string
+---@field usage? string
+---@field wechat? table
+
+---@class SourceLoadMatch
+---@field id string
+---@field client_secret? string
+---@field expand? table
+---@field customer_id? string
+
+---@class SourceListMatch
+---@field customer_id string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
 ---@field object? string
----@field payment_status? string
+---@field starting_after? string
+
+---@class SourceCreateData
+---@field id string
+---@field ach_credit_transfer? table
+---@field ach_debit? table
+---@field acss_debit? table
+---@field alipay? table
+---@field allow_redisplay? boolean
+---@field amount? number
+---@field au_becs_debit? table
+---@field bancontact? table
+---@field card? table
+---@field card_present? table
+---@field client_secret string
+---@field code_verification table
+---@field created number
+---@field currency? string
+---@field customer? string
+---@field data table
+---@field eps? table
+---@field flow string
+---@field giropay? table
+---@field has_more boolean
+---@field ideal? table
+---@field klarna? table
+---@field livemode boolean
+---@field metadata? table
+---@field multibanco? table
+---@field object string
+---@field owner? any
+---@field p24? table
+---@field receiver table
+---@field redirect table
+---@field sepa_debit? table
+---@field sofort? table
+---@field source_order table
+---@field statement_descriptor? string
+---@field status string
+---@field three_d_secure? table
+---@field type string
+---@field url string
+---@field usage? string
+---@field wechat? table
+
+---@class SourceRemoveMatch
+---@field customer_id string
+---@field id string
+
+---@class SourceMandateNotification
+---@field acss_debit? table
+---@field amount? number
+---@field bacs_debit? table
+---@field created number
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field reason string
+---@field sepa_debit? table
+---@field source table
+---@field status string
+---@field type string
+
+---@class SourceMandateNotificationLoadMatch
+---@field id string
+---@field source_id string
+---@field expand? table
+
+---@class SourceTransaction
+---@field ach_credit_transfer? table
+---@field amount number
+---@field chf_credit_transfer? table
+---@field created number
+---@field currency string
+---@field gbp_credit_transfer? table
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field paper_check? table
+---@field sepa_credit_transfer? table
+---@field source string
+---@field status string
+---@field type string
+
+---@class SourceTransactionLoadMatch
+---@field id string
+---@field source_id string
+---@field expand? table
+
+---@class SourceTransactionListMatch
+---@field id string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class Subscription
+---@field application? any
+---@field application_fee_percent? number
+---@field automatic_tax table
+---@field billing_cycle_anchor number
+---@field billing_cycle_anchor_config? any
+---@field billing_mode table
+---@field billing_schedules table
+---@field billing_thresholds? any
+---@field cancel_at? number
+---@field cancel_at_period_end boolean
+---@field canceled_at? number
+---@field cancellation_details? any
+---@field collection_method string
+---@field created number
+---@field currency string
+---@field customer any
+---@field customer_account? string
+---@field days_until_due? number
+---@field default_payment_method? any
+---@field default_source? any
+---@field default_tax_rates? table
+---@field description? string
+---@field discounts table
+---@field ended_at? number
+---@field id string
+---@field invoice_settings table
+---@field items table
+---@field latest_invoice? any
+---@field livemode boolean
+---@field managed_payments? any
+---@field metadata table
+---@field next_pending_invoice_item_invoice? number
+---@field object string
+---@field on_behalf_of? any
+---@field pause_collection? any
+---@field payment_settings? any
+---@field pending_invoice_item_interval? any
+---@field pending_setup_intent? any
+---@field pending_update? any
+---@field presentment_details table
+---@field schedule? any
+---@field start_date number
+---@field status string
+---@field status_details table
+---@field test_clock? any
+---@field transfer_data? any
+---@field trial_end? number
+---@field trial_settings? any
+---@field trial_start? number
+
+---@class SubscriptionLoadMatch
+---@field customer_id? string
+---@field id string
+---@field expand? table
+
+---@class SubscriptionListMatch
+---@field automatic_tax? table
+---@field collection_method? string
+---@field created? any
+---@field current_period_end? any
+---@field current_period_start? any
+---@field customer? string
+---@field customer_account? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field price? string
+---@field starting_after? string
 ---@field status? string
----@field success_url? string
+---@field test_clock? string
+
+---@class SubscriptionCreateData
+---@field id string
+---@field application? any
+---@field application_fee_percent? number
+---@field automatic_tax table
+---@field billing_cycle_anchor number
+---@field billing_cycle_anchor_config? any
+---@field billing_mode table
+---@field billing_schedules table
+---@field billing_thresholds? any
+---@field cancel_at? number
+---@field cancel_at_period_end boolean
+---@field canceled_at? number
+---@field cancellation_details? any
+---@field collection_method string
+---@field created number
+---@field currency string
+---@field customer any
+---@field customer_account? string
+---@field days_until_due? number
+---@field default_payment_method? any
+---@field default_source? any
+---@field default_tax_rates? table
+---@field description? string
+---@field discounts table
+---@field ended_at? number
+---@field invoice_settings table
+---@field items table
+---@field latest_invoice? any
+---@field livemode boolean
+---@field managed_payments? any
+---@field metadata table
+---@field next_pending_invoice_item_invoice? number
+---@field object string
+---@field on_behalf_of? any
+---@field pause_collection? any
+---@field payment_settings? any
+---@field pending_invoice_item_interval? any
+---@field pending_setup_intent? any
+---@field pending_update? any
+---@field presentment_details table
+---@field schedule? any
+---@field start_date number
+---@field status string
+---@field status_details table
+---@field test_clock? any
+---@field transfer_data? any
+---@field trial_end? number
+---@field trial_settings? any
+---@field trial_start? number
+
+---@class SubscriptionRemoveMatch
+---@field customer_id? string
+---@field id string
+
+---@class SubscriptionItem
+---@field billed_until? number
+---@field billing_thresholds? any
+---@field created number
+---@field current_period_end number
+---@field current_period_start number
+---@field current_trial? any
+---@field discounts table
+---@field id string
+---@field metadata table
+---@field object string
+---@field price table
+---@field quantity? number
+---@field subscription string
+---@field tax_rates? table
+
+---@class SubscriptionItemLoadMatch
+---@field id string
+---@field expand? table
+
+---@class SubscriptionItemListMatch
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field subscription string
+
+---@class SubscriptionItemCreateData
+---@field id string
+---@field billed_until? number
+---@field billing_thresholds? any
+---@field created number
+---@field current_period_end number
+---@field current_period_start number
+---@field current_trial? any
+---@field discounts table
+---@field metadata table
+---@field object string
+---@field price table
+---@field quantity? number
+---@field subscription string
+---@field tax_rates? table
+
+---@class SubscriptionSchedule
+---@field application? any
+---@field billing_mode table
+---@field canceled_at? number
+---@field completed_at? number
+---@field created number
+---@field current_phase? any
+---@field customer any
+---@field customer_account? string
+---@field default_settings table
+---@field end_behavior string
+---@field id string
+---@field livemode boolean
+---@field metadata? table
+---@field object string
+---@field pause_schedules? table
+---@field phases table
+---@field released_at? number
+---@field released_subscription? string
+---@field status string
+---@field subscription? any
+---@field test_clock? any
+
+---@class SubscriptionScheduleLoadMatch
+---@field id string
+---@field expand? table
+
+---@class SubscriptionScheduleListMatch
+---@field canceled_at? any
+---@field completed_at? any
+---@field created? any
+---@field customer? string
+---@field customer_account? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field released_at? any
+---@field scheduled? boolean
+---@field starting_after? string
+
+---@class SubscriptionScheduleCreateData
+---@field id string
+---@field application? any
+---@field billing_mode table
+---@field canceled_at? number
+---@field completed_at? number
+---@field created number
+---@field current_phase? any
+---@field customer any
+---@field customer_account? string
+---@field default_settings table
+---@field end_behavior string
+---@field livemode boolean
+---@field metadata? table
+---@field object string
+---@field pause_schedules? table
+---@field phases table
+---@field released_at? number
+---@field released_subscription? string
+---@field status string
+---@field subscription? any
+---@field test_clock? any
+
+---@class Supplier
+---@field id string
+---@field info_url string
+---@field livemode boolean
+---@field locations table
+---@field name string
+---@field object string
+---@field removal_pathway string
+
+---@class SupplierLoadMatch
+---@field id string
+---@field expand? table
+
+---@class SupplierListMatch
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class TaxCode
+---@field description string
+---@field id string
+---@field name string
+---@field object string
+---@field requirements? any
+
+---@class TaxCodeLoadMatch
+---@field id string
+---@field expand? table
+
+---@class TaxCodeListMatch
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class TaxId
+---@field country? string
+---@field created number
+---@field customer? any
+---@field customer_account? string
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field owner? any
+---@field type string
+---@field value string
+---@field verification? any
+
+---@class TaxIdLoadMatch
+---@field customer_id? string
+---@field id string
+---@field expand? table
+
+---@class TaxIdListMatch
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field owner? table
+---@field starting_after? string
+
+---@class TaxIdCreateData
+---@field country? string
+---@field created number
+---@field customer? any
+---@field customer_account? string
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field owner? any
+---@field type string
+---@field value string
+---@field verification? any
+
+---@class TaxIdRemoveMatch
+---@field customer_id? string
+---@field id string
+
+---@class TaxRate
+---@field active boolean
+---@field country? string
+---@field created number
+---@field description? string
+---@field display_name string
+---@field effective_percentage? number
+---@field flat_amount? any
+---@field id string
+---@field inclusive boolean
+---@field jurisdiction? string
+---@field jurisdiction_level? string
+---@field livemode boolean
+---@field metadata? table
+---@field object string
+---@field percentage number
+---@field rate_type? string
+---@field state? string
+---@field tax_type? string
+
+---@class TaxRateLoadMatch
+---@field id string
+---@field expand? table
+
+---@class TaxRateListMatch
+---@field active? boolean
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field inclusive? boolean
+---@field limit? number
+---@field starting_after? string
+
+---@class TaxRateCreateData
+---@field id string
+---@field active boolean
+---@field country? string
+---@field created number
+---@field description? string
+---@field display_name string
+---@field effective_percentage? number
+---@field flat_amount? any
+---@field inclusive boolean
+---@field jurisdiction? string
+---@field jurisdiction_level? string
+---@field livemode boolean
+---@field metadata? table
+---@field object string
+---@field percentage number
+---@field rate_type? string
+---@field state? string
+---@field tax_type? string
+
+---@class TestClock
+---@field advancing table
+---@field created number
+---@field deletes_after number
+---@field frozen_time number
+---@field id string
+---@field livemode boolean
+---@field name? string
+---@field object string
+---@field status string
+---@field status_details table
+
+---@class TestClockLoadMatch
+---@field id string
+---@field expand? table
+
+---@class TestClockListMatch
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class TestClockCreateData
+---@field advancing table
+---@field created number
+---@field deletes_after number
+---@field frozen_time number
+---@field id string
+---@field livemode boolean
+---@field name? string
+---@field object string
+---@field status string
+---@field status_details table
+
+---@class TestClockRemoveMatch
+---@field id string
+
+---@class Token
+---@field bank_account table
+---@field card any
+---@field client_ip? string
+---@field created number
+---@field device_fingerprint? string
+---@field id string
+---@field last4? string
+---@field livemode boolean
+---@field network string
+---@field network_data table
+---@field network_updated_at number
+---@field object string
+---@field status string
+---@field type string
+---@field used boolean
+---@field wallet_provider? string
+
+---@class TokenLoadMatch
+---@field id string
+---@field expand? table
+
+---@class TokenListMatch
+---@field card string
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field status? string
+
+---@class TokenCreateData
+---@field id string
+---@field bank_account table
+---@field card any
+---@field client_ip? string
+---@field created number
+---@field device_fingerprint? string
+---@field last4? string
+---@field livemode boolean
+---@field network string
+---@field network_data table
+---@field network_updated_at number
+---@field object string
+---@field status string
+---@field type string
+---@field used boolean
+---@field wallet_provider? string
+
+---@class Topup
+---@field amount number
+---@field balance_transaction? any
+---@field created number
+---@field currency string
+---@field description? string
+---@field expected_availability_date? number
+---@field failure_code? string
+---@field failure_message? string
+---@field id string
+---@field initiated_by? string
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field payment_method? any
+---@field payment_method_options? any
+---@field source? any
+---@field statement_descriptor? string
+---@field status string
+---@field transfer_group? string
+
+---@class TopupLoadMatch
+---@field id string
+---@field expand? table
+
+---@class TopupListMatch
+---@field amount? number
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field status? string
+
+---@class TopupCreateData
+---@field id string
+---@field amount number
+---@field balance_transaction? any
+---@field created number
+---@field currency string
+---@field description? string
+---@field expected_availability_date? number
+---@field failure_code? string
+---@field failure_message? string
+---@field initiated_by? string
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field payment_method? any
+---@field payment_method_options? any
+---@field source? any
+---@field statement_descriptor? string
+---@field status string
+---@field transfer_group? string
+
+---@class Transaction
+---@field account string
+---@field amount number
+---@field amount_details? any
+---@field authorization? any
+---@field balance_impact table
+---@field balance_transaction? any
+---@field card any
+---@field cardholder? any
+---@field created number
+---@field currency string
+---@field customer? string
+---@field customer_details table
+---@field description string
+---@field dispute? any
+---@field entries table
+---@field financial_account string
+---@field flow? string
+---@field flow_details? any
+---@field flow_type string
+---@field id string
+---@field line_items table
+---@field livemode boolean
+---@field merchant_amount number
+---@field merchant_currency string
+---@field merchant_data table
+---@field metadata table
+---@field network_data? any
+---@field object string
+---@field posted_at? number
+---@field purchase_details? any
+---@field reference string
+---@field reversal? any
+---@field ship_from_details? any
+---@field shipping_cost? any
+---@field status string
+---@field status_transitions table
+---@field tax_date number
+---@field token? string
+---@field transacted_at number
+---@field transaction_refresh string
+---@field treasury? any
+---@field type string
+---@field updated number
+---@field void_at? number
+---@field wallet? string
+
+---@class TransactionLoadMatch
+---@field id string
+---@field expand? table
+
+---@class TransactionListMatch
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field financial_account string
+---@field limit? number
+---@field order_by? string
+---@field starting_after? string
+---@field status? string
+---@field status_transition? table
+
+---@class TransactionCreateData
+---@field id string
+---@field account string
+---@field amount number
+---@field amount_details? any
+---@field authorization? any
+---@field balance_impact table
+---@field balance_transaction? any
+---@field card any
+---@field cardholder? any
+---@field created number
+---@field currency string
+---@field customer? string
+---@field customer_details table
+---@field description string
+---@field dispute? any
+---@field entries table
+---@field financial_account string
+---@field flow? string
+---@field flow_details? any
+---@field flow_type string
+---@field line_items table
+---@field livemode boolean
+---@field merchant_amount number
+---@field merchant_currency string
+---@field merchant_data table
+---@field metadata table
+---@field network_data? any
+---@field object string
+---@field posted_at? number
+---@field purchase_details? any
+---@field reference string
+---@field reversal? any
+---@field ship_from_details? any
+---@field shipping_cost? any
+---@field status string
+---@field status_transitions table
+---@field tax_date number
+---@field token? string
+---@field transacted_at number
+---@field transaction_refresh string
+---@field treasury? any
+---@field type string
+---@field updated number
+---@field void_at? number
+---@field wallet? string
+
+---@class TransactionEntry
+---@field balance_impact table
+---@field created number
+---@field currency string
+---@field effective_at number
+---@field financial_account string
+---@field flow? string
+---@field flow_details? any
+---@field flow_type string
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field transaction any
+---@field type string
+
+---@class TransactionEntryLoadMatch
+---@field id string
+---@field expand? table
+
+---@class TransactionEntryListMatch
+---@field created? any
+---@field effective_at? any
+---@field ending_before? string
+---@field expand? table
+---@field financial_account string
+---@field limit? number
+---@field order_by? string
+---@field starting_after? string
+---@field transaction? string
+
+---@class Transfer
+---@field amount number
+---@field amount_reversed number
+---@field balance_transaction? any
+---@field created number
+---@field currency string
+---@field description? string
+---@field destination? any
+---@field destination_payment? any
+---@field id string
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field reversals table
+---@field reversed boolean
+---@field source_transaction? any
+---@field source_type? string
+---@field transfer_group? string
+
+---@class TransferLoadMatch
+---@field id string
+---@field expand? table
+
+---@class TransferListMatch
+---@field created? any
+---@field destination? string
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field transfer_group? string
+
+---@class TransferCreateData
+---@field id string
+---@field amount number
+---@field amount_reversed number
+---@field balance_transaction? any
+---@field created number
+---@field currency string
+---@field description? string
+---@field destination? any
+---@field destination_payment? any
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field reversals table
+---@field reversed boolean
+---@field source_transaction? any
+---@field source_type? string
+---@field transfer_group? string
+
+---@class TrialOffer
+---@field active boolean
+---@field duration table
+---@field end_behavior table
+---@field id string
+---@field livemode boolean
+---@field nickname? string
+---@field object string
+---@field price number
+
+---@class TrialOfferLoadMatch
+---@field id string
+---@field expand? table
+
+---@class TrialOfferListMatch
+---@field active? boolean
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field price? table
+---@field starting_after? string
+
+---@class TrialOfferCreateData
+---@field id string
+---@field active boolean
+---@field duration table
+---@field end_behavior table
+---@field livemode boolean
+---@field nickname? string
+---@field object string
+---@field price number
+
+---@class ValueList
+---@field alias string
+---@field created number
+---@field created_by string
+---@field id string
+---@field item_type string
+---@field list_items table
+---@field livemode boolean
+---@field metadata table
+---@field name string
+---@field object string
+
+---@class ValueListLoadMatch
+---@field id string
+---@field expand? table
+
+---@class ValueListListMatch
+---@field alia? string
+---@field contain? string
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class ValueListCreateData
+---@field id string
+---@field alias string
+---@field created number
+---@field created_by string
+---@field item_type string
+---@field list_items table
+---@field livemode boolean
+---@field metadata table
+---@field name string
+---@field object string
+
+---@class ValueListRemoveMatch
+---@field id string
+
+---@class ValueListItem
+---@field created number
+---@field created_by string
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field value string
+---@field value_list string
+
+---@class ValueListItemLoadMatch
+---@field id string
+---@field expand? table
+
+---@class ValueListItemListMatch
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field value? string
+---@field value_list string
+
+---@class ValueListItemCreateData
+---@field created number
+---@field created_by string
+---@field id string
+---@field livemode boolean
+---@field object string
+---@field value string
+---@field value_list string
+
+---@class ValueListItemRemoveMatch
+---@field id string
+
+---@class VerificationReport
+---@field client_reference_id? string
+---@field created number
+---@field document table
+---@field email table
+---@field id string
+---@field id_number table
+---@field livemode boolean
+---@field object string
+---@field options? table
+---@field phone table
+---@field selfie table
+---@field type string
+---@field verification_flow? string
+---@field verification_session? string
+
+---@class VerificationReportLoadMatch
+---@field id string
+---@field expand? table
+
+---@class VerificationReportListMatch
+---@field client_reference_id? string
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+---@field type? string
+---@field verification_session? string
+
+---@class VerificationSession
+---@field client_reference_id? string
+---@field client_secret? string
+---@field created number
+---@field id string
+---@field last_error? any
+---@field last_verification_report? any
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field options? any
+---@field provided_details? any
+---@field redaction? any
+---@field related_customer? string
+---@field related_customer_account? string
+---@field related_person table
+---@field status string
+---@field type string
+---@field url? string
+---@field verification_flow? string
+---@field verified_outputs? any
+
+---@class VerificationSessionLoadMatch
+---@field id string
+---@field expand? table
+
+---@class VerificationSessionListMatch
+---@field client_reference_id? string
+---@field created? any
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field related_customer? string
+---@field related_customer_account? string
+---@field starting_after? string
+---@field status? string
+
+---@class VerificationSessionCreateData
+---@field id string
+---@field client_reference_id? string
+---@field client_secret? string
+---@field created number
+---@field last_error? any
+---@field last_verification_report? any
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field options? any
+---@field provided_details? any
+---@field redaction? any
+---@field related_customer? string
+---@field related_customer_account? string
+---@field related_person table
+---@field status string
+---@field type string
+---@field url? string
+---@field verification_flow? string
+---@field verified_outputs? any
+
+---@class WebhookEndpoint
+---@field api_version? string
+---@field application? string
+---@field created number
+---@field description? string
+---@field enabled_events table
+---@field id string
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field secret? string
+---@field status string
+---@field url string
+
+---@class WebhookEndpointLoadMatch
+---@field id string
+---@field expand? table
+
+---@class WebhookEndpointListMatch
+---@field ending_before? string
+---@field expand? table
+---@field limit? number
+---@field starting_after? string
+
+---@class WebhookEndpointCreateData
+---@field id string
+---@field api_version? string
+---@field application? string
+---@field created number
+---@field description? string
+---@field enabled_events table
+---@field livemode boolean
+---@field metadata table
+---@field object string
+---@field secret? string
+---@field status string
+---@field url string
 
 local M = {}
 

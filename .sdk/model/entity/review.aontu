@@ -1,0 +1,318 @@
+# Entity: review
+
+main: kit: entity: review: {
+
+  alias: field: {}
+
+  fields: {
+    billing_zip: {
+      h: "Billing Zip"
+      n: "billing_zip"
+      r: false
+      sh: "The ZIP or postal code of the card used, if applicable."
+      t: "`$STRING`"
+    }
+    charge: {
+      h: "Charge"
+      n: "charge"
+      r: false
+      sh: "The charge associated with this review."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    closed_reason: {
+      h: "Closed Reason"
+      n: "closed_reason"
+      r: false
+      sh: "The reason the review was closed, or null if it has not yet been closed."
+      t: "`$STRING`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    ip_address: {
+      h: "Ip Address"
+      n: "ip_address"
+      r: false
+      sh: "The IP address where the payment originated."
+      t: "`$STRING`"
+    }
+    ip_address_location: {
+      h: "Ip Address Location"
+      n: "ip_address_location"
+      r: false
+      sh: "Information related to the location of the payment."
+      t: "`$ANY`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    open: {
+      h: "Open"
+      n: "open"
+      r: true
+      sh: "If `true`, the review needs action."
+      t: "`$BOOLEAN`"
+    }
+    opened_reason: {
+      h: "Opened Reason"
+      n: "opened_reason"
+      r: true
+      sh: "The reason the review was opened."
+      t: "`$STRING`"
+    }
+    payment_intent: {
+      h: "Payment Intent"
+      n: "payment_intent"
+      r: false
+      sh: "The PaymentIntent ID associated with this review, if one exists."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    reason: {
+      h: "Reason"
+      n: "reason"
+      r: true
+      sh: "The reason the review is currently open or closed."
+      t: "`$STRING`"
+    }
+    session: {
+      h: "Session"
+      n: "session"
+      r: false
+      sh: "Information related to the browsing session of the user who initiated the payment."
+      t: "`$ANY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "review"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/reviews/{review}/approve"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "review"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/reviews/{review}/approve"
+          q: {
+            "$action": "approve"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              review: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "reviews"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "approve"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/reviews"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/reviews"
+          q: {
+            exist: [
+              "created"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "reviews"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/reviews/{review}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "review"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/reviews/{review}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              review: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "reviews"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,260 @@
+# Entity: linked_account
+
+main: kit: entity: linked_account: {
+
+  alias: field: {}
+
+  fields: {
+    account_holder: {
+      h: "Account Holder"
+      n: "account_holder"
+      r: false
+      sh: "The account holder that this account belongs to."
+      t: "`$ANY`"
+      union: {
+        branches: 17
+        count: 107346
+        depth: 64
+      }
+    }
+    account_numbers: {
+      h: "Account Numbers"
+      n: "account_numbers"
+      r: false
+      sh: "Details about the account numbers."
+      t: "`$ARRAY`"
+    }
+    balance: {
+      h: "Balance"
+      n: "balance"
+      r: false
+      sh: "The most recent information about the account's balance."
+      t: "`$ANY`"
+    }
+    balance_refresh: {
+      h: "Balance Refresh"
+      n: "balance_refresh"
+      r: false
+      sh: "The state of the most recent attempt to refresh the account balance."
+      t: "`$ANY`"
+    }
+    category: {
+      h: "Category"
+      n: "category"
+      r: true
+      sh: "The type of the account."
+      t: "`$STRING`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    display_name: {
+      h: "Display Name"
+      n: "display_name"
+      r: false
+      sh: "A human-readable name that has been assigned to this account, either by the account holder or by the institution."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    institution_name: {
+      h: "Institution Name"
+      n: "institution_name"
+      r: true
+      sh: "The name of the institution that holds this account."
+      t: "`$STRING`"
+    }
+    last4: {
+      h: "Last4"
+      n: "last4"
+      r: false
+      sh: "The last 4 digits of the account number."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    ownership: {
+      h: "Ownership"
+      n: "ownership"
+      r: false
+      sh: "The most recent information about the account's owners."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    ownership_refresh: {
+      h: "Ownership Refresh"
+      n: "ownership_refresh"
+      r: false
+      sh: "The state of the most recent attempt to refresh the account owners."
+      t: "`$ANY`"
+    }
+    permissions: {
+      h: "Permissions"
+      n: "permissions"
+      r: false
+      sh: "The list of permissions granted by this account."
+      t: "`$ARRAY`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "The status of the link to the account."
+      t: "`$STRING`"
+    }
+    status_details: {
+      h: "Status Details"
+      n: "status_details"
+      r: false
+      t: "`$OBJECT`"
+    }
+    subcategory: {
+      h: "Subcategory"
+      n: "subcategory"
+      r: true
+      sh: "If `category` is `cash`, one of: - `checking` - `savings` - `other` If `category` is `credit`, one of: - `mortgage` - `line_of_credit` - `credit_card` - `other` If `category` is `investment` or `other`, this will be `other`."
+      t: "`$STRING`"
+    }
+    subscriptions: {
+      h: "Subscriptions"
+      n: "subscriptions"
+      r: false
+      sh: "The list of data refresh subscriptions requested on this account."
+      t: "`$ARRAY`"
+    }
+    supported_payment_method_types: {
+      h: "Supported Payment Method Types"
+      n: "supported_payment_method_types"
+      r: true
+      sh: "The [PaymentMethod type](https://docs.stripe.com/api/payment_methods/object#payment_method_object-type)(s) that can be created from this account."
+      t: "`$ARRAY`"
+    }
+    transaction_refresh: {
+      h: "Transaction Refresh"
+      n: "transaction_refresh"
+      r: false
+      sh: "The state of the most recent attempt to refresh the account transactions."
+      t: "`$ANY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "linked_account"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/linked_accounts"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "account_holder"
+                or: "account_holder"
+                r: false
+                t: "`$OBJECT`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "session"
+                or: "session"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/linked_accounts"
+          q: {
+            exist: [
+              "account_holder"
+              "ending_before"
+              "expand"
+              "limit"
+              "session"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "linked_accounts"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

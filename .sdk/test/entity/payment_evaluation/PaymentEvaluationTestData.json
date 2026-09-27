@@ -1,0 +1,72 @@
+{
+  "existing": {
+    "payment_evaluation": {
+      "PAYMENT_EVALUATION00": {
+        "client_device_metadata_details": {},
+        "created_at": 121,
+        "customer_details": {},
+        "events": [],
+        "id": "PAYMENT_EVALUATION00",
+        "livemode": false,
+        "metadata": {},
+        "object": "s7f",
+        "outcome": "s80",
+        "payment_details": {},
+        "recommended_action": "s82",
+        "signals": {}
+      },
+      "PAYMENT_EVALUATION01": {
+        "client_device_metadata_details": {},
+        "created_at": 241,
+        "customer_details": {},
+        "events": [],
+        "id": "PAYMENT_EVALUATION01",
+        "livemode": false,
+        "metadata": {},
+        "object": "sf7",
+        "outcome": "sf8",
+        "payment_details": {},
+        "recommended_action": "sfa",
+        "signals": {}
+      },
+      "PAYMENT_EVALUATION02": {
+        "client_device_metadata_details": {},
+        "created_at": 361,
+        "customer_details": {},
+        "events": [],
+        "id": "PAYMENT_EVALUATION02",
+        "livemode": false,
+        "metadata": {},
+        "object": "s16f",
+        "outcome": "s170",
+        "payment_details": {},
+        "recommended_action": "s172",
+        "signals": {}
+      }
+    }
+  },
+  "new": {
+    "payment_evaluation": {
+      "payment_evaluation_ref01": {
+        "client_device_metadata_details": {},
+        "created_at": 481,
+        "customer_details": {},
+        "events": [],
+        "livemode": false,
+        "metadata": {},
+        "object": "s1e7",
+        "outcome": "s1e8",
+        "payment_details": {},
+        "recommended_action": "s1ea",
+        "signals": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/radar/payment_evaluations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "existing": {
+    "source_mandate_notification": {
+      "SOURCE_MANDATE_NOTIFICATION00": {
+        "acss_debit": {},
+        "amount": 121,
+        "bacs_debit": {},
+        "created": 123,
+        "id": "SOURCE_MANDATE_NOTIFICATION00",
+        "livemode": false,
+        "object": "s7e",
+        "reason": "s7f",
+        "sepa_debit": {},
+        "source": {},
+        "status": "s82",
+        "type": "s83",
+        "source_id": "SOURCE01"
+      },
+      "SOURCE_MANDATE_NOTIFICATION01": {
+        "acss_debit": {},
+        "amount": 241,
+        "bacs_debit": {},
+        "created": 243,
+        "id": "SOURCE_MANDATE_NOTIFICATION01",
+        "livemode": false,
+        "object": "sf6",
+        "reason": "sf7",
+        "sepa_debit": {},
+        "source": {},
+        "status": "sfa",
+        "type": "sfb",
+        "source_id": "SOURCE01"
+      },
+      "SOURCE_MANDATE_NOTIFICATION02": {
+        "acss_debit": {},
+        "amount": 361,
+        "bacs_debit": {},
+        "created": 363,
+        "id": "SOURCE_MANDATE_NOTIFICATION02",
+        "livemode": false,
+        "object": "s16e",
+        "reason": "s16f",
+        "sepa_debit": {},
+        "source": {},
+        "status": "s172",
+        "type": "s173",
+        "source_id": "SOURCE01"
+      }
+    }
+  },
+  "new": {
+    "source_mandate_notification": {
+      "source_mandate_notification_ref01": {
+        "acss_debit": {},
+        "amount": 481,
+        "bacs_debit": {},
+        "created": 483,
+        "livemode": false,
+        "object": "s1e6",
+        "reason": "s1e7",
+        "sepa_debit": {},
+        "source": {},
+        "status": "s1ea",
+        "type": "s1eb"
+      }
+    }
+  },
+  "requests": {
+    "GET /v1/sources/{source}/mandate_notifications/{mandate_notification}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

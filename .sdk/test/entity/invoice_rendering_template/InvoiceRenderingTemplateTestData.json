@@ -1,0 +1,74 @@
+{
+  "existing": {
+    "invoice_rendering_template": {
+      "INVOICE_RENDERING_TEMPLATE00": {
+        "created": 80,
+        "id": "INVOICE_RENDERING_TEMPLATE00",
+        "livemode": true,
+        "metadata": {},
+        "nickname": "s54",
+        "object": "s55",
+        "status": "s56",
+        "version": 87,
+        "template": "TEMPLATE01"
+      },
+      "INVOICE_RENDERING_TEMPLATE01": {
+        "created": 160,
+        "id": "INVOICE_RENDERING_TEMPLATE01",
+        "livemode": true,
+        "metadata": {},
+        "nickname": "sa4",
+        "object": "sa5",
+        "status": "sa6",
+        "version": 167,
+        "template": "TEMPLATE01"
+      },
+      "INVOICE_RENDERING_TEMPLATE02": {
+        "created": 240,
+        "id": "INVOICE_RENDERING_TEMPLATE02",
+        "livemode": true,
+        "metadata": {},
+        "nickname": "sf4",
+        "object": "sf5",
+        "status": "sf6",
+        "version": 247,
+        "template": "TEMPLATE01"
+      }
+    }
+  },
+  "new": {
+    "invoice_rendering_template": {
+      "invoice_rendering_template_ref01": {
+        "created": 320,
+        "livemode": true,
+        "metadata": {},
+        "nickname": "s144",
+        "object": "s145",
+        "status": "s146",
+        "version": 327
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/invoice_rendering_templates/{template}/archive": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/invoice_rendering_templates/{template}/unarchive": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/invoice_rendering_templates": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/invoice_rendering_templates/{template}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

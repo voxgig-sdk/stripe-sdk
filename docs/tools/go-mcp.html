@@ -1,12 +1,159 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Go MCP server | Stripe Checkout Sessions API</title><link rel="stylesheet" href="../assets/style.css"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Go MCP server | Stripe API</title><link rel="stylesheet" href="../assets/style.css"></head>
 <body><a class="skip" href="#content">Skip to content</a>
-<header class="site-header"><a class="site-title" href="../index.html">Stripe Checkout Sessions API<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/stripe-sdk">voxgig-sdk/stripe-sdk</a></div></header>
+<header class="site-header"><a class="site-title" href="../index.html">Stripe API<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/stripe-sdk">voxgig-sdk/stripe-sdk</a></div></header>
 <div class="site-notice" role="note"></div>
-<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Stripe Checkout Sessions API</a></details>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Stripe API</a></details>
 <details><summary>API</summary><a href="../api/index.html">API overview</a>
-<a href="../api/session.html">Session</a></details>
+<a href="../api/account.html">Account</a>
+<a href="../api/account_link.html">AccountLink</a>
+<a href="../api/account_owner.html">AccountOwner</a>
+<a href="../api/account_session.html">AccountSession</a>
+<a href="../api/active_entitlement.html">ActiveEntitlement</a>
+<a href="../api/alert.html">Alert</a>
+<a href="../api/apple_pay_domain.html">ApplePayDomain</a>
+<a href="../api/application_fee.html">ApplicationFee</a>
+<a href="../api/association.html">Association</a>
+<a href="../api/authentication.html">Authentication</a>
+<a href="../api/authorization.html">Authorization</a>
+<a href="../api/balance.html">Balance</a>
+<a href="../api/balance_setting.html">BalanceSetting</a>
+<a href="../api/balance_transaction.html">BalanceTransaction</a>
+<a href="../api/bank_account.html">BankAccount</a>
+<a href="../api/calculation.html">Calculation</a>
+<a href="../api/capability.html">Capability</a>
+<a href="../api/card.html">Card</a>
+<a href="../api/cardholder.html">Cardholder</a>
+<a href="../api/cash_balance.html">CashBalance</a>
+<a href="../api/cash_balance_transaction.html">CashBalanceTransaction</a>
+<a href="../api/charge.html">Charge</a>
+<a href="../api/configuration.html">Configuration</a>
+<a href="../api/confirmation_token.html">ConfirmationToken</a>
+<a href="../api/connection_token.html">ConnectionToken</a>
+<a href="../api/country_spec.html">CountrySpec</a>
+<a href="../api/coupon.html">Coupon</a>
+<a href="../api/credit_balance_summary.html">CreditBalanceSummary</a>
+<a href="../api/credit_balance_transaction.html">CreditBalanceTransaction</a>
+<a href="../api/credit_grant.html">CreditGrant</a>
+<a href="../api/credit_note.html">CreditNote</a>
+<a href="../api/credit_note_line.html">CreditNoteLine</a>
+<a href="../api/credit_reversal.html">CreditReversal</a>
+<a href="../api/customer.html">Customer</a>
+<a href="../api/customer_balance_transaction.html">CustomerBalanceTransaction</a>
+<a href="../api/customer_session.html">CustomerSession</a>
+<a href="../api/debit_reversal.html">DebitReversal</a>
+<a href="../api/deleted_account.html">DeletedAccount</a>
+<a href="../api/deleted_apple_pay_domain.html">DeletedApplePayDomain</a>
+<a href="../api/deleted_coupon.html">DeletedCoupon</a>
+<a href="../api/deleted_external_account.html">DeletedExternalAccount</a>
+<a href="../api/deleted_invoiceitem.html">DeletedInvoiceitem</a>
+<a href="../api/deleted_person.html">DeletedPerson</a>
+<a href="../api/deleted_plan.html">DeletedPlan</a>
+<a href="../api/deleted_product_feature.html">DeletedProductFeature</a>
+<a href="../api/deleted_subscription_item.html">DeletedSubscriptionItem</a>
+<a href="../api/deleted_webhook_endpoint.html">DeletedWebhookEndpoint</a>
+<a href="../api/discount.html">Discount</a>
+<a href="../api/dispute.html">Dispute</a>
+<a href="../api/domain.html">Domain</a>
+<a href="../api/early_fraud_warning.html">EarlyFraudWarning</a>
+<a href="../api/ephemeral_key.html">EphemeralKey</a>
+<a href="../api/event.html">Event</a>
+<a href="../api/exchange_rate.html">ExchangeRate</a>
+<a href="../api/external_account.html">ExternalAccount</a>
+<a href="../api/feature.html">Feature</a>
+<a href="../api/feedback_option.html">FeedbackOption</a>
+<a href="../api/file.html">File</a>
+<a href="../api/file_link.html">FileLink</a>
+<a href="../api/financial_account.html">FinancialAccount</a>
+<a href="../api/financial_account_feature.html">FinancialAccountFeature</a>
+<a href="../api/fund_cash_balance.html">FundCashBalance</a>
+<a href="../api/funding_instruction.html">FundingInstruction</a>
+<a href="../api/history.html">History</a>
+<a href="../api/inbound_transfer.html">InboundTransfer</a>
+<a href="../api/install.html">Install</a>
+<a href="../api/invoice.html">Invoice</a>
+<a href="../api/invoice_payment.html">InvoicePayment</a>
+<a href="../api/invoice_rendering_template.html">InvoiceRenderingTemplate</a>
+<a href="../api/invoiceitem.html">Invoiceitem</a>
+<a href="../api/line.html">Line</a>
+<a href="../api/line_item.html">LineItem</a>
+<a href="../api/linked_account.html">LinkedAccount</a>
+<a href="../api/linked_account_owner.html">LinkedAccountOwner</a>
+<a href="../api/location.html">Location</a>
+<a href="../api/login_link.html">LoginLink</a>
+<a href="../api/mandate.html">Mandate</a>
+<a href="../api/meter.html">Meter</a>
+<a href="../api/meter_event.html">MeterEvent</a>
+<a href="../api/meter_event_adjustment.html">MeterEventAdjustment</a>
+<a href="../api/meter_event_summary.html">MeterEventSummary</a>
+<a href="../api/onboarding_link.html">OnboardingLink</a>
+<a href="../api/order.html">Order</a>
+<a href="../api/outbound_payment.html">OutboundPayment</a>
+<a href="../api/outbound_transfer.html">OutboundTransfer</a>
+<a href="../api/payment_attempt_record.html">PaymentAttemptRecord</a>
+<a href="../api/payment_evaluation.html">PaymentEvaluation</a>
+<a href="../api/payment_intent.html">PaymentIntent</a>
+<a href="../api/payment_intent_amount_details_line_item.html">PaymentIntentAmountDetailsLineItem</a>
+<a href="../api/payment_link.html">PaymentLink</a>
+<a href="../api/payment_method.html">PaymentMethod</a>
+<a href="../api/payment_method_configuration.html">PaymentMethodConfiguration</a>
+<a href="../api/payment_method_domain.html">PaymentMethodDomain</a>
+<a href="../api/payment_record.html">PaymentRecord</a>
+<a href="../api/payout.html">Payout</a>
+<a href="../api/person.html">Person</a>
+<a href="../api/personalization_design.html">PersonalizationDesign</a>
+<a href="../api/physical_bundle.html">PhysicalBundle</a>
+<a href="../api/plan.html">Plan</a>
+<a href="../api/price.html">Price</a>
+<a href="../api/product.html">Product</a>
+<a href="../api/product_feature.html">ProductFeature</a>
+<a href="../api/promotion_code.html">PromotionCode</a>
+<a href="../api/quote.html">Quote</a>
+<a href="../api/quote_computed_upfront_line_item.html">QuoteComputedUpfrontLineItem</a>
+<a href="../api/quote_pdf.html">QuotePdf</a>
+<a href="../api/reader.html">Reader</a>
+<a href="../api/received_credit.html">ReceivedCredit</a>
+<a href="../api/received_debit.html">ReceivedDebit</a>
+<a href="../api/refund.html">Refund</a>
+<a href="../api/registration.html">Registration</a>
+<a href="../api/report_run.html">ReportRun</a>
+<a href="../api/report_type.html">ReportType</a>
+<a href="../api/request.html">Request</a>
+<a href="../api/reversal.html">Reversal</a>
+<a href="../api/review.html">Review</a>
+<a href="../api/scheduled_query_run.html">ScheduledQueryRun</a>
+<a href="../api/search.html">Search</a>
+<a href="../api/secret.html">Secret</a>
+<a href="../api/session.html">Session</a>
+<a href="../api/setting.html">Setting</a>
+<a href="../api/settlement.html">Settlement</a>
+<a href="../api/setup_attempt.html">SetupAttempt</a>
+<a href="../api/setup_intent.html">SetupIntent</a>
+<a href="../api/shipping_rate.html">ShippingRate</a>
+<a href="../api/sigma_api_query.html">SigmaApiQuery</a>
+<a href="../api/source.html">Source</a>
+<a href="../api/source_mandate_notification.html">SourceMandateNotification</a>
+<a href="../api/source_transaction.html">SourceTransaction</a>
+<a href="../api/subscription.html">Subscription</a>
+<a href="../api/subscription_item.html">SubscriptionItem</a>
+<a href="../api/subscription_schedule.html">SubscriptionSchedule</a>
+<a href="../api/supplier.html">Supplier</a>
+<a href="../api/tax_code.html">TaxCode</a>
+<a href="../api/tax_id.html">TaxId</a>
+<a href="../api/tax_rate.html">TaxRate</a>
+<a href="../api/test_clock.html">TestClock</a>
+<a href="../api/token.html">Token</a>
+<a href="../api/topup.html">Topup</a>
+<a href="../api/transaction.html">Transaction</a>
+<a href="../api/transaction_entry.html">TransactionEntry</a>
+<a href="../api/transfer.html">Transfer</a>
+<a href="../api/trial_offer.html">TrialOffer</a>
+<a href="../api/value_list.html">ValueList</a>
+<a href="../api/value_list_item.html">ValueListItem</a>
+<a href="../api/verification_report.html">VerificationReport</a>
+<a href="../api/verification_session.html">VerificationSession</a>
+<a href="../api/webhook_endpoint.html">WebhookEndpoint</a></details>
 <details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
 <a href="../guides/first-call.html">Make your first API call</a>
 <a href="../guides/errors.html">Handle errors</a>
@@ -19,14 +166,14 @@
 <a href="../sdks/ts.html">TypeScript</a></details>
 <details open><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
 <a aria-current="page" href="../tools/go-mcp.html">Go MCP server</a></details>
-<details><summary>Features</summary><a href="../features/debug.html">Request/response capture ring buffer for debugging</a>
-<a href="../features/idempotency.html">Idempotency keys for safe retries of mutating operations</a>
-<a href="../features/metrics.html">Statistics capture: per-operation counters and latency</a>
-<a href="../features/paging.html">Pagination signals for list operations</a>
-<a href="../features/ratelimit.html">Client-side rate limiting via a token bucket</a>
-<a href="../features/retry.html">Automatic retry of transient failures with exponential backoff</a>
-<a href="../features/test.html">In-memory mock transport for testing without a live server</a>
-<a href="../features/timeout.html">Per-request timeout with transport abort</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>Tools</div><h1 id="go-mcp-server">Go MCP server</h1>
+<details><summary>Features</summary><a href="../features/debug.html">Debug capture</a>
+<a href="../features/idempotency.html">Idempotency</a>
+<a href="../features/metrics.html">Metrics</a>
+<a href="../features/paging.html">Paging</a>
+<a href="../features/ratelimit.html">Rate limiting</a>
+<a href="../features/retry.html">Retry</a>
+<a href="../features/test.html">Test transport</a>
+<a href="../features/timeout.html">Timeout</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>Tools</div><h1 id="go-mcp-server">Go MCP server</h1>
 <p>Go MCP server</p>
 <h2 id="install">Install</h2>
 <p>Not published. Build from the go-mcp directory.</p>
@@ -43,7 +190,595 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../api/account.html">Account</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/account_link.html">AccountLink</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/account_owner.html">AccountOwner</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/account_session.html">AccountSession</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/active_entitlement.html">ActiveEntitlement</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/alert.html">Alert</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/apple_pay_domain.html">ApplePayDomain</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/application_fee.html">ApplicationFee</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/association.html">Association</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/authentication.html">Authentication</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/authorization.html">Authorization</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/balance.html">Balance</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/balance_setting.html">BalanceSetting</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/balance_transaction.html">BalanceTransaction</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/bank_account.html">BankAccount</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/calculation.html">Calculation</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/capability.html">Capability</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/card.html">Card</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/cardholder.html">Cardholder</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/cash_balance.html">CashBalance</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/cash_balance_transaction.html">CashBalanceTransaction</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/charge.html">Charge</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/configuration.html">Configuration</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/confirmation_token.html">ConfirmationToken</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/connection_token.html">ConnectionToken</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/country_spec.html">CountrySpec</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/coupon.html">Coupon</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/credit_balance_summary.html">CreditBalanceSummary</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/credit_balance_transaction.html">CreditBalanceTransaction</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/credit_grant.html">CreditGrant</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/credit_note.html">CreditNote</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/credit_note_line.html">CreditNoteLine</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/credit_reversal.html">CreditReversal</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/customer.html">Customer</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/customer_balance_transaction.html">CustomerBalanceTransaction</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/customer_session.html">CustomerSession</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/debit_reversal.html">DebitReversal</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/deleted_account.html">DeletedAccount</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/deleted_apple_pay_domain.html">DeletedApplePayDomain</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/deleted_coupon.html">DeletedCoupon</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/deleted_external_account.html">DeletedExternalAccount</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/deleted_invoiceitem.html">DeletedInvoiceitem</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/deleted_person.html">DeletedPerson</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/deleted_plan.html">DeletedPlan</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/deleted_product_feature.html">DeletedProductFeature</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/deleted_subscription_item.html">DeletedSubscriptionItem</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/deleted_webhook_endpoint.html">DeletedWebhookEndpoint</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/discount.html">Discount</a></td>
+<td><code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/dispute.html">Dispute</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/domain.html">Domain</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/early_fraud_warning.html">EarlyFraudWarning</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/ephemeral_key.html">EphemeralKey</a></td>
+<td><code>create</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/event.html">Event</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/exchange_rate.html">ExchangeRate</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/external_account.html">ExternalAccount</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/feature.html">Feature</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/feedback_option.html">FeedbackOption</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/file.html">File</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/file_link.html">FileLink</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/financial_account.html">FinancialAccount</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/financial_account_feature.html">FinancialAccountFeature</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/fund_cash_balance.html">FundCashBalance</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/funding_instruction.html">FundingInstruction</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/history.html">History</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/inbound_transfer.html">InboundTransfer</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/install.html">Install</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/invoice.html">Invoice</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/invoice_payment.html">InvoicePayment</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/invoice_rendering_template.html">InvoiceRenderingTemplate</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/invoiceitem.html">Invoiceitem</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/line.html">Line</a></td>
+<td><code>create</code>, <code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/line_item.html">LineItem</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/linked_account.html">LinkedAccount</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/linked_account_owner.html">LinkedAccountOwner</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/location.html">Location</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/login_link.html">LoginLink</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/mandate.html">Mandate</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/meter.html">Meter</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/meter_event.html">MeterEvent</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/meter_event_adjustment.html">MeterEventAdjustment</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/meter_event_summary.html">MeterEventSummary</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/onboarding_link.html">OnboardingLink</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/order.html">Order</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/outbound_payment.html">OutboundPayment</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/outbound_transfer.html">OutboundTransfer</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/payment_attempt_record.html">PaymentAttemptRecord</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/payment_evaluation.html">PaymentEvaluation</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/payment_intent.html">PaymentIntent</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/payment_intent_amount_details_line_item.html">PaymentIntentAmountDetailsLineItem</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/payment_link.html">PaymentLink</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/payment_method.html">PaymentMethod</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/payment_method_configuration.html">PaymentMethodConfiguration</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/payment_method_domain.html">PaymentMethodDomain</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/payment_record.html">PaymentRecord</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/payout.html">Payout</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/person.html">Person</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/personalization_design.html">PersonalizationDesign</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/physical_bundle.html">PhysicalBundle</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/plan.html">Plan</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/price.html">Price</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/product.html">Product</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/product_feature.html">ProductFeature</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/promotion_code.html">PromotionCode</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/quote.html">Quote</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/quote_computed_upfront_line_item.html">QuoteComputedUpfrontLineItem</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/quote_pdf.html">QuotePdf</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/reader.html">Reader</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/received_credit.html">ReceivedCredit</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/received_debit.html">ReceivedDebit</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/refund.html">Refund</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/registration.html">Registration</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/report_run.html">ReportRun</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/report_type.html">ReportType</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/request.html">Request</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/reversal.html">Reversal</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/review.html">Review</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/scheduled_query_run.html">ScheduledQueryRun</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/search.html">Search</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/secret.html">Secret</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
 <td><a href="../api/session.html">Session</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/setting.html">Setting</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/settlement.html">Settlement</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/setup_attempt.html">SetupAttempt</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/setup_intent.html">SetupIntent</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/shipping_rate.html">ShippingRate</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/sigma_api_query.html">SigmaApiQuery</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/source.html">Source</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/source_mandate_notification.html">SourceMandateNotification</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/source_transaction.html">SourceTransaction</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/subscription.html">Subscription</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/subscription_item.html">SubscriptionItem</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/subscription_schedule.html">SubscriptionSchedule</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/supplier.html">Supplier</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/tax_code.html">TaxCode</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/tax_id.html">TaxId</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/tax_rate.html">TaxRate</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/test_clock.html">TestClock</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/token.html">Token</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/topup.html">Topup</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/transaction.html">Transaction</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/transaction_entry.html">TransactionEntry</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/transfer.html">Transfer</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/trial_offer.html">TrialOffer</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/value_list.html">ValueList</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/value_list_item.html">ValueListItem</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/verification_report.html">VerificationReport</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/verification_session.html">VerificationSession</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/webhook_endpoint.html">WebhookEndpoint</a></td>
 <td><code>create</code>, <code>list</code>, <code>load</code></td>
 </tr>
 </tbody>
@@ -52,14 +787,14 @@
 <p>Set the server URL and credentials for your environment. Enable only the features your application needs.</p>
 <h2 id="features">Features</h2>
 <ul>
-<li><a href="../features/debug.html">Request/response capture ring buffer for debugging</a></li>
-<li><a href="../features/idempotency.html">Idempotency keys for safe retries of mutating operations</a></li>
-<li><a href="../features/metrics.html">Statistics capture: per-operation counters and latency</a></li>
-<li><a href="../features/paging.html">Pagination signals for list operations</a></li>
-<li><a href="../features/ratelimit.html">Client-side rate limiting via a token bucket</a></li>
-<li><a href="../features/retry.html">Automatic retry of transient failures with exponential backoff</a></li>
-<li><a href="../features/test.html">In-memory mock transport for testing without a live server</a></li>
-<li><a href="../features/timeout.html">Per-request timeout with transport abort</a></li>
+<li><a href="../features/debug.html">Debug capture</a></li>
+<li><a href="../features/idempotency.html">Idempotency</a></li>
+<li><a href="../features/metrics.html">Metrics</a></li>
+<li><a href="../features/paging.html">Paging</a></li>
+<li><a href="../features/ratelimit.html">Rate limiting</a></li>
+<li><a href="../features/retry.html">Retry</a></li>
+<li><a href="../features/test.html">Test transport</a></li>
+<li><a href="../features/timeout.html">Timeout</a></li>
 </ul>
 <h2 id="tools">Tools</h2>
 <h3 id="stripe_list"><code>stripe_list</code></h3>
@@ -72,7 +807,7 @@
   &quot;properties&quot;: {
     &quot;entity&quot;: {
       &quot;type&quot;: &quot;string&quot;,
-      &quot;description&quot;: &quot;session&quot;
+      &quot;description&quot;: &quot;account | account_link | account_owner | account_session | active_entitlement | alert | apple_pay_domain | application_fee | association | authentication | authorization | balance | balance_setting | balance_transaction | bank_account | calculation | capability | card | cardholder | cash_balance | cash_balance_transaction | charge | configuration | confirmation_token | connection_token | country_spec | coupon | credit_balance_summary | credit_balance_transaction | credit_grant | credit_note | credit_note_line | credit_reversal | customer | customer_balance_transaction | customer_session | debit_reversal | deleted_account | deleted_apple_pay_domain | deleted_coupon | deleted_external_account | deleted_invoiceitem | deleted_person | deleted_plan | deleted_product_feature | deleted_subscription_item | deleted_webhook_endpoint | discount | dispute | domain | early_fraud_warning | ephemeral_key | event | exchange_rate | external_account | feature | feedback_option | file | file_link | financial_account | financial_account_feature | fund_cash_balance | funding_instruction | history | inbound_transfer | install | invoice | invoice_payment | invoice_rendering_template | invoiceitem | line | line_item | linked_account | linked_account_owner | location | login_link | mandate | meter | meter_event | meter_event_adjustment | meter_event_summary | onboarding_link | order | outbound_payment | outbound_transfer | payment_attempt_record | payment_evaluation | payment_intent | payment_intent_amount_details_line_item | payment_link | payment_method | payment_method_configuration | payment_method_domain | payment_record | payout | person | personalization_design | physical_bundle | plan | price | product | product_feature | promotion_code | quote | quote_computed_upfront_line_item | quote_pdf | reader | received_credit | received_debit | refund | registration | report_run | report_type | request | reversal | review | scheduled_query_run | search | secret | session | setting | settlement | setup_attempt | setup_intent | shipping_rate | sigma_api_query | source | source_mandate_notification | source_transaction | subscription | subscription_item | subscription_schedule | supplier | tax_code | tax_id | tax_rate | test_clock | token | topup | transaction | transaction_entry | transfer | trial_offer | value_list | value_list_item | verification_report | verification_session | webhook_endpoint&quot;
     },
     &quot;query&quot;: {
       &quot;type&quot;: &quot;object&quot;,
@@ -81,7 +816,7 @@
   }
 }
 </code></pre>
-<p>Supported entities: <code>session</code>.</p>
+<p>Supported entities: <code>account</code>, <code>account_owner</code>, <code>active_entitlement</code>, <code>alert</code>, <code>application_fee</code>, <code>association</code>, <code>authentication</code>, <code>authorization</code>, <code>balance</code>, <code>balance_transaction</code>, <code>bank_account</code>, <code>capability</code>, <code>card</code>, <code>cardholder</code>, <code>cash_balance_transaction</code>, <code>charge</code>, <code>configuration</code>, <code>country_spec</code>, <code>coupon</code>, <code>credit_balance_summary</code>, <code>credit_balance_transaction</code>, <code>credit_grant</code>, <code>credit_note</code>, <code>credit_note_line</code>, <code>credit_reversal</code>, <code>customer</code>, <code>debit_reversal</code>, <code>dispute</code>, <code>domain</code>, <code>early_fraud_warning</code>, <code>event</code>, <code>exchange_rate</code>, <code>external_account</code>, <code>feature</code>, <code>feedback_option</code>, <code>file</code>, <code>file_link</code>, <code>financial_account</code>, <code>history</code>, <code>inbound_transfer</code>, <code>install</code>, <code>invoice</code>, <code>invoice_payment</code>, <code>invoice_rendering_template</code>, <code>invoiceitem</code>, <code>line</code>, <code>line_item</code>, <code>linked_account</code>, <code>linked_account_owner</code>, <code>location</code>, <code>meter</code>, <code>meter_event_summary</code>, <code>order</code>, <code>outbound_payment</code>, <code>outbound_transfer</code>, <code>payment_attempt_record</code>, <code>payment_intent</code>, <code>payment_intent_amount_details_line_item</code>, <code>payment_link</code>, <code>payment_method</code>, <code>payment_method_configuration</code>, <code>payment_method_domain</code>, <code>payment_record</code>, <code>payout</code>, <code>person</code>, <code>personalization_design</code>, <code>physical_bundle</code>, <code>plan</code>, <code>price</code>, <code>product</code>, <code>promotion_code</code>, <code>quote</code>, <code>quote_computed_upfront_line_item</code>, <code>reader</code>, <code>received_credit</code>, <code>received_debit</code>, <code>refund</code>, <code>registration</code>, <code>report_run</code>, <code>report_type</code>, <code>request</code>, <code>reversal</code>, <code>review</code>, <code>scheduled_query_run</code>, <code>search</code>, <code>secret</code>, <code>session</code>, <code>setup_attempt</code>, <code>setup_intent</code>, <code>shipping_rate</code>, <code>source</code>, <code>source_transaction</code>, <code>subscription</code>, <code>subscription_item</code>, <code>subscription_schedule</code>, <code>supplier</code>, <code>tax_code</code>, <code>tax_id</code>, <code>tax_rate</code>, <code>test_clock</code>, <code>token</code>, <code>topup</code>, <code>transaction</code>, <code>transaction_entry</code>, <code>transfer</code>, <code>trial_offer</code>, <code>value_list</code>, <code>value_list_item</code>, <code>verification_report</code>, <code>verification_session</code>, <code>webhook_endpoint</code>.</p>
 <h3 id="stripe_load"><code>stripe_load</code></h3>
 <p>Load one record for an entity.</p>
 <pre><code class="language-json">{
@@ -92,7 +827,7 @@
   &quot;properties&quot;: {
     &quot;entity&quot;: {
       &quot;type&quot;: &quot;string&quot;,
-      &quot;description&quot;: &quot;session&quot;
+      &quot;description&quot;: &quot;account | account_link | account_owner | account_session | active_entitlement | alert | apple_pay_domain | application_fee | association | authentication | authorization | balance | balance_setting | balance_transaction | bank_account | calculation | capability | card | cardholder | cash_balance | cash_balance_transaction | charge | configuration | confirmation_token | connection_token | country_spec | coupon | credit_balance_summary | credit_balance_transaction | credit_grant | credit_note | credit_note_line | credit_reversal | customer | customer_balance_transaction | customer_session | debit_reversal | deleted_account | deleted_apple_pay_domain | deleted_coupon | deleted_external_account | deleted_invoiceitem | deleted_person | deleted_plan | deleted_product_feature | deleted_subscription_item | deleted_webhook_endpoint | discount | dispute | domain | early_fraud_warning | ephemeral_key | event | exchange_rate | external_account | feature | feedback_option | file | file_link | financial_account | financial_account_feature | fund_cash_balance | funding_instruction | history | inbound_transfer | install | invoice | invoice_payment | invoice_rendering_template | invoiceitem | line | line_item | linked_account | linked_account_owner | location | login_link | mandate | meter | meter_event | meter_event_adjustment | meter_event_summary | onboarding_link | order | outbound_payment | outbound_transfer | payment_attempt_record | payment_evaluation | payment_intent | payment_intent_amount_details_line_item | payment_link | payment_method | payment_method_configuration | payment_method_domain | payment_record | payout | person | personalization_design | physical_bundle | plan | price | product | product_feature | promotion_code | quote | quote_computed_upfront_line_item | quote_pdf | reader | received_credit | received_debit | refund | registration | report_run | report_type | request | reversal | review | scheduled_query_run | search | secret | session | setting | settlement | setup_attempt | setup_intent | shipping_rate | sigma_api_query | source | source_mandate_notification | source_transaction | subscription | subscription_item | subscription_schedule | supplier | tax_code | tax_id | tax_rate | test_clock | token | topup | transaction | transaction_entry | transfer | trial_offer | value_list | value_list_item | verification_report | verification_session | webhook_endpoint&quot;
     },
     &quot;query&quot;: {
       &quot;type&quot;: &quot;object&quot;,
@@ -101,6 +836,6 @@
   }
 }
 </code></pre>
-<p>Supported entities: <code>session</code>.</p>
+<p>Supported entities: <code>account</code>, <code>active_entitlement</code>, <code>alert</code>, <code>apple_pay_domain</code>, <code>application_fee</code>, <code>authentication</code>, <code>authorization</code>, <code>balance_setting</code>, <code>balance_transaction</code>, <code>bank_account</code>, <code>calculation</code>, <code>capability</code>, <code>card</code>, <code>cardholder</code>, <code>cash_balance</code>, <code>cash_balance_transaction</code>, <code>charge</code>, <code>configuration</code>, <code>confirmation_token</code>, <code>country_spec</code>, <code>coupon</code>, <code>credit_balance_transaction</code>, <code>credit_grant</code>, <code>credit_note</code>, <code>credit_reversal</code>, <code>customer</code>, <code>customer_balance_transaction</code>, <code>debit_reversal</code>, <code>discount</code>, <code>dispute</code>, <code>early_fraud_warning</code>, <code>event</code>, <code>exchange_rate</code>, <code>external_account</code>, <code>feature</code>, <code>feedback_option</code>, <code>file</code>, <code>file_link</code>, <code>financial_account</code>, <code>financial_account_feature</code>, <code>inbound_transfer</code>, <code>install</code>, <code>invoice</code>, <code>invoice_payment</code>, <code>invoice_rendering_template</code>, <code>invoiceitem</code>, <code>location</code>, <code>mandate</code>, <code>meter</code>, <code>order</code>, <code>outbound_payment</code>, <code>outbound_transfer</code>, <code>payment_attempt_record</code>, <code>payment_intent</code>, <code>payment_link</code>, <code>payment_method</code>, <code>payment_method_configuration</code>, <code>payment_method_domain</code>, <code>payment_record</code>, <code>payout</code>, <code>person</code>, <code>personalization_design</code>, <code>physical_bundle</code>, <code>plan</code>, <code>price</code>, <code>product</code>, <code>product_feature</code>, <code>promotion_code</code>, <code>quote</code>, <code>quote_pdf</code>, <code>reader</code>, <code>received_credit</code>, <code>received_debit</code>, <code>refund</code>, <code>registration</code>, <code>report_run</code>, <code>report_type</code>, <code>request</code>, <code>reversal</code>, <code>review</code>, <code>scheduled_query_run</code>, <code>secret</code>, <code>session</code>, <code>setting</code>, <code>settlement</code>, <code>setup_intent</code>, <code>shipping_rate</code>, <code>source</code>, <code>source_mandate_notification</code>, <code>source_transaction</code>, <code>subscription</code>, <code>subscription_item</code>, <code>subscription_schedule</code>, <code>supplier</code>, <code>tax_code</code>, <code>tax_id</code>, <code>tax_rate</code>, <code>test_clock</code>, <code>token</code>, <code>topup</code>, <code>transaction</code>, <code>transaction_entry</code>, <code>transfer</code>, <code>trial_offer</code>, <code>value_list</code>, <code>value_list_item</code>, <code>verification_report</code>, <code>verification_session</code>, <code>webhook_endpoint</code>.</p>
 </main></div>
 <script src="../assets/search.js" defer></script></body></html>

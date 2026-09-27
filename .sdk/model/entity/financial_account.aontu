@@ -1,0 +1,423 @@
+# Entity: financial_account
+
+main: kit: entity: financial_account: {
+
+  alias: field: {}
+
+  fields: {
+    active_features: {
+      h: "Active Features"
+      n: "active_features"
+      r: false
+      sh: "The array of paths to active Features in the Features hash."
+      t: "`$ARRAY`"
+    }
+    balance: {
+      h: "Balance"
+      n: "balance"
+      r: true
+      sh: "Balance information for the FinancialAccount"
+      t: "`$OBJECT`"
+    }
+    country: {
+      h: "Country"
+      n: "country"
+      r: true
+      sh: "Two-letter country code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2))."
+      t: "`$STRING`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    features: {
+      h: "Features"
+      n: "features"
+      r: true
+      sh: "Encodes whether a FinancialAccount has access to a particular Feature, with a `status` enum and associated `status_details`."
+      t: "`$OBJECT`"
+    }
+    financial_addresses: {
+      h: "Financial Addresses"
+      n: "financial_addresses"
+      r: true
+      sh: "The set of credentials that resolve to a FinancialAccount."
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    is_default: {
+      h: "Is Default"
+      n: "is_default"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    nickname: {
+      h: "Nickname"
+      n: "nickname"
+      r: false
+      sh: "The nickname for the FinancialAccount."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    pending_features: {
+      h: "Pending Features"
+      n: "pending_features"
+      r: false
+      sh: "The array of paths to pending Features in the Features hash."
+      t: "`$ARRAY`"
+    }
+    platform_restrictions: {
+      h: "Platform Restrictions"
+      n: "platform_restrictions"
+      r: false
+      sh: "The set of functionalities that the platform can restrict on the FinancialAccount."
+      t: "`$ANY`"
+    }
+    restricted_features: {
+      h: "Restricted Features"
+      n: "restricted_features"
+      r: false
+      sh: "The array of paths to restricted Features in the Features hash."
+      t: "`$ARRAY`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "Status of this FinancialAccount."
+      t: "`$STRING`"
+    }
+    status_details: {
+      h: "Status Details"
+      n: "status_details"
+      r: true
+      t: "`$OBJECT`"
+    }
+    supported_currencies: {
+      h: "Supported Currencies"
+      n: "supported_currencies"
+      r: true
+      sh: "The currencies the FinancialAccount can hold a balance in."
+      t: "`$ARRAY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "financial_account"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/treasury/financial_accounts/{financial_account}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "financial_account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/treasury/financial_accounts/{financial_account}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              financial_account: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "financial_accounts"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/treasury/financial_accounts/{financial_account}/close"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "financial_account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/treasury/financial_accounts/{financial_account}/close"
+          q: {
+            "$action": "close"
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              financial_account: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "financial_accounts"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "close"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/treasury/financial_accounts"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/treasury/financial_accounts"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "financial_accounts"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/treasury/financial_accounts"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "created"
+                or: "created"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/treasury/financial_accounts"
+          q: {
+            exist: [
+              "created"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+              "status"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "financial_accounts"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/treasury/financial_accounts/{financial_account}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "financial_account"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/treasury/financial_accounts/{financial_account}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              financial_account: "id"
+            }
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "treasury"
+            }
+            {
+              lit: "financial_accounts"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

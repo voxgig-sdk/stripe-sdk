@@ -1,7 +1,7 @@
 {
-  "name": "@voxgig-sdk/stripe",
+  "name": "@voxgig-sdk/stripe-sdk",
   "version": "0.0.1",
-  "description": "Unofficial generated TypeScript SDK for the Stripe Checkout Sessions public API. Not affiliated with or endorsed by the upstream API provider.",
+  "description": "Unofficial generated TypeScript SDK for the Stripe public API. Not affiliated with or endorsed by the upstream API provider.",
   "keywords": [
     "voxgig",
     "sdk",
@@ -23,7 +23,8 @@
   "types": "dist/StripeSDK.d.ts",
   "files": [
     "dist",
-    "src"
+    "src",
+    "README.md"
   ],
   "scripts": {
     "pretest": "npm run build",

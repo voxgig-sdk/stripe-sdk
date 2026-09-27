@@ -1,0 +1,52 @@
+# BasicSubscriptionScheduleFlow
+
+main: kit: flow: BasicSubscriptionScheduleFlow:
+{
+  entity: "subscription_schedule",
+  kind: "basic",
+  name: "BasicSubscriptionScheduleFlow",
+  step: [
+    {
+      i: {
+        ref: "subscription_schedule_ref01"
+      }
+
+      o: "create"
+    }
+
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "subscription_schedule_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "subscription_schedule_ref01",
+        srcdatavar: "subscription_schedule_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "subscription_schedule01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-subscription_schedule_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSubscriptionScheduleFlow"
+}

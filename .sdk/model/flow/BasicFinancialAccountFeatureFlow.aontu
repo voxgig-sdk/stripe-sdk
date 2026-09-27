@@ -1,0 +1,44 @@
+# BasicFinancialAccountFeatureFlow
+
+main: kit: flow: BasicFinancialAccountFeatureFlow:
+{
+  entity: "financial_account_feature",
+  kind: "basic",
+  name: "BasicFinancialAccountFeatureFlow",
+  step: [
+    {
+      i: {
+        ref: "financial_account_feature_ref01"
+      }
+
+      m: {
+        financial_account: "financial_account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "financial_account_feature_ref01",
+        srcdatavar: "financial_account_feature_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "financial_account_feature01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-financial_account_feature_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicFinancialAccountFeatureFlow"
+}

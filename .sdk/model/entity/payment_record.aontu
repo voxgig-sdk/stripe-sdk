@@ -1,0 +1,607 @@
+# Entity: payment_record
+
+main: kit: entity: payment_record: {
+
+  alias: field: {}
+
+  fields: {
+    amount: {
+      h: "Amount"
+      n: "amount"
+      r: true
+      sh: "A representation of an amount of money, consisting of an amount and a currency."
+      t: "`$OBJECT`"
+    }
+    amount_authorized: {
+      h: "Amount Authorized"
+      n: "amount_authorized"
+      r: true
+      sh: "A representation of an amount of money, consisting of an amount and a currency."
+      t: "`$OBJECT`"
+    }
+    amount_canceled: {
+      h: "Amount Canceled"
+      n: "amount_canceled"
+      r: true
+      sh: "A representation of an amount of money, consisting of an amount and a currency."
+      t: "`$OBJECT`"
+    }
+    amount_failed: {
+      h: "Amount Failed"
+      n: "amount_failed"
+      r: true
+      sh: "A representation of an amount of money, consisting of an amount and a currency."
+      t: "`$OBJECT`"
+    }
+    amount_guaranteed: {
+      h: "Amount Guaranteed"
+      n: "amount_guaranteed"
+      r: true
+      sh: "A representation of an amount of money, consisting of an amount and a currency."
+      t: "`$OBJECT`"
+    }
+    amount_refunded: {
+      h: "Amount Refunded"
+      n: "amount_refunded"
+      r: true
+      sh: "A representation of an amount of money, consisting of an amount and a currency."
+      t: "`$OBJECT`"
+    }
+    amount_requested: {
+      h: "Amount Requested"
+      n: "amount_requested"
+      r: true
+      sh: "A representation of an amount of money, consisting of an amount and a currency."
+      t: "`$OBJECT`"
+    }
+    application: {
+      h: "Application"
+      n: "application"
+      r: false
+      sh: "ID of the Connect application that created the PaymentRecord."
+      t: "`$STRING`"
+    }
+    created: {
+      fo: "unix-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Time at which the object was created."
+      t: "`$INTEGER`"
+    }
+    customer_details: {
+      h: "Customer Details"
+      n: "customer_details"
+      r: false
+      sh: "Customer information for this payment."
+      t: "`$ANY`"
+    }
+    customer_presence: {
+      h: "Customer Presence"
+      n: "customer_presence"
+      r: false
+      sh: "Indicates whether the customer was present in your checkout flow during this payment."
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "An arbitrary string attached to the object."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the object."
+      t: "`$STRING`"
+    }
+    latest_payment_attempt_record: {
+      h: "Latest Payment Attempt Record"
+      n: "latest_payment_attempt_record"
+      r: false
+      sh: "ID of the latest Payment Attempt Record attached to this Payment Record."
+      t: "`$STRING`"
+    }
+    livemode: {
+      h: "Livemode"
+      n: "livemode"
+      r: true
+      sh: "If the object exists in live mode, the value is `true`."
+      t: "`$BOOLEAN`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: true
+      sh: "Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object."
+      t: "`$OBJECT`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "String representing the object's type."
+      t: "`$STRING`"
+    }
+    payment_method_details: {
+      h: "Payment Method Details"
+      n: "payment_method_details"
+      r: false
+      sh: "Information about the Payment Method debited for this payment."
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 15
+        depth: 11
+      }
+    }
+    processor_details: {
+      h: "Processor Details"
+      n: "processor_details"
+      r: true
+      sh: "Processor information associated with this payment."
+      t: "`$OBJECT`"
+    }
+    reported_by: {
+      h: "Reported By"
+      n: "reported_by"
+      r: true
+      sh: "Indicates who reported the payment."
+      t: "`$STRING`"
+    }
+    shipping_details: {
+      h: "Shipping Details"
+      n: "shipping_details"
+      r: false
+      sh: "Shipping information for this payment."
+      t: "`$ANY`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "payment_record"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /v1/payment_records/{id}/report_payment_attempt"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/payment_records/{id}/report_payment_attempt"
+          q: {
+            "$action": "report_payment_attempt"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_records"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "report_payment_attempt"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/payment_records/{id}/report_payment_attempt_canceled"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/payment_records/{id}/report_payment_attempt_canceled"
+          q: {
+            "$action": "report_payment_attempt_canceled"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_records"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "report_payment_attempt_canceled"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/payment_records/{id}/report_payment_attempt_failed"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/payment_records/{id}/report_payment_attempt_failed"
+          q: {
+            "$action": "report_payment_attempt_failed"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_records"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "report_payment_attempt_failed"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/payment_records/{id}/report_payment_attempt_guaranteed"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/payment_records/{id}/report_payment_attempt_guaranteed"
+          q: {
+            "$action": "report_payment_attempt_guaranteed"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_records"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "report_payment_attempt_guaranteed"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/payment_records/{id}/report_payment_attempt_informational"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/payment_records/{id}/report_payment_attempt_informational"
+          q: {
+            "$action": "report_payment_attempt_informational"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_records"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "report_payment_attempt_informational"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/payment_records/{id}/report_refund"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/v1/payment_records/{id}/report_refund"
+          q: {
+            "$action": "report_refund"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_records"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "report_refund"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /v1/payment_records/report_payment"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/v1/payment_records/report_payment"
+          q: {
+            "$action": "report_payment"
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_records"
+            }
+            {
+              lit: "report_payment"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/payment_records"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "created_after"
+                or: "created_after"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "created_before"
+                or: "created_before"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "ending_before"
+                or: "ending_before"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "starting_after"
+                or: "starting_after"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/payment_records"
+          q: {
+            exist: [
+              "created_after"
+              "created_before"
+              "ending_before"
+              "expand"
+              "limit"
+              "starting_after"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_records"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/payment_records/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/v1/payment_records/{id}"
+          q: {
+            exist: [
+              "expand"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "payment_records"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

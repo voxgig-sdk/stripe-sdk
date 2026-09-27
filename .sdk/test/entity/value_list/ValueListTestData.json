@@ -1,0 +1,84 @@
+{
+  "existing": {
+    "value_list": {
+      "VALUE_LIST00": {
+        "alias": "s64",
+        "created": 101,
+        "created_by": "s66",
+        "id": "VALUE_LIST00",
+        "item_type": "s68",
+        "list_items": {},
+        "livemode": true,
+        "metadata": {},
+        "name": "s6c",
+        "object": "s6d"
+      },
+      "VALUE_LIST01": {
+        "alias": "sc8",
+        "created": 201,
+        "created_by": "sca",
+        "id": "VALUE_LIST01",
+        "item_type": "scc",
+        "list_items": {},
+        "livemode": true,
+        "metadata": {},
+        "name": "sd0",
+        "object": "sd1"
+      },
+      "VALUE_LIST02": {
+        "alias": "s12c",
+        "created": 301,
+        "created_by": "s12e",
+        "id": "VALUE_LIST02",
+        "item_type": "s130",
+        "list_items": {},
+        "livemode": true,
+        "metadata": {},
+        "name": "s134",
+        "object": "s135"
+      }
+    }
+  },
+  "new": {
+    "value_list": {
+      "value_list_ref01": {
+        "alias": "s190",
+        "created": 401,
+        "created_by": "s192",
+        "item_type": "s194",
+        "list_items": {},
+        "livemode": true,
+        "metadata": {},
+        "name": "s198",
+        "object": "s199"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/radar/value_lists/{value_list}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/radar/value_lists": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/radar/value_lists": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/radar/value_lists/{value_list}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /v1/radar/value_lists/{value_list}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

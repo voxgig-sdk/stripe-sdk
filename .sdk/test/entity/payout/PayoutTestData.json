@@ -1,0 +1,157 @@
+{
+  "existing": {
+    "payout": {
+      "PAYOUT00": {
+        "amount": 270,
+        "application_fee": "s10f",
+        "application_fee_amount": 272,
+        "arrival_date": 273,
+        "automatic": true,
+        "balance_transaction": "s113",
+        "created": 276,
+        "currency": "s115",
+        "description": "s116",
+        "destination": "s117",
+        "failure_balance_transaction": "s118",
+        "failure_code": "s119",
+        "failure_message": "s11a",
+        "id": "PAYOUT00",
+        "livemode": true,
+        "metadata": {},
+        "method": "s11e",
+        "object": "s11f",
+        "original_payout": "s120",
+        "payout_method": "s121",
+        "reconciliation_status": "s122",
+        "reversed_by": "s123",
+        "source_type": "s124",
+        "statement_descriptor": "s125",
+        "status": "s126",
+        "trace_id": "TRACE01",
+        "type": "s128"
+      },
+      "PAYOUT01": {
+        "amount": 540,
+        "application_fee": "s21d",
+        "application_fee_amount": 542,
+        "arrival_date": 543,
+        "automatic": true,
+        "balance_transaction": "s221",
+        "created": 546,
+        "currency": "s223",
+        "description": "s224",
+        "destination": "s225",
+        "failure_balance_transaction": "s226",
+        "failure_code": "s227",
+        "failure_message": "s228",
+        "id": "PAYOUT01",
+        "livemode": true,
+        "metadata": {},
+        "method": "s22c",
+        "object": "s22d",
+        "original_payout": "s22e",
+        "payout_method": "s22f",
+        "reconciliation_status": "s230",
+        "reversed_by": "s231",
+        "source_type": "s232",
+        "statement_descriptor": "s233",
+        "status": "s234",
+        "trace_id": "TRACE01",
+        "type": "s236"
+      },
+      "PAYOUT02": {
+        "amount": 810,
+        "application_fee": "s32b",
+        "application_fee_amount": 812,
+        "arrival_date": 813,
+        "automatic": true,
+        "balance_transaction": "s32f",
+        "created": 816,
+        "currency": "s331",
+        "description": "s332",
+        "destination": "s333",
+        "failure_balance_transaction": "s334",
+        "failure_code": "s335",
+        "failure_message": "s336",
+        "id": "PAYOUT02",
+        "livemode": true,
+        "metadata": {},
+        "method": "s33a",
+        "object": "s33b",
+        "original_payout": "s33c",
+        "payout_method": "s33d",
+        "reconciliation_status": "s33e",
+        "reversed_by": "s33f",
+        "source_type": "s340",
+        "statement_descriptor": "s341",
+        "status": "s342",
+        "trace_id": "TRACE01",
+        "type": "s344"
+      }
+    }
+  },
+  "new": {
+    "payout": {
+      "payout_ref01": {
+        "amount": 1080,
+        "application_fee": "s439",
+        "application_fee_amount": 1082,
+        "arrival_date": 1083,
+        "automatic": true,
+        "balance_transaction": "s43d",
+        "created": 1086,
+        "currency": "s43f",
+        "description": "s440",
+        "destination": "s441",
+        "failure_balance_transaction": "s442",
+        "failure_code": "s443",
+        "failure_message": "s444",
+        "livemode": true,
+        "metadata": {},
+        "method": "s448",
+        "object": "s449",
+        "original_payout": "s44a",
+        "payout_method": "s44b",
+        "reconciliation_status": "s44c",
+        "reversed_by": "s44d",
+        "source_type": "s44e",
+        "statement_descriptor": "s44f",
+        "status": "s450",
+        "trace_id": "TRACE01",
+        "type": "s452"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/payouts/{payout}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/payouts/{payout}/cancel": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/payouts/{payout}/reverse": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/payouts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/payouts": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/payouts/{payout}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

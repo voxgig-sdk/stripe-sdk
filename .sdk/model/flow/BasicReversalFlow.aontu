@@ -1,0 +1,61 @@
+# BasicReversalFlow
+
+main: kit: flow: BasicReversalFlow:
+{
+  entity: "reversal",
+  kind: "basic",
+  name: "BasicReversalFlow",
+  step: [
+    {
+      i: {
+        ref: "reversal_ref01"
+      }
+
+      m: {
+        transfer_id: "transfer01"
+      }
+
+      o: "create"
+    }
+
+    {
+      m: {
+        transfer_id: "transfer01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "reversal_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "reversal_ref01",
+        srcdatavar: "reversal_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "reversal01",
+        transfer_id: "transfer01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-reversal_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicReversalFlow"
+}

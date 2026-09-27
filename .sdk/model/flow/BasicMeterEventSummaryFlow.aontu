@@ -1,0 +1,22 @@
+# BasicMeterEventSummaryFlow
+
+main: kit: flow: BasicMeterEventSummaryFlow:
+{
+  entity: "meter_event_summary",
+  kind: "basic",
+  name: "BasicMeterEventSummaryFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "meter_event_summary_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicMeterEventSummaryFlow"
+}

@@ -2,328 +2,387 @@
   "existing": {
     "session": {
       "SESSION00": {
-        "amount_total": 110,
-        "cancel_url": "s6f",
-        "created": 112,
-        "currency": "s71",
-        "customer": "s72",
+        "account_holder": "s316",
+        "accounts": {},
+        "adaptive_pricing": "s318",
+        "after_expiration": "s319",
+        "allow_promotion_codes": true,
+        "allowed_payment_method_types": [],
+        "amount_subtotal": 796,
+        "amount_total": 797,
+        "automatic_tax": {},
+        "bank_account_token": {},
+        "billing_address_collection": "s320",
+        "branding_settings": {},
+        "cancel_url": "s322",
+        "client_reference_id": "CLIENT_REFERENCE01",
+        "client_secret": "s324",
+        "collected_information": "s325",
+        "configuration": "s326",
+        "consent": "s327",
+        "consent_collection": "s328",
+        "created": 809,
+        "currency": "s32a",
+        "currency_conversion": "s32b",
+        "custom_fields": [],
+        "custom_text": {},
+        "customer": "s32e",
+        "customer_account": "s32f",
+        "customer_creation": "s330",
+        "customer_details": "s331",
+        "customer_email": "s332",
+        "discounts": [],
+        "excluded_payment_method_types": [],
+        "expires_at": 821,
+        "filters": {},
+        "flow": "s337",
         "id": "SESSION00",
-        "mode": "s74",
-        "object": "s75",
-        "payment_status": "s76",
-        "status": "s77",
-        "success_url": "s78"
+        "integration_identifier": "s339",
+        "invoice": "s33a",
+        "invoice_creation": "s33b",
+        "limits": {},
+        "line_items": {},
+        "livemode": true,
+        "locale": "s33f",
+        "managed_payments": "s340",
+        "manual_entry": {},
+        "metadata": {},
+        "mode": "s343",
+        "name_collection": {},
+        "object": "s345",
+        "on_behalf_of": "s346",
+        "optional_items": [],
+        "origin_context": "s348",
+        "payment_intent": "s349",
+        "payment_link": "s34a",
+        "payment_method_collection": "s34b",
+        "payment_method_configuration_details": "s34c",
+        "payment_method_options": "s34d",
+        "payment_method_types": [],
+        "payment_status": "s34f",
+        "permissions": "s350",
+        "phone_number_collection": {},
+        "prefetch": [],
+        "presentment_details": {},
+        "recovered_from": "s354",
+        "redirect_on_completion": "s355",
+        "return_url": "s356",
+        "saved_payment_method_options": "s357",
+        "setup_intent": "s358",
+        "shipping_address_collection": "s359",
+        "shipping_cost": "s35a",
+        "shipping_options": [],
+        "status": "s35c",
+        "submit_type": "s35d",
+        "subscription": "s35e",
+        "success_url": "s35f",
+        "tax_id_collection": {},
+        "total_details": 865,
+        "ui_mode": "s362",
+        "url": "s363",
+        "wallet_options": "s364",
+        "session": "SESSION01"
       },
       "SESSION01": {
-        "amount_total": 220,
-        "cancel_url": "sdd",
-        "created": 222,
-        "currency": "sdf",
-        "customer": "se0",
+        "account_holder": "s62c",
+        "accounts": {},
+        "adaptive_pricing": "s62e",
+        "after_expiration": "s62f",
+        "allow_promotion_codes": true,
+        "allowed_payment_method_types": [],
+        "amount_subtotal": 1586,
+        "amount_total": 1587,
+        "automatic_tax": {},
+        "bank_account_token": {},
+        "billing_address_collection": "s636",
+        "branding_settings": {},
+        "cancel_url": "s638",
+        "client_reference_id": "CLIENT_REFERENCE01",
+        "client_secret": "s63a",
+        "collected_information": "s63b",
+        "configuration": "s63c",
+        "consent": "s63d",
+        "consent_collection": "s63e",
+        "created": 1599,
+        "currency": "s640",
+        "currency_conversion": "s641",
+        "custom_fields": [],
+        "custom_text": {},
+        "customer": "s644",
+        "customer_account": "s645",
+        "customer_creation": "s646",
+        "customer_details": "s647",
+        "customer_email": "s648",
+        "discounts": [],
+        "excluded_payment_method_types": [],
+        "expires_at": 1611,
+        "filters": {},
+        "flow": "s64d",
         "id": "SESSION01",
-        "mode": "se2",
-        "object": "se3",
-        "payment_status": "se4",
-        "status": "se5",
-        "success_url": "se6"
+        "integration_identifier": "s64f",
+        "invoice": "s650",
+        "invoice_creation": "s651",
+        "limits": {},
+        "line_items": {},
+        "livemode": true,
+        "locale": "s655",
+        "managed_payments": "s656",
+        "manual_entry": {},
+        "metadata": {},
+        "mode": "s659",
+        "name_collection": {},
+        "object": "s65b",
+        "on_behalf_of": "s65c",
+        "optional_items": [],
+        "origin_context": "s65e",
+        "payment_intent": "s65f",
+        "payment_link": "s660",
+        "payment_method_collection": "s661",
+        "payment_method_configuration_details": "s662",
+        "payment_method_options": "s663",
+        "payment_method_types": [],
+        "payment_status": "s665",
+        "permissions": "s666",
+        "phone_number_collection": {},
+        "prefetch": [],
+        "presentment_details": {},
+        "recovered_from": "s66a",
+        "redirect_on_completion": "s66b",
+        "return_url": "s66c",
+        "saved_payment_method_options": "s66d",
+        "setup_intent": "s66e",
+        "shipping_address_collection": "s66f",
+        "shipping_cost": "s670",
+        "shipping_options": [],
+        "status": "s672",
+        "submit_type": "s673",
+        "subscription": "s674",
+        "success_url": "s675",
+        "tax_id_collection": {},
+        "total_details": 1655,
+        "ui_mode": "s678",
+        "url": "s679",
+        "wallet_options": "s67a",
+        "session": "SESSION01"
       },
       "SESSION02": {
-        "amount_total": 330,
-        "cancel_url": "s14b",
-        "created": 332,
-        "currency": "s14d",
-        "customer": "s14e",
+        "account_holder": "s942",
+        "accounts": {},
+        "adaptive_pricing": "s944",
+        "after_expiration": "s945",
+        "allow_promotion_codes": true,
+        "allowed_payment_method_types": [],
+        "amount_subtotal": 2376,
+        "amount_total": 2377,
+        "automatic_tax": {},
+        "bank_account_token": {},
+        "billing_address_collection": "s94c",
+        "branding_settings": {},
+        "cancel_url": "s94e",
+        "client_reference_id": "CLIENT_REFERENCE01",
+        "client_secret": "s950",
+        "collected_information": "s951",
+        "configuration": "s952",
+        "consent": "s953",
+        "consent_collection": "s954",
+        "created": 2389,
+        "currency": "s956",
+        "currency_conversion": "s957",
+        "custom_fields": [],
+        "custom_text": {},
+        "customer": "s95a",
+        "customer_account": "s95b",
+        "customer_creation": "s95c",
+        "customer_details": "s95d",
+        "customer_email": "s95e",
+        "discounts": [],
+        "excluded_payment_method_types": [],
+        "expires_at": 2401,
+        "filters": {},
+        "flow": "s963",
         "id": "SESSION02",
-        "mode": "s150",
-        "object": "s151",
-        "payment_status": "s152",
-        "status": "s153",
-        "success_url": "s154"
+        "integration_identifier": "s965",
+        "invoice": "s966",
+        "invoice_creation": "s967",
+        "limits": {},
+        "line_items": {},
+        "livemode": true,
+        "locale": "s96b",
+        "managed_payments": "s96c",
+        "manual_entry": {},
+        "metadata": {},
+        "mode": "s96f",
+        "name_collection": {},
+        "object": "s971",
+        "on_behalf_of": "s972",
+        "optional_items": [],
+        "origin_context": "s974",
+        "payment_intent": "s975",
+        "payment_link": "s976",
+        "payment_method_collection": "s977",
+        "payment_method_configuration_details": "s978",
+        "payment_method_options": "s979",
+        "payment_method_types": [],
+        "payment_status": "s97b",
+        "permissions": "s97c",
+        "phone_number_collection": {},
+        "prefetch": [],
+        "presentment_details": {},
+        "recovered_from": "s980",
+        "redirect_on_completion": "s981",
+        "return_url": "s982",
+        "saved_payment_method_options": "s983",
+        "setup_intent": "s984",
+        "shipping_address_collection": "s985",
+        "shipping_cost": "s986",
+        "shipping_options": [],
+        "status": "s988",
+        "submit_type": "s989",
+        "subscription": "s98a",
+        "success_url": "s98b",
+        "tax_id_collection": {},
+        "total_details": 2445,
+        "ui_mode": "s98e",
+        "url": "s98f",
+        "wallet_options": "s990",
+        "session": "SESSION01"
       }
     }
   },
   "new": {
     "session": {
       "session_ref01": {
-        "amount_total": 440,
-        "cancel_url": "s1b9",
-        "created": 442,
-        "currency": "s1bb",
-        "customer": "s1bc",
-        "mode": "s1be",
-        "object": "s1bf",
-        "payment_status": "s1c0",
-        "status": "s1c1",
-        "success_url": "s1c2"
+        "account_holder": "sc58",
+        "accounts": {},
+        "adaptive_pricing": "sc5a",
+        "after_expiration": "sc5b",
+        "allow_promotion_codes": true,
+        "allowed_payment_method_types": [],
+        "amount_subtotal": 3166,
+        "amount_total": 3167,
+        "automatic_tax": {},
+        "bank_account_token": {},
+        "billing_address_collection": "sc62",
+        "branding_settings": {},
+        "cancel_url": "sc64",
+        "client_reference_id": "CLIENT_REFERENCE01",
+        "client_secret": "sc66",
+        "collected_information": "sc67",
+        "configuration": "sc68",
+        "consent": "sc69",
+        "consent_collection": "sc6a",
+        "created": 3179,
+        "currency": "sc6c",
+        "currency_conversion": "sc6d",
+        "custom_fields": [],
+        "custom_text": {},
+        "customer": "sc70",
+        "customer_account": "sc71",
+        "customer_creation": "sc72",
+        "customer_details": "sc73",
+        "customer_email": "sc74",
+        "discounts": [],
+        "excluded_payment_method_types": [],
+        "expires_at": 3191,
+        "filters": {},
+        "flow": "sc79",
+        "integration_identifier": "sc7b",
+        "invoice": "sc7c",
+        "invoice_creation": "sc7d",
+        "limits": {},
+        "line_items": {},
+        "livemode": true,
+        "locale": "sc81",
+        "managed_payments": "sc82",
+        "manual_entry": {},
+        "metadata": {},
+        "mode": "sc85",
+        "name_collection": {},
+        "object": "sc87",
+        "on_behalf_of": "sc88",
+        "optional_items": [],
+        "origin_context": "sc8a",
+        "payment_intent": "sc8b",
+        "payment_link": "sc8c",
+        "payment_method_collection": "sc8d",
+        "payment_method_configuration_details": "sc8e",
+        "payment_method_options": "sc8f",
+        "payment_method_types": [],
+        "payment_status": "sc91",
+        "permissions": "sc92",
+        "phone_number_collection": {},
+        "prefetch": [],
+        "presentment_details": {},
+        "recovered_from": "sc96",
+        "redirect_on_completion": "sc97",
+        "return_url": "sc98",
+        "saved_payment_method_options": "sc99",
+        "setup_intent": "sc9a",
+        "shipping_address_collection": "sc9b",
+        "shipping_cost": "sc9c",
+        "shipping_options": [],
+        "status": "sc9e",
+        "submit_type": "sc9f",
+        "subscription": "sca0",
+        "success_url": "sca1",
+        "tax_id_collection": {},
+        "total_details": 3235,
+        "ui_mode": "sca4",
+        "url": "sca5",
+        "wallet_options": "sca6"
       }
     }
   },
   "requests": {
-    "POST /checkout/sessions": {
+    "POST /v1/checkout/sessions/{session}": {
       "provenance": "operation-contract",
-      "contract": {
-        "operationId": "createCheckoutSession",
-        "parameters": [],
-        "protocol": "http",
-        "requestBody": {
-          "content": {
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "properties": {
-                  "cancel_url": {
-                    "type": "string"
-                  },
-                  "currency": {
-                    "type": "string"
-                  },
-                  "customer": {
-                    "type": "string"
-                  },
-                  "mode": {
-                    "type": "string"
-                  },
-                  "success_url": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "mode",
-                  "success_url"
-                ],
-                "type": "object"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "amount_total": {
-                      "type": "integer"
-                    },
-                    "cancel_url": {
-                      "type": "string"
-                    },
-                    "created": {
-                      "type": "integer"
-                    },
-                    "currency": {
-                      "type": "string"
-                    },
-                    "customer": {
-                      "type": "string"
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "mode": {
-                      "type": "string"
-                    },
-                    "object": {
-                      "type": "string"
-                    },
-                    "payment_status": {
-                      "type": "string"
-                    },
-                    "status": {
-                      "type": "string"
-                    },
-                    "success_url": {
-                      "type": "string"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            },
-            "description": "The created checkout session"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "securitySchemes": {
-          "bearerAuth": {
-            "scheme": "bearer",
-            "type": "http"
-          }
-        },
-        "securitySource": "definition"
-      }
+      "version": 2,
+      "source": "openapi3"
     },
-    "GET /checkout/sessions": {
+    "POST /v1/checkout/sessions/{session}/expire": {
       "provenance": "operation-contract",
-      "contract": {
-        "operationId": "listCheckoutSessions",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "limit",
-            "required": false,
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "in": "query",
-            "name": "customer",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "protocol": "http",
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "items": {
-                        "properties": {
-                          "amount_total": {
-                            "type": "integer"
-                          },
-                          "cancel_url": {
-                            "type": "string"
-                          },
-                          "created": {
-                            "type": "integer"
-                          },
-                          "currency": {
-                            "type": "string"
-                          },
-                          "customer": {
-                            "type": "string"
-                          },
-                          "id": {
-                            "type": "string"
-                          },
-                          "mode": {
-                            "type": "string"
-                          },
-                          "object": {
-                            "type": "string"
-                          },
-                          "payment_status": {
-                            "type": "string"
-                          },
-                          "status": {
-                            "type": "string"
-                          },
-                          "success_url": {
-                            "type": "string"
-                          }
-                        },
-                        "type": "object"
-                      },
-                      "type": "array"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            },
-            "description": "A page of checkout sessions"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "securitySchemes": {
-          "bearerAuth": {
-            "scheme": "bearer",
-            "type": "http"
-          }
-        },
-        "securitySource": "definition"
-      }
+      "version": 2,
+      "source": "openapi3"
     },
-    "GET /checkout/sessions/{id}": {
+    "POST /v1/billing_portal/sessions": {
       "provenance": "operation-contract",
-      "contract": {
-        "operationId": "getCheckoutSession",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "protocol": "http",
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "amount_total": {
-                      "type": "integer"
-                    },
-                    "cancel_url": {
-                      "type": "string"
-                    },
-                    "created": {
-                      "type": "integer"
-                    },
-                    "currency": {
-                      "type": "string"
-                    },
-                    "customer": {
-                      "type": "string"
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "mode": {
-                      "type": "string"
-                    },
-                    "object": {
-                      "type": "string"
-                    },
-                    "payment_status": {
-                      "type": "string"
-                    },
-                    "status": {
-                      "type": "string"
-                    },
-                    "success_url": {
-                      "type": "string"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            },
-            "description": "The requested checkout session"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "securitySchemes": {
-          "bearerAuth": {
-            "scheme": "bearer",
-            "type": "http"
-          }
-        },
-        "securitySource": "definition"
-      }
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/checkout/sessions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/financial_connections/sessions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /v1/link_account_sessions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/checkout/sessions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/checkout/sessions/{session}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/financial_connections/sessions/{session}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /v1/link_account_sessions/{session}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
     }
   }
 }

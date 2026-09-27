@@ -1,0 +1,53 @@
+{
+  "existing": {
+    "ephemeral_key": {
+      "EPHEMERAL_KEY00": {
+        "created": 60,
+        "expires": 61,
+        "id": "EPHEMERAL_KEY00",
+        "livemode": false,
+        "object": "s40",
+        "secret": "s41"
+      },
+      "EPHEMERAL_KEY01": {
+        "created": 120,
+        "expires": 121,
+        "id": "EPHEMERAL_KEY01",
+        "livemode": false,
+        "object": "s7c",
+        "secret": "s7d"
+      },
+      "EPHEMERAL_KEY02": {
+        "created": 180,
+        "expires": 181,
+        "id": "EPHEMERAL_KEY02",
+        "livemode": false,
+        "object": "sb8",
+        "secret": "sb9"
+      }
+    }
+  },
+  "new": {
+    "ephemeral_key": {
+      "ephemeral_key_ref01": {
+        "created": 240,
+        "expires": 241,
+        "livemode": false,
+        "object": "sf4",
+        "secret": "sf5"
+      }
+    }
+  },
+  "requests": {
+    "POST /v1/ephemeral_keys": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /v1/ephemeral_keys/{key}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}
